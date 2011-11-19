@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<commands xmlns="http://rsdn.ru/projects/Janus/JanusCommandDescriptor.xsd">
+
+	<command name="Janus.Database.DbMigration"
+			 displayNameTextResource="Database.Commands.DbMigration.DisplayName"
+			 descriptionTextResource="Database.Commands.DbMigration.Description"/>
+
+	<command name="Janus.Database.RebuildAggregates"
+			 displayNameTextResource="Database.Commands.RebuildAggregates.DisplayName"
+			 descriptionTextResource="Database.Commands.RebuildAggregates.Description"/>
+
+</commands>

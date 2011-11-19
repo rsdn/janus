@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<commands xmlns="http://rsdn.ru/projects/Janus/JanusCommandDescriptor.xsd">
+
+	<command name="Janus.Synchronization.Synchronize"
+			 displayNameTextResource="Sync.Commands.Synchronize.DisplayName"
+			 descriptionTextResource="Sync.Commands.Synchronize.Description"/>
+
+</commands>

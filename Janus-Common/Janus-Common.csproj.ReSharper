@@ -1,0 +1,12 @@
+<Configuration>
+  <NamespaceFolders>
+    <SkipFolder>3F0703D6-B568-492C-9AE2-807C490826C5/d:CoreServices/d:Commands</SkipFolder>
+    <SkipFolder>3F0703D6-B568-492C-9AE2-807C490826C5/d:CoreServices</SkipFolder>
+    <SkipFolder>3F0703D6-B568-492C-9AE2-807C490826C5/d:Synchronization/d:NetSync</SkipFolder>
+    <SkipFolder>3F0703D6-B568-492C-9AE2-807C490826C5/d:Synchronization/d:WebSvcSync</SkipFolder>
+    <SkipFolder>3F0703D6-B568-492C-9AE2-807C490826C5/d:Synchronization</SkipFolder>
+    <SkipFolder>3F0703D6-B568-492C-9AE2-807C490826C5/d:Utils</SkipFolder>
+  </NamespaceFolders>
+  <SolutionWideInspectionsLevel>InternalsOnly</SolutionWideInspectionsLevel>
+  <CSharpLanguageLevel>CSharp30</CSharpLanguageLevel>
+</Configuration>

@@ -1,0 +1,2235 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AltTextShowImages" xml:space="preserve">
+    <value>Щёлкните мышью для просмотра.</value>
+  </data>
+  <data name="AuthorColumnName" xml:space="preserve">
+    <value>Автор</value>
+  </data>
+  <data name="Base64ConvertError" xml:space="preserve">
+    <value>Ошибка при конвертировании данных в Base64</value>
+  </data>
+  <data name="BranchRepairModeUpToRoot" xml:space="preserve">
+    <value>До корня</value>
+  </data>
+  <data name="BranchRepairModeWholeTopic" xml:space="preserve">
+    <value>Тему целиком</value>
+  </data>
+  <data name="Build" xml:space="preserve">
+    <value>сборка</value>
+  </data>
+  <data name="CloseButtonText" xml:space="preserve">
+    <value>Закрыть</value>
+  </data>
+  <data name="Component" xml:space="preserve">
+    <value>Компонент</value>
+  </data>
+  <data name="ConfigDescriptionCaptionWidth" xml:space="preserve">
+    <value>Ширина колонки подписи в пикселах</value>
+  </data>
+  <data name="ConfigDescriptionScrolledEnvelope" xml:space="preserve">
+    <value>описание</value>
+  </data>
+  <data name="ConfigDescriptionSearchOnlyInSubjects" xml:space="preserve">
+    <value>Искать текст только в заголовках</value>
+  </data>
+  <data name="ConfigDescriptionShowSubject" xml:space="preserve">
+    <value>Показывать тему сообщения</value>
+  </data>
+  <data name="ConfigDisplayNameCaptionWidth" xml:space="preserve">
+    <value>Ширина колонки подписи</value>
+  </data>
+  <data name="ConfigDisplayNameScrolledEnvelope" xml:space="preserve">
+    <value>Прокручиваемый конверт</value>
+  </data>
+  <data name="ConfigDisplayNameSearchOnlyInSubjects" xml:space="preserve">
+    <value>Только в заголовках</value>
+  </data>
+  <data name="ConfigDisplayNameShowSubject" xml:space="preserve">
+    <value>Тема</value>
+  </data>
+  <data name="ConfigLinksDisplayNameDefaultPage" xml:space="preserve">
+    <value>Стартовая страница</value>
+  </data>
+  <data name="ConfigLinksDisplayNameForums" xml:space="preserve">
+    <value>Форумы</value>
+  </data>
+  <data name="ConfigLinksDisplayNameLogon" xml:space="preserve">
+    <value>Вход (logon)</value>
+  </data>
+  <data name="ConfigLinksDisplayNamePolls" xml:space="preserve">
+    <value>Голосования</value>
+  </data>
+  <data name="DatabaseAbsent" xml:space="preserve">
+    <value>БД отсутствует</value>
+  </data>
+  <data name="DataColumnName" xml:space="preserve">
+    <value>Дата</value>
+  </data>
+  <data name="DBVersion" xml:space="preserve">
+    <value>Версия БД</value>
+  </data>
+  <data name="DeleteOutboxMessage" xml:space="preserve">
+    <value>Удалить исходящее сообщение</value>
+  </data>
+  <data name="DispatchRequestException" xml:space="preserve">
+    <value>Ошибка при обработке запроса {0}.</value>
+  </data>
+  <data name="DisplayNameWindowsMedia" xml:space="preserve">
+    <value>Проигрыватель Windows Media</value>
+  </data>
+  <data name="EditOutboxMessage" xml:space="preserve">
+    <value>Редактировать исходящее сообщение…</value>
+  </data>
+  <data name="FavNewFolderInputBoxPrompt" xml:space="preserve">
+    <value>Введите название нового раздела</value>
+  </data>
+  <data name="FavNewFolderInputBoxTitle" xml:space="preserve">
+    <value>Новый раздел</value>
+  </data>
+  <data name="FavoritesDummyFormForumSelectMsg" xml:space="preserve">
+    <value>Выберите форум для просмотра избранных сообщений</value>
+  </data>
+  <data name="FavoritesFolder" xml:space="preserve">
+    <value>Избранное</value>
+  </data>
+  <data name="FavRemoveMessagePrompt" xml:space="preserve">
+    <value>Удалить элемент из раздела?</value>
+  </data>
+  <data name="FavRenameFolderPrompt" xml:space="preserve">
+    <value>Новое название раздела</value>
+  </data>
+  <data name="ForumColumnName" xml:space="preserve">
+    <value>Форум</value>
+  </data>
+  <data name="ForumSaveMessage" xml:space="preserve">
+    <value>Сохранить сообщение…</value>
+  </data>
+  <data name="ForumTeam" xml:space="preserve">
+    <value>Администрация форума</value>
+  </data>
+  <data name="ForumTeamList" xml:space="preserve">
+    <value>Полный список команды</value>
+  </data>
+  <data name="ForumUsers" xml:space="preserve">
+    <value>Список пользователей</value>
+  </data>
+  <data name="ForumViewerUserRateCaption" xml:space="preserve">
+    <value>Список оценок</value>
+  </data>
+  <data name="HistoryDockName" xml:space="preserve">
+    <value>История</value>
+  </data>
+  <data name="HistorySizeDescription" xml:space="preserve">
+    <value>Максимально отображаемый размер истории просмотра сообщений</value>
+  </data>
+  <data name="HistorySizeName" xml:space="preserve">
+    <value>Размер истории</value>
+  </data>
+  <data name="InnerLink" xml:space="preserve">
+    <value> [Внутренняя ссылка]</value>
+  </data>
+  <data name="InvalidUrlFormat" xml:space="preserve">
+    <value>Неверный формат URL</value>
+  </data>
+  <data name="JanusDatabaseRestructured" xml:space="preserve">
+    <value>Произведена реструктуризация БД \nСтарая БД сохранена в том же каталоге под именем {0}</value>
+  </data>
+  <data name="JanusImpossibleWork" xml:space="preserve">
+    <value>Работа без данных пользователя невозможна</value>
+  </data>
+  <data name="License" xml:space="preserve">
+    <value>Лицензия</value>
+  </data>
+  <data name="MessageAbsent" xml:space="preserve">
+    <value>Сообщение отсутствует в локальной базе данных. </value>
+  </data>
+  <data name="MessageAbsentLoadTitle" xml:space="preserve">
+    <value>Кликните для загрузки при следующей синхронизации</value>
+  </data>
+  <data name="MessageAbsentMsgBoxMessage" xml:space="preserve">
+    <value>Данное сообщение будет загружено при следующей синхронизации</value>
+  </data>
+  <data name="MessageAbsentMsgBoxTitle" xml:space="preserve">
+    <value>Загрузка отсутствующего сообщения</value>
+  </data>
+  <data name="MessageNotFound" xml:space="preserve">
+    <value>Сообщение '{0}' не найдено в локальной БД.</value>
+  </data>
+  <data name="MsgExtBrowserLinkTitle" xml:space="preserve">
+    <value>Открыть в Web</value>
+  </data>
+  <data name="OptionsUserFormFirstRunMessage" xml:space="preserve">
+    <value> для текущего пользователя был запущен впервые</value>
+  </data>
+  <data name="OptionsUserFormNewUser" xml:space="preserve">
+    <value>Новый пользователь</value>
+  </data>
+  <data name="OptionsUserFormOptions" xml:space="preserve">
+    <value>Настройки пользователя</value>
+  </data>
+  <data name="OptionsUserFormUserFolder" xml:space="preserve">
+    <value>Каталог пользователя</value>
+  </data>
+  <data name="OutcomeMessagesFolderName" xml:space="preserve">
+    <value>Исходящие сообщения</value>
+  </data>
+  <data name="PTEncDefaultDisplayName" xml:space="preserve">
+    <value>По умолчанию</value>
+  </data>
+  <data name="QueryTypeRandom" xml:space="preserve">
+    <value>Случайно</value>
+  </data>
+  <data name="QueryTypeSequential" xml:space="preserve">
+    <value>Последовательно</value>
+  </data>
+  <data name="QuotaPrefixColor" xml:space="preserve">
+    <value>Цвет префикса цитаты</value>
+  </data>
+  <data name="RateList" xml:space="preserve">
+    <value>Список оценок</value>
+  </data>
+  <data name="ResourceNotFound" xml:space="preserve">
+    <value>Ресурс '{0}' не найден.</value>
+  </data>
+  <data name="Revision" xml:space="preserve">
+    <value>ревизия</value>
+  </data>
+  <data name="ShowForumComboBoxDescription" xml:space="preserve">
+    <value>Показывать комбобокс для выбора форума в верхней части окна просмотра</value>
+  </data>
+  <data name="ShowForumComboBoxName" xml:space="preserve">
+    <value>Выбор форумов</value>
+  </data>
+  <data name="SizeToolbar16DisplayName" xml:space="preserve">
+    <value>16 точек</value>
+  </data>
+  <data name="SizeToolbar24DisplayName" xml:space="preserve">
+    <value>24 точки</value>
+  </data>
+  <data name="SmallMessageFormDefaultMessage" xml:space="preserve">
+    <value>Подождите…</value>
+  </data>
+  <data name="SmartJumpToNextAny" xml:space="preserve">
+    <value>Переход к следующему</value>
+  </data>
+  <data name="SmartJumpToNextUnread" xml:space="preserve">
+    <value>Переход к следующему непрочитанному</value>
+  </data>
+  <data name="SmartJumpToNextUnreadForum" xml:space="preserve">
+    <value>Переход в следующий форум.</value>
+  </data>
+  <data name="StyleConfigDisplayNameForumNamesColor" xml:space="preserve">
+    <value>Цвет названий форумов в дереве навигации</value>
+  </data>
+  <data name="StyleConfigDisplayNameNavigationTreeBackground" xml:space="preserve">
+    <value>Цвет фона в дереве навигации</value>
+  </data>
+  <data name="StyleConfigDisplayNameNavigationTreeFont" xml:space="preserve">
+    <value>Шрифт дерева навигации</value>
+  </data>
+  <data name="StyleConfigDisplayNameOptionsBackgroundColor" xml:space="preserve">
+    <value>Цвет фона редактора свойств</value>
+  </data>
+  <data name="StyleConfigDisplayNameOptionsGridLinesColor" xml:space="preserve">
+    <value>Цвет рамок редактора свойств</value>
+  </data>
+  <data name="StyleConfigDisplayNameOptionsHeaderColor" xml:space="preserve">
+    <value>Цвет заголовка редактора свойств</value>
+  </data>
+  <data name="StyleConfigDisplayNameOptionsTextColor" xml:space="preserve">
+    <value>Цвет текста редактора свойств</value>
+  </data>
+  <data name="TagsAndSmilesDockName" xml:space="preserve">
+    <value>Теги и смайлы</value>
+  </data>
+  <data name="TGColumnAnswers" xml:space="preserve">
+    <value>Ответов</value>
+  </data>
+  <data name="TGColumnAuthor" xml:space="preserve">
+    <value>Автор</value>
+  </data>
+  <data name="TGColumnComment" xml:space="preserve">
+    <value>Комментарий</value>
+  </data>
+  <data name="TGColumnDate" xml:space="preserve">
+    <value>Дата</value>
+  </data>
+  <data name="TGColumnForumName" xml:space="preserve">
+    <value>Имя форума</value>
+  </data>
+  <data name="TGColumnMessageRate" xml:space="preserve">
+    <value>Оценка сообщения</value>
+  </data>
+  <data name="TGColumnNameLink" xml:space="preserve">
+    <value>Название или Ссылка</value>
+  </data>
+  <data name="TGColumnRate" xml:space="preserve">
+    <value>Оценка</value>
+  </data>
+  <data name="TGColumnSubject" xml:space="preserve">
+    <value>Тема</value>
+  </data>
+  <data name="TGColumnSubjectRate" xml:space="preserve">
+    <value>Оценка по теме</value>
+  </data>
+  <data name="ThemeColumnName" xml:space="preserve">
+    <value>Тема</value>
+  </data>
+  <data name="UILanguageEnglishDisplayName" xml:space="preserve">
+    <value>Английский</value>
+  </data>
+  <data name="UILanguageRussianDisplayName" xml:space="preserve">
+    <value>Русский</value>
+  </data>
+  <data name="UserInfo" xml:space="preserve">
+    <value>Информация о пользователе</value>
+  </data>
+  <data name="UserInfoAgree" xml:space="preserve">
+    <value>Согласен</value>
+  </data>
+  <data name="UserInfoDisAgree" xml:space="preserve">
+    <value>Не согласен</value>
+  </data>
+  <data name="UserInfoFrom" xml:space="preserve">
+    <value>из</value>
+  </data>
+  <data name="UserInfoFromUser" xml:space="preserve">
+    <value>От</value>
+  </data>
+  <data name="UserInfoHomePage" xml:space="preserve">
+    <value>Домашняя страница</value>
+  </data>
+  <data name="UserInfoMarks" xml:space="preserve">
+    <value>Баллов</value>
+  </data>
+  <data name="UserInfoMessageCnt" xml:space="preserve">
+    <value>Количество</value>
+  </data>
+  <data name="UserInfoMessagesCntCaption" xml:space="preserve">
+    <value>Количество сообщений пользователя, хранящихся в локальной базе</value>
+  </data>
+  <data name="UserInfoMessagesLastMonthOnly" xml:space="preserve">
+    <value> (за последний месяц) </value>
+  </data>
+  <data name="UserInfoMessagesList" xml:space="preserve">
+    <value>Список сообщений пользователя</value>
+  </data>
+  <data name="UserInfoMissed" xml:space="preserve">
+    <value>Пользователь отсутствует в локальной базе</value>
+  </data>
+  <data name="UserInfoName" xml:space="preserve">
+    <value>Имя</value>
+  </data>
+  <data name="UserInfoNickName" xml:space="preserve">
+    <value>Псевдоним</value>
+  </data>
+  <data name="UserInfoPercent" xml:space="preserve">
+    <value>Процент</value>
+  </data>
+  <data name="UserInfoRateListComplete" xml:space="preserve">
+    <value>Список всех оценок</value>
+  </data>
+  <data name="UserInfoRateListLastMonth" xml:space="preserve">
+    <value>Список оценок за последний месяц</value>
+  </data>
+  <data name="UserInfoRealName" xml:space="preserve">
+    <value>Имя в миру</value>
+  </data>
+  <data name="UserInfoSeeOnSite" xml:space="preserve">
+    <value>Посмотреть на сайте RSDN</value>
+  </data>
+  <data name="UserInfoSmiles" xml:space="preserve">
+    <value>Улыбок</value>
+  </data>
+  <data name="UserInfoSpecialization" xml:space="preserve">
+    <value>Специализация</value>
+  </data>
+  <data name="UserInfoStatus" xml:space="preserve">
+    <value>Статус</value>
+  </data>
+  <data name="UserInfoTotalMessages" xml:space="preserve">
+    <value>Всего сообщений</value>
+  </data>
+  <data name="UserInfoTotalRate" xml:space="preserve">
+    <value>Всего оценок</value>
+  </data>
+  <data name="UserInfoViewFull" xml:space="preserve">
+    <value>Показать полную информацию о пользователе</value>
+  </data>
+  <data name="UserInfoWhereFrom" xml:space="preserve">
+    <value>Откуда</value>
+  </data>
+  <data name="Version" xml:space="preserve">
+    <value>Версия</value>
+  </data>
+  <data name="WriteMessageCustomizeBar" xml:space="preserve">
+    <value>Настроить панель…</value>
+  </data>
+  <data name="WriteMessagePreview" xml:space="preserve">
+    <value>Предварительный просмотр</value>
+  </data>
+  <data name="WriteMessageQuotaLevel1Color" xml:space="preserve">
+    <value>Цвет цитаты 1 уровня</value>
+  </data>
+  <data name="WriteMessageQuotaLevel2Color" xml:space="preserve">
+    <value>Цвет цитаты 2 уровня</value>
+  </data>
+  <data name="WriteMessageQuotaLevel3Color" xml:space="preserve">
+    <value>Цвет цитаты 3 уровня или больше</value>
+  </data>
+  <data name="WriteMessageSave" xml:space="preserve">
+    <value>Сохранить</value>
+  </data>
+  <data name="WriteMessageSaveAndClose" xml:space="preserve">
+    <value>Сохранить сообщение и закрыть окно</value>
+  </data>
+  <data name="WriteMessageSend" xml:space="preserve">
+    <value>Отправить</value>
+  </data>
+  <data name="WriteMessageTabSizeDescription" xml:space="preserve">
+    <value>Размер табуляции в символах</value>
+  </data>
+  <data name="WriteMessageTabSizeName" xml:space="preserve">
+    <value>Размер табуляции</value>
+  </data>
+  <data name="WriteMessageToggleCustomBar" xml:space="preserve">
+    <value>Показывать панель</value>
+  </data>
+  <data name="About.AIFileName" xml:space="preserve">
+    <value>Файл</value>
+  </data>
+  <data name="About.AIKey" xml:space="preserve">
+    <value>Идентификатор</value>
+  </data>
+  <data name="About.AssemblyInfo" xml:space="preserve">
+    <value>Информация о сборках</value>
+  </data>
+  <data name="About.CLCaption" xml:space="preserve">
+    <value>Список изменений</value>
+  </data>
+  <data name="About.CLComment" xml:space="preserve">
+    <value>Комментарий</value>
+  </data>
+  <data name="About.CLDeveloper" xml:space="preserve">
+    <value>Разработчик</value>
+  </data>
+  <data name="About.CLRevision" xml:space="preserve">
+    <value>Версия</value>
+  </data>
+  <data name="About.ComponentInfo" xml:space="preserve">
+    <value>Используемые в проекте компоненты</value>
+  </data>
+  <data name="About.DevelopersList" xml:space="preserve">
+    <value>Список разработчиков</value>
+  </data>
+  <data name="About.Locale" xml:space="preserve">
+    <value>Локаль</value>
+  </data>
+  <data name="Application.GoJanusInstallationError" xml:space="preserve">
+    <value>Ошибка установки GoJanus. Причина: {0}.</value>
+  </data>
+  <data name="Application.ProtocolInstallationError" xml:space="preserve">
+    <value>Ошибка установки протокола janus://. Причина: {0}.</value>
+  </data>
+  <data name="BuildIndexForm.Caption" xml:space="preserve">
+    <value>Построить индекс</value>
+  </data>
+  <data name="BuildIndexForm.CleanAskCaptionText" xml:space="preserve">
+    <value>Предупреждение</value>
+  </data>
+  <data name="BuildIndexForm.CleanAskText" xml:space="preserve">
+    <value>Вы действительно хотите очистить индекс?</value>
+  </data>
+  <data name="BuildIndexForm.CleanText" xml:space="preserve">
+    <value>Очистить</value>
+  </data>
+  <data name="BuildIndexForm.CloseText" xml:space="preserve">
+    <value>Закрыть</value>
+  </data>
+  <data name="BuildIndexForm.OptimizeIndexText" xml:space="preserve">
+    <value>Оптимизировать индекс при останове</value>
+  </data>
+  <data name="BuildIndexForm.ProgressText" xml:space="preserve">
+    <value>Сообщение {0} из {1} ({2}%)</value>
+  </data>
+  <data name="BuildIndexForm.StartText" xml:space="preserve">
+    <value>Начать</value>
+  </data>
+  <data name="BuildIndexForm.StopText" xml:space="preserve">
+    <value>Остановить</value>
+  </data>
+  <data name="BuildIndexForm.Action.CanceledText" xml:space="preserve">
+    <value>Построение поискового индекса прервано пользователем</value>
+  </data>
+  <data name="BuildIndexForm.Action.CancelText" xml:space="preserve">
+    <value>Построение поискового индекса прервано пользователем</value>
+  </data>
+  <data name="BuildIndexForm.Action.CompleteText" xml:space="preserve">
+    <value>Закончено построение поискового индекса</value>
+  </data>
+  <data name="BuildIndexForm.Action.ErrorText" xml:space="preserve">
+    <value>Построение поискового индекса прервано с исключением: {0}. Рекомендуем очистить индекс и повторить операцию.</value>
+  </data>
+  <data name="BuildIndexForm.Action.IndexingText" xml:space="preserve">
+    <value>Идёт индексирование, обработано {0} сообщений ({1}%)…</value>
+  </data>
+  <data name="BuildIndexForm.Action.OptimizingText" xml:space="preserve">
+    <value>Идёт оптимизация индекса…</value>
+  </data>
+  <data name="BuildIndexForm.Action.PreparingText" xml:space="preserve">
+    <value>Подготовка к индексированию…</value>
+  </data>
+  <data name="BuildIndexForm.Action.WelcomeText" xml:space="preserve">
+    <value>Для построения индекса нажмите [Начать]</value>
+  </data>
+  <data name="Config.ColorSettings" xml:space="preserve">
+    <value>Настройки цвета</value>
+  </data>
+  <data name="Config.ColorSettingsDetailed" xml:space="preserve">
+    <value>Подробные настройки цвета</value>
+  </data>
+  <data name="Config.SmartJumpPageSizeLegitimateValue" xml:space="preserve">
+    <value>Допустимые значения от 1 до 100</value>
+  </data>
+  <data name="Config.Autosync.Description" xml:space="preserve">
+    <value>Автоматически запускать синхронизацию через указанный промежуток времени</value>
+  </data>
+  <data name="Config.Autosync.DisplayName" xml:space="preserve">
+    <value>Автосинхронизация</value>
+  </data>
+  <data name="Config.AutosyncInterval.Description" xml:space="preserve">
+    <value>Интервал, по прошествии которого будут производиться попытки автосинхронизации, секунд</value>
+  </data>
+  <data name="Config.AutosyncInterval.DisplayName" xml:space="preserve">
+    <value>Интервал автосинхронизации</value>
+  </data>
+  <data name="Config.CategoryName.BackgroundMode" xml:space="preserve">
+    <value>4. Фоновый режим</value>
+  </data>
+  <data name="Config.CategoryName.Common" xml:space="preserve">
+    <value>1. Общие</value>
+  </data>
+  <data name="Config.CategoryName.DB" xml:space="preserve">
+    <value>5. База данных</value>
+  </data>
+  <data name="Config.CategoryName.Forums" xml:space="preserve">
+    <value>2. Форумы</value>
+  </data>
+  <data name="Config.CategoryName.Sync" xml:space="preserve">
+    <value>3. Синхронизация</value>
+  </data>
+  <data name="Config.CategoryName.Style.Common" xml:space="preserve">
+    <value>01. Общие настройки</value>
+  </data>
+  <data name="Config.CategoryName.Style.MessageTree" xml:space="preserve">
+    <value>02. Дерево сообщений</value>
+  </data>
+  <data name="Config.CategoryName.Style.NavigationTree" xml:space="preserve">
+    <value>03. Дерево навигации</value>
+  </data>
+  <data name="Config.CategoryName.Style.OptionsDialog" xml:space="preserve">
+    <value>04. Диалог настроек</value>
+  </data>
+  <data name="Config.CategoryName.Style.WriteMessage" xml:space="preserve">
+    <value>04. Редактирование сообщения</value>
+  </data>
+  <data name="Config.Confirmation.Description" xml:space="preserve">
+    <value>Разрешить/запретить подтверждения</value>
+  </data>
+  <data name="Config.Confirmation.DisplayName" xml:space="preserve">
+    <value>Подтверждения</value>
+  </data>
+  <data name="Config.Confirmation.Exit.Description" xml:space="preserve">
+    <value>Показывать окно с предупреждением при выходе</value>
+  </data>
+  <data name="Config.Confirmation.Exit.DisplayName" xml:space="preserve">
+    <value>Предупреждать при выходе</value>
+  </data>
+  <data name="Config.Confirmation.MarkAll.Description" xml:space="preserve">
+    <value>Запрашивать подтверждение при попытке пометить все сообщения форума как прочитанные/непрочитанные?</value>
+  </data>
+  <data name="Config.Confirmation.MarkAll.DisplayName" xml:space="preserve">
+    <value>Подтверждение пометки всех сообщений форума</value>
+  </data>
+  <data name="Config.Confirmation.SearchJump.Description" xml:space="preserve">
+    <value>Согласовывать переход на сообщения по двойному щелчку</value>
+  </data>
+  <data name="Config.Confirmation.SearchJump.DisplayName" xml:space="preserve">
+    <value>Согласование перехода</value>
+  </data>
+  <data name="Config.ConnectionTimeout.Description" xml:space="preserve">
+    <value>Время ожидания отклика от сервера, миллисекунд</value>
+  </data>
+  <data name="Config.ConnectionTimeout.DisplayName" xml:space="preserve">
+    <value>Таймаут соединения</value>
+  </data>
+  <data name="Config.ConnectRetries.Description" xml:space="preserve">
+    <value>Количество попыток, которые будут предприниматься для связи с сервером при проблемах с соединением</value>
+  </data>
+  <data name="Config.ConnectRetries.DisplayName" xml:space="preserve">
+    <value>Количество попыток соединения</value>
+  </data>
+  <data name="Config.DB.DbDriver" xml:space="preserve">
+    <value>Драйвер БД</value>
+  </data>
+  <data name="Config.DB.DbDriverDescription" xml:space="preserve">
+    <value>Используемый драйвер БД</value>
+  </data>
+  <data name="Config.DBConnectionString.Description" xml:space="preserve">
+    <value>Строка подключения к базе данных</value>
+  </data>
+  <data name="Config.DBConnectionString.DisplayName" xml:space="preserve">
+    <value>Строка подключения</value>
+  </data>
+  <data name="Config.DBConnectTimeout.Description" xml:space="preserve">
+    <value>Таймаут подключения к базе данных</value>
+  </data>
+  <data name="Config.DBConnectTimeout.DisplayName" xml:space="preserve">
+    <value>Таймаут подключения</value>
+  </data>
+  <data name="Config.DBEngineType.Description" xml:space="preserve">
+    <value>Механизм Базы Данных</value>
+  </data>
+  <data name="Config.DBEngineType.DisplayName" xml:space="preserve">
+    <value>Механизм БД (движок)</value>
+  </data>
+  <data name="Config.DBFolderSpecIcon.Description" xml:space="preserve">
+    <value>Изменяет стандартную иконку папки с базой данных на иконку RSDN@Home</value>
+  </data>
+  <data name="Config.DBFolderSpecIcon.DisplayName" xml:space="preserve">
+    <value>Специальная иконка для папки с БД</value>
+  </data>
+  <data name="Config.DownloadUsers.Description" xml:space="preserve">
+    <value>Создавать локальную копию базы пользователей (увеличивает трафик)</value>
+  </data>
+  <data name="Config.DownloadUsers.DisplayName" xml:space="preserve">
+    <value>Локальная база пользователей</value>
+  </data>
+  <data name="Config.ExternalUrlBehavior.Description" xml:space="preserve">
+    <value>Определяет поведение приложения при клику по внешней ссылке</value>
+  </data>
+  <data name="Config.ExternalUrlBehavior.DisplayName" xml:space="preserve">
+    <value>По щелчку на внешней ссылке</value>
+  </data>
+  <data name="Config.ExternalUrlBehavior.OpenDefaultBrowser" xml:space="preserve">
+    <value>Открыть браузер по умолчанию</value>
+  </data>
+  <data name="Config.ExternalUrlBehavior.OpenJBrowser" xml:space="preserve">
+    <value>Открыть JBrowser</value>
+  </data>
+  <data name="Config.ForumDisplay.Description" xml:space="preserve">
+    <value>Настройки отображения форума</value>
+  </data>
+  <data name="Config.ForumDisplay.DisplayName" xml:space="preserve">
+    <value>Настройки отображения</value>
+  </data>
+  <data name="Config.ForumDisplay.DateFormat.Description" xml:space="preserve">
+    <value>Формат даты, используемой при отображении даты сообщений</value>
+  </data>
+  <data name="Config.ForumDisplay.DateFormat.DisplayName" xml:space="preserve">
+    <value>Формат даты</value>
+  </data>
+  <data name="Config.ForumDisplay.DaysToOutdate.Description" xml:space="preserve">
+    <value>Количество дней для выделения давности сообщения или 0</value>
+  </data>
+  <data name="Config.ForumDisplay.DaysToOutdate.DisplayName" xml:space="preserve">
+    <value>Дней для выделения давности</value>
+  </data>
+  <data name="Config.ForumDisplay.DetectMediaContentLinks.Description" xml:space="preserve">
+    <value>Отображать медиа-контент в текущем окне.</value>
+  </data>
+  <data name="Config.ForumDisplay.DetectMediaContentLinks.DisplayName" xml:space="preserve">
+    <value>Распознавать ссылки на медиа-контент</value>
+  </data>
+  <data name="Config.ForumDisplay.FullForumNames.Description" xml:space="preserve">
+    <value>Показывать полные наименования форумов</value>
+  </data>
+  <data name="Config.ForumDisplay.FullForumNames.DisplayName" xml:space="preserve">
+    <value>Полные имена форумов</value>
+  </data>
+  <data name="Config.ForumDisplay.GridLines.Description" xml:space="preserve">
+    <value>Видимость линий сетки в дереве сообщений сообщений</value>
+  </data>
+  <data name="Config.ForumDisplay.GridLines.DisplayName" xml:space="preserve">
+    <value>Линии сетки в списке сообщений</value>
+  </data>
+  <data name="Config.ForumDisplay.HighlightChildMessages.Description" xml:space="preserve">
+    <value>Выделять сообщения, являющимися ответом на текущее, цветом фона заданным в настройках.</value>
+  </data>
+  <data name="Config.ForumDisplay.HighlightChildMessages.DisplayName" xml:space="preserve">
+    <value>Подсвечивать дочерние сообщения</value>
+  </data>
+  <data name="Config.ForumDisplay.HighlightParentMessage.Description" xml:space="preserve">
+    <value>Выделять сообщение, ответом на которое является текущее сообщение, цветом фона, заданным в настройках.</value>
+  </data>
+  <data name="Config.ForumDisplay.HighlightParentMessage.DisplayName" xml:space="preserve">
+    <value>Подсвечивать родительское сообщение</value>
+  </data>
+  <data name="Config.ForumDisplay.MaxTopicsPerForum.Description" xml:space="preserve">
+    <value>Максимальное количество тем, которое будет показываться в форуме.
+                -1 - без ограничений</value>
+  </data>
+  <data name="Config.ForumDisplay.MaxTopicsPerForum.DisplayName" xml:space="preserve">
+    <value>Максимальное количество тем в форуме
+                -1 - без ограничений</value>
+  </data>
+  <data name="Config.ForumDisplay.MessageEnvelope.Description" xml:space="preserve">
+    <value>Настраивает вид элементов сообщения</value>
+  </data>
+  <data name="Config.ForumDisplay.MessageEnvelope.DisplayName" xml:space="preserve">
+    <value>Конверт сообщения</value>
+  </data>
+  <data name="Config.ForumDisplay.MessageEnvelope.FloaterRateFrameAlpha.Description" xml:space="preserve">
+    <value>Выставляет прозрачность плавающей таблички оценок</value>
+  </data>
+  <data name="Config.ForumDisplay.MessageEnvelope.FloaterRateFrameAlpha.DisplayName" xml:space="preserve">
+    <value>Прозрачность плавающей таблички оценок</value>
+  </data>
+  <data name="Config.ForumDisplay.MessageEnvelope.RateWidth.Description" xml:space="preserve">
+    <value>Ширина панели оценок в точках</value>
+  </data>
+  <data name="Config.ForumDisplay.MessageEnvelope.RateWidth.DisplayName" xml:space="preserve">
+    <value>Ширина панели оценок</value>
+  </data>
+  <data name="Config.ForumDisplay.MessageEnvelope.ShowFloaterRateFrame.Description" xml:space="preserve">
+    <value>Показывает табличку оценок как плавающий слой</value>
+  </data>
+  <data name="Config.ForumDisplay.MessageEnvelope.ShowFloaterRateFrame.DisplayName" xml:space="preserve">
+    <value>Показывать список плавающим</value>
+  </data>
+  <data name="Config.ForumDisplay.MessageEnvelope.ShowHeader.Description" xml:space="preserve">
+    <value>Показывать заголовок сообщения</value>
+  </data>
+  <data name="Config.ForumDisplay.MessageEnvelope.ShowHeader.DisplayName" xml:space="preserve">
+    <value>Заголовок</value>
+  </data>
+  <data name="Config.ForumDisplay.MessageEnvelope.ShowRateFrame.Description" xml:space="preserve">
+    <value>Показывать небольшую панель оценок сообщения в теле сообщения</value>
+  </data>
+  <data name="Config.ForumDisplay.MessageEnvelope.ShowRateFrame.DisplayName" xml:space="preserve">
+    <value>Панель оценок</value>
+  </data>
+  <data name="Config.ForumDisplay.MessageEnvelope.TemplatesFromFolder.Description" xml:space="preserve">
+    <value>Сохраняет шаблоны страниц в папке Templates каталога пользователя и потом загружает их оттуда</value>
+  </data>
+  <data name="Config.ForumDisplay.MessageEnvelope.TemplatesFromFolder.DisplayName" xml:space="preserve">
+    <value>Загружать шаблоны страниц из файлов</value>
+  </data>
+  <data name="Config.ForumDisplay.MessageEnvelope.UseFriendlyCopyCode.Description" xml:space="preserve">
+    <value>Добавляет к блокам кода заголовок, позволяющий быстро и удобно скопировать содержимое в буфер обмена.</value>
+  </data>
+  <data name="Config.ForumDisplay.MessageEnvelope.UseFriendlyCopyCode.DisplayName" xml:space="preserve">
+    <value>Добавлять заголовок к блокам кода</value>
+  </data>
+  <data name="Config.ForumDisplay.NewMessagesOnTop.Description" xml:space="preserve">
+    <value>Добавлять новые сообщения сверху</value>
+  </data>
+  <data name="Config.ForumDisplay.NewMessagesOnTop.DisplayName" xml:space="preserve">
+    <value>Новые сообщения сверху</value>
+  </data>
+  <data name="Config.ForumDisplay.ShowImagesAtImgTag.Description" xml:space="preserve">
+    <value>Показывать рисунки пользователя в сообщениях</value>
+  </data>
+  <data name="Config.ForumDisplay.ShowImagesAtImgTag.DisplayName" xml:space="preserve">
+    <value>Показывать рисунки тега [img]</value>
+  </data>
+  <data name="Config.ForumDisplay.ShowMessageFormCustomBarOnNewLine.Description" xml:space="preserve">
+    <value>Показывать настраиваемую панель в редакторе с новой линии</value>
+  </data>
+  <data name="Config.ForumDisplay.ShowMessageFormCustomBarOnNewLine.DisplayName" xml:space="preserve">
+    <value>Настраиваемая панель в редакторе с новой линии</value>
+  </data>
+  <data name="Config.ForumDisplay.ShowMessageId.Description" xml:space="preserve">
+    <value>Показывать id сообщения в списке сообщений</value>
+  </data>
+  <data name="Config.ForumDisplay.ShowMessageId.DisplayName" xml:space="preserve">
+    <value>Показывать id сообщения</value>
+  </data>
+  <data name="Config.ForumDisplay.ShowMessagesCountInUserInfo.DisplayName" xml:space="preserve">
+    <value>Количество сообщений в окне информации</value>
+  </data>
+  <data name="Config.ForumDisplay.ShowRatingInUserInfo.Description" xml:space="preserve">
+    <value>Показывать список оценок в окне информации о пользователе</value>
+  </data>
+  <data name="Config.ForumDisplay.ShowTotalMessages.Description" xml:space="preserve">
+    <value>Показывать общее количество сообщений в форуме в дереве навигации</value>
+  </data>
+  <data name="Config.ForumDisplay.ShowTotalMessages.DisplayName" xml:space="preserve">
+    <value>Показывать всего сообщений</value>
+  </data>
+  <data name="Config.ForumDisplay.ShowUnreadThreadsOnly.Description" xml:space="preserve">
+    <value>Показывать только ветки, имеющие непрочитанные сообщения</value>
+  </data>
+  <data name="Config.ForumDisplay.ShowUnreadThreadsOnly.DisplayName" xml:space="preserve">
+    <value>Только непрочитанные ветки</value>
+  </data>
+  <data name="Config.ForumDisplay.ShowUserRateLastMonthOnly.Description" xml:space="preserve">
+    <value>Показывать оценки пользователя только за последний месяц</value>
+  </data>
+  <data name="Config.ForumDisplay.ShowUserRateLastMonthOnly.DisplayName" xml:space="preserve">
+    <value>Оценки только за месяц</value>
+  </data>
+  <data name="Config.ForumDisplay.TreeSpacing.Description" xml:space="preserve">
+    <value>Отступ ответов в дереве сообщений в точках</value>
+  </data>
+  <data name="Config.ForumDisplay.TreeSpacing.DisplayName" xml:space="preserve">
+    <value>Размер отступа в дереве</value>
+  </data>
+  <data name="Config.ForumExport.Description" xml:space="preserve">
+    <value>Настройки экспорта сообщений форумов</value>
+  </data>
+  <data name="Config.ForumExport.DisplayName" xml:space="preserve">
+    <value>Экспорт</value>
+  </data>
+  <data name="Config.ForumExport.CharsPerLine.Description" xml:space="preserve">
+    <value>Определяет количество символов в строке при выводе в txt файл</value>
+  </data>
+  <data name="Config.ForumExport.CharsPerLine.DisplayName" xml:space="preserve">
+    <value>Символов в строке txt файла</value>
+  </data>
+  <data name="Config.ForumExport.PlainTextEncoding.Description" xml:space="preserve">
+    <value>Определяет кодировку текста при выводе в txt файл</value>
+  </data>
+  <data name="Config.ForumExport.PlainTextEncoding.DisplayName" xml:space="preserve">
+    <value>Кодировка текста txt файла</value>
+  </data>
+  <data name="Config.ForumExport.RemoveTags.Description" xml:space="preserve">
+    <value>Удаляет теги [] [/]при экспорте в txt файл</value>
+  </data>
+  <data name="Config.ForumExport.RemoveTags.DisplayName" xml:space="preserve">
+    <value>Удалять [] теги</value>
+  </data>
+  <data name="Config.IconSize.Description" xml:space="preserve">
+    <value>Размер иконок на тулбаре. (Требует перезапуска приложения)</value>
+  </data>
+  <data name="Config.IconSize.DisplayName" xml:space="preserve">
+    <value>Размер иконок</value>
+  </data>
+  <data name="Config.LogFile.Description" xml:space="preserve">
+    <value>Имя файла, в который будут сохранятся все события за время синхронизации</value>
+  </data>
+  <data name="Config.LogFile.DisplayName" xml:space="preserve">
+    <value>Имя файла лога</value>
+  </data>
+  <data name="Config.MarkMessageReadInterval.Description" xml:space="preserve">
+    <value>Интервал в миллисекундах, после которого открытое сообщение помечается как прочитанное</value>
+  </data>
+  <data name="Config.MarkMessageReadInterval.DisplayName" xml:space="preserve">
+    <value>Интервал установки сообщения прочитанным</value>
+  </data>
+  <data name="Config.MarkMessageReadInterval.OutOfRangeException" xml:space="preserve">
+    <value>Значение интервала не попадает в допустимые границы. Пожалуйста, задайте целое число в диапазоне от 1 до 10000.</value>
+  </data>
+  <data name="Config.MarkNavigatedMessages.Description" xml:space="preserve">
+    <value>Помечать сообщение прочитанным при переходе на него через заданный интервал времени</value>
+  </data>
+  <data name="Config.MarkNavigatedMessages.DisplayName" xml:space="preserve">
+    <value>Помечать сообщения прочитанными</value>
+  </data>
+  <data name="Config.MarkOwn.Description" xml:space="preserve">
+    <value>Помечать свои сообщения как прочитанные</value>
+  </data>
+  <data name="Config.MarkOwn.DisplayName" xml:space="preserve">
+    <value>Пометка своих сообщений</value>
+  </data>
+  <data name="Config.MaxMessagesPerSession.Description" xml:space="preserve">
+    <value>Максимальное количество сообщений, забираемое за одну сессию синхронизации (максимум 1000)</value>
+  </data>
+  <data name="Config.MaxMessagesPerSession.DisplayName" xml:space="preserve">
+    <value>Сообщений в сессии</value>
+  </data>
+  <data name="Config.MaxUsersPerSession.Description" xml:space="preserve">
+    <value>Максимальное количество пользователей, забираемое за один раз (максимум 1000)</value>
+  </data>
+  <data name="Config.MaxUsersPerSession.DisplayName" xml:space="preserve">
+    <value>Пользователей в сессии</value>
+  </data>
+  <data name="Config.MinimizeTray.Description" xml:space="preserve">
+    <value>Сворачивать окно в трей</value>
+  </data>
+  <data name="Config.MinimizeTray.DisplayName" xml:space="preserve">
+    <value>Минимизировать в трей</value>
+  </data>
+  <data name="Config.MsgPosition.Description" xml:space="preserve">
+    <value>Расположить область просмотра сообщений справа (или внизу списка сообщений)</value>
+  </data>
+  <data name="Config.MsgPosition.DisplayName" xml:space="preserve">
+    <value>Область просмотра сообщений справа</value>
+  </data>
+  <data name="Config.NavigationCombo.Description" xml:space="preserve">
+    <value>Настройки панели навигации</value>
+  </data>
+  <data name="Config.NavigationCombo.DisplayName" xml:space="preserve">
+    <value>Панель навигации</value>
+  </data>
+  <data name="Config.NavigationCombo.MaxDropDownItems.Description" xml:space="preserve">
+    <value>Количество элементов в списке выбора, отображаемых без вертикальной прокрутки.</value>
+  </data>
+  <data name="Config.NavigationCombo.MaxDropDownItems.DisplayName" xml:space="preserve">
+    <value>Размер списка выбора</value>
+  </data>
+  <data name="Config.NavigationCombo.Show.Description" xml:space="preserve">
+    <value>Показывать список выбора для навигации над панелью с данными</value>
+  </data>
+  <data name="Config.NavigationCombo.Show.DisplayName" xml:space="preserve">
+    <value>Показывать</value>
+  </data>
+  <data name="Config.Notification.Description" xml:space="preserve">
+    <value>Настройка оповещений</value>
+  </data>
+  <data name="Config.Notification.DisplayName" xml:space="preserve">
+    <value>Оповещения</value>
+  </data>
+  <data name="Config.Notification.Time.Description" xml:space="preserve">
+    <value>Интервал в миллисекундах, после которого закрывается информационное окно</value>
+  </data>
+  <data name="Config.Notification.Time.DisplayName" xml:space="preserve">
+    <value>Время отображения нотификации</value>
+  </data>
+  <data name="Config.Notification.Tray.Description" xml:space="preserve">
+    <value>Вкл./откл. использования всплывающих подсказок событий синхронизации</value>
+  </data>
+  <data name="Config.Notification.Tray.DisplayName" xml:space="preserve">
+    <value>Использовать трей для нотификаций</value>
+  </data>
+  <data name="Config.OptionsUserForm.FirstRunMessage" xml:space="preserve">
+    <value> для текущего пользователя был запущен впервые</value>
+  </data>
+  <data name="Config.OptionsUserForm.FormOptions" xml:space="preserve">
+    <value>Настройки пользователя</value>
+  </data>
+  <data name="Config.OptionsUserForm.NewUser" xml:space="preserve">
+    <value>Новый пользователь</value>
+  </data>
+  <data name="Config.OptionsUserForm.UserFolder" xml:space="preserve">
+    <value>Каталог пользователя</value>
+  </data>
+  <data name="Config.Proxy.Description" xml:space="preserve">
+    <value>Конфигурация прокси-сервера</value>
+  </data>
+  <data name="Config.Proxy.DisplayName" xml:space="preserve">
+    <value>Прокси-сервер</value>
+  </data>
+  <data name="Config.Proxy.Settings.Address.Description" xml:space="preserve">
+    <value>Адрес прокси-сервера, например "127.0.0.1"</value>
+  </data>
+  <data name="Config.Proxy.Settings.Address.DisplayName" xml:space="preserve">
+    <value>Адрес</value>
+  </data>
+  <data name="Config.Proxy.Settings.Description" xml:space="preserve">
+    <value>Использование прокси-сервера при соединении с Webservice'ом</value>
+  </data>
+  <data name="Config.Proxy.Settings.DisplayName" xml:space="preserve">
+    <value>Настройки прокси-сервера</value>
+  </data>
+  <data name="Config.Proxy.Settings.Port.Description" xml:space="preserve">
+    <value>Порт прокси-сервера, например "3128"</value>
+  </data>
+  <data name="Config.Proxy.Settings.Port.DisplayName" xml:space="preserve">
+    <value>Порт</value>
+  </data>
+  <data name="Config.Proxy.UseAuthorization.Description" xml:space="preserve">
+    <value>Использование авторизации для соединений через прокси-сервера</value>
+  </data>
+  <data name="Config.Proxy.UseAuthorization.DisplayName" xml:space="preserve">
+    <value>Использовать авторизацию</value>
+  </data>
+  <data name="Config.Proxy.UseType.Description" xml:space="preserve">
+    <value>Выберите один из вариантов настроек прокси-сервера</value>
+  </data>
+  <data name="Config.Proxy.UseType.DisplayName" xml:space="preserve">
+    <value>Тип соединения</value>
+  </data>
+  <data name="Config.RepairTopic.Description" xml:space="preserve">
+    <value>Достраивать ветки до корня</value>
+  </data>
+  <data name="Config.RepairTopic.DisplayName" xml:space="preserve">
+    <value>Достраивать ветки</value>
+  </data>
+  <data name="Config.RestoreForumPosition.Description" xml:space="preserve">
+    <value>Восстанавливать последнюю позицию в форуме</value>
+  </data>
+  <data name="Config.RestoreForumPosition.DisplayName" xml:space="preserve">
+    <value>Восстанавливать позицию в форуме</value>
+  </data>
+  <data name="Config.Search.Description" xml:space="preserve">
+    <value>Конфигурация системы поиска</value>
+  </data>
+  <data name="Config.Search.DisplayName" xml:space="preserve">
+    <value>Поиск</value>
+  </data>
+  <data name="Config.Search.MaxResultInSelect.Description" xml:space="preserve">
+    <value>Максимальное количество сообщений в результатах поиска</value>
+  </data>
+  <data name="Config.Search.MaxResultInSelect.DisplayName" xml:space="preserve">
+    <value>Максимум записей при поиске</value>
+  </data>
+  <data name="Config.Search.UseLucene.Description" xml:space="preserve">
+    <value>Использовать движок lucene при поиске по сообщениям</value>
+  </data>
+  <data name="Config.Search.UseLucene.DisplayName" xml:space="preserve">
+    <value>Использовать lucene</value>
+  </data>
+  <data name="Config.ShowIndicator.Description" xml:space="preserve">
+    <value>Показывать индикатор прогресса на форме синхронизации</value>
+  </data>
+  <data name="Config.ShowIndicator.DisplayName" xml:space="preserve">
+    <value>Показывать индикатор прогресса</value>
+  </data>
+  <data name="Config.ShowSplash.Description" xml:space="preserve">
+    <value>Показывать заставку при старте приложения</value>
+  </data>
+  <data name="Config.ShowSplash.DisplayName" xml:space="preserve">
+    <value>Показывать заставку</value>
+  </data>
+  <data name="Config.SiteUrl.Description" xml:space="preserve">
+    <value>Локальный URL rsdn.ru. Если пустой, то будет использоваться URL веб-сервиса.</value>
+  </data>
+  <data name="Config.SiteUrl.DisplayName" xml:space="preserve">
+    <value>Адрес rsdn.ru</value>
+  </data>
+  <data name="Config.SmartJumpBehavior.Description" xml:space="preserve">
+    <value>Прокручивать текст сообщения до конца, затем перейти к следующему.</value>
+  </data>
+  <data name="Config.SmartJumpBehavior.DisplayName" xml:space="preserve">
+    <value>Смарт-переход по сообщениям</value>
+  </data>
+  <data name="Config.SmartJumpPageSize.Description" xml:space="preserve">
+    <value>Прокручивать сообщение с заданным шагом в процентах от размера окна. Допустимые значения от 1 до 100.</value>
+  </data>
+  <data name="Config.SmartJumpPageSize.DisplayName" xml:space="preserve">
+    <value>Прокручивать сообщение с шагом в</value>
+  </data>
+  <data name="Config.Sound.Description" xml:space="preserve">
+    <value>Настройки звуков оповещения</value>
+  </data>
+  <data name="Config.Sound.DisplayName" xml:space="preserve">
+    <value>Звуки оповещения</value>
+  </data>
+  <data name="Config.Sound.File.Description" xml:space="preserve">
+    <value>Использовать файл для оповещения о новых сообщениях</value>
+  </data>
+  <data name="Config.Sound.File.DisplayName" xml:space="preserve">
+    <value>Пользовательский звук</value>
+  </data>
+  <data name="Config.Sound.Use.Description" xml:space="preserve">
+    <value>Использовать звуки для сигнализации входящих сообщений</value>
+  </data>
+  <data name="Config.Sound.Use.DisplayName" xml:space="preserve">
+    <value>Использовать звуки</value>
+  </data>
+  <data name="Config.StyleConfig.BrokenColor.DisplayName" xml:space="preserve">
+    <value>Цвет оборванных тем</value>
+  </data>
+  <data name="Config.StyleConfig.ChildActiveMessageBackgroundColor.DisplayName" xml:space="preserve">
+    <value>Цвет фона ответов на активное сообщение</value>
+  </data>
+  <data name="Config.StyleConfig.FavoriteMessageColor.DisplayName" xml:space="preserve">
+    <value>Цвет избранных сообщений</value>
+  </data>
+  <data name="Config.StyleConfig.MessageColor.DisplayName" xml:space="preserve">
+    <value>Цвет сообщений</value>
+  </data>
+  <data name="Config.StyleConfig.MessagesAnswerColor.DisplayName" xml:space="preserve">
+    <value>Цвет ответов на свои сообщения</value>
+  </data>
+  <data name="Config.StyleConfig.MessageTreeFont.DisplayName" xml:space="preserve">
+    <value>Шрифт дерева сообщений</value>
+  </data>
+  <data name="Config.StyleConfig.OwnMessagesColor.DisplayName" xml:space="preserve">
+    <value>Цвет своих сообщений</value>
+  </data>
+  <data name="Config.StyleConfig.ParentActiveMessageBackgroundColor.DisplayName" xml:space="preserve">
+    <value>Цвет фона родителя активного сообщения</value>
+  </data>
+  <data name="Config.StyleConfig.TreeBackground.DisplayName" xml:space="preserve">
+    <value>Цвет фона дерева сообщений</value>
+  </data>
+  <data name="Config.SyncThreadPriority.Description" xml:space="preserve">
+    <value>Приоритет потока синхронизации. Используйте Нормальный, только если во время синхронизации другие процессы загружают CPU на 100%.</value>
+  </data>
+  <data name="Config.SyncThreadPriority.DisplayName" xml:space="preserve">
+    <value>Приоритет потока синхронизации</value>
+  </data>
+  <data name="Config.SyncWindow.Description" xml:space="preserve">
+    <value>Включает/отключает окно процесса синхронизации</value>
+  </data>
+  <data name="Config.SyncWindow.DisplayName" xml:space="preserve">
+    <value>Показывать окно синхронизации</value>
+  </data>
+  <data name="Config.SyncWindowPinned.Description" xml:space="preserve">
+    <value>Закрепленное окно остается открытым после очередной синхронизации</value>
+  </data>
+  <data name="Config.SyncWindowPinned.DisplayName" xml:space="preserve">
+    <value>Закреплять окно синхронизации</value>
+  </data>
+  <data name="Config.TagLine.Description" xml:space="preserve">
+    <value>Строка, которую клиент будет добавлять в конец каждого прочитанного сообщения для указания способа которым было написано это сообщение.</value>
+  </data>
+  <data name="Config.TagLine.DisplayName" xml:space="preserve">
+    <value>Строка подписи клиента</value>
+  </data>
+  <data name="Config.TagLine.Citation.Description" xml:space="preserve">
+    <value>Конфигурация макроса цитат</value>
+  </data>
+  <data name="Config.TagLine.Citation.DisplayName" xml:space="preserve">
+    <value>Цитаты</value>
+  </data>
+  <data name="Config.TagLine.Citation.Citations.Description" xml:space="preserve">
+    <value>Список цитат</value>
+  </data>
+  <data name="Config.TagLine.Citation.Citations.DisplayName" xml:space="preserve">
+    <value>Цитаты</value>
+  </data>
+  <data name="Config.TagLine.Citation.QueryType.Description" xml:space="preserve">
+    <value>Тип запроса к списку цитат</value>
+  </data>
+  <data name="Config.TagLine.Citation.QueryType.DisplayName" xml:space="preserve">
+    <value>Тип выборки</value>
+  </data>
+  <data name="Config.TagLine.Editor.Add" xml:space="preserve">
+    <value>Добавить подпись</value>
+  </data>
+  <data name="Config.TagLine.Editor.DefaultName" xml:space="preserve">
+    <value>Основная</value>
+  </data>
+  <data name="Config.TagLine.Editor.Delete" xml:space="preserve">
+    <value>Удалить подпись</value>
+  </data>
+  <data name="Config.TagLine.Editor.Edit" xml:space="preserve">
+    <value>Редактировать подпись</value>
+  </data>
+  <data name="Config.TagLine.Editor.Summary1" xml:space="preserve">
+    <value>({0} подпись)</value>
+  </data>
+  <data name="Config.TagLine.Editor.Summary2" xml:space="preserve">
+    <value>({0} подписи)</value>
+  </data>
+  <data name="Config.TagLine.Editor.Summary5" xml:space="preserve">
+    <value>({0} подписей)</value>
+  </data>
+  <data name="Config.TagLine.Format.Description" xml:space="preserve">
+    <value>Формат теглайна</value>
+  </data>
+  <data name="Config.TagLine.Format.DisplayName" xml:space="preserve">
+    <value>Формат</value>
+  </data>
+  <data name="Config.TagLine.MediaPlayer.Description" xml:space="preserve">
+    <value>Конфигурация макроса "Мультимедиа проигрыватель"</value>
+  </data>
+  <data name="Config.TagLine.MediaPlayer.DisplayName" xml:space="preserve">
+    <value>Проигрыватель мультимедиа</value>
+  </data>
+  <data name="Config.TagLine.MediaPlayer.Silent.Description" xml:space="preserve">
+    <value>Строка, которая выводиться, если Winamp не обнаружен или не проигрывает</value>
+  </data>
+  <data name="Config.TagLine.MediaPlayer.Silent.DisplayName" xml:space="preserve">
+    <value>Строка для тишины</value>
+  </data>
+  <data name="Config.TagLine.MediaPlayer.Type.Description" xml:space="preserve">
+    <value>Используемый проигрыватель мультимедиа</value>
+  </data>
+  <data name="Config.TagLine.MediaPlayer.Type.DisplayName" xml:space="preserve">
+    <value>Используемый проигрыватель</value>
+  </data>
+  <data name="Config.TagLine.TimeFormat.Description" xml:space="preserve">
+    <value>Формат макроса @@datetime</value>
+  </data>
+  <data name="Config.TagLine.TimeFormat.DisplayName" xml:space="preserve">
+    <value>Формат времени</value>
+  </data>
+  <data name="Config.TagLine.Use.Description" xml:space="preserve">
+    <value>Использовать теглайн в исходящих сообщениях</value>
+  </data>
+  <data name="Config.TagLine.Use.DisplayName" xml:space="preserve">
+    <value>Использовать теглайн</value>
+  </data>
+  <data name="Config.Ticker.Description" xml:space="preserve">
+    <value>Настройки тикера</value>
+  </data>
+  <data name="Config.Ticker.DisplayName" xml:space="preserve">
+    <value>Тикер</value>
+  </data>
+  <data name="Config.Ticker.Opacity.Description" xml:space="preserve">
+    <value>Прозрачность тикера
+                0 - полностью прозрачный,
+                1 - непрозрачный</value>
+  </data>
+  <data name="Config.Ticker.Opacity.DisplayName" xml:space="preserve">
+    <value>Прозрачность тикера</value>
+  </data>
+  <data name="Config.Ticker.ScrollLine.Description" xml:space="preserve">
+    <value>Показать в тикере бегущую строку</value>
+  </data>
+  <data name="Config.Ticker.ScrollLine.DisplayName" xml:space="preserve">
+    <value>Бегущая строка активна</value>
+  </data>
+  <data name="Config.Ticker.ScrollSpeed.Description" xml:space="preserve">
+    <value>Скорость скроллинга. 1000/значение, точек в секунду</value>
+  </data>
+  <data name="Config.Ticker.ScrollSpeed.DisplayName" xml:space="preserve">
+    <value>Скорость скроллинга</value>
+  </data>
+  <data name="Config.Ticker.Show.Description" xml:space="preserve">
+    <value>Показывать тикер для отображения фоновой информации</value>
+  </data>
+  <data name="Config.Ticker.Show.DisplayName" xml:space="preserve">
+    <value>Показывать тикер</value>
+  </data>
+  <data name="Config.Ticker.Sticky.Description" xml:space="preserve">
+    <value>Тикер будет "прилипать" к границам рабочей области экрана</value>
+  </data>
+  <data name="Config.Ticker.Sticky.DisplayName" xml:space="preserve">
+    <value>"Липкий" тикер</value>
+  </data>
+  <data name="Config.ToolStripsStyle.Description" xml:space="preserve">
+    <value>Вид отрисовки меню и панелей инструментов.</value>
+  </data>
+  <data name="Config.ToolStripsStyle.DisplayName" xml:space="preserve">
+    <value>Отрисовка инструментальных панелей</value>
+  </data>
+  <data name="Config.ToolStripsStyle.Professional.DisplayName" xml:space="preserve">
+    <value>Профессиональный</value>
+  </data>
+  <data name="Config.ToolStripsStyle.System.DisplayName" xml:space="preserve">
+    <value>Системный</value>
+  </data>
+  <data name="Config.TopicRepairMode.Description" xml:space="preserve">
+    <value>Режим восстановления оборванных веток</value>
+  </data>
+  <data name="Config.TopicRepairMode.DisplayName" xml:space="preserve">
+    <value>Режим восстановления веток</value>
+  </data>
+  <data name="Config.TreeLinks.Description" xml:space="preserve">
+    <value>Описание линков в дереве</value>
+  </data>
+  <data name="Config.TreeLinks.DisplayName" xml:space="preserve">
+    <value>Линки в дереве</value>
+  </data>
+  <data name="Config.TreeLinks.TreeLink.Link.Description" xml:space="preserve">
+    <value>Ссылка на ресурс линка</value>
+  </data>
+  <data name="Config.TreeLinks.TreeLink.Link.DisplayName" xml:space="preserve">
+    <value>Ссылка</value>
+  </data>
+  <data name="Config.TreeLinks.TreeLink.Name.Description" xml:space="preserve">
+    <value>Наименование линка, отображаемое на экране</value>
+  </data>
+  <data name="Config.TreeLinks.TreeLink.Name.DisplayName" xml:space="preserve">
+    <value>Наименование линка</value>
+  </data>
+  <data name="Config.UILanguage.Description" xml:space="preserve">
+    <value>Язык, используемый для отображения интерфейса (Требует перезапуска приложения)</value>
+  </data>
+  <data name="Config.UILanguage.DisplayName" xml:space="preserve">
+    <value>Язык интерфейса</value>
+  </data>
+  <data name="Config.UseCompression.Description" xml:space="preserve">
+    <value>Использовать сжатие при получении данных с сервера</value>
+  </data>
+  <data name="Config.UseCompression.DisplayName" xml:space="preserve">
+    <value>Использовать сжатие</value>
+  </data>
+  <data name="Config.UseLog.Description" xml:space="preserve">
+    <value>Записывать все события, произошедшие во время синхронизации, в файл</value>
+  </data>
+  <data name="Config.UseLog.DisplayName" xml:space="preserve">
+    <value>Использовать файловый лог</value>
+  </data>
+  <data name="Database.CannotMigrateToSelf" xml:space="preserve">
+    <value>Невозможно мигрировать в ту же базу данных</value>
+  </data>
+  <data name="Database.ConfirmRestartAfterMigrate" xml:space="preserve">
+    <value>Желаете перезапустить приложение и подключиться к новой базе данных?</value>
+  </data>
+  <data name="Database.ErrorOnMessageDelete" xml:space="preserve">
+    <value>Ошибка при удалении сообщения id=</value>
+  </data>
+  <data name="Database.ErrorOnMessageProcessing" xml:space="preserve">
+    <value>Ошибка при обработке сообщения id =</value>
+  </data>
+  <data name="Database.ErrorOnSetReadReplies" xml:space="preserve">
+    <value>Ошибка при выполнении SetReadReplies: {0}</value>
+  </data>
+  <data name="Database.MarkMessagesProcess" xml:space="preserve">
+    <value>Пометка сообщений</value>
+  </data>
+  <data name="Database.MigrationStarted" xml:space="preserve">
+    <value>Начинается миграция базы данных</value>
+  </data>
+  <data name="Database.NeedRestructure" xml:space="preserve">
+    <value>В текущей версии БД нет поддержки агрегатных значений. Необходима реструктуризация БД.</value>
+  </data>
+  <data name="Database.NeedRestructure2" xml:space="preserve">
+    <value>Повреждена, изменена или отсутствует таблица подсчета агрегатных значений.</value>
+  </data>
+  <data name="Database.WarningAfterAggregateRestructure" xml:space="preserve">
+    <value>Обновление БД закончено. Процедура заняла {0:0.000} секунд. Обработано {1:### ### ##0} строк. Дополнено {2:### ### ##0} тем.</value>
+  </data>
+  <data name="Database.WarningBeforeAggregateRestructure" xml:space="preserve">
+    <value>Сейчас будет произведено обновление БД, обеспечивающее поддержку автоматического расчета агрегатных значений при синхронизации. Это может занять несколько минут.</value>
+  </data>
+  <data name="Database.WarningOnUnsubscribeForum" xml:space="preserve">
+    <value>Удалить записи форума '{0}'?</value>
+  </data>
+  <data name="Database.WarningOnUnsubscribeForumCaption" xml:space="preserve">
+    <value>Внимание!</value>
+  </data>
+  <data name="Database.Commands.DbMigration.Description" xml:space="preserve">
+    <value>Мигрировать в другую БД.</value>
+  </data>
+  <data name="Database.Commands.DbMigration.DisplayName" xml:space="preserve">
+    <value>Мигрировать в другую БД</value>
+  </data>
+  <data name="Database.Commands.RebuildAggregates.Description" xml:space="preserve">
+    <value>Перестроить агрегатную таблицу.</value>
+  </data>
+  <data name="Database.Commands.RebuildAggregates.DisplayName" xml:space="preserve">
+    <value>Перестроить агрегатную таблицу</value>
+  </data>
+  <data name="Database.ConfigControls.Jet.DatabasePath" xml:space="preserve">
+    <value>Путь к Базе данных:</value>
+  </data>
+  <data name="Database.ConfigControls.Jet.OpenFileDialogFilter" xml:space="preserve">
+    <value>Файлы Access (*.mdb)|*.mdb|Все файлы (*.*)|*.*</value>
+  </data>
+  <data name="Database.ConfigControls.Sqlite.DatabasePath" xml:space="preserve">
+    <value>Путь к Базе данных:</value>
+  </data>
+  <data name="Database.ConfigControls.Sqlite.OpenFileDialogFilter" xml:space="preserve">
+    <value>Все файлы (*.*)|*.*</value>
+  </data>
+  <data name="Favorites.BadProtocol" xml:space="preserve">
+    <value>Должен быть указан протокол «janus://» или «http://»</value>
+  </data>
+  <data name="Favorites.DeleteItemPrompt" xml:space="preserve">
+    <value>Удалить элемент из Избранного?</value>
+  </data>
+  <data name="Favorites.DisplayName" xml:space="preserve">
+    <value>Избранное</value>
+  </data>
+  <data name="Favorites.ElementExists" xml:space="preserve">
+    <value>Элемент уже содержится в разделе {0}.</value>
+  </data>
+  <data name="Favorites.EmptyLink" xml:space="preserve">
+    <value>Ссылка - обязательное поле</value>
+  </data>
+  <data name="Favorites.ItemExists" xml:space="preserve">
+    <value>Ссылка с номером {0} уже содержится в разделе {1}.</value>
+  </data>
+  <data name="Favorites.ItemsExists" xml:space="preserve">
+    <value>Ссылки {0} уже содержатся в разделе {1}.</value>
+  </data>
+  <data name="Favorites.MovingItems" xml:space="preserve">
+    <value>Перемещение элементов...</value>
+  </data>
+  <data name="Favorites.Commands.AddLink.DisplayName" xml:space="preserve">
+    <value>Добавить ссылку</value>
+  </data>
+  <data name="Favorites.Commands.CreateFolder.DisplayName" xml:space="preserve">
+    <value>Создать папку</value>
+  </data>
+  <data name="Favorites.Commands.DeleteItem.DisplayName" xml:space="preserve">
+    <value>Удалить</value>
+  </data>
+  <data name="Favorites.Commands.EditLink.DisplayName" xml:space="preserve">
+    <value>Редактировать</value>
+  </data>
+  <data name="Favorites.Commands.MoveItem.DisplayName" xml:space="preserve">
+    <value>Переместить</value>
+  </data>
+  <data name="Favorites.Commands.OpenLink.DisplayName" xml:space="preserve">
+    <value>Открыть</value>
+  </data>
+  <data name="Favorites.Commands.RenameFolder.DisplayName" xml:space="preserve">
+    <value>Переименовать</value>
+  </data>
+  <data name="Forum.DisplayName" xml:space="preserve">
+    <value>(сообщений: {0}, не прочитанных: {1}, ответов мне: {2})</value>
+  </data>
+  <data name="Forum.DownloadTopicClickSource" xml:space="preserve">
+    <value>Клик по отсутствующему</value>
+  </data>
+  <data name="Forum.DownloadTopicHint" xml:space="preserve">
+    <value>Тема с сообщением '{0}'</value>
+  </data>
+  <data name="Forum.DownloadTopicIESource" xml:space="preserve">
+    <value>Из IE</value>
+  </data>
+  <data name="Forum.DownloadTopicManualSource" xml:space="preserve">
+    <value>Добавлено вручную</value>
+  </data>
+  <data name="Forum.DownloadTopicRegetSource" xml:space="preserve">
+    <value>Перезапрошено</value>
+  </data>
+  <data name="Forum.DownloadTopicRestoreHint" xml:space="preserve">
+    <value>Восстановление оборванной ветки {0}</value>
+  </data>
+  <data name="Forum.DownloadTopicsProcessing" xml:space="preserve">
+    <value>Обработка полученных тем</value>
+  </data>
+  <data name="Forum.MarkMessageCaption" xml:space="preserve">
+    <value>Отметка сообщений…</value>
+  </data>
+  <data name="Forum.MarkMessageResult" xml:space="preserve">
+    <value>Отмечено {0} {1}</value>
+  </data>
+  <data name="Forum.Message1" xml:space="preserve">
+    <value>сообщение</value>
+  </data>
+  <data name="Forum.Message2" xml:space="preserve">
+    <value>сообщения</value>
+  </data>
+  <data name="Forum.Message5" xml:space="preserve">
+    <value>сообщений</value>
+  </data>
+  <data name="Forum.PromptMarkAll" xml:space="preserve">
+    <value>Отметить все сообщения форума как {0}?</value>
+  </data>
+  <data name="Forum.PromptRead" xml:space="preserve">
+    <value>прочитанные</value>
+  </data>
+  <data name="Forum.PromptUnread" xml:space="preserve">
+    <value>не прочитанные</value>
+  </data>
+  <data name="Forum.ResetFilter" xml:space="preserve">
+    <value>Сбросить</value>
+  </data>
+  <data name="Forum.UserNickAnonymous" xml:space="preserve">
+    <value>&lt;Аноним&gt;</value>
+  </data>
+  <data name="Forum.ExportMessages.Export2ParentLink" xml:space="preserve">
+    <value>К родителю</value>
+  </data>
+  <data name="Forum.ExportMessages.ExportMessage" xml:space="preserve">
+    <value>Экспортировано {0} из {1} сообщений</value>
+  </data>
+  <data name="Forum.ExportMessages.ExportPrepareMessage" xml:space="preserve">
+    <value>Сбор сообщений…</value>
+  </data>
+  <data name="Forum.GoToMessage.BadNumber" xml:space="preserve">
+    <value>Вы должны ввести целое число соответствующее идентификатору сообщения.</value>
+  </data>
+  <data name="Forum.GoToMessage.IncorrectNumber" xml:space="preserve">
+    <value>Слишком большое или маленькое число. Число должно быть в пределах от 0 до 1 000 000.</value>
+  </data>
+  <data name="Forum.GoToMessage.MessageDownloadScheduled" xml:space="preserve">
+    <value>Сообщение {0} добавлено в очередь загрузки</value>
+  </data>
+  <data name="Forum.GoToMessage.NotFound" xml:space="preserve">
+    <value>Сообщение {0} не найдено.
+Закачать его при следующей синхронизации?</value>
+  </data>
+  <data name="Forum.GoToMessage.ValidationError" xml:space="preserve">
+    <value>Ошибка при проверке</value>
+  </data>
+  <data name="Forum.Incoming.DisplayName" xml:space="preserve">
+    <value>Входящие</value>
+  </data>
+  <data name="Forum.MarkMsg.ReadNeedSelectForum" xml:space="preserve">
+    <value>Нужно выбрать форум(ы)</value>
+  </data>
+  <data name="Forum.MarkMsg.TipCheckAll" xml:space="preserve">
+    <value>Выделить форумы</value>
+  </data>
+  <data name="Forum.MarkMsg.TipCheckInvert" xml:space="preserve">
+    <value>Инвертировать выделение форумов</value>
+  </data>
+  <data name="Forum.MarkMsg.TipUnCheckAll" xml:space="preserve">
+    <value>Отменить выделение форумов</value>
+  </data>
+  <data name="Forum.MarkTag.NoTags" xml:space="preserve">
+    <value>&lt;тегов нет&gt;</value>
+  </data>
+  <data name="Forum.MarkTag.NoTagsMessage" xml:space="preserve">
+    <value>Тегов нет.
+Используйте вкладку "Избранное" для их создания.</value>
+  </data>
+  <data name="Forum.MarkTag.TagRoot" xml:space="preserve">
+    <value>Корневой тег</value>
+  </data>
+  <data name="Forum.MarkTag.Text" xml:space="preserve">
+    <value>Теги</value>
+  </data>
+  <data name="Forum.Menu.Forums.Text" xml:space="preserve">
+    <value>Форумы</value>
+  </data>
+  <data name="Forum.Menu.Forums.ImportAndExport.Text" xml:space="preserve">
+    <value>Импорт и экспорт</value>
+  </data>
+  <data name="Forum.Menu.Message.ReadMark.MarkAllMessagesInForumAsRead" xml:space="preserve">
+    <value>Пометить все сообщения в форуме как прочтенные</value>
+  </data>
+  <data name="Forum.Menu.Message.ReadMark.MarkAllMessagesInForumAsUnread" xml:space="preserve">
+    <value>Пометить все сообщения в форуме как непрочтенные</value>
+  </data>
+  <data name="Forum.Menu.Message.ReadMark.MarkMessageAsRead" xml:space="preserve">
+    <value>Пометить сообщение как прочтенное</value>
+  </data>
+  <data name="Forum.Menu.Message.ReadMark.MarkMessageAsUnread" xml:space="preserve">
+    <value>Пометить сообщение как непрочтенное</value>
+  </data>
+  <data name="Forum.Menu.Message.ReadMark.MarkRepliesAsRead" xml:space="preserve">
+    <value>Помечать ответы как прочтенные</value>
+  </data>
+  <data name="Forum.Menu.Message.ReadMark.MarkTopicAsRead" xml:space="preserve">
+    <value>Пометить тему как прочтенную</value>
+  </data>
+  <data name="Forum.Menu.Message.ReadMark.MarkTopicAsUnread" xml:space="preserve">
+    <value>Пометить тему как непрочтенную</value>
+  </data>
+  <data name="Forum.Menu.Message.ReadMark.Text" xml:space="preserve">
+    <value>Отметка о прочтении</value>
+  </data>
+  <data name="Forum.Menu.Navigation.NextUnread.Description" xml:space="preserve">
+    <value>Перейти к следующему непрочтенному сообщению.</value>
+  </data>
+  <data name="Forum.Menu.Navigation.NextUnread.Text" xml:space="preserve">
+    <value>Следующее непрочтенное</value>
+  </data>
+  <data name="Forum.Menu.Navigation.PreviousUnread.Description" xml:space="preserve">
+    <value>Перейти к предыдущему непрочтенному сообщению.</value>
+  </data>
+  <data name="Forum.Menu.Navigation.PreviousUnread.Text" xml:space="preserve">
+    <value>Предыдущее непрочтенное сообщение</value>
+  </data>
+  <data name="Forum.MessageViewer.Moderating" xml:space="preserve">
+    <value>Модерирование …</value>
+  </data>
+  <data name="Forum.MessageViewer.Rate.Agree.Text" xml:space="preserve">
+    <value>Согласен</value>
+  </data>
+  <data name="Forum.MessageViewer.Rate.Delete.Text" xml:space="preserve">
+    <value>Удалить оценку</value>
+  </data>
+  <data name="Forum.MessageViewer.Rate.Disagree.Text" xml:space="preserve">
+    <value>Не согласен</value>
+  </data>
+  <data name="Forum.MessageViewer.Rate.One.Text" xml:space="preserve">
+    <value>Интересно</value>
+  </data>
+  <data name="Forum.MessageViewer.Rate.Plus1.Text" xml:space="preserve">
+    <value>Неумножаемая единица</value>
+  </data>
+  <data name="Forum.MessageViewer.Rate.Smile.Text" xml:space="preserve">
+    <value>Смешно</value>
+  </data>
+  <data name="Forum.MessageViewer.Rate.Three.Text" xml:space="preserve">
+    <value>Супер!</value>
+  </data>
+  <data name="Forum.MessageViewer.Rate.Two.Text" xml:space="preserve">
+    <value>Спасибо</value>
+  </data>
+  <data name="Forum.Moderatorial.CloseTopic" xml:space="preserve">
+    <value>Закрыть тему</value>
+  </data>
+  <data name="Forum.Moderatorial.Delete" xml:space="preserve">
+    <value>Удалить</value>
+  </data>
+  <data name="Forum.Moderatorial.ExtractBranch" xml:space="preserve">
+    <value>Выделить ветку</value>
+  </data>
+  <data name="Forum.Moderatorial.LeaveIntact" xml:space="preserve">
+    <value>Оставить как есть</value>
+  </data>
+  <data name="Forum.Moderatorial.MoveToForum" xml:space="preserve">
+    <value>Переместить в '{0}'</value>
+  </data>
+  <data name="Forum.Moderatorial.OpenTopic" xml:space="preserve">
+    <value>Открыть тему</value>
+  </data>
+  <data name="Forum.Outcoming.DisplayName" xml:space="preserve">
+    <value>Исходящие</value>
+  </data>
+  <data name="Forum.RateForm.AddRate" xml:space="preserve">
+    <value>Поставить оценку?</value>
+  </data>
+  <data name="Forum.RateForm.DeleteRate" xml:space="preserve">
+    <value>Удалить оценку?</value>
+  </data>
+  <data name="Forum.RateForm.DeleteRateLocally" xml:space="preserve">
+    <value>Удалить оценку локально?</value>
+  </data>
+  <data name="Forum.Subscribe.Message" xml:space="preserve">
+    <value>Подписка на форум(-ы)…</value>
+  </data>
+  <data name="Forum.Unsubscribe.Message" xml:space="preserve">
+    <value>Отписка от форума(-ов)…</value>
+  </data>
+  <data name="Forum.Unsubscribed.DisplayName" xml:space="preserve">
+    <value>Неподписанные</value>
+  </data>
+  <data name="GoJanusListener.InvalidReceivedMessage" xml:space="preserve">
+    <value>По каналу связи с GoJanus получено неверное сообщение. {0}</value>
+  </data>
+  <data name="GoJanusListener.PipeListenerErrorMessage" xml:space="preserve">
+    <value>Ошибка канала связи с GoJanus: {0}</value>
+  </data>
+  <data name="Log.ContextMenu.Clear" xml:space="preserve">
+    <value>Очистить лог</value>
+  </data>
+  <data name="MainForm.AppCloseTitle" xml:space="preserve">
+    <value>Завершение приложения</value>
+  </data>
+  <data name="MainForm.ApplicationShutdown" xml:space="preserve">
+    <value>закрывается!</value>
+  </data>
+  <data name="MainForm.AppNeedRestart" xml:space="preserve">
+    <value>Необходимо перезапустить приложение!</value>
+  </data>
+  <data name="MainForm.CloseQuestion" xml:space="preserve">
+    <value>Закрыть {0}?</value>
+  </data>
+  <data name="MainForm.SyncActiveWarning" xml:space="preserve">
+    <value>Синхронизация активна. Закрыть?</value>
+  </data>
+  <data name="MainForm.BugReport.DefaultDescription" xml:space="preserve">
+    <value>&lt;введите здесь описание ошибки&gt;</value>
+  </data>
+  <data name="MainForm.BugReport.DefaultName" xml:space="preserve">
+    <value>&lt;введите здесь название ошибки&gt;</value>
+  </data>
+  <data name="MainForm.BugReport.DefaultStackTrace" xml:space="preserve">
+    <value>&lt;введите здесь трассировку стека, если она доступна&gt;</value>
+  </data>
+  <data name="MainForm.Menu.File.Text" xml:space="preserve">
+    <value>Файл</value>
+  </data>
+  <data name="MainForm.Menu.Help.Text" xml:space="preserve">
+    <value>Справка</value>
+  </data>
+  <data name="MainForm.Menu.Service.Text" xml:space="preserve">
+    <value>Сервис</value>
+  </data>
+  <data name="MainForm.Menu.View.NavigationPane" xml:space="preserve">
+    <value>Дерево навигации</value>
+  </data>
+  <data name="MainForm.Menu.View.Text" xml:space="preserve">
+    <value>Вид</value>
+  </data>
+  <data name="MainForm.SystemMenuHelper.SyncItemCaption" xml:space="preserve">
+    <value>Синхронизировать</value>
+  </data>
+  <data name="MessageEditor.FindNothing" xml:space="preserve">
+    <value>Вхождений больше не найдено</value>
+  </data>
+  <data name="MessageEditor.LogChangeMsg" xml:space="preserve">
+    <value>Изменено сообщение в форум '{0}'</value>
+  </data>
+  <data name="MessageEditor.LogNewMsg" xml:space="preserve">
+    <value>Сохранено новое сообщение в форум '{0}'</value>
+  </data>
+  <data name="MessageEditor.Message" xml:space="preserve">
+    <value>Сообщение</value>
+  </data>
+  <data name="MessageEditor.PreviewTitle" xml:space="preserve">
+    <value>Предварительный просмотр</value>
+  </data>
+  <data name="MessageEditor.QuoteWarning" xml:space="preserve">
+    <value>Вы привысили объем допустимого цитирования (90%). Нажмите [Да] чтобы послать сообщение в неизменном виде, или [Нет] чтобы вернуться к редактированию сообщения.</value>
+  </data>
+  <data name="MessageEditor.SavePromptRequired" xml:space="preserve">
+    <value>Сохранить сообщение для отправки?</value>
+  </data>
+  <data name="MessageEditor.SendPromptRequired" xml:space="preserve">
+    <value>Отправить?</value>
+  </data>
+  <data name="MessageEditor.SubjectRequired" xml:space="preserve">
+    <value>Тема сообщения является обязательным полем</value>
+  </data>
+  <data name="MessageEditor.Commands.Close.Description" xml:space="preserve">
+    <value>Закрыть редактор сообщений.</value>
+  </data>
+  <data name="MessageEditor.Commands.Close.DisplayName" xml:space="preserve">
+    <value>Закрыть</value>
+  </data>
+  <data name="MessageEditor.Commands.FindAndReplace.Description" xml:space="preserve">
+    <value>Поиск и замена в тексте.</value>
+  </data>
+  <data name="MessageEditor.Commands.FindAndReplace.DisplayName" xml:space="preserve">
+    <value>Поиск и замена</value>
+  </data>
+  <data name="MessageEditor.Commands.InsertTag.Description" xml:space="preserve">
+    <value>Вставить тег.</value>
+  </data>
+  <data name="MessageEditor.Commands.InsertTag.DisplayName" xml:space="preserve">
+    <value>Вставить тег</value>
+  </data>
+  <data name="MessageEditor.Commands.Preview.Description" xml:space="preserve">
+    <value>Предварительный просмотр сообщения.</value>
+  </data>
+  <data name="MessageEditor.Commands.Preview.DisplayName" xml:space="preserve">
+    <value>Предварительный просмотр сообщения</value>
+  </data>
+  <data name="MessageEditor.Commands.Redo.Description" xml:space="preserve">
+    <value>Повторить.</value>
+  </data>
+  <data name="MessageEditor.Commands.Redo.DisplayName" xml:space="preserve">
+    <value>Повторить</value>
+  </data>
+  <data name="MessageEditor.Commands.Save.Description" xml:space="preserve">
+    <value>Сохранить сообщение в "Черновики".</value>
+  </data>
+  <data name="MessageEditor.Commands.Save.DisplayName" xml:space="preserve">
+    <value>Сохранить</value>
+  </data>
+  <data name="MessageEditor.Commands.SaveAndClose.Description" xml:space="preserve">
+    <value>Сохранить сообщение в "Черновики" и закрыть редактор сообщений.</value>
+  </data>
+  <data name="MessageEditor.Commands.SaveAndClose.DisplayName" xml:space="preserve">
+    <value>Сохранить и закрыть</value>
+  </data>
+  <data name="MessageEditor.Commands.Send.Description" xml:space="preserve">
+    <value>Сохранить сообщение в папку "Исходящие" для дальнейшей отправки при следующей синхронизации.</value>
+  </data>
+  <data name="MessageEditor.Commands.Send.DisplayName" xml:space="preserve">
+    <value>Отправить</value>
+  </data>
+  <data name="MessageEditor.Commands.Undo.Description" xml:space="preserve">
+    <value>Отменить.</value>
+  </data>
+  <data name="MessageEditor.Commands.Undo.DisplayName" xml:space="preserve">
+    <value>Отменить</value>
+  </data>
+  <data name="MessageEditor.Menu.File.Text" xml:space="preserve">
+    <value>Файл</value>
+  </data>
+  <data name="Navigation.Commands.SelectFeatureByKey.Description" xml:space="preserve">
+    <value>Перейти ко вкладке с заданным ключем.</value>
+  </data>
+  <data name="Navigation.Commands.SelectFeatureByKey.DisplayName" xml:space="preserve">
+    <value>Перейти ко вкладке с заданным ключем</value>
+  </data>
+  <data name="Navigation.Commands.SelectNextFeature.Description" xml:space="preserve">
+    <value>Перейти на следующий форум.</value>
+  </data>
+  <data name="Navigation.Commands.SelectNextFeature.DisplayName" xml:space="preserve">
+    <value>Следующий форум</value>
+  </data>
+  <data name="Navigation.Commands.SelectPreviousFeature.Description" xml:space="preserve">
+    <value>Вернуться на предыдущий форум.</value>
+  </data>
+  <data name="Navigation.Commands.SelectPreviousFeature.DisplayName" xml:space="preserve">
+    <value>Предыдущий форум</value>
+  </data>
+  <data name="Navigation.NavTree.Category" xml:space="preserve">
+    <value>Дерево навигации</value>
+  </data>
+  <data name="Navigation.NavTree.DockName" xml:space="preserve">
+    <value>Дерево навигации</value>
+  </data>
+  <data name="Navigation.NavTree.InfoColumn" xml:space="preserve">
+    <value>Доп. инф.</value>
+  </data>
+  <data name="Navigation.NavTree.NameColumn" xml:space="preserve">
+    <value>Название</value>
+  </data>
+  <data name="Outbox.BugReportTemplate" xml:space="preserve">
+    <value>[b]Ошибка:[/b]
+{0}
+
+[b]Описание:[/b]
+{1}
+
+[b]Версия приложения:[/b]
+{2}
+
+[b]Тип БД:[/b]
+{3}
+
+[b]Трассировка стека:[/b]
+[code]
+{4}
+[/code]</value>
+  </data>
+  <data name="Outbox.DownloadTopicsCollection" xml:space="preserve">
+    <value>Темы для загрузки</value>
+  </data>
+  <data name="Outbox.NewMessageCollection" xml:space="preserve">
+    <value>Новые сообщения</value>
+  </data>
+  <data name="Outbox.RateMarkCollection" xml:space="preserve">
+    <value>Оценки</value>
+  </data>
+  <data name="Outbox.RemoveMessageConfirm" xml:space="preserve">
+    <value>Удалить исходящее сообщение?</value>
+  </data>
+  <data name="Outbox.Commands.DeleteItem.Description" xml:space="preserve">
+    <value>Удалить элемент.</value>
+  </data>
+  <data name="Outbox.Commands.DeleteItem.DisplayName" xml:space="preserve">
+    <value>Удалить</value>
+  </data>
+  <data name="Outbox.Commands.EditItem.Description" xml:space="preserve">
+    <value>Редактировать элемент.</value>
+  </data>
+  <data name="Outbox.Commands.EditItem.DisplayName" xml:space="preserve">
+    <value>Редактировать</value>
+  </data>
+  <data name="Outbox.DownloadTopic.ItemsExists" xml:space="preserve">
+    <value>Ссылки {0} уже содержатся в списке дополнительно загружаемых сообщений.</value>
+  </data>
+  <data name="Search.AdvLeft" xml:space="preserve">
+    <value>&lt;&lt; Доп</value>
+  </data>
+  <data name="Search.AdvRight" xml:space="preserve">
+    <value>Доп &gt;&gt;</value>
+  </data>
+  <data name="Search.Confirmation" xml:space="preserve">
+    <value>Согласование</value>
+  </data>
+  <data name="Search.DisplayName" xml:space="preserve">
+    <value>Поиск</value>
+  </data>
+  <data name="Search.EntryContainsBadCode" xml:space="preserve">
+    <value>Строка поиска должна содержать соответствующее количество символов [ и ].</value>
+  </data>
+  <data name="Search.Error" xml:space="preserve">
+    <value>Ошибка!</value>
+  </data>
+  <data name="Search.ForumDescAll" xml:space="preserve">
+    <value>Все форумы</value>
+  </data>
+  <data name="Search.IndexCleared" xml:space="preserve">
+    <value>Очищен поисковый индекс</value>
+  </data>
+  <data name="Search.IndexingFinished" xml:space="preserve">
+    <value>Индексирование сообщений закончено.</value>
+  </data>
+  <data name="Search.IndexingStarted" xml:space="preserve">
+    <value>Индексирование сообщений…</value>
+  </data>
+  <data name="Search.IndexingTerminatedByError" xml:space="preserve">
+    <value>Построение поискового индекса прервано с исключением: {0}</value>
+  </data>
+  <data name="Search.IndexingTerminatedByUser" xml:space="preserve">
+    <value>Построение поискового индекса прервано пользователем.</value>
+  </data>
+  <data name="Search.JumpRequest" xml:space="preserve">
+    <value>Вы уверены, что хотите перейти к ветке данного сообщения?</value>
+  </data>
+  <data name="Search.LogFound" xml:space="preserve">
+    <value>Найдено {0} сообщений, удовлетворяющих запросу.</value>
+  </data>
+  <data name="Search.LogNotFound" xml:space="preserve">
+    <value>Не найдено сообщений, удовлетворяющих запросу.</value>
+  </data>
+  <data name="Search.MessagesAddedIntoIndex" xml:space="preserve">
+    <value>Добавлено сообщений в индекс: {0}</value>
+  </data>
+  <data name="Search.MessagesRemovedFromIndex" xml:space="preserve">
+    <value>Удалено сообщений из индекса: {0}</value>
+  </data>
+  <data name="Search.NoParams" xml:space="preserve">
+    <value>Введите строку для поиска или выберите дополнительные параметры.</value>
+  </data>
+  <data name="Search.NotFound" xml:space="preserve">
+    <value>Не найдено сообщение или форум сообщения</value>
+  </data>
+  <data name="Search.OutResults" xml:space="preserve">
+    <value>Вывод результатов…</value>
+  </data>
+  <data name="Search.Searching" xml:space="preserve">
+    <value>Поиск сообщений…</value>
+  </data>
+  <data name="Search.Title" xml:space="preserve">
+    <value>Поиск</value>
+  </data>
+  <data name="Search.Commands.BuildSearchIndex.Description" xml:space="preserve">
+    <value>Построить поисковый индекс.</value>
+  </data>
+  <data name="Search.Commands.BuildSearchIndex.DisplayName" xml:space="preserve">
+    <value>Построить поисковый индекс</value>
+  </data>
+  <data name="Search.Commands.ClearSearchResult.Description" xml:space="preserve">
+    <value>Очистить список с результатами поиска.</value>
+  </data>
+  <data name="Search.Commands.ClearSearchResult.DisplayName" xml:space="preserve">
+    <value>Очистить результаты поиска</value>
+  </data>
+  <data name="Splash.ApplicationStart" xml:space="preserve">
+    <value>Запуск приложения…</value>
+  </data>
+  <data name="Splash.CheckDatabase" xml:space="preserve">
+    <value>Проверка базы данных…</value>
+  </data>
+  <data name="Splash.InitApplication" xml:space="preserve">
+    <value>Инициализация приложения…</value>
+  </data>
+  <data name="Splash.LoadForum" xml:space="preserve">
+    <value>Загрузка форума '{0}'…</value>
+  </data>
+  <data name="Splash.LoadForums" xml:space="preserve">
+    <value>Загрузка списка форумов…</value>
+  </data>
+  <data name="Splash.RestructureDatabase" xml:space="preserve">
+    <value>Реструктуризация базы данных…</value>
+  </data>
+  <data name="Splash.RunApplication" xml:space="preserve">
+    <value>Приложение запущено</value>
+  </data>
+  <data name="StyleConfig.ExternalThemeFileDescription" xml:space="preserve">
+    <value>Внешний файл со стилем картинок, картинки из которого заменяют стандартные при отображении кнопок панелей инструментов, меню и сообщений форума. (Требует перезапуска приложения)</value>
+  </data>
+  <data name="StyleConfig.ExternalThemeFileName" xml:space="preserve">
+    <value>Внешний файл cо стилем картинок</value>
+  </data>
+  <data name="StyleConfig.LogBackColorDescription" xml:space="preserve">
+    <value>Цвет фона окна лога</value>
+  </data>
+  <data name="StyleConfig.LogBackColorName" xml:space="preserve">
+    <value>Фон лога</value>
+  </data>
+  <data name="StyleConfig.ThemeDescription" xml:space="preserve">
+    <value>Стиль картинок для кнопок панелей инструментов, меню и сообщений форума. (Требует перезапуска приложения)</value>
+  </data>
+  <data name="StyleConfig.ThemeName" xml:space="preserve">
+    <value>Стиль картинок</value>
+  </data>
+  <data name="Sync.AutoAborted" xml:space="preserve">
+    <value>Не удалось произвести автосинхронизацию</value>
+  </data>
+  <data name="Sync.BrokenThread1" xml:space="preserve">
+    <value>оборванная ветка</value>
+  </data>
+  <data name="Sync.BrokenThread2" xml:space="preserve">
+    <value>оборванных ветки</value>
+  </data>
+  <data name="Sync.BrokenThread3" xml:space="preserve">
+    <value>оборванных веток</value>
+  </data>
+  <data name="Sync.BrokenTopicRequestHint" xml:space="preserve">
+    <value>Для сообщения '{0}' не найден родитель</value>
+  </data>
+  <data name="Sync.BrokenTopicRequestSource" xml:space="preserve">
+    <value>Поиск оборванных веток</value>
+  </data>
+  <data name="Sync.CompressionKind" xml:space="preserve">
+    <value>Используется {0} сжатие, {1} байт</value>
+  </data>
+  <data name="Sync.CompressionNotUsed" xml:space="preserve">
+    <value>сжатие не используется</value>
+  </data>
+  <data name="Sync.CompressionUsed" xml:space="preserve">
+    <value>используется метод сжатия '{0}'</value>
+  </data>
+  <data name="Sync.ConnectError" xml:space="preserve">
+    <value>Ошибка связи</value>
+  </data>
+  <data name="Sync.DownloadTopics" xml:space="preserve">
+    <value>Загрузка дополнительных сообщений</value>
+  </data>
+  <data name="Sync.DownloadTopicsStat" xml:space="preserve">
+    <value>{0} {1} загружено</value>
+  </data>
+  <data name="Sync.FailedOutboundMessages1" xml:space="preserve">
+    <value>сбойное исходящее сообщение</value>
+  </data>
+  <data name="Sync.FailedOutboundMessages2" xml:space="preserve">
+    <value>сбойных исходящих сообщения</value>
+  </data>
+  <data name="Sync.FailedOutboundMessages5" xml:space="preserve">
+    <value>сбойных исходящих сообщений</value>
+  </data>
+  <data name="Sync.ForumsReceived1" xml:space="preserve">
+    <value>форум</value>
+  </data>
+  <data name="Sync.ForumsReceived2" xml:space="preserve">
+    <value>форума</value>
+  </data>
+  <data name="Sync.ForumsReceived5" xml:space="preserve">
+    <value>форумов</value>
+  </data>
+  <data name="Sync.Found1" xml:space="preserve">
+    <value>Обнаружена</value>
+  </data>
+  <data name="Sync.Found2" xml:space="preserve">
+    <value>Обнаружено</value>
+  </data>
+  <data name="Sync.GetForumsList" xml:space="preserve">
+    <value>Запрос списка форумов с сервера</value>
+  </data>
+  <data name="Sync.InboundMessages1" xml:space="preserve">
+    <value>входящее сообщение</value>
+  </data>
+  <data name="Sync.InboundMessages2" xml:space="preserve">
+    <value>входящих сообщения</value>
+  </data>
+  <data name="Sync.InboundMessages5" xml:space="preserve">
+    <value>входящих сообщений</value>
+  </data>
+  <data name="Sync.InboundRates1" xml:space="preserve">
+    <value>входящая оценка</value>
+  </data>
+  <data name="Sync.InboundRates2" xml:space="preserve">
+    <value>входящих оценки</value>
+  </data>
+  <data name="Sync.InboundRates5" xml:space="preserve">
+    <value>входящих оценок</value>
+  </data>
+  <data name="Sync.Indexed" xml:space="preserve">
+    <value>проиндексировано</value>
+  </data>
+  <data name="Sync.InListAdded" xml:space="preserve">
+    <value>В список добавлено {0} {1}</value>
+  </data>
+  <data name="Sync.LoadedProfiles" xml:space="preserve">
+    <value>Загружены профили {0} {1}</value>
+  </data>
+  <data name="Sync.Messages1" xml:space="preserve">
+    <value>сообщение</value>
+  </data>
+  <data name="Sync.Messages2" xml:space="preserve">
+    <value>сообщения</value>
+  </data>
+  <data name="Sync.Messages5" xml:space="preserve">
+    <value>сообщений</value>
+  </data>
+  <data name="Sync.MessagesPosted1" xml:space="preserve">
+    <value>{0} сообщение послано</value>
+  </data>
+  <data name="Sync.MessagesPosted2" xml:space="preserve">
+    <value>{0} сообщения послано</value>
+  </data>
+  <data name="Sync.MessagesPosted5" xml:space="preserve">
+    <value>{0} сообщений послано</value>
+  </data>
+  <data name="Sync.Moderatorials1" xml:space="preserve">
+    <value>модерирование</value>
+  </data>
+  <data name="Sync.Moderatorials2" xml:space="preserve">
+    <value>модерирования</value>
+  </data>
+  <data name="Sync.Moderatorials5" xml:space="preserve">
+    <value>модерирований</value>
+  </data>
+  <data name="Sync.NewForums1" xml:space="preserve">
+    <value>новый форум</value>
+  </data>
+  <data name="Sync.NewForums2" xml:space="preserve">
+    <value>новых форума</value>
+  </data>
+  <data name="Sync.NewForums5" xml:space="preserve">
+    <value>новых форумов</value>
+  </data>
+  <data name="Sync.NewUsersNotFound" xml:space="preserve">
+    <value>Новых профилей пользователей не найдено</value>
+  </data>
+  <data name="Sync.NoCompression" xml:space="preserve">
+    <value>Сжатие не используется</value>
+  </data>
+  <data name="Sync.OutboundMessages1" xml:space="preserve">
+    <value>исходящее сообщение</value>
+  </data>
+  <data name="Sync.OutboundMessages2" xml:space="preserve">
+    <value>исходящих сообщения</value>
+  </data>
+  <data name="Sync.OutboundMessages5" xml:space="preserve">
+    <value>исходящих сообщений</value>
+  </data>
+  <data name="Sync.PacketSize" xml:space="preserve">
+    <value>размер пакета {0}</value>
+  </data>
+  <data name="Sync.PostMessages" xml:space="preserve">
+    <value>Отсылка сообщений</value>
+  </data>
+  <data name="Sync.ProcessForumsList" xml:space="preserve">
+    <value>Обработка полученного списка форумов</value>
+  </data>
+  <data name="Sync.ProcessMessages" xml:space="preserve">
+    <value>Обработка новых сообщений</value>
+  </data>
+  <data name="Sync.ProcessUsers" xml:space="preserve">
+    <value>Обработка профилей новых пользователей</value>
+  </data>
+  <data name="Sync.QueryNewMessages" xml:space="preserve">
+    <value>Запрос новых сообщений в форумах</value>
+  </data>
+  <data name="Sync.QueryNewUsers" xml:space="preserve">
+    <value>Запрос новых пользователей</value>
+  </data>
+  <data name="Sync.RepairingTopics" xml:space="preserve">
+    <value>Достраивание оборванных веток…</value>
+  </data>
+  <data name="Sync.SendChangesToServer" xml:space="preserve">
+    <value>Отправка изменений в форумы</value>
+  </data>
+  <data name="Sync.UpdateForumData" xml:space="preserve">
+    <value>Обновляются данные форума…</value>
+  </data>
+  <data name="Sync.UsersReceived1" xml:space="preserve">
+    <value>пользователь</value>
+  </data>
+  <data name="Sync.UsersReceived2" xml:space="preserve">
+    <value>пользователя</value>
+  </data>
+  <data name="Sync.UsersReceived5" xml:space="preserve">
+    <value>пользователей</value>
+  </data>
+  <data name="Sync.Commands.Synchronize.Description" xml:space="preserve">
+    <value>Синхронизация с сервером для принятия или отправки сообщений.</value>
+  </data>
+  <data name="Sync.Commands.Synchronize.DisplayName" xml:space="preserve">
+    <value>Синхронизировать</value>
+  </data>
+  <data name="Sync.Log.BrokenTopicMessage1" xml:space="preserve">
+    <value>Найдена {0} оборванная ветка ({1})</value>
+  </data>
+  <data name="Sync.Log.BrokenTopicMessage2" xml:space="preserve">
+    <value>Найдено {0} оборванных ветки ({1})</value>
+  </data>
+  <data name="Sync.Log.BrokenTopicMessage5" xml:space="preserve">
+    <value>Найдено {0} оборванных веток ({1})</value>
+  </data>
+  <data name="Sync.NewMessages.ProcessingProgressText1" xml:space="preserve">
+    <value>{0} сообщение обработано</value>
+  </data>
+  <data name="Sync.NewMessages.ProcessingProgressText2" xml:space="preserve">
+    <value>{0} сообщения обработано</value>
+  </data>
+  <data name="Sync.NewMessages.ProcessingProgressText5" xml:space="preserve">
+    <value>{0} сообщений обработано</value>
+  </data>
+  <data name="Sync.NewRates.ProcessingProgress1" xml:space="preserve">
+    <value>{0} оценка обработана</value>
+  </data>
+  <data name="Sync.NewRates.ProcessingProgress2" xml:space="preserve">
+    <value>{0} оценки обработано</value>
+  </data>
+  <data name="Sync.NewRates.ProcessingProgress5" xml:space="preserve">
+    <value>{0} оценок обработано</value>
+  </data>
+  <data name="TreeLinks.DisplayName" xml:space="preserve">
+    <value>Ссылки</value>
+  </data>
+  <data name="Sync.OutboundRates1" xml:space="preserve">
+    <value>исходящая оценка</value>
+  </data>
+  <data name="Sync.OutboundRates2" xml:space="preserve">
+    <value>исходящих оценки</value>
+  </data>
+  <data name="Sync.OutboundRates5" xml:space="preserve">
+    <value>исходящих оценок</value>
+  </data>
+  <data name="EnterTopicMessageIdForm.MessageIdIsTextFormat" xml:space="preserve">
+    <value>ID сообщения: {0}</value>
+  </data>
+</root>

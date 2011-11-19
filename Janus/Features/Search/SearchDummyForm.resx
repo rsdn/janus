@@ -1,0 +1,999 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="_splitContainer.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="_splitContainer.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="_splitContainer.Orientation" type="System.Windows.Forms.Orientation, System.Windows.Forms">
+    <value>Horizontal</value>
+  </data>
+  <data name="_idCol.Text" xml:space="preserve">
+    <value>id</value>
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="_idCol.Width" type="System.Int32, mscorlib">
+    <value>47</value>
+  </data>
+  <data name="_markedCol.Text" xml:space="preserve">
+    <value>marked</value>
+  </data>
+  <data name="_markedCol.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
+    <value>Center</value>
+  </data>
+  <data name="_markedCol.Width" type="System.Int32, mscorlib">
+    <value>64</value>
+  </data>
+  <data name="_subjectCol.Text" xml:space="preserve">
+    <value>subject</value>
+  </data>
+  <data name="_subjectCol.Width" type="System.Int32, mscorlib">
+    <value>200</value>
+  </data>
+  <data name="_userNickCol.Text" xml:space="preserve">
+    <value>userNick</value>
+  </data>
+  <data name="_userNickCol.Width" type="System.Int32, mscorlib">
+    <value>80</value>
+  </data>
+  <data name="_rateThisCol.Text" xml:space="preserve">
+    <value>rateThis</value>
+  </data>
+  <data name="_rateThisCol.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
+    <value>Right</value>
+  </data>
+  <data name="_rateThisCol.Width" type="System.Int32, mscorlib">
+    <value>80</value>
+  </data>
+  <data name="_forumNameCol.Text" xml:space="preserve">
+    <value>forumName</value>
+  </data>
+  <data name="_forumNameCol.Width" type="System.Int32, mscorlib">
+    <value>80</value>
+  </data>
+  <data name="_repliesCountCol.Text" xml:space="preserve">
+    <value>repliesCount</value>
+  </data>
+  <data name="_repliesCountCol.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
+    <value>Right</value>
+  </data>
+  <data name="_repliesCountCol.Width" type="System.Int32, mscorlib">
+    <value>80</value>
+  </data>
+  <data name="_msgDateCol.Text" xml:space="preserve">
+    <value>msgDate</value>
+  </data>
+  <data name="_msgDateCol.Width" type="System.Int32, mscorlib">
+    <value>80</value>
+  </data>
+  <data name="_tgMsgs.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="_tgMsgs.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 128</value>
+  </data>
+  <data name="_tgMsgs.Size" type="System.Drawing.Size, System.Drawing">
+    <value>745, 154</value>
+  </data>
+  <data name="_tgMsgs.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="_tgMsgs.Text" xml:space="preserve">
+    <value>_tgMsgs1</value>
+  </data>
+  <data name="&gt;&gt;_tgMsgs.Name" xml:space="preserve">
+    <value>_tgMsgs</value>
+  </data>
+  <data name="&gt;&gt;_tgMsgs.Type" xml:space="preserve">
+    <value>Rsdn.Janus.JanusGrid, Janus, Version=1.2.0.1514, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;_tgMsgs.Parent" xml:space="preserve">
+    <value>_splitContainer.Panel1</value>
+  </data>
+  <data name="&gt;&gt;_tgMsgs.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="searchInOverquoting.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="searchInOverquoting.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="searchInOverquoting.Location" type="System.Drawing.Point, System.Drawing">
+    <value>555, 55</value>
+  </data>
+  <data name="searchInOverquoting.Size" type="System.Drawing.Size, System.Drawing">
+    <value>84, 17</value>
+  </data>
+  <data name="searchInOverquoting.TabIndex" type="System.Int32, mscorlib">
+    <value>15</value>
+  </data>
+  <data name="searchInOverquoting.Text" xml:space="preserve">
+    <value>Overquoting</value>
+  </data>
+  <data name="searchInOverquoting.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;searchInOverquoting.Name" xml:space="preserve">
+    <value>searchInOverquoting</value>
+  </data>
+  <data name="&gt;&gt;searchInOverquoting.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;searchInOverquoting.Parent" xml:space="preserve">
+    <value>pnlSearchAdvanced</value>
+  </data>
+  <data name="&gt;&gt;searchInOverquoting.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="searchInQuestions.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="searchInQuestions.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="searchInQuestions.Location" type="System.Drawing.Point, System.Drawing">
+    <value>140, 71</value>
+  </data>
+  <data name="searchInQuestions.Size" type="System.Drawing.Size, System.Drawing">
+    <value>100, 17</value>
+  </data>
+  <data name="searchInQuestions.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="searchInQuestions.Text" xml:space="preserve">
+    <value>Find in question</value>
+  </data>
+  <data name="&gt;&gt;searchInQuestions.Name" xml:space="preserve">
+    <value>searchInQuestions</value>
+  </data>
+  <data name="&gt;&gt;searchInQuestions.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;searchInQuestions.Parent" xml:space="preserve">
+    <value>pnlSearchAdvanced</value>
+  </data>
+  <data name="&gt;&gt;searchInQuestions.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="searchAnyWords.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="searchAnyWords.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="searchAnyWords.Location" type="System.Drawing.Point, System.Drawing">
+    <value>555, 40</value>
+  </data>
+  <data name="searchAnyWords.Size" type="System.Drawing.Size, System.Drawing">
+    <value>87, 17</value>
+  </data>
+  <data name="searchAnyWords.TabIndex" type="System.Int32, mscorlib">
+    <value>14</value>
+  </data>
+  <data name="searchAnyWords.Text" xml:space="preserve">
+    <value>Any of words</value>
+  </data>
+  <data name="&gt;&gt;searchAnyWords.Name" xml:space="preserve">
+    <value>searchAnyWords</value>
+  </data>
+  <data name="&gt;&gt;searchAnyWords.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;searchAnyWords.Parent" xml:space="preserve">
+    <value>pnlSearchAdvanced</value>
+  </data>
+  <data name="&gt;&gt;searchAnyWords.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="searchInMyMessages.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="searchInMyMessages.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="searchInMyMessages.Location" type="System.Drawing.Point, System.Drawing">
+    <value>140, 55</value>
+  </data>
+  <data name="searchInMyMessages.Size" type="System.Drawing.Size, System.Drawing">
+    <value>123, 17</value>
+  </data>
+  <data name="searchInMyMessages.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="searchInMyMessages.Text" xml:space="preserve">
+    <value>Find in my messages</value>
+  </data>
+  <data name="&gt;&gt;searchInMyMessages.Name" xml:space="preserve">
+    <value>searchInMyMessages</value>
+  </data>
+  <data name="&gt;&gt;searchInMyMessages.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;searchInMyMessages.Parent" xml:space="preserve">
+    <value>pnlSearchAdvanced</value>
+  </data>
+  <data name="&gt;&gt;searchInMyMessages.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="searchInMarked.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="searchInMarked.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="searchInMarked.Location" type="System.Drawing.Point, System.Drawing">
+    <value>140, 40</value>
+  </data>
+  <data name="searchInMarked.Size" type="System.Drawing.Size, System.Drawing">
+    <value>83, 17</value>
+  </data>
+  <data name="searchInMarked.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="searchInMarked.Text" xml:space="preserve">
+    <value>Find in mark</value>
+  </data>
+  <data name="&gt;&gt;searchInMarked.Name" xml:space="preserve">
+    <value>searchInMarked</value>
+  </data>
+  <data name="&gt;&gt;searchInMarked.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;searchInMarked.Parent" xml:space="preserve">
+    <value>pnlSearchAdvanced</value>
+  </data>
+  <data name="&gt;&gt;searchInMarked.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="clearButton.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Right</value>
+  </data>
+  <data name="clearButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="clearButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>600, 16</value>
+  </data>
+  <data name="clearButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>135, 23</value>
+  </data>
+  <data name="clearButton.TabIndex" type="System.Int32, mscorlib">
+    <value>16</value>
+  </data>
+  <data name="clearButton.Text" xml:space="preserve">
+    <value>Clear parameters</value>
+  </data>
+  <data name="&gt;&gt;clearButton.Name" xml:space="preserve">
+    <value>clearButton</value>
+  </data>
+  <data name="&gt;&gt;clearButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;clearButton.Parent" xml:space="preserve">
+    <value>pnlSearchAdvanced</value>
+  </data>
+  <data name="&gt;&gt;clearButton.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="lblSplitLine.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left, Right</value>
+  </data>
+  <data name="lblSplitLine.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lblSplitLine.Location" type="System.Drawing.Point, System.Drawing">
+    <value>130, 8</value>
+  </data>
+  <data name="lblSplitLine.Size" type="System.Drawing.Size, System.Drawing">
+    <value>605, 2</value>
+  </data>
+  <data name="lblSplitLine.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;lblSplitLine.Name" xml:space="preserve">
+    <value>lblSplitLine</value>
+  </data>
+  <data name="&gt;&gt;lblSplitLine.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblSplitLine.Parent" xml:space="preserve">
+    <value>pnlSearchAdvanced</value>
+  </data>
+  <data name="&gt;&gt;lblSplitLine.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="lblAdditionalParameters.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblAdditionalParameters.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lblAdditionalParameters.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 0</value>
+  </data>
+  <data name="lblAdditionalParameters.Size" type="System.Drawing.Size, System.Drawing">
+    <value>108, 13</value>
+  </data>
+  <data name="lblAdditionalParameters.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="lblAdditionalParameters.Text" xml:space="preserve">
+    <value>Additional parameters</value>
+  </data>
+  <data name="&gt;&gt;lblAdditionalParameters.Name" xml:space="preserve">
+    <value>lblAdditionalParameters</value>
+  </data>
+  <data name="&gt;&gt;lblAdditionalParameters.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblAdditionalParameters.Parent" xml:space="preserve">
+    <value>pnlSearchAdvanced</value>
+  </data>
+  <data name="&gt;&gt;lblAdditionalParameters.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="lblSearchTo.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblSearchTo.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lblSearchTo.Location" type="System.Drawing.Point, System.Drawing">
+    <value>355, 70</value>
+  </data>
+  <data name="lblSearchTo.Size" type="System.Drawing.Size, System.Drawing">
+    <value>39, 13</value>
+  </data>
+  <data name="lblSearchTo.TabIndex" type="System.Int32, mscorlib">
+    <value>12</value>
+  </data>
+  <data name="lblSearchTo.Text" xml:space="preserve">
+    <value>Find to</value>
+  </data>
+  <data name="&gt;&gt;lblSearchTo.Name" xml:space="preserve">
+    <value>lblSearchTo</value>
+  </data>
+  <data name="&gt;&gt;lblSearchTo.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblSearchTo.Parent" xml:space="preserve">
+    <value>pnlSearchAdvanced</value>
+  </data>
+  <data name="&gt;&gt;lblSearchTo.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="lblSearchFrom.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblSearchFrom.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lblSearchFrom.Location" type="System.Drawing.Point, System.Drawing">
+    <value>344, 44</value>
+  </data>
+  <data name="lblSearchFrom.Size" type="System.Drawing.Size, System.Drawing">
+    <value>50, 13</value>
+  </data>
+  <data name="lblSearchFrom.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="lblSearchFrom.Text" xml:space="preserve">
+    <value>Find from</value>
+  </data>
+  <data name="&gt;&gt;lblSearchFrom.Name" xml:space="preserve">
+    <value>lblSearchFrom</value>
+  </data>
+  <data name="&gt;&gt;lblSearchFrom.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblSearchFrom.Parent" xml:space="preserve">
+    <value>pnlSearchAdvanced</value>
+  </data>
+  <data name="&gt;&gt;lblSearchFrom.ZOrder" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <data name="searchFromDate.CustomFormat" xml:space="preserve">
+    <value>dd.MM.yyyy</value>
+  </data>
+  <data name="searchFromDate.Location" type="System.Drawing.Point, System.Drawing">
+    <value>400, 40</value>
+  </data>
+  <data name="searchFromDate.Size" type="System.Drawing.Size, System.Drawing">
+    <value>136, 20</value>
+  </data>
+  <data name="searchFromDate.TabIndex" type="System.Int32, mscorlib">
+    <value>11</value>
+  </data>
+  <data name="&gt;&gt;searchFromDate.Name" xml:space="preserve">
+    <value>searchFromDate</value>
+  </data>
+  <data name="&gt;&gt;searchFromDate.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DateTimePicker, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;searchFromDate.Parent" xml:space="preserve">
+    <value>pnlSearchAdvanced</value>
+  </data>
+  <data name="&gt;&gt;searchFromDate.ZOrder" xml:space="preserve">
+    <value>10</value>
+  </data>
+  <data name="searchToDate.CustomFormat" xml:space="preserve">
+    <value>dd.MM.yyyy</value>
+  </data>
+  <data name="searchToDate.Location" type="System.Drawing.Point, System.Drawing">
+    <value>400, 66</value>
+  </data>
+  <data name="searchToDate.Size" type="System.Drawing.Size, System.Drawing">
+    <value>136, 20</value>
+  </data>
+  <data name="searchToDate.TabIndex" type="System.Int32, mscorlib">
+    <value>13</value>
+  </data>
+  <data name="&gt;&gt;searchToDate.Name" xml:space="preserve">
+    <value>searchToDate</value>
+  </data>
+  <data name="&gt;&gt;searchToDate.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DateTimePicker, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;searchToDate.Parent" xml:space="preserve">
+    <value>pnlSearchAdvanced</value>
+  </data>
+  <data name="&gt;&gt;searchToDate.ZOrder" xml:space="preserve">
+    <value>11</value>
+  </data>
+  <data name="searchAuthor.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="searchAuthor.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="searchAuthor.Location" type="System.Drawing.Point, System.Drawing">
+    <value>15, 70</value>
+  </data>
+  <data name="searchAuthor.Size" type="System.Drawing.Size, System.Drawing">
+    <value>79, 17</value>
+  </data>
+  <data name="searchAuthor.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="searchAuthor.Text" xml:space="preserve">
+    <value>Find author</value>
+  </data>
+  <data name="&gt;&gt;searchAuthor.Name" xml:space="preserve">
+    <value>searchAuthor</value>
+  </data>
+  <data name="&gt;&gt;searchAuthor.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;searchAuthor.Parent" xml:space="preserve">
+    <value>pnlSearchAdvanced</value>
+  </data>
+  <data name="&gt;&gt;searchAuthor.ZOrder" xml:space="preserve">
+    <value>12</value>
+  </data>
+  <data name="searchInSubject.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="searchInSubject.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="searchInSubject.Location" type="System.Drawing.Point, System.Drawing">
+    <value>15, 55</value>
+  </data>
+  <data name="searchInSubject.Size" type="System.Drawing.Size, System.Drawing">
+    <value>94, 17</value>
+  </data>
+  <data name="searchInSubject.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="searchInSubject.Text" xml:space="preserve">
+    <value>Find in subject</value>
+  </data>
+  <data name="&gt;&gt;searchInSubject.Name" xml:space="preserve">
+    <value>searchInSubject</value>
+  </data>
+  <data name="&gt;&gt;searchInSubject.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;searchInSubject.Parent" xml:space="preserve">
+    <value>pnlSearchAdvanced</value>
+  </data>
+  <data name="&gt;&gt;searchInSubject.ZOrder" xml:space="preserve">
+    <value>13</value>
+  </data>
+  <data name="searchInText.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="searchInText.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="searchInText.Location" type="System.Drawing.Point, System.Drawing">
+    <value>15, 40</value>
+  </data>
+  <data name="searchInText.Size" type="System.Drawing.Size, System.Drawing">
+    <value>77, 17</value>
+  </data>
+  <data name="searchInText.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="searchInText.Text" xml:space="preserve">
+    <value>Find in text</value>
+  </data>
+  <data name="&gt;&gt;searchInText.Name" xml:space="preserve">
+    <value>searchInText</value>
+  </data>
+  <data name="&gt;&gt;searchInText.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;searchInText.Parent" xml:space="preserve">
+    <value>pnlSearchAdvanced</value>
+  </data>
+  <data name="&gt;&gt;searchInText.ZOrder" xml:space="preserve">
+    <value>14</value>
+  </data>
+  <data name="lblForum.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblForum.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lblForum.Location" type="System.Drawing.Point, System.Drawing">
+    <value>15, 20</value>
+  </data>
+  <data name="lblForum.Size" type="System.Drawing.Size, System.Drawing">
+    <value>36, 13</value>
+  </data>
+  <data name="lblForum.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="lblForum.Text" xml:space="preserve">
+    <value>Forum</value>
+  </data>
+  <data name="&gt;&gt;lblForum.Name" xml:space="preserve">
+    <value>lblForum</value>
+  </data>
+  <data name="&gt;&gt;lblForum.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblForum.Parent" xml:space="preserve">
+    <value>pnlSearchAdvanced</value>
+  </data>
+  <data name="&gt;&gt;lblForum.ZOrder" xml:space="preserve">
+    <value>15</value>
+  </data>
+  <data name="searchInForum.Location" type="System.Drawing.Point, System.Drawing">
+    <value>85, 17</value>
+  </data>
+  <data name="searchInForum.MaxDropDownItems" type="System.Int32, mscorlib">
+    <value>12</value>
+  </data>
+  <data name="searchInForum.Size" type="System.Drawing.Size, System.Drawing">
+    <value>245, 21</value>
+  </data>
+  <data name="searchInForum.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;searchInForum.Name" xml:space="preserve">
+    <value>searchInForum</value>
+  </data>
+  <data name="&gt;&gt;searchInForum.Type" xml:space="preserve">
+    <value>Rsdn.Janus.ForumsBox, Janus, Version=1.2.0.1139, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;searchInForum.Parent" xml:space="preserve">
+    <value>pnlSearchAdvanced</value>
+  </data>
+  <data name="&gt;&gt;searchInForum.ZOrder" xml:space="preserve">
+    <value>16</value>
+  </data>
+  <data name="pnlSearchAdvanced.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="pnlSearchAdvanced.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 36</value>
+  </data>
+  <data name="pnlSearchAdvanced.Size" type="System.Drawing.Size, System.Drawing">
+    <value>745, 92</value>
+  </data>
+  <data name="pnlSearchAdvanced.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;pnlSearchAdvanced.Name" xml:space="preserve">
+    <value>pnlSearchAdvanced</value>
+  </data>
+  <data name="&gt;&gt;pnlSearchAdvanced.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;pnlSearchAdvanced.Parent" xml:space="preserve">
+    <value>_splitContainer.Panel1</value>
+  </data>
+  <data name="&gt;&gt;pnlSearchAdvanced.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="comboSearchEntry.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left, Right</value>
+  </data>
+  <data name="comboSearchEntry.ItemHeight" type="System.Int32, mscorlib">
+    <value>13</value>
+  </data>
+  <data name="comboSearchEntry.Location" type="System.Drawing.Point, System.Drawing">
+    <value>85, 9</value>
+  </data>
+  <data name="comboSearchEntry.Size" type="System.Drawing.Size, System.Drawing">
+    <value>508, 21</value>
+  </data>
+  <data name="comboSearchEntry.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;comboSearchEntry.Name" xml:space="preserve">
+    <value>comboSearchEntry</value>
+  </data>
+  <data name="&gt;&gt;comboSearchEntry.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;comboSearchEntry.Parent" xml:space="preserve">
+    <value>pnlSearchMain</value>
+  </data>
+  <data name="&gt;&gt;comboSearchEntry.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="lblSearch.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblSearch.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lblSearch.Location" type="System.Drawing.Point, System.Drawing">
+    <value>15, 12</value>
+  </data>
+  <data name="lblSearch.Size" type="System.Drawing.Size, System.Drawing">
+    <value>41, 13</value>
+  </data>
+  <data name="lblSearch.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="lblSearch.Text" xml:space="preserve">
+    <value>Search</value>
+  </data>
+  <data name="&gt;&gt;lblSearch.Name" xml:space="preserve">
+    <value>lblSearch</value>
+  </data>
+  <data name="&gt;&gt;lblSearch.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblSearch.Parent" xml:space="preserve">
+    <value>pnlSearchMain</value>
+  </data>
+  <data name="&gt;&gt;lblSearch.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="searchButton.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Right</value>
+  </data>
+  <data name="searchButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="searchButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>600, 7</value>
+  </data>
+  <data name="searchButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>64, 23</value>
+  </data>
+  <data name="searchButton.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="searchButton.Text" xml:space="preserve">
+    <value>Find now</value>
+  </data>
+  <data name="&gt;&gt;searchButton.Name" xml:space="preserve">
+    <value>searchButton</value>
+  </data>
+  <data name="&gt;&gt;searchButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;searchButton.Parent" xml:space="preserve">
+    <value>pnlSearchMain</value>
+  </data>
+  <data name="&gt;&gt;searchButton.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="advancedButton.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Right</value>
+  </data>
+  <data name="advancedButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="advancedButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>672, 7</value>
+  </data>
+  <data name="advancedButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>64, 23</value>
+  </data>
+  <data name="advancedButton.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="advancedButton.Text" xml:space="preserve">
+    <value>Adv &gt;&gt;</value>
+  </data>
+  <data name="&gt;&gt;advancedButton.Name" xml:space="preserve">
+    <value>advancedButton</value>
+  </data>
+  <data name="&gt;&gt;advancedButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;advancedButton.Parent" xml:space="preserve">
+    <value>pnlSearchMain</value>
+  </data>
+  <data name="&gt;&gt;advancedButton.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="pnlSearchMain.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="pnlSearchMain.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="pnlSearchMain.Size" type="System.Drawing.Size, System.Drawing">
+    <value>745, 36</value>
+  </data>
+  <data name="pnlSearchMain.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;pnlSearchMain.Name" xml:space="preserve">
+    <value>pnlSearchMain</value>
+  </data>
+  <data name="&gt;&gt;pnlSearchMain.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;pnlSearchMain.Parent" xml:space="preserve">
+    <value>_splitContainer.Panel1</value>
+  </data>
+  <data name="&gt;&gt;pnlSearchMain.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;_splitContainer.Panel1.Name" xml:space="preserve">
+    <value>_splitContainer.Panel1</value>
+  </data>
+  <data name="&gt;&gt;_splitContainer.Panel1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.SplitterPanel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;_splitContainer.Panel1.Parent" xml:space="preserve">
+    <value>_splitContainer</value>
+  </data>
+  <data name="&gt;&gt;_splitContainer.Panel1.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="_splitContainer.Panel1MinSize" type="System.Int32, mscorlib">
+    <value>35</value>
+  </data>
+  <data name="&gt;&gt;_splitContainer.Panel2.Name" xml:space="preserve">
+    <value>_splitContainer.Panel2</value>
+  </data>
+  <data name="&gt;&gt;_splitContainer.Panel2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.SplitterPanel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;_splitContainer.Panel2.Parent" xml:space="preserve">
+    <value>_splitContainer</value>
+  </data>
+  <data name="&gt;&gt;_splitContainer.Panel2.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="_splitContainer.Size" type="System.Drawing.Size, System.Drawing">
+    <value>745, 496</value>
+  </data>
+  <data name="_splitContainer.SplitterDistance" type="System.Int32, mscorlib">
+    <value>282</value>
+  </data>
+  <data name="_splitContainer.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="_splitContainer.Text" xml:space="preserve">
+    <value>splitContainer1</value>
+  </data>
+  <data name="&gt;&gt;_splitContainer.Name" xml:space="preserve">
+    <value>_splitContainer</value>
+  </data>
+  <data name="&gt;&gt;_splitContainer.Type" xml:space="preserve">
+    <value>System.Windows.Forms.SplitContainer, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;_splitContainer.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;_splitContainer.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <metadata name="_contextMenuStrip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
+  <data name="_contextMenuStrip.Size" type="System.Drawing.Size, System.Drawing">
+    <value>61, 4</value>
+  </data>
+  <data name="&gt;&gt;_contextMenuStrip.Name" xml:space="preserve">
+    <value>_contextMenuStrip</value>
+  </data>
+  <data name="&gt;&gt;_contextMenuStrip.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ContextMenuStrip, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>6, 13</value>
+  </data>
+  <data name="$this.Size" type="System.Drawing.Size, System.Drawing">
+    <value>745, 496</value>
+  </data>
+  <data name="&gt;&gt;_idCol.Name" xml:space="preserve">
+    <value>_idCol</value>
+  </data>
+  <data name="&gt;&gt;_idCol.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;_markedCol.Name" xml:space="preserve">
+    <value>_markedCol</value>
+  </data>
+  <data name="&gt;&gt;_markedCol.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;_subjectCol.Name" xml:space="preserve">
+    <value>_subjectCol</value>
+  </data>
+  <data name="&gt;&gt;_subjectCol.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;_userNickCol.Name" xml:space="preserve">
+    <value>_userNickCol</value>
+  </data>
+  <data name="&gt;&gt;_userNickCol.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;_rateThisCol.Name" xml:space="preserve">
+    <value>_rateThisCol</value>
+  </data>
+  <data name="&gt;&gt;_rateThisCol.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;_forumNameCol.Name" xml:space="preserve">
+    <value>_forumNameCol</value>
+  </data>
+  <data name="&gt;&gt;_forumNameCol.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;_repliesCountCol.Name" xml:space="preserve">
+    <value>_repliesCountCol</value>
+  </data>
+  <data name="&gt;&gt;_repliesCountCol.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;_msgDateCol.Name" xml:space="preserve">
+    <value>_msgDateCol</value>
+  </data>
+  <data name="&gt;&gt;_msgDateCol.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>SearchDummyForm</value>
+  </data>
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>System.Windows.Forms.UserControl, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+</root>

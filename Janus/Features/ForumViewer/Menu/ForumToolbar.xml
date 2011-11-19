@@ -1,0 +1,134 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<root xmlns="http://rsdn.ru/projects/Janus/JanusMenuDescriptor.xsd"
+	  name="MainForm.Toolbar">
+
+	<group name="Synchronization" orderIndex="10">
+		<menuCommand command="Janus.Forum.Subscription" image="subscribe" orderIndex="20"/>
+	</group>
+
+	<group name="History" orderIndex="30">
+			<!--<splitButton name="Back" command="Janus.Forum.NavigateBackward" image="prev"/>
+			<splitButton name="Forward" command="Janus.Forum.NavigateForward" image="next"/>-->
+		<menuCommand command="Janus.Forum.NavigateBackward" image="prev"/>
+		<menuCommand command="Janus.Forum.NavigateForward" image="next"/>
+	</group>
+
+	<group name="Navigation" orderIndex="40">
+
+		<menuCommand command="Janus.Forum.SelectMessageByAttribute"
+					 textResource="Forum.Menu.Navigation.PreviousUnread.Text"
+					 description="Forum.Menu.Navigation.PreviousUnread.Description"
+					 image="prevunread">
+			<parameter name="direction">Up</parameter>
+			<parameter name="attribute">Unread</parameter>
+			<parameter name="searchArea">CurrentForum</parameter>
+		</menuCommand>
+
+		<menuCommand command="Janus.Forum.CollapseTopicAndSelectRoot"
+					 image="collapseandgoroot"/>
+
+		<menuCommand command="Janus.Forum.ExpandUnreadBranches"
+					 image="expandunread"/>
+
+		<menuCommand command="Janus.Forum.SelectMessageByAttribute"
+					 textResource="Forum.Menu.Navigation.NextUnread.Text"
+					 description="Forum.Menu.Navigation.NextUnread.Description"
+					 image="nextunread">
+			<parameter name="direction">Down</parameter>
+			<parameter name="attribute">Unread</parameter>
+			<parameter name="searchArea">CurrentForum</parameter>
+		</menuCommand>
+
+	</group>
+
+	<group name="MeseeagesWriting" orderIndex="50">
+		<menuCommand command="Janus.Forum.WriteMessage" image="new"/>
+		<menuCommand command="Janus.Forum.ReplyMessage" image="reply"/>
+	</group>
+
+	<group name="MarkAsRead" orderIndex="60">
+
+		<menuCommand command="Janus.Forum.SetMessagesReadMark"
+					 textResource="Forum.Menu.Message.ReadMark.MarkMessageAsRead"
+					 image="markread">
+			<parameter name="isRead">true</parameter>
+			<parameter name="markChilds">false</parameter>
+		</menuCommand>
+
+		<menuCommand command="Janus.Forum.SetTopicReadMark"
+					 textResource="Forum.Menu.Message.ReadMark.MarkTopicAsRead"
+					 image="markconvread">
+			<parameter name="isRead">true</parameter>
+		</menuCommand>
+
+		<menuCommand command="Janus.Forum.SetAllMessagesInForumReadMark"
+					 textResource="Forum.Menu.Message.ReadMark.MarkAllMessagesInForumAsRead"
+					 image="markallread">
+			<parameter name="isRead">true</parameter>
+		</menuCommand>
+
+	</group>
+
+	<group name="MarkAsUnread" orderIndex="65">
+
+		<menuCommand command="Janus.Forum.SetMessagesReadMark"
+					 textResource="Forum.Menu.Message.ReadMark.MarkMessageAsUnread"
+					 image="markunread">
+			<parameter name="isRead">false</parameter>
+			<parameter name="markChilds">false</parameter>
+		</menuCommand>
+
+		<menuCommand command="Janus.Forum.SetTopicReadMark"
+					 textResource="Forum.Menu.Message.ReadMark.MarkTopicAsUnread"
+					 image="markconvunread">
+			<parameter name="isRead">false</parameter>
+		</menuCommand>
+
+		<menuCommand command="Janus.Forum.SetAllMessagesInForumReadMark"
+					 textResource="Forum.Menu.Message.ReadMark.MarkAllMessagesInForumAsUnread"
+					 image="markallunread">
+			<parameter name="isRead">false</parameter>
+		</menuCommand>
+
+	</group>
+
+	<group name="ForumServices" orderIndex="70">
+
+		<splitButton name="ForumLists"
+					 command="Janus.Forum.ShowUserRatingIn"
+					 image="userratein">
+
+			<group name="Articles">
+				<menuCommand command="Janus.Forum.ShowAllArticles" image="articleall"/>
+				<menuCommand command="Janus.Forum.ShowForumArticles" image="articleitem"/>
+			</group>
+
+			<group name="Faq">
+				<menuCommand command="Janus.Forum.ShowAllFaq" image="faqall"/>
+				<menuCommand command="Janus.Forum.ShowForumFaq" image="faqitem"/>
+			</group>
+
+			<group name="Rating">
+				<menuCommand command="Janus.Forum.ShowUserRatingIn" image="userratein"/>
+				<menuCommand command="Janus.Forum.ShowUserRatingOut" image="userrateout"/>
+			</group>
+
+		</splitButton>
+
+	</group>
+
+	<group name="ImportAndExport" orderIndex="90">
+
+		<splitButton name="ImportExportState" command="Janus.Forum.StateExport" image="export">
+
+			<group name="Main">
+				<menuCommand command="Janus.Forum.StateExport" image="export"/>
+				<menuCommand command="Janus.Forum.StateImport" image="export"/>
+			</group>
+
+		</splitButton>
+
+	</group>
+
+</root>

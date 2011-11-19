@@ -1,0 +1,412 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+	<!-- 
+		Microsoft ResX Schema
+
+		Version 1.3
+
+		The primary goals of this format is to allow a simple XML format 
+		that is mostly human readable. The generation and parsing of the 
+		various data types are done through the TypeConverter classes 
+		associated with the data types.
+
+		Example:
+
+		... ado.net/XML headers & schema ...
+		<resheader name="resmimetype">text/microsoft-resx</resheader>
+		<resheader name="version">1.3</resheader>
+		<resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+		<resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+		<data name="Name1">this is my long string</data>
+		<data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+		<data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+			[base64 mime encoded serialized .NET Framework object]
+		</data>
+		<data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+			[base64 mime encoded string representing a byte array form of the .NET Framework object]
+		</data>
+
+		There are any number of "resheader" rows that contain simple 
+		name/value pairs.
+
+		Each data row contains a name, and value. The row also contains a 
+		type or mimetype. Type corresponds to a .NET class that support 
+		text/value conversion through the TypeConverter architecture. 
+		Classes that don't support this are serialized and stored with the 
+		mimetype set.
+
+		The mimetype is used for serialized objects, and tells the 
+		ResXResourceReader how to depersist the object. This is currently not 
+		extensible. For a given mimetype the value must be set accordingly:
+
+		Note - application/x-microsoft.net.object.binary.base64 is the format 
+		that the ResXResourceWriter will generate, however the reader can 
+		read any of the formats listed below.
+
+		mimetype: application/x-microsoft.net.object.binary.base64
+		value   : The object must be serialized with 
+			: System.Serialization.Formatters.Binary.BinaryFormatter
+			: and then encoded with base64 encoding.
+
+		mimetype: application/x-microsoft.net.object.soap.base64
+		value   : The object must be serialized with 
+			: System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+			: and then encoded with base64 encoding.
+
+		mimetype: application/x-microsoft.net.object.bytearray.base64
+		value   : The object must be serialized into a byte array 
+			: using a System.ComponentModel.TypeConverter
+			: and then encoded with base64 encoding.
+	-->
+	
+	<xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+		<xsd:element name="root" msdata:IsDataSet="true">
+			<xsd:complexType>
+				<xsd:choice maxOccurs="unbounded">
+					<xsd:element name="data">
+						<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+								<xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+							</xsd:sequence>
+							<xsd:attribute name="name" type="xsd:string" msdata:Ordinal="1" />
+							<xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+							<xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+						</xsd:complexType>
+					</xsd:element>
+					<xsd:element name="resheader">
+						<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+							</xsd:sequence>
+							<xsd:attribute name="name" type="xsd:string" use="required" />
+						</xsd:complexType>
+					</xsd:element>
+				</xsd:choice>
+			</xsd:complexType>
+		</xsd:element>
+	</xsd:schema>
+	<resheader name="resmimetype">
+		<value>text/microsoft-resx</value>
+	</resheader>
+	<resheader name="version">
+		<value>1.3</value>
+	</resheader>
+	<resheader name="reader">
+		<value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.3500.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+	</resheader>
+	<resheader name="writer">
+		<value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.3500.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+	</resheader>
+
+  <data name="Code.Asm.Text" xml:space="preserve">
+    <value>[asm]</value>
+  </data>
+  <data name="Code.C.Text" xml:space="preserve">
+    <value>[ccode]</value>
+  </data>
+  <data name="Code.Common.Text" xml:space="preserve">
+    <value>[code]</value>
+  </data>
+  <data name="Code.CSharp.Text" xml:space="preserve">
+    <value>[c#]</value>
+  </data>
+  <data name="Code.Erlang.Text" xml:space="preserve">
+    <value>[erlang]</value>
+  </data>
+  <data name="Code.Haskell.Text" xml:space="preserve">
+    <value>[haskell]</value>
+  </data>
+  <data name="Code.Java.Text" xml:space="preserve">
+    <value>[java]</value>
+  </data>
+  <data name="Code.Lisp.Text" xml:space="preserve">
+    <value>[lisp]</value>
+  </data>
+  <data name="Code.Midl.Text" xml:space="preserve">
+    <value>[midl]</value>
+  </data>
+  <data name="Code.Msil.Text" xml:space="preserve">
+    <value>[msil]</value>
+  </data>
+  <data name="Code.Okaml.Text" xml:space="preserve">
+    <value>[ml]</value>
+  </data>
+  <data name="Code.Pascal.Text" xml:space="preserve">
+    <value>[pascal]</value>
+  </data>
+  <data name="Code.Perl.Text" xml:space="preserve">
+    <value>[perl]</value>
+  </data>
+  <data name="Code.Php.Text" xml:space="preserve">
+    <value>[php]</value>
+  </data>
+  <data name="Code.Prolog.Text" xml:space="preserve">
+    <value>[prolog]</value>
+  </data>
+  <data name="Code.Python.Text" xml:space="preserve">
+    <value>[py]</value>
+  </data>
+  <data name="Code.Ruby.Text" xml:space="preserve">
+    <value>[rb]</value>
+  </data>
+  <data name="Code.Sql.Text" xml:space="preserve">
+    <value>[sql]</value>
+  </data>
+  <data name="Code.Vb.Text" xml:space="preserve">
+    <value>[vb]</value>
+  </data>
+  <data name="Code.Xml.Text" xml:space="preserve">
+    <value>[xml]</value>
+  </data>
+  
+  <data name="Code.Asm.Description" xml:space="preserve">
+    <value>Assembler code</value>
+  </data>
+  <data name="Code.C.Description" xml:space="preserve">
+    <value>C/C++ code</value>
+  </data>
+  <data name="Code.Common.Description" xml:space="preserve">
+    <value>Common code</value>
+  </data>
+  <data name="Code.CSharp.Description" xml:space="preserve">
+    <value>C# code</value>
+  </data>
+  <data name="Code.Erlang.Description" xml:space="preserve">
+    <value>Erlang code</value>
+  </data>
+  <data name="Code.Haskell.Description" xml:space="preserve">
+    <value>Haskell code</value>
+  </data>
+  <data name="Code.Java.Description" xml:space="preserve">
+    <value>Java code</value>
+  </data>
+  <data name="Code.Lisp.Description" xml:space="preserve">
+    <value>Lisp code</value>
+  </data>
+  <data name="Code.Midl.Description" xml:space="preserve">
+    <value>MIDL code</value>
+  </data>
+  <data name="Code.Msil.Description" xml:space="preserve">
+    <value>MSIL code</value>
+  </data>
+  <data name="Code.Okaml.Description" xml:space="preserve">
+    <value>Okaml code</value>
+  </data>
+  <data name="Code.Pascal.Description" xml:space="preserve">
+    <value>Pascal code</value>
+  </data>
+  <data name="Code.Perl.Description" xml:space="preserve">
+    <value>Perl code</value>
+  </data>
+  <data name="Code.Php.Description" xml:space="preserve">
+    <value>PHP code</value>
+  </data>
+  <data name="Code.Prolog.Description" xml:space="preserve">
+    <value>Prolog code</value>
+  </data>
+  <data name="Code.Python.Description" xml:space="preserve">
+    <value>Python code</value>
+  </data>
+  <data name="Code.Ruby.Description" xml:space="preserve">
+    <value>Ruby code</value>
+  </data>
+  <data name="Code.Sql.Description" xml:space="preserve">
+    <value>SQL code</value>
+  </data>
+  <data name="Code.Vb.Description" xml:space="preserve">
+    <value>Visual Basic code</value>
+  </data>
+  <data name="Code.Xml.Description" xml:space="preserve">
+    <value>Xml code</value>
+  </data>
+  
+  <data name="Emotion.Beer.Description" xml:space="preserve">
+    <value>Beer</value>
+  </data>
+  <data name="Emotion.Biggrin.Description" xml:space="preserve">
+    <value>Big grin</value>
+  </data>
+  <data name="Emotion.Confused.Description" xml:space="preserve">
+    <value>Bewilderment</value>
+  </data>
+  <data name="Emotion.Crash.Description" xml:space="preserve">
+    <value>Malicious Programmer</value>
+  </data>
+  <data name="Emotion.Down.Description" xml:space="preserve">
+    <value>Disapproval</value>
+  </data>
+    <data name="Emotion.Frown.Description" xml:space="preserve">
+    <value>Annoyed</value>
+  </data>
+  <data name="Emotion.Lol.Description" xml:space="preserve">
+    <value>Laugh</value>
+  </data>
+  <data name="Emotion.Maniac.Description" xml:space="preserve">
+    <value>Maniac</value>
+  </data>
+  <data name="Emotion.No.Description" xml:space="preserve">
+    <value>Disagreement</value>
+  </data>
+  <data name="Emotion.Shuffle.Description" xml:space="preserve">
+    <value>Confusion</value>
+  </data>
+  <data name="Emotion.Smile.Description" xml:space="preserve">
+    <value>Smile</value>
+  </data>
+  <data name="Emotion.Smirk.Description" xml:space="preserve">
+    <value>Smirk</value>
+  </data>
+  <data name="Emotion.Super.Description" xml:space="preserve">
+    <value>Super</value>
+  </data>
+  <data name="Emotion.Up.Description" xml:space="preserve">
+    <value>Approval</value>
+  </data>
+  <data name="Emotion.User.Description" xml:space="preserve">
+    <value>Work</value>
+  </data>
+  <data name="Emotion.Wink.Description" xml:space="preserve">
+    <value>Wink</value>
+  </data>
+  <data name="Emotion.Wow.Description" xml:space="preserve">
+    <value>WOW!</value>
+  </data>
+  <data name="Emotion.Xz.Description" xml:space="preserve">
+    <value>…</value>
+  </data>
+  
+  <data name="Format.Bold.Description" xml:space="preserve">
+    <value>Bold</value>
+  </data>
+  <data name="Format.Email.Description" xml:space="preserve">
+    <value>Insert e-mail</value>
+  </data>
+  <data name="Format.Hr.Description" xml:space="preserve">
+    <value>Horizontal line</value>
+  </data>
+  <data name="Format.Img.Description" xml:space="preserve">
+    <value>Insert picture URL</value>
+  </data>
+  <data name="Format.Italic.Description" xml:space="preserve">
+    <value>Italic</value>
+  </data>
+  <data name="Format.List.Description" xml:space="preserve">
+    <value>List</value>
+  </data>
+  <data name="Format.List1.Description" xml:space="preserve">
+    <value>Digit list</value>
+  </data>
+  <data name="Format.Lista.Description" xml:space="preserve">
+    <value>Alpha list</value>
+  </data>
+  <data name="Format.ListItem.Description" xml:space="preserve">
+    <value>List item</value>
+  </data>
+  <data name="Format.Msdn.Description" xml:space="preserve">
+    <value>Search in MSDN</value>
+  </data>
+  <data name="Format.Quote.Description" xml:space="preserve">
+    <value>Quote</value>
+  </data>
+  <data name="Format.Table.Description" xml:space="preserve">
+    <value>Table</value>
+  </data>
+  <data name="Format.TableCell.Description" xml:space="preserve">
+    <value>Table cell</value>
+  </data>
+  <data name="Format.TableHeader.Description" xml:space="preserve">
+    <value>Table header</value>
+  </data>
+  <data name="Format.TableRow.Description" xml:space="preserve">
+    <value>Table row</value>
+  </data>
+  <data name="Format.Title1.Description" xml:space="preserve">
+    <value>Title 1</value>
+  </data>
+  <data name="Format.Title2.Description" xml:space="preserve">
+    <value>Title 2</value>
+  </data>
+  <data name="Format.Title3.Description" xml:space="preserve">
+    <value>Title 3</value>
+  </data>
+  <data name="Format.Title4.Description" xml:space="preserve">
+    <value>Title 4</value>
+  </data>
+  <data name="Format.Title5.Description" xml:space="preserve">
+    <value>Title 5</value>
+  </data>
+  <data name="Format.Title6.Description" xml:space="preserve">
+    <value>Title 6</value>
+  </data>
+  <data name="Format.Url.Description" xml:space="preserve">
+    <value>Insert URL</value>
+  </data>
+
+  <data name="Format.Bold.Text" xml:space="preserve">
+    <value>[b]</value>
+  </data>
+  <data name="Format.Email.Text" xml:space="preserve">
+    <value>[email]</value>
+  </data>
+  <data name="Format.Hr.Text" xml:space="preserve">
+    <value>[hr]</value>
+  </data>
+  <data name="Format.Img.Text" xml:space="preserve">
+    <value>[img]</value>
+  </data>
+  <data name="Format.Italic.Text" xml:space="preserve">
+    <value>[i]</value>
+  </data>
+  <data name="Format.List.Text" xml:space="preserve">
+    <value>[list]</value>
+  </data>
+  <data name="Format.List1.Text" xml:space="preserve">
+    <value>[list=1]</value>
+  </data>
+  <data name="Format.Lista.Text" xml:space="preserve">
+    <value>[list=a]</value>
+  </data>
+  <data name="Format.ListItem.Text" xml:space="preserve">
+    <value>[*]</value>
+  </data>
+  <data name="Format.Msdn.Text" xml:space="preserve">
+    <value>[msdn]</value>
+  </data>
+  <data name="Format.Quote.Text" xml:space="preserve">
+    <value>[q]</value>
+  </data>
+  <data name="Format.Table.Text" xml:space="preserve">
+    <value>[t]</value>
+  </data>
+  <data name="Format.TableCell.Text" xml:space="preserve">
+    <value>[td]</value>
+  </data>
+  <data name="Format.TableHeader.Text" xml:space="preserve">
+    <value>[th]</value>
+  </data>
+  <data name="Format.TableRow.Text" xml:space="preserve">
+    <value>[tr]</value>
+  </data>
+  <data name="Format.Title1.Text" xml:space="preserve">
+    <value>[h1]</value>
+  </data>
+  <data name="Format.Title2.Text" xml:space="preserve">
+    <value>[h2]</value>
+  </data>
+  <data name="Format.Title3.Text" xml:space="preserve">
+    <value>[h3]</value>
+  </data>
+  <data name="Format.Title4.Text" xml:space="preserve">
+    <value>[h4]</value>
+  </data>
+  <data name="Format.Title5.Text" xml:space="preserve">
+    <value>[h5]</value>
+  </data>
+  <data name="Format.Title6.Text" xml:space="preserve">
+    <value>[h6]</value>
+  </data>
+  <data name="Format.Url.Text" xml:space="preserve">
+    <value>[url]</value>
+  </data>
+</root>

@@ -1,0 +1,2615 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ScintillaEditor</name>
+    </assembly>
+    <members>
+        <member name="T:Rsdn.Scintilla.ModifiedEventArgs">
+            <summary>
+            Аргументы события Modified.
+            </summary>
+        </member>
+        <member name="P:Rsdn.Scintilla.ModifiedEventArgs.ModificationTypes">
+            <summary>
+            Тип модификации
+            </summary>
+        </member>
+        <member name="P:Rsdn.Scintilla.ModifiedEventArgs.Position">
+            <summary>
+            Стартовая позиция изменения текста или стиля. 0 если не используется.
+            </summary>
+        </member>
+        <member name="P:Rsdn.Scintilla.ModifiedEventArgs.Length">
+            <summary>
+            Длина изменений. 0 если не используется.
+            </summary>
+        </member>
+        <member name="P:Rsdn.Scintilla.ModifiedEventArgs.LinesAdded">
+            <summary>
+            Количество добавленных строк. Отрицательное если строки были удалены.
+            0 если строки не были ни добавлены, ни удалены.
+            </summary>
+        </member>
+        <member name="P:Rsdn.Scintilla.ModifiedEventArgs.Line">
+            <summary>
+            Строка, в которой произошло изменение уровня вложенности или маркера.
+            0 если не используется.
+            </summary>
+        </member>
+        <member name="P:Rsdn.Scintilla.ModifiedEventArgs.FoldLevelNow">
+            <summary>
+            Новый уровень вложенности. 0 если не используется.
+            </summary>
+        </member>
+        <member name="P:Rsdn.Scintilla.ModifiedEventArgs.FoldLevelPrev">
+            <summary>
+            Предыдущий уровень вложенности. 0 если не используется.
+            </summary>
+        </member>
+        <member name="T:Rsdn.Scintilla.ModifiedEventHandler">
+            <summary>
+            Тип обработчика события Modified
+            </summary>
+        </member>
+        <member name="T:Rsdn.Scintilla.LanguageDef">
+            <summary>
+            Считывает настройка языка из ресурсов
+            </summary>
+        </member>
+        <member name="T:Rsdn.Scintilla.ILanguage">
+            <summary>
+            Свойства языка
+            </summary>
+        </member>
+        <member name="M:Rsdn.Scintilla.ILanguage.GetKeyWords">
+            <summary>
+            Ключевые слова
+            </summary>
+        </member>
+        <member name="P:Rsdn.Scintilla.ILanguage.Lexer">
+            <summary>
+            Встроенный Лексер
+            </summary>
+        </member>
+        <member name="P:Rsdn.Scintilla.ILanguage.Name">
+            <summary>
+            Название языка (C, C++ ...)
+            </summary>
+        </member>
+        <member name="P:Rsdn.Scintilla.ILanguage.StatementIndent">
+            <summary>
+            Конструкции, после которых нужно делать отступ
+            </summary>
+        </member>
+        <member name="P:Rsdn.Scintilla.ILanguage.StatementEnd">
+            <summary>
+            Завершающие конструкции
+            </summary>
+        </member>
+        <member name="P:Rsdn.Scintilla.ILanguage.BlockStart">
+            <summary>
+            Начало блока кода
+            </summary>
+        </member>
+        <member name="P:Rsdn.Scintilla.ILanguage.BlockEnd">
+            <summary>
+            Конец блока кода
+            </summary>
+        </member>
+        <member name="P:Rsdn.Scintilla.ILanguage.PreprocessorSymbol">
+            <summary>
+            Preprocessor symbol (in C: #)
+            </summary>
+        </member>
+        <member name="P:Rsdn.Scintilla.ILanguage.PreprocessorConditionStart">
+            <summary>
+            List of preprocessor conditional start keywords (in C: if ifdef ifndef)
+            </summary>
+        </member>
+        <member name="P:Rsdn.Scintilla.ILanguage.PreprocessorConditionMiddle">
+            <summary>
+            List of preprocessor conditional middle keywords (in C: else elif)
+            </summary>
+        </member>
+        <member name="P:Rsdn.Scintilla.ILanguage.PreprocessorConditionEnd">
+            <summary>
+            List of preprocessor conditional end keywords (in C: endif)
+            </summary>
+        </member>
+        <member name="P:Rsdn.Scintilla.ILanguage.Styles">
+            <summary>
+            Стили, нужные данному языку
+            </summary>
+        </member>
+        <member name="P:Rsdn.Scintilla.ILanguage.ExtendedProperties">
+            <summary>
+            Свойства, нужные для отображения 
+            </summary>
+        </member>
+        <member name="M:Rsdn.Scintilla.LanguageDef.#ctor(System.Reflection.Assembly,System.String)">
+            <summary>
+            Конструктор
+            </summary>
+            <param name="resourceId">Идентификатор строки</param>
+            <param name="resAssembly">Сборка откуда считывать настройки</param>
+        </member>
+        <member name="M:Rsdn.Scintilla.LanguageDef.GetKeyWords">
+            <summary>
+            Ключевые слова
+            </summary>
+        </member>
+        <member name="P:Rsdn.Scintilla.LanguageDef.Lexer">
+            <summary>
+            Встроенный Лексер
+            </summary>
+        </member>
+        <member name="P:Rsdn.Scintilla.LanguageDef.Name">
+            <summary>
+            Название языка (C, C++ ...)
+            </summary>
+        </member>
+        <member name="P:Rsdn.Scintilla.LanguageDef.StatementIndent">
+            <summary>
+            Конструкции, после которых нужно делать отступ
+            </summary>
+        </member>
+        <member name="P:Rsdn.Scintilla.LanguageDef.StatementEnd">
+            <summary>
+            Завершающие конструкции
+            </summary>
+        </member>
+        <member name="P:Rsdn.Scintilla.LanguageDef.BlockStart">
+            <summary>
+            Начало блока кода
+            </summary>
+        </member>
+        <member name="P:Rsdn.Scintilla.LanguageDef.BlockEnd">
+            <summary>
+            Конец блока кода
+            </summary>
+        </member>
+        <member name="P:Rsdn.Scintilla.LanguageDef.PreprocessorSymbol">
+            <summary>
+            Preprocessor symbol (in C: #)
+            </summary>
+        </member>
+        <member name="P:Rsdn.Scintilla.LanguageDef.PreprocessorConditionStart">
+            <summary>
+            List of preprocessor conditional start keywords (in C: if ifdef ifndef)
+            </summary>
+        </member>
+        <member name="P:Rsdn.Scintilla.LanguageDef.PreprocessorConditionMiddle">
+            <summary>
+            List of preprocessor conditional middle keywords (in C: else elif)
+            </summary>
+        </member>
+        <member name="P:Rsdn.Scintilla.LanguageDef.PreprocessorConditionEnd">
+            <summary>
+            List of preprocessor conditional end keywords (in C: endif)
+            </summary>
+        </member>
+        <member name="P:Rsdn.Scintilla.LanguageDef.Styles">
+            <summary>
+            Стили
+            </summary>
+        </member>
+        <member name="P:Rsdn.Scintilla.LanguageDef.ExtendedProperties">
+            <summary>
+            Расширенные свойства
+            </summary>
+        </member>
+        <member name="T:Rsdn.Scintilla.SciLexer">
+            <summary>
+            Типы лексеров
+            </summary>
+        </member>
+        <member name="F:Rsdn.Scintilla.SciLexer.Container">
+            <summary>
+            Контейнер
+            </summary>
+        </member>
+        <member name="F:Rsdn.Scintilla.SciLexer.Null">
+            <summary>
+            Лексер отсутствует
+            </summary>
+        </member>
+        <member name="F:Rsdn.Scintilla.SciLexer.Python">
+            <summary>
+            Python
+            </summary>
+        </member>
+        <member name="F:Rsdn.Scintilla.SciLexer.CPlusPlus">
+            <summary>
+            C++
+            </summary>
+        </member>
+        <member name="F:Rsdn.Scintilla.SciLexer.Html">
+            <summary>
+            HTML
+            </summary>
+        </member>
+        <member name="F:Rsdn.Scintilla.SciLexer.Xml">
+            <summary>
+            XML
+            </summary>
+        </member>
+        <member name="F:Rsdn.Scintilla.SciLexer.Perl">
+            <summary>
+            Perl
+            </summary>
+        </member>
+        <member name="F:Rsdn.Scintilla.SciLexer.Sql">
+            <summary>
+            SQL
+            </summary>
+        </member>
+        <member name="F:Rsdn.Scintilla.SciLexer.VisualBasic">
+            <summary>
+            Visual Basic
+            </summary>
+        </member>
+        <member name="F:Rsdn.Scintilla.SciLexer.Properties">
+            <summary>
+            Файл свойств (имя = значение)
+            </summary>
+        </member>
+        <member name="F:Rsdn.Scintilla.SciLexer.ErrorList">
+            <summary>
+            Error list
+            </summary>
+        </member>
+        <member name="F:Rsdn.Scintilla.SciLexer.MakeFile">
+            <summary>
+            Makefile
+            </summary>
+        </member>
+        <member name="F:Rsdn.Scintilla.SciLexer.Batch">
+            <summary>
+            Batch file
+            </summary>
+        </member>
+        <member name="F:Rsdn.Scintilla.SciLexer.XCode">
+            <summary>
+            XCode
+            </summary>
+        </member>
+        <member name="F:Rsdn.Scintilla.SciLexer.LaTeX">
+            <summary>
+            LaTeX
+            </summary>
+        </member>
+        <member name="F:Rsdn.Scintilla.SciLexer.Lua">
+            <summary>
+            Lua
+            </summary>
+        </member>
+        <member name="F:Rsdn.Scintilla.SciLexer.Diff">
+            <summary>
+            Diff
+            </summary>
+        </member>
+        <member name="F:Rsdn.Scintilla.SciLexer.Conf">
+            <summary>
+            Conf
+            </summary>
+        </member>
+        <member name="F:Rsdn.Scintilla.SciLexer.Pascal">
+            <summary>
+            Pascal
+            </summary>
+        </member>
+        <member name="F:Rsdn.Scintilla.SciLexer.Ave">
+            <summary>
+            Ave
+            </summary>
+        </member>
+        <member name="F:Rsdn.Scintilla.SciLexer.Ada">
+            <summary>
+            Ada
+            </summary>
+        </member>
+        <member name="F:Rsdn.Scintilla.SciLexer.Lisp">
+            <summary>
+            Lisp
+            </summary>
+        </member>
+        <member name="F:Rsdn.Scintilla.SciLexer.Ruby">
+            <summary>
+            Ruby
+            </summary>
+        </member>
+        <member name="F:Rsdn.Scintilla.SciLexer.Eiffel">
+            <summary>
+            Eiffel
+            </summary>
+        </member>
+        <member name="F:Rsdn.Scintilla.SciLexer.EiffelKW">
+            <summary>
+            Eiffel keywords
+            </summary>
+        </member>
+        <member name="F:Rsdn.Scintilla.SciLexer.Tcl">
+            <summary>
+            Tcl
+            </summary>
+        </member>
+        <member name="F:Rsdn.Scintilla.SciLexer.NNCronTab">
+            <summary>
+            NnCronTab
+            </summary>
+        </member>
+        <member name="F:Rsdn.Scintilla.SciLexer.Bullant">
+            <summary>
+            Bullant
+            </summary>
+        </member>
+        <member name="F:Rsdn.Scintilla.SciLexer.VBScript">
+            <summary>
+            VBScript
+            </summary>
+        </member>
+        <member name="F:Rsdn.Scintilla.SciLexer.Asp">
+            <summary>
+            ASP
+            </summary>
+        </member>
+        <member name="F:Rsdn.Scintilla.SciLexer.Php">
+            <summary>
+            PHP
+            </summary>
+        </member>
+        <member name="F:Rsdn.Scintilla.SciLexer.Baan">
+            <summary>
+            Baan
+            </summary>
+        </member>
+        <member name="F:Rsdn.Scintilla.SciLexer.MatLab">
+            <summary>
+            MatLab
+            </summary>
+        </member>
+        <member name="F:Rsdn.Scintilla.SciLexer.Scriptol">
+            <summary>
+            Scriptol
+            </summary>
+        </member>
+        <member name="F:Rsdn.Scintilla.SciLexer.Asm">
+            <summary>
+            Assembler
+            </summary>
+        </member>
+        <member name="F:Rsdn.Scintilla.SciLexer.CPlusPlusNoCase">
+            <summary>
+            C++ without case
+            </summary>
+        </member>
+        <member name="F:Rsdn.Scintilla.SciLexer.Fortran">
+            <summary>
+            Fortran
+            </summary>
+        </member>
+        <member name="F:Rsdn.Scintilla.SciLexer.Fortran77">
+            <summary>
+            Fortran 77
+            </summary>
+        </member>
+        <member name="F:Rsdn.Scintilla.SciLexer.Css">
+            <summary>
+            CSS
+            </summary>
+        </member>
+        <member name="F:Rsdn.Scintilla.SciLexer.Pov">
+            <summary>
+            PovRay
+            </summary>
+        </member>
+        <member name="F:Rsdn.Scintilla.SciLexer.Lout">
+            <summary>
+            Lout
+            </summary>
+        </member>
+        <member name="F:Rsdn.Scintilla.SciLexer.EScript">
+            <summary>
+            EScript
+            </summary>
+        </member>
+        <member name="T:Rsdn.Scintilla.SciKeyModifiers">
+            <summary>
+            Маски для перечисления for SciKeys.
+            </summary>
+        </member>
+        <member name="F:Rsdn.Scintilla.SciKeyModifiers.Shift">
+            <summary>
+            Shift modificator
+            </summary>
+        </member>
+        <member name="F:Rsdn.Scintilla.SciKeyModifiers.Ctrl">
+            <summary>
+            Ctrl modificator
+            </summary>
+        </member>
+        <member name="F:Rsdn.Scintilla.SciKeyModifiers.Alt">
+            <summary>
+            Alt modificator
+            </summary>
+        </member>
+        <member name="T:Rsdn.Scintilla.NotificationEvent">
+            <summary>
+            События нотификации
+            </summary>
+        </member>
+        <member name="T:Rsdn.Scintilla.FoldLevels">
+            <summary>
+            Флажки признаки состояние строки текста
+            </summary>
+        </member>
+        <member name="F:Rsdn.Scintilla.FoldLevels.Base">
+            <summary>
+            Base
+            </summary>
+        </member>
+        <member name="F:Rsdn.Scintilla.FoldLevels.OnWhiteSpace">
+            <summary>
+            on whitespace
+            </summary>
+        </member>
+        <member name="F:Rsdn.Scintilla.FoldLevels.OnHeadersFlag">
+            <summary>
+            on header
+            </summary>
+        </member>
+        <member name="F:Rsdn.Scintilla.FoldLevels.OnBoxHeader">
+            <summary>
+            on header
+            </summary>
+        </member>
+        <member name="F:Rsdn.Scintilla.FoldLevels.OnBoxFooter">
+            <summary>
+            on footer
+            </summary>
+        </member>
+        <member name="F:Rsdn.Scintilla.FoldLevels.OnFolded">
+            <summary>
+            on folded item
+            </summary>
+        </member>
+        <member name="F:Rsdn.Scintilla.FoldLevels.OnUnindent">
+            <summary>
+            on UnIndent
+            </summary>
+        </member>
+        <member name="T:Rsdn.Scintilla.ScintillaEditor">
+            <summary>
+            Редактор с подсветкой синтаксиса
+            </summary>
+        </member>
+        <member name="F:Rsdn.Scintilla.ScintillaEditor._autoCompleteSeparator">
+            <summary>
+            TODO : в перспективе придумать более продвинутую механику выбора сепаратора.
+            </summary>
+        </member>
+        <member name="M:Rsdn.Scintilla.ScintillaEditor.ScrollToCaret">
+            <summary>
+            Выполнить скроллинг до позиции каретки.
+            </summary>
+        </member>
+        <member name="M:Rsdn.Scintilla.ScintillaEditor.Undo">
+            <summary>
+            Выполняет Undo.
+            </summary>
+        </member>
+        <member name="M:Rsdn.Scintilla.ScintillaEditor.Redo">
+            <summary>
+            Выполняет Redo.
+            </summary>
+        </member>
+        <member name="M:Rsdn.Scintilla.ScintillaEditor.ClearUndoBuffer">
+            <summary>
+            Очишает Undo буфер.
+            </summary>
+        </member>
+        <member name="M:Rsdn.Scintilla.ScintillaEditor.BeginUndoOperation">
+            <summary>
+            Начинает блок изменений, записываемых как едиснтвенная undo операция.
+            </summary>
+        </member>
+        <member name="M:Rsdn.Scintilla.ScintillaEditor.EndUndoOperation">
+            <summary>
+            Завершает блок изменений, записываемых как едиснтвенная undo операция.
+            </summary>
+        </member>
+        <member name="M:Rsdn.Scintilla.ScintillaEditor.#ctor">
+            <summary>
+            Инициализирует экземпляр
+            </summary>
+        </member>
+        <member name="M:Rsdn.Scintilla.ScintillaEditor.WndProc(System.Windows.Forms.Message@)">
+            <summary>
+            Оконная процедура
+            </summary>
+            <param name="m">сообщение</param>
+        </member>
+        <member name="M:Rsdn.Scintilla.ScintillaEditor.OnModified(Rsdn.Scintilla.ModifiedEventArgs)">
+            <summary>
+            Вызывает событие Modified
+            </summary>
+            <param name="e">аргументы события</param>
+        </member>
+        <member name="M:Rsdn.Scintilla.ScintillaEditor.OnStyleNeeded(Rsdn.Scintilla.StyleNeededEventArgs)">
+            <summary>
+            Вызывает событие <see cref="E:Rsdn.Scintilla.ScintillaEditor.StyleNeeded"/>
+            </summary>
+            <param name="e">аргументы события</param>
+        </member>
+        <member name="M:Rsdn.Scintilla.ScintillaEditor.OnCharAdded(System.Windows.Forms.KeyPressEventArgs)">
+            <summary>
+            Вызывает событие <see cref="E:Rsdn.Scintilla.ScintillaEditor.StyleNeeded"/>
+            </summary>
+            <param name="e">аргументы события</param>
+        </member>
+        <member name="M:Rsdn.Scintilla.ScintillaEditor.OnUpdateUI(System.EventArgs)">
+            <summary>
+            Вызывает событие <see cref="E:Rsdn.Scintilla.ScintillaEditor.UpdateUI"/>
+            </summary>
+            <param name="e">аргументы события</param>
+        </member>
+        <member name="M:Rsdn.Scintilla.ScintillaEditor.OnHotSpotClicked(Rsdn.Scintilla.EditorClickEventArgs)">
+            <summary>
+            Вызывает событие <see cref="E:Rsdn.Scintilla.ScintillaEditor.HotSpotClicked"/>
+            </summary>
+        </member>
+        <member name="M:Rsdn.Scintilla.ScintillaEditor.OnHotSpotDoubleClicked(Rsdn.Scintilla.EditorClickEventArgs)">
+            <summary>
+            Вызывает событие <see cref="E:Rsdn.Scintilla.ScintillaEditor.HotSpotDoubleClicked"/>
+            </summary>
+        </member>
+        <member name="M:Rsdn.Scintilla.ScintillaEditor.StartStyling(System.Int32,System.Int32)">
+            <summary>
+            Подготовиться к применению стилей
+            </summary>
+            <param name="position">Начальная позиция</param>
+            <param name="mask">маска стилей</param>
+        </member>
+        <member name="M:Rsdn.Scintilla.ScintillaEditor.SetStyling(System.Int32,Rsdn.Scintilla.TextStyle)">
+            <summary>
+            Установить стиль
+            </summary>
+            <param name="length">Длина последовательности, для которой 
+            устанавливается стиль</param>
+            <param name="style">стиль</param>
+        </member>
+        <member name="M:Rsdn.Scintilla.ScintillaEditor.GetStandardLanguagesName">
+            <summary>
+            Стандартно поддерживаемые языки
+            </summary>
+        </member>
+        <member name="M:Rsdn.Scintilla.ScintillaEditor.GetPredefinedFoldStyles">
+            <summary>
+            Предопределенные стили фолдинга
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Rsdn.Scintilla.ScintillaEditor.GetStandardLanguage(System.String)">
+            <summary>
+            Возвращает языковые настройки, для известных языков
+            </summary>
+            <param name="langName">Имя языка</param>
+            <returns>Настройки</returns>
+        </member>
+        <member name="M:Rsdn.Scintilla.ScintillaEditor.GetPreDefinedFoldStyle(System.String)">
+            <summary>
+            Возвращает настройки фолдинга для предопределенных стилей
+            </summary>
+            <param name="foldStyleName">Имя стиля</param>
+            <returns>Настройки стиля</returns>
+        </member>
+        <member name="M:Rsdn.Scintilla.ScintillaEditor.SetStyleCharset(System.Int32,Rsdn.Scintilla.ScintillaCharset)">
+            <summary>
+            Set charset for specified style.
+            </summary>
+        </member>
+        <member name="M:Rsdn.Scintilla.ScintillaEditor.SetStyleCharset(Rsdn.Scintilla.PredefinedStyle,Rsdn.Scintilla.ScintillaCharset)">
+            <summary>
+            Set charset for specified predefined style.
+            </summary>
+        </member>
+        <member name="M:Rsdn.Scintilla.ScintillaEditor.GetStyleCharset(System.Int32)">
+            <summary>
+            Returns charset for specified style.
+            </summary>
+        </member>
+        <member name="M:Rsdn.Scintilla.ScintillaEditor.GetStyleCharset(Rsdn.Scintilla.PredefinedStyle)">
+            <summary>
+            Returns charset for specified predefined style.
+            </summary>
+        </member>
+        <member name="M:Rsdn.Scintilla.ScintillaEditor.GotoLine(System.Int32)">
+            <summary>
+            Перейти к строке.
+            </summary>
+            <param name="line"></param>
+            <remarks>Курсор будет перемещен в начало строки. Если строка 
+            вне диапазона документа то переход будет к первой или последней строке</remarks>
+        </member>
+        <member name="M:Rsdn.Scintilla.ScintillaEditor.SetForeColor(System.Int32,System.Drawing.Color)">
+            <summary>
+            Установить цвет шрифта стиля
+            </summary>
+            <param name="styleNum">номер стиля</param>
+            <param name="c">цвет</param>
+        </member>
+        <member name="M:Rsdn.Scintilla.ScintillaEditor.OnAutocompleteSelected(Rsdn.Scintilla.AutocompleteSelectedEventArgs)">
+            <summary>
+            Вызывает событие <see cref="E:Rsdn.Scintilla.ScintillaEditor.AutocompleteSelected"/>
+            </summary>
+        </member>
+        <member name="M:Rsdn.Scintilla.ScintillaEditor.ShowAutocomplete(System.Int32,System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            Отобразить список автодополнения.
+            </summary>
+        </member>
+        <member name="M:Rsdn.Scintilla.ScintillaEditor.CancelAutocomplete">
+            <summary>
+            Отменяет автокомплит.
+            </summary>
+        </member>
+        <member name="M:Rsdn.Scintilla.ScintillaEditor.SetSavePoint">
+            <summary>
+            Установить точку сохранения.
+            </summary>
+            <remarks>Операции Undo/Redo работают до последней установленной точки 
+            сохранения</remarks>
+        </member>
+        <member name="M:Rsdn.Scintilla.ScintillaEditor.OnIsModifiedChanged">
+            <summary>
+            Вызывает событие <see cref="E:Rsdn.Scintilla.ScintillaEditor.IsModifiedChanged"/>.
+            </summary>
+        </member>
+        <member name="P:Rsdn.Scintilla.ScintillaEditor.CaretColor">
+            <summary>
+            Цвет текстового курсора
+            </summary>
+        </member>
+        <member name="P:Rsdn.Scintilla.ScintillaEditor.CaretLineVisible">
+            <summary>
+            Подсветка фона линии, в которой находится текстовый курсор
+            </summary>
+        </member>
+        <member name="P:Rsdn.Scintilla.ScintillaEditor.CaretLineColor">
+            <summary>
+            Цвет фона линии, в которой находится текстовый курсор
+            </summary>
+        </member>
+        <member name="P:Rsdn.Scintilla.ScintillaEditor.CaretBlinkingPeriod">
+            <summary>
+            Период мигания текстового курсора, мс
+            </summary>
+        </member>
+        <member name="P:Rsdn.Scintilla.ScintillaEditor.CaretWidth">
+            <summary>
+            Ширина текстового курсора в пикселях
+            </summary>
+            <remarks>Допустимы значения 0, 1, 2 и 3. 0 означает 
+            невидимый курсор</remarks>
+        </member>
+        <member name="P:Rsdn.Scintilla.ScintillaEditor.CaretPosition">
+            <summary>
+            Позиция текстового курсора
+            </summary>
+        </member>
+        <member name="P:Rsdn.Scintilla.ScintillaEditor.CurrentLine">
+            <summary>
+            Текущая строка
+            </summary>
+        </member>
+        <member name="P:Rsdn.Scintilla.ScintillaEditor.CanUndo">
+            <summary>
+            Признак того, что команда Undo доступна.
+            </summary>
+        </member>
+        <member name="P:Rsdn.Scintilla.ScintillaEditor.CanRedo">
+            <summary>
+            Признак того, что команда Redo доступна.
+            </summary>
+        </member>
+        <member name="P:Rsdn.Scintilla.ScintillaEditor.AllowUndo">
+            <summary>
+            Признак разрешения механизма Undo/Redo.
+            </summary>
+        </member>
+        <member name="P:Rsdn.Scintilla.ScintillaEditor.CreateParams">
+            <summary>
+            Создает параметры окна
+            </summary>
+        </member>
+        <member name="P:Rsdn.Scintilla.ScintillaEditor.ReadOnly">
+            <summary>
+            Запрет редактирования
+            </summary>
+        </member>
+        <member name="P:Rsdn.Scintilla.ScintillaEditor.Text">
+            <summary>
+            Убираем свойство из Design Time
+            </summary>
+        </member>
+        <member name="P:Rsdn.Scintilla.ScintillaEditor.Model">
+            <summary>
+            Представление текста в контроле
+            </summary>
+        </member>
+        <member name="P:Rsdn.Scintilla.ScintillaEditor.Overwrite">
+            <summary>
+            Включает режим замены символа при наборе
+            </summary>
+        </member>
+        <member name="P:Rsdn.Scintilla.ScintillaEditor.ShowIndentationGuides">
+            <summary>
+            Показывать отступы
+            </summary>
+        </member>
+        <member name="P:Rsdn.Scintilla.ScintillaEditor.TabWidth">
+            <summary>
+            Ширина табуляции в символах
+            </summary>
+        </member>
+        <member name="P:Rsdn.Scintilla.ScintillaEditor.Indent">
+            <summary>
+            Размер отступа.
+            </summary>
+            <remarks>0 - совпадает с размером табуляции</remarks>
+        </member>
+        <member name="P:Rsdn.Scintilla.ScintillaEditor.AutoIndent">
+            <summary>
+            Автоматический отступ
+            </summary>
+        </member>
+        <member name="P:Rsdn.Scintilla.ScintillaEditor.SmartIndent">
+            <summary>
+            Отступ в новой строке на основе лексера
+            </summary>
+        </member>
+        <member name="P:Rsdn.Scintilla.ScintillaEditor.MatchBraces">
+            <summary>
+            Подсвечивать скобки
+            </summary>
+        </member>
+        <member name="P:Rsdn.Scintilla.ScintillaEditor.WrapLines">
+            <summary>
+            Переносить строки
+            </summary>
+        </member>
+        <member name="P:Rsdn.Scintilla.ScintillaEditor.UseDisplayLines">
+            <summary>
+            Использовать в качестве конца строки для клавиш End/Home экранные строки
+            </summary>
+        </member>
+        <member name="P:Rsdn.Scintilla.ScintillaEditor.Lexer">
+            <summary>
+            Лексический анализатор
+            </summary>
+        </member>
+        <member name="P:Rsdn.Scintilla.ScintillaEditor.EndStyledPosition">
+            <summary>
+            Последняя позиция, в которой не требуется применение стиля
+            </summary>
+        </member>
+        <member name="P:Rsdn.Scintilla.ScintillaEditor.Language">
+            <summary>
+            Язык
+            </summary>
+        </member>
+        <member name="P:Rsdn.Scintilla.ScintillaEditor.TextStyles">
+            <summary>
+            Стили текста
+            </summary>
+        </member>
+        <member name="P:Rsdn.Scintilla.ScintillaEditor.SelectionForeColor">
+            <summary>
+            Цвет текста выделения
+            </summary>
+        </member>
+        <member name="P:Rsdn.Scintilla.ScintillaEditor.SelectionBackColor">
+            <summary>
+            Цвет фона выделения
+            </summary>
+        </member>
+        <member name="P:Rsdn.Scintilla.ScintillaEditor.HotSpotActiveUnderline">
+            <summary>
+            Использовать подчеркивание для активного хотспота.
+            </summary>
+        </member>
+        <member name="P:Rsdn.Scintilla.ScintillaEditor.Selection">
+            <summary>
+            Выделенный текст
+            </summary>
+        </member>
+        <member name="P:Rsdn.Scintilla.ScintillaEditor.MultipleSelection">
+            <summary>
+            Доступность множественного выделения.
+            </summary>
+        </member>
+        <member name="P:Rsdn.Scintilla.ScintillaEditor.AdditionalSelectionTyping">
+            <summary>
+            Доступность множественного выделения.
+            </summary>
+        </member>
+        <member name="E:Rsdn.Scintilla.ScintillaEditor.Modified">
+            <summary>
+            Вызывается при изменении текста или стиля
+            </summary>
+        </member>
+        <member name="E:Rsdn.Scintilla.ScintillaEditor.StyleNeeded">
+            <summary>
+            Вызывается при необходимости применения стиля, в случае если в качестве
+            лексера указан <see cref="F:Rsdn.Scintilla.SciLexer.Container"/>
+            </summary>
+        </member>
+        <member name="E:Rsdn.Scintilla.ScintillaEditor.CharAdded">
+            <summary>
+            Вызывается при добавлении нового символа
+            </summary>
+        </member>
+        <member name="E:Rsdn.Scintilla.ScintillaEditor.UpdateUI">
+            <summary>
+            Вызывается при изменении стиля, текста, выделения и позиции курсора.
+            </summary>
+        </member>
+        <member name="E:Rsdn.Scintilla.ScintillaEditor.HotSpotClicked">
+            <summary>
+            Вызывается при щелчке по хотспоту.
+            </summary>
+        </member>
+        <member name="E:Rsdn.Scintilla.ScintillaEditor.HotSpotDoubleClicked">
+            <summary>
+            Вызывается при двойном щелчке по хотспоту.
+            </summary>
+        </member>
+        <member name="P:Rsdn.Scintilla.ScintillaEditor.LineNumberWidth">
+            <summary>
+            Ширина колонки с номерами строк в левой границе. 
+            0 - не показывать номера строк.
+            </summary>
+        </member>
+        <member name="P:Rsdn.Scintilla.ScintillaEditor.EdgeMode">
+            <summary>
+            Режим отображения границы длины строк
+            </summary>
+        </member>
+        <member name="P:Rsdn.Scintilla.ScintillaEditor.EdgeColumn">
+            <summary>
+            Граничная колонка длины строк
+            </summary>
+        </member>
+        <member name="P:Rsdn.Scintilla.ScintillaEditor.EdgeColor">
+            <summary>
+            Цвет границы
+            </summary>
+        </member>
+        <member name="P:Rsdn.Scintilla.ScintillaEditor.UseFolding">
+            <summary>
+            Use Folding
+            </summary>
+        </member>
+        <member name="P:Rsdn.Scintilla.ScintillaEditor.FoldMarginWidth">
+            <summary>
+            Ширина отступа для показа состояния
+            </summary>
+        </member>
+        <member name="P:Rsdn.Scintilla.ScintillaEditor.FoldingParameters">
+            <summary>
+            Параметры фолдинга
+            </summary>
+        </member>
+        <member name="P:Rsdn.Scintilla.ScintillaEditor.CodePage">
+            <summary>
+            Кодовая страница.
+            </summary>
+        </member>
+        <member name="P:Rsdn.Scintilla.ScintillaEditor.AutocompleteActive">
+            <summary>
+            Признак активности автокомплита.
+            </summary>
+        </member>
+        <member name="P:Rsdn.Scintilla.ScintillaEditor.AutocompleteIgnoreCase">
+            <summary>
+            Игнорировать регистр. 
+            </summary>
+        </member>
+        <member name="E:Rsdn.Scintilla.ScintillaEditor.AutocompleteSelected">
+            <summary>
+            Вызывается перед завершением выбора из списка автокомплита.
+            </summary>
+        </member>
+        <member name="P:Rsdn.Scintilla.ScintillaEditor.IsModified">
+            <summary>
+            Признак того, что документ модифицирован.
+            </summary>
+            <remarks>
+            Актуально только в том случае, если был вызван метод <see cref="M:Rsdn.Scintilla.ScintillaEditor.SetSavePoint"/>.
+            </remarks>
+        </member>
+        <member name="E:Rsdn.Scintilla.ScintillaEditor.IsModifiedChanged">
+            <summary>
+            Вызывается при изменении значения свойства IsModified.
+            </summary>
+        </member>
+        <member name="T:Rsdn.Scintilla.SearchFlags">
+            <summary>
+            Флаги для поиска.
+            </summary>
+        </member>
+        <member name="F:Rsdn.Scintilla.SearchFlags.None">
+            <summary>
+            Нет флагов
+            </summary>
+        </member>
+        <member name="F:Rsdn.Scintilla.SearchFlags.WholeWord">
+            <summary>
+            Искать слово целиком
+            </summary>
+        </member>
+        <member name="F:Rsdn.Scintilla.SearchFlags.MatchCase">
+            <summary>
+            Учитывать регистр
+            </summary>
+        </member>
+        <member name="F:Rsdn.Scintilla.SearchFlags.WordStart">
+            <summary>
+            Искать только в начале слов
+            </summary>
+        </member>
+        <member name="F:Rsdn.Scintilla.SearchFlags.RegExp">
+            <summary>
+            Строка поиска интерпретируется как regexp
+            </summary>
+        </member>
+        <member name="T:Rsdn.Scintilla.ScintillaApi">
+            <summary>
+            API для Scintilla
+            </summary>
+        </member>
+        <member name="T:Rsdn.Scintilla.MarginStyle">
+            <summary>
+            Стиль отступов
+            </summary>
+        </member>
+        <member name="F:Rsdn.Scintilla.MarginStyle.Symbol">
+            <summary>
+            Символьный
+            </summary>
+        </member>
+        <member name="F:Rsdn.Scintilla.MarginStyle.Number">
+            <summary>
+            Числовой
+            </summary>
+        </member>
+        <member name="T:Rsdn.Scintilla.MarkStyle">
+            <summary>
+            Стиль маркров
+            </summary>
+        </member>
+        <member name="F:Rsdn.Scintilla.MarkStyle.Folding">
+            <summary>
+            Маска fold margins
+            </summary>
+        </member>
+        <member name="F:Rsdn.Scintilla.MarkStyle.MaxMarkers">
+            <summary>
+            Максимальное число маркеров
+            </summary>
+        </member>
+        <member name="F:Rsdn.Scintilla.MarkStyle.Circle">
+            <summary>
+            Круглый Маркер 
+            </summary>
+        </member>
+        <member name="F:Rsdn.Scintilla.MarkStyle.RoundRectangle">
+            <summary>
+            Прямоуглоьник со скругленными углами
+            </summary>
+        </member>
+        <member name="F:Rsdn.Scintilla.MarkStyle.Arrow">
+            <summary>
+            Стрелка
+            </summary>
+        </member>
+        <member name="F:Rsdn.Scintilla.MarkStyle.SmallRectangle">
+            <summary>
+            Маленький прямоугольник
+            </summary>
+        </member>
+        <member name="F:Rsdn.Scintilla.MarkStyle.ShortArrow">
+            <summary>
+            короткая стрелка
+            </summary>
+        </member>
+        <member name="F:Rsdn.Scintilla.MarkStyle.Empty">
+            <summary>
+            пустое пространство
+            </summary>
+        </member>
+        <member name="F:Rsdn.Scintilla.MarkStyle.ArrowDown">
+            <summary>
+            Стрелка вниз
+            </summary>
+        </member>
+        <member name="F:Rsdn.Scintilla.MarkStyle.Minus">
+            <summary>
+            минус
+            </summary>
+        </member>
+        <member name="F:Rsdn.Scintilla.MarkStyle.Plus">
+            <summary>
+            плюс
+            </summary>
+        </member>
+        <member name="F:Rsdn.Scintilla.MarkStyle.VerticalLine">
+            <summary>
+            Вертикальная линия
+            </summary>
+        </member>
+        <member name="F:Rsdn.Scintilla.MarkStyle.LeftCorner">
+            <summary>
+            уголок вверх
+            </summary>
+        </member>
+        <member name="F:Rsdn.Scintilla.MarkStyle.TopCorner">
+            <summary>
+            уголок вниз
+            </summary>
+        </member>
+        <member name="F:Rsdn.Scintilla.MarkStyle.PlusInBox">
+            <summary>
+            плюсик в рамке
+            </summary>
+        </member>
+        <member name="F:Rsdn.Scintilla.MarkStyle.PlusInBoxConnected">
+            <summary>
+            плюсик в рамке 2
+            </summary>
+        </member>
+        <member name="F:Rsdn.Scintilla.MarkStyle.MinusInBox">
+            <summary>
+            минус в рамке
+            </summary>
+        </member>
+        <member name="F:Rsdn.Scintilla.MarkStyle.MinusInBoxConnected">
+            <summary>
+            минус в рамке 2
+            </summary>
+        </member>
+        <member name="F:Rsdn.Scintilla.MarkStyle.LeftCornerCurve">
+            <summary>
+            дуга вниз
+            </summary>
+        </member>
+        <member name="F:Rsdn.Scintilla.MarkStyle.TopCornerCurve">
+            <summary>
+            дуга вверх
+            </summary>
+        </member>
+        <member name="F:Rsdn.Scintilla.MarkStyle.PlusInCircle">
+            <summary>
+            плюс в окружности
+            </summary>
+        </member>
+        <member name="F:Rsdn.Scintilla.MarkStyle.PlusInCircleConnected">
+            <summary>
+            плюс в окружности 2
+            </summary>
+        </member>
+        <member name="F:Rsdn.Scintilla.MarkStyle.MinusInCircle">
+            <summary>
+            минус в окружности
+            </summary>
+        </member>
+        <member name="F:Rsdn.Scintilla.MarkStyle.MinusInCircleConnected">
+            <summary>
+            минус в окружности 2
+            </summary>
+        </member>
+        <member name="F:Rsdn.Scintilla.MarkStyle.Background">
+            <summary>
+            заливка
+            </summary>
+        </member>
+        <member name="F:Rsdn.Scintilla.MarkStyle.DotDotDot">
+            <summary>
+            многоточее
+            </summary>
+        </member>
+        <member name="F:Rsdn.Scintilla.MarkStyle.Arrows">
+            <summary>
+            стрелки
+            </summary>
+        </member>
+        <member name="F:Rsdn.Scintilla.MarkStyle.PixelMap">
+            <summary>
+            картинка
+            </summary>
+        </member>
+        <member name="F:Rsdn.Scintilla.MarkStyle.Char">
+            <summary>
+            символ
+            </summary>
+        </member>
+        <member name="T:Rsdn.Scintilla.SciKey">
+            <summary>
+            Коды управляющих клавиш
+            </summary>
+        </member>
+        <member name="F:Rsdn.Scintilla.SciKey.Escape">
+            <summary>
+            Escape
+            </summary>
+        </member>
+        <member name="F:Rsdn.Scintilla.SciKey.Back">
+            <summary>
+            Back
+            </summary>
+        </member>
+        <member name="F:Rsdn.Scintilla.SciKey.Tab">
+            <summary>
+            Tab
+            </summary>
+        </member>
+        <member name="F:Rsdn.Scintilla.SciKey.Down">
+            <summary>
+            Down
+            </summary>
+        </member>
+        <member name="F:Rsdn.Scintilla.SciKey.Up">
+            <summary>
+            Up
+            </summary>
+        </member>
+        <member name="F:Rsdn.Scintilla.SciKey.Left">
+            <summary>
+            Left
+            </summary>
+        </member>
+        <member name="F:Rsdn.Scintilla.SciKey.Right">
+            <summary>
+            Right
+            </summary>
+        </member>
+        <member name="F:Rsdn.Scintilla.SciKey.Home">
+            <summary>
+            Home
+            </summary>
+        </member>
+        <member name="F:Rsdn.Scintilla.SciKey.End">
+            <summary>
+            End
+            </summary>
+        </member>
+        <member name="F:Rsdn.Scintilla.SciKey.Prior">
+            <summary>
+            Prior
+            </summary>
+        </member>
+        <member name="F:Rsdn.Scintilla.SciKey.Next">
+            <summary>
+            Next
+            </summary>
+        </member>
+        <member name="F:Rsdn.Scintilla.SciKey.Delete">
+            <summary>
+            Delete
+            </summary>
+        </member>
+        <member name="F:Rsdn.Scintilla.SciKey.Insert">
+            <summary>
+            Insert
+            </summary>
+        </member>
+        <member name="F:Rsdn.Scintilla.SciKey.Return">
+            <summary>
+            Return
+            </summary>
+        </member>
+        <member name="F:Rsdn.Scintilla.SciKey.Add">
+            <summary>
+            Add
+            </summary>
+        </member>
+        <member name="F:Rsdn.Scintilla.SciKey.Subtract">
+            <summary>
+            Subtract
+            </summary>
+        </member>
+        <member name="F:Rsdn.Scintilla.SciKey.Divide">
+            <summary>
+            Divide
+            </summary>
+        </member>
+        <member name="T:Rsdn.Scintilla.FoldDraws">
+            <summary>
+            Параметры отображения фолдинга
+            </summary>
+        </member>
+        <member name="F:Rsdn.Scintilla.FoldDraws.Box">
+            <summary>
+            draw boxes if expanded
+            </summary>
+        </member>
+        <member name="F:Rsdn.Scintilla.FoldDraws.LineBeforeExpanded">
+            <summary>
+            Draw above if expanded
+            </summary>
+        </member>
+        <member name="F:Rsdn.Scintilla.FoldDraws.LineBeforeFolded">
+            <summary>
+            Draw above if not expanded
+            </summary>
+        </member>
+        <member name="F:Rsdn.Scintilla.FoldDraws.LineAfterExpanded">
+            <summary>
+            Draw below if expanded
+            </summary>
+        </member>
+        <member name="F:Rsdn.Scintilla.FoldDraws.LineAfterFolded">
+            <summary>
+            Draw below if not expanded
+            </summary>
+        </member>
+        <member name="F:Rsdn.Scintilla.FoldDraws.ShowLevels">
+            <summary>
+            display hexadecimal fold levels in line margin to aid debugging of folding.
+            </summary>
+        </member>
+        <member name="T:Rsdn.Scintilla.FoldingStyleDef">
+            <summary>
+            Предопределенные стили фолдинга
+            </summary>
+        </member>
+        <member name="T:Rsdn.Scintilla.IFoldingParameters">
+            <summary>
+            Параметры фолдинга
+            </summary>
+        </member>
+        <member name="P:Rsdn.Scintilla.IFoldingParameters.Name">
+            <summary>
+            Имя Стиля
+            </summary>
+        </member>
+        <member name="P:Rsdn.Scintilla.IFoldingParameters.DrawFlags">
+            <summary>
+            Параметры отрисовки
+            </summary>
+        </member>
+        <member name="P:Rsdn.Scintilla.IFoldingParameters.Item(Rsdn.Scintilla.FoldingMarkersType)">
+            <summary>
+            Маркеры 
+            </summary>
+        </member>
+        <member name="M:Rsdn.Scintilla.FoldingStyleDef.#ctor(System.Reflection.Assembly,System.String,System.String)">
+            <summary>
+            Конструктор
+            </summary>
+            <param name="asm">Сборка - хранилище ресурсов</param>
+            <param name="streamName">Имя ресурса</param>
+            <param name="styleName">Имя стиля</param>
+        </member>
+        <member name="P:Rsdn.Scintilla.FoldingStyleDef.Name">
+            <summary>
+            Имя Стиля
+            </summary>
+        </member>
+        <member name="P:Rsdn.Scintilla.FoldingStyleDef.Item(Rsdn.Scintilla.FoldingMarkersType)">
+            <summary>
+            Маркеры фолдинга
+            </summary>
+        </member>
+        <member name="P:Rsdn.Scintilla.FoldingStyleDef.DrawFlags">
+            <summary>
+            Стили отрисовки фолдинга
+            </summary>
+        </member>
+        <member name="T:Rsdn.Scintilla.EditorClickEventArgs">
+            <summary>
+            Аргументы события клика в редакторе.
+            </summary>
+        </member>
+        <member name="M:Rsdn.Scintilla.EditorClickEventArgs.#ctor(System.Int32)">
+            <summary>
+            Инициализирует экземпляр.
+            </summary>
+        </member>
+        <member name="P:Rsdn.Scintilla.EditorClickEventArgs.Position">
+            <summary>
+            Позиция символа.
+            </summary>
+        </member>
+        <member name="T:Rsdn.Scintilla.EditorClickEventHandler">
+            <summary>
+            Обработчик клика в редакторе.
+            </summary>
+        </member>
+        <member name="T:Rsdn.Scintilla.EdgeMode">
+            <summary>
+            Режимы отображения границы длины строк
+            </summary>
+        </member>
+        <member name="F:Rsdn.Scintilla.EdgeMode.None">
+            <summary>
+            Не отображать
+            </summary>
+        </member>
+        <member name="F:Rsdn.Scintilla.EdgeMode.Line">
+            <summary>
+            Отображать линию
+            </summary>
+        </member>
+        <member name="F:Rsdn.Scintilla.EdgeMode.Background">
+            <summary>
+            Отображать изменением цвета фона
+            </summary>
+        </member>
+        <member name="T:Rsdn.Scintilla.TextStylesChangedEventArgs">
+            <summary>
+            Аргументы события TextStylesChanged
+            </summary>
+        </member>
+        <member name="M:Rsdn.Scintilla.TextStylesChangedEventArgs.GetChangedItems">
+            <summary>
+            Измененные элементы коллекции
+            </summary>
+        </member>
+        <member name="T:Rsdn.Scintilla.TextStylesChangedEventHandler">
+            <summary>
+            Обработчик события TextStylesChanged
+            </summary>
+        </member>
+        <member name="T:Rsdn.Scintilla.ModificationTypes">
+            <summary>
+            Типы модификаций текста
+            </summary>
+        </member>
+        <member name="F:Rsdn.Scintilla.ModificationTypes.InsertText">
+            <summary>
+            Текст был вставлен в документ
+            </summary>
+        </member>
+        <member name="F:Rsdn.Scintilla.ModificationTypes.DeleteText">
+            <summary>
+            Текст был удален из документа
+            </summary>
+        </member>
+        <member name="F:Rsdn.Scintilla.ModificationTypes.ChangeStyle">
+            <summary>
+            Произошло изменение стиля
+            </summary>
+        </member>
+        <member name="F:Rsdn.Scintilla.ModificationTypes.ChangeFold">
+            <summary>
+            Произошло изменение уровня вложенности
+            </summary>
+        </member>
+        <member name="F:Rsdn.Scintilla.ModificationTypes.PerformedUser">
+            <summary>
+            Операция была произведена пользователем
+            </summary>
+        </member>
+        <member name="F:Rsdn.Scintilla.ModificationTypes.PerformedUndo">
+            <summary>
+            Операция была результатом Undo
+            </summary>
+        </member>
+        <member name="F:Rsdn.Scintilla.ModificationTypes.PerformedRedo">
+            <summary>
+            Операция была результатом Redo
+            </summary>
+        </member>
+        <member name="F:Rsdn.Scintilla.ModificationTypes.LastSetInUndoRedo">
+            <summary>
+            Последний шаг в многошаговой Undo/Redo операции
+            </summary>
+        </member>
+        <member name="F:Rsdn.Scintilla.ModificationTypes.ChangeMarker">
+            <summary>
+            Маркер был изменен
+            </summary>
+        </member>
+        <member name="F:Rsdn.Scintilla.ModificationTypes.BeforeInsert">
+            <summary>
+            Текст будет вставлен
+            </summary>
+        </member>
+        <member name="F:Rsdn.Scintilla.ModificationTypes.BeforeDelete">
+            <summary>
+            Текст будет удален
+            </summary>
+        </member>
+        <member name="T:Rsdn.Scintilla.LanguagePropertyEditor">
+            <summary>
+            Редактор свойства <see cref="P:Rsdn.Scintilla.ScintillaEditor.Language"/>
+            </summary>
+        </member>
+        <member name="M:Rsdn.Scintilla.LanguagePropertyEditor.GetEditStyle(System.ComponentModel.ITypeDescriptorContext)">
+            <summary>
+            Получить стиль редактора
+            </summary>
+            <param name="context">контекст</param>
+            <returns>стиль редактора</returns>
+        </member>
+        <member name="M:Rsdn.Scintilla.LanguagePropertyEditor.EditValue(System.ComponentModel.ITypeDescriptorContext,System.IServiceProvider,System.Object)">
+            <summary>
+            Редактировать значение
+            </summary>
+        </member>
+        <member name="T:Rsdn.Scintilla.FindTextResult">
+            <summary>
+            Результаты поиска
+            </summary>
+        </member>
+        <member name="P:Rsdn.Scintilla.FindTextResult.FindStart">
+            <summary>
+            Позиция начала найденного результата
+            </summary>
+        </member>
+        <member name="P:Rsdn.Scintilla.FindTextResult.FindEnd">
+            <summary>
+            Позиция конца найденного результата
+            </summary>
+        </member>
+        <member name="P:Rsdn.Scintilla.FindTextResult.IsSuccess">
+            <summary>
+            Успешен ли поиск.
+            </summary>
+        </member>
+        <member name="T:Rsdn.Scintilla.EditorTextEditorForm">
+            <summary>
+            Summary description for EditorTextEditorForm.
+            </summary>
+        </member>
+        <member name="F:Rsdn.Scintilla.EditorTextEditorForm.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Rsdn.Scintilla.EditorTextEditorForm.#ctor(Rsdn.Scintilla.TextModel)">
+            <summary>
+            Инициализирует компонент
+            </summary>
+        </member>
+        <member name="M:Rsdn.Scintilla.EditorTextEditorForm.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+        </member>
+        <member name="M:Rsdn.Scintilla.EditorTextEditorForm.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:Rsdn.Scintilla.TextModelTypeConverter">
+            <summary>
+            TypeConverter для TextModel.
+            </summary>
+        </member>
+        <member name="M:Rsdn.Scintilla.TextModelTypeConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext,System.Type)">
+            <summary>
+            CanConvertTo
+            </summary>
+        </member>
+        <member name="M:Rsdn.Scintilla.TextModelTypeConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext,System.Globalization.CultureInfo,System.Object,System.Type)">
+            <summary>
+            ConvertTo
+            </summary>
+        </member>
+        <member name="M:Rsdn.Scintilla.TextModelTypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext,System.Globalization.CultureInfo,System.Object)">
+            <summary>
+            ConvertFrom
+            </summary>
+            <param name="context"></param>
+            <param name="culture"></param>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Rsdn.Scintilla.TextStyleCollection">
+            <summary>
+                <para>
+                  A collection that stores <see cref="T:Rsdn.Scintilla.TextStyle"/> objects.
+               </para>
+            </summary>
+            <seealso cref="T:Rsdn.Scintilla.TextStyleCollection"/>
+        </member>
+        <member name="M:Rsdn.Scintilla.TextStyleCollection.#ctor">
+            <summary>
+                <para>
+                  Initializes a new instance of TextStyleCollection.
+               </para>
+            </summary>
+        </member>
+        <member name="M:Rsdn.Scintilla.TextStyleCollection.#ctor(Rsdn.Scintilla.TextStyleCollection)">
+            <summary>
+                <para>
+                  Initializes a new instance of <see cref="T:Rsdn.Scintilla.TextStyleCollection"/> based on another <see cref="T:Rsdn.Scintilla.TextStyleCollection"/>.
+               </para>
+            </summary>
+            <param name="value">
+                  A <see cref="T:Rsdn.Scintilla.TextStyleCollection"/> from which the contents are copied
+            </param>
+        </member>
+        <member name="M:Rsdn.Scintilla.TextStyleCollection.#ctor(Rsdn.Scintilla.TextStyle[])">
+            <summary>
+                <para>
+                  Initializes a new instance of <see cref="T:Rsdn.Scintilla.TextStyleCollection"/> containing any array of <see cref="T:Rsdn.Scintilla.TextStyle"/> objects.
+               </para>
+            </summary>
+        </member>
+        <member name="M:Rsdn.Scintilla.TextStyleCollection.OnTextStylesChanged(Rsdn.Scintilla.TextStylesChangedEventArgs)">
+            <summary>
+            Вызывает событие TextStylesChanged
+            </summary>
+            <param name="e">аргументы события</param>
+        </member>
+        <member name="M:Rsdn.Scintilla.TextStyleCollection.Add(Rsdn.Scintilla.TextStyle)">
+            <summary>
+               <para>Adds a <see cref="T:Rsdn.Scintilla.TextStyle"/> with the specified value to the 
+               <see cref="T:Rsdn.Scintilla.TextStyleCollection"/> .</para>
+            </summary>
+            <param name="value">The <see cref="T:Rsdn.Scintilla.TextStyle"/> to add.</param>
+            <returns>
+               <para>The index at which the new element was inserted.</para>
+            </returns>
+            <seealso cref="M:Rsdn.Scintilla.TextStyleCollection.AddRange(Rsdn.Scintilla.TextStyle[])"/>
+        </member>
+        <member name="M:Rsdn.Scintilla.TextStyleCollection.Add(System.Object)">
+            <summary>
+            IList.Add implementation
+            </summary>
+        </member>
+        <member name="M:Rsdn.Scintilla.TextStyleCollection.AddRange(Rsdn.Scintilla.TextStyle[])">
+            <summary>
+            <para>Copies the elements of an array to the end of the <see cref="T:Rsdn.Scintilla.TextStyleCollection"/>.</para>
+            </summary>
+            <param name="value">
+               An array of type <see cref="T:Rsdn.Scintilla.TextStyle"/> containing the objects to add to the collection.
+            </param>
+            <returns>
+              <para>None.</para>
+            </returns>
+            <seealso cref="M:Rsdn.Scintilla.TextStyleCollection.Add(Rsdn.Scintilla.TextStyle)"/>
+        </member>
+        <member name="M:Rsdn.Scintilla.TextStyleCollection.AddRange(Rsdn.Scintilla.TextStyleCollection)">
+            <summary>
+                <para>
+                  Adds the contents of another <see cref="T:Rsdn.Scintilla.TextStyleCollection"/> to the end of the collection.
+               </para>
+            </summary>
+            <param name="value">
+               A <see cref="T:Rsdn.Scintilla.TextStyleCollection"/> containing the objects to add to the collection.
+            </param>
+            <returns>
+              <para>None.</para>
+            </returns>
+            <seealso cref="M:Rsdn.Scintilla.TextStyleCollection.Add(Rsdn.Scintilla.TextStyle)"/>
+        </member>
+        <member name="M:Rsdn.Scintilla.TextStyleCollection.Contains(Rsdn.Scintilla.TextStyle)">
+            <summary>
+            <para>Gets a value indicating whether the 
+               <see cref="T:Rsdn.Scintilla.TextStyleCollection"/> contains the specified <see cref="T:Rsdn.Scintilla.TextStyle"/>.</para>
+            </summary>
+            <param name="value">The <see cref="T:Rsdn.Scintilla.TextStyle"/> to locate.</param>
+            <returns>
+            <para><see langword="true"/> if the <see cref="T:Rsdn.Scintilla.TextStyle"/> is contained in the collection; 
+              otherwise, <see langword="false"/>.</para>
+            </returns>
+            <seealso cref="M:Rsdn.Scintilla.TextStyleCollection.IndexOf(Rsdn.Scintilla.TextStyle)"/>
+        </member>
+        <member name="M:Rsdn.Scintilla.TextStyleCollection.CopyTo(Rsdn.Scintilla.TextStyle[],System.Int32)">
+            <summary>
+            <para>Copies the <see cref="T:Rsdn.Scintilla.TextStyleCollection"/> values to a one-dimensional <see cref="T:System.Array"/> instance at the 
+               specified index.</para>
+            </summary>
+        </member>
+        <member name="M:Rsdn.Scintilla.TextStyleCollection.IndexOf(Rsdn.Scintilla.TextStyle)">
+            <summary>
+               <para>Returns the index of a <see cref="T:Rsdn.Scintilla.TextStyle"/> in 
+                  the <see cref="T:Rsdn.Scintilla.TextStyleCollection"/> .</para>
+            </summary>
+            <param name="value">The <see cref="T:Rsdn.Scintilla.TextStyle"/> to locate.</param>
+            <returns>
+            <para>The index of the <see cref="T:Rsdn.Scintilla.TextStyle"/> of <paramref name="value"/> in the 
+            <see cref="T:Rsdn.Scintilla.TextStyleCollection"/>, if found; otherwise, -1.</para>
+            </returns>
+            <seealso cref="M:Rsdn.Scintilla.TextStyleCollection.Contains(Rsdn.Scintilla.TextStyle)"/>
+        </member>
+        <member name="M:Rsdn.Scintilla.TextStyleCollection.Insert(System.Int32,Rsdn.Scintilla.TextStyle)">
+            <summary>
+            <para>Inserts a <see cref="T:Rsdn.Scintilla.TextStyle"/> into the <see cref="T:Rsdn.Scintilla.TextStyleCollection"/> at the specified index.</para>
+            </summary>
+            <param name="index">The zero-based index where <paramref name="value"/> should be inserted.</param>
+            <param name=" value">The <see cref="T:Rsdn.Scintilla.TextStyle"/> to insert.</param>
+            <returns><para>None.</para></returns>
+            <seealso cref="M:Rsdn.Scintilla.TextStyleCollection.Add(Rsdn.Scintilla.TextStyle)"/>
+            <param name="value">style value</param>
+        </member>
+        <member name="M:Rsdn.Scintilla.TextStyleCollection.Insert(System.Int32,System.Object)">
+            <summary>
+            IList.Insert implementation
+            </summary>
+        </member>
+        <member name="M:Rsdn.Scintilla.TextStyleCollection.Remove(Rsdn.Scintilla.TextStyle)">
+            <summary>
+               <para> Removes a specific <see cref="T:Rsdn.Scintilla.TextStyle"/> from the 
+               <see cref="T:Rsdn.Scintilla.TextStyleCollection"/> .</para>
+            </summary>
+            <param name="value">The <see cref="T:Rsdn.Scintilla.TextStyle"/> to remove from the <see cref="T:Rsdn.Scintilla.TextStyleCollection"/> .</param>
+            <returns><para>None.</para></returns>
+            <exception cref="T:System.ArgumentException"><paramref name="value"/> is not found in the Collection. </exception>
+        </member>
+        <member name="E:Rsdn.Scintilla.TextStyleCollection.Changed">
+            <summary>
+            Вызывается при изменении стилей
+            </summary>
+        </member>
+        <member name="P:Rsdn.Scintilla.TextStyleCollection.Item(System.Int32)">
+            <summary>
+            <para>Represents the entry at the specified index of the <see cref="T:Rsdn.Scintilla.TextStyle"/>.</para>
+            </summary>
+            <param name="index"><para>The zero-based index of the entry to locate in the collection.</para></param>
+            <value>
+               <para> The entry at the specified index of the collection.</para>
+            </value>
+            <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="index"/> is outside the valid range of indexes for the collection.</exception>
+        </member>
+        <member name="T:Rsdn.Scintilla.TextSelection">
+            <summary>
+            Простой класс текущего выделенного фрагмента
+            </summary>
+        </member>
+        <member name="P:Rsdn.Scintilla.TextSelection.Start">
+            <summary>
+            Индекс первого выделенного символа модели 
+            </summary>
+        </member>
+        <member name="P:Rsdn.Scintilla.TextSelection.End">
+            <summary>
+            Индекс последнего выделенного символа модели.
+            </summary>
+        </member>
+        <member name="P:Rsdn.Scintilla.TextSelection.Text">
+            <summary>
+            Выделенный Текст
+            </summary>
+        </member>
+        <member name="T:Rsdn.Scintilla.StringHelper">
+            <summary>
+            Мелкий классик для преобразования строки в цвет
+            </summary>
+        </member>
+        <member name="M:Rsdn.Scintilla.StringHelper.StringToColor(System.String)">
+            <summary>
+            Непосредственно функция преобразования
+            </summary>
+            <param name="color">Описание цвета</param>
+            <returns>Структура НЕТ</returns>
+            <remarks>
+            Поддерживаемые форматы:
+            #XXXXXX - шеснадцетиричное число RGB по 2 символа на канал
+            ddddddddd - десятичное число RGB по 3 символа на канал
+            </remarks>
+        </member>
+        <member name="T:Rsdn.Scintilla.IndentationStatus">
+            <summary>
+            Состояние авто-отступов
+            </summary>
+        </member>
+        <member name="F:Rsdn.Scintilla.IndentationStatus.None">
+            <summary>
+            no effect on indentation
+            </summary>
+        </member>
+        <member name="F:Rsdn.Scintilla.IndentationStatus.BlockStart">
+            <summary>
+            indentation block begin such as "{" or VB "function"
+            </summary>
+        </member>
+        <member name="F:Rsdn.Scintilla.IndentationStatus.BlockEnd">
+            <summary>
+            indentation end indicator such as "}" or VB "end"
+            </summary>
+        </member>
+        <member name="F:Rsdn.Scintilla.IndentationStatus.KeyWordStart">
+            <summary>
+            Keywords that cause indentation
+            </summary>
+        </member>
+        <member name="T:Rsdn.Scintilla.AutocompleteSelectedEventArgs">
+            <summary>
+            Аргументы события выбора варианта автокомплита.
+            </summary>
+        </member>
+        <member name="M:Rsdn.Scintilla.AutocompleteSelectedEventArgs.#ctor(System.Int32,System.String)">
+            <summary>
+            Инициализирует экземпляр.
+            </summary>
+        </member>
+        <member name="P:Rsdn.Scintilla.AutocompleteSelectedEventArgs.WordStart">
+            <summary>
+            Позиция начала выбранного слова.
+            </summary>
+        </member>
+        <member name="P:Rsdn.Scintilla.AutocompleteSelectedEventArgs.Text">
+            <summary>
+            Выбранный текст.
+            </summary>
+        </member>
+        <member name="P:Rsdn.Scintilla.AutocompleteSelectedEventArgs.Cancel">
+            <summary>
+            Признак отмены выбора.
+            </summary>
+        </member>
+        <member name="T:Rsdn.Scintilla.Win32Api">
+            <summary>
+            Содержит необходимый функционал из Win32Api.
+            </summary>
+        </member>
+        <member name="F:Rsdn.Scintilla.Win32Api.WM_PAINT">
+            <summary>
+            Сообщение WM_PAINT
+            </summary>
+        </member>
+        <member name="F:Rsdn.Scintilla.Win32Api.WM_NOTIFY">
+            <summary>
+            Сообщение WM_NOTIFY
+            </summary>
+        </member>
+        <member name="F:Rsdn.Scintilla.Win32Api.WM_USER">
+            <summary>
+            Сообщение WM_USER
+            </summary>
+        </member>
+        <member name="F:Rsdn.Scintilla.Win32Api.OCM_BASE">
+            <summary>
+            База сообщений для WinForms
+            </summary>
+        </member>
+        <member name="F:Rsdn.Scintilla.Win32Api.WM_REFLECT">
+            <summary>
+            Базовое Сообщение - рефлект от родителя обратно потомку
+            </summary>
+        </member>
+        <member name="F:Rsdn.Scintilla.Win32Api.OCM_NOTIFY">
+            <summary>
+            Reflection WM_NOTIFY 
+            </summary>
+        </member>
+        <member name="M:Rsdn.Scintilla.Win32Api.#ctor">
+            <summary>
+            Не может быть создан. Только статические методы.
+            </summary>
+        </member>
+        <member name="M:Rsdn.Scintilla.Win32Api.SendMessage(System.IntPtr,System.UInt32,System.IntPtr,System.IntPtr)">
+            <summary>
+            
+            </summary>
+            <param name="hWnd">дескриптор окна</param>
+            <param name="Msg">сообщение</param>
+            <param name="wParam">word параметр</param>
+            <param name="lParam">long параметр</param>
+            <returns></returns>
+        </member>
+        <member name="M:Rsdn.Scintilla.Win32Api.LoadLibrary(System.String)">
+            <summary>
+            Загрузить DLL.
+            </summary>
+            <param name="fileName">Имя файла</param>
+        </member>
+        <member name="M:Rsdn.Scintilla.Win32Api.FreeLibrary(System.IntPtr)">
+            <summary>
+            Выгрузить DLL.
+            </summary>
+        </member>
+        <member name="M:Rsdn.Scintilla.Win32Api.SendMessage(System.IntPtr,System.UInt32,System.IntPtr,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="hWnd">дескриптор окна</param>
+            <param name="Msg">сообщение</param>
+            <param name="wParam">word параметр</param>
+            <param name="lParam">long параметр</param>
+            <returns></returns>
+        </member>
+        <member name="T:Rsdn.Scintilla.StyleAndWords">
+            <summary>
+            Стиль 
+            </summary>
+        </member>
+        <member name="M:Rsdn.Scintilla.StyleAndWords.#ctor(System.Int32,System.String[])">
+            <summary>
+            Конструктор
+            </summary>
+            <param name="styleNum">Номер стиля</param>
+            <param name="words">список слов</param>
+        </member>
+        <member name="M:Rsdn.Scintilla.StyleAndWords.GetWords">
+            <summary>
+            Коллекция слов 
+            </summary>
+        </member>
+        <member name="M:Rsdn.Scintilla.StyleAndWords.IsInclude(System.String)">
+            <summary>
+            Есть ли слово в списке?
+            </summary>
+            <param name="word">слово</param>
+            <returns>yes/no</returns>
+        </member>
+        <member name="P:Rsdn.Scintilla.StyleAndWords.Style">
+            <summary>
+            Номер стиля
+            </summary>
+        </member>
+        <member name="P:Rsdn.Scintilla.StyleAndWords.IsEmpty">
+            <summary>
+            Пустая коллекция
+            </summary>
+        </member>
+        <member name="P:Rsdn.Scintilla.StyleAndWords.IsSingleChar">
+            <summary>
+            Состоит из одной буквы?
+            </summary>
+        </member>
+        <member name="T:Rsdn.Scintilla.FoldingMarker">
+            <summary>
+            Summary description for FoldingMarker.
+            </summary>
+        </member>
+        <member name="M:Rsdn.Scintilla.FoldingMarker.#ctor(Rsdn.Scintilla.FoldingMarkersType,Rsdn.Scintilla.MarkStyle,System.Drawing.Color,System.Drawing.Color)">
+            <summary>
+            Инициализирует экземпляр
+            </summary>
+            <param name="type">тип маркера</param>
+            <param name="style">стиль маркера</param>
+            <param name="foreColor">цвет маркера</param>
+            <param name="backColor">цвет фона</param>
+        </member>
+        <member name="P:Rsdn.Scintilla.FoldingMarker.Type">
+            <summary>
+            Тип маркера
+            </summary>
+        </member>
+        <member name="P:Rsdn.Scintilla.FoldingMarker.Style">
+            <summary>
+            Стиль маркера
+            </summary>
+        </member>
+        <member name="P:Rsdn.Scintilla.FoldingMarker.ForeColor">
+            <summary>
+            Цвет маркера
+            </summary>
+        </member>
+        <member name="P:Rsdn.Scintilla.FoldingMarker.BackColor">
+            <summary>
+            Цвет подложки маркера
+            </summary>
+        </member>
+        <member name="T:Rsdn.Scintilla.ScintillaCommand">
+            <summary>
+            Команды элемента управления
+            </summary>
+        </member>
+        <member name="T:Rsdn.Scintilla.PredefinedStyle">
+            <summary>
+            Предопределенные стили
+            </summary>
+        </member>
+        <member name="F:Rsdn.Scintilla.PredefinedStyle.None">
+            <summary>
+            Нет
+            </summary>
+        </member>
+        <member name="F:Rsdn.Scintilla.PredefinedStyle.Default">
+            <summary>
+            Стиль по умолчанию
+            </summary>
+        </member>
+        <member name="F:Rsdn.Scintilla.PredefinedStyle.LineNumber">
+            <summary>
+            Стиль номеров строк
+            </summary>
+            <remarks>Цвет фона для этого стиля автоматически применяется к 
+            цвету фона границ</remarks>
+        </member>
+        <member name="F:Rsdn.Scintilla.PredefinedStyle.BraceLight">
+            <summary>
+            Стиль подсветки парных скобок
+            </summary>
+        </member>
+        <member name="F:Rsdn.Scintilla.PredefinedStyle.BraceBad">
+            <summary>
+            Стиль подстветки незакрытых скобок
+            </summary>
+        </member>
+        <member name="F:Rsdn.Scintilla.PredefinedStyle.ControlChar">
+            <summary>
+            Стиль управляющих символов
+            </summary>
+            <remarks>Используются имя шрифта, его размер, жирность и курсив и 
+            чарсет. Остальные атрибуты не используются</remarks>
+        </member>
+        <member name="F:Rsdn.Scintilla.PredefinedStyle.IndentGuide">
+            <summary>
+            Стиль отображений отступов
+            </summary>
+            <remarks>Используется цвет символа и цвет фона</remarks>
+        </member>
+        <member name="T:Rsdn.Scintilla.FoldingPropertyEditor">
+            <summary>
+            Редактор свойства <see cref="P:Rsdn.Scintilla.ScintillaEditor.FoldingParameters"/>
+            </summary>
+        </member>
+        <member name="M:Rsdn.Scintilla.FoldingPropertyEditor.GetEditStyle(System.ComponentModel.ITypeDescriptorContext)">
+            <summary>
+            Получить стиль редактора
+            </summary>
+            <param name="context">контекст</param>
+            <returns>стиль редактора</returns>
+        </member>
+        <member name="M:Rsdn.Scintilla.FoldingPropertyEditor.EditValue(System.ComponentModel.ITypeDescriptorContext,System.IServiceProvider,System.Object)">
+            <summary>
+            Редактировать значение
+            </summary>
+        </member>
+        <member name="T:Rsdn.Scintilla.ScintillaEditorHelper">
+            <summary>
+            Вспомогательные методы.
+            </summary>
+        </member>
+        <member name="M:Rsdn.Scintilla.ScintillaEditorHelper.UndoOperationScope(Rsdn.Scintilla.ScintillaEditor)">
+            <summary>
+            Хелпер для конструкции using().
+            </summary>
+            <example>
+            using (myScintillaEditor.UndoOperationScope)
+            {
+              // all modifications, that included in a single undo step
+            }
+            </example>
+        </member>
+        <member name="T:Rsdn.Scintilla.CaseMode">
+            <summary>
+            Режим преобразования регистра
+            </summary>
+        </member>
+        <member name="F:Rsdn.Scintilla.CaseMode.Mixed">
+            <summary>
+            Смешанный. Исходный регистр не меняется
+            </summary>
+        </member>
+        <member name="F:Rsdn.Scintilla.CaseMode.Upper">
+            <summary>
+            Верхний регистр
+            </summary>
+        </member>
+        <member name="F:Rsdn.Scintilla.CaseMode.Lower">
+            <summary>
+            Нижний регистр
+            </summary>
+        </member>
+        <member name="T:Rsdn.Scintilla.StyleNeededEventArgs">
+            <summary>
+            Аргументы события StyleNeeded.
+            </summary>
+        </member>
+        <member name="P:Rsdn.Scintilla.StyleNeededEventArgs.StartPosition">
+            <summary>
+            Начальная позиция участка текста, для которого требуется стиль
+            </summary>
+        </member>
+        <member name="P:Rsdn.Scintilla.StyleNeededEventArgs.EndPosition">
+            <summary>
+            Конечная позиция участка текста, для которого требуется стиль
+            </summary>
+        </member>
+        <member name="T:Rsdn.Scintilla.StyleNeededEventHandler">
+            <summary>
+            Обработчик события StyleNeeded.
+            </summary>
+        </member>
+        <member name="T:Rsdn.Scintilla.PropertiesReader">
+            <summary>
+            Читатель настроек
+            </summary>
+        </member>
+        <member name="M:Rsdn.Scintilla.PropertiesReader.#ctor(System.IO.Stream)">
+            <summary>
+            Конструктор
+            </summary>
+            <param name="inStream">Поток</param>
+        </member>
+        <member name="M:Rsdn.Scintilla.PropertiesReader.GetList(System.String,System.Boolean)">
+            <summary>
+            Возвращает список значений свойства
+            </summary>
+            <param name="propName">Имя свойства</param>
+            <param name="isCaseInsensitive">учитывать регистр или все приводить к малому регистру</param>
+            <returns>Список</returns>
+        </member>
+        <member name="M:Rsdn.Scintilla.PropertiesReader.GetPropertiesCategory(System.String)">
+            <summary>
+            Возвращает набор свойств определенной категории
+            </summary>
+            <param name="catName">Имя категории</param>
+            <returns>коллекция</returns>
+        </member>
+        <member name="P:Rsdn.Scintilla.PropertiesReader.Item(System.String)">
+            <summary>
+            Индексатор свойств
+            </summary>
+        </member>
+        <member name="T:Rsdn.Scintilla.EditorTextEditor">
+            <summary>
+            Редактор текста элемента управления.
+            </summary>
+        </member>
+        <member name="M:Rsdn.Scintilla.EditorTextEditor.GetEditStyle(System.ComponentModel.ITypeDescriptorContext)">
+            <summary>
+            GetEditStyle()
+            </summary>
+        </member>
+        <member name="M:Rsdn.Scintilla.EditorTextEditor.EditValue(System.ComponentModel.ITypeDescriptorContext,System.IServiceProvider,System.Object)">
+            <summary>
+            EditValue()
+            </summary>
+        </member>
+        <member name="T:Rsdn.Scintilla.TextStyle">
+            <summary>
+            Стиль текста
+            </summary>
+        </member>
+        <member name="M:Rsdn.Scintilla.TextStyle.#ctor">
+            <summary>
+            Инициализирует компонент
+            </summary>
+        </member>
+        <member name="M:Rsdn.Scintilla.TextStyle.#ctor(System.String,System.Int32,System.Drawing.Font,System.Drawing.Color,System.Drawing.Color,System.Boolean,Rsdn.Scintilla.CaseMode,System.Boolean,System.Boolean,Rsdn.Scintilla.PredefinedStyle)">
+            <summary>
+            Инициализирует компонент
+            </summary>
+        </member>
+        <member name="M:Rsdn.Scintilla.TextStyle.ToString">
+            <summary>
+            Преобразовать к строке
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:Rsdn.Scintilla.TextStyle.StyleName">
+            <summary>
+            Имя стиля
+            </summary>
+        </member>
+        <member name="P:Rsdn.Scintilla.TextStyle.Number">
+            <summary>
+            Номер стиля
+            </summary>
+        </member>
+        <member name="P:Rsdn.Scintilla.TextStyle.Font">
+            <summary>
+            Шрифт
+            </summary>
+        </member>
+        <member name="P:Rsdn.Scintilla.TextStyle.ForeColor">
+            <summary>
+            Цвет текста
+            </summary>
+        </member>
+        <member name="P:Rsdn.Scintilla.TextStyle.BackColor">
+            <summary>
+            Цвет фона
+            </summary>
+        </member>
+        <member name="P:Rsdn.Scintilla.TextStyle.EolFilled">
+            <summary>
+            Фон заполнен цветом до конца строки
+            </summary>
+        </member>
+        <member name="P:Rsdn.Scintilla.TextStyle.CaseMode">
+            <summary>
+            Режим преобразования регистра
+            </summary>
+        </member>
+        <member name="P:Rsdn.Scintilla.TextStyle.Visible">
+            <summary>
+            Текст видимый
+            </summary>
+        </member>
+        <member name="P:Rsdn.Scintilla.TextStyle.HotSpot">
+            <summary>
+            Чувствительный к нажатию мыши
+            </summary>
+        </member>
+        <member name="P:Rsdn.Scintilla.TextStyle.PredefinedStyle">
+            <summary>
+            Предопределенный стиль
+            </summary>
+        </member>
+        <member name="T:Rsdn.Scintilla.LanguageTypeConverter">
+            <summary>
+            Конвертер типа для свойства Language
+            </summary>
+        </member>
+        <member name="M:Rsdn.Scintilla.LanguageTypeConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext,System.Type)">
+            <summary>
+            CanConvertFrom
+            </summary>
+        </member>
+        <member name="M:Rsdn.Scintilla.LanguageTypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext,System.Globalization.CultureInfo,System.Object)">
+            <summary>
+            ConvertFrom
+            </summary>
+        </member>
+        <member name="M:Rsdn.Scintilla.LanguageTypeConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext,System.Type)">
+            <summary>
+            CanConvertTo
+            </summary>
+        </member>
+        <member name="M:Rsdn.Scintilla.LanguageTypeConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext,System.Globalization.CultureInfo,System.Object,System.Type)">
+            <summary>
+            ConvertTo
+            </summary>
+        </member>
+        <member name="T:Rsdn.Scintilla.FoldingParametersConverter">
+            <summary>
+            Конвертер типа для свойства FoldingParameters
+            </summary>
+        </member>
+        <member name="M:Rsdn.Scintilla.FoldingParametersConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext,System.Type)">
+            <summary>
+            CanConvertFrom
+            </summary>
+        </member>
+        <member name="M:Rsdn.Scintilla.FoldingParametersConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext,System.Globalization.CultureInfo,System.Object)">
+            <summary>
+            ConvertFrom
+            </summary>
+        </member>
+        <member name="M:Rsdn.Scintilla.FoldingParametersConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext,System.Type)">
+            <summary>
+            CanConvertTo
+            </summary>
+        </member>
+        <member name="M:Rsdn.Scintilla.FoldingParametersConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext,System.Globalization.CultureInfo,System.Object,System.Type)">
+            <summary>
+            ConvertTo
+            </summary>
+        </member>
+        <member name="T:Rsdn.Scintilla.TextModel">
+            <summary>
+            Модель для работы с текстом в контроле
+            </summary>
+        </member>
+        <member name="F:Rsdn.Scintilla.TextModel._TextRetreivalCategoryName">
+            <summary>
+            Имя категории 
+            </summary>
+        </member>
+        <member name="M:Rsdn.Scintilla.TextModel.#ctor(Rsdn.Scintilla.ScintillaEditor)">
+            <summary>
+            Конструктор модели
+            </summary>
+            <param name="editor">Контрол с которым данная модель "повязана"</param>
+        </member>
+        <member name="M:Rsdn.Scintilla.TextModel.InsertText(System.String)">
+            <summary>
+            Вставить текст в позицию курсора
+            </summary>
+            <param name="text">текст</param>
+        </member>
+        <member name="M:Rsdn.Scintilla.TextModel.InsertText(System.Int32,System.String)">
+            <summary>
+            Вставить текст в указанную позицию
+            </summary>
+            <param name="pos">позиция</param>
+            <param name="text">текст</param>
+        </member>
+        <member name="M:Rsdn.Scintilla.TextModel.AppendText(System.String)">
+            <summary>
+            Добавить текст в конец
+            </summary>
+            <param name="text">текст</param>
+        </member>
+        <member name="M:Rsdn.Scintilla.TextModel.GetLine(System.Int32)">
+            <summary>
+            Получить строку по ее номеру
+            </summary>
+            <param name="lineNum">номер строки</param>
+            <returns>строка</returns>
+        </member>
+        <member name="M:Rsdn.Scintilla.TextModel.GetTextRange(System.Int32,System.Int32)">
+            <summary>
+            Получить часть текста в указанном диапазоне
+            </summary>
+            <param name="startPos">начальная позиция</param>
+            <param name="endPos">конечная позиция</param>
+            <returns>текст</returns>
+        </member>
+        <member name="M:Rsdn.Scintilla.TextModel.ClearAll">
+            <summary>
+            Очистить редактор
+            </summary>
+        </member>
+        <member name="M:Rsdn.Scintilla.TextModel.ClearStyle">
+            <summary>
+            Очистить все стили
+            </summary>
+        </member>
+        <member name="M:Rsdn.Scintilla.TextModel.CharAt(System.Int32)">
+            <summary>
+            Получимть символ в указанной позиции
+            </summary>
+            <param name="pos">позиция</param>
+            <returns>символ</returns>
+        </member>
+        <member name="M:Rsdn.Scintilla.TextModel.StyleAt(System.Int32)">
+            <summary>
+            Получить стиль в указанной позиции
+            </summary>
+            <param name="pos">позиция</param>
+            <returns>стиль</returns>
+        </member>
+        <member name="M:Rsdn.Scintilla.TextModel.FindText(System.Int32,System.Int32,System.String,Rsdn.Scintilla.SearchFlags)">
+            <summary>
+            Найти текст
+            </summary>
+            <param name="searchFrom">начальная позиция, с которой будет произведен поиск</param>
+            <param name="searchTo">конечная позиция, до которой будет произведен поиск</param>
+            <param name="searchPattern">образец для поиска</param>
+            <param name="flags">параметры поиска</param>
+            <returns>результат поиска</returns>
+        </member>
+        <member name="M:Rsdn.Scintilla.TextModel.LineFromPosition(System.Int32)">
+            <summary>
+            Получить номер строки из номера позиции
+            </summary>
+            <param name="position">позиция</param>
+            <returns>номер строки</returns>
+        </member>
+        <member name="M:Rsdn.Scintilla.TextModel.PositionFromLine(System.Int32)">
+            <summary>
+            Получить позицию начала строки
+            </summary>
+            <param name="lineNum">номер строки</param>
+            <returns>позиция первого символа строки</returns>
+        </member>
+        <member name="M:Rsdn.Scintilla.TextModel.EndPositionFromLine(System.Int32)">
+            <summary>
+            Получить позицию конца строки
+            </summary>
+            <param name="lineNum">номер строки</param>
+            <returns>позиция последнего символа строки</returns>
+        </member>
+        <member name="M:Rsdn.Scintilla.TextModel.GetLineLength(System.Int32)">
+            <summary>
+            Вернуть длину строки
+            </summary>
+            <param name="lineNum">номер строки</param>
+            <returns>длина строки в символах</returns>
+        </member>
+        <member name="M:Rsdn.Scintilla.TextModel.GetLineIndentation(System.Int32)">
+            <summary>
+            Получить размер отступа строки
+            </summary>
+            <param name="lineNum">номер строки</param>
+            <returns>размер отступа</returns>
+        </member>
+        <member name="M:Rsdn.Scintilla.TextModel.GetLineIndentPosition(System.Int32)">
+            <summary>
+            Получить позицию отступа строки
+            </summary>
+            <param name="lineNum">номер строки</param>
+            <returns>позицию отступа</returns>
+        </member>
+        <member name="M:Rsdn.Scintilla.TextModel.SetLineIndentation(System.Int32,System.Int32)">
+            <summary>
+            Установить размер отступа строки
+            </summary>
+            <param name="lineNum">номер строки</param>
+            <param name="indent">отступ</param>
+        </member>
+        <member name="P:Rsdn.Scintilla.TextModel.Editor">
+            <summary>
+            Для поддержки связанности
+            </summary>
+        </member>
+        <member name="P:Rsdn.Scintilla.TextModel.Text">
+            <summary>
+            Текст, содержащийся в редакторе
+            </summary>
+        </member>
+        <member name="P:Rsdn.Scintilla.TextModel.CodePage">
+            <summary>
+            Кодовая страница.
+            </summary>
+        </member>
+        <member name="P:Rsdn.Scintilla.TextModel.TextLength">
+            <summary>
+            Общая длина текста.
+            </summary>
+        </member>
+        <member name="T:Rsdn.Scintilla.TextModel.TextSelection">
+            <summary>
+            Простой класс текущего выделенного фрагмента
+            </summary>
+        </member>
+        <member name="P:Rsdn.Scintilla.TextModel.TextSelection.Start">
+            <summary>
+            Индекс первого выделенного символа модели 
+            </summary>
+        </member>
+        <member name="P:Rsdn.Scintilla.TextModel.TextSelection.End">
+            <summary>
+            Индекс последнего выделенного символа модели.
+            </summary>
+        </member>
+        <member name="P:Rsdn.Scintilla.TextModel.TextSelection.Text">
+            <summary>
+            Выделенный Текст
+            </summary>
+        </member>
+        <member name="T:Rsdn.Scintilla.FoldLevelsMask">
+            <summary>
+            Маски для перечисления FoldLevels.
+            </summary>
+        </member>
+        <member name="F:Rsdn.Scintilla.FoldLevelsMask.NumberMask">
+            <summary>
+            On Number
+            </summary>
+        </member>
+        <member name="T:JetBrains.Annotations.StringFormatMethodAttribute">
+            <summary>
+            Indicates that marked method builds string by format pattern and (optional) arguments. 
+            Parameter, which contains format string, should be given in constructor.
+            The format string should be in <see cref="M:System.String.Format(System.IFormatProvider,System.String,System.Object[])"/> -like form
+            </summary>
+        </member>
+        <member name="M:JetBrains.Annotations.StringFormatMethodAttribute.#ctor(System.String)">
+            <summary>
+            Initializes new instance of StringFormatMethodAttribute
+            </summary>
+            <param name="formatParameterName">Specifies which parameter of an annotated method should be treated as format-string</param>
+        </member>
+        <member name="P:JetBrains.Annotations.StringFormatMethodAttribute.FormatParameterName">
+            <summary>
+            Gets format parameter name
+            </summary>
+        </member>
+        <member name="T:JetBrains.Annotations.InvokerParameterNameAttribute">
+            <summary>
+            Indicates that the function argument should be string literal and match one  of the parameters of the caller function.
+            For example, <see cref="T:System.ArgumentNullException"/> has such parameter.
+            </summary>
+        </member>
+        <member name="T:JetBrains.Annotations.AssertionMethodAttribute">
+            <summary>
+            Indicates that the marked method is assertion method, i.e. it halts control flow if one of the conditions is satisfied. 
+            To set the condition, mark one of the parameters with <see cref="T:JetBrains.Annotations.AssertionConditionAttribute"/> attribute
+            </summary>
+            <seealso cref="T:JetBrains.Annotations.AssertionConditionAttribute"/>
+        </member>
+        <member name="T:JetBrains.Annotations.AssertionConditionAttribute">
+            <summary>
+            Indicates the condition parameter of the assertion method. 
+            The method itself should be marked by <see cref="T:JetBrains.Annotations.AssertionMethodAttribute"/> attribute.
+            The mandatory argument of the attribute is the assertion type.
+            </summary>
+            <seealso cref="T:JetBrains.Annotations.AssertionConditionType"/>
+        </member>
+        <member name="M:JetBrains.Annotations.AssertionConditionAttribute.#ctor(JetBrains.Annotations.AssertionConditionType)">
+            <summary>
+            Initializes new instance of AssertionConditionAttribute
+            </summary>
+            <param name="conditionType">Specifies condition type</param>
+        </member>
+        <member name="P:JetBrains.Annotations.AssertionConditionAttribute.ConditionType">
+            <summary>
+            Gets condition type
+            </summary>
+        </member>
+        <member name="T:JetBrains.Annotations.AssertionConditionType">
+            <summary>
+            Specifies assertion type. If the assertion method argument satisifes the condition, then the execution continues. 
+            Otherwise, execution is assumed to be halted
+            </summary>
+        </member>
+        <member name="F:JetBrains.Annotations.AssertionConditionType.IS_TRUE">
+            <summary>
+            Indicates that the marked parameter should be evaluated to true
+            </summary>
+        </member>
+        <member name="F:JetBrains.Annotations.AssertionConditionType.IS_FALSE">
+            <summary>
+            Indicates that the marked parameter should be evaluated to false
+            </summary>
+        </member>
+        <member name="F:JetBrains.Annotations.AssertionConditionType.IS_NULL">
+            <summary>
+            Indicates that the marked parameter should be evaluated to null value
+            </summary>
+        </member>
+        <member name="F:JetBrains.Annotations.AssertionConditionType.IS_NOT_NULL">
+            <summary>
+            Indicates that the marked parameter should be evaluated to not null value
+            </summary>
+        </member>
+        <member name="T:JetBrains.Annotations.TerminatesProgramAttribute">
+            <summary>
+            Indicates that the marked method unconditionally terminates control flow execution.
+            For example, it could unconditionally throw exception
+            </summary>
+        </member>
+        <member name="T:JetBrains.Annotations.CanBeNullAttribute">
+            <summary>
+            Indicates that the value of marked element could be <c>null</c> sometimes, so the check for <c>null</c> is necessary before its usage
+            </summary>
+        </member>
+        <member name="T:JetBrains.Annotations.NotNullAttribute">
+            <summary>
+            Indicates that the value of marked element could never be <c>null</c>
+            </summary>
+        </member>
+        <member name="T:JetBrains.Annotations.CannotApplyEqualityOperatorAttribute">
+            <summary>
+            Indicates that the value of marked type (or its derivatives) cannot be compared using '==' or '!=' operators.
+            There is only exception to compare with <c>null</c>, it is permitted
+            </summary>
+        </member>
+        <member name="T:JetBrains.Annotations.BaseTypeRequiredAttribute">
+            <summary>
+            When applied to target attribute, specifies a requirement for any type which is marked with 
+            target attribute to implement or inherit specific type or types
+            </summary>
+            <example>
+            <code>
+            [BaseTypeRequired(typeof(IComponent)] // Specify requirement
+            public class ComponentAttribute : Attribute 
+            {}
+            
+            [Component] // ComponentAttribute requires implementing IComponent interface
+            public class MyComponent : IComponent
+            {}
+            </code>
+            </example>
+        </member>
+        <member name="M:JetBrains.Annotations.BaseTypeRequiredAttribute.#ctor(System.Type[])">
+            <summary>
+            Initializes new instance of BaseTypeRequiredAttribute
+            </summary>
+            <param name="baseTypes">Specifies which types are required</param>
+        </member>
+        <member name="P:JetBrains.Annotations.BaseTypeRequiredAttribute.BaseTypes">
+            <summary>
+            Gets enumerations of specified base types
+            </summary>
+        </member>
+        <member name="T:JetBrains.Annotations.UsedImplicitlyAttribute">
+            <summary>
+            Indicates that the marked symbol is used implicitly (e.g. via reflection, in external library),
+            so this symbol will not be marked as unused (as well as by other usage inspections)
+            </summary>
+        </member>
+        <member name="M:JetBrains.Annotations.UsedImplicitlyAttribute.#ctor">
+            <summary>
+            Initializes new instance of UsedImplicitlyAttribute
+            </summary>
+        </member>
+        <member name="M:JetBrains.Annotations.UsedImplicitlyAttribute.#ctor(JetBrains.Annotations.ImplicitUseFlags)">
+            <summary>
+            Initializes new instance of UsedImplicitlyAttribute with specified flags
+            </summary>
+            <param name="flags">Value of type <see cref="T:JetBrains.Annotations.ImplicitUseFlags"/> indicating usage kind</param>
+        </member>
+        <member name="P:JetBrains.Annotations.UsedImplicitlyAttribute.Flags">
+            <summary>
+            Gets value indicating what is meant to be used
+            </summary>
+        </member>
+        <member name="T:JetBrains.Annotations.MeansImplicitUseAttribute">
+            <summary>
+            Should be used on attributes and causes ReSharper to not mark symbols marked with such attributes as unused (as well as by other usage inspections)
+            </summary>
+        </member>
+        <member name="M:JetBrains.Annotations.MeansImplicitUseAttribute.#ctor">
+            <summary>
+            Initializes new instance of MeansImplicitUseAttribute
+            </summary>
+        </member>
+        <member name="M:JetBrains.Annotations.MeansImplicitUseAttribute.#ctor(JetBrains.Annotations.ImplicitUseFlags)">
+            <summary>
+            Initializes new instance of MeansImplicitUseAttribute with specified flags
+            </summary>
+            <param name="flags">Value of type <see cref="T:JetBrains.Annotations.ImplicitUseFlags"/> indicating usage kind</param>
+        </member>
+        <member name="P:JetBrains.Annotations.MeansImplicitUseAttribute.Flags">
+            <summary>
+            Gets value indicating what is meant to be used
+            </summary>
+        </member>
+        <member name="T:JetBrains.Annotations.ImplicitUseFlags">
+            <summary>
+            Specify what is considered used implicitly when marked with <see cref="T:JetBrains.Annotations.MeansImplicitUseAttribute"/> or <see cref="T:JetBrains.Annotations.UsedImplicitlyAttribute"/>
+            </summary>
+        </member>
+        <member name="F:JetBrains.Annotations.ImplicitUseFlags.Default">
+            <summary>
+            Only entity marked with attribute considered used
+            </summary>
+        </member>
+        <member name="F:JetBrains.Annotations.ImplicitUseFlags.IncludeMembers">
+            <summary>
+            Entity marked with attribute and all its members considered used
+            </summary>
+        </member>
+        <member name="T:Rsdn.Scintilla.TextStyleTypeConverter">
+            <summary>
+            TypeConverter для TextStyle.
+            </summary>
+        </member>
+        <member name="M:Rsdn.Scintilla.TextStyleTypeConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext,System.Type)">
+            <summary>
+            CanConvertTo
+            </summary>
+        </member>
+        <member name="M:Rsdn.Scintilla.TextStyleTypeConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext,System.Globalization.CultureInfo,System.Object,System.Type)">
+            <summary>
+            ConvertTo
+            </summary>
+        </member>
+        <member name="T:Rsdn.Scintilla.NotifyHeader">
+            <summary>
+            Не испольтзуется. Я так понял что для совместимости с стандартными аргументами
+            WM_NOTIFY
+            </summary>
+        </member>
+        <member name="T:Rsdn.Scintilla.ScNotification">
+            <summary>
+            Структура данных нотификации ScNotification
+            </summary>
+        </member>
+        <member name="T:Rsdn.Scintilla.FoldingMarkersType">
+            <summary>
+            Типы маркеров фолдинга
+            </summary>
+        </member>
+        <member name="F:Rsdn.Scintilla.FoldingMarkersType.FoldEnd">
+            <summary>
+            конец открытой папки
+            </summary>
+        </member>
+        <member name="F:Rsdn.Scintilla.FoldingMarkersType.FoldMidOpened">
+            <summary>
+            открытая вложенная папка 
+            </summary>
+        </member>
+        <member name="F:Rsdn.Scintilla.FoldingMarkersType.FoldMidTail">
+            <summary>
+            конец открытой вложенной папки
+            </summary>
+        </member>
+        <member name="F:Rsdn.Scintilla.FoldingMarkersType.FoldTail">
+            <summary>
+            конец открытой папки
+            </summary>
+        </member>
+        <member name="F:Rsdn.Scintilla.FoldingMarkersType.SubFold">
+            <summary>
+            вложенная папка
+            </summary>
+        </member>
+        <member name="F:Rsdn.Scintilla.FoldingMarkersType.Fold">
+            <summary>
+            папка
+            </summary>
+        </member>
+        <member name="F:Rsdn.Scintilla.FoldingMarkersType.FoldOpen">
+            <summary>
+            открытая папка
+            </summary>
+        </member>
+    </members>
+</doc>

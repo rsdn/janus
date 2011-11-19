@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<commands xmlns="http://rsdn.ru/projects/Janus/JanusCommandDescriptor.xsd">
+
+	<command name="Janus.Navigation.SelectNextFeature"
+			 displayNameTextResource="Navigation.Commands.SelectNextFeature.DisplayName"
+			 descriptionTextResource="Navigation.Commands.SelectNextFeature.Description"/>
+
+	<command name="Janus.Navigation.SelectPreviousFeature"
+			 displayNameTextResource="Navigation.Commands.SelectPreviousFeature.DisplayName"
+			 descriptionTextResource="Navigation.Commands.SelectPreviousFeature.Description"/>
+
+	<command name="Janus.Navigation.SelectFeatureByKey"
+			 displayNameTextResource="Navigation.Commands.SelectFeatureByKey.DisplayName"
+			 descriptionTextResource="Navigation.Commands.SelectFeatureByKey.Description">
+	<parameter name="key"/>
+	</command>
+
+	<command name="Janus.Navigation.ToggleNavigationWindowVisibility"/>
+
+</commands>

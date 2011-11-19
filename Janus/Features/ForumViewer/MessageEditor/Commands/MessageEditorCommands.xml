@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<commands xmlns="http://rsdn.ru/projects/Janus/JanusCommandDescriptor.xsd">
+
+	<command name="Janus.Forum.MessageEditor.Send"
+			 displayNameTextResource="MessageEditor.Commands.Send.DisplayName"
+			 descriptionTextResource="MessageEditor.Commands.Send.Description"/>
+
+	<command name="Janus.Forum.MessageEditor.Preview"
+			 displayNameTextResource="MessageEditor.Commands.Preview.DisplayName"
+			 descriptionTextResource="MessageEditor.Commands.Preview.Description"/>
+
+	<command name="Janus.Forum.MessageEditor.Save"
+			 displayNameTextResource="MessageEditor.Commands.Save.DisplayName"
+			 descriptionTextResource="MessageEditor.Commands.Save.Description"/>
+
+	<command name="Janus.Forum.MessageEditor.SaveAndClose"
+			 displayNameTextResource="MessageEditor.Commands.SaveAndClose.DisplayName"
+			 descriptionTextResource="MessageEditor.Commands.SaveAndClose.Description"/>
+
+	<command name="Janus.Forum.MessageEditor.Undo"
+			 displayNameTextResource="MessageEditor.Commands.Undo.DisplayName"
+			 descriptionTextResource="MessageEditor.Commands.Undo.Description"/>
+
+	<command name="Janus.Forum.MessageEditor.Redo"
+			 displayNameTextResource="MessageEditor.Commands.Redo.DisplayName"
+			 descriptionTextResource="MessageEditor.Commands.Redo.Description"/>
+
+	<command name="Janus.Forum.MessageEditor.FindAndReplace"
+			 type="RequiresInteraction"
+			 displayNameTextResource="MessageEditor.Commands.FindAndReplace.DisplayName"
+			 descriptionTextResource="MessageEditor.Commands.FindAndReplace.Description"/>
+
+	<command name="Janus.Forum.MessageEditor.InsertSmile"
+			 displayNameTextResource="MessageEditor.Commands.InsertTag.DisplayName"
+			 descriptionTextResource="MessageEditor.Commands.InsertTag.Description">
+		<parameter name="text"/>
+	</command>
+
+	<command name="Janus.Forum.MessageEditor.InsertSingleTag"
+			 displayNameTextResource="MessageEditor.Commands.InsertTag.DisplayName"
+			 descriptionTextResource="MessageEditor.Commands.InsertTag.Description">
+		<parameter name="text"/>
+	</command>
+
+	<command name="Janus.Forum.MessageEditor.InsertPairTag"
+			 displayNameTextResource="MessageEditor.Commands.InsertTag.DisplayName"
+			 descriptionTextResource="MessageEditor.Commands.InsertTag.Description">
+		<parameter name="start"/>
+		<parameter name="end"/>
+		<parameter name="newLine"/>
+	</command>
+
+	<command name="Janus.Forum.MessageEditor.Close"
+			 displayNameTextResource="MessageEditor.Commands.Close.DisplayName"
+			 descriptionTextResource="MessageEditor.Commands.Close.Description"/>
+
+</commands>

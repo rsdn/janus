@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<root name="JBrowser.Toolbar"
+	  xmlns="http://rsdn.ru/projects/Janus/JanusMenuDescriptor.xsd">
+
+	<group name="Browsing">
+		<menuCommand command="Janus.JBrowser.NavigateBackward" image="prev"/>
+		<menuCommand command="Janus.JBrowser.NavigateForward" image="next"/>
+		<menuCommand command="Janus.JBrowser.Refresh" image="refresh"/>
+		<menuCommand command="Janus.JBrowser.Stop" image="stop"/>
+	</group>
+
+	<group name="OpenPageIn">
+		<menuCommand command="Janus.JBrowser.OpenInExternalBrowser" image="ExtBrowser"/>
+		<menuCommand command="Janus.Forum.GoToMessage" image="openurl"/>
+	</group>
+
+	<group name="Close">
+		<menuCommand command="Janus.JBrowser.Close" image="exit"/>
+	</group>
+
+</root>

@@ -1,0 +1,86 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<root xmlns="http://rsdn.ru/projects/Janus/JanusMenuDescriptor.xsd"
+	  name="ForumMessage.ContextMenu">
+
+	<group name="Reply" orderIndex="10">
+		<menuCommand command="Janus.Forum.ReplyMessage" image="reply"/>
+	</group>
+
+	<group name="GoToMessage" orderIndex="20">
+		<menuCommand command="Janus.Forum.GoToMessage" image="show"/>
+	</group>
+
+	<group name="Open" orderIndex="30">
+		<menuCommand command="Janus.Forum.OpenMessageInJBrowser" image="JBrowser"/>
+		<menuCommand command="Janus.Forum.OpenMessageOnRsdn" image="ExtBrowser"/>
+		<menuCommand command="Janus.Forum.OpenModeratingOnRsdn" image="openurl"/>
+		<menuCommand command="Janus.Forum.OpenMessageRatingOnRsdn" image="ExtBrowser"/>
+	</group>
+
+	<group name="Copy" orderIndex="40">
+		<menuCommand command="Janus.Forum.CopyMessageAddress" image="clipboard"/>
+		<menuCommand command="Janus.Forum.CopyMessageAuthorAddress" image="clipboard"/>
+	</group>
+
+	<group name="RegetTopic" orderIndex="50">
+		<menuCommand command="Janus.Forum.RegetTopic" image="regettopic"/>
+	</group>
+
+	<group name="ReadMark" orderIndex="60">
+
+		<menu name="ReadMark" textResource="Forum.Menu.Message.ReadMark.Text">
+
+		<group name="Read" orderIndex="10">
+
+			<menuCommand command="Janus.Forum.SetMessagesReadMark"
+						 textResource="Forum.Menu.Message.ReadMark.MarkMessageAsRead"
+						 image="markread">
+				<parameter name="isRead">true</parameter>
+				<parameter name="markChilds">false</parameter>
+			</menuCommand>
+
+			<menuCommand command="Janus.Forum.SetTopicReadMark"
+						 textResource="Forum.Menu.Message.ReadMark.MarkTopicAsRead"
+						 image="markconvread">
+				<parameter name="isRead">true</parameter>
+			</menuCommand>
+
+			<menuCheckCommand textResource="Forum.Menu.Message.ReadMark.MarkRepliesAsRead"
+							  checkStateName="Janus.Forum.MessagesRepliesAutoReadMark"
+							  image="markconvread">
+					<checkCommand name="Janus.Forum.SetMessagesRepliesAutoReadMark">
+						<parameter name="isEnabled">true</parameter>
+					</checkCommand>
+					<uncheckCommand name="Janus.Forum.SetMessagesRepliesAutoReadMark">
+				<parameter name="isEnabled">false</parameter>
+			</uncheckCommand>
+		</menuCheckCommand>
+
+		</group>
+
+		<group name="Unread" orderIndex="20">
+
+			<menuCommand command="Janus.Forum.SetMessagesReadMark"
+						 textResource="Forum.Menu.Message.ReadMark.MarkMessageAsUnread"
+						 image="markunread">
+				<parameter name="isRead">false</parameter>
+				<parameter name="markChilds">false</parameter>
+			</menuCommand>
+
+			<menuCommand command="Janus.Forum.SetTopicReadMark"
+						 textResource="Forum.Menu.Message.ReadMark.MarkTopicAsUnread"
+						 image="markconvunread">
+				<parameter name="isRead">false</parameter>
+			</menuCommand>
+
+		</group>
+
+		</menu>
+
+	</group>
+
+	<group name="Export" orderIndex="70">
+		<menuCommand command="Janus.Forum.MessageExport" image="export"/>
+	</group>
+
+</root>

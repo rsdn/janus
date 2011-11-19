@@ -1,0 +1,15 @@
+<Configuration>
+  <NamespaceFolders>
+    <SkipFolder>8B6FB1B4-141C-46DA-82B8-6A2220D7D868/d:CoreServices/d:Browser</SkipFolder>
+    <SkipFolder>8B6FB1B4-141C-46DA-82B8-6A2220D7D868/d:CoreServices/d:Commands/d:Extensibility</SkipFolder>
+    <SkipFolder>8B6FB1B4-141C-46DA-82B8-6A2220D7D868/d:CoreServices/d:Commands</SkipFolder>
+    <SkipFolder>8B6FB1B4-141C-46DA-82B8-6A2220D7D868/d:CoreServices/d:Progress</SkipFolder>
+    <SkipFolder>8B6FB1B4-141C-46DA-82B8-6A2220D7D868/d:CoreServices</SkipFolder>
+    <SkipFolder>8B6FB1B4-141C-46DA-82B8-6A2220D7D868/d:rsdn.ru/d:Database/d:Forums/d:MsgMark</SkipFolder>
+    <SkipFolder>8B6FB1B4-141C-46DA-82B8-6A2220D7D868/d:rsdn.ru/d:Database/d:Forums</SkipFolder>
+    <SkipFolder>8B6FB1B4-141C-46DA-82B8-6A2220D7D868/d:rsdn.ru/d:Database</SkipFolder>
+    <SkipFolder>8B6FB1B4-141C-46DA-82B8-6A2220D7D868/d:rsdn.ru</SkipFolder>
+    <SkipFolder>8B6FB1B4-141C-46DA-82B8-6A2220D7D868/d:Synchronization</SkipFolder>
+  </NamespaceFolders>
+  <SolutionWideInspectionsLevel>InternalsOnly</SolutionWideInspectionsLevel>
+</Configuration>

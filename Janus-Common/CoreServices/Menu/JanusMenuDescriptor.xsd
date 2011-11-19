@@ -1,0 +1,124 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="JanusMenuDescriptor"
+    targetNamespace="http://rsdn.ru/projects/Janus/JanusMenuDescriptor.xsd"
+    elementFormDefault="qualified"
+    xmlns="http://rsdn.ru/projects/Janus/JanusMenuDescriptor.xsd"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    xmlns:jt="http://rsdn.ru/projects/Janus/CommonTypes.xsd"
+>
+  <xs:import namespace="http://rsdn.ru/projects/Janus/CommonTypes.xsd"/>
+
+  <xs:complexType name="CommandParameter">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute name="name" type="jt:Name" use="required"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:simpleType name="MenuItemDisplayStyle">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Default"/>
+      <xs:enumeration value="Text"/>
+      <xs:enumeration value="Image"/>
+      <xs:enumeration value="TextAndImage"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:complexType name="MenuItem" abstract="true">
+    <xs:attribute name="orderIndex" type="xs:int" use="optional" default="0"/>
+  </xs:complexType>
+
+  <xs:complexType name="MenuItemWithTextAndImage" abstract="true">
+    <xs:complexContent>
+      <xs:extension base="MenuItem">
+        <xs:attribute name="textResource" type="jt:RequiredString" use="optional"/>
+        <xs:attribute name="image" type="jt:RequiredString" use="optional"/>
+        <xs:attribute name="description" type="jt:RequiredString" use="optional"/>
+        <xs:attribute name="displayStyle" type="MenuItemDisplayStyle" use="optional" default="Default"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="Menu">
+    <xs:complexContent>
+      <xs:extension base="MenuItemWithTextAndImage">
+        <xs:sequence>
+          <xs:element name="group" type="MenuGroup" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+        <xs:attribute name="name" type="jt:Name" use="required"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="MenuCommand">
+    <xs:complexContent>
+      <xs:extension base="MenuItemWithTextAndImage">
+        <xs:sequence>
+          <xs:element name="parameter" type="CommandParameter" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+        <xs:attribute name="command" type="jt:FullQualyfiedName" use="required"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="MenuCheckCommand">
+    <xs:complexContent>
+      <xs:extension base="MenuItemWithTextAndImage">
+        <xs:all>
+          <xs:element name="checkCommand" minOccurs="1" maxOccurs="1">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="parameter" type="CommandParameter" minOccurs="0" maxOccurs="unbounded"/>
+              </xs:sequence>
+              <xs:attribute name="name" type="jt:FullQualyfiedName" use="required"/>
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="uncheckCommand" minOccurs="1" maxOccurs="1">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="parameter" type="CommandParameter" minOccurs="0" maxOccurs="unbounded"/>
+              </xs:sequence>
+              <xs:attribute name="name" type="jt:FullQualyfiedName" use="required"/>
+            </xs:complexType>
+          </xs:element>
+        </xs:all>
+        <xs:attribute name="checkStateName" type="jt:FullQualyfiedName" use="required"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="SplitButton">
+    <xs:complexContent>
+      <xs:extension base="MenuCommand">
+        <xs:sequence>
+          <xs:element name="group" type="MenuGroup" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+        <xs:attribute name="name" type="jt:Name" use="required"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="MenuGroup">
+    <xs:sequence>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="menu" type="Menu" minOccurs="0" maxOccurs="unbounded"/>
+        <xs:element name="menuCommand" type="MenuCommand" minOccurs="0" maxOccurs="unbounded"/>
+        <xs:element name="menuCheckCommand" type="MenuCheckCommand" minOccurs="0" maxOccurs="unbounded"/>
+        <xs:element name="splitButton" type="SplitButton" minOccurs="0" maxOccurs="unbounded"/>
+      </xs:choice>
+    </xs:sequence>
+    <xs:attribute name="name" type="jt:Name" use="required"/>
+    <xs:attribute name="orderIndex" type="xs:int" use="optional" default="0"/>
+  </xs:complexType>
+
+  <xs:complexType name="MenuRoot">
+    <xs:sequence>
+      <xs:element name="group" type="MenuGroup" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+    <xs:attribute name="name" type="jt:FullQualyfiedName" use="required"/>
+  </xs:complexType>
+
+  <xs:element name="root" type="MenuRoot"/>
+
+</xs:schema>

@@ -1,0 +1,80 @@
+ <Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003" DefaultTargets="ClientBuild">
+	<PropertyGroup>
+
+		<BuildFolder>$(MSBuildProjectDirectory)\Build</BuildFolder>
+
+		<DebugBuildPath>$(BuildFolder)\Debug</DebugBuildPath>
+
+		<DebugDefaultBuildPath>$(MSBuildProjectDirectory)\Janus\bin\Debug</DebugDefaultBuildPath>
+
+		<ReleaseBuildPath>$(BuildFolder)\Release</ReleaseBuildPath>
+
+		<ReleaseDefaultBuildPath>$(MSBuildProjectDirectory)\Janus\bin\Release</ReleaseDefaultBuildPath>
+
+		<ReleaseX86DefaultBuildPath>$(MSBuildProjectDirectory)\Janus\bin\x86\Release</ReleaseX86DefaultBuildPath>
+
+		<SetupBuildPath>$(BuildFolder)\Setup</SetupBuildPath>
+
+		<SetupScriptPath>$(MSBuildProjectDirectory)\JanusSetup2\janussetup.nsi</SetupScriptPath>
+
+		<DestinationSoundPath>$(ReleaseBuildPath)\sound</DestinationSoundPath>
+
+		<NSISPath>"C:\Program Files\NSIS\makensis.exe"</NSISPath>
+
+		<SolutionPath>$(MSBuildProjectDirectory)\Janus.sln</SolutionPath>
+
+	</PropertyGroup>
+
+	<Target Name="Prepare">
+		<MakeDir Directories="$(ReleaseBuildPath)" />
+		<MakeDir Directories="$(DestinationSoundPath)" />
+	</Target>
+
+	<Target Name="_CompliteRelease">
+		<Exec Command="del /Q $(ReleaseBuildPath)\*.xml" />
+		<Exec Command="del /Q $(ReleaseBuildPath)\*.vshost.*" />
+	</Target>
+
+	<!-- Clean solution in Debug Mode -->
+	<Target Name="CleanDebug">
+		<MSBuild Projects="$(SolutionPath);" Targets="Clean" Properties="Configuration=Debug"/>
+		<RemoveDir Directories="$(DebugBuildPath)" />
+	</Target>
+
+	<!-- Clean solution in Release Mode -->
+	<Target Name="CleanRelease">
+		<MSBuild Projects="$(SolutionPath);" Targets="Clean" Properties="Configuration=Release"/>
+		<RemoveDir Directories="$(ReleaseBuildPath)" />
+	</Target>
+
+	<!-- Compile solution in Debug mode && output -->
+	<Target Name="BuildDebug" DependsOnTargets="CleanDebug">
+		<RemoveDir Directories="$(DebugBuildPath)" ContinueOnError="false"/>
+		<MakeDir Directories="$(DebugBuildPath);" />
+		<MSBuild Projects="$(SolutionPath);" Targets="Rebuild" Properties="Configuration=Debug"/>
+		<Exec Command="xcopy /E $(DebugDefaultBuildPath) $(DebugBuildPath)" />
+	</Target>
+
+	<!-- Compile solution in Release mode && output -->
+	<Target Name="BuildRelease" DependsOnTargets="CleanRelease;Prepare">
+		<MSBuild Projects="$(SolutionPath);" Targets="Rebuild" Properties="Configuration=Release"/>
+        <Exec Command="xcopy /E $(ReleaseDefaultBuildPath) $(ReleaseBuildPath)" />
+		<CallTarget Targets="_CompliteRelease" />
+	</Target>
+
+	<!-- Compile solution in Release x86 mode && output -->
+	<Target Name="BuildRelease32" DependsOnTargets="CleanRelease;Prepare">
+		<MSBuild Projects="$(SolutionPath);" Targets="Rebuild" Properties="Configuration=Release;Platform=x86"/>
+		<Exec Command="xcopy /E $(ReleaseX86DefaultBuildPath) $(ReleaseBuildPath)" />
+	<CallTarget Targets="_CompliteRelease" />
+	</Target>
+
+	<!-- Compile solution in Release mode && make setup with NSIS && output -->
+	<Target Name="BuildSetup" DependsOnTargets="BuildRelease32">
+		<!-- prepare folders -->
+		<RemoveDir Directories="$(SetupBuildPath)" ContinueOnError="false"/>
+		<MakeDir Directories="$(SetupBuildPath)" />
+		<Exec Command="$(NSISPath) $(SetupScriptPath)" />
+		<Exec Command="move /Y $(MSBuildProjectDirectory)\JanusSetup2\RAHSetup.exe $(SetupBuildPath)" />
+	</Target>
+</Project>

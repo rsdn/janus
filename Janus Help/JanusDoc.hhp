@@ -1,0 +1,18 @@
+[OPTIONS]
+Compatibility=1.1 or later
+Compiled file=JanusDoc.chm
+Contents file=Table of Contents.hhc
+Default Window=Main
+Default topic=Source\license.htm
+Display compile progress=No
+Full-text search=Yes
+Index file=Index.hhk
+Language=0x419 Русский
+Title=Справка RSDN@Home
+
+[WINDOWS]
+Main=,"Table of Contents.hhc",,"Source\license.htm","Source\faq.htm","Source\faq.htm","ЧАВО",,,0x63520,,0x4304e,[0,25,500,400],,,,,,,0
+
+
+[INFOTYPES]
+

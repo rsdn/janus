@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<root xmlns="http://rsdn.ru/projects/Janus/JanusMenuDescriptor.xsd"
+	  name="MainForm.Toolbar">
+
+	<group name="Synchronization" orderIndex="10">
+		<menuCommand command="Janus.Synchronization.Synchronize" image="sync" orderIndex="10"/>
+	</group>
+
+</root>

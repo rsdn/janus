@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<xs:schema id="CommonTypes"
+    targetNamespace="http://rsdn.ru/projects/Janus/CommonTypes.xsd"
+    elementFormDefault="qualified"
+    xmlns="http://rsdn.ru/projects/Janus/CommonTypes.xsd"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"
+>
+  <xs:simpleType name="Name">
+    <xs:restriction base="xs:string">
+      <xs:minLength value="1"/>
+      <xs:pattern value="[\p{L}_]{1}[\p{L}_\p{Nd}]*"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="FullQualyfiedName">
+    <xs:restriction base="xs:string">
+      <xs:minLength value="1"/>
+      <xs:pattern value="([\p{L}_]{1}[\p{L}_\p{Nd}]*){1}(\.[\p{L}_]{1}[\p{L}_\p{Nd}]*)*"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="RequiredString">
+    <xs:restriction base="xs:string">
+      <xs:minLength value="1"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+</xs:schema>

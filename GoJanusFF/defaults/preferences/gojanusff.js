@@ -1,0 +1,1 @@
+pref("gojanusff.showOnlyOnRsdnLinks", true);

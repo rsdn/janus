@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<commands xmlns="http://rsdn.ru/projects/Janus/JanusCommandDescriptor.xsd">
+
+	<command name="Janus.Console.Show"
+			 displayNameTextResource="Show.DisplayName"
+			 descriptionTextResource="Show.Description"/>
+
+	<command name="Janus.Console.Close"
+			 displayNameTextResource="Close.DisplayName"
+			 descriptionTextResource="Close.Description"/>
+
+	<command name="Janus.Console.Clear"
+			 displayNameTextResource="Clear.DisplayName"
+			 descriptionTextResource="Clear.Description"/>
+
+	<command name="Janus.Console.CommandInfo"
+			 displayNameTextResource="CommandInfo.DisplayName"
+			 descriptionTextResource="CommandInfo.Description">
+	<parameter name="command"/>
+	</command>
+
+	<command name="Janus.Console.Prompt"
+			 displayNameTextResource="Prompt.DisplayName"
+			 descriptionTextResource="Prompt.Description">
+	<parameter name="prompt" isOptional="true"/>
+	</command>
+
+</commands>

@@ -1,0 +1,321 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{8B6FB1B4-141C-46DA-82B8-6A2220D7D868}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Rsdn.Janus</RootNamespace>
+    <AssemblyName>Janus-Model</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>
+    </DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>none</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <None Include="ApplicationInfo.template.cs" />
+    <Compile Include="ApplicationInfo.cs" />
+    <Compile Include="Config\ConfigDescriptionAttribute.cs" />
+    <Compile Include="Config\ConfigDisplayNameAttribute.cs" />
+    <Compile Include="Config\ConfigResources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ConfigResources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="CoreServices\Search\ISearchService.cs" />
+    <Compile Include="CoreServices\Search\MessageSearchInfo.cs" />
+    <Compile Include="CoreServices\WebConnection\IProxyConfig.cs" />
+    <Compile Include="CoreServices\WebConnection\IProxySettings.cs" />
+    <Compile Include="CoreServices\WebConnection\IWebConnectionConfig.cs" />
+    <Compile Include="Config\SyncThreadPriority.cs" />
+    <Compile Include="CoreServices\WebConnection\UseProxyType.cs" />
+    <Compile Include="CoreServices\Browser\IBrowserService.cs" />
+    <Compile Include="CoreServices\CheckState\Extensibility\CheckStateSourceAttribute.cs" />
+    <Compile Include="CoreServices\CheckState\Extensibility\CheckStateSourceInfo.cs" />
+    <Compile Include="CoreServices\CheckState\ICheckStateSource.cs" />
+    <Compile Include="CoreServices\Commands\CommandType.cs" />
+    <Compile Include="CoreServices\Commands\Extensibility\CommandProviderAttribute.cs" />
+    <Compile Include="CoreServices\Commands\Extensibility\CommandProviderInfo.cs" />
+    <Compile Include="CoreServices\Commands\Extensibility\CommandTargetAttribute.cs" />
+    <Compile Include="CoreServices\Commands\Extensibility\CommandTargetInfo.cs" />
+    <Compile Include="CoreServices\Commands\ICommandContext.cs" />
+    <Compile Include="CoreServices\Commands\ICommandHandlerService.cs" />
+    <Compile Include="CoreServices\Commands\ICommandInfo.cs" />
+    <Compile Include="CoreServices\Commands\ICommandParameterInfo.cs" />
+    <Compile Include="CoreServices\Commands\ICommandProvider.cs" />
+    <Compile Include="CoreServices\Commands\ICommandService.cs" />
+    <Compile Include="CoreServices\Commands\ICommandTarget.cs" />
+    <Compile Include="CoreServices\Console\IConsoleWindowService.cs" />
+    <Compile Include="CoreServices\Extensibility\ExtensionInfoProviderAttribute.cs" />
+    <Compile Include="CoreServices\Extensibility\ExtensionInfoProviderInfo.cs" />
+    <Compile Include="CoreServices\Extensibility\IExtensionInfoProvider.cs" />
+    <Compile Include="CoreServices\Extensibility\IJanusExtensionManager.cs" />
+    <Compile Include="CoreServices\IBootTimeInformer.cs" />
+    <Compile Include="CoreServices\CheckState\ICheckStateService.cs" />
+    <Compile Include="CoreServices\Commands\IDefaultCommandService.cs" />
+    <Compile Include="CoreServices\Menu\IDynamicMenuProvider.cs" />
+    <Compile Include="CoreServices\Menu\MenuItems\IContainerMenuItem.cs" />
+    <Compile Include="CoreServices\NavigationHistory\INavigationHistoryService.cs" />
+    <Compile Include="CoreServices\NavigationHistory\NavigationHistoryStep.cs" />
+    <Compile Include="CoreServices\NavigationPages\Extensibility\NavigationPageProviderAttribute.cs" />
+    <Compile Include="CoreServices\NavigationPages\Extensibility\NavigationPageProviderInfo.cs" />
+    <Compile Include="CoreServices\NavigationPages\INavigationItemHeader.cs" />
+    <Compile Include="CoreServices\NavigationPages\INavigationPage.cs" />
+    <Compile Include="CoreServices\NavigationPages\INavigationPageFactoryService.cs" />
+    <Compile Include="CoreServices\NavigationPages\INavigationPageProvider.cs" />
+    <Compile Include="CoreServices\NavigationPages\INavigationPageService.cs" />
+    <Compile Include="CoreServices\NavigationPages\NavigationPageState.cs" />
+    <Compile Include="CoreServices\NavigationPages\PagesChangedEventArgs.cs" />
+    <Compile Include="CoreServices\NavigationPages\PagesChangeType.cs" />
+    <Compile Include="CoreServices\NavigationTree\Extensibility\NavigationTreeProviderAttribute.cs" />
+    <Compile Include="CoreServices\NavigationTree\Extensibility\NavigationTreeProviderInfo.cs" />
+    <Compile Include="CoreServices\NavigationTree\IDynamicNavigationTreeProvider.cs" />
+    <Compile Include="CoreServices\NavigationTree\INavigationTreeNode.cs" />
+    <Compile Include="CoreServices\NavigationTree\INavigationTreeNodeExtension.cs" />
+    <Compile Include="CoreServices\NavigationTree\INavigationTreeNodeSource.cs" />
+    <Compile Include="CoreServices\NavigationTree\INavigationTreeProvider.cs" />
+    <Compile Include="CoreServices\NavigationTree\INavigationTreeService.cs" />
+    <Compile Include="CoreServices\Notification\INotificationService.cs" />
+    <Compile Include="CoreServices\INotifyIconService.cs" />
+    <Compile Include="CoreServices\Browser\IBrowserFormService.cs" />
+    <Compile Include="CoreServices\IMainWindowService.cs" />
+    <Compile Include="CoreServices\Logger\ILogWindowService.cs" />
+    <Compile Include="CoreServices\Notification\NotificationType.cs" />
+    <Compile Include="CoreServices\TextMacros\Extensibility\TextMacrosProviderAttribute.cs" />
+    <Compile Include="CoreServices\TextMacros\Extensibility\TextMacrosProviderInfo.cs" />
+    <Compile Include="CoreServices\TextMacros\ITextMacros.cs" />
+    <Compile Include="CoreServices\Menu\IMenuGroup.cs" />
+    <Compile Include="CoreServices\Menu\IMenuRoot.cs" />
+    <Compile Include="CoreServices\Menu\IMenuItemVisitor.cs" />
+    <Compile Include="CoreServices\Menu\MenuItemDisplayStyle.cs" />
+    <Compile Include="CoreServices\Menu\MenuItems\IMenu.cs" />
+    <Compile Include="CoreServices\Menu\MenuItems\IMenuCheckCommand.cs" />
+    <Compile Include="CoreServices\Menu\MenuItems\IMenuCommand.cs" />
+    <Compile Include="CoreServices\Menu\MenuItems\IMenuItem.cs" />
+    <Compile Include="CoreServices\Menu\MenuItems\IMenuItemWithTextAndImage.cs" />
+    <Compile Include="CoreServices\Menu\MenuItems\IMenuSplitButton.cs" />
+    <Compile Include="CoreServices\TextMacros\ITextMacrosProvider.cs" />
+    <Compile Include="CoreServices\TextMacros\ITextMacrosService.cs" />
+    <Compile Include="CoreServices\WebConnection\IWebConnectionService.cs" />
+    <Compile Include="Database\DataModel\IVariable.cs" />
+    <Compile Include="Database\IDBVarsManager.cs" />
+    <Compile Include="Database\IJanusDataContext.cs" />
+    <Compile Include="Database\IJanusRWLock.cs" />
+    <Compile Include="Database\OnlyForQueriesException.cs" />
+    <Compile Include="rsdn.ru\Database\Forums\DataModel\IDownloadTopic.cs" />
+    <Compile Include="rsdn.ru\Database\Forums\DataModel\IFavoritesFolder.cs" />
+    <Compile Include="rsdn.ru\Database\Forums\DataModel\IFavoritesItem.cs" />
+    <Compile Include="rsdn.ru\Database\Forums\DataModel\IForumMessage.cs" />
+    <Compile Include="rsdn.ru\Database\Forums\DataModel\IModeratorial.cs" />
+    <Compile Include="rsdn.ru\Database\Forums\DataModel\IOutboxMessage.cs" />
+    <Compile Include="rsdn.ru\Database\Forums\DataModel\IOutboxRate.cs" />
+    <Compile Include="rsdn.ru\Database\Forums\DataModel\IRate.cs" />
+    <Compile Include="rsdn.ru\Database\Forums\DataModel\IServerForum.cs" />
+    <Compile Include="rsdn.ru\Database\Forums\DataModel\ISubscribedForum.cs" />
+    <Compile Include="rsdn.ru\Database\Forums\DataModel\ITopicInfo.cs" />
+    <Compile Include="rsdn.ru\Database\Users\DataModel\IUser.cs" />
+    <Compile Include="rsdn.ru\Database\Forums\MsgMark\ForumEntryChangedEventArgs.cs" />
+    <Compile Include="rsdn.ru\Database\Forums\MsgMark\ForumEntryChangeType.cs" />
+    <Compile Include="rsdn.ru\Forums\ForumEventNames.cs" />
+    <Compile Include="rsdn.ru\Forums\IActiveForumService.cs" />
+    <Compile Include="rsdn.ru\Forums\IForumsAggregatesService.cs" />
+    <Compile Include="rsdn.ru\Forums\IJanusFormatter.cs" />
+    <Compile Include="rsdn.ru\Forums\IMessageEditorService.cs" />
+    <Compile Include="CoreServices\Progress\IProgressService.cs" />
+    <Compile Include="CoreServices\Progress\IProgressVisualizer.cs" />
+    <Compile Include="CoreServices\Logger\ILogger.cs" />
+    <Compile Include="CoreServices\IUIShell.cs" />
+    <Compile Include="CoreServices\Logger\LogEventArgs.cs" />
+    <Compile Include="CoreServices\Logger\LogEventType.cs" />
+    <Compile Include="CoreServices\Logger\LogItem.cs" />
+    <Compile Include="CoreServices\Commands\CommandStatus.cs" />
+    <Compile Include="CoreServices\Menu\Extensibility\MenuProviderInfo.cs" />
+    <Compile Include="CoreServices\Menu\IMenuProvider.cs" />
+    <Compile Include="CoreServices\Menu\IMenuService.cs" />
+    <Compile Include="CoreServices\Menu\Extensibility\MenuProviderAttribute.cs" />
+    <Compile Include="CoreServices\Stats\IStatisticsContainer.cs" />
+    <Compile Include="CoreServices\Stats\IStatisticsFormatter.cs" />
+    <Compile Include="CoreServices\Stats\IStatsFormatterManager.cs" />
+    <Compile Include="CoreServices\Stats\StatisticsFormatterInfo.cs" />
+    <Compile Include="CoreServices\Stats\StatisticsFormatterAttribute.cs" />
+    <Compile Include="CoreServices\Styles\IStyleImageManager.cs" />
+    <Compile Include="CoreServices\Styles\StyleImageType.cs" />
+    <Compile Include="CoreServices\TagLine\ITagLineManager.cs" />
+    <Compile Include="rsdn.ru\Database\Forums\IForum.cs" />
+    <Compile Include="rsdn.ru\Database\Forums\IForumMessageHeader.cs" />
+    <Compile Include="rsdn.ru\Database\Forums\MsgMark\ForumEntryIds.cs" />
+    <Compile Include="rsdn.ru\Database\Forums\MsgMark\IMessageMarkService.cs" />
+    <Compile Include="rsdn.ru\Database\Forums\MessageRates.cs" />
+    <Compile Include="rsdn.ru\Database\Forums\SortType.cs" />
+    <Compile Include="rsdn.ru\Forums\IRsdnForumConfig.cs" />
+    <Compile Include="rsdn.ru\Forums\IRsdnForumService.cs" />
+    <Compile Include="rsdn.ru\Sync\IRsdnSyncConfigService.cs" />
+    <Compile Include="rsdn.ru\Outbox\IDownloadTopic.cs" />
+    <Compile Include="rsdn.ru\Outbox\IDownloadTopicCollection.cs" />
+    <Compile Include="rsdn.ru\Outbox\IOutboxMessage.cs" />
+    <Compile Include="rsdn.ru\Database\Users\IUserForumMessagesStats.cs" />
+    <Compile Include="rsdn.ru\Database\Users\UserClass.cs" />
+    <Compile Include="Database\DbTask.cs" />
+    <Compile Include="Database\IDBConfigControl.cs" />
+    <Compile Include="Database\IDBDriver.cs" />
+    <Compile Include="Database\IDBDriverManager.cs" />
+    <Compile Include="Database\IJanusDatabaseManager.cs" />
+    <Compile Include="Database\ISqlFormatter.cs" />
+    <Compile Include="Database\JanusDBDriverAttribute.cs" />
+    <Compile Include="Database\JanusDBDriverInfo.cs" />
+    <Compile Include="Database\Schema\DBSchemaException.cs" />
+    <Compile Include="Database\Schema\Elements\ColumnType.cs" />
+    <Compile Include="Database\Schema\Elements\ConstraintType.cs" />
+    <Compile Include="Database\Schema\Elements\DBGenerator.cs" />
+    <Compile Include="Database\Schema\Elements\IndexSchema.cs" />
+    <Compile Include="Database\Schema\Elements\KeySchema.cs" />
+    <Compile Include="Database\Schema\Elements\DBSchema.cs" />
+    <Compile Include="Database\Schema\Elements\TableColumnSchema.cs" />
+    <Compile Include="Database\Schema\Elements\TableSchema.cs" />
+    <Compile Include="Database\Schema\Elements\IndexClearType.cs" />
+    <Compile Include="Database\Schema\Elements\IndexNullAllowance.cs" />
+    <Compile Include="Database\Schema\Elements\LinkRule.cs" />
+    <Compile Include="Database\Schema\Elements\SchemaNamedElement.cs" />
+    <Compile Include="Database\Schema\Elements\SortOrder.cs" />
+    <Compile Include="Database\Schema\IDBSchemaDriver.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ResourceDescriptionAttribute.cs" />
+    <Compile Include="ResourceDisplayNameAttribute.cs" />
+    <Compile Include="Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="rsdn.ru\Forums\ForumImages\IForumImageManager.cs" />
+    <Compile Include="rsdn.ru\Forums\ForumImages\MessageFlagExistence.cs" />
+    <Compile Include="rsdn.ru\Forums\ForumImages\MessageType.cs" />
+    <Compile Include="rsdn.ru\Outbox\IOutboxForm.cs" />
+    <Compile Include="rsdn.ru\Outbox\IOutboxManager.cs" />
+    <Compile Include="rsdn.ru\Outbox\IOutboxMessageCollection.cs" />
+    <Compile Include="rsdn.ru\Outbox\IOutboxRate.cs" />
+    <Compile Include="rsdn.ru\Outbox\IOutboxRateCollection.cs" />
+    <Compile Include="rsdn.ru\Sync\IRsdnSyncConfig.cs" />
+    <Compile Include="Synchronization\CompressionState.cs" />
+    <Compile Include="Synchronization\Extensibility\SyncProviderAttribute.cs" />
+    <Compile Include="Synchronization\Extensibility\SyncProviderInfo.cs" />
+    <Compile Include="Synchronization\ISyncProgressVisualizer.cs" />
+    <Compile Include="Synchronization\ISyncContext.cs" />
+    <Compile Include="Synchronization\ISyncErrorInformer.cs" />
+    <Compile Include="Synchronization\ISynchronizer.cs" />
+    <Compile Include="Synchronization\ISyncProvider.cs" />
+    <Compile Include="Synchronization\ISyncStat.cs" />
+    <Compile Include="Synchronization\ITaskIndicator.cs" />
+    <Compile Include="Synchronization\ITaskIndicatorProvider.cs" />
+    <Compile Include="Synchronization\NetworkSyncInfo.cs" />
+    <Compile Include="Synchronization\SyncErrorInfo.cs" />
+    <Compile Include="Synchronization\SyncErrorType.cs" />
+    <Compile Include="Synchronization\EndSyncEventArgs.cs" />
+    <Compile Include="Synchronization\SyncResources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SyncResources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Synchronization\SyncResult.cs" />
+    <Compile Include="Synchronization\SyncTaskState.cs" />
+    <Compile Include="Synchronization\UserCancelledException.cs" />
+    <Compile Include="Synchronization\WebSvcSync\ITransferNotificator.cs" />
+    <Compile Include="Synchronization\WebSvcSync\IWebSvcSyncTask.cs" />
+    <Compile Include="Synchronization\WebSvcSync\TransferDirection.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="BLToolkit.3, Version=3.2.0.0, Culture=neutral, PublicKeyToken=b1d3f6ab3aadaca3, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Dependencies\bltoolkit\BLToolkit.3.dll</HintPath>
+    </Reference>
+    <Reference Include="R.SAT-Common, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Dependencies\R.SAT\R.SAT-Common.dll</HintPath>
+    </Reference>
+    <Reference Include="R.SAT-Model, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Dependencies\R.SAT\R.SAT-Model.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Reactive, Version=1.0.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Dependencies\R.SAT\System.Reactive.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="TreeGrid3, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Dependencies\TreeGrid3\TreeGrid3.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Config\ConfigResources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>ConfigResources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+      <CustomToolNamespace>Rsdn.Janus</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Config\ConfigResources.ru.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources.ru.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Synchronization\SyncResources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>SyncResources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+      <CustomToolNamespace>Rsdn.Janus</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Synchronization\SyncResources.ru.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\PropertyGridCustomizer\PropertyGridCustomizer.csproj">
+      <Project>{56213B95-F028-49A2-9CC9-3138E69E3251}</Project>
+      <Name>PropertyGridCustomizer</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <PropertyGroup>
+    <PreBuildEvent>"$(SolutionDir)\SvnRevision/$(OutDir)SvnRevision.exe" "$(SolutionDir)/" "$(ProjectDir)ApplicationInfo.template.cs" "$(ProjectDir)ApplicationInfo.cs"</PreBuildEvent>
+  </PropertyGroup>
+</Project>

@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="JanusCommandDescriptor"
+    targetNamespace="http://rsdn.ru/projects/Janus/JanusCommandDescriptor.xsd"
+    elementFormDefault="qualified"
+    xmlns="http://rsdn.ru/projects/Janus/JanusCommandDescriptor.xsd"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    xmlns:jt="http://rsdn.ru/projects/Janus/CommonTypes.xsd"
+>
+  <xs:import namespace="http://rsdn.ru/projects/Janus/CommonTypes.xsd"/>
+  
+  <xs:simpleType name="CommandType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Default"/>
+      <xs:enumeration value="RequiresInteraction"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:element name="commands">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="command" minOccurs="0" maxOccurs="unbounded">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="parameter" minOccurs="0" maxOccurs="unbounded">
+                <xs:complexType>
+                  <xs:attribute name="name" type="jt:Name" use="required"/>
+                  <xs:attribute name="isOptional" type="xs:boolean" default="false" use="optional"/>
+                  <xs:attribute name="descriptionTextResource" use="optional"/>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+            <xs:attribute name="name" type="jt:FullQualyfiedName" use="required"/>
+            <xs:attribute name="type" type="CommandType" use="optional" default="Default"/>
+            <xs:attribute name="displayNameTextResource" type="jt:RequiredString" use="optional"/>
+            <xs:attribute name="descriptionTextResource" type="jt:RequiredString" use="optional"/>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

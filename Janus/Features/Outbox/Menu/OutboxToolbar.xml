@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<root xmlns="http://rsdn.ru/projects/Janus/JanusMenuDescriptor.xsd"
+	  name="MainForm.Toolbar">
+
+	<group name="Edit" orderIndex="30">
+		<menuCommand command="Janus.Outbox.EditItem" image="editmsg"/>
+	</group>
+
+	<group name="ItemsManagement" orderIndex="40">
+		<menuCommand command="Janus.Outbox.DeleteItem" image="del"/>
+	</group>
+
+</root>

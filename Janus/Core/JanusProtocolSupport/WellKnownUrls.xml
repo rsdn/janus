@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<WellKnownUrls>
+    <!-- rsdn.ru, www.rsdn.ru, gzip.rsdn.ru, etc. -->
+    <Url Match="rsdn\.ru" ImagePath="links\rsdn" />
+    <!-- google.com, www.google.com, google.ru, google.de, google.name, etc. -->
+    <Url Match="(www\.)?google\.\w{2,6}" ImagePath="links\google" />
+    <!-- *.blogspot.com, etc. -->
+    <Url Match=".*\.blogspot\.com" ImagePath="links\blogspot" />
+	<!-- en.wikipedia.org, ru.wikipedia.org, etc. -->
+    <Url Match="(\w{2})\.wikipedia\.org" ImagePath="links\wiki" />
+	<!-- msdn.microsoft.com, msdn2.microsoft.com. -->
+    <Url Match="msdn(2)?\.microsoft\.com" ImagePath="links\msdn" />
+	<!-- *.livejournal.com, livejournal.com -->
+    <Url Match=".*\.livejournal\.com" ImagePath="links\lj" />
+</WellKnownUrls>

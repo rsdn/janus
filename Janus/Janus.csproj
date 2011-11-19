@@ -1,0 +1,1848 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <ProjectType>Local</ProjectType>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{C23AAECC-D360-4EA5-814A-14A81AAA453A}</ProjectGuid>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ApplicationIcon>../Graphics/RH48.ico</ApplicationIcon>
+    <AssemblyKeyContainerName>
+    </AssemblyKeyContainerName>
+    <AssemblyName>Janus</AssemblyName>
+    <AssemblyOriginatorKeyFile>
+    </AssemblyOriginatorKeyFile>
+    <DefaultClientScript>JScript</DefaultClientScript>
+    <DefaultHTMLPageLayout>Grid</DefaultHTMLPageLayout>
+    <DefaultTargetSchema>IE50</DefaultTargetSchema>
+    <DelaySign>false</DelaySign>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Rsdn.Janus</RootNamespace>
+    <RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
+    <StartupObject>
+    </StartupObject>
+    <WebReference_EnableProperties>true</WebReference_EnableProperties>
+    <WebReference_EnableSQLTypes>false</WebReference_EnableSQLTypes>
+    <WebReference_EnableLegacyEventingModel>true</WebReference_EnableLegacyEventingModel>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <IsWebBootstrapper>true</IsWebBootstrapper>
+    <OldToolsVersion>2.0</OldToolsVersion>
+    <ApplicationManifest>Janus.exe.manifest</ApplicationManifest>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <PublishUrl>http://localhost/Janus/</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Web</InstallFrom>
+    <UpdateEnabled>true</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <BaseAddress>285212672</BaseAddress>
+    <CheckForOverflowUnderflow>true</CheckForOverflowUnderflow>
+    <ConfigurationOverrideFile>
+    </ConfigurationOverrideFile>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DocumentationFile>
+    </DocumentationFile>
+    <DebugSymbols>true</DebugSymbols>
+    <FileAlignment>4096</FileAlignment>
+    <NoStdLib>false</NoStdLib>
+    <NoWarn>
+    </NoWarn>
+    <Optimize>false</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+    <GenerateSerializationAssemblies>On</GenerateSerializationAssemblies>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <BaseAddress>285212672</BaseAddress>
+    <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
+    <ConfigurationOverrideFile>
+    </ConfigurationOverrideFile>
+    <DefineConstants>TRACE</DefineConstants>
+    <DocumentationFile>
+    </DocumentationFile>
+    <DebugSymbols>false</DebugSymbols>
+    <FileAlignment>4096</FileAlignment>
+    <NoStdLib>false</NoStdLib>
+    <NoWarn>
+    </NoWarn>
+    <Optimize>true</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>4</WarningLevel>
+    <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x64' ">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <BaseAddress>285212672</BaseAddress>
+    <PlatformTarget>x64</PlatformTarget>
+    <CodeAnalysisRuleAssemblies>\rules</CodeAnalysisRuleAssemblies>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x64' ">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <BaseAddress>285212672</BaseAddress>
+    <Optimize>true</Optimize>
+    <PlatformTarget>x64</PlatformTarget>
+    <CodeAnalysisRuleAssemblies>\rules</CodeAnalysisRuleAssemblies>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <BaseAddress>285212672</BaseAddress>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisRuleAssemblies>\rules</CodeAnalysisRuleAssemblies>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <BaseAddress>285212672</BaseAddress>
+    <Optimize>true</Optimize>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisRuleAssemblies>\rules</CodeAnalysisRuleAssemblies>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="BLToolkit.3, Version=3.2.0.0, Culture=neutral, PublicKeyToken=b1d3f6ab3aadaca3, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Dependencies\bltoolkit\BLToolkit.3.dll</HintPath>
+    </Reference>
+    <Reference Include="Lucene.Net, Version=1.9.1.3, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Dependencies\lucene\Lucene.Net.dll</HintPath>
+    </Reference>
+    <Reference Include="R.SAT-Common, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Dependencies\R.SAT\R.SAT-Common.dll</HintPath>
+    </Reference>
+    <Reference Include="R.SAT-Model, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Dependencies\R.SAT\R.SAT-Model.dll</HintPath>
+    </Reference>
+    <Reference Include="Rsdn.Framework.Formatting, Version=1.0.2215.29712, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Dependencies\rsdn\Rsdn.Framework.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="ScintillaEditor, Version=1.0.0.0, Culture=neutral, PublicKeyToken=fd1477d250249ca2, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Dependencies\scintilla\ScintillaEditor.dll</HintPath>
+    </Reference>
+    <Reference Include="System">
+      <Name>System</Name>
+    </Reference>
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Configuration.Install">
+      <Name>System.Configuration.Install</Name>
+    </Reference>
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data">
+      <Name>System.Data</Name>
+    </Reference>
+    <Reference Include="System.Design" />
+    <Reference Include="System.Drawing">
+      <Name>System.Drawing</Name>
+    </Reference>
+    <Reference Include="System.Reactive, Version=1.0.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Dependencies\R.SAT\System.Reactive.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Services">
+      <Name>System.Web.Services</Name>
+    </Reference>
+    <Reference Include="System.Windows.Forms">
+      <Name>System.Windows.Forms</Name>
+    </Reference>
+    <Reference Include="System.XML" />
+    <Reference Include="TreeGrid3, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Dependencies\TreeGrid3\TreeGrid3.dll</HintPath>
+    </Reference>
+    <Reference Include="WindowsBase">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <ProjectReference Include="..\GoJanusNet\GoJanusNet.csproj">
+      <Project>{7EA33B3F-EAE5-45FE-ABE1-BED285637E39}</Project>
+      <Name>GoJanusNet</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Janus-Common\Janus-Common.csproj">
+      <Project>{3F0703D6-B568-492C-9AE2-807C490826C5}</Project>
+      <Name>Janus-Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Janus-Model\Janus-Model.csproj">
+      <Project>{8B6FB1B4-141C-46DA-82B8-6A2220D7D868}</Project>
+      <Name>Janus-Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Janus.Framework\Janus.Framework.csproj">
+      <Project>{C92BBDC9-5AE5-4C2D-B0F5-7369506CDF27}</Project>
+      <Name>Janus.Framework</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\JanusProtocol\JanusProtocol.csproj">
+      <Project>{A281DA80-E9C9-4B89-BB00-6DE4473146E7}</Project>
+      <Name>JanusProtocol</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PropertyGridCustomizer\PropertyGridCustomizer.csproj">
+      <Name>PropertyGridCustomizer</Name>
+      <Project>{56213B95-F028-49A2-9CC9-3138E69E3251}</Project>
+      <Package>{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</Package>
+    </ProjectReference>
+    <ProjectReference Include="..\Shortcuts\Shortcuts.csproj">
+      <Name>Shortcuts</Name>
+      <Project>{66C70EF7-03BE-4365-A0F7-D92C7F265DAB}</Project>
+      <Package>{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</Package>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <EmbeddedResource Include="Core\Extensibility\JanusExtensionDescriptor.xsd" />
+    <None Include="Janus.exe.manifest">
+    </None>
+    <EmbeddedResource Include="Core\ApplicationCommands\ApplicationCommands.xml" />
+    <EmbeddedResource Include="Core\Navigation\ForumsBox.resx">
+      <DependentUpon>ForumsBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Core\Synchronization\ProxyAuthForm.resx">
+      <DependentUpon>ProxyAuthForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Core\Synchronization\ProxyAuthForm.ru.resx">
+      <DependentUpon>ProxyAuthForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Features\ForumViewer\Commands\Forum\ForumCommands.xml" />
+    <EmbeddedResource Include="Features\ForumViewer\Menu\ForumToolbar.xml" />
+    <EmbeddedResource Include="Core\DataManagement\Commands\DatabaseCommands.xml" />
+    <EmbeddedResource Include="Core\Synchronization\Commands\SynchronizationCommands.xml" />
+    <EmbeddedResource Include="Features\Search\Commands\SearchCommands.xml" />
+    <EmbeddedResource Include="Features\Outbox\Commands\OutboxCommands.xml" />
+    <EmbeddedResource Include="Features\Favorites\Commands\FavoritesCommands.xml" />
+    <EmbeddedResource Include="Core\DataManagement\Menu\DatabaseMenu.xml" />
+    <EmbeddedResource Include="Core\Navigation\Commands\NavigationCommands.xml" />
+    <EmbeddedResource Include="Core\JBrowserManagement\Commands\JBrowserCommands.xml" />
+    <EmbeddedResource Include="Core\JBrowserManagement\Menu\JBrowserMenu.xml" />
+    <EmbeddedResource Include="Core\JBrowserManagement\Menu\JBrowserToolbar.xml" />
+    <EmbeddedResource Include="Core\Synchronization\UI\Menu\SynchronizationToolbar.xml" />
+    <EmbeddedResource Include="Core\Synchronization\UI\Menu\SynchronizationMenu.xml" />
+    <EmbeddedResource Include="Core\Synchronization\UI\Menu\SynchronizationTrayMenu.xml" />
+    <EmbeddedResource Include="Features\ForumViewer\Menu\ForumMessageContextMenu.xml" />
+    <EmbeddedResource Include="Features\Search\Menu\SearchMenu.xml" />
+    <EmbeddedResource Include="Features\Favorites\Menu\FavoritesToolbar.xml" />
+    <EmbeddedResource Include="Features\Search\Menu\SearchToolbar.xml" />
+    <EmbeddedResource Include="Features\ForumViewer\MessageEditor\Commands\MessageEditorCommands.xml" />
+    <EmbeddedResource Include="Features\ForumViewer\MessageEditor\Menu\MessageEditorMenu.xml" />
+    <EmbeddedResource Include="Features\ForumViewer\MessageEditor\Menu\MessageEditorToolbar.xml" />
+    <EmbeddedResource Include="Features\Favorites\Menu\FavoritesContextMenu.xml" />
+    <EmbeddedResource Include="Features\Outbox\Menu\OutboxContextMenu.xml" />
+    <EmbeddedResource Include="Features\ForumViewer\TagLine\Commands\TagLineCommands.xml" />
+    <EmbeddedResource Include="Features\ForumViewer\TagLine\Menu\TagLineContextMenu.xml" />
+    <EmbeddedResource Include="Features\ForumViewer\TagLine\Menu\TagLineToolbar.xml" />
+    <EmbeddedResource Include="Core\Navigation\Menu\NavigationMenu.xml" />
+    <EmbeddedResource Include="Features\ForumViewer\MessageEditor\Menu\TagsBar.xml" />
+    <EmbeddedResource Include="Features\Outbox\Menu\OutboxToolbar.xml" />
+    <EmbeddedResource Include="Core\Console\Menu\ConsoleToolbar.xml" />
+    <EmbeddedResource Include="Core\Console\Commands\ConsoleCommands.xml" />
+    <EmbeddedResource Include="Core\LoggingManagement\Commands\LogCommands.xml" />
+    <EmbeddedResource Include="Core\LoggingManagement\Menu\LogToolbar.xml" />
+    <EmbeddedResource Include="Core\JanusProtocolSupport\WellKnownUrls.xml" />
+    <EmbeddedResource Include="Features\ForumViewer\Commands\ForumMessage\ForumMessageCommands.xml" />
+    <EmbeddedResource Include="Features\ForumViewer\Commands\Forums\ForumsCommands.xml" />
+    <EmbeddedResource Include="Features\ForumViewer\Commands\ForumViewer\ForumViewerCommands.xml" />
+    <Content Include="Features\ForumViewer\MessageEditor\StandardEditorShortcuts.txt" />
+    <Content Include="Features\Search\RU\Package.html" />
+    <Content Include="JanusDoc.chm">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="NgenAll.cmd">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <EmbeddedResource Include="Core\JanusProtocolSupport\HtmlPageBuilder\AbsentMessage.html" />
+    <EmbeddedResource Include="Core\JanusProtocolSupport\HtmlPageBuilder\ArticleList.html" />
+    <EmbeddedResource Include="Core\JanusProtocolSupport\HtmlPageBuilder\ArticleListNotFound.html" />
+    <EmbeddedResource Include="Core\JanusProtocolSupport\HtmlPageBuilder\ExceptionPage.html" />
+    <EmbeddedResource Include="Core\JanusProtocolSupport\HtmlPageBuilder\FaqList.html" />
+    <EmbeddedResource Include="Core\JanusProtocolSupport\HtmlPageBuilder\FaqListNotFound.html" />
+    <EmbeddedResource Include="Core\JanusProtocolSupport\HtmlPageBuilder\form.css" />
+    <EmbeddedResource Include="Core\JanusProtocolSupport\HtmlPageBuilder\forum.css" />
+    <EmbeddedResource Include="Core\JanusProtocolSupport\HtmlPageBuilder\janus.css" />
+    <EmbeddedResource Include="Core\JanusProtocolSupport\HtmlPageBuilder\Message.html" />
+    <EmbeddedResource Include="Core\JanusProtocolSupport\HtmlPageBuilder\MessageNotFound.html" />
+    <EmbeddedResource Include="Core\JanusProtocolSupport\HtmlPageBuilder\MessageRate.html" />
+    <EmbeddedResource Include="Core\JanusProtocolSupport\HtmlPageBuilder\MessagesStats.html" />
+    <EmbeddedResource Include="Core\JanusProtocolSupport\HtmlPageBuilder\MessagesStatNotFound.html" />
+    <EmbeddedResource Include="Core\JanusProtocolSupport\HtmlPageBuilder\MessageWithRate.html" />
+    <EmbeddedResource Include="Core\JanusProtocolSupport\HtmlPageBuilder\StandartPage.html" />
+    <EmbeddedResource Include="Core\JanusProtocolSupport\HtmlPageBuilder\UserInfo.html" />
+    <EmbeddedResource Include="Core\JanusProtocolSupport\HtmlPageBuilder\UserInfoNotFound.html" />
+    <EmbeddedResource Include="Core\JanusProtocolSupport\HtmlPageBuilder\UserMessages.html" />
+    <EmbeddedResource Include="Core\JanusProtocolSupport\HtmlPageBuilder\UserMessagesCountInfo.html" />
+    <EmbeddedResource Include="Core\JanusProtocolSupport\HtmlPageBuilder\UserMessagesNotFound.html" />
+    <EmbeddedResource Include="Core\JanusProtocolSupport\HtmlPageBuilder\UserOutrating.html" />
+    <EmbeddedResource Include="Core\JanusProtocolSupport\HtmlPageBuilder\UserOutratingNotFound.html" />
+    <EmbeddedResource Include="Core\JanusProtocolSupport\HtmlPageBuilder\UserRating.html" />
+    <EmbeddedResource Include="Core\JanusProtocolSupport\HtmlPageBuilder\UserRatingNotFound.html" />
+    <EmbeddedResource Include="Core\LoggingManagement\LogForm.resx">
+      <DependentUpon>LogForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Core\LoggingManagement\LogForm.ru.resx">
+      <DependentUpon>LogForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Core\LoggingManagement\LogComboBox.resx">
+      <DependentUpon>LogComboBox.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Core\Navigation\NavigationDummyForm.resx">
+      <DependentUpon>NavigationDummyForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Core\Synchronization\UI\SyncForm.resx">
+      <DependentUpon>SyncForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Core\UI\AboutJanusForm.resx">
+      <DependentUpon>AboutJanusForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Core\UI\AboutMainPage.html" />
+    <EmbeddedResource Include="Core\UI\MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Core\UI\Menu\MainFormMenu.xml" />
+    <EmbeddedResource Include="Core\UI\Menu\MainFormToolbar.xml" />
+    <EmbeddedResource Include="Core\UI\SplashForm.resx">
+      <DependentUpon>SplashForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Features\Favorites\FavoritesDummyForm.resx">
+      <DependentUpon>FavoritesDummyForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Features\Favorites\FavoritesFolderForm.resx">
+      <DependentUpon>FavoritesFolderForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Features\Favorites\FavoritesFolderForm.ru.resx">
+      <DependentUpon>FavoritesFolderForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Features\Favorites\FavoritesLinkForm.resx">
+      <DependentUpon>FavoritesLinkForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Features\Favorites\FavoritesLinkForm.ru.resx">
+      <DependentUpon>FavoritesLinkForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Features\Favorites\FavoritesSelectFolderForm.resx">
+      <DependentUpon>FavoritesSelectFolderForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Features\Favorites\FavoritesSelectFolderForm.ru.resx">
+      <DependentUpon>FavoritesSelectFolderForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Features\ForumViewer\GoToForm.resx">
+      <DependentUpon>GoToForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Features\ForumViewer\GoToForm.ru.resx">
+      <DependentUpon>GoToForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Features\ForumViewer\EnterTopicMessageIdForm.resx">
+      <DependentUpon>EnterTopicMessageIdForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Features\ForumViewer\EnterTopicMessageIdForm.ru.resx">
+      <DependentUpon>EnterTopicMessageIdForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Features\ForumViewer\ExpectedMessageClickedForm.resx">
+      <DependentUpon>ExpectedMessageClickedForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Features\ForumViewer\ExpectedMessageClickedForm.ru.resx">
+      <DependentUpon>ExpectedMessageClickedForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Features\ForumViewer\Export\ExportMessageDialog.resx">
+      <DependentUpon>ExportMessageDialog.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Features\ForumViewer\Export\ExportMessageDialog.ru.resx">
+      <DependentUpon>ExportMessageDialog.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Features\ForumViewer\Export\forum.css" />
+    <EmbeddedResource Include="Features\ForumViewer\Export\MessageFormat.html" />
+    <EmbeddedResource Include="Features\ForumViewer\Export\page.html" />
+    <EmbeddedResource Include="Features\ForumViewer\Menu\ForumMenu.xml" />
+    <EmbeddedResource Include="Features\ForumViewer\Menu\ForumContextMenu.xml" />
+    <EmbeddedResource Include="Features\ForumViewer\ForumDummyForm.resx">
+      <DependentUpon>ForumDummyForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Features\ForumViewer\ForumDummyForm.ru.resx">
+      <DependentUpon>ForumDummyForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Features\ForumViewer\MessageViewer\Menu\MessageViewerToolbar.xml" />
+    <EmbeddedResource Include="Features\ForumViewer\MessageViewer\MsgViewer.resx">
+      <DependentUpon>MsgViewer.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Features\ForumViewer\RateForm.resx">
+      <DependentUpon>RateForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Features\ForumViewer\RateForm.ru.resx">
+      <DependentUpon>RateForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Features\ForumViewer\MessageEditor\FindDialogForm.resx">
+      <DependentUpon>FindDialogForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Features\ForumViewer\MessageEditor\FindDialogForm.ru.resx">
+      <DependentUpon>FindDialogForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Features\ForumViewer\MessageEditor\MessageForm.resx">
+      <DependentUpon>MessageForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Features\ForumViewer\MessageEditor\MessageForm.ru.resx">
+      <DependentUpon>MessageForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Features\ForumViewer\MessageEditor\PreviewMessage.html" />
+    <EmbeddedResource Include="Features\ForumViewer\MessageEditor\SmilesToolbar\SmilesToolbar.resx">
+      <DependentUpon>SmilesToolbar.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Features\ForumViewer\TagLine\TagLineEditorForm.resx">
+      <DependentUpon>TagLineEditorForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Features\ForumViewer\TagLine\TagLineEditorForm.ru.resx">
+      <DependentUpon>TagLineEditorForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Features\ForumViewer\TagLine\TagLineListForm.resx">
+      <DependentUpon>TagLineListForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Features\ForumViewer\TagLine\TagLineListForm.ru.resx">
+      <DependentUpon>TagLineListForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Features\Outbox\OutboxDummyForm.resx">
+      <DependentUpon>OutboxDummyForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Features\Outbox\OutboxDummyForm.ru.resx">
+      <DependentUpon>OutboxDummyForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Features\Outbox\RateMark\EditRateForm.resx">
+      <DependentUpon>EditRateForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Features\Outbox\RateMark\EditRateForm.ru.resx">
+      <DependentUpon>EditRateForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Core\Ticker\tickerbg.png" />
+    <EmbeddedResource Include="Core\Ticker\urmsgsoff.png" />
+    <EmbeddedResource Include="Core\Ticker\urmsgson.png" />
+    <EmbeddedResource Include="Resources\JanusSmall.ico" />
+    <EmbeddedResource Include="Resources\JanusSmallMe.ico" />
+    <EmbeddedResource Include="Resources\JanusSmallNew.ico" />
+    <EmbeddedResource Include="Resources\tabIcon.png" />
+    <EmbeddedResource Include="SR.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SR.ru.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DbSchema.xml" />
+    <EmbeddedResource Include="Core\JanusProtocolSupport\XmlPageBuilder\Message.xsl" />
+    <EmbeddedResource Include="Core\JanusProtocolSupport\XmlPageBuilder\CopyCode.js" />
+    <EmbeddedResource Include="Core\JanusProtocolSupport\XmlPageBuilder\Media.js" />
+    <EmbeddedResource Include="Core\LoggingManagement\HintIcon.ico" />
+    <Content Include="Framework\Docking\Resources\DockIndicator_PaneDiamond.bmp" />
+    <Content Include="Framework\Docking\Resources\DockIndicator_PaneDiamond_Bottom.bmp" />
+    <Content Include="Framework\Docking\Resources\Dockindicator_PaneDiamond_Fill.bmp" />
+    <Content Include="Framework\Docking\Resources\DockIndicator_PaneDiamond_Hotspot.bmp" />
+    <Content Include="Framework\Docking\Resources\DockIndicator_PaneDiamond_HotspotIndex.bmp" />
+    <Content Include="Framework\Docking\Resources\DockIndicator_PaneDiamond_Left.bmp" />
+    <Content Include="Framework\Docking\Resources\DockIndicator_PaneDiamond_Right.bmp" />
+    <Content Include="Framework\Docking\Resources\DockIndicator_PaneDiamond_Top.bmp" />
+    <Content Include="Framework\Docking\Resources\DockIndicator_PanelBottom.bmp" />
+    <Content Include="Framework\Docking\Resources\DockIndicator_PanelBottom_Active.bmp" />
+    <Content Include="Framework\Docking\Resources\DockIndicator_PanelFill.bmp" />
+    <Content Include="Framework\Docking\Resources\DockIndicator_PanelFill_Active.bmp" />
+    <Content Include="Framework\Docking\Resources\DockIndicator_PanelLeft.bmp" />
+    <Content Include="Framework\Docking\Resources\DockIndicator_PanelLeft_Active.bmp" />
+    <Content Include="Framework\Docking\Resources\DockIndicator_PanelRight.bmp" />
+    <Content Include="Framework\Docking\Resources\DockIndicator_PanelRight_Active.bmp" />
+    <Content Include="Framework\Docking\Resources\DockIndicator_PanelTop.bmp" />
+    <Content Include="Framework\Docking\Resources\DockIndicator_PanelTop_Active.bmp" />
+    <Content Include="Framework\Docking\Resources\DockPane_AutoHide.bmp" />
+    <Content Include="Framework\Docking\Resources\DockPane_Close.bmp" />
+    <Content Include="Framework\Docking\Resources\DockPane_Dock.bmp" />
+    <Content Include="Framework\Docking\Resources\DockPane_Option.bmp" />
+    <Content Include="Framework\Docking\Resources\DockPane_OptionOverflow.bmp" />
+    <Content Include="ReadMe.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sound\Alarm.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Compile Include="Core\CheckState\Extensibility\CommandProviderStrategiesFactory.cs" />
+    <Compile Include="Core\Configuration\ConfigChangedEventArgs.cs" />
+    <Compile Include="Core\Configuration\ConfigChangedNotifier.cs" />
+    <Compile Include="Core\Configuration\ConfigResources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ConfigResources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Core\Configuration\OptionsForm.Designer.cs">
+      <DependentUpon>OptionsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Core\Configuration\OptionsUserForm.Designer.cs">
+      <DependentUpon>OptionsUserForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Core\Configuration\ProxyConfig.cs" />
+    <Compile Include="Core\Configuration\ProxySettings.cs" />
+    <Compile Include="Core\Console\ConsoleResources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ConsoleResources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Core\Console\Parser\AST\ASTParentNode.cs" />
+    <Compile Include="Core\Console\Parser\AST\ConsoleCommandArgName.cs" />
+    <Compile Include="Core\Console\Parser\AST\ConsoleCommandArgValue.cs" />
+    <Compile Include="Core\Console\Parser\AST\ASTNode.cs" />
+    <Compile Include="Core\Console\Parser\AST\ConsoleCommand.cs" />
+    <Compile Include="Core\Console\Parser\AST\ConsoleCommandArgument.cs" />
+    <Compile Include="Core\Console\Parser\AST\ConsoleCommandName.cs" />
+    <Compile Include="Core\Console\Commands\ConsoleCommandProvider.cs" />
+    <Compile Include="Core\Console\Commands\ConsoleCommandTarget.cs" />
+    <Compile Include="Core\Console\Parser\ConsoleParser.cs" />
+    <Compile Include="Core\Console\Menu\ConsoleToolbarProvider.cs" />
+    <Compile Include="Core\Console\ConsoleForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Core\Console\ConsoleForm.Designer.cs">
+      <DependentUpon>ConsoleForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Core\Console\ConsoleWindowService.cs" />
+    <Compile Include="Core\DataSchemaManagement\SchemaManagementResources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SchemaManagementResources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Core\JanusProtocolSupport\XmlPageBuilder\XsltFormatUtils.cs" />
+    <Compile Include="Core\JBrowserManagement\BrowserHelper.cs" />
+    <Compile Include="Core\JBrowserManagement\JBrowserActiveMessageService.cs" />
+    <Compile Include="Core\JBrowserManagement\JBrowserResources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>JBrowserResources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Core\JBrowserManagement\JBrowserService.cs" />
+    <Compile Include="Core\LoggingManagement\Commands\LogCommandProvider.cs" />
+    <Compile Include="Core\LoggingManagement\Commands\LogCommandTarget.cs" />
+    <Compile Include="Core\LoggingManagement\LogWindowService.cs" />
+    <Compile Include="Core\LoggingManagement\Menu\LogToolbarProvider.cs" />
+    <Compile Include="Core\Navigation\Extensibility\MenuProviderStrategy.cs" />
+    <Compile Include="Core\Navigation\Extensibility\MenuStrategiesFactory.cs" />
+    <Compile Include="Core\Navigation\NavigationCheckStateSource.cs" />
+    <Compile Include="Core\Navigation\Menu\NavigationMenuProvider.cs" />
+    <Compile Include="Core\Navigation\NavigationComboBoxGenerator.cs" />
+    <Compile Include="Core\Notification\NotificationHelper.cs" />
+    <Compile Include="Core\Notification\NotificationService.cs" />
+    <Compile Include="Core\NotifyIcon\NotifyIconActivePart.cs" />
+    <Compile Include="Core\NotifyIcon\NotifyIconResources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>NotifyIconResources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Core\NotifyIcon\NotifyIconService.cs" />
+    <Compile Include="Core\Synchronization\AutoSyncActivePart.cs" />
+    <Compile Include="Core\Synchronization\ProxyAuthForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Core\Synchronization\ProxyAuthForm.Designer.cs">
+      <DependentUpon>ProxyAuthForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Core\UI\AboutJanusForm.Designer.cs">
+      <DependentUpon>AboutJanusForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Core\UI\SplashForm.Designer.cs">
+      <DependentUpon>SplashForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Core\WebConnection\WebConnectionConfig.cs" />
+    <Compile Include="Core\Synchronization\SyncResources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SyncResources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Core\Synchronization\UI\Notification\SyncNotificationActivePart.cs" />
+    <Compile Include="Core\Synchronization\UI\Notification\SyncNotificationResources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SyncNotificationResources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Core\TextMacros\CitationMacros\CitationMacrosResources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CitationMacrosResources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Core\TextMacros\Extensibility\TextMacrosProviderStrategy.cs" />
+    <Compile Include="Core\TextMacros\Extensibility\TextMacrosStrategiesFactory.cs" />
+    <Compile Include="Core\TextMacros\LocalTimeMacros\LocalTimeMacrosResources.Designer.cs">
+      <DependentUpon>LocalTimeMacrosResources.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Core\TextMacros\MediaPlayerMacros\MediaPlayerMacrosResources.Designer.cs">
+      <DependentUpon>MediaPlayerMacrosResources.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Core\TextMacros\ResharperMacros\ResharperMacrosResources.Designer.cs">
+      <DependentUpon>ResharperMacrosResources.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Core\TextMacros\SimpleMacros\SimpleMacrosResources.Designer.cs">
+      <DependentUpon>SimpleMacrosResources.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Core\UI\MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Core\UI\MainWindowService.cs" />
+    <Compile Include="Core\WebConnection\WebConnectionService.cs" />
+    <Compile Include="Features\Favorites\Commands\FavoritesCommandProvider.cs" />
+    <Compile Include="Features\Favorites\Commands\FavoritesCommandTarget.cs" />
+    <Compile Include="Features\Favorites\FavoritesDummyForm.Designer.cs">
+      <DependentUpon>FavoritesDummyForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Features\Favorites\FavoritesDummyFormService.cs" />
+    <Compile Include="Features\Favorites\FavoritesFolderForm.Designer.cs">
+      <DependentUpon>FavoritesFolderForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Features\Favorites\FavoritesLinkForm.Designer.cs">
+      <DependentUpon>FavoritesLinkForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Features\Favorites\FavoritesSelectFolderForm.Designer.cs">
+      <DependentUpon>FavoritesSelectFolderForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Features\Favorites\IFavoritesDummyFormService.cs" />
+    <Compile Include="Features\Favorites\IFavoritesManager.cs" />
+    <Compile Include="Features\Favorites\Menu\FavoritesContextMenuProvider.cs" />
+    <Compile Include="Features\Favorites\Menu\FavoritesToolbarProvider.cs" />
+    <Compile Include="Features\ForumViewer\Commands\ForumMessage\ForumMessageCommandProvider.cs" />
+    <Compile Include="Features\ForumViewer\Commands\ForumMessage\ForumMessageCommandHelper.cs" />
+    <Compile Include="Features\ForumViewer\Commands\Forums\ForumsCommandProvider.cs" />
+    <Compile Include="Features\ForumViewer\Commands\ForumViewer\ForumViewerCommandProvider.cs" />
+    <Compile Include="Features\ForumViewer\EnterTopicMessageIdForm.Designer.cs">
+      <DependentUpon>EnterTopicMessageIdForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Features\ForumViewer\ExpectedMessageClickedForm.Designer.cs">
+      <DependentUpon>ExpectedMessageClickedForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Features\ForumViewer\ForumsAggregatesService.cs" />
+    <Compile Include="Features\ForumViewer\MarkMsgReadForm.Designer.cs">
+      <DependentUpon>MarkMsgReadForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Features\ForumViewer\Menu\HistoryMenuProvider.cs" />
+    <Compile Include="Features\ForumViewer\MessageEditor\FindDialogForm.Designer.cs">
+      <DependentUpon>FindDialogForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Features\ForumViewer\MessageEditor\Menu\TagsBarProvider.cs" />
+    <Compile Include="Features\ForumViewer\FeatureActiveForumService.cs" />
+    <Compile Include="Features\ForumViewer\FeatureActiveMessageService.cs" />
+    <Compile Include="Core\Commands\Extensibility\CommandProviderStrategiesFactory.cs" />
+    <Compile Include="Core\Commands\Extensibility\CommandTargetStrategy.cs" />
+    <Compile Include="Core\Commands\Extensibility\CommandTargetStrategiesFactory.cs" />
+    <Compile Include="Core\ApplicationCommands\ApplicationCommandProvider.cs" />
+    <Compile Include="Core\ApplicationCommands\ApplicationCommandTarget.cs" />
+    <Compile Include="Core\DataManagement\Commands\DatabaseCommandProvider.cs" />
+    <Compile Include="Core\DataManagement\Commands\DatabaseCommandTarget.cs" />
+    <Compile Include="Core\DataManagement\Menu\DatabaseMenuProvider.cs" />
+    <Compile Include="Core\JBrowserManagement\Commands\JBrowserCommandProvider.cs" />
+    <Compile Include="Core\JBrowserManagement\Commands\JBrowserCommandTarget.cs" />
+    <Compile Include="Core\JBrowserManagement\JBrowserFormService.cs" />
+    <Compile Include="Core\JBrowserManagement\Menu\JBrowserMenuProvider.cs" />
+    <Compile Include="Core\JBrowserManagement\Menu\JBrowserToolbarProvider.cs" />
+    <Compile Include="Core\Menu\Extensibility\MenuProviderStrategy.cs" />
+    <Compile Include="Core\Menu\Extensibility\MenuStrategiesFactory.cs" />
+    <Compile Include="Core\Modules\CoreServices\Impl\Styles\StyleImageManager.cs" />
+    <Compile Include="Core\Modules\CoreServices\Model\PersistentData\IPersistentDataManager.cs" />
+    <Compile Include="Core\Modules\CoreServices\Model\Profiles\IUserProfile.cs" />
+    <Compile Include="Core\Modules\CoreServices\Model\Profiles\IUserProfilesManager.cs" />
+    <Compile Include="Core\Navigation\Commands\NavigationCommandProvider.cs" />
+    <Compile Include="Core\Navigation\Commands\NavigationCommandTarget.cs" />
+    <Compile Include="Core\ObjectModel\DataSort.cs" />
+    <Compile Include="Core\ObjectModel\MsgBaseComparer.cs" />
+    <Compile Include="Core\DefaultProgressService\DefaultProgressService.cs" />
+    <Compile Include="Core\DefaultProgressService\DefaultProgressVisualizer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Core\DefaultProgressService\DefaultProgressVisualizer.Designer.cs">
+      <DependentUpon>DefaultProgressVisualizer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Core\DefaultProgressService\ProgressForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Core\DefaultProgressService\ProgressForm.Designer.cs">
+      <DependentUpon>ProgressForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Core\Synchronization\Commands\SynchronizationCommandProvider.cs" />
+    <Compile Include="Core\Synchronization\Commands\SynchronizationCommandTarget.cs" />
+    <Compile Include="Core\Synchronization\UI\Menu\SynchronizationMenuProvider.cs" />
+    <Compile Include="Core\Synchronization\UI\Menu\SynchronizationToolbarProvider.cs" />
+    <Compile Include="Core\Synchronization\UI\Menu\SynchronizationTrayMenuProvider.cs" />
+    <Compile Include="Core\UI\ExceptionForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Core\UI\ExceptionForm.Designer.cs">
+      <DependentUpon>ExceptionForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Core\UI\Menu\MainFormMenuProvider.cs" />
+    <Compile Include="Core\UI\Menu\MainFormToolbarProvider.cs" />
+    <Compile Include="Core\NotifyIcon\Menu\TrayMenuProvider.cs" />
+    <Compile Include="Core\ObjectModel\Features\Model\FolderDummyForm.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Core\ObjectModel\Features\Model\FolderDummyForm.Designer.cs">
+      <DependentUpon>FolderDummyForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Features\ForumViewer\ForumHelper.cs" />
+    <Compile Include="Features\ForumViewer\ForumMessageCheckStateSource.cs" />
+    <Compile Include="Features\ForumViewer\MessageViewer\MsgViewer.Designer.cs">
+      <DependentUpon>MsgViewer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Features\ForumViewer\Navigation\HistoryNavigationType.cs" />
+    <Compile Include="Features\ForumViewer\IActiveMessagesService.cs" />
+    <Compile Include="Features\ForumViewer\IForumViewerService.cs" />
+    <Compile Include="Features\ForumViewer\IMessagesFeature.cs" />
+    <Compile Include="Features\ForumViewer\MessageEditor\Commands\MessageEditorCommandProvider.cs" />
+    <Compile Include="Features\ForumViewer\MessageEditor\Commands\MessageEditorCommandTarget.cs" />
+    <Compile Include="Features\ForumViewer\MessageEditor\Menu\MessageEditorMenuProvider.cs" />
+    <Compile Include="Features\ForumViewer\MessageEditor\Menu\MessageEditorToolbarProvider.cs" />
+    <Compile Include="Features\ForumViewer\MessageEditor\MessageEditorService.cs" />
+    <Compile Include="Features\ForumViewer\MessageEditor\SmilesToolbar\SmilesToolbarGenerator.cs" />
+    <Compile Include="Features\ForumViewer\RateForm.Designer.cs">
+      <DependentUpon>RateForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Features\ForumViewer\TagLine\Commands\TagLineCommandProvider.cs" />
+    <Compile Include="Features\ForumViewer\TagLine\Commands\TagLineCommandTarget.cs" />
+    <Compile Include="Features\ForumViewer\TagLine\ITagLineListFormService.cs" />
+    <Compile Include="Features\ForumViewer\TagLine\Menu\TagLineContextMenuProvider.cs" />
+    <Compile Include="Features\ForumViewer\TagLine\Menu\TagLineToolbarProvider.cs" />
+    <Compile Include="Features\ForumViewer\TagLine\TagLineEditorForm.Designer.cs">
+      <DependentUpon>TagLineEditorForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Features\ForumViewer\TagLine\TagLineListForm.Designer.cs">
+      <DependentUpon>TagLineListForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Features\ForumViewer\TagLine\TagLineListFormService.cs" />
+    <Compile Include="Features\ForumViewer\Navigation\MessageNavigateEvent.cs" />
+    <Compile Include="Features\ForumViewer\MessageViewer\MsgViewerActiveMessageService.cs" />
+    <Compile Include="Features\ForumViewer\Navigation\MessageViewHistory.cs" />
+    <Compile Include="Features\ForumViewer\Navigation\MessageViewHistoryEntry.cs" />
+    <Compile Include="Features\ForumViewer\MarkMsgReadForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Features\ForumViewer\Commands\Forum\ForumCommandProvider.cs" />
+    <Compile Include="Features\ForumViewer\Commands\Forum\ForumCommandTarget.cs" />
+    <Compile Include="Features\ForumViewer\Commands\ForumMessage\ForumMessageCommandTarget.cs" />
+    <Compile Include="Features\ForumViewer\Commands\Forums\ForumsCommandTarget.cs" />
+    <Compile Include="Features\ForumViewer\Commands\ForumViewer\ForumViewerCommandTarget.cs" />
+    <Compile Include="Features\ForumViewer\Menu\ForumMessageContextMenuProvider.cs" />
+    <Compile Include="Features\ForumViewer\Menu\ForumContextMenuProvider.cs" />
+    <Compile Include="Features\ForumViewer\Menu\ForumMenuProvider.cs" />
+    <Compile Include="Features\ForumViewer\Menu\ForumToolBarProvider.cs" />
+    <Compile Include="Features\ForumViewer\MessageViewer\Menu\MessageViewerToolBarProvider.cs" />
+    <Compile Include="Features\Outbox\Commands\OutboxCommandProvider.cs" />
+    <Compile Include="Features\Outbox\Commands\OutboxCommandTarget.cs" />
+    <Compile Include="Features\Outbox\DownloadTopic\DownloadTopicImpl.cs" />
+    <Compile Include="Features\Outbox\IActiveOutboxItemService.cs" />
+    <Compile Include="Features\Outbox\Menu\OutboxToolbarProvider.cs" />
+    <Compile Include="Features\Outbox\Menu\OutboxContextMenuProvider.cs" />
+    <Compile Include="Features\Outbox\FeatureActiveOutboxItemService.cs" />
+    <Compile Include="Features\Outbox\OutboxDummyForm.Designer.cs">
+      <DependentUpon>OutboxDummyForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Features\Outbox\RateMark\EditRateForm.Designer.cs">
+      <DependentUpon>EditRateForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Features\Search\Commands\SearchCommandProvider.cs" />
+    <Compile Include="Features\Search\Commands\SearchCommandTarget.cs" />
+    <Compile Include="Features\Search\Menu\SearchMenuProvider.cs" />
+    <Compile Include="Features\Search\Menu\SearchToolbarProvider.cs" />
+    <Compile Include="Features\Search\RU\RussianAnalyzer.cs" />
+    <Compile Include="Features\Search\RU\RussianCharsets.cs" />
+    <Compile Include="Features\Search\RU\RussianLetterTokenizer.cs" />
+    <Compile Include="Features\Search\RU\RussianLowerCaseFilter.cs" />
+    <Compile Include="Features\Search\RU\RussianStemFilter.cs" />
+    <Compile Include="Features\Search\RU\RussianStemmer.cs" />
+    <Compile Include="Features\Search\Search.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Search.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Features\Search\SearchDummyForm.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Features\Search\SearchDummyForm.Designer.cs">
+      <DependentUpon>SearchDummyForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Features\Search\SearchService.cs" />
+    <Compile Include="Framework\DockingRsdn\ContentDummyForm.Designer.cs">
+      <DependentUpon>ContentDummyForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Framework\DockingRsdn\JanusDockPane.Designer.cs">
+      <DependentUpon>JanusDockPane.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Framework\Docking\DockPanelSkin.cs" />
+    <Compile Include="Core\DataManagement\Extensibility\DataStrategiesFactory.cs" />
+    <Compile Include="Core\DataManagement\JanusDatabaseManager.cs" />
+    <Compile Include="Core\ObjectModel\IMsg.cs" />
+    <Compile Include="Core\Statistics\StatsFormatterManager.cs" />
+    <Compile Include="Core\Statistics\StatsFormatterStrategy.cs" />
+    <Compile Include="rsdn.ru\ForumViewer\ForumEntryIdsExtensions.cs" />
+    <Compile Include="rsdn.ru\ForumViewer\ForumImages\ForumImageManager.cs" />
+    <Compile Include="rsdn.ru\ForumViewer\MessageMarkService.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Core\ApplicationManager.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Core\Configuration\ButtonsPropertyConverter.cs" />
+    <Compile Include="Core\Configuration\ChangeActionType.cs" />
+    <Compile Include="Core\Configuration\ChangePropertyAttribute.cs" />
+    <Compile Include="Core\Configuration\CitationTagConfig.cs" />
+    <Compile Include="Core\Configuration\Config.cs" />
+    <Compile Include="Core\Configuration\ConfirmationConfig.cs" />
+    <Compile Include="Core\Configuration\DetailStyleTab.cs" />
+    <Compile Include="Core\Configuration\EnvelopeConfig.cs" />
+    <Compile Include="Core\Configuration\UrlBehavior.cs" />
+    <Compile Include="Core\Configuration\ForumDisplayConfig.cs" />
+    <Compile Include="Core\Configuration\ForumExportConfig.cs" />
+    <Compile Include="Core\Configuration\JanusCategoryAttribute.cs" />
+    <Compile Include="Core\Configuration\JanusDescriptionAttribute.cs" />
+    <Compile Include="Core\Configuration\JanusDisplayNameAttribute.cs" />
+    <Compile Include="Core\Configuration\MediaPlayerTagConfig.cs" />
+    <Compile Include="Core\Configuration\NavigationComboConfig.cs" />
+    <Compile Include="Core\Configuration\NormalStyleTab.cs" />
+    <Compile Include="Core\Configuration\NotificationConfig.cs" />
+    <Compile Include="Core\Configuration\OptionsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Core\Configuration\OptionsUserForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Core\Configuration\SearchConfig.cs" />
+    <Compile Include="Core\Configuration\SmartJumpBehavior.cs" />
+    <Compile Include="Core\Configuration\SoundConfig.cs" />
+    <Compile Include="Core\Configuration\StyleConfig.cs" />
+    <Compile Include="Core\Configuration\SubConfigBase.cs" />
+    <Compile Include="Core\Configuration\TagLineConfig.cs" />
+    <Compile Include="Core\Configuration\TickerConfig.cs" />
+    <Compile Include="Core\Configuration\ToolbarImageSize.cs" />
+    <Compile Include="Core\Configuration\ToolStripsStyle.cs" />
+    <Compile Include="Core\Configuration\TopicRepairMode.cs" />
+    <Compile Include="Core\Configuration\UILanguage.cs" />
+    <Compile Include="Core\DataManagement\DatabaseManager\DatabaseManager.Aggregates.cs" />
+    <Compile Include="Core\DataManagement\DatabaseManager\DatabaseManager.ForumMessages.cs" />
+    <Compile Include="Core\DataManagement\DBDriverManager.cs" />
+    <Compile Include="Core\DataManagement\DatabaseManager\DatabaseManager.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Core\DataManagement\DBVars.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Core\DataSchemaManagement\DbsmManager\DBSchemaManager.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Core\DataManagement\Extensibility\DBDriverRegStrategy.cs" />
+    <Compile Include="Core\DataSchemaManagement\SelectDB.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Core\DataSchemaManagement\SelectDB.Designer.cs">
+      <DependentUpon>SelectDB.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Core\DockManagement\DockManager.cs" />
+    <Compile Include="Core\Extensibility\JanusExtensionManager.cs" />
+    <Compile Include="Core\Extensibility\ExtInfoProvidersStrategy.cs" />
+    <Compile Include="Core\JanusProtocolSupport\JanusProtocolInfo.cs" />
+    <Compile Include="Core\JBrowserManagement\WebBrowserForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Core\JBrowserManagement\WebBrowserForm.designer.cs">
+      <DependentUpon>WebBrowserForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Core\LocalUserManagement\LocalUser.cs" />
+    <Compile Include="Core\LocalUserManagement\LocalUserNotFoundException.cs" />
+    <Compile Include="Core\LoggingManagement\LogForm.Designer.cs">
+      <DependentUpon>LogForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Core\JanusProtocolSupport\XmlPageBuilder\XmlBuilder.cs" />
+    <Compile Include="Core\JanusProtocolSupport\XmlPageBuilder\XmlMessage.cs" />
+    <Compile Include="Core\JanusProtocolSupport\XmlPageBuilder\XmlPageBuilder.cs" />
+    <Compile Include="Core\JanusProtocolSupport\XmlPageBuilder\XmlTextWriterEx.cs" />
+    <Compile Include="Core\Janus.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Core\JanusProtocolSupport\HtmlPageBuilder\HtmlPageBuilder.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Core\JanusProtocolSupport\JanusFormatMessage.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Core\JanusProtocolSupport\JanusInternalResourceProvider.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Core\JanusProtocolSupport\JanusProtocolDispatcher.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Core\JanusProtocolSupport\JanusProtocolEventHandlerAttribute.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Core\JanusProtocolSupport\JanusProtocolResource.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Core\LoggingManagement\FileLog.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Core\LoggingManagement\LogForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Core\LoggingManagement\LogComboBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Core\LoggingManagement\Logger.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Core\Extensibility\JanusExtStrategyFactory.cs" />
+    <Compile Include="Core\Extensibility\JanusHost.cs" />
+    <Compile Include="Core\Navigation\ForumsBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Core\Navigation\NavigationDummyForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Core\Navigation\Navigator.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Core\JanusProtocolSupport\LinkType.cs" />
+    <Compile Include="Features\Search\BuildIndexForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Features\Search\BuildIndexForm.Designer.cs">
+      <DependentUpon>BuildIndexForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Features\Search\SearchHelper.cs" />
+    <Compile Include="Core\SplashHelper.cs" />
+    <Compile Include="Core\SR.Janus.cs" />
+    <Compile Include="Core\Synchronization\SyncContext.cs" />
+    <Compile Include="Core\Synchronization\UI\SyncForm.Designer.cs">
+      <DependentUpon>SyncForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Core\Synchronization\Extensibility\SyncStrategiesFactory.cs" />
+    <Compile Include="Core\UI\SP1RequiredForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Core\UI\SP1RequiredForm.Designer.cs">
+      <DependentUpon>SP1RequiredForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Core\UI\UIShell.cs" />
+    <Compile Include="Features\Favorites\FavoritesFeature.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Core\ObjectModel\Features\Forum.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Core\ObjectModel\Features\ForumFolder.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Core\ObjectModel\Features\Forums.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Core\ObjectModel\Features\Model\Feature.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Core\ObjectModel\Features\Model\Features.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Core\ObjectModel\Features\Model\FolderFeature.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Core\ObjectModel\Features\Model\IFeature.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Core\ObjectModel\Features\Model\IFeatureGui.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Core\ObjectModel\Features\Model\IFeatureView.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Features\ForumViewer\GoToForm.Designer.cs">
+      <DependentUpon>GoToForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Features\ForumViewer\Export\ExportMessageDialog.Designer.cs">
+      <DependentUpon>ExportMessageDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Features\ForumViewer\ForumDummyForm.Designer.cs">
+      <DependentUpon>ForumDummyForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Features\ForumViewer\ForumFormState.cs" />
+    <Compile Include="Features\ForumViewer\JanusState\RestoreStateDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Features\ForumViewer\JanusState\RestoreStateDialog.Designer.cs">
+      <DependentUpon>RestoreStateDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Features\ForumViewer\JanusState\RestoreStateOptions.cs" />
+    <Compile Include="Features\ForumViewer\JanusState\SaveStateDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Features\ForumViewer\JanusState\SaveStateDialog.Designer.cs">
+      <DependentUpon>SaveStateDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Features\ForumViewer\JanusState\SaveStateOptions.cs" />
+    <Compile Include="Features\ForumViewer\JanusState\StateObject.cs" />
+    <Compile Include="Features\ForumViewer\MessageViewer\ModeratingForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Features\ForumViewer\MessageViewer\ModeratingForm.Designer.cs">
+      <DependentUpon>ModeratingForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Features\ForumViewer\MessageEditor\MessageForm.Designer.cs">
+      <DependentUpon>MessageForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Features\ForumViewer\MessageEditor\SmilesToolbar\SmilesToolbar.Designer.cs">
+      <DependentUpon>SmilesToolbar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Core\TextMacros\ResharperMacros\ResharperMacrosProvider.cs" />
+    <Compile Include="Features\Search\SearchFeature.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Core\ObjectModel\IInitable.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Core\ObjectModel\LinearTreeMsg.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Core\ObjectModel\Msg.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Core\ObjectModel\MsgBase.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Core\Synchronization\UI\SyncForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Core\Synchronization\Synchronizer.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Core\UI\AboutJanusForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Core\UI\MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Core\UI\SplashForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Features\Favorites\FavoritesDummyForm.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Features\Favorites\FavoritesFolder.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Features\Favorites\FavoritesFolderComparer.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Features\Favorites\FavoritesFolderForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Features\Favorites\FavoritesLink.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Features\Favorites\FavoritesLinkForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Features\Favorites\FavoritesManager.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Features\Favorites\FavoritesSelectFolderForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Features\Favorites\IFavoritesEntry.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Features\ForumViewer\GoToForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Features\ForumViewer\EnterTopicMessageIdForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Features\ForumViewer\ExpectedMessageClickedForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Features\ForumViewer\Export\ExportEncoding.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Features\ForumViewer\Export\ExportFormat.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Features\ForumViewer\Export\ExportMessageDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Features\ForumViewer\Export\ExportMode.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Features\ForumViewer\Export\MessageExporter.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Features\ForumViewer\ForumDummyForm.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Features\ForumViewer\Navigation\ForumNavigator.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Features\ForumViewer\ForumTreeImages.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Features\ForumViewer\MessageViewer\MsgViewer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Features\ForumViewer\RateForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Features\ForumViewer\MessageEditor\FindDialogForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Features\ForumViewer\MessageEditor\JanusScintilla.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Features\ForumViewer\MessageEditor\MessageEditor.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Features\ForumViewer\MessageEditor\MessageForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Features\ForumViewer\MessageEditor\MessageFormMode.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Features\ForumViewer\MessageEditor\MessageInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Features\ForumViewer\MessageEditor\QuoteAnalyzer.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Features\ForumViewer\MessageEditor\SmilesToolbar\ButtonInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Features\ForumViewer\MessageEditor\SmilesToolbar\ButtonInfoCollection.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Features\ForumViewer\MessageEditor\SmilesToolbar\SmilesToolbar.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Core\TextMacros\CitationMacros\CitationQueryType.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Core\TextMacros\CitationMacros\CitationMacrosProvider.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Core\TextMacros\LocalTimeMacros\LocalTimeMacrosProvider.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Core\TextMacros\MediaPlayerMacros\MediaPlayerMacrosProvider.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Core\TextMacros\MediaPlayerMacros\MediaPlayerType.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Core\TextMacros\SimpleMacros\SimpleMacrosProvider.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Features\ForumViewer\TagLine\TagLineEditorForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Features\ForumViewer\TagLine\TagLineInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Features\ForumViewer\TagLine\TagLineInfoEditor.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Features\ForumViewer\TagLine\TagLineInfos.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Features\ForumViewer\TagLine\TagLineListForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Features\ForumViewer\TagLine\TagLineManager.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Features\Outbox\DownloadTopic\DownloadTopic.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Features\Outbox\DownloadTopic\DownloadTopicCollection.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Features\Outbox\DownloadTopic\DownloadTopicEditor.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Features\Outbox\IOutboxCollection.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Features\Outbox\IOutboxItemEditor.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Features\Outbox\IPreviewSource.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Features\Outbox\NewMessage\NewMessage.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Features\Outbox\NewMessage\NewMessageCollection.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Features\Outbox\NewMessage\NewMessageEditor.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Features\Outbox\OutboxDummyForm.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Features\Outbox\OutboxFeature.cs" />
+    <Compile Include="Features\Outbox\OutboxImageManager.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Features\Outbox\OutboxItemEditorAttribute.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Features\Outbox\OutboxManager.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Features\Outbox\RateMark\EditRateForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Features\Outbox\RateMark\RateMark.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Features\Outbox\RateMark\RateMarkCollection.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Features\Outbox\RateMark\RateMarkEditor.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Core\Ticker\IIndicatorCollection.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Core\Ticker\ITicker.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Core\Ticker\ITickerIndicator.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Core\Ticker\TextIndicator.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Core\Ticker\Ticker.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Core\Ticker\TickerIndicatorBase.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Framework\Controls\CollapsibleSplitter.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Framework\Controls\ComboListBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Framework\Controls\ComboListBox.Designer.cs">
+      <DependentUpon>ComboListBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Framework\Controls\FramePanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Framework\Controls\ProgressPieControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Framework\Controls\TreeGrid\ActiveNodeHoldHelper.cs" />
+    <Compile Include="Framework\Controls\TreeGrid\BeforeMouseDownEventArgs.cs" />
+    <Compile Include="Framework\Controls\TreeGrid\IKeyedNode.cs" />
+    <Compile Include="Framework\Controls\TreeGrid\JanusGrid.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Framework\Controls\TreeGrid\PathKey.cs" />
+    <Compile Include="Framework\Utils\DataSetHelper.cs" />
+    <Compile Include="Framework\DockingRsdn\ContentDummyForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Framework\DockingRsdn\JanusDockPane.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Framework\Docking\AutoHideStripBase.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Framework\Docking\DockAreasEditor.cs" />
+    <Compile Include="Framework\Docking\DockContent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Framework\Docking\DockContentCollection.cs" />
+    <Compile Include="Framework\Docking\DockContentEventArgs.cs" />
+    <Compile Include="Framework\Docking\DockContentHandler.cs" />
+    <Compile Include="Framework\Docking\DockOutlineBase.cs" />
+    <Compile Include="Framework\Docking\DockPane.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Framework\Docking\DockPane.SplitterControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Framework\Docking\DockPaneCaptionBase.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Framework\Docking\DockPaneCollection.cs" />
+    <Compile Include="Framework\Docking\DockPanel.AutoHideWindow.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Framework\Docking\DockPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Framework\Docking\DockPanel.DockDragHandler.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Framework\Docking\DockPanel.DragHandler.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Framework\Docking\DockPanel.FocusManager.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Framework\Docking\DockPanel.MdiClientController.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Framework\Docking\DockPanel.Persistor.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Framework\Docking\DockPanel.SplitterDragHandler.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Framework\Docking\DockPanelExtender.cs" />
+    <Compile Include="Framework\Docking\DockPaneStripBase.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Framework\Docking\DockWindow.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Framework\Docking\DockWindow.SplitterControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Framework\Docking\DockWindowCollection.cs" />
+    <Compile Include="Framework\Docking\DragForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Framework\Docking\DummyControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Framework\Docking\Enums.cs" />
+    <Compile Include="Framework\Docking\FloatWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Framework\Docking\FloatWindowCollection.cs" />
+    <Compile Include="Framework\Docking\Helpers\DockHelper.cs" />
+    <Compile Include="Framework\Docking\Helpers\DrawHelper.cs" />
+    <Compile Include="Framework\Docking\Helpers\ResourceHelper.cs" />
+    <Compile Include="Framework\Docking\Helpers\Win32Helper.cs" />
+    <Compile Include="Framework\Docking\InertButtonBase.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Framework\Docking\Interfaces.cs" />
+    <Compile Include="Framework\Docking\Localization.cs" />
+    <Compile Include="Framework\Docking\Measures.cs" />
+    <Compile Include="Framework\Docking\NestedDockingStatus.cs" />
+    <Compile Include="Framework\Docking\NestedPaneCollection.cs" />
+    <Compile Include="Framework\Docking\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Framework\Docking\SplitterBase.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Framework\Docking\Strings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Strings.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Framework\Docking\VisibleNestedPaneCollection.cs" />
+    <Compile Include="Framework\Docking\VS2005AutoHideStrip.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Framework\Docking\VS2005DockPaneCaption.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Framework\Docking\VS2005DockPaneStrip.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Framework\Docking\Win32\Enums.cs" />
+    <Compile Include="Framework\Docking\Win32\NativeMethods.cs" />
+    <Compile Include="Framework\GoJanus\GoJanusInstaller.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Framework\GoJanus\GoJanusListener.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Framework\Utils\Algorithms.cs" />
+    <Compile Include="Framework\Utils\Beeper.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Framework\Utils\ClipboardHelper.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Framework\Utils\CollectionBase.cs" />
+    <Compile Include="Framework\Utils\CollectionWithEvents.cs" />
+    <Compile Include="Framework\Utils\DisposableBase.cs" />
+    <Compile Include="Framework\Utils\DragDropHelper.cs" />
+    <Compile Include="Framework\Utils\DragExpandDetector.cs" />
+    <Compile Include="Framework\Utils\DragStartDetector.cs" />
+    <Compile Include="Framework\Utils\NativeMethods.cs" />
+    <Compile Include="Framework\Utils\Pair.cs" />
+    <Compile Include="Framework\Utils\SiteUrlHelper.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Framework\Utils\SystemMenuHelper.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Framework\Utils\TanColorTable.cs" />
+    <Compile Include="Framework\Utils\TreeNodeBag.cs" />
+    <Compile Include="Framework\Utils\TwoCollectionEnumerator.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Framework\Utils\BitUtils.cs" />
+    <Compile Include="Framework\Utils\VistaTools.cs" />
+    <Compile Include="Framework\Utils\WheelDispatcher.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Framework\Utils\WindowActivator.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="rsdn.ru\ForumViewer\RsdnForumConfig.cs" />
+    <Compile Include="rsdn.ru\ForumViewer\RsdnForumService.cs" />
+    <Compile Include="rsdn.ru\Sync\RsdnSyncConfig.cs" />
+    <Compile Include="rsdn.ru\Sync\RsdnSyncConfigService.cs" />
+    <Compile Include="SR.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Core\ApplicationCommands\ApplicationCommandResources.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Core\ApplicationCommands\ApplicationCommandResources.ru.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Core\Configuration\ConfigResources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>ConfigResources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Core\Configuration\ConfigResources.ru.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Core\Configuration\OptionsForm.resx">
+      <DependentUpon>OptionsForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Core\Configuration\OptionsForm.ru.resx">
+      <DependentUpon>OptionsForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Core\Configuration\OptionsUserForm.resx">
+      <DependentUpon>OptionsUserForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Core\Configuration\OptionsUserForm.ru.resx">
+      <DependentUpon>OptionsUserForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Core\Console\ConsoleForm.resx">
+      <DependentUpon>ConsoleForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Core\Console\Commands\ConsoleCommandResources.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Core\Console\Commands\ConsoleCommandResources.ru.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Core\Console\ConsoleForm.ru.resx">
+      <DependentUpon>ConsoleForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Core\Console\ConsoleResources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>ConsoleResources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Core\Console\ConsoleResources.ru.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Core\DataSchemaManagement\SchemaManagementResources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>SchemaManagementResources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Core\DataSchemaManagement\SchemaManagementResources.ru.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Core\DataSchemaManagement\SelectDB.resx">
+      <DependentUpon>SelectDB.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Core\DefaultProgressService\DefaultProgressVisualizer.ru.resx">
+      <DependentUpon>DefaultProgressVisualizer.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Core\JBrowserManagement\Commands\JBrowserCommandResources.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Core\JBrowserManagement\Commands\JBrowserCommandResources.ru.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Core\JBrowserManagement\JBrowserResources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>JBrowserResources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Core\JBrowserManagement\JBrowserResources.ru.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Core\JBrowserManagement\Menu\JBrowserMenuResources.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Core\JBrowserManagement\Menu\JBrowserMenuResources.ru.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Core\JBrowserManagement\WebBrowserForm.resx">
+      <DependentUpon>WebBrowserForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Core\LoggingManagement\Commands\LogCommandResources.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Core\LoggingManagement\Commands\LogCommandResources.ru.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Core\NotifyIcon\NotifyIconResources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>NotifyIconResources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Core\NotifyIcon\NotifyIconResources.ru.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Core\Synchronization\SyncResources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>SyncResources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Core\Synchronization\SyncResources.ru.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Core\Synchronization\UI\Notification\SyncNotificationResources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>SyncNotificationResources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Core\Synchronization\UI\Notification\SyncNotificationResources.ru.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Core\TextMacros\CitationMacros\CitationMacrosResources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>CitationMacrosResources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Core\TextMacros\CitationMacros\CitationMacrosResources.ru.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Core\TextMacros\LocalTimeMacros\LocalTimeMacrosResources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>LocalTimeMacrosResources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Core\TextMacros\LocalTimeMacros\LocalTimeMacrosResources.ru.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Core\TextMacros\MediaPlayerMacros\MediaPlayerMacrosResources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>MediaPlayerMacrosResources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Core\TextMacros\MediaPlayerMacros\MediaPlayerMacrosResources.ru.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Core\TextMacros\ResharperMacros\ResharperMacrosResources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>ResharperMacrosResources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Core\TextMacros\ResharperMacros\ResharperMacrosResources.ru.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Core\TextMacros\SimpleMacros\SimpleMacrosResources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>SimpleMacrosResources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Core\TextMacros\SimpleMacros\SimpleMacrosResources.ru.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Features\ForumViewer\Commands\ForumMessage\ForumMessageCommandResources.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Features\ForumViewer\Commands\ForumMessage\ForumMessageCommandResources.ru.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Features\ForumViewer\Commands\Forums\ForumsCommandResources.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Features\ForumViewer\Commands\Forums\ForumsCommandResources.ru.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Features\ForumViewer\Commands\ForumViewer\ForumViewerCommandResources.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Features\ForumViewer\Commands\ForumViewer\ForumViewerCommandResources.ru.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Features\ForumViewer\Commands\Forum\ForumCommandResources.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Features\ForumViewer\Commands\Forum\ForumCommandResources.ru.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Features\ForumViewer\MessageEditor\Menu\TagsResources.ru.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Features\ForumViewer\MessageEditor\Menu\TagsResources.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Features\Search\BuildIndexForm.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>BuildIndexForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Core\Synchronization\UI\SyncForm.ru.resx">
+      <DependentUpon>SyncForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Core\UI\AboutJanusForm.ru.resx">
+      <DependentUpon>AboutJanusForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Core\UI\ExceptionForm.resx">
+      <DependentUpon>ExceptionForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Core\UI\ExceptionForm.ru.resx">
+      <DependentUpon>ExceptionForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Core\NotifyIcon\Menu\TrayMenu.xml" />
+    <EmbeddedResource Include="Core\UI\SP1RequiredForm.resx">
+      <DependentUpon>SP1RequiredForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Core\UI\SP1RequiredForm.ru.resx">
+      <DependentUpon>SP1RequiredForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Core\DefaultProgressService\DefaultProgressVisualizer.resx">
+      <DependentUpon>DefaultProgressVisualizer.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Core\DefaultProgressService\ProgressForm.resx">
+      <DependentUpon>ProgressForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Core\DefaultProgressService\ProgressForm.ru.resx">
+      <DependentUpon>ProgressForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Features\Favorites\FavoritesDummyForm.ru.resx">
+      <DependentUpon>FavoritesDummyForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Core\ObjectModel\Features\Model\FolderDummyForm.resx">
+      <DependentUpon>FolderDummyForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Features\ForumViewer\MarkMsgReadForm.resx">
+      <DependentUpon>MarkMsgReadForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Features\ForumViewer\MarkMsgReadForm.ru.resx">
+      <DependentUpon>MarkMsgReadForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Features\ForumViewer\JanusState\RestoreStateDialog.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>RestoreStateDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Features\ForumViewer\JanusState\RestoreStateDialog.ru.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>RestoreStateDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Features\ForumViewer\JanusState\SaveStateDialog.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>SaveStateDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Features\ForumViewer\JanusState\SaveStateDialog.ru.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>SaveStateDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Features\ForumViewer\MessageViewer\ModeratingForm.resx">
+      <DependentUpon>ModeratingForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Features\ForumViewer\MessageViewer\ModeratingForm.ru.resx">
+      <DependentUpon>ModeratingForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Features\Search\Search.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Search.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>Rsdn.Janus.Search</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Features\Search\Search.ru.resx" />
+    <EmbeddedResource Include="Features\Search\SearchDummyForm.resx">
+      <DependentUpon>SearchDummyForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Features\Search\SearchDummyForm.ru.resx">
+      <DependentUpon>SearchDummyForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Framework\DockingRsdn\ContentDummyForm.resx">
+      <DependentUpon>ContentDummyForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Framework\DockingRsdn\JanusDockPane.resx">
+      <DependentUpon>JanusDockPane.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Framework\Docking\Resources.resx">
+      <SubType>Designer</SubType>
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>WeifenLuo.WinFormsUI.Docking</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Framework\Docking\Strings.resx">
+      <SubType>Designer</SubType>
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Strings.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>WeifenLuo.WinFormsUI.Docking</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Images.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 2.0 %28x86%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>"$(SolutionDir)\LocUtil2/$(OutDir)LocUtil2.exe" "$(ProjectDir)SR.resx" "Rsdn.Janus" "public" "$(ProjectDir)/"
+"$(SolutionDir)\ImageUtil/$(OutDir)ImageUtil.exe" "$(ProjectDir)images" "$(ProjectDir)Resources/Images.resx"</PreBuildEvent>
+    <PostBuildEvent>mkdir "$(TargetDir)udf\"
+mkdir "$(TargetDir)intl\"
+set FBDIR=$(SolutionDir)\Dependencies\firebird\
+copy "%25FBDIR%25udf\*" "$(TargetDir)udf\*"
+copy "%25FBDIR%25intl\*" "$(TargetDir)intl\*"
+copy "%25FBDIR%25fbembed.dll"
+copy "%25FBDIR%25firebird.conf"
+copy "%25FBDIR%25firebird.log"
+copy "%25FBDIR%25firebird.msg"
+copy "%25FBDIR%25ib_util.dll"
+copy "%25FBDIR%25icudt30.dll"
+copy "%25FBDIR%25icuin30.dll"
+copy "%25FBDIR%25icuuc30.dll"</PostBuildEvent>
+  </PropertyGroup>
+</Project>

@@ -1,0 +1,272 @@
+﻿body
+{
+	color: #000000;   	
+	background-color: #FFFFFF;
+	font-family: verdana, tahoma, helvetica, arial;
+	padding: 5px 5px;
+}
+
+a:link    { text-decoration: none; color:#4587AB; }
+a:visited { text-decoration: none; color:#4587AB; }
+a:hover   { text-decoration: underline; color:#6677AA; }
+
+h2
+{
+	font-family: arial, verdana, tahoma, helvetica;
+	font-weight: bolder;
+	text-align: center;
+	color: #4580A0;
+}
+
+table.nm
+{
+	color: #444444;
+	background-color: #cfe5f0;
+	padding: 0px 5px 0px 5px;
+	border-style: solid;
+	border-width: 1px;
+	border-color: #65a7cb;
+}
+
+.rinp
+{
+	border-width: 1px;
+	border-style: solid;
+	border-color: #65a7cb;
+	background-color: #FFFFFF;
+	font-family: verdana, tahoma;
+}
+
+.fb
+{
+	border-width: 1px;
+	border-style: solid;
+	border-color: #65a7cb;
+	font-family: verdana, tahoma;
+	background-color: #cfe5f0;
+	cursor: pointer; cursor: hand;
+}
+
+.fbg
+{
+	border-width: 1px;
+	border-style: solid;
+	border-color: #999999;
+	font-family: verdana, tahoma;
+	background-color: #D4D4D4;
+	cursor: pointer; cursor: hand;
+}
+
+th.ghr
+{
+	background-color: #65A7CB;
+	font-weight: bold;
+	color: #d5f2ff;
+	text-align: left;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+th, tr.gh
+{
+	background-color: #65A7CB;
+	font-weight: bold;
+	color: #d5f2ff;
+	text-align: center;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+td
+{
+	padding-left: 3px;
+	padding-right: 3px;
+	padding-top: 0px;
+	padding-bottom: 0px;
+	border-color: White;
+}
+
+tr.gi
+{
+	background-color: #F4F4F4;
+}
+
+tr.gp
+{
+	background-color: #E4E4E4;
+}
+
+.hdr
+{
+	font-size: large;
+	font-weight: bolder;
+	text-align: center;
+	font-family: Arial;
+	color: #5597BB;
+}
+
+.shdr
+{
+	font-family: verdana, tahoma, helvetica, arial;
+	font-weight: lighter;
+	text-align: left;
+	color: #5597BB;
+	font-size: large;
+}
+
+.sshdr
+{
+	font-weight: bold;
+	font-size: small;
+	color: #5597BB;
+	font-family: verdana, tahoma, helvetica, arial;
+	text-align: left;
+}
+
+.j
+{
+	text-align: justify;
+}
+
+img.i
+{
+	border-width: 0px;
+	width: 18px;
+	height: 14px;
+}
+
+table.inf
+{
+	border-style: none;
+	width: 100%;
+}
+
+table.inf1
+{
+	border-style: solid;
+	border-width: 1px;
+	border-color: #65a7cb;
+	width: 100%;
+}
+
+td.infhdr
+{
+	background-color: #65a7cb;
+	font-weight: bold;
+	color: #d5f2ff;
+	text-align: left;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+td.ainfhdr
+{
+	background-color: #65c7ab;
+	font-weight: bold;
+	color: #ffffff;
+	text-align: left;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+td.centerinfhdr
+{
+	background-color: #65a7cb;
+	font-weight: bold;
+	color: #d5f2ff;
+	text-align: center;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+td.iinfhdr
+{
+	background-color: #e5a7cb;
+	font-weight: bold;
+	color: #ffffff;
+	text-align: left;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+td.inf
+{
+	border-color: #65a7cb;
+	border-style: solid;
+	border-width: 1px;
+	text-align: left;
+	padding: 5px 5px 5px 5px;
+}
+
+td.ainf
+{
+	border-color: #65c7ab;
+	border-style: solid;
+	border-width: 1px;
+	text-align: left;
+	padding: 5px 5px 5px 5px;
+}
+
+td.iinf
+{
+	border-color: #e5a7cb;
+	border-style: solid;
+	border-width: 1px;
+	text-align: left;
+	padding: 5px 5px 5px 5px;
+}
+
+td.infc
+{
+	border-color: #65a7cb;
+	border-style: solid;
+	border-width: 1px;
+	text-align: center;
+	padding: 5px;
+}
+
+td.nopadding
+{
+	padding-right: 0px;
+	padding-left: 0px;
+	padding-bottom: 0px;
+	padding-top: 0px;
+}
+
+/*** RSS Feed Button ***/
+.standardsButton:link
+{
+    border:1px solid;
+    border-color:#ffc8a4 #7d3302 #3f1a01 #ff9a57;
+    padding:0px 3px 0px 3px;
+    font:bold 10px verdana,sans-serif; 
+    color:#FFFFFF; 
+    background-color:#ff6600;
+    text-decoration:none;
+    margin:0px;
+    vertical-align:middle;   
+}
+.standardsButton:hover
+{
+    border:1px solid;
+    border-color:#ffc8a4 #7d3302 #3f1a01 #ff9a57;
+    padding:0px 3px 0px 3px;
+    font:bold 10px verdana,sans-serif; 
+    color:#FFFFFF; 
+    background-color:#ff6600;
+    text-decoration:none;
+    margin:0px;
+    vertical-align:middle;
+}
+.standardsButton:visited
+{
+    border:1px solid;
+    border-color:#ffc8a4 #7d3302 #3f1a01 #ff9a57;
+    padding:0px 3px 0px 3px;
+    font:bold 10px verdana,sans-serif; 
+    color:#FFFFFF; 
+    background-color:#ff6600;
+    text-decoration:none;
+    margin:0px;
+    vertical-align:middle;
+}

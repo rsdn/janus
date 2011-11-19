@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+
+<!--locale-->
+<!DOCTYPE window SYSTEM "chrome://gojanusff/locale/gojanusff.dtd" >
+
+<overlay id="gojanusff" xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+
+	<script type="application/x-javascript" src="chrome://gojanusff/content/GoJanusFF.js"/>
+
+	<popup id="contentAreaContextMenu">
+
+		<menuseparator id="gojanusff-sep" />
+
+		<menu id="gojanusff-menu"
+			label="&gojanusff-menu.label;"
+			class="menuitem-iconic"
+			image="chrome://gojanusff/skin/rsdn.ico" >
+
+			<menupopup>
+
+				<menuitem id="gojanusff-open"
+					label="&gojanusff-open.label;"
+					accesskey="&gojanusff-open.accesskey;"
+					oncommand="GoJanusFFMenu.doOpen(event);"
+					class="menuitem-iconic"
+					image="chrome://gojanusff/skin/rsdn.ico" />
+
+				<menuitem id="gojanusff-download"
+					label="&gojanusff-download.label;"
+					accesskey="&gojanusff-download.accesskey;"
+					oncommand="GoJanusFFMenu.doDownload(event);"
+					class="menuitem-iconic"
+					image="chrome://gojanusff/skin/rsdn.ico" />
+
+				<menuseparator />
+
+				<menuitem id="gojanusff-download-all"
+					label="&gojanusff-download-all.label;"
+					accesskey="&gojanusff-download-all.accesskey;"
+					oncommand="GoJanusFFMenu.doDownloadAll(event);"
+					class="menuitem-iconic"
+					image="chrome://gojanusff/skin/rsdn.ico" />
+
+			</menupopup>
+			
+		</menu>
+	</popup>
+</overlay>

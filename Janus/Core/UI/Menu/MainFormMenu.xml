@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<root xmlns="http://rsdn.ru/projects/Janus/JanusMenuDescriptor.xsd"
+	  name="MainForm.Menu">
+
+	<group name="Main">
+
+		<menu name="File" textResource="MainForm.Menu.File.Text" orderIndex="10">
+			<group name="Exit" orderIndex="100">
+				<menuCommand image="exit" command="Janus.Application.Exit"/>
+			</group>
+		</menu>
+
+		<menu name="Service" textResource="MainForm.Menu.Service.Text" orderIndex="40">
+
+			<group name="LogAndConsole" orderIndex="30">
+				<menuCommand command="Janus.Log.Show" image="log"/>
+				<menuCommand command="Janus.Console.Show" image="console"/>
+			</group>
+
+			<group name="Options" orderIndex="50">
+				<menuCommand command="Janus.Application.UserOptions" image="conoptions"/>
+				<menuCommand command="Janus.Application.AppOptions" image="options"/>
+			</group>
+
+		</menu>
+
+		<menu name="Help" textResource="MainForm.Menu.Help.Text" orderIndex="50">
+
+			<group name="Documentation" orderIndex="10">
+				<menuCommand command="Janus.Application.Help" image="help"/>
+			</group>
+
+			<group name="SendBugReport" orderIndex="20">
+				<menuCommand command="Janus.Application.SendBugReport" image="bug"/>
+			</group>
+
+			<group name="About" orderIndex="40">
+				<menuCommand command="Janus.Application.About" image="about"/>
+			</group>
+
+		</menu>
+
+	</group>
+
+</root>

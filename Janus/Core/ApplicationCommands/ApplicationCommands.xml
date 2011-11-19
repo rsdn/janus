@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<commands xmlns="http://rsdn.ru/projects/Janus/JanusCommandDescriptor.xsd">
+  
+  <command name="Janus.Application.Exit"
+           displayNameTextResource="Exit.DisplayName"
+           descriptionTextResource="Exit.Description"/>
+  
+  <command name="Janus.Application.About"
+           displayNameTextResource="About.DisplayName"
+           descriptionTextResource="About.Description"/>
+  
+  <command name="Janus.Application.AppOptions"
+           type="RequiresInteraction"
+           displayNameTextResource="AppOptions.DisplayName"
+           descriptionTextResource="AppOptions.Description"/>
+  
+  <command name="Janus.Application.UserOptions"
+           type="RequiresInteraction"
+           displayNameTextResource="UserOptions.DisplayName"
+           descriptionTextResource="UserOptions.Description"/>
+  
+  <command name="Janus.Application.Help"
+           displayNameTextResource="Help.DisplayName"
+           descriptionTextResource="Help.Description"/>
+  
+  <command name="Janus.Application.SendBugReport"
+           type="RequiresInteraction"
+           displayNameTextResource="SendBugReport.DisplayName"
+           descriptionTextResource="SendBugReport.Description"/>
+
+  <command name="Janus.Application.ShowMainForm"
+           displayNameTextResource="ShowMainForm.DisplayName"
+           descriptionTextResource="ShowMainForm.Description"/>
+  
+</commands>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<root xmlns="http://rsdn.ru/projects/Janus/JanusMenuDescriptor.xsd"
+	  name="Janus.Console.Toolbar">
+
+	<group name="Clear">
+		<menuCommand command="Janus.Console.Clear" image="clear"/>
+	</group>
+
+	<group name="Close">
+		<menuCommand command="Janus.Console.Close" image="exit"/>
+	</group>
+
+</root>

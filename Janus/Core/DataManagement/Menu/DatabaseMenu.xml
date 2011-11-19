@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<root xmlns="http://rsdn.ru/projects/Janus/JanusMenuDescriptor.xsd"
+	  name="MainForm.Menu">
+
+	<group name="Main">
+
+		<menu name="File" textResource="MainForm.Menu.File.Text" orderIndex="10">
+			<group name="MigrateDb" orderIndex="10">
+				<menuCommand command="Janus.Database.DbMigration" image="migrate"/>
+			</group>
+		</menu>
+
+		<menu name="Service" textResource="MainForm.Menu.Service.Text" orderIndex="40">
+			<group name="ServiceActions" orderIndex="40">
+				<menuCommand command="Janus.Database.RebuildAggregates"/>
+			</group>
+		</menu>
+
+	</group>
+
+</root>

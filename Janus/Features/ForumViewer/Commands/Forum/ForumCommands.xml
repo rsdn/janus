@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<commands xmlns="http://rsdn.ru/projects/Janus/JanusCommandDescriptor.xsd">
+
+  <command name="Janus.Forum.ShowForumArticles"
+           displayNameTextResource="ShowForumArticles.DisplayName"
+           descriptionTextResource="ShowForumArticles.Description">
+    <parameter name="forumId" isOptional="true"/>
+  </command>
+
+  <command name="Janus.Forum.ShowForumFaq"
+           displayNameTextResource="ShowForumFaq.DisplayName"
+           descriptionTextResource="ShowForumFaq.Description">
+    <parameter name="forumId" isOptional="true"/>
+  </command>
+
+  <command name="Janus.Forum.WriteMessage"
+           type="RequiresInteraction"
+           displayNameTextResource="WriteMessage.DisplayName"
+           descriptionTextResource="WriteMessage.Description">
+    <parameter name="forumId" isOptional="true"/>
+  </command>
+
+  <command name="Janus.Forum.OpenForumOnRsdn"
+           displayNameTextResource="OpenForumOnRsdn.DisplayName"
+           descriptionTextResource="OpenForumOnRsdn.Description">
+    <parameter name="forumId" isOptional="true"/>
+  </command>
+
+  <command name="Janus.Forum.SetAllMessagesInForumReadMark"
+           displayNameTextResource="SetAllMessagesInForumReadMark.DisplayName"
+           descriptionTextResource="SetAllMessagesInForumReadMark.Description">
+    <parameter name="forumIds" isOptional="true"/>
+    <parameter name="isRead"/>
+  </command>
+
+</commands>

@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<root xmlns="http://rsdn.ru/projects/Janus/JanusMenuDescriptor.xsd"
+	  name="MainForm.Toolbar">
+
+	<group name="Options" orderIndex="20">
+		<menuCommand command="Janus.Application.AppOptions" image="options"/>
+		<menuCommand command="Janus.Application.UserOptions" image="conoptions"/>
+	</group>
+
+</root>

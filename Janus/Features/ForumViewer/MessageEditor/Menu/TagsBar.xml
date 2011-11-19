@@ -1,0 +1,458 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<root xmlns="http://rsdn.ru/projects/Janus/JanusMenuDescriptor.xsd"
+	  name="Forum.MessageEditor.TagsBar">
+
+	<group name="FormatTags">
+
+		<menuCommand command="Janus.Forum.MessageEditor.InsertPairTag"
+					 textResource="Format.Bold.Text"
+					 description="Format.Bold.Description">
+			<parameter name="start">b</parameter>
+			<parameter name="end">b</parameter>
+			<parameter name="newLine">false</parameter>
+		</menuCommand>
+
+		<menuCommand command="Janus.Forum.MessageEditor.InsertPairTag"
+					 textResource="Format.Italic.Text"
+					 description="Format.Italic.Description">
+			<parameter name="start">i</parameter>
+			<parameter name="end">i</parameter>
+			<parameter name="newLine">false</parameter>
+		</menuCommand>
+
+		<menuCommand command="Janus.Forum.MessageEditor.InsertPairTag"
+					 textResource="Format.Url.Text"
+					 description="Format.Url.Description">
+			<parameter name="start">url=</parameter>
+			<parameter name="end">url</parameter>
+			<parameter name="newLine">false</parameter>
+		</menuCommand>
+
+		<menuCommand command="Janus.Forum.MessageEditor.InsertPairTag"
+					 textResource="Format.Img.Text"
+					 description="Format.Img.Description">
+			<parameter name="start">img</parameter>
+			<parameter name="end">img</parameter>
+			<parameter name="newLine">false</parameter>
+		</menuCommand>
+
+		<menuCommand command="Janus.Forum.MessageEditor.InsertPairTag"
+					 textResource="Format.Quote.Text"
+					 description="Format.Quote.Description">
+			<parameter name="start">q</parameter>
+			<parameter name="end">q</parameter>
+			<parameter name="newLine">true</parameter>
+		</menuCommand>
+
+		<menuCommand command="Janus.Forum.MessageEditor.InsertPairTag"
+					 textResource="Format.List.Text"
+					 description="Format.List.Description">
+			<parameter name="start">list</parameter>
+			<parameter name="end">list</parameter>
+			<parameter name="newLine">true</parameter>
+		</menuCommand>
+
+		<menuCommand command="Janus.Forum.MessageEditor.InsertPairTag"
+					 textResource="Format.List1.Text"
+					 description="Format.List1.Description">
+			<parameter name="start">list=1</parameter>
+			<parameter name="end">list</parameter>
+			<parameter name="newLine">true</parameter>
+		</menuCommand>
+
+		<menuCommand command="Janus.Forum.MessageEditor.InsertPairTag"
+					 textResource="Format.Lista.Text"
+					 description="Format.Lista.Description">
+			<parameter name="start">list=a</parameter>
+			<parameter name="end">list</parameter>
+			<parameter name="newLine">true</parameter>
+		</menuCommand>
+
+		<menuCommand command="Janus.Forum.MessageEditor.InsertSingleTag"
+					 textResource="Format.ListItem.Text"
+					 description="Format.ListItem.Description">
+			<parameter name="text">*</parameter>
+		</menuCommand>
+
+		<menuCommand command="Janus.Forum.MessageEditor.InsertSingleTag"
+					 textResource="Format.Hr.Text"
+					 description="Format.Hr.Description">
+			<parameter name="text">hr</parameter>
+		</menuCommand>
+
+		<menuCommand command="Janus.Forum.MessageEditor.InsertPairTag"
+					 textResource="Format.Email.Text"
+					 description="Format.Email.Description">
+			<parameter name="start">email</parameter>
+			<parameter name="end">email</parameter>
+			<parameter name="newLine">false</parameter>
+		</menuCommand>
+
+		<menuCommand command="Janus.Forum.MessageEditor.InsertPairTag"
+					 textResource="Format.Msdn.Text"
+					 description="Format.Msdn.Description">
+			<parameter name="start">msdn</parameter>
+			<parameter name="end">msdn</parameter>
+			<parameter name="newLine">false</parameter>
+		</menuCommand>
+
+		<menuCommand command="Janus.Forum.MessageEditor.InsertPairTag"
+					 textResource="Format.Title1.Text"
+					 description="Format.Title1.Description">
+			<parameter name="start">h1</parameter>
+			<parameter name="end">h1</parameter>
+			<parameter name="newLine">false</parameter>
+		</menuCommand>
+
+		<menuCommand command="Janus.Forum.MessageEditor.InsertPairTag"
+					 textResource="Format.Title2.Text"
+					 description="Format.Title2.Description">
+			<parameter name="start">h2</parameter>
+			<parameter name="end">h2</parameter>
+			<parameter name="newLine">false</parameter>
+		</menuCommand>
+
+		<menuCommand command="Janus.Forum.MessageEditor.InsertPairTag"
+					 textResource="Format.Title3.Text"
+					 description="Format.Title3.Description">
+			<parameter name="start">h3</parameter>
+			<parameter name="end">h3</parameter>
+			<parameter name="newLine">false</parameter>
+		</menuCommand>
+
+		<menuCommand command="Janus.Forum.MessageEditor.InsertPairTag"
+					 textResource="Format.Title4.Text"
+					 description="Format.Title4.Description">
+			<parameter name="start">h4</parameter>
+			<parameter name="end">h4</parameter>
+			<parameter name="newLine">false</parameter>
+		</menuCommand>
+
+		<menuCommand command="Janus.Forum.MessageEditor.InsertPairTag"
+					 textResource="Format.Title5.Text"
+					 description="Format.Title5.Description">
+			<parameter name="start">h5</parameter>
+			<parameter name="end">h5</parameter>
+			<parameter name="newLine">false</parameter>
+		</menuCommand>
+
+		<menuCommand command="Janus.Forum.MessageEditor.InsertPairTag"
+					 textResource="Format.Title6.Text"
+					 description="Format.Title6.Description">
+			<parameter name="start">h6</parameter>
+			<parameter name="end">h6</parameter>
+			<parameter name="newLine">false</parameter>
+		</menuCommand>
+
+		<menuCommand command="Janus.Forum.MessageEditor.InsertPairTag"
+					 textResource="Format.Table.Text"
+					 description="Format.Table.Description">
+			<parameter name="start">t</parameter>
+			<parameter name="end">t</parameter>
+			<parameter name="newLine">true</parameter>
+		</menuCommand>
+
+		<menuCommand command="Janus.Forum.MessageEditor.InsertPairTag"
+					 textResource="Format.TableRow.Text"
+					 description="Format.TableRow.Description">
+			<parameter name="start">tr</parameter>
+			<parameter name="end">tr</parameter>
+			<parameter name="newLine">true</parameter>
+		</menuCommand>
+
+		<menuCommand command="Janus.Forum.MessageEditor.InsertPairTag"
+					 textResource="Format.TableHeader.Text"
+					 description="Format.TableHeader.Description">
+			<parameter name="start">th</parameter>
+			<parameter name="end">th</parameter>
+			<parameter name="newLine">false</parameter>
+		</menuCommand>
+
+		<menuCommand command="Janus.Forum.MessageEditor.InsertPairTag"
+					 textResource="Format.TableCell.Text"
+					 description="Format.TableCell.Description">
+			<parameter name="start">td</parameter>
+			<parameter name="end">td</parameter>
+			<parameter name="newLine">false</parameter>
+		</menuCommand>
+
+	</group>
+
+
+	<group name="LanguageTags">
+
+		<menuCommand command="Janus.Forum.MessageEditor.InsertPairTag"
+						 textResource="Code.Common.Text"
+						 description="Code.Common.Description">
+			<parameter name="start">code</parameter>
+			<parameter name="end">code</parameter>
+			<parameter name="newLine">true</parameter>
+		</menuCommand>
+
+		<menuCommand command="Janus.Forum.MessageEditor.InsertPairTag"
+						 textResource="Code.CSharp.Text"
+						 description="Code.CSharp.Description">
+			<parameter name="start">c#</parameter>
+			<parameter name="end">c#</parameter>
+			<parameter name="newLine">true</parameter>
+		</menuCommand>
+
+		<menuCommand command="Janus.Forum.MessageEditor.InsertPairTag"
+						 textResource="Code.C.Text"
+						 description="Code.C.Description">
+			<parameter name="start">ccode</parameter>
+			<parameter name="end">ccode</parameter>
+			<parameter name="newLine">true</parameter>
+		</menuCommand>
+
+		<menuCommand command="Janus.Forum.MessageEditor.InsertPairTag"
+						 textResource="Code.Pascal.Text"
+						 description="Code.Pascal.Description">
+			<parameter name="start">pascal</parameter>
+			<parameter name="end">pascal</parameter>
+			<parameter name="newLine">true</parameter>
+		</menuCommand>
+
+		<menuCommand command="Janus.Forum.MessageEditor.InsertPairTag"
+						 textResource="Code.Sql.Text"
+						 description="Code.Sql.Description">
+			<parameter name="start">sql</parameter>
+			<parameter name="end">sql</parameter>
+			<parameter name="newLine">true</parameter>
+		</menuCommand>
+
+		<menuCommand command="Janus.Forum.MessageEditor.InsertPairTag"
+						 textResource="Code.Php.Text"
+						 description="Code.Php.Description">
+			<parameter name="start">php</parameter>
+			<parameter name="end">php</parameter>
+			<parameter name="newLine">true</parameter>
+		</menuCommand>
+
+		<menuCommand command="Janus.Forum.MessageEditor.InsertPairTag"
+						 textResource="Code.Perl.Text"
+						 description="Code.Perl.Description">
+			<parameter name="start">perl</parameter>
+			<parameter name="end">perl</parameter>
+			<parameter name="newLine">true</parameter>
+		</menuCommand>
+
+		<menuCommand command="Janus.Forum.MessageEditor.InsertPairTag"
+						 textResource="Code.Java.Text"
+						 description="Code.Java.Description">
+			<parameter name="start">java</parameter>
+			<parameter name="end">java</parameter>
+			<parameter name="newLine">true</parameter>
+		</menuCommand>
+
+		<menuCommand command="Janus.Forum.MessageEditor.InsertPairTag"
+						 textResource="Code.Vb.Text"
+						 description="Code.Vb.Description">
+			<parameter name="start">vb</parameter>
+			<parameter name="end">vb</parameter>
+			<parameter name="newLine">true</parameter>
+		</menuCommand>
+
+		<menuCommand command="Janus.Forum.MessageEditor.InsertPairTag"
+						 textResource="Code.Asm.Text"
+						 description="Code.Asm.Description">
+			<parameter name="start">asm</parameter>
+			<parameter name="end">asm</parameter>
+			<parameter name="newLine">true</parameter>
+		</menuCommand>
+
+		<menuCommand command="Janus.Forum.MessageEditor.InsertPairTag"
+						 textResource="Code.Msil.Text"
+						 description="Code.Msil.Description">
+			<parameter name="start">msil</parameter>
+			<parameter name="end">msil</parameter>
+			<parameter name="newLine">true</parameter>
+		</menuCommand>
+
+		<menuCommand command="Janus.Forum.MessageEditor.InsertPairTag"
+						 textResource="Code.Midl.Text"
+						 description="Code.Midl.Description">
+			<parameter name="start">midl</parameter>
+			<parameter name="end">midl</parameter>
+			<parameter name="newLine">true</parameter>
+		</menuCommand>
+
+		<menuCommand command="Janus.Forum.MessageEditor.InsertPairTag"
+						 textResource="Code.Xml.Text"
+						 description="Code.Xml.Description">
+			<parameter name="start">xml</parameter>
+			<parameter name="end">xml</parameter>
+			<parameter name="newLine">true</parameter>
+		</menuCommand>
+
+		<menuCommand command="Janus.Forum.MessageEditor.InsertPairTag"
+						 textResource="Code.Erlang.Text"
+						 description="Code.Erlang.Description">
+			<parameter name="start">erlang</parameter>
+			<parameter name="end">erlang</parameter>
+			<parameter name="newLine">true</parameter>
+		</menuCommand>
+
+		<menuCommand command="Janus.Forum.MessageEditor.InsertPairTag"
+						 textResource="Code.Haskell.Text"
+						 description="Code.Haskell.Description">
+			<parameter name="start">haskell</parameter>
+			<parameter name="end">haskell</parameter>
+			<parameter name="newLine">true</parameter>
+		</menuCommand>
+
+		<menuCommand command="Janus.Forum.MessageEditor.InsertPairTag"
+						 textResource="Code.Lisp.Text"
+						 description="Code.Lisp.Description">
+			<parameter name="start">lisp</parameter>
+			<parameter name="end">lisp</parameter>
+			<parameter name="newLine">true</parameter>
+		</menuCommand>
+
+		<menuCommand command="Janus.Forum.MessageEditor.InsertPairTag"
+						 textResource="Code.Okaml.Text"
+						 description="Code.Okaml.Description">
+			<parameter name="start">ml</parameter>
+			<parameter name="end">ml</parameter>
+			<parameter name="newLine">true</parameter>
+		</menuCommand>
+
+		<menuCommand command="Janus.Forum.MessageEditor.InsertPairTag"
+						 textResource="Code.Python.Text"
+						 description="Code.Python.Description">
+			<parameter name="start">py</parameter>
+			<parameter name="end">py</parameter>
+			<parameter name="newLine">true</parameter>
+		</menuCommand>
+
+		<menuCommand command="Janus.Forum.MessageEditor.InsertPairTag"
+						 textResource="Code.Ruby.Text"
+						 description="Code.Ruby.Description">
+			<parameter name="start">rb</parameter>
+			<parameter name="end">rb</parameter>
+			<parameter name="newLine">true</parameter>
+		</menuCommand>
+
+		<menuCommand command="Janus.Forum.MessageEditor.InsertPairTag"
+						 textResource="Code.Prolog.Text"
+						 description="Code.Prolog.Description">
+			<parameter name="start">prolog</parameter>
+			<parameter name="end">prolog</parameter>
+			<parameter name="newLine">true</parameter>
+		</menuCommand>
+
+	</group>
+
+	<group name="Smiles">
+
+		<menuCommand command="Janus.Forum.MessageEditor.InsertSmile"
+					 description="Emotion.Smile.Description"
+					 image="MessageEditor\EmSmile">
+			<parameter name="text">:)</parameter>
+		</menuCommand>
+
+		<menuCommand command="Janus.Forum.MessageEditor.InsertSmile"
+					 description="Emotion.Frown.Description"
+					 image="MessageEditor\EmFrown">
+			<parameter name="text">:(</parameter>
+		</menuCommand>
+
+		<menuCommand command="Janus.Forum.MessageEditor.InsertSmile"
+					 description="Emotion.Wink.Description"
+					 image="MessageEditor\EmWink">
+			<parameter name="text">;)</parameter>
+		</menuCommand>
+
+		<menuCommand command="Janus.Forum.MessageEditor.InsertSmile"
+					 description="Emotion.Biggrin.Description"
+					 image="MessageEditor\EmBiggrin">
+			<parameter name="text">:))</parameter>
+		</menuCommand>
+
+		<menuCommand command="Janus.Forum.MessageEditor.InsertSmile"
+					 description="Emotion.Lol.Description"
+					 image="MessageEditor\EmLol">
+			<parameter name="text">:)))</parameter>
+		</menuCommand>
+
+		<menuCommand command="Janus.Forum.MessageEditor.InsertSmile"
+					 description="Emotion.Smirk.Description"
+					 image="MessageEditor\EmSmirk">
+			<parameter name="text">:-\</parameter>
+		</menuCommand>
+
+		<menuCommand command="Janus.Forum.MessageEditor.InsertSmile"
+					 description="Emotion.Confused.Description"
+					 image="MessageEditor\EmConfused">
+			<parameter name="text">:???:</parameter>
+		</menuCommand>
+
+		<menuCommand command="Janus.Forum.MessageEditor.InsertSmile"
+					 description="Emotion.No.Description"
+					 image="MessageEditor\EmNo">
+			<parameter name="text">:no:</parameter>
+		</menuCommand>
+
+		<menuCommand command="Janus.Forum.MessageEditor.InsertSmile"
+					 description="Emotion.Up.Description"
+					 image="MessageEditor\EmUp">
+			<parameter name="text">:up:</parameter>
+		</menuCommand>
+
+		<menuCommand command="Janus.Forum.MessageEditor.InsertSmile"
+					 description="Emotion.Down.Description"
+					 image="MessageEditor\EmDown">
+			<parameter name="text">:down:</parameter>
+		</menuCommand>
+
+		<menuCommand command="Janus.Forum.MessageEditor.InsertSmile"
+					 description="Emotion.Super.Description"
+					 image="MessageEditor\EmSuper">
+			<parameter name="text">:super:</parameter>
+		</menuCommand>
+
+		<menuCommand command="Janus.Forum.MessageEditor.InsertSmile"
+					 description="Emotion.Shuffle.Description"
+					 image="MessageEditor\EmShuffle">
+			<parameter name="text">:shuffle:</parameter>
+		</menuCommand>
+
+		<menuCommand command="Janus.Forum.MessageEditor.InsertSmile"
+					 description="Emotion.Wow.Description"
+					 image="MessageEditor\EmWow">
+			<parameter name="text">:wow:</parameter>
+		</menuCommand>
+
+		<menuCommand command="Janus.Forum.MessageEditor.InsertSmile"
+					 description="Emotion.Crash.Description"
+					 image="MessageEditor\EmCrash">
+			<parameter name="text">:crash:</parameter>
+		</menuCommand>
+
+		<menuCommand command="Janus.Forum.MessageEditor.InsertSmile"
+					 description="Emotion.User.Description"
+					 image="MessageEditor\EmUser">
+			<parameter name="text">:user:</parameter>
+		</menuCommand>
+
+		<menuCommand command="Janus.Forum.MessageEditor.InsertSmile"
+					 description="Emotion.Maniac.Description"
+					 image="MessageEditor\EmManiac">
+			<parameter name="text">:maniac:</parameter>
+		</menuCommand>
+
+		<menuCommand command="Janus.Forum.MessageEditor.InsertSmile"
+					 description="Emotion.Xz.Description"
+					 image="MessageEditor\EmXz">
+			<parameter name="text">:xz:</parameter>
+		</menuCommand>
+
+		<menuCommand command="Janus.Forum.MessageEditor.InsertSmile"
+					 description="Emotion.Beer.Description"
+					 image="MessageEditor\EmBeer">
+			<parameter name="text">:beer:</parameter>
+		</menuCommand>
+
+	</group>
+
+</root>

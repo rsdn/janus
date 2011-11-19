@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<commands xmlns="http://rsdn.ru/projects/Janus/JanusCommandDescriptor.xsd">
+
+	<command name="Janus.Forum.TagLine.Add"
+			 displayNameTextResource="Config.TagLine.Editor.Add"/>
+
+	<command name="Janus.Forum.TagLine.Edit"
+			 displayNameTextResource="Config.TagLine.Editor.Edit"/>
+
+	<command name="Janus.Forum.TagLine.Delete"
+			 displayNameTextResource="Config.TagLine.Editor.Delete"/>
+
+</commands>

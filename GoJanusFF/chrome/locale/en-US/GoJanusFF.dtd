@@ -1,0 +1,7 @@
+<!ENTITY gojanusff-menu.label "RSDN@Home">
+<!ENTITY gojanusff-open.label "Open in RSDN@Home">
+<!ENTITY gojanusff-open.accesskey "O">
+<!ENTITY gojanusff-download.label "Download on next synch.">
+<!ENTITY gojanusff-download.accesskey "D">
+<!ENTITY gojanusff-download-all.label "Download all links on page.">
+<!ENTITY gojanusff-download-all.accesskey "A">

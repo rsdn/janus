@@ -1,0 +1,7 @@
+﻿<!ENTITY gojanusff-menu.label "RSDN@Home">
+<!ENTITY gojanusff-open.label "Открыть сообщение в RSDN@Home">
+<!ENTITY gojanusff-open.accesskey "О">
+<!ENTITY gojanusff-download.label "Закачать сообщение при следующей синхронизации">
+<!ENTITY gojanusff-download.accesskey "З">
+<!ENTITY gojanusff-download-all.label "Закачать все сообщения на странице">
+<!ENTITY gojanusff-download-all.accesskey "В">

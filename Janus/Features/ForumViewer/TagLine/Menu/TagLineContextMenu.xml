@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<root xmlns="http://rsdn.ru/projects/Janus/JanusMenuDescriptor.xsd"
+	  name="Forum.TagLine.ContextMenu">
+
+	<group name="Edit">
+		<menuCommand command="Janus.Forum.TagLine.Edit" image="editmsg"/>
+	</group>
+
+	<group name="Delete">
+		<menuCommand command="Janus.Forum.TagLine.Delete" image="del"/>
+	</group>
+
+</root>

@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<items>
+	<button text="Forum.MessageViewer.Rate.Delete.Text" small-image="MessageViewer\RateX" event-id="MessageRates.DeleteRate"/>
+	<separator/>
+	<button text="Forum.MessageViewer.Rate.Plus1.Text" small-image="MessageViewer\RatePlus1" event-id="MessageRates.Plus1"/>
+	<button text="Forum.MessageViewer.Rate.One.Text" small-image="MessageViewer\Rate1" event-id="MessageRates.Rate1"/>
+	<button text="Forum.MessageViewer.Rate.Two.Text" small-image="MessageViewer\Rate2" event-id="MessageRates.Rate2"/>
+	<button text="Forum.MessageViewer.Rate.Three.Text" small-image="MessageViewer\Rate3" event-id="MessageRates.Rate3"/>
+	<separator/>
+	<button text="Forum.MessageViewer.Rate.Smile.Text" small-image="MessageViewer\RateSmile" event-id="MessageRates.Smile"/>
+	<separator/>
+	<button text="Forum.MessageViewer.Rate.Agree.Text" small-image="MessageViewer\RateAgree" event-id="MessageRates.Agree"/>
+	<button text="Forum.MessageViewer.Rate.Disagree.Text" small-image="MessageViewer\RateDisagree" event-id="MessageRates.DisAgree"/>
+	<separator/>
+	<button id="ModeratorialsButton" text="Forum.MessageViewer.Moderating" small-image="MessageViewer\Moderating" event-id="Moderating"/>
+</items>

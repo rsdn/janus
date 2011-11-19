@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<root xmlns="http://rsdn.ru/projects/Janus/JanusMenuDescriptor.xsd" 
+	  name="MessageEditor.Menu">
+
+	<group name="Main">
+
+		<menu name="File" textResource="MessageEditor.Menu.File.Text">
+
+			<group name="Send">
+				<menuCommand command="Janus.Forum.MessageEditor.Send" image="sendmessage"/>
+				<menuCommand command="Janus.Forum.MessageEditor.Preview" image="previewmessage"/>
+			</group>
+
+			<group name="Save">
+				<menuCommand command="Janus.Forum.MessageEditor.Save" image="save"/>
+				<menuCommand command="Janus.Forum.MessageEditor.SaveAndClose" image="saveandclose"/>
+			</group>
+
+			<group name="Close">
+				<menuCommand command="Janus.Forum.MessageEditor.Close" image="exit"/>
+			</group>
+
+		</menu>
+
+	</group>
+
+</root>

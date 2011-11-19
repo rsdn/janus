@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<commands xmlns="http://rsdn.ru/projects/Janus/JanusCommandDescriptor.xsd">
+
+  <command name="Janus.Forum.SetMessagesReadMarkByDate"
+           type="RequiresInteraction"
+           displayNameTextResource="SetMessagesReadMarkByDate.DisplayName"
+           descriptionTextResource="SetMessagesReadMarkByDate.Description"/>
+
+  <command name="Janus.Forum.ShowTeamList"
+           displayNameTextResource="ShowTeamList.DisplayName"
+           descriptionTextResource="ShowTeamList.Description"/>
+
+  <command name="Janus.Forum.OpenFileUploadOnRsdn"
+           displayNameTextResource="OpenFileUploadOnRsdn.DisplayName"
+           descriptionTextResource="OpenFileUploadOnRsdn.Description"/>
+
+  <command name="Janus.Forum.TopicDownload"
+           type="RequiresInteraction"
+           displayNameTextResource="TopicDownload.DisplayName"
+           descriptionTextResource="TopicDownload.Description"/>
+
+  <command name="Janus.Forum.ShowUserRatingIn"
+           displayNameTextResource="ShowUserRatingIn.DisplayName"
+           descriptionTextResource="ShowUserRatingIn.Description"/>
+
+  <command name="Janus.Forum.ShowUserRatingOut"
+           displayNameTextResource="ShowUserRatingOut.DisplayName"
+           descriptionTextResource="ShowUserRatingOut.Description"/>
+
+  <command name="Janus.Forum.ShowAllArticles"
+           displayNameTextResource="ShowAllArticles.DisplayName"
+           descriptionTextResource="ShowAllArticles.Description"/>
+
+  <command name="Janus.Forum.ShowAllFaq"
+           displayNameTextResource="ShowAllFaq.DisplayName"
+           descriptionTextResource="ShowAllFaq.Description"/>
+
+  <command name="Janus.Forum.MessageExport"
+           type="RequiresInteraction"
+           displayNameTextResource="MessageExport.DisplayName"
+           descriptionTextResource="MessageExport.Description"/>
+
+  <command name="Janus.Forum.StateExport"
+           type="RequiresInteraction"
+           displayNameTextResource="StateExport.DisplayName"
+           descriptionTextResource="StateExport.Description"/>
+
+  <command name="Janus.Forum.StateImport"
+           type="RequiresInteraction"
+           displayNameTextResource="StateImport.DisplayName"
+           descriptionTextResource="StateImport.Description"/>
+
+</commands>

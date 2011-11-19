@@ -1,0 +1,82 @@
+﻿Word Processing Shortcuts
+
+Ctrl+X	Cut text
+Ctrl+C	Copy text
+Ctrl+V	Paste text
+Ctrl+Z	Undo Change
+Ctrl+Y	Redo previous undo
+Ctrl+A	Select all text in the page
+Del	
+Delete selected text
+
+ 	 
+Ctrl+B	Bold text
+Ctrl+I	Italic text
+Ctrl+U	Underline text
+Ctrl+K	Strikeout text
+Ctrl+L	Left justify text
+Ctrl+E	Center text
+Ctrl+R	Right justify text
+Ctrl+J	Jump to notebook of current page
+Ctrl+Tab	Indent
+Shift+Tab	Unindent
+Shift+Ctrl+U	Superscript
+ 	 
+Ctrl+D	Inserts the current date
+Shift+Ctrl+F	Opens the font dialog
+Shift+Ctrl+P	Opens the paragraph options dialog
+Shift+Ctrl+>	Increase text size
+Shift+Ctrl+<	Decrease text size
+Shift+Ctrl+W	Word count
+Ctrl+Alt+Right	Move to next open page
+Ctrl+Alt+Left	Move to previous open page
+Ctrl+Alt+O	All On / All Off
+Shift+Ctrl+'	Smart Quotes on or off
+ 	 
+Ctrl+1, Ctrl+2...	Inserts user defined values specified in the Quick-Insert dialog
+ 	 
+Shift+Ctrl+1	Default colour (black)
+Shift+Ctrl+2	Grey colour
+Shift+Ctrl+3	Red colour
+Shift+Ctrl+4	Green colour
+Shift+Ctrl+5	Blue colour
+Shift+Ctrl+6	Maroon colour
+Shift+Ctrl+7	Teal colour
+Shift+Ctrl+8	Light blue colour
+Pages Shortcuts
+
+F2	Rename page, folder or notebook
+F6	Thesaurus
+F7	Spell check page
+F8	Live Spelling On or Off
+F12	Take snapshot of page
+ 	 
+Ctrl+P	Print page
+Ctrl+S	Save pages
+Ctrl+W	Close page
+Ctrl+Q	Close all other pages
+Ctrl+J	Jump to notebook of current page
+Ctrl+F	Find text
+F3	Find next
+Ctrl+H	Replace text
+Notebook Shortcuts
+
+Ctrl+N	Add new page
+Ctrl+T	Add new folder
+Ctrl+S	Save all pages
+Ctrl+C	Copy selected chapters and pages
+Ctrl+X	Cut selected folders and pages
+Ctrl+V	Paste copied or cut folders and pages
+Ctrl+Z	Deselect all cut or copied folders and pages
+Ctrl+G	Find folder or page
+Ctrl+J	Jump to Notebooks List or word processor
+ 	 
+Enter	Open folder, page, or notebook
+Del	Delete selected folders, pages, or notebooks
+F9	Switch Notebooks pane on
+F10	Switch Snapshot list on
+F11	Switch Notebooks and Snapshot list off
+F4	Lock Notebook
+F5	Unlock Notebook
+ 	 
+Alt+F4	Close PageFour

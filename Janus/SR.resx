@@ -1,0 +1,2270 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AltTextShowImages" xml:space="preserve">
+    <value>Left click to view.</value>
+  </data>
+  <data name="AuthorColumnName" xml:space="preserve">
+    <value>Author</value>
+  </data>
+  <data name="Base64ConvertError" xml:space="preserve">
+    <value>Base64 convertion error</value>
+  </data>
+  <data name="BranchRepairModeUpToRoot" xml:space="preserve">
+    <value>Up to root</value>
+  </data>
+  <data name="BranchRepairModeWholeTopic" xml:space="preserve">
+    <value>Whole topic</value>
+  </data>
+  <data name="Build" xml:space="preserve">
+    <value>build</value>
+  </data>
+  <data name="CloseButtonText" xml:space="preserve">
+    <value>Close</value>
+  </data>
+  <data name="Component" xml:space="preserve">
+    <value>Component</value>
+  </data>
+  <data name="ConfigDescriptionCaptionWidth" xml:space="preserve">
+    <value>Width of a column of the caption in pixels</value>
+  </data>
+  <data name="ConfigDescriptionScrolledEnvelope" xml:space="preserve">
+    <value>description</value>
+  </data>
+  <data name="ConfigDescriptionSearchOnlyInSubjects" xml:space="preserve">
+    <value>Search the text in the subjects only</value>
+  </data>
+  <data name="ConfigDescriptionShowSubject" xml:space="preserve">
+    <value>Show subject of message</value>
+  </data>
+  <data name="ConfigDisplayNameCaptionWidth" xml:space="preserve">
+    <value>Width of a column of the caption</value>
+  </data>
+  <data name="ConfigDisplayNameScrolledEnvelope" xml:space="preserve">
+    <value>Scrolled envelope</value>
+  </data>
+  <data name="ConfigDisplayNameSearchOnlyInSubjects" xml:space="preserve">
+    <value>Only in subjects</value>
+  </data>
+  <data name="ConfigDisplayNameShowSubject" xml:space="preserve">
+    <value>Subject</value>
+  </data>
+  <data name="ConfigLinksDisplayNameDefaultPage" xml:space="preserve">
+    <value>Default page</value>
+  </data>
+  <data name="ConfigLinksDisplayNameForums" xml:space="preserve">
+    <value>Forums</value>
+  </data>
+  <data name="ConfigLinksDisplayNameLogon" xml:space="preserve">
+    <value>logon</value>
+  </data>
+  <data name="ConfigLinksDisplayNamePolls" xml:space="preserve">
+    <value>Polls</value>
+  </data>
+  <data name="DatabaseAbsent" xml:space="preserve">
+    <value>Database is not exists</value>
+  </data>
+  <data name="DataColumnName" xml:space="preserve">
+    <value>Data</value>
+  </data>
+  <data name="DBVersion" xml:space="preserve">
+    <value>DB version</value>
+  </data>
+  <data name="DeleteOutboxMessage" xml:space="preserve">
+    <value>Delete outbox message</value>
+  </data>
+  <data name="DispatchRequestException" xml:space="preserve">
+    <value>Error while processing request '{0}'.</value>
+  </data>
+  <data name="DisplayNameWinamp2x" xml:space="preserve">
+    <value>Winamp 2x, 5x</value>
+  </data>
+  <data name="DisplayNameWinamp3x" xml:space="preserve">
+    <value>Winamp 3x</value>
+  </data>
+  <data name="DisplayNameWindowsMedia" xml:space="preserve">
+    <value>Windows Media Player</value>
+  </data>
+  <data name="EditOutboxMessage" xml:space="preserve">
+    <value>Edit outbox message …</value>
+  </data>
+  <data name="FavNewFolderInputBoxPrompt" xml:space="preserve">
+    <value>Folder name:</value>
+  </data>
+  <data name="FavNewFolderInputBoxTitle" xml:space="preserve">
+    <value>Enter new favorites folder name</value>
+  </data>
+  <data name="FavoritesDummyFormForumSelectMsg" xml:space="preserve">
+    <value>Select forum for view favorites messages</value>
+  </data>
+  <data name="FavoritesFolder" xml:space="preserve">
+    <value>Favorites</value>
+  </data>
+  <data name="FavRemoveMessagePrompt" xml:space="preserve">
+    <value>Remove item from Favorites?</value>
+  </data>
+  <data name="FavRenameFolderPrompt" xml:space="preserve">
+    <value>New folder name</value>
+  </data>
+  <data name="ForumColumnName" xml:space="preserve">
+    <value>Forum</value>
+  </data>
+  <data name="ForumSaveMessage" xml:space="preserve">
+    <value>Save message …</value>
+  </data>
+  <data name="ForumTeam" xml:space="preserve">
+    <value>Forum team</value>
+  </data>
+  <data name="ForumTeamList" xml:space="preserve">
+    <value>Full forum team list</value>
+  </data>
+  <data name="ForumUsers" xml:space="preserve">
+    <value>Forum users list</value>
+  </data>
+  <data name="ForumViewerUserRateCaption" xml:space="preserve">
+    <value>Rating list</value>
+  </data>
+  <data name="HistoryDockName" xml:space="preserve">
+    <value>History</value>
+  </data>
+  <data name="HistorySizeDescription" xml:space="preserve">
+    <value>Size of forum navigation history</value>
+  </data>
+  <data name="HistorySizeName" xml:space="preserve">
+    <value>History size</value>
+  </data>
+  <data name="InnerLink" xml:space="preserve">
+    <value> [Internal reference]</value>
+  </data>
+  <data name="InvalidUrlFormat" xml:space="preserve">
+    <value>Invalid URL format</value>
+  </data>
+  <data name="JanusDatabaseRestructured" xml:space="preserve">
+    <value>Database was restructured\nOld database stored in the same directory with name {0}</value>
+  </data>
+  <data name="JanusImpossibleWork" xml:space="preserve">
+    <value>Impossible application work without user information</value>
+  </data>
+  <data name="License" xml:space="preserve">
+    <value>License</value>
+  </data>
+  <data name="MessageAbsent" xml:space="preserve">
+    <value>Message is absent in local database.</value>
+  </data>
+  <data name="MessageAbsentLoadTitle" xml:space="preserve">
+    <value>Click here for loading a message at the next synchronization</value>
+  </data>
+  <data name="MessageAbsentMsgBoxMessage" xml:space="preserve">
+    <value>Missing messages will be loaded at the next synchronization</value>
+  </data>
+  <data name="MessageAbsentMsgBoxTitle" xml:space="preserve">
+    <value>Missing message loading</value>
+  </data>
+  <data name="MessageNotFound" xml:space="preserve">
+    <value>Message '{0}' not found in local DB.</value>
+  </data>
+  <data name="MsgExtBrowserLinkTitle" xml:space="preserve">
+    <value>Open on Web</value>
+  </data>
+  <data name="OptionsUserFormFirstRunMessage" xml:space="preserve">
+    <value> runs for a first time by current user</value>
+  </data>
+  <data name="OptionsUserFormNewUser" xml:space="preserve">
+    <value>New user</value>
+  </data>
+  <data name="OptionsUserFormOptions" xml:space="preserve">
+    <value>User options</value>
+  </data>
+  <data name="OptionsUserFormUserFolder" xml:space="preserve">
+    <value>User folder</value>
+  </data>
+  <data name="OutcomeMessagesFolderName" xml:space="preserve">
+    <value>Outcome messages</value>
+  </data>
+  <data name="PTEncDefaultDisplayName" xml:space="preserve">
+    <value>Default</value>
+  </data>
+  <data name="PTEncDOSCP866DisplayName" xml:space="preserve">
+    <value>DOS CodePage 866</value>
+  </data>
+  <data name="PTEncUnicodeDisplayName" xml:space="preserve">
+    <value>Unicode</value>
+  </data>
+  <data name="PTEncUTF8DisplayName" xml:space="preserve">
+    <value>UTF 8</value>
+  </data>
+  <data name="PTEncWin1251DisplayName" xml:space="preserve">
+    <value>Windows - 1251</value>
+  </data>
+  <data name="QueryTypeRandom" xml:space="preserve">
+    <value>Random</value>
+  </data>
+  <data name="QueryTypeSequential" xml:space="preserve">
+    <value>Sequential</value>
+  </data>
+  <data name="QuotaPrefixColor" xml:space="preserve">
+    <value>Quotation prefix color</value>
+  </data>
+  <data name="RateList" xml:space="preserve">
+    <value>Rate list</value>
+  </data>
+  <data name="ResourceNotFound" xml:space="preserve">
+    <value>Resource '{0}' not found.</value>
+  </data>
+  <data name="Revision" xml:space="preserve">
+    <value>revision</value>
+  </data>
+  <data name="ShowForumComboBoxDescription" xml:space="preserve">
+    <value>Show forum combo box at the top of forum viewer</value>
+  </data>
+  <data name="ShowForumComboBoxName" xml:space="preserve">
+    <value>Show forum combo box</value>
+  </data>
+  <data name="SizeToolbar16DisplayName" xml:space="preserve">
+    <value>16 pixels</value>
+  </data>
+  <data name="SizeToolbar24DisplayName" xml:space="preserve">
+    <value>24 pixels</value>
+  </data>
+  <data name="SmallMessageFormDefaultMessage" xml:space="preserve">
+    <value>Wait …</value>
+  </data>
+  <data name="SmartJumpToNextAny" xml:space="preserve">
+    <value>Jump to a next message</value>
+  </data>
+  <data name="SmartJumpToNextUnread" xml:space="preserve">
+    <value>Jump to the next unread message</value>
+  </data>
+  <data name="SmartJumpToNextUnreadForum" xml:space="preserve">
+    <value>Jump to next unread forum</value>
+  </data>
+  <data name="StyleConfigDisplayNameForumNamesColor" xml:space="preserve">
+    <value>Forum's name color in the navigation tree</value>
+  </data>
+  <data name="StyleConfigDisplayNameNavigationTreeBackground" xml:space="preserve">
+    <value>Background color in the navigation tree</value>
+  </data>
+  <data name="StyleConfigDisplayNameNavigationTreeFont" xml:space="preserve">
+    <value>Navigation tree font</value>
+  </data>
+  <data name="StyleConfigDisplayNameNavigationTreeForumPriorityColors" xml:space="preserve">
+    <value>Colors of navigation tree forum priority</value>
+  </data>
+  <data name="StyleConfigDisplayNameOptionsBackgroundColor" xml:space="preserve">
+    <value>The background color of the option editor</value>
+  </data>
+  <data name="StyleConfigDisplayNameOptionsGridLinesColor" xml:space="preserve">
+    <value>Options editor grid lines color</value>
+  </data>
+  <data name="StyleConfigDisplayNameOptionsHeaderColor" xml:space="preserve">
+    <value>Options editor header color</value>
+  </data>
+  <data name="StyleConfigDisplayNameOptionsTextColor" xml:space="preserve">
+    <value>Options editor text color</value>
+  </data>
+  <data name="TagsAndSmilesDockName" xml:space="preserve">
+    <value>Tags and smiles</value>
+  </data>
+  <data name="TGColumnAnswers" xml:space="preserve">
+    <value>Answers</value>
+  </data>
+  <data name="TGColumnAuthor" xml:space="preserve">
+    <value>Author</value>
+  </data>
+  <data name="TGColumnComment" xml:space="preserve">
+    <value>Comment</value>
+  </data>
+  <data name="TGColumnDate" xml:space="preserve">
+    <value>Date</value>
+  </data>
+  <data name="TGColumnForumName" xml:space="preserve">
+    <value>Forum name</value>
+  </data>
+  <data name="TGColumnMessageRate" xml:space="preserve">
+    <value>Message rate</value>
+  </data>
+  <data name="TGColumnNameLink" xml:space="preserve">
+    <value>Name or Link</value>
+  </data>
+  <data name="TGColumnRate" xml:space="preserve">
+    <value>Rate</value>
+  </data>
+  <data name="TGColumnSubject" xml:space="preserve">
+    <value>Subject</value>
+  </data>
+  <data name="TGColumnSubjectRate" xml:space="preserve">
+    <value>Subject rate</value>
+  </data>
+  <data name="ThemeColumnName" xml:space="preserve">
+    <value>Theme</value>
+  </data>
+  <data name="UILanguageEnglishDisplayName" xml:space="preserve">
+    <value>English</value>
+  </data>
+  <data name="UILanguageRussianDisplayName" xml:space="preserve">
+    <value>Russian</value>
+  </data>
+  <data name="UserInfo" xml:space="preserve">
+    <value>User info</value>
+  </data>
+  <data name="UserInfoAgree" xml:space="preserve">
+    <value>Agree</value>
+  </data>
+  <data name="UserInfoDisAgree" xml:space="preserve">
+    <value>Disagree</value>
+  </data>
+  <data name="UserInfoFrom" xml:space="preserve">
+    <value>from</value>
+  </data>
+  <data name="UserInfoFromUser" xml:space="preserve">
+    <value>From</value>
+  </data>
+  <data name="UserInfoHomePage" xml:space="preserve">
+    <value>Home page</value>
+  </data>
+  <data name="UserInfoMarks" xml:space="preserve">
+    <value>Marks</value>
+  </data>
+  <data name="UserInfoMessageCnt" xml:space="preserve">
+    <value>Count</value>
+  </data>
+  <data name="UserInfoMessagesCntCaption" xml:space="preserve">
+    <value>Total user message count, stored into local database</value>
+  </data>
+  <data name="UserInfoMessagesLastMonthOnly" xml:space="preserve">
+    <value> (last month only) </value>
+  </data>
+  <data name="UserInfoMessagesList" xml:space="preserve">
+    <value>User messages list</value>
+  </data>
+  <data name="UserInfoMissed" xml:space="preserve">
+    <value>User missed in local base</value>
+  </data>
+  <data name="UserInfoName" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="UserInfoNickName" xml:space="preserve">
+    <value>Nick</value>
+  </data>
+  <data name="UserInfoPercent" xml:space="preserve">
+    <value>Percent</value>
+  </data>
+  <data name="UserInfoRateListComplete" xml:space="preserve">
+    <value>The list of the summary rates</value>
+  </data>
+  <data name="UserInfoRateListLastMonth" xml:space="preserve">
+    <value>The list of rates at the last month</value>
+  </data>
+  <data name="UserInfoRealName" xml:space="preserve">
+    <value>Real name</value>
+  </data>
+  <data name="UserInfoSeeOnSite" xml:space="preserve">
+    <value>Look at the user info on the RSDN.ru</value>
+  </data>
+  <data name="UserInfoSmiles" xml:space="preserve">
+    <value>Smiles</value>
+  </data>
+  <data name="UserInfoSpecialization" xml:space="preserve">
+    <value>Specialization</value>
+  </data>
+  <data name="UserInfoStatus" xml:space="preserve">
+    <value>Status</value>
+  </data>
+  <data name="UserInfoTotalMessages" xml:space="preserve">
+    <value>Total messages count</value>
+  </data>
+  <data name="UserInfoTotalRate" xml:space="preserve">
+    <value>Total rate</value>
+  </data>
+  <data name="UserInfoViewFull" xml:space="preserve">
+    <value>View full user info</value>
+  </data>
+  <data name="UserInfoWhereFrom" xml:space="preserve">
+    <value>Whence</value>
+  </data>
+  <data name="Version" xml:space="preserve">
+    <value>Version</value>
+  </data>
+  <data name="WriteMessageCustomizeBar" xml:space="preserve">
+    <value>Customize bar…</value>
+  </data>
+  <data name="WriteMessagePreview" xml:space="preserve">
+    <value>Preview</value>
+  </data>
+  <data name="WriteMessageQuotaLevel1Color" xml:space="preserve">
+    <value>Quotation color level 1</value>
+  </data>
+  <data name="WriteMessageQuotaLevel2Color" xml:space="preserve">
+    <value>Quotation color level 2</value>
+  </data>
+  <data name="WriteMessageQuotaLevel3Color" xml:space="preserve">
+    <value>Quotation color level 3 and more</value>
+  </data>
+  <data name="WriteMessageSave" xml:space="preserve">
+    <value>Save</value>
+  </data>
+  <data name="WriteMessageSaveAndClose" xml:space="preserve">
+    <value>Save message and close</value>
+  </data>
+  <data name="WriteMessageSend" xml:space="preserve">
+    <value>Send</value>
+  </data>
+  <data name="WriteMessageTabSizeDescription" xml:space="preserve">
+    <value>Size of tabulation in symbols</value>
+  </data>
+  <data name="WriteMessageTabSizeName" xml:space="preserve">
+    <value>Tab size</value>
+  </data>
+  <data name="WriteMessageToggleCustomBar" xml:space="preserve">
+    <value>Show bar</value>
+  </data>
+  <data name="About.AIFileName" xml:space="preserve">
+    <value>File name</value>
+  </data>
+  <data name="About.AIKey" xml:space="preserve">
+    <value>Key</value>
+  </data>
+  <data name="About.AssemblyInfo" xml:space="preserve">
+    <value>Assembly Info</value>
+  </data>
+  <data name="About.CLCaption" xml:space="preserve">
+    <value>Change log</value>
+  </data>
+  <data name="About.CLComment" xml:space="preserve">
+    <value>Comment</value>
+  </data>
+  <data name="About.CLDeveloper" xml:space="preserve">
+    <value>Developer</value>
+  </data>
+  <data name="About.CLRevision" xml:space="preserve">
+    <value>Revision</value>
+  </data>
+  <data name="About.ComponentInfo" xml:space="preserve">
+    <value>Used in project components</value>
+  </data>
+  <data name="About.DevelopersList" xml:space="preserve">
+    <value>Developers list</value>
+  </data>
+  <data name="About.Locale" xml:space="preserve">
+    <value>Locale</value>
+  </data>
+  <data name="Application.GoJanusInstallationError" xml:space="preserve">
+    <value>Error installing GoJanus. Reason: {0}.</value>
+  </data>
+  <data name="Application.ProtocolInstallationError" xml:space="preserve">
+    <value>Error installing janus:// protocol. Reason: {0}.</value>
+  </data>
+  <data name="BuildIndexForm.Caption" xml:space="preserve">
+    <value>Build index</value>
+  </data>
+  <data name="BuildIndexForm.CleanAskCaptionText" xml:space="preserve">
+    <value>Warning</value>
+  </data>
+  <data name="BuildIndexForm.CleanAskText" xml:space="preserve">
+    <value>You really want to clean the index?</value>
+  </data>
+  <data name="BuildIndexForm.CleanText" xml:space="preserve">
+    <value>Clean</value>
+  </data>
+  <data name="BuildIndexForm.CloseText" xml:space="preserve">
+    <value>Close</value>
+  </data>
+  <data name="BuildIndexForm.OptimizeIndexText" xml:space="preserve">
+    <value>Optimize index at stop</value>
+  </data>
+  <data name="BuildIndexForm.ProgressText" xml:space="preserve">
+    <value>Message {0} of {1} ({2}%)</value>
+  </data>
+  <data name="BuildIndexForm.StartText" xml:space="preserve">
+    <value>Start</value>
+  </data>
+  <data name="BuildIndexForm.StopText" xml:space="preserve">
+    <value>Stop</value>
+  </data>
+  <data name="BuildIndexForm.Action.CanceledText" xml:space="preserve">
+    <value>Building search index is canceled by user</value>
+  </data>
+  <data name="BuildIndexForm.Action.CancelText" xml:space="preserve">
+    <value>Building of the search index is interrupted by user</value>
+  </data>
+  <data name="BuildIndexForm.Action.CompleteText" xml:space="preserve">
+    <value>Building search index is complete</value>
+  </data>
+  <data name="BuildIndexForm.Action.ErrorText" xml:space="preserve">
+    <value>Building search index aborted with exception: {0}. You must clean the index and repeat the operation.</value>
+  </data>
+  <data name="BuildIndexForm.Action.IndexingText" xml:space="preserve">
+    <value>Indexing, proceed {0} messages ({1}%) …</value>
+  </data>
+  <data name="BuildIndexForm.Action.OptimizingText" xml:space="preserve">
+    <value>Optimizing index…</value>
+  </data>
+  <data name="BuildIndexForm.Action.PreparingText" xml:space="preserve">
+    <value>Prepare for indexing …</value>
+  </data>
+  <data name="BuildIndexForm.Action.WelcomeText" xml:space="preserve">
+    <value>To build index press [Start]</value>
+  </data>
+  <data name="Config.ColorSettings" xml:space="preserve">
+    <value>Color settings</value>
+  </data>
+  <data name="Config.ColorSettingsDetailed" xml:space="preserve">
+    <value>Detailed color settings</value>
+  </data>
+  <data name="Config.SmartJumpPageSizeLegitimateValue" xml:space="preserve">
+    <value>Valid value must be in range from 1 to 100</value>
+  </data>
+  <data name="Config.Autosync.Description" xml:space="preserve">
+    <value>Runs synchronization periodically</value>
+  </data>
+  <data name="Config.Autosync.DisplayName" xml:space="preserve">
+    <value>Autosynchronization</value>
+  </data>
+  <data name="Config.AutosyncInterval.Description" xml:space="preserve">
+    <value>Time interval to run autosynchronization, in seconds</value>
+  </data>
+  <data name="Config.AutosyncInterval.DisplayName" xml:space="preserve">
+    <value>Autosynchronization time interval</value>
+  </data>
+  <data name="Config.CategoryName.BackgroundMode" xml:space="preserve">
+    <value>4. Background mode</value>
+  </data>
+  <data name="Config.CategoryName.Common" xml:space="preserve">
+    <value>1. Common</value>
+  </data>
+  <data name="Config.CategoryName.DB" xml:space="preserve">
+    <value>5. Database</value>
+  </data>
+  <data name="Config.CategoryName.Forums" xml:space="preserve">
+    <value>2. Forums</value>
+  </data>
+  <data name="Config.CategoryName.Sync" xml:space="preserve">
+    <value>3. Synchronization</value>
+  </data>
+  <data name="Config.CategoryName.Style.Common" xml:space="preserve">
+    <value>01. Common options</value>
+  </data>
+  <data name="Config.CategoryName.Style.MessageTree" xml:space="preserve">
+    <value>02. Messages tree</value>
+  </data>
+  <data name="Config.CategoryName.Style.NavigationTree" xml:space="preserve">
+    <value>03. Navigation tree</value>
+  </data>
+  <data name="Config.CategoryName.Style.OptionsDialog" xml:space="preserve">
+    <value>04. Options dialog</value>
+  </data>
+  <data name="Config.CategoryName.Style.WriteMessage" xml:space="preserve">
+    <value>04. Editing message</value>
+  </data>
+  <data name="Config.Confirmation.Description" xml:space="preserve">
+    <value>Enable/disable confirmations</value>
+  </data>
+  <data name="Config.Confirmation.DisplayName" xml:space="preserve">
+    <value>Confirmations</value>
+  </data>
+  <data name="Config.Confirmation.Exit.Description" xml:space="preserve">
+    <value>Prompt before exiting?</value>
+  </data>
+  <data name="Config.Confirmation.Exit.DisplayName" xml:space="preserve">
+    <value>Request exit confirmation</value>
+  </data>
+  <data name="Config.Confirmation.MarkAll.Description" xml:space="preserve">
+    <value>Ask for confirmation when marking all messages in the forum as read/unread?</value>
+  </data>
+  <data name="Config.Confirmation.MarkAll.DisplayName" xml:space="preserve">
+    <value>Prompt before marking all messages?</value>
+  </data>
+  <data name="Config.Confirmation.SearchJump.Description" xml:space="preserve">
+    <value>Confirm jump to the message by double click on it</value>
+  </data>
+  <data name="Config.Confirmation.SearchJump.DisplayName" xml:space="preserve">
+    <value>Jump confirmation</value>
+  </data>
+  <data name="Config.ConnectionTimeout.Description" xml:space="preserve">
+    <value>Time to wait for server answer, in milliseconds</value>
+  </data>
+  <data name="Config.ConnectionTimeout.DisplayName" xml:space="preserve">
+    <value>Connection timeout</value>
+  </data>
+  <data name="Config.ConnectRetries.Description" xml:space="preserve">
+    <value>Number of connection retries when the problem occurs</value>
+  </data>
+  <data name="Config.ConnectRetries.DisplayName" xml:space="preserve">
+    <value>Connection retries</value>
+  </data>
+  <data name="Config.DB.DbDriver" xml:space="preserve">
+    <value>DB Driver</value>
+  </data>
+  <data name="Config.DB.DbDriverDescription" xml:space="preserve">
+    <value>DB driver for DB Engine</value>
+  </data>
+  <data name="Config.DBConnectionString.Description" xml:space="preserve">
+    <value>Data base connection string</value>
+  </data>
+  <data name="Config.DBConnectionString.DisplayName" xml:space="preserve">
+    <value>Connection string</value>
+  </data>
+  <data name="Config.DBConnectTimeout.Description" xml:space="preserve">
+    <value>Data Base connection timeout</value>
+  </data>
+  <data name="Config.DBConnectTimeout.DisplayName" xml:space="preserve">
+    <value>Connection timeout</value>
+  </data>
+  <data name="Config.DBEngineType.Description" xml:space="preserve">
+    <value>Data Base Engine Type</value>
+  </data>
+  <data name="Config.DBEngineType.DisplayName" xml:space="preserve">
+    <value>DB Engine Type</value>
+  </data>
+  <data name="Config.DBFolderSpecIcon.Description" xml:space="preserve">
+    <value>Change standard icon of the file with database with RSDN@Home icon</value>
+  </data>
+  <data name="Config.DBFolderSpecIcon.DisplayName" xml:space="preserve">
+    <value>Special icon for database folder</value>
+  </data>
+  <data name="Config.DownloadUsers.Description" xml:space="preserve">
+    <value>Create local users database (increases trafic)</value>
+  </data>
+  <data name="Config.DownloadUsers.DisplayName" xml:space="preserve">
+    <value>Local users database</value>
+  </data>
+  <data name="Config.ExternalUrlBehavior.Description" xml:space="preserve">
+    <value>Defines the applicaiton behavior when external url is clicked.</value>
+  </data>
+  <data name="Config.ExternalUrlBehavior.DisplayName" xml:space="preserve">
+    <value>On external url clicked</value>
+  </data>
+  <data name="Config.ExternalUrlBehavior.OpenDefaultBrowser" xml:space="preserve">
+    <value>Open default browser</value>
+  </data>
+  <data name="Config.ExternalUrlBehavior.OpenJBrowser" xml:space="preserve">
+    <value>Open JBrowser</value>
+  </data>
+  <data name="Config.ForumDisplay.Description" xml:space="preserve">
+    <value>Forum display settings</value>
+  </data>
+  <data name="Config.ForumDisplay.DisplayName" xml:space="preserve">
+    <value>Display Settings</value>
+  </data>
+  <data name="Config.ForumDisplay.DateFormat.Description" xml:space="preserve">
+    <value>Format string, used to display date and time in messages</value>
+  </data>
+  <data name="Config.ForumDisplay.DateFormat.DisplayName" xml:space="preserve">
+    <value>Date format</value>
+  </data>
+  <data name="Config.ForumDisplay.DaysToOutdate.Description" xml:space="preserve">
+    <value>Days for allocation of prescription of the message or 0</value>
+  </data>
+  <data name="Config.ForumDisplay.DaysToOutdate.DisplayName" xml:space="preserve">
+    <value>Days for a mark of prescription of the message</value>
+  </data>
+  <data name="Config.ForumDisplay.DetectMediaContentLinks.Description" xml:space="preserve">
+    <value>Show media content into the current window</value>
+  </data>
+  <data name="Config.ForumDisplay.DetectMediaContentLinks.DisplayName" xml:space="preserve">
+    <value>Detect links to media content</value>
+  </data>
+  <data name="Config.ForumDisplay.FullForumNames.Description" xml:space="preserve">
+    <value>Show full forum names</value>
+  </data>
+  <data name="Config.ForumDisplay.FullForumNames.DisplayName" xml:space="preserve">
+    <value>Forums full names</value>
+  </data>
+  <data name="Config.ForumDisplay.GridLines.Description" xml:space="preserve">
+    <value>Tree grid lines visibility for messages</value>
+  </data>
+  <data name="Config.ForumDisplay.GridLines.DisplayName" xml:space="preserve">
+    <value>Message tree grid visibility</value>
+  </data>
+  <data name="Config.ForumDisplay.HighlightChildMessages.Description" xml:space="preserve">
+    <value>Highlights child messages with a color set in preferences.</value>
+  </data>
+  <data name="Config.ForumDisplay.HighlightChildMessages.DisplayName" xml:space="preserve">
+    <value>Highlight child messages</value>
+  </data>
+  <data name="Config.ForumDisplay.HighlightParentMessage.Description" xml:space="preserve">
+    <value>Highlights parent messages with a color set in preferences.</value>
+  </data>
+  <data name="Config.ForumDisplay.HighlightParentMessage.DisplayName" xml:space="preserve">
+    <value>Highlight parent message</value>
+  </data>
+  <data name="Config.ForumDisplay.MaxTopicsPerForum.Description" xml:space="preserve">
+    <value>Maximum topics to display in forum.
+                -1 - without restriction.</value>
+  </data>
+  <data name="Config.ForumDisplay.MaxTopicsPerForum.DisplayName" xml:space="preserve">
+    <value>Max topics per forum</value>
+  </data>
+  <data name="Config.ForumDisplay.MessageEnvelope.Description" xml:space="preserve">
+    <value>Adjusts a kind of elements of the message</value>
+  </data>
+  <data name="Config.ForumDisplay.MessageEnvelope.DisplayName" xml:space="preserve">
+    <value>Envelope of the message</value>
+  </data>
+  <data name="Config.ForumDisplay.MessageEnvelope.FloaterRateFrameAlpha.Description" xml:space="preserve">
+    <value>Set transparency of floating rating table</value>
+  </data>
+  <data name="Config.ForumDisplay.MessageEnvelope.FloaterRateFrameAlpha.DisplayName" xml:space="preserve">
+    <value>Transparency of floating rating</value>
+  </data>
+  <data name="Config.ForumDisplay.MessageEnvelope.RateWidth.Description" xml:space="preserve">
+    <value>Width of rate frame in px</value>
+  </data>
+  <data name="Config.ForumDisplay.MessageEnvelope.RateWidth.DisplayName" xml:space="preserve">
+    <value>Width of rate frame</value>
+  </data>
+  <data name="Config.ForumDisplay.MessageEnvelope.ShowFloaterRateFrame.Description" xml:space="preserve">
+    <value>Create and show rate frame as floating layer</value>
+  </data>
+  <data name="Config.ForumDisplay.MessageEnvelope.ShowFloaterRateFrame.DisplayName" xml:space="preserve">
+    <value>Show floater rate frame</value>
+  </data>
+  <data name="Config.ForumDisplay.MessageEnvelope.ShowHeader.Description" xml:space="preserve">
+    <value>Show header of message</value>
+  </data>
+  <data name="Config.ForumDisplay.MessageEnvelope.ShowHeader.DisplayName" xml:space="preserve">
+    <value>Header</value>
+  </data>
+  <data name="Config.ForumDisplay.MessageEnvelope.ShowRateFrame.Description" xml:space="preserve">
+    <value>Show small frame of mesage rate in message body</value>
+  </data>
+  <data name="Config.ForumDisplay.MessageEnvelope.ShowRateFrame.DisplayName" xml:space="preserve">
+    <value>Rate frame</value>
+  </data>
+  <data name="Config.ForumDisplay.MessageEnvelope.TemplatesFromFolder.Description" xml:space="preserve">
+    <value>Saves templates of the pages to files (into Templates directory of the user) and afterwards takes them from there</value>
+  </data>
+  <data name="Config.ForumDisplay.MessageEnvelope.TemplatesFromFolder.DisplayName" xml:space="preserve">
+    <value>Pages templates from files</value>
+  </data>
+  <data name="Config.ForumDisplay.MessageEnvelope.UseFriendlyCopyCode.Description" xml:space="preserve">
+    <value>Adds to the code blocks a header, allowing to copy the content to the clipboard quick and easy.</value>
+  </data>
+  <data name="Config.ForumDisplay.MessageEnvelope.UseFriendlyCopyCode.DisplayName" xml:space="preserve">
+    <value>Add header to code blocks</value>
+  </data>
+  <data name="Config.ForumDisplay.NewMessagesOnTop.Description" xml:space="preserve">
+    <value>New messages in topic appears on top</value>
+  </data>
+  <data name="Config.ForumDisplay.NewMessagesOnTop.DisplayName" xml:space="preserve">
+    <value>New messages on top</value>
+  </data>
+  <data name="Config.ForumDisplay.ShowImagesAtImgTag.Description" xml:space="preserve">
+    <value>Show images of the user in messages</value>
+  </data>
+  <data name="Config.ForumDisplay.ShowImagesAtImgTag.DisplayName" xml:space="preserve">
+    <value>Show images of tag [img]</value>
+  </data>
+  <data name="Config.ForumDisplay.ShowMessageFormCustomBarOnNewLine.Description" xml:space="preserve">
+    <value>Show custom bar in message editor on new line</value>
+  </data>
+  <data name="Config.ForumDisplay.ShowMessageFormCustomBarOnNewLine.DisplayName" xml:space="preserve">
+    <value>Custom bar in message editor on new line</value>
+  </data>
+  <data name="Config.ForumDisplay.ShowMessageId.Description" xml:space="preserve">
+    <value>Show message id in message list</value>
+  </data>
+  <data name="Config.ForumDisplay.ShowMessageId.DisplayName" xml:space="preserve">
+    <value>Show message id</value>
+  </data>
+  <data name="Config.ForumDisplay.ShowMessagesCountInUserInfo.DisplayName" xml:space="preserve">
+    <value>Messages count in info window</value>
+  </data>
+  <data name="Config.ForumDisplay.ShowRatingInUserInfo.Description" xml:space="preserve">
+    <value>Show user rating lisy in info window</value>
+  </data>
+  <data name="Config.ForumDisplay.ShowTotalMessages.Description" xml:space="preserve">
+    <value>Show total count of messages in navigation tree</value>
+  </data>
+  <data name="Config.ForumDisplay.ShowTotalMessages.DisplayName" xml:space="preserve">
+    <value>Show total messages</value>
+  </data>
+  <data name="Config.ForumDisplay.ShowUnreadThreadsOnly.Description" xml:space="preserve">
+    <value>Show only unread topics</value>
+  </data>
+  <data name="Config.ForumDisplay.ShowUnreadThreadsOnly.DisplayName" xml:space="preserve">
+    <value>Only unread topics</value>
+  </data>
+  <data name="Config.ForumDisplay.ShowUserRateLastMonthOnly.Description" xml:space="preserve">
+    <value>Show user rate list at last month only</value>
+  </data>
+  <data name="Config.ForumDisplay.ShowUserRateLastMonthOnly.DisplayName" xml:space="preserve">
+    <value>User rate list at last month only</value>
+  </data>
+  <data name="Config.ForumDisplay.TreeSpacing.Description" xml:space="preserve">
+    <value>Message tree answers spacing, in pixels</value>
+  </data>
+  <data name="Config.ForumDisplay.TreeSpacing.DisplayName" xml:space="preserve">
+    <value>Tree spacing size</value>
+  </data>
+  <data name="Config.ForumExport.Description" xml:space="preserve">
+    <value>Forum messages export configuration</value>
+  </data>
+  <data name="Config.ForumExport.DisplayName" xml:space="preserve">
+    <value>Export</value>
+  </data>
+  <data name="Config.ForumExport.CharsPerLine.Description" xml:space="preserve">
+    <value>Quantifies symbol in line at output in txt file</value>
+  </data>
+  <data name="Config.ForumExport.CharsPerLine.DisplayName" xml:space="preserve">
+    <value>Characters per line (plain text)</value>
+  </data>
+  <data name="Config.ForumExport.PlainTextEncoding.Description" xml:space="preserve">
+    <value>Defines a encoding at export into text file</value>
+  </data>
+  <data name="Config.ForumExport.PlainTextEncoding.DisplayName" xml:space="preserve">
+    <value>Plain text encoding</value>
+  </data>
+  <data name="Config.ForumExport.RemoveTags.Description" xml:space="preserve">
+    <value>Remove [] [/] tags at export into text file</value>
+  </data>
+  <data name="Config.ForumExport.RemoveTags.DisplayName" xml:space="preserve">
+    <value>Remove [] tags</value>
+  </data>
+  <data name="Config.IconSize.Description" xml:space="preserve">
+    <value>Toolbar icons size (If you change this option, you must restart application)</value>
+  </data>
+  <data name="Config.IconSize.DisplayName" xml:space="preserve">
+    <value>Icons size</value>
+  </data>
+  <data name="Config.LogFile.Description" xml:space="preserve">
+    <value>Log file name for synchronization events</value>
+  </data>
+  <data name="Config.LogFile.DisplayName" xml:space="preserve">
+    <value>Log file name</value>
+  </data>
+  <data name="Config.MarkMessageReadInterval.Description" xml:space="preserve">
+    <value>Time in milliseconds to wait before marking message as read</value>
+  </data>
+  <data name="Config.MarkMessageReadInterval.DisplayName" xml:space="preserve">
+    <value>Mark message read interval</value>
+  </data>
+  <data name="Config.MarkMessageReadInterval.OutOfRangeException" xml:space="preserve">
+    <value>Interval value is out of range. Please enter integer between 1 and 10000.</value>
+  </data>
+  <data name="Config.MarkNavigatedMessages.Description" xml:space="preserve">
+    <value>Start read mark timer on message navigation</value>
+  </data>
+  <data name="Config.MarkNavigatedMessages.DisplayName" xml:space="preserve">
+    <value>Mark navigated messages read</value>
+  </data>
+  <data name="Config.MarkOwn.Description" xml:space="preserve">
+    <value>Mark your own messages as read</value>
+  </data>
+  <data name="Config.MarkOwn.DisplayName" xml:space="preserve">
+    <value>Mark your own messages</value>
+  </data>
+  <data name="Config.MaxMessagesPerSession.Description" xml:space="preserve">
+    <value>Maximum number of messages, which will be downloaded during single synchronization</value>
+  </data>
+  <data name="Config.MaxMessagesPerSession.DisplayName" xml:space="preserve">
+    <value>Messages in session</value>
+  </data>
+  <data name="Config.MaxUsersPerSession.Description" xml:space="preserve">
+    <value>Maximum number of users, which will be downloaded during single synchronization</value>
+  </data>
+  <data name="Config.MaxUsersPerSession.DisplayName" xml:space="preserve">
+    <value>Users in session</value>
+  </data>
+  <data name="Config.MinimizeTray.Description" xml:space="preserve">
+    <value>Minimize window to the tray</value>
+  </data>
+  <data name="Config.MinimizeTray.DisplayName" xml:space="preserve">
+    <value>Minimize to tray</value>
+  </data>
+  <data name="Config.MsgPosition.Description" xml:space="preserve">
+    <value>Move area of viewing of messages to the right (vertical position)</value>
+  </data>
+  <data name="Config.MsgPosition.DisplayName" xml:space="preserve">
+    <value>Viewing of messages on the right</value>
+  </data>
+  <data name="Config.NavigationCombo.Description" xml:space="preserve">
+    <value>Navigation combo config</value>
+  </data>
+  <data name="Config.NavigationCombo.DisplayName" xml:space="preserve">
+    <value>Navigation combo</value>
+  </data>
+  <data name="Config.NavigationCombo.MaxDropDownItems.Description" xml:space="preserve">
+    <value>The maximum number of entries to display in selection list without scrolling.</value>
+  </data>
+  <data name="Config.NavigationCombo.MaxDropDownItems.DisplayName" xml:space="preserve">
+    <value>Selection list size</value>
+  </data>
+  <data name="Config.NavigationCombo.Show.Description" xml:space="preserve">
+    <value>Show navigation combo on top of the content panel</value>
+  </data>
+  <data name="Config.NavigationCombo.Show.DisplayName" xml:space="preserve">
+    <value>Show</value>
+  </data>
+  <data name="Config.Notification.Description" xml:space="preserve">
+    <value>Notifications configuration</value>
+  </data>
+  <data name="Config.Notification.DisplayName" xml:space="preserve">
+    <value>Notifications</value>
+  </data>
+  <data name="Config.Notification.Time.Description" xml:space="preserve">
+    <value>Show notification for a specified time interval, in milliseconds</value>
+  </data>
+  <data name="Config.Notification.Time.DisplayName" xml:space="preserve">
+    <value>Notification time</value>
+  </data>
+  <data name="Config.Notification.Tray.Description" xml:space="preserve">
+    <value>Event notification baloon on/off</value>
+  </data>
+  <data name="Config.Notification.Tray.DisplayName" xml:space="preserve">
+    <value>Use tray for notifications</value>
+  </data>
+  <data name="Config.OptionsUserForm.FirstRunMessage" xml:space="preserve">
+    <value> runs for a first time by current user</value>
+  </data>
+  <data name="Config.OptionsUserForm.FormOptions" xml:space="preserve">
+    <value>User options</value>
+  </data>
+  <data name="Config.OptionsUserForm.NewUser" xml:space="preserve">
+    <value>New user</value>
+  </data>
+  <data name="Config.OptionsUserForm.UserFolder" xml:space="preserve">
+    <value>User folder</value>
+  </data>
+  <data name="Config.Proxy.Description" xml:space="preserve">
+    <value>Proxy-server configuration</value>
+  </data>
+  <data name="Config.Proxy.DisplayName" xml:space="preserve">
+    <value>Proxy-server</value>
+  </data>
+  <data name="Config.RepairTopic.Description" xml:space="preserve">
+    <value>Reconstruct message threads to the root</value>
+  </data>
+  <data name="Config.RepairTopic.DisplayName" xml:space="preserve">
+    <value>Reconstruct message threads</value>
+  </data>
+  <data name="Config.RestoreForumPosition.Description" xml:space="preserve">
+    <value>Restore last position in forum</value>
+  </data>
+  <data name="Config.RestoreForumPosition.DisplayName" xml:space="preserve">
+    <value>Restore position in forum</value>
+  </data>
+  <data name="Config.Search.Description" xml:space="preserve">
+    <value>Search system configuration</value>
+  </data>
+  <data name="Config.Search.DisplayName" xml:space="preserve">
+    <value>Search</value>
+  </data>
+  <data name="Config.Search.MaxResultInSelect.Description" xml:space="preserve">
+    <value>Max records in search result</value>
+  </data>
+  <data name="Config.Search.MaxResultInSelect.DisplayName" xml:space="preserve">
+    <value>Max records in search</value>
+  </data>
+  <data name="Config.Search.UseLucene.Description" xml:space="preserve">
+    <value>Use lucene engine in search on messages</value>
+  </data>
+  <data name="Config.Search.UseLucene.DisplayName" xml:space="preserve">
+    <value>Use lucene</value>
+  </data>
+  <data name="Config.ShowIndicator.Description" xml:space="preserve">
+    <value>Show progress indicator on the synchronization form</value>
+  </data>
+  <data name="Config.ShowIndicator.DisplayName" xml:space="preserve">
+    <value>Show progress indicator</value>
+  </data>
+  <data name="Config.ShowSplash.Description" xml:space="preserve">
+    <value>Show splash screen while application starts</value>
+  </data>
+  <data name="Config.ShowSplash.DisplayName" xml:space="preserve">
+    <value>Show splash screen</value>
+  </data>
+  <data name="Config.SiteUrl.Description" xml:space="preserve">
+    <value>Local URL of rsdn.ru. Use web service URL, if blank</value>
+  </data>
+  <data name="Config.SiteUrl.DisplayName" xml:space="preserve">
+    <value>URL rsdn.ru</value>
+  </data>
+  <data name="Config.SmartJumpBehavior.Description" xml:space="preserve">
+    <value>To scroll the text of the message up to the end, then to pass to the following.</value>
+  </data>
+  <data name="Config.SmartJumpBehavior.DisplayName" xml:space="preserve">
+    <value>Smart-transition under messages</value>
+  </data>
+  <data name="Config.SmartJumpPageSize.Description" xml:space="preserve">
+    <value>To scroll the message with the set step in percentage of the size of a window. Admissible values from 1 up to 100.</value>
+  </data>
+  <data name="Config.SmartJumpPageSize.DisplayName" xml:space="preserve">
+    <value>To scroll the message with step in</value>
+  </data>
+  <data name="Config.Sound.Description" xml:space="preserve">
+    <value>Notification sound configuration</value>
+  </data>
+  <data name="Config.Sound.DisplayName" xml:space="preserve">
+    <value>Notification sound</value>
+  </data>
+  <data name="Config.Sound.File.Description" xml:space="preserve">
+    <value>Use file for sound notifications</value>
+  </data>
+  <data name="Config.Sound.File.DisplayName" xml:space="preserve">
+    <value>User sound</value>
+  </data>
+  <data name="Config.Sound.Use.Description" xml:space="preserve">
+    <value>Use sound for notification</value>
+  </data>
+  <data name="Config.Sound.Use.DisplayName" xml:space="preserve">
+    <value>Use sound</value>
+  </data>
+  <data name="Config.StyleConfig.BrokenColor.DisplayName" xml:space="preserve">
+    <value>Broken threads color</value>
+  </data>
+  <data name="Config.StyleConfig.ChildActiveMessageBackgroundColor.DisplayName" xml:space="preserve">
+    <value>Child messages background</value>
+  </data>
+  <data name="Config.StyleConfig.FavoriteMessageColor.DisplayName" xml:space="preserve">
+    <value>Favorite message color</value>
+  </data>
+  <data name="Config.StyleConfig.MessageColor.DisplayName" xml:space="preserve">
+    <value>Messages color</value>
+  </data>
+  <data name="Config.StyleConfig.MessagesAnswerColor.DisplayName" xml:space="preserve">
+    <value>Color of answers on your own messages</value>
+  </data>
+  <data name="Config.StyleConfig.MessageTreeFont.DisplayName" xml:space="preserve">
+    <value>Messages tree font</value>
+  </data>
+  <data name="Config.StyleConfig.OwnMessagesColor.DisplayName" xml:space="preserve">
+    <value>Own messages color</value>
+  </data>
+  <data name="Config.StyleConfig.ParentActiveMessageBackgroundColor.DisplayName" xml:space="preserve">
+    <value>Parent message background</value>
+  </data>
+  <data name="Config.StyleConfig.TreeBackground.DisplayName" xml:space="preserve">
+    <value>Messages tree background color</value>
+  </data>
+  <data name="Config.SyncThreadPriority.Description" xml:space="preserve">
+    <value>Synchronization thread priority. User Normal only when CPU is loaded 100% by other tasks during synchronization.</value>
+  </data>
+  <data name="Config.SyncThreadPriority.DisplayName" xml:space="preserve">
+    <value>Synchronization Thread Priority</value>
+  </data>
+  <data name="Config.SyncWindow.Description" xml:space="preserve">
+    <value>Show/hide window for synchronization process</value>
+  </data>
+  <data name="Config.SyncWindow.DisplayName" xml:space="preserve">
+    <value>Show synchronization window</value>
+  </data>
+  <data name="Config.SyncWindowPinned.Description" xml:space="preserve">
+    <value>Pinned window stay on top after synchronization</value>
+  </data>
+  <data name="Config.SyncWindowPinned.DisplayName" xml:space="preserve">
+    <value>Synchronization window pinned</value>
+  </data>
+  <data name="Config.TagLine.Description" xml:space="preserve">
+    <value>String to add to the end of each message
+                                Available macros:
+                                @@appname - application name;
+                                @@version - application version;
+                                @@subversion - application subversion;
+                                @@build - application build;
+                                @@copyright - copyright string;
+                                @@nick - your nick name;
+                                @@osname - OS name;
+                                @@osversion - OS version;</value>
+  </data>
+  <data name="Config.TagLine.DisplayName" xml:space="preserve">
+    <value>Tag line</value>
+  </data>
+  <data name="Config.TagLine.Citation.Description" xml:space="preserve">
+    <value>Citations macro configuration</value>
+  </data>
+  <data name="Config.TagLine.Citation.DisplayName" xml:space="preserve">
+    <value>Citations</value>
+  </data>
+  <data name="Config.TagLine.Citation.Citations.Description" xml:space="preserve">
+    <value>Citation list</value>
+  </data>
+  <data name="Config.TagLine.Citation.Citations.DisplayName" xml:space="preserve">
+    <value>Citations</value>
+  </data>
+  <data name="Config.TagLine.Citation.QueryType.Description" xml:space="preserve">
+    <value>Type of query in citation list</value>
+  </data>
+  <data name="Config.TagLine.Citation.QueryType.DisplayName" xml:space="preserve">
+    <value>Query type</value>
+  </data>
+  <data name="Config.TagLine.Editor.Add" xml:space="preserve">
+    <value>Add tagline</value>
+  </data>
+  <data name="Config.TagLine.Editor.DefaultName" xml:space="preserve">
+    <value>Default</value>
+  </data>
+  <data name="Config.TagLine.Editor.Delete" xml:space="preserve">
+    <value>Delete tagline</value>
+  </data>
+  <data name="Config.TagLine.Editor.Edit" xml:space="preserve">
+    <value>Edit tagline</value>
+  </data>
+  <data name="Config.TagLine.Editor.Summary1" xml:space="preserve">
+    <value>({0} tagline)</value>
+  </data>
+  <data name="Config.TagLine.Editor.Summary2" xml:space="preserve">
+    <value>({0} taglines)</value>
+  </data>
+  <data name="Config.TagLine.Editor.Summary5" xml:space="preserve">
+    <value>({0} taglines)</value>
+  </data>
+  <data name="Config.TagLine.Format.Description" xml:space="preserve">
+    <value>Tagline format</value>
+  </data>
+  <data name="Config.TagLine.Format.DisplayName" xml:space="preserve">
+    <value>Format</value>
+  </data>
+  <data name="Config.TagLine.MediaPlayer.Description" xml:space="preserve">
+    <value>Media player macro configuration</value>
+  </data>
+  <data name="Config.TagLine.MediaPlayer.DisplayName" xml:space="preserve">
+    <value>Media Player</value>
+  </data>
+  <data name="Config.TagLine.MediaPlayer.Silent.Description" xml:space="preserve">
+    <value>String, that used when no sounds playing</value>
+  </data>
+  <data name="Config.TagLine.MediaPlayer.Silent.DisplayName" xml:space="preserve">
+    <value>Silent string</value>
+  </data>
+  <data name="Config.TagLine.MediaPlayer.Type.Description" xml:space="preserve">
+    <value>Type of media player</value>
+  </data>
+  <data name="Config.TagLine.MediaPlayer.Type.DisplayName" xml:space="preserve">
+    <value>Media Player Type</value>
+  </data>
+  <data name="Config.TagLine.TimeFormat.Description" xml:space="preserve">
+    <value>@@datetime macro format</value>
+  </data>
+  <data name="Config.TagLine.TimeFormat.DisplayName" xml:space="preserve">
+    <value>Time format</value>
+  </data>
+  <data name="Config.TagLine.Use.Description" xml:space="preserve">
+    <value>Use tagline in out messages</value>
+  </data>
+  <data name="Config.TagLine.Use.DisplayName" xml:space="preserve">
+    <value>Use tagline</value>
+  </data>
+  <data name="Config.Ticker.Description" xml:space="preserve">
+    <value>Ticker configuration</value>
+  </data>
+  <data name="Config.Ticker.DisplayName" xml:space="preserve">
+    <value>Ticker</value>
+  </data>
+  <data name="Config.Ticker.Opacity.Description" xml:space="preserve">
+    <value>Ticker transparency
+                0 - transparent,
+                1 - solid</value>
+  </data>
+  <data name="Config.Ticker.Opacity.DisplayName" xml:space="preserve">
+    <value>Transparent ticker</value>
+  </data>
+  <data name="Config.Ticker.ScrollLine.Description" xml:space="preserve">
+    <value>Show ticker scroll line</value>
+  </data>
+  <data name="Config.Ticker.ScrollLine.DisplayName" xml:space="preserve">
+    <value>Scroll line active</value>
+  </data>
+  <data name="Config.Ticker.ScrollSpeed.Description" xml:space="preserve">
+    <value>Scrolling speed. 1000/value, in pixels per second</value>
+  </data>
+  <data name="Config.Ticker.ScrollSpeed.DisplayName" xml:space="preserve">
+    <value>Scrolling speed</value>
+  </data>
+  <data name="Config.Ticker.Show.Description" xml:space="preserve">
+    <value>Show ticker for display background information</value>
+  </data>
+  <data name="Config.Ticker.Show.DisplayName" xml:space="preserve">
+    <value>Show Ticker</value>
+  </data>
+  <data name="Config.Ticker.Sticky.Description" xml:space="preserve">
+    <value>Ticker sticks to the screen borders</value>
+  </data>
+  <data name="Config.Ticker.Sticky.DisplayName" xml:space="preserve">
+    <value>Sticky ticker</value>
+  </data>
+  <data name="Config.ToolStripsStyle.Description" xml:space="preserve">
+    <value>Menu and toolbars render mode.</value>
+  </data>
+  <data name="Config.ToolStripsStyle.DisplayName" xml:space="preserve">
+    <value>ToolStrips Render Mode</value>
+  </data>
+  <data name="Config.ToolStripsStyle.Professional.DisplayName" xml:space="preserve">
+    <value>Professional</value>
+  </data>
+  <data name="Config.ToolStripsStyle.System.DisplayName" xml:space="preserve">
+    <value>System</value>
+  </data>
+  <data name="Config.ToolStripsStyle.TanColorTable.DisplayName" xml:space="preserve">
+    <value>Tan Color</value>
+  </data>
+  <data name="Config.TopicRepairMode.Description" xml:space="preserve">
+    <value>Broken branch repair mode</value>
+  </data>
+  <data name="Config.TopicRepairMode.DisplayName" xml:space="preserve">
+    <value>Branch repair mode</value>
+  </data>
+  <data name="Config.TreeLinks.Description" xml:space="preserve">
+    <value>Tree links description</value>
+  </data>
+  <data name="Config.TreeLinks.DisplayName" xml:space="preserve">
+    <value>Tree links</value>
+  </data>
+  <data name="Config.TreeLinks.TreeLink.Link.Description" xml:space="preserve">
+    <value>Link to the resource</value>
+  </data>
+  <data name="Config.TreeLinks.TreeLink.Link.DisplayName" xml:space="preserve">
+    <value>Link</value>
+  </data>
+  <data name="Config.TreeLinks.TreeLink.Name.Description" xml:space="preserve">
+    <value>Tree link name</value>
+  </data>
+  <data name="Config.TreeLinks.TreeLink.Name.DisplayName" xml:space="preserve">
+    <value>Tree link name</value>
+  </data>
+  <data name="Config.UILanguage.Description" xml:space="preserve">
+    <value>This language will be used for user interface (If you change this option, you must restart application)</value>
+  </data>
+  <data name="Config.UILanguage.DisplayName" xml:space="preserve">
+    <value>User interface language</value>
+  </data>
+  <data name="Config.UseCompression.Description" xml:space="preserve">
+    <value>Use compression while receive data from server</value>
+  </data>
+  <data name="Config.UseCompression.DisplayName" xml:space="preserve">
+    <value>Use compression</value>
+  </data>
+  <data name="Config.UseLog.Description" xml:space="preserve">
+    <value>Write synchronization events to the log file</value>
+  </data>
+  <data name="Config.UseLog.DisplayName" xml:space="preserve">
+    <value>Use file log</value>
+  </data>
+  <data name="Config.Proxy.Settings.Address.Description" xml:space="preserve">
+    <value>Proxy server address, for example "127.0.0.1"</value>
+  </data>
+  <data name="Config.Proxy.Settings.Address.DisplayName" xml:space="preserve">
+    <value>Address</value>
+  </data>
+  <data name="Config.Proxy.Settings.Description" xml:space="preserve">
+    <value>Use proxy server to connect to the webservice</value>
+  </data>
+  <data name="Config.Proxy.Settings.DisplayName" xml:space="preserve">
+    <value>Proxy server settings</value>
+  </data>
+  <data name="Config.Proxy.Settings.Port.Description" xml:space="preserve">
+    <value>Proxy server port, for example "3128"</value>
+  </data>
+  <data name="Config.Proxy.Settings.Port.DisplayName" xml:space="preserve">
+    <value>Port</value>
+  </data>
+  <data name="Config.Proxy.UseAuthorization.Description" xml:space="preserve">
+    <value>Use authorization for connections through proxy servers (407 Http-Error)</value>
+  </data>
+  <data name="Config.Proxy.UseAuthorization.DisplayName" xml:space="preserve">
+    <value>Use proxy-authorization</value>
+  </data>
+  <data name="Config.Proxy.UseType.Description" xml:space="preserve">
+    <value>Proxy connection type</value>
+  </data>
+  <data name="Config.Proxy.UseType.DisplayName" xml:space="preserve">
+    <value>Connection type</value>
+  </data>
+  <data name="Database.CannotMigrateToSelf" xml:space="preserve">
+    <value>Can't migrate to the same database</value>
+  </data>
+  <data name="Database.ConfirmRestartAfterMigrate" xml:space="preserve">
+    <value>Would you like to restart the application and connect to the new database?</value>
+  </data>
+  <data name="Database.ErrorOnMessageDelete" xml:space="preserve">
+    <value>Error on deleting message with id=</value>
+  </data>
+  <data name="Database.ErrorOnMessageProcessing" xml:space="preserve">
+    <value>Error on processing message with id=</value>
+  </data>
+  <data name="Database.ErrorOnSetReadReplies" xml:space="preserve">
+    <value>Error on execute SetReadReplies: {0}</value>
+  </data>
+  <data name="Database.MarkMessagesProcess" xml:space="preserve">
+    <value>Mark messages in progress</value>
+  </data>
+  <data name="Database.MigrationStarted" xml:space="preserve">
+    <value>Database migration started</value>
+  </data>
+  <data name="Database.NeedRestructure" xml:space="preserve">
+    <value>Aggregates not supported on this version of DB. Restructure DB first.</value>
+  </data>
+  <data name="Database.NeedRestructure2" xml:space="preserve">
+    <value>Damaged, changed or missing aggregates table.</value>
+  </data>
+  <data name="Database.WarningAfterAggregateRestructure" xml:space="preserve">
+    <value>Restructure completed. Operation to take {0:0.000} second. Processed {1:### ### ##0} lines. Added {2:### ### ##0} themes.</value>
+  </data>
+  <data name="Database.WarningBeforeAggregateRestructure" xml:space="preserve">
+    <value>Now database will restructured for aggregates support. This can some time.</value>
+  </data>
+  <data name="Database.WarningOnUnsubscribeForum" xml:space="preserve">
+    <value>Delete forum '{0}' records?</value>
+  </data>
+  <data name="Database.WarningOnUnsubscribeForumCaption" xml:space="preserve">
+    <value>Warning!</value>
+  </data>
+  <data name="Database.Commands.DbMigration.Description" xml:space="preserve">
+    <value>Migrate DB.</value>
+  </data>
+  <data name="Database.Commands.DbMigration.DisplayName" xml:space="preserve">
+    <value>Migrate DB</value>
+  </data>
+  <data name="Database.Commands.RebuildAggregates.Description" xml:space="preserve">
+    <value>Rebuild aggregates.</value>
+  </data>
+  <data name="Database.Commands.RebuildAggregates.DisplayName" xml:space="preserve">
+    <value>Rebuild Aggregates</value>
+  </data>
+  <data name="Database.ConfigControls.Jet.DatabasePath" xml:space="preserve">
+    <value>Database path:</value>
+  </data>
+  <data name="Database.ConfigControls.Jet.OpenFileDialogFilter" xml:space="preserve">
+    <value>Access files (*.mdb)|*.mdb|All files (*.*)|*.*</value>
+  </data>
+  <data name="Database.ConfigControls.Sqlite.DatabasePath" xml:space="preserve">
+    <value>Database path:</value>
+  </data>
+  <data name="Database.ConfigControls.Sqlite.OpenFileDialogFilter" xml:space="preserve">
+    <value>All files (*.*)|*.*</value>
+  </data>
+  <data name="Favorites.BadProtocol" xml:space="preserve">
+    <value>Protocol should be «janus://» or «http://»</value>
+  </data>
+  <data name="Favorites.DeleteItemPrompt" xml:space="preserve">
+    <value>Delete folder from Favorites?</value>
+  </data>
+  <data name="Favorites.DisplayName" xml:space="preserve">
+    <value>Favorites</value>
+  </data>
+  <data name="Favorites.ElementExists" xml:space="preserve">
+    <value>Item is already exists in section {0}.</value>
+  </data>
+  <data name="Favorites.EmptyLink" xml:space="preserve">
+    <value>Link is required field</value>
+  </data>
+  <data name="Favorites.ItemExists" xml:space="preserve">
+    <value>Item with number {0} exists in section {1}.</value>
+  </data>
+  <data name="Favorites.ItemsExists" xml:space="preserve">
+    <value>Items {0} already exists in section {1}.</value>
+  </data>
+  <data name="Favorites.MovingItems" xml:space="preserve">
+    <value>Moving items...</value>
+  </data>
+  <data name="Favorites.Commands.AddLink.DisplayName" xml:space="preserve">
+    <value>Add Link</value>
+  </data>
+  <data name="Favorites.Commands.CreateFolder.DisplayName" xml:space="preserve">
+    <value>Create Folder</value>
+  </data>
+  <data name="Favorites.Commands.DeleteItem.DisplayName" xml:space="preserve">
+    <value>Delete</value>
+  </data>
+  <data name="Favorites.Commands.EditLink.DisplayName" xml:space="preserve">
+    <value>Edit</value>
+  </data>
+  <data name="Favorites.Commands.MoveItem.DisplayName" xml:space="preserve">
+    <value>Move</value>
+  </data>
+  <data name="Favorites.Commands.OpenLink.DisplayName" xml:space="preserve">
+    <value>Open</value>
+  </data>
+  <data name="Favorites.Commands.RenameFolder.DisplayName" xml:space="preserve">
+    <value>Rename</value>
+  </data>
+  <data name="Forum.DisplayName" xml:space="preserve">
+    <value>(messages: {0}, unread: {1}, replies to me: {2})</value>
+  </data>
+  <data name="Forum.DownloadTopicClickSource" xml:space="preserve">
+    <value>Click to expected</value>
+  </data>
+  <data name="Forum.DownloadTopicHint" xml:space="preserve">
+    <value>Topic with message '{0}'</value>
+  </data>
+  <data name="Forum.DownloadTopicIESource" xml:space="preserve">
+    <value>From IE</value>
+  </data>
+  <data name="Forum.DownloadTopicManualSource" xml:space="preserve">
+    <value>Added manually</value>
+  </data>
+  <data name="Forum.DownloadTopicRegetSource" xml:space="preserve">
+    <value>Regetted</value>
+  </data>
+  <data name="Forum.DownloadTopicRestoreHint" xml:space="preserve">
+    <value>Restore broken topic {0}</value>
+  </data>
+  <data name="Forum.DownloadTopicsProcessing" xml:space="preserve">
+    <value>Process download topics</value>
+  </data>
+  <data name="Forum.MarkMessageCaption" xml:space="preserve">
+    <value>Mark of messages…</value>
+  </data>
+  <data name="Forum.MarkMessageResult" xml:space="preserve">
+    <value>Marked {0} {1}</value>
+  </data>
+  <data name="Forum.Message1" xml:space="preserve">
+    <value>message</value>
+  </data>
+  <data name="Forum.Message2" xml:space="preserve">
+    <value>messages</value>
+  </data>
+  <data name="Forum.Message5" xml:space="preserve">
+    <value>messages</value>
+  </data>
+  <data name="Forum.PromptMarkAll" xml:space="preserve">
+    <value>Mark all forum messages as {0}?</value>
+  </data>
+  <data name="Forum.PromptRead" xml:space="preserve">
+    <value>read</value>
+  </data>
+  <data name="Forum.PromptUnread" xml:space="preserve">
+    <value>unread</value>
+  </data>
+  <data name="Forum.ResetFilter" xml:space="preserve">
+    <value>Reset</value>
+  </data>
+  <data name="Forum.UserNickAnonymous" xml:space="preserve">
+    <value>&lt;Anonymous&gt;</value>
+  </data>
+  <data name="Forum.ExportMessages.Export2ParentLink" xml:space="preserve">
+    <value>To parent</value>
+  </data>
+  <data name="Forum.ExportMessages.ExportMessage" xml:space="preserve">
+    <value>Export {0} of {1} messages</value>
+  </data>
+  <data name="Forum.ExportMessages.ExportPrepareMessage" xml:space="preserve">
+    <value>Collecting messages…</value>
+  </data>
+  <data name="Forum.GoToMessage.BadNumber" xml:space="preserve">
+    <value>Your should enter number correspond with message Id.</value>
+  </data>
+  <data name="Forum.GoToMessage.IncorrectNumber" xml:space="preserve">
+    <value>Very big or small number. Number should be between 0 - 1 000 000.</value>
+  </data>
+  <data name="Forum.GoToMessage.MessageDownloadScheduled" xml:space="preserve">
+    <value>Message {0} was scheduled for download</value>
+  </data>
+  <data name="Forum.GoToMessage.NotFound" xml:space="preserve">
+    <value>Message {0} not found.
+Shedule it for download?</value>
+  </data>
+  <data name="Forum.GoToMessage.ValidationError" xml:space="preserve">
+    <value>Validation error</value>
+  </data>
+  <data name="Forum.Incoming.DisplayName" xml:space="preserve">
+    <value>Incoming</value>
+  </data>
+  <data name="Forum.MarkMsg.ReadNeedSelectForum" xml:space="preserve">
+    <value>Need select forum(s)</value>
+  </data>
+  <data name="Forum.MarkMsg.TipCheckAll" xml:space="preserve">
+    <value>Select all forums</value>
+  </data>
+  <data name="Forum.MarkMsg.TipCheckInvert" xml:space="preserve">
+    <value>Invert selected forums</value>
+  </data>
+  <data name="Forum.MarkMsg.TipUnCheckAll" xml:space="preserve">
+    <value>Unselect all forums</value>
+  </data>
+  <data name="Forum.MarkTag.NoTags" xml:space="preserve">
+    <value>&lt;no tags&gt;</value>
+  </data>
+  <data name="Forum.MarkTag.NoTagsMessage" xml:space="preserve">
+    <value>No tags specified.
+Use "Favorites" tab to specify them.</value>
+  </data>
+  <data name="Forum.MarkTag.TagRoot" xml:space="preserve">
+    <value>Root tag</value>
+  </data>
+  <data name="Forum.MarkTag.Text" xml:space="preserve">
+    <value>Tag marks</value>
+  </data>
+  <data name="Forum.Menu.Forums.Text" xml:space="preserve">
+    <value>Forums</value>
+  </data>
+  <data name="Forum.Menu.Forums.ImportAndExport.Text" xml:space="preserve">
+    <value>Import &amp; Export</value>
+  </data>
+  <data name="Forum.Menu.Message.ReadMark.MarkAllMessagesInForumAsRead" xml:space="preserve">
+    <value>Mark All Messages In Forum As Read</value>
+  </data>
+  <data name="Forum.Menu.Message.ReadMark.MarkAllMessagesInForumAsUnread" xml:space="preserve">
+    <value>Mark All Messages In Forum As Unread</value>
+  </data>
+  <data name="Forum.Menu.Message.ReadMark.MarkMessageAsRead" xml:space="preserve">
+    <value>Mark Message As Read</value>
+  </data>
+  <data name="Forum.Menu.Message.ReadMark.MarkMessageAsUnread" xml:space="preserve">
+    <value>Mark Message As Unread</value>
+  </data>
+  <data name="Forum.Menu.Message.ReadMark.MarkRepliesAsRead" xml:space="preserve">
+    <value>Mark Replies As Read</value>
+  </data>
+  <data name="Forum.Menu.Message.ReadMark.MarkTopicAsRead" xml:space="preserve">
+    <value>Mark Topic As Read</value>
+  </data>
+  <data name="Forum.Menu.Message.ReadMark.MarkTopicAsUnread" xml:space="preserve">
+    <value>Mark Topic As Unread</value>
+  </data>
+  <data name="Forum.Menu.Message.ReadMark.Text" xml:space="preserve">
+    <value>Read Mark</value>
+  </data>
+  <data name="Forum.Menu.Navigation.NextUnread.Description" xml:space="preserve">
+    <value>Select next unread message.</value>
+  </data>
+  <data name="Forum.Menu.Navigation.NextUnread.Text" xml:space="preserve">
+    <value>Next Unread</value>
+  </data>
+  <data name="Forum.Menu.Navigation.PreviousUnread.Description" xml:space="preserve">
+    <value>Select previous unread message.</value>
+  </data>
+  <data name="Forum.Menu.Navigation.PreviousUnread.Text" xml:space="preserve">
+    <value>Previous Unread</value>
+  </data>
+  <data name="Forum.MessageViewer.Moderating" xml:space="preserve">
+    <value>Moderating …</value>
+  </data>
+  <data name="Forum.MessageViewer.Rate.Agree.Text" xml:space="preserve">
+    <value>Agree</value>
+  </data>
+  <data name="Forum.MessageViewer.Rate.Delete.Text" xml:space="preserve">
+    <value>Delete rate</value>
+  </data>
+  <data name="Forum.MessageViewer.Rate.Disagree.Text" xml:space="preserve">
+    <value>Disagree</value>
+  </data>
+  <data name="Forum.MessageViewer.Rate.One.Text" xml:space="preserve">
+    <value>Interesting</value>
+  </data>
+  <data name="Forum.MessageViewer.Rate.Plus1.Text" xml:space="preserve">
+    <value>Hard One</value>
+  </data>
+  <data name="Forum.MessageViewer.Rate.Smile.Text" xml:space="preserve">
+    <value>Funny</value>
+  </data>
+  <data name="Forum.MessageViewer.Rate.Three.Text" xml:space="preserve">
+    <value>Super!</value>
+  </data>
+  <data name="Forum.MessageViewer.Rate.Two.Text" xml:space="preserve">
+    <value>Thank You</value>
+  </data>
+  <data name="Forum.Moderatorial.CloseTopic" xml:space="preserve">
+    <value>Close topic</value>
+  </data>
+  <data name="Forum.Moderatorial.Delete" xml:space="preserve">
+    <value>Delete</value>
+  </data>
+  <data name="Forum.Moderatorial.ExtractBranch" xml:space="preserve">
+    <value>Extract branch</value>
+  </data>
+  <data name="Forum.Moderatorial.LeaveIntact" xml:space="preserve">
+    <value>Leave intact</value>
+  </data>
+  <data name="Forum.Moderatorial.MoveToForum" xml:space="preserve">
+    <value>Move to '{0}'</value>
+  </data>
+  <data name="Forum.Moderatorial.OpenTopic" xml:space="preserve">
+    <value>Open topic</value>
+  </data>
+  <data name="Forum.Outcoming.DisplayName" xml:space="preserve">
+    <value>Outcoming</value>
+  </data>
+  <data name="Forum.RateForm.AddRate" xml:space="preserve">
+    <value>Add rate?</value>
+  </data>
+  <data name="Forum.RateForm.DeleteRate" xml:space="preserve">
+    <value>Delete rate?</value>
+  </data>
+  <data name="Forum.RateForm.DeleteRateLocally" xml:space="preserve">
+    <value>Delete rate from local DB?</value>
+  </data>
+  <data name="Forum.Subscribe.Message" xml:space="preserve">
+    <value>Subscribe to forum(s)…</value>
+  </data>
+  <data name="Forum.Unsubscribe.Message" xml:space="preserve">
+    <value>Unsubscribe forum(s)…</value>
+  </data>
+  <data name="Forum.Unsubscribed.DisplayName" xml:space="preserve">
+    <value>Unsubscribed</value>
+  </data>
+  <data name="GoJanusListener.InvalidReceivedMessage" xml:space="preserve">
+    <value>Invalid message received by listener. {0}</value>
+  </data>
+  <data name="GoJanusListener.PipeListenerErrorMessage" xml:space="preserve">
+    <value>Named pipe listener error: {0}</value>
+  </data>
+  <data name="Log.ContextMenu.Clear" xml:space="preserve">
+    <value>Clear log</value>
+  </data>
+  <data name="MainForm.AppCloseTitle" xml:space="preserve">
+    <value>Application closing</value>
+  </data>
+  <data name="MainForm.ApplicationShutdown" xml:space="preserve">
+    <value>shutdown!</value>
+  </data>
+  <data name="MainForm.AppNeedRestart" xml:space="preserve">
+    <value>Application must be restarted!</value>
+  </data>
+  <data name="MainForm.CloseQuestion" xml:space="preserve">
+    <value>Close {0}?</value>
+  </data>
+  <data name="MainForm.SyncActiveWarning" xml:space="preserve">
+    <value>Synchronization active. Close anyway?</value>
+  </data>
+  <data name="MainForm.BugReport.DefaultDescription" xml:space="preserve">
+    <value>&lt;enter bug description here&gt;</value>
+  </data>
+  <data name="MainForm.BugReport.DefaultName" xml:space="preserve">
+    <value>&lt;enter bur name here&gt;</value>
+  </data>
+  <data name="MainForm.BugReport.DefaultStackTrace" xml:space="preserve">
+    <value>&lt;enter stack trace here, if available&gt;</value>
+  </data>
+  <data name="MainForm.Menu.File.Text" xml:space="preserve">
+    <value>File</value>
+  </data>
+  <data name="MainForm.Menu.Help.Text" xml:space="preserve">
+    <value>Help</value>
+  </data>
+  <data name="MainForm.Menu.Service.Text" xml:space="preserve">
+    <value>Service</value>
+  </data>
+  <data name="MainForm.Menu.View.NavigationPane" xml:space="preserve">
+    <value>Navigation Tree</value>
+  </data>
+  <data name="MainForm.Menu.View.Text" xml:space="preserve">
+    <value>View</value>
+  </data>
+  <data name="MainForm.SystemMenuHelper.SyncItemCaption" xml:space="preserve">
+    <value>Synchronize</value>
+  </data>
+  <data name="MessageEditor.FindNothing" xml:space="preserve">
+    <value>No more occurences found</value>
+  </data>
+  <data name="MessageEditor.LogChangeMsg" xml:space="preserve">
+    <value>Changed message in forum '{0}'</value>
+  </data>
+  <data name="MessageEditor.LogNewMsg" xml:space="preserve">
+    <value>Save new message in forum '{0}'</value>
+  </data>
+  <data name="MessageEditor.Message" xml:space="preserve">
+    <value>Message</value>
+  </data>
+  <data name="MessageEditor.PreviewTitle" xml:space="preserve">
+    <value>Message preview</value>
+  </data>
+  <data name="MessageEditor.QuoteWarning" xml:space="preserve">
+    <value>Overquoting! Чер его знает как это по англицки. В общем, точно уверены что хотите все равно послать сообщене?</value>
+  </data>
+  <data name="MessageEditor.SavePromptRequired" xml:space="preserve">
+    <value>Save message for sending to server?</value>
+  </data>
+  <data name="MessageEditor.SendPromptRequired" xml:space="preserve">
+    <value>Send?</value>
+  </data>
+  <data name="MessageEditor.SubjectRequired" xml:space="preserve">
+    <value>Message subject is required field</value>
+  </data>
+  <data name="MessageEditor.Commands.Close.Description" xml:space="preserve">
+    <value>Close message editor.</value>
+  </data>
+  <data name="MessageEditor.Commands.Close.DisplayName" xml:space="preserve">
+    <value>Close</value>
+  </data>
+  <data name="MessageEditor.Commands.FindAndReplace.Description" xml:space="preserve">
+    <value>Find and replace in text.</value>
+  </data>
+  <data name="MessageEditor.Commands.FindAndReplace.DisplayName" xml:space="preserve">
+    <value>Find and Replace</value>
+  </data>
+  <data name="MessageEditor.Commands.InsertTag.Description" xml:space="preserve">
+    <value>Insert tag.</value>
+  </data>
+  <data name="MessageEditor.Commands.InsertTag.DisplayName" xml:space="preserve">
+    <value>Insert Tag</value>
+  </data>
+  <data name="MessageEditor.Commands.Preview.Description" xml:space="preserve">
+    <value>Message preview.</value>
+  </data>
+  <data name="MessageEditor.Commands.Preview.DisplayName" xml:space="preserve">
+    <value>Message Preview</value>
+  </data>
+  <data name="MessageEditor.Commands.Redo.Description" xml:space="preserve">
+    <value>Redo.</value>
+  </data>
+  <data name="MessageEditor.Commands.Redo.DisplayName" xml:space="preserve">
+    <value>Redo</value>
+  </data>
+  <data name="MessageEditor.Commands.Save.Description" xml:space="preserve">
+    <value>Save message to drafts.</value>
+  </data>
+  <data name="MessageEditor.Commands.Save.DisplayName" xml:space="preserve">
+    <value>Save</value>
+  </data>
+  <data name="MessageEditor.Commands.SaveAndClose.Description" xml:space="preserve">
+    <value>Save message to drafts and close message editor.</value>
+  </data>
+  <data name="MessageEditor.Commands.SaveAndClose.DisplayName" xml:space="preserve">
+    <value>Save and Close</value>
+  </data>
+  <data name="MessageEditor.Commands.Send.Description" xml:space="preserve">
+    <value>Save message to outbox for sendind at next synchronization.</value>
+  </data>
+  <data name="MessageEditor.Commands.Send.DisplayName" xml:space="preserve">
+    <value>Send</value>
+  </data>
+  <data name="MessageEditor.Commands.Undo.Description" xml:space="preserve">
+    <value>Undo.</value>
+  </data>
+  <data name="MessageEditor.Commands.Undo.DisplayName" xml:space="preserve">
+    <value>Undo</value>
+  </data>
+  <data name="MessageEditor.Menu.File.Text" xml:space="preserve">
+    <value>File</value>
+  </data>
+  <data name="MessageEditor.Tags.FormatBold.Text" xml:space="preserve">
+    <value>[b]</value>
+  </data>
+  <data name="Navigation.Commands.SelectFeatureByKey.Description" xml:space="preserve">
+    <value>Go to feature with key.</value>
+  </data>
+  <data name="Navigation.Commands.SelectFeatureByKey.DisplayName" xml:space="preserve">
+    <value>Go To Feature With Key</value>
+  </data>
+  <data name="Navigation.Commands.SelectNextFeature.Description" xml:space="preserve">
+    <value>Go to next forum.</value>
+  </data>
+  <data name="Navigation.Commands.SelectNextFeature.DisplayName" xml:space="preserve">
+    <value>Next Forum</value>
+  </data>
+  <data name="Navigation.Commands.SelectPreviousFeature.Description" xml:space="preserve">
+    <value>Go to previous forum.</value>
+  </data>
+  <data name="Navigation.Commands.SelectPreviousFeature.DisplayName" xml:space="preserve">
+    <value>Previous Forum</value>
+  </data>
+  <data name="Navigation.NavTree.Category" xml:space="preserve">
+    <value>Navigation tree</value>
+  </data>
+  <data name="Navigation.NavTree.DockName" xml:space="preserve">
+    <value>Navigation tree</value>
+  </data>
+  <data name="Navigation.NavTree.InfoColumn" xml:space="preserve">
+    <value>Info</value>
+  </data>
+  <data name="Navigation.NavTree.NameColumn" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="Outbox.BugReportTemplate" xml:space="preserve">
+    <value>[b]Error:[/b]
+{0}
+
+[b]Description:[/b]
+{1}
+
+[b]Application version:[/b]
+{2}
+
+[b]Db engine:[/b]
+{3}
+
+[b]Stack Trace:[/b]
+[code]
+{4}
+[/code]</value>
+  </data>
+  <data name="Outbox.DownloadTopicsCollection" xml:space="preserve">
+    <value>Download topics</value>
+  </data>
+  <data name="Outbox.NewMessageCollection" xml:space="preserve">
+    <value>New messages</value>
+  </data>
+  <data name="Outbox.RateMarkCollection" xml:space="preserve">
+    <value>Rate marks</value>
+  </data>
+  <data name="Outbox.RemoveMessageConfirm" xml:space="preserve">
+    <value>Delete a outbox message?</value>
+  </data>
+  <data name="Outbox.Commands.DeleteItem.Description" xml:space="preserve">
+    <value>Delete outbox item.</value>
+  </data>
+  <data name="Outbox.Commands.DeleteItem.DisplayName" xml:space="preserve">
+    <value>Delete</value>
+  </data>
+  <data name="Outbox.Commands.EditItem.Description" xml:space="preserve">
+    <value>Edit outbox item.</value>
+  </data>
+  <data name="Outbox.Commands.EditItem.DisplayName" xml:space="preserve">
+    <value>Edit</value>
+  </data>
+  <data name="Outbox.DownloadTopic.ItemsExists" xml:space="preserve">
+    <value>Items {0} already exists in Download Topics.</value>
+  </data>
+  <data name="Search.AdvLeft" xml:space="preserve">
+    <value>&lt;&lt; Adv</value>
+  </data>
+  <data name="Search.AdvRight" xml:space="preserve">
+    <value>Adv &gt;&gt;</value>
+  </data>
+  <data name="Search.Confirmation" xml:space="preserve">
+    <value>Confirmation</value>
+  </data>
+  <data name="Search.DisplayName" xml:space="preserve">
+    <value>Search</value>
+  </data>
+  <data name="Search.EntryContainsBadCode" xml:space="preserve">
+    <value>Search string should contain equals count symbols [ and ].</value>
+  </data>
+  <data name="Search.Error" xml:space="preserve">
+    <value>Error!</value>
+  </data>
+  <data name="Search.ForumDescAll" xml:space="preserve">
+    <value>All forums</value>
+  </data>
+  <data name="Search.IndexCleared" xml:space="preserve">
+    <value>Search index cleared</value>
+  </data>
+  <data name="Search.IndexingFinished" xml:space="preserve">
+    <value>Messages indexing finished.</value>
+  </data>
+  <data name="Search.IndexingStarted" xml:space="preserve">
+    <value>Messages indexing…</value>
+  </data>
+  <data name="Search.IndexingTerminatedByError" xml:space="preserve">
+    <value>Search indexing terminated by exception {0}</value>
+  </data>
+  <data name="Search.IndexingTerminatedByUser" xml:space="preserve">
+    <value>Search indexing terminated by user.</value>
+  </data>
+  <data name="Search.JumpRequest" xml:space="preserve">
+    <value>Are you sure to jump to this message thread?</value>
+  </data>
+  <data name="Search.LogFound" xml:space="preserve">
+    <value>Found {0} messages meets the query.</value>
+  </data>
+  <data name="Search.LogNotFound" xml:space="preserve">
+    <value>Not found messages meets the query.</value>
+  </data>
+  <data name="Search.MessagesAddedIntoIndex" xml:space="preserve">
+    <value>{0} messages added into index</value>
+  </data>
+  <data name="Search.MessagesRemovedFromIndex" xml:space="preserve">
+    <value>{0} messages removed from index</value>
+  </data>
+  <data name="Search.NoParams" xml:space="preserve">
+    <value>Enter string to search or choose advanced search options.</value>
+  </data>
+  <data name="Search.NotFound" xml:space="preserve">
+    <value>Message or message forum not found</value>
+  </data>
+  <data name="Search.OutResults" xml:space="preserve">
+    <value>Results output…</value>
+  </data>
+  <data name="Search.Searching" xml:space="preserve">
+    <value>Searching…</value>
+  </data>
+  <data name="Search.Title" xml:space="preserve">
+    <value>Search</value>
+  </data>
+  <data name="Search.Commands.BuildSearchIndex.Description" xml:space="preserve">
+    <value>Build search index.</value>
+  </data>
+  <data name="Search.Commands.BuildSearchIndex.DisplayName" xml:space="preserve">
+    <value>Build Search Index</value>
+  </data>
+  <data name="Search.Commands.ClearSearchResult.Description" xml:space="preserve">
+    <value>Clear list with find results.</value>
+  </data>
+  <data name="Search.Commands.ClearSearchResult.DisplayName" xml:space="preserve">
+    <value>Clear Search Result</value>
+  </data>
+  <data name="Splash.ApplicationStart" xml:space="preserve">
+    <value>Starting application …</value>
+  </data>
+  <data name="Splash.CheckDatabase" xml:space="preserve">
+    <value>Checking database …</value>
+  </data>
+  <data name="Splash.InitApplication" xml:space="preserve">
+    <value>Initializing application …</value>
+  </data>
+  <data name="Splash.LoadForum" xml:space="preserve">
+    <value>Loading forum '{0}' …</value>
+  </data>
+  <data name="Splash.LoadForums" xml:space="preserve">
+    <value>Loading forum list …</value>
+  </data>
+  <data name="Splash.RestructureDatabase" xml:space="preserve">
+    <value>Restructuring database …</value>
+  </data>
+  <data name="Splash.RunApplication" xml:space="preserve">
+    <value>Application running</value>
+  </data>
+  <data name="StyleConfig.ExternalThemeFileDescription" xml:space="preserve">
+    <value>External theme images file to replace default ones in toolbars, menus and forum messages. (Application restart required)</value>
+  </data>
+  <data name="StyleConfig.ExternalThemeFileName" xml:space="preserve">
+    <value>External theme images file</value>
+  </data>
+  <data name="StyleConfig.LogBackColorDescription" xml:space="preserve">
+    <value>Log box background color</value>
+  </data>
+  <data name="StyleConfig.LogBackColorName" xml:space="preserve">
+    <value>Log background</value>
+  </data>
+  <data name="StyleConfig.ThemeDescription" xml:space="preserve">
+    <value>Theme images to use for toolbars, menus and forum messages. (Application restart required)</value>
+  </data>
+  <data name="StyleConfig.ThemeName" xml:space="preserve">
+    <value>Images theme</value>
+  </data>
+  <data name="Sync.AutoAborted" xml:space="preserve">
+    <value>Autosynchronization was not completed</value>
+  </data>
+  <data name="Sync.BrokenThread1" xml:space="preserve">
+    <value>broken thread</value>
+  </data>
+  <data name="Sync.BrokenThread2" xml:space="preserve">
+    <value>broken threads</value>
+  </data>
+  <data name="Sync.BrokenThread3" xml:space="preserve">
+    <value>broken threads</value>
+  </data>
+  <data name="Sync.BrokenTopicRequestHint" xml:space="preserve">
+    <value>Parent for message '{0}' not found</value>
+  </data>
+  <data name="Sync.BrokenTopicRequestSource" xml:space="preserve">
+    <value>Broken messages search</value>
+  </data>
+  <data name="Sync.CompressionKind" xml:space="preserve">
+    <value>Use {0} compression, {1} bytes</value>
+  </data>
+  <data name="Sync.CompressionNotUsed" xml:space="preserve">
+    <value>compression not used</value>
+  </data>
+  <data name="Sync.CompressionUsed" xml:space="preserve">
+    <value>use compression method '{0}'</value>
+  </data>
+  <data name="Sync.ConnectError" xml:space="preserve">
+    <value>Connection error</value>
+  </data>
+  <data name="Sync.DownloadTopics" xml:space="preserve">
+    <value>Download additional topics</value>
+  </data>
+  <data name="Sync.DownloadTopicsStat" xml:space="preserve">
+    <value>{0} {1} downloaded</value>
+  </data>
+  <data name="Sync.FailedOutboundMessages1" xml:space="preserve">
+    <value>outbound message failed</value>
+  </data>
+  <data name="Sync.FailedOutboundMessages2" xml:space="preserve">
+    <value>outbound messages failed</value>
+  </data>
+  <data name="Sync.FailedOutboundMessages5" xml:space="preserve">
+    <value>outbound messages failed</value>
+  </data>
+  <data name="Sync.ForumsReceived1" xml:space="preserve">
+    <value>forum</value>
+  </data>
+  <data name="Sync.ForumsReceived2" xml:space="preserve">
+    <value>forums</value>
+  </data>
+  <data name="Sync.ForumsReceived5" xml:space="preserve">
+    <value>forums</value>
+  </data>
+  <data name="Sync.Found1" xml:space="preserve">
+    <value>Found</value>
+  </data>
+  <data name="Sync.Found2" xml:space="preserve">
+    <value>Found</value>
+  </data>
+  <data name="Sync.GetForumsList" xml:space="preserve">
+    <value>Query forums list from server</value>
+  </data>
+  <data name="Sync.InboundMessages1" xml:space="preserve">
+    <value>inbound message</value>
+  </data>
+  <data name="Sync.InboundMessages2" xml:space="preserve">
+    <value>inbound messages</value>
+  </data>
+  <data name="Sync.InboundMessages5" xml:space="preserve">
+    <value>inbound messages</value>
+  </data>
+  <data name="Sync.InboundRates1" xml:space="preserve">
+    <value>inbound rate</value>
+  </data>
+  <data name="Sync.InboundRates2" xml:space="preserve">
+    <value>inbound rates</value>
+  </data>
+  <data name="Sync.InboundRates5" xml:space="preserve">
+    <value>inbound rates</value>
+  </data>
+  <data name="Sync.Indexed" xml:space="preserve">
+    <value>indexed</value>
+  </data>
+  <data name="Sync.InListAdded" xml:space="preserve">
+    <value>In list addded {0} {1}</value>
+  </data>
+  <data name="Sync.LoadedProfiles" xml:space="preserve">
+    <value>Loaded profiles of {0} {1}</value>
+  </data>
+  <data name="Sync.Messages1" xml:space="preserve">
+    <value>message</value>
+  </data>
+  <data name="Sync.Messages2" xml:space="preserve">
+    <value>messages</value>
+  </data>
+  <data name="Sync.Messages5" xml:space="preserve">
+    <value>messages</value>
+  </data>
+  <data name="Sync.MessagesPosted1" xml:space="preserve">
+    <value>{0} message posted</value>
+  </data>
+  <data name="Sync.MessagesPosted2" xml:space="preserve">
+    <value>{0} messages posted</value>
+  </data>
+  <data name="Sync.MessagesPosted5" xml:space="preserve">
+    <value>{0} messages posted</value>
+  </data>
+  <data name="Sync.Moderatorials1" xml:space="preserve">
+    <value>moderatorial</value>
+  </data>
+  <data name="Sync.Moderatorials2" xml:space="preserve">
+    <value>moderatorials</value>
+  </data>
+  <data name="Sync.Moderatorials5" xml:space="preserve">
+    <value>moderatorials</value>
+  </data>
+  <data name="Sync.NewForums1" xml:space="preserve">
+    <value>new forum</value>
+  </data>
+  <data name="Sync.NewForums2" xml:space="preserve">
+    <value>new forums</value>
+  </data>
+  <data name="Sync.NewForums5" xml:space="preserve">
+    <value>new forums</value>
+  </data>
+  <data name="Sync.NewUsersNotFound" xml:space="preserve">
+    <value>New user profiles not found</value>
+  </data>
+  <data name="Sync.NoCompression" xml:space="preserve">
+    <value>Use no compression</value>
+  </data>
+  <data name="Sync.OutboundMessages1" xml:space="preserve">
+    <value>outbound message</value>
+  </data>
+  <data name="Sync.OutboundMessages2" xml:space="preserve">
+    <value>outbound messages</value>
+  </data>
+  <data name="Sync.OutboundMessages5" xml:space="preserve">
+    <value>outbound messages</value>
+  </data>
+  <data name="Sync.OutboundRates1" xml:space="preserve">
+    <value>outbound rate</value>
+  </data>
+  <data name="Sync.OutboundRates2" xml:space="preserve">
+    <value>outbound rates</value>
+  </data>
+  <data name="Sync.OutboundRates5" xml:space="preserve">
+    <value>outbound rates</value>
+  </data>
+  <data name="Sync.PacketSize" xml:space="preserve">
+    <value>packet size {0}</value>
+  </data>
+  <data name="Sync.PostMessages" xml:space="preserve">
+    <value>Post messages</value>
+  </data>
+  <data name="Sync.ProcessForumsList" xml:space="preserve">
+    <value>Processing received forums list</value>
+  </data>
+  <data name="Sync.ProcessMessages" xml:space="preserve">
+    <value>Processing received messages</value>
+  </data>
+  <data name="Sync.ProcessUsers" xml:space="preserve">
+    <value>Processing new user profiles</value>
+  </data>
+  <data name="Sync.QueryNewMessages" xml:space="preserve">
+    <value>Query new messages from forums</value>
+  </data>
+  <data name="Sync.QueryNewUsers" xml:space="preserve">
+    <value>Query new user profiles from server</value>
+  </data>
+  <data name="Sync.RepairingTopics" xml:space="preserve">
+    <value>Repairing broken topics…</value>
+  </data>
+  <data name="Sync.SendChangesToServer" xml:space="preserve">
+    <value>Send changes to server</value>
+  </data>
+  <data name="Sync.UpdateForumData" xml:space="preserve">
+    <value>Update Forum Data …</value>
+  </data>
+  <data name="Sync.UsersReceived1" xml:space="preserve">
+    <value>user</value>
+  </data>
+  <data name="Sync.UsersReceived2" xml:space="preserve">
+    <value>users</value>
+  </data>
+  <data name="Sync.UsersReceived5" xml:space="preserve">
+    <value>users</value>
+  </data>
+  <data name="Sync.Commands.Synchronize.Description" xml:space="preserve">
+    <value>Synchronization with server for send and receive messages.</value>
+  </data>
+  <data name="Sync.Commands.Synchronize.DisplayName" xml:space="preserve">
+    <value>Synchronize</value>
+  </data>
+  <data name="Sync.Log.BrokenTopicMessage1" xml:space="preserve">
+    <value>Found {0} broken topic ({1})</value>
+  </data>
+  <data name="Sync.Log.BrokenTopicMessage2" xml:space="preserve">
+    <value>Found {0} broken topics ({1})</value>
+  </data>
+  <data name="Sync.Log.BrokenTopicMessage5" xml:space="preserve">
+    <value>Found {0} broken topics ({1})</value>
+  </data>
+  <data name="Sync.NewMessages.ProcessingProgressText1" xml:space="preserve">
+    <value>{0} message processed</value>
+  </data>
+  <data name="Sync.NewMessages.ProcessingProgressText2" xml:space="preserve">
+    <value>{0} messages processed</value>
+  </data>
+  <data name="Sync.NewMessages.ProcessingProgressText5" xml:space="preserve">
+    <value>{0} messages processed</value>
+  </data>
+  <data name="Sync.NewRates.ProcessingProgress1" xml:space="preserve">
+    <value>{0} rate processed</value>
+  </data>
+  <data name="Sync.NewRates.ProcessingProgress2" xml:space="preserve">
+    <value>{0} rates processed</value>
+  </data>
+  <data name="Sync.NewRates.ProcessingProgress5" xml:space="preserve">
+    <value>{0} rates processed</value>
+  </data>
+  <data name="TreeLinks.DisplayName" xml:space="preserve">
+    <value>Links</value>
+  </data>
+  <data name="EnterTopicMessageIdForm.MessageIdIsTextFormat" xml:space="preserve">
+    <value>Message ID is: {0}</value>
+  </data>
+</root>

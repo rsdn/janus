@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<root xmlns="http://rsdn.ru/projects/Janus/JanusMenuDescriptor.xsd"
+	  name="MainForm.Menu">
+
+	<group name="Main">
+
+		<menu name="Service" textResource="MainForm.Menu.Service.Text" orderIndex="40">
+			<group name="ServiceActions" orderIndex="40">
+				<menuCommand command="Janus.Mssql.CompactDb"/>
+			</group>
+		</menu>
+
+	</group>
+
+</root>

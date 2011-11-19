@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<commands xmlns="http://rsdn.ru/projects/Janus/JanusCommandDescriptor.xsd">
+
+	<command name="Janus.Log.Show"
+			 displayNameTextResource="Show.DisplayName"
+			 descriptionTextResource="Show.Description"/>
+
+	<command name="Janus.Log.Close"
+			 displayNameTextResource="Close.DisplayName"
+			 descriptionTextResource="Close.Description"/>
+
+	<command name="Janus.Log.Clear"
+			 displayNameTextResource="Clear.DisplayName"
+			 descriptionTextResource="Clear.Description"/>
+
+</commands>

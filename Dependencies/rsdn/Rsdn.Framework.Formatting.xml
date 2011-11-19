@@ -1,0 +1,1213 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Rsdn.Framework.Formatting</name>
+    </assembly>
+    <members>
+        <member name="T:Rsdn.Framework.Formatting.QueryBuilder">
+            <summary>
+            Summary description for QueryBuilder.
+            </summary>
+        </member>
+        <member name="M:Rsdn.Framework.Formatting.QueryBuilder.#ctor">
+            <summary>
+            Construct <see cref="T:Rsdn.Framework.Formatting.QueryBuilder"/> object.
+            </summary>
+        </member>
+        <member name="M:Rsdn.Framework.Formatting.QueryBuilder.#ctor(Rsdn.Framework.Formatting.QueryBuilder)">
+            <summary>
+            Construct <see cref="T:Rsdn.Framework.Formatting.QueryBuilder"/> object.
+            </summary>
+            <param name="queryBuilder">Existing <see cref="T:Rsdn.Framework.Formatting.QueryBuilder"/> object.</param>
+        </member>
+        <member name="M:Rsdn.Framework.Formatting.QueryBuilder.#ctor(System.Collections.Specialized.NameValueCollection)">
+            <summary>
+            Construct <see cref="T:Rsdn.Framework.Formatting.QueryBuilder"/> object.
+            </summary>
+            <param name="queryCollection">query parameters collection.</param>
+        </member>
+        <member name="M:Rsdn.Framework.Formatting.QueryBuilder.#ctor(System.Collections.Specialized.NameValueCollection,System.Text.Encoding)">
+            <summary>
+            Construct <see cref="T:Rsdn.Framework.Formatting.QueryBuilder"/> object.
+            </summary>
+            <param name="queryCollection">query parameters collection.</param>
+            <param name="encoding">Encoding to encode non-ascii symbols.</param>
+        </member>
+        <member name="M:Rsdn.Framework.Formatting.QueryBuilder.#ctor(System.String)">
+            <summary>
+            Construct <see cref="T:Rsdn.Framework.Formatting.QueryBuilder"/> object.
+            </summary>
+            <param name="queryString">Query string to parse.
+            May or may not start with '?' question symbol.</param>
+        </member>
+        <member name="M:Rsdn.Framework.Formatting.QueryBuilder.#ctor(System.String,System.Text.Encoding)">
+            <summary>
+            Construct <see cref="T:Rsdn.Framework.Formatting.QueryBuilder"/> object.
+            </summary>
+            <param name="queryString">Query string to parse.
+            May or may not start with '?' question symbol.</param>
+            <param name="encoding">Encoding to encode non-ascii symbols.</param>
+        </member>
+        <member name="M:Rsdn.Framework.Formatting.QueryBuilder.ToString">
+            <summary>
+            Convert to query string.
+            </summary>
+            <returns>String presentation of query parameters.</returns>
+        </member>
+        <member name="M:Rsdn.Framework.Formatting.QueryBuilder.ToString(System.Boolean)">
+            <summary>
+            Convert to query string.
+            </summary>
+            <param name="withQuestionMark">
+            Include or not question mark in beginning of string presentation.
+            </param>
+            <returns>String presentation of query parameters.</returns>
+        </member>
+        <member name="T:Rsdn.Framework.Formatting.Matcher">
+            <summary>
+            Helper class for counting of matches.
+            </summary>
+        </member>
+        <member name="M:Rsdn.Framework.Formatting.Matcher.#ctor(System.String)">
+            <summary>
+            Class constructor
+            </summary>
+            <param name="pattern">Match replacement pattern</param>
+        </member>
+        <member name="M:Rsdn.Framework.Formatting.Matcher.Match(System.Text.RegularExpressions.Match)">
+            <summary>
+            Match evaluator
+            </summary>
+            <param name="match">Match</param>
+            <returns>Replacement string</returns>
+        </member>
+        <member name="M:Rsdn.Framework.Formatting.Matcher.Reset">
+            <summary>
+            Reset evaluator
+            </summary>
+        </member>
+        <member name="P:Rsdn.Framework.Formatting.Matcher.Count">
+            <summary>
+            Get count of matches
+            </summary>
+        </member>
+        <member name="P:Rsdn.Framework.Formatting.Matcher.Item(System.Int32)">
+            <summary>
+            Get evaluated match by number
+            </summary>
+        </member>
+        <member name="T:Rsdn.Framework.Formatting.Format">
+            <summary>
+            Инкапсулирует функции форматирования.
+            </summary>
+        </member>
+        <member name="F:Rsdn.Framework.Formatting.Format.RsdnDomainName">
+            <summary>
+            Top level RSDN domain name
+            </summary>
+        </member>
+        <member name="T:Rsdn.Framework.Formatting.Format.Forum">
+            <summary>
+            Инкапсулирует функции форматирования сообщений форума.
+            </summary>
+        </member>
+        <member name="F:Rsdn.Framework.Formatting.Format.Forum._reDetector">
+            <summary>
+            Regex for detecting Re: and Re[number]: prefixes in subject at the start of the line
+            </summary>
+        </member>
+        <member name="M:Rsdn.Framework.Formatting.Format.Forum.GetEditSubject(System.String)">
+            <summary>
+            Готовит поле 'тема' для редактирования.
+            </summary>
+            <param name="subj">Название темы.</param>
+            <returns>Результат.</returns>
+        </member>
+        <member name="M:Rsdn.Framework.Formatting.Format.Forum.AdjustSubject(System.String,System.String)">
+            <summary>
+            Корректировка темы сообщения.
+            </summary>
+            <remarks>
+            Добавляет префикс '<b>Re</b>' к новой теме сообщения.
+            Для первого ответа в ветке добавляется префикс '<b>Re:</b>', 
+            для всех последующий '<b>Re[n]:</b>', где <b>n</b> - уровень вложенности.
+            </remarks>
+            <param name="oldSubject">Тема предыдущего сообщения.</param>
+            <param name="newSubject">Тема нового сообщения.</param>
+            <returns>Возвращает сообщение с добавленным префиксом 'Re'.</returns>
+        </member>
+        <member name="M:Rsdn.Framework.Formatting.Format.Forum.GetSubjectDeep(System.String)">
+            <summary>
+            Возвращает уровень вложенности темы сообщения.
+            </summary>
+            <param name="subject">Тема сообщения</param>
+            <returns>Уровень вложенности.</returns>
+        </member>
+        <member name="M:Rsdn.Framework.Formatting.Format.Forum.GetRePrefix(System.Int32)">
+            <summary>
+            Возвращает префикс темы сообщения.
+            </summary>
+            <remarks>
+            Для первого ответа в ветке префикс '<b>Re:</b>', 
+            для всех последующий '<b>Re[n]:</b>', где <b>n</b> - уровень вложенности.
+            </remarks>
+            <param name="level">Уровень вложенности сообщения.</param>
+            <returns>Префикс.</returns>
+        </member>
+        <member name="M:Rsdn.Framework.Formatting.Format.Forum.AdjustSubject(System.Int32,System.String)">
+            <summary>
+            Корректировка темы сообщения.
+            </summary>
+            <remarks>
+            Корректирует уровень вложенности сообщения (Re[xxx])
+            относительно нового корня.
+            </remarks>
+            <param name="level">Уровень вложенности корневого сообщения.</param>
+            <param name="subject">Тема сообщения.</param>
+            <returns>Откорректированная тема сообщения.</returns>
+        </member>
+        <member name="M:Rsdn.Framework.Formatting.Format.Forum.GetShortNick(System.String)">
+            <summary>
+            Возвращает сокращения для заданного ника.
+            </summary>
+            <param name="nick">Ник.</param>
+            <returns>Сокращение.</returns>
+        </member>
+        <member name="M:Rsdn.Framework.Formatting.Format.Forum.GetEditMessage(System.String,System.String)">
+            <summary>
+            Готовит сообщение к цитированию.
+            </summary>
+            <param name="msg">Сообщение.</param>
+            <param name="nick">Автор ссобщения.</param>
+            <returns>Обработанное сообщение</returns>
+        </member>
+        <member name="M:Rsdn.Framework.Formatting.Format.Forum.GetEditMessage(System.String,System.String,System.Boolean)">
+            <summary>
+            Готовит сообщение к цитированию.
+            </summary>
+            <param name="msg">Сообщение.</param>
+            <param name="nick">Автор ссобщения.</param>
+            <param name="moderator">== true, если пользователь - модератор.</param>
+            <returns>Обработанное сообщение</returns>
+        </member>
+        <member name="T:Rsdn.Framework.Formatting.Format.Date">
+            <summary>
+            Инкапсулирует функции форматирования даты.
+            </summary>
+        </member>
+        <member name="M:Rsdn.Framework.Formatting.Format.Date.#ctor">
+            <summary>
+            Контсруктор объекта.
+            </summary>
+        </member>
+        <member name="M:Rsdn.Framework.Formatting.Format.Date.#ctor(System.DateTime)">
+            <summary>
+            Конструктор объекта.
+            </summary>
+            <param name="dateTime">Дата.</param>
+        </member>
+        <member name="M:Rsdn.Framework.Formatting.Format.Date.GetClientTimeZoneOffset">
+            <summary>
+            Get client time zone's offset in minutes from HttpContext
+            </summary>
+            <remarks>If HttpContext is absent, no offset is provided</remarks>
+            <returns></returns>
+        </member>
+        <member name="M:Rsdn.Framework.Formatting.Format.Date.CorrectToServerTime(System.DateTime)">
+            <summary>
+            Correct client time to server time.
+            </summary>
+            <param name="clientTime">Client time.</param>
+            <returns>Server time.</returns>
+        </member>
+        <member name="M:Rsdn.Framework.Formatting.Format.Date.CorrectToClientTime(System.DateTime)">
+            <summary>
+            Correct server time to client timezone's time
+            </summary>
+            <param name="serverTime">Server time</param>
+            <returns>Corrected time</returns>
+        </member>
+        <member name="M:Rsdn.Framework.Formatting.Format.Date.Correct(System.DateTime,System.Double)">
+            <summary>
+            Correct server time to client time zone's time
+            </summary>
+            <param name="serverTime">Server time</param>
+            <param name="clientTimezoneOffsetMinutes">Client time zone's offset in minutes</param>
+            <returns></returns>
+        </member>
+        <member name="M:Rsdn.Framework.Formatting.Format.Date.Correct(System.Object,System.Double)">
+            <summary>
+            Correct server time to client time zone's time
+            </summary>
+            <param name="serverTime">Server time. If not DateTime then return zero date</param>
+            <param name="clientTimezoneOffsetMinutes">Client time zone's offset in minutes</param>
+            <returns></returns>
+        </member>
+        <member name="M:Rsdn.Framework.Formatting.Format.Date.ToYearString">
+            <summary>
+            Форматирует дату используя формат "dd.MM.yy HH:mm"
+            </summary>
+            <returns>Результирующая строка.</returns>
+        </member>
+        <member name="M:Rsdn.Framework.Formatting.Format.Date.ToYearString(System.DateTime)">
+            <summary>
+            Форматирует дату используя формат "dd.MM.yy HH:mm"
+            </summary>
+            <param name="dateTime">Форматируемая дата.</param>
+            <returns>Результирующая строка.</returns>
+        </member>
+        <member name="M:Rsdn.Framework.Formatting.Format.Date.ToLongString">
+            <summary>
+            Форматирует дату используя формат "dd.MM.yy"
+            </summary>
+            <returns>Результирующая строка.</returns>
+        </member>
+        <member name="M:Rsdn.Framework.Formatting.Format.Date.ToLongString(System.DateTime)">
+            <summary>
+            Форматирует дату используя формат "dd.MM.yy"
+            </summary>
+            <param name="dateTime">Форматируемая дата.</param>
+            <returns>Результирующая строка.</returns>
+        </member>
+        <member name="M:Rsdn.Framework.Formatting.Format.Date.ToShortString">
+            <summary>
+            Форматирует дату используя формат "dd.MM HH:mm"
+            </summary>
+            <returns>Результирующая строка.</returns>
+        </member>
+        <member name="M:Rsdn.Framework.Formatting.Format.Date.ToShortString(System.DateTime)">
+            <summary>
+            Форматирует дату используя формат "dd.MM HH:mm"
+            </summary>
+            <param name="dateTime">Форматируемая дата.</param>
+            <returns>Результирующая строка.</returns>
+        </member>
+        <member name="M:Rsdn.Framework.Formatting.Format.Date.ToDependString">
+            <summary>
+            Форматирует дату в зависимости от ее давности.
+            Больше полугода - "dd.MM.yy.", меньше - "dd/MM HH:mm"
+            </summary>
+            <returns>Результирующая строка.</returns>
+        </member>
+        <member name="M:Rsdn.Framework.Formatting.Format.Date.ToDependString(System.DateTime)">
+            <summary>
+            Форматирует дату в зависимости от ее давности.
+            Больше полугода - "dd.MM.yy.", меньше - "dd/MM HH:mm"
+            </summary>
+            <param name="dateTime">Форматируемая дата.</param>
+            <returns>Результирующая строка.</returns>
+        </member>
+        <member name="M:Rsdn.Framework.Formatting.Format.Date.GetDayBeginning">
+            <summary>
+            Возвращает дату на начало текущего дня.
+            </summary>
+            <returns>Начало текущего дня.</returns>
+        </member>
+        <member name="M:Rsdn.Framework.Formatting.Format.Date.GetDayBeginning(System.DateTime)">
+            <summary>
+            Возвращает дату на начало заданного дня.
+            </summary>
+            <param name="dateTime">Заданная дата.</param>
+            <returns>Начало дня.</returns>
+        </member>
+        <member name="M:Rsdn.Framework.Formatting.Format.Date.GetMonthBeginning">
+            <summary>
+            Возвращает дату на начало текущего месяца.
+            </summary>
+            <returns>Начало месяца.</returns>
+        </member>
+        <member name="M:Rsdn.Framework.Formatting.Format.Date.GetMonthBeginning(System.DateTime)">
+            <summary>
+            Возвращает дату на начало заданного месяца.
+            </summary>
+            <param name="dateTime">Заданная дата.</param>
+            <returns>Начало месяца.</returns>
+        </member>
+        <member name="T:Rsdn.Framework.Formatting.AppConstants">
+            <summary>
+             Application wide constants.
+            </summary>
+        </member>
+        <member name="F:Rsdn.Framework.Formatting.AppConstants.MajorVersion">
+            <summary>
+            Major version.
+            </summary>
+        </member>
+        <member name="F:Rsdn.Framework.Formatting.AppConstants.MinorVersion">
+            <summary>
+            Minor version.
+            </summary>
+        </member>
+        <member name="F:Rsdn.Framework.Formatting.AppConstants.Build">
+            <summary>
+            Build number (actually SVN revision, because main distribution of product is source code).
+            </summary>
+        </member>
+        <member name="F:Rsdn.Framework.Formatting.AppConstants.BuildDate">
+            <summary>
+            Build date.
+            </summary>
+        </member>
+        <member name="F:Rsdn.Framework.Formatting.AppConstants.ProductName">
+            <summary>
+            Product name.
+            </summary>
+        </member>
+        <member name="F:Rsdn.Framework.Formatting.AppConstants.ProductDescription">
+            <summary>
+            Product description.
+            </summary>
+        </member>
+        <member name="F:Rsdn.Framework.Formatting.AppConstants.CompanyName">
+            <summary>
+            Company name.
+            </summary>
+        </member>
+        <member name="F:Rsdn.Framework.Formatting.AppConstants.Copyright">
+            <summary>
+            Copyright.
+            </summary>
+        </member>
+        <member name="T:Rsdn.Framework.Formatting.Lazy`1">
+            <summary>
+            Lazy&lt;T&gt; from FW4
+            </summary>
+            <remarks>Not thread safe</remarks>
+        </member>
+        <member name="T:Rsdn.Framework.Formatting.FormatterHelper">
+            <summary>
+            Helper methods for use with formatter.
+            </summary>
+        </member>
+        <member name="M:Rsdn.Framework.Formatting.FormatterHelper.GetLangInfos">
+            <summary>
+            Returns all supported language infos.
+            </summary>
+        </member>
+        <member name="M:Rsdn.Framework.Formatting.FormatterHelper.GetCodeFormatter(System.String)">
+            <summary>
+            Returns code formatter by language name.
+            </summary>
+        </member>
+        <member name="M:Rsdn.Framework.Formatting.FormatterHelper.GetCodeFormatter(Rsdn.Framework.Formatting.CodeLangInfo)">
+            <summary>
+            Returns code formatter by language info.
+            </summary>
+        </member>
+        <member name="M:Rsdn.Framework.Formatting.FormatterHelper.MarkupCode(System.String,System.String)">
+            <summary>
+            Markup code with xml.
+            </summary>
+        </member>
+        <member name="M:Rsdn.Framework.Formatting.FormatterHelper.MarkupCode(Rsdn.Framework.Formatting.CodeLangInfo,System.String)">
+            <summary>
+            Markup code with xml.
+            </summary>
+        </member>
+        <member name="M:Rsdn.Framework.Formatting.FormatterHelper.GetCodeTagNames">
+            <summary>
+            Returns all known tag names.
+            </summary>
+        </member>
+        <member name="M:Rsdn.Framework.Formatting.FormatterHelper.GetCodeFormatterByTag(System.String)">
+            <summary>
+            Returns code formatter by tag name.
+            </summary>
+        </member>
+        <member name="M:Rsdn.Framework.Formatting.FormatterHelper.MarkupCodeByTag(System.String,System.String)">
+            <summary>
+            Markup code with xml.
+            </summary>
+        </member>
+        <member name="M:Rsdn.Framework.Formatting.FormatterHelper.Trim(System.Text.StringBuilder,System.Char[])">
+            <summary>
+            Trim sides of string.
+            </summary>
+        </member>
+        <member name="M:Rsdn.Framework.Formatting.FormatterHelper.IsEmpty(System.Text.StringBuilder)">
+            <summary>
+            Returns true is StringBuilder is empty.
+            </summary>
+        </member>
+        <member name="M:Rsdn.Framework.Formatting.FormatterHelper.Replace(System.Text.RegularExpressions.Regex,System.Text.StringBuilder,System.String)">
+            <summary>
+            Replace parts of StringBuilder by Regex.
+            </summary>
+        </member>
+        <member name="M:Rsdn.Framework.Formatting.FormatterHelper.Replace(System.Text.RegularExpressions.Regex,System.Text.StringBuilder,System.Text.RegularExpressions.MatchEvaluator)">
+            <summary>
+            Replace parts of StringBuilder by Regex.
+            </summary>
+        </member>
+        <member name="M:Rsdn.Framework.Formatting.FormatterHelper.Replace(System.Text.StringBuilder,System.String,System.String)">
+            <summary>
+            Replace parts of StringBuilder by Regex.
+            </summary>
+        </member>
+        <member name="M:Rsdn.Framework.Formatting.FormatterHelper.ReplaceTagsWQ(System.Text.StringBuilder)">
+            <summary>
+            Заменяет служебные символы HTML на их аналоги исключая '"'.
+            </summary>
+            <param name="sb">Исходный текст.</param>
+            <returns>Результат.</returns>
+        </member>
+        <member name="M:Rsdn.Framework.Formatting.FormatterHelper.ReplaceTagsWQ(System.String)">
+            <summary>
+            Заменяет служебные символы HTML на их аналоги исключая '"'.
+            </summary>
+            <param name="str">Исходный текст.</param>
+            <returns>Результат.</returns>
+        </member>
+        <member name="M:Rsdn.Framework.Formatting.FormatterHelper.ReplaceTags(System.String)">
+            <summary>
+            Заменяет служебные символы HTML на их аналоги.
+            </summary>
+            <param name="str">Исходный текст.</param>
+            <returns>Результат.</returns>
+        </member>
+        <member name="M:Rsdn.Framework.Formatting.FormatterHelper.ReplaceTags(System.Object)">
+            <summary>
+            Заменяет служебные символы HTML на их аналоги.
+            </summary>
+            <param name="str">Исходный текст.</param>
+            <returns>Результат.</returns>
+        </member>
+        <member name="M:Rsdn.Framework.Formatting.FormatterHelper.EncodeJScriptText(System.String)">
+            <summary>
+            Подготавливает текст для JScript.
+            </summary>
+            <warning>Текст не должен содержать спецмаркеры :quotes:, :apostroph: !</warning>
+            <param name="str">Исходная строка.</param>
+            <returns>Преобразованная строка.</returns>
+        </member>
+        <member name="M:Rsdn.Framework.Formatting.FormatterHelper.EncodeAgainstXSS(System.String)">
+            <summary>
+            Подготавливает текст для предотовращения XSS (Cross Site Scripting)
+            Используется, в основном для кодирования адресов (ссылок, картинок).
+            </summary>
+            <param name="value">Исходный текст.</param>
+            <returns>Преобразованный текст.</returns>
+        </member>
+        <member name="M:Rsdn.Framework.Formatting.FormatterHelper.ToInt(System.Object)">
+            <summary>
+            Преобразует object в int. 
+            В случае возникновения исключения возвращается 0.
+            </summary>
+            <param name="o">Преобразуемый объект.</param>
+            <returns>Результат.</returns>
+        </member>
+        <member name="M:Rsdn.Framework.Formatting.FormatterHelper.ToInt(System.Object,System.Int32)">
+            <summary>
+            Преобразует object в int. 
+            В случае возникновения исключения возвращается errorValue.
+            </summary>
+            <param name="o">Преобразуемый объект.</param>
+            <param name="errorValue">Значение возвращаемое если произошла ошибка.</param>
+            <returns>Результат.</returns>
+        </member>
+        <member name="M:Rsdn.Framework.Formatting.FormatterHelper.ToDouble(System.Object)">
+            <summary>
+            Преобразует object в double. 
+            В случае возникновения исключения возвращается 0.
+            </summary>
+            <param name="o">Преобразуемый объект.</param>
+            <returns>Результат.</returns>
+        </member>
+        <member name="F:Rsdn.Framework.Formatting.FormatterHelper._tagsExtractor">
+            <summary>
+            Message tag extractor
+            </summary>
+        </member>
+        <member name="M:Rsdn.Framework.Formatting.FormatterHelper.ExtractTags(System.String)">
+            <summary>
+            Extract tags from string
+            </summary>
+            <param name="tags"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Rsdn.Framework.Formatting.FormatterHelper.ExtractTags(System.String,System.Text.RegularExpressions.MatchEvaluator)">
+            <summary>
+            Format tags
+            </summary>
+            <param name="tags"></param>
+            <param name="eval">Tag transformer</param>
+        </member>
+        <member name="M:Rsdn.Framework.Formatting.FormatterHelper.RemoveQuotations(System.String)">
+            <summary>
+             Убирает цитирование из текста сообщения.
+            </summary>
+             <param name="msg">Сообщение.</param>
+             <returns>Обработанное сообщение</returns>
+        </member>
+        <member name="T:Rsdn.Framework.Formatting.FormatterException">
+            <summary>
+             Formatter exceptions class.
+            </summary>
+        </member>
+        <member name="M:Rsdn.Framework.Formatting.FormatterException.#ctor">
+            <summary>
+            Initialize instance.
+            </summary>
+        </member>
+        <member name="M:Rsdn.Framework.Formatting.FormatterException.#ctor(System.String)">
+            <summary>
+            Initialize instance with supplied message;
+            </summary>
+        </member>
+        <member name="M:Rsdn.Framework.Formatting.FormatterException.#ctor(System.String,System.Exception)">
+            <summary>
+            Initialize instance with supplied message and inner exception.
+            </summary>
+        </member>
+        <member name="M:Rsdn.Framework.Formatting.FormatterException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+            Deserialization constructor.
+            </summary>
+        </member>
+        <member name="T:Rsdn.Framework.Formatting.CodeLangInfo">
+            <summary>
+            Information about supported code language.
+            </summary>
+        </member>
+        <member name="M:Rsdn.Framework.Formatting.CodeLangInfo.#ctor(System.String,System.String)">
+            <summary>
+            Initialize instance.
+            </summary>
+        </member>
+        <member name="P:Rsdn.Framework.Formatting.CodeLangInfo.Name">
+            <summary>
+            Unique language name.
+            </summary>
+        </member>
+        <member name="P:Rsdn.Framework.Formatting.CodeLangInfo.DisplayName">
+            <summary>
+            User friendly language name.
+            </summary>
+        </member>
+        <member name="T:Rsdn.Framework.Formatting.CodeFormatter">
+            <summary>
+            Класс, для раскраски исходников
+            Загружает правила раскраски из xml-файла
+            </summary>
+        </member>
+        <member name="F:Rsdn.Framework.Formatting.CodeFormatter._xmlSchemas">
+            <summary>
+            Source XML validating schemas (XSD)
+            </summary>
+        </member>
+        <member name="F:Rsdn.Framework.Formatting.CodeFormatter.ColorerRegex">
+            <summary>
+            Регулярное выражение, используемое при расераске.
+            Получается после преобразования исходных данных.
+            </summary>
+        </member>
+        <member name="F:Rsdn.Framework.Formatting.CodeFormatter.GroupNames">
+            <summary>
+            Массив имен именованых групп в регулярном выражении
+            Используется при поиске имени группы по ее номеру
+            </summary>
+        </member>
+        <member name="F:Rsdn.Framework.Formatting.CodeFormatter.CountGroups">
+            <summary>
+            Число групп в регулярном выражении
+            </summary>
+        </member>
+        <member name="M:Rsdn.Framework.Formatting.CodeFormatter.#ctor(System.IO.Stream)">
+            <summary>
+            Создание экземпляра раскрасивальщика.
+            </summary>
+            <param name="xmlSource">Исходный xml-поток</param>
+        </member>
+        <member name="M:Rsdn.Framework.Formatting.CodeFormatter.#ctor(System.IO.Stream,System.Text.RegularExpressions.RegexOptions)">
+            <summary>
+            Создание экземпляра раскрасивальщика с дополнительными опциями для регулярного выражения.
+            </summary>
+            <param name="xmlSource">Исходный xml-поток</param>
+            <param name="options">Regex опции</param>
+        </member>
+        <member name="M:Rsdn.Framework.Formatting.CodeFormatter.Transform(System.String)">
+            <summary>
+            Преобразование текста раскрасивальщиком
+            </summary>
+            <param name="sourceText">Исходный текст</param>
+            <returns>Преобразованный текст</returns>
+        </member>
+        <member name="M:Rsdn.Framework.Formatting.CodeFormatter.ReplaceEvaluator(System.Text.RegularExpressions.Match)">
+            <summary>
+            Функция обработки найденного выражения во время трансформации
+            </summary>
+            <param name="match">Соответсвие</param>
+            <returns>Обработанное соответсвие</returns>
+        </member>
+        <member name="T:Rsdn.Framework.Formatting.Resources.ResourceHandler">
+            <summary>
+            HTTP handler for images in resources.
+            </summary>
+        </member>
+        <member name="M:Rsdn.Framework.Formatting.Resources.ResourceHandler.FormatLink(System.String)">
+            <summary>
+            Format link for handler.
+            </summary>
+        </member>
+        <member name="P:Rsdn.Framework.Formatting.Resources.ResourceHandler.HandlerName">
+            <summary>
+            Returns handler name.
+            </summary>
+        </member>
+        <member name="T:Rsdn.Framework.Formatting.TextFormatter">
+            <summary>
+            Форматирование сообщение и расцветка кода.
+            </summary>
+        </member>
+        <member name="F:Rsdn.Framework.Formatting.TextFormatter.StartCitation">
+            <summary>
+            Start of line citation.
+            </summary>
+        </member>
+        <member name="M:Rsdn.Framework.Formatting.TextFormatter.#ctor">
+            <summary>
+            Создаёт экземпляр класса <b>TextFormatter</b>.
+            </summary>
+        </member>
+        <member name="M:Rsdn.Framework.Formatting.TextFormatter.#ctor(Rsdn.Framework.Formatting.TextFormatter.ProcessImagesDelegate)">
+            <summary>
+            Создаёт экземпляр класса <b>TextFormatter</b>
+            </summary>
+            <param name="imagesDelegate">Делегат для обработки картинок.
+            Если null - используется делегат по умолчанию <see cref="M:Rsdn.Framework.Formatting.TextFormatter.DefaultProcessImagesDelegate(Rsdn.Framework.Formatting.TextFormatter,System.Text.RegularExpressions.Match)"/>.
+            </param>
+        </member>
+        <member name="M:Rsdn.Framework.Formatting.TextFormatter.GetPathToRoot">
+            <summary>
+            Returns path to root of the site.
+            </summary>
+        </member>
+        <member name="F:Rsdn.Framework.Formatting.TextFormatter._rxCodeFormatting">
+            <summary>
+            Выражения для обработки кодов.
+            </summary>
+        </member>
+        <member name="M:Rsdn.Framework.Formatting.TextFormatter.#cctor">
+            <summary>
+            Статическая инициализация форматтера.
+            </summary>
+        </member>
+        <member name="M:Rsdn.Framework.Formatting.TextFormatter.PaintCode(System.Text.RegularExpressions.Match)">
+            <summary>
+            Раскраска кода
+            </summary>
+            <param name="codeMatch">Вхождение кода (группа tag содержит тип кода)</param>
+            <returns></returns>
+        </member>
+        <member name="F:Rsdn.Framework.Formatting.TextFormatter._rxSetFont01">
+            <summary>
+            Выражения для замены временных тегов.
+            </summary>
+        </member>
+        <member name="M:Rsdn.Framework.Formatting.TextFormatter.SetFont(System.String)">
+            <summary>
+            Заменяет временные теги на html.
+            </summary>
+            <param name="code">Исходный код.</param>
+            <returns>Обработанный текст.</returns>
+        </member>
+        <member name="M:Rsdn.Framework.Formatting.TextFormatter.DefaultProcessImagesDelegate(Rsdn.Framework.Formatting.TextFormatter,System.Text.RegularExpressions.Match)">
+            <summary>
+            Делагат по умолчанию для обработки картинок.
+            </summary>
+            <param name="formatter">Форматтер.</param>
+            <param name="image">Регэксповское совпадение тэга [img].</param>
+            <returns>Обработанный тэг.</returns>
+        </member>
+        <member name="F:Rsdn.Framework.Formatting.TextFormatter.ImagesDelegate">
+            <summary>
+            Делегат для обработки картинок.
+            </summary>
+        </member>
+        <member name="F:Rsdn.Framework.Formatting.TextFormatter._imgTagRegex">
+            <summary>
+            [img] тэг. С защитой от javascript.
+            </summary>
+        </member>
+        <member name="M:Rsdn.Framework.Formatting.TextFormatter.ProcessImages(System.Text.RegularExpressions.Match)">
+            <summary>
+            Process RSDN IMG tag
+            </summary>
+            <param name="image">Regexp match with RSDN img tag</param>
+            <returns>Formatted image value</returns>
+        </member>
+        <member name="F:Rsdn.Framework.Formatting.TextFormatter._urlTagRegex">
+            <summary>
+            [url] &amp; [purl] тэг.
+            </summary>
+        </member>
+        <member name="M:Rsdn.Framework.Formatting.TextFormatter.ProcessURLs(System.String,System.String)">
+            <summary>
+            Process RSDN URL tag
+            </summary>
+            <returns>Formatted url value</returns>
+        </member>
+        <member name="M:Rsdn.Framework.Formatting.TextFormatter.ProcessImplicitURLs(System.Text.RegularExpressions.Match)">
+            <summary>
+            Process implicit URLs (not explicity specified by RSDN URL tag).
+            </summary>
+            <param name="match">URL match.</param>
+            <returns>Formatted URL.</returns>
+        </member>
+        <member name="F:Rsdn.Framework.Formatting.TextFormatter.SchemeFormatting">
+            <summary>
+            Map of URI schemes and associated handlers.
+            </summary>
+        </member>
+        <member name="M:Rsdn.Framework.Formatting.TextFormatter.ProcessMsHelpLink(System.Text.RegularExpressions.Match,System.Web.UI.HtmlControls.HtmlAnchor)">
+            <summary>
+            Process local MSDN links (ms-help scheme).
+            </summary>
+            <param name="urlMatch">Input URL match</param>
+            <param name="link">Output formatted URL</param>
+        </member>
+        <member name="F:Rsdn.Framework.Formatting.TextFormatter.HostFormatting">
+            <summary>
+            Map of host names and associated handlers.
+            </summary>
+        </member>
+        <member name="M:Rsdn.Framework.Formatting.TextFormatter.ProcessAmazonLink(System.Text.RegularExpressions.Match,System.Web.UI.HtmlControls.HtmlAnchor)">
+            <summary>
+            Process Amazon.com links
+            </summary>
+            <param name="urlMatch"></param>
+            <param name="link"></param>
+        </member>
+        <member name="M:Rsdn.Framework.Formatting.TextFormatter.ProcessPartnerLink(System.Text.RegularExpressions.Match,System.Web.UI.HtmlControls.HtmlAnchor)">
+            <summary>
+            Process RSDN partneship links.
+            </summary>
+            <param name="urlMatch"></param>
+            <param name="link"></param>
+        </member>
+        <member name="M:Rsdn.Framework.Formatting.TextFormatter.FormatURLs(System.Text.RegularExpressions.Match,System.String,System.String)">
+            <summary>
+            Format URLs to hyperlinks.
+            Used in both, explicitly &amp; implicitly specified links.
+            </summary>
+            <param name="urlMatch">Regex match with URL address.</param>
+            <param name="urlAdsress">URL address.</param>
+            <param name="urlName">URL name. May be or may be not different from URL address.</param>
+            <returns>Formatted link for specified URL.</returns>
+        </member>
+        <member name="M:Rsdn.Framework.Formatting.TextFormatter.AddClass(System.Web.UI.HtmlControls.HtmlAnchor,System.String)">
+            <summary>
+            Add css class to HtmlAnchor
+            </summary>
+            <param name="link"></param>
+            <param name="className"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Rsdn.Framework.Formatting.TextFormatter.RenderControl(System.Web.UI.Control)">
+            <summary>
+            Render server control to string
+            </summary>
+            <param name="control">Control</param>
+            <returns>Rendered control</returns>
+        </member>
+        <member name="M:Rsdn.Framework.Formatting.TextFormatter.FormatRsdnURLs(System.Text.RegularExpressions.Match,System.Web.UI.HtmlControls.HtmlAnchor)">
+            <summary>
+            Format RSDN URLs to hyperlinks.
+            Used in both, explicitly &amp; implicitly specified links.
+            </summary>
+            <param name="urlMatch">Regex match with URL address.</param>
+            <param name="link">HtmlLink, initialized by default</param>
+            <returns>true - processed by formatter itself, no further processing</returns>
+        </member>
+        <member name="F:Rsdn.Framework.Formatting.TextFormatter.ServerName">
+            <summary>
+            Server's name for using in rsdn host replacing.
+            </summary>
+        </member>
+        <member name="F:Rsdn.Framework.Formatting.TextFormatter._taglineDetector">
+            <summary>
+            Detect [tagline] tag.
+            </summary>
+        </member>
+        <member name="M:Rsdn.Framework.Formatting.TextFormatter.GetMSDNRef(System.String)">
+            <summary>
+            Возвращает ссылку на MSDN.
+            </summary>
+            <param name="keyword">Название функции или искомый текст.</param>
+            <returns>Ссылка.</returns>
+        </member>
+        <member name="F:Rsdn.Framework.Formatting.TextFormatter._rxMsdn">
+            <summary>
+            Выражения для обработки ссылок на MSDN.
+            </summary>
+        </member>
+        <member name="M:Rsdn.Framework.Formatting.TextFormatter.DoMSDNRef(System.Text.RegularExpressions.Match)">
+            <summary>
+            Обработывает ссылки на MSDN.
+            </summary>
+            <param name="match">Вхождение [msdn]</param>
+            <returns>Обработаный текст</returns>
+        </member>
+        <member name="M:Rsdn.Framework.Formatting.TextFormatter.GetImagePrefix">
+            <summary>
+            Возвращает префикс для картинок.
+            </summary>
+            <returns>Строка префикса.</returns>
+        </member>
+        <member name="M:Rsdn.Framework.Formatting.TextFormatter.ListEvaluator(System.Text.RegularExpressions.Match)">
+            <summary>
+            Обработка нумерованных списков
+            </summary>
+            <param name="match"></param>
+            <returns></returns>
+        </member>
+        <member name="F:Rsdn.Framework.Formatting.TextFormatter._rxPrep01">
+            <summary>
+            Выражения для форматирования текста.
+            </summary>
+        </member>
+        <member name="F:Rsdn.Framework.Formatting.TextFormatter._moderatorDetector">
+            <summary>
+            Detect [moderator] tag.
+            </summary>
+        </member>
+        <member name="F:Rsdn.Framework.Formatting.TextFormatter._rsdnLinkDetector">
+            <summary>
+            Detect RSDN links - [#] tag.
+            </summary>
+        </member>
+        <member name="F:Rsdn.Framework.Formatting.TextFormatter._dashDetector">
+            <summary>
+            Detect dashes.
+            </summary>
+        </member>
+        <member name="M:Rsdn.Framework.Formatting.TextFormatter.ProcessRsdnLinkAsAnchor(System.Text.RegularExpressions.Match)">
+            <summary>
+            Process RSDN link tag
+            </summary>
+            <param name="name">Regexp match with RSDN link tag</param>
+            <returns>Formatted link as HtmlAnchor</returns>
+        </member>
+        <member name="M:Rsdn.Framework.Formatting.TextFormatter.ProcessRsdnLink(System.Text.RegularExpressions.Match)">
+            <summary>
+            Process RSDN link tag
+            </summary>
+            <param name="name">Regexp match with RSDN link tag</param>
+            <returns>Formatted link as plain string (by default calls ProcessRsdnLinkAsAnchor)</returns>
+        </member>
+        <member name="M:Rsdn.Framework.Formatting.TextFormatter.ProcessEmailLink(System.Text.RegularExpressions.Match)">
+            <summary>
+            Process email link.
+            </summary>
+            <param name="match">Email match</param>
+            <returns>Formatted result</returns>
+        </member>
+        <member name="M:Rsdn.Framework.Formatting.TextFormatter.FormatEmail(System.String)">
+            <summary>
+            Format email address
+            </summary>
+            <param name="email"></param>
+            <returns></returns>
+        </member>
+        <member name="F:Rsdn.Framework.Formatting.TextFormatter.TrimArray">
+            <summary>
+            Массив символов для отсечения ведущих и концевых пробельных строк сообщений.
+            </summary>
+        </member>
+        <member name="M:Rsdn.Framework.Formatting.TextFormatter.Format(System.String)">
+            <summary>
+            Форматирование текста.
+            <b>НЕПОТОКОБЕЗОПАСНЫЙ!</b>
+            </summary>
+            <param name="txt">Исходный текст.</param>
+            <returns>Сформатированный текст.</returns>
+        </member>
+        <member name="M:Rsdn.Framework.Formatting.TextFormatter.Format(System.String,System.Boolean)">
+            <summary>
+            Форматирование текста.
+            <b>НЕПОТОКОБЕЗОПАСНЫЙ!</b>
+            </summary>
+            <param name="txt">Исходный текст.</param>
+            <param name="smile">Признак обработки смайликов.</param>
+            <returns>Сформатированный текст.</returns>
+        </member>
+        <member name="M:Rsdn.Framework.Formatting.TextFormatter.Format(System.String,System.Boolean,System.Boolean,System.Boolean)">
+            <summary>
+            Форматирование текста.
+            <b>НЕПОТОКОБЕЗОПАСНЫЙ!</b>
+            </summary>
+            <param name="txt">Исходный текст.</param>
+            <param name="smile">Признак обработки смайликов.</param>
+            <param name="doNotReplaceTags">Не заменять служебные символы HTML.</param>
+            <param name="doNotFormatImplicitLinks">Не форматировать явно не указанные ссылки.</param>
+            <returns>Сформатированный текст.</returns>
+        </member>
+        <member name="M:Rsdn.Framework.Formatting.TextFormatter.RemoveTaglineTag(System.String)">
+            <summary>
+            Remove [tagline] tag from text.
+            </summary>
+            <param name="text">Original text.</param>
+            <returns>Modified text.</returns>
+        </member>
+        <member name="M:Rsdn.Framework.Formatting.TextFormatter.RemoveModeratorTag(System.String)">
+            <summary>
+            Remove [moderator] tag from text.
+            </summary>
+            <param name="text">Original text.</param>
+            <returns>Modified text.</returns>
+        </member>
+        <member name="M:Rsdn.Framework.Formatting.TextFormatter.IsThereModeratorTag(System.String)">
+            <summary>
+            Проверяет на наличие модераторского текста в сообщении
+            </summary>
+            <param name="text"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Rsdn.Framework.Formatting.TextFormatter.ParseUrl(System.String)">
+            <summary>
+            Отпарсить URL.
+            </summary>
+        </member>
+        <member name="M:Rsdn.Framework.Formatting.TextFormatter.ProcessISBN(System.Text.RegularExpressions.Match,System.String)">
+            <summary>
+            Обработка ISBN
+            </summary>
+        </member>
+        <member name="P:Rsdn.Framework.Formatting.TextFormatter.OpenRsdnLinksInNewWindow">
+            <summary>
+            How to open internal RSDN links.
+            </summary>
+        </member>
+        <member name="P:Rsdn.Framework.Formatting.TextFormatter.CanonicalRsdnHostName">
+            <summary>
+            Canonical (common) name of RSDN to replace in all links to rsdn
+            </summary>
+        </member>
+        <member name="T:Rsdn.Framework.Formatting.TextFormatter.ProcessImagesDelegate">
+            <summary>
+            Тип делегата для обработки картинок (тэга [img])
+            </summary>
+        </member>
+        <member name="T:Rsdn.Framework.Formatting.TextFormatter.ProcessUrlItself">
+            <summary>
+            Delegate to process URLs
+            </summary>
+        </member>
+        <member name="T:Rsdn.Framework.Formatting.TextFormatter.URL">
+            <summary>
+            Structure to contain necessary info about link for processing.
+            </summary>
+        </member>
+        <member name="F:Rsdn.Framework.Formatting.TextFormatter.URL.Href">
+            <summary>
+            Address of link.
+            </summary>
+        </member>
+        <member name="F:Rsdn.Framework.Formatting.TextFormatter.URL.Name">
+            <summary>
+            Name of link
+            </summary>
+        </member>
+        <member name="F:Rsdn.Framework.Formatting.TextFormatter.URL.Title">
+            <summary>
+            Additional info for link
+            </summary>
+        </member>
+        <member name="M:Rsdn.Framework.Formatting.TextFormatter.URL.#ctor(System.String,System.String)">
+            <summary>
+            Create URL object.
+            </summary>
+            <param name="href">Adress of link</param>
+            <param name="name">Name of link</param>
+        </member>
+        <member name="T:Rsdn.Framework.Formatting.TextFormatter.ProcessUrl">
+            <summary>
+            Delegate to process URLs.
+            </summary>
+        </member>
+        <member name="T:Rsdn.Framework.Formatting.JetBrains.Annotations.StringFormatMethodAttribute">
+            <summary>
+            Indicates that marked method builds string by format pattern and (optional) arguments. 
+            Parameter, which contains format string, should be given in constructor.
+            The format string should be in <see cref="M:System.String.Format(System.IFormatProvider,System.String,System.Object[])"/> -like form
+            </summary>
+        </member>
+        <member name="M:Rsdn.Framework.Formatting.JetBrains.Annotations.StringFormatMethodAttribute.#ctor(System.String)">
+            <summary>
+            Initializes new instance of StringFormatMethodAttribute
+            </summary>
+            <param name="formatParameterName">Specifies which parameter of an annotated method should be treated as format-string</param>
+        </member>
+        <member name="P:Rsdn.Framework.Formatting.JetBrains.Annotations.StringFormatMethodAttribute.FormatParameterName">
+            <summary>
+            Gets format parameter name
+            </summary>
+        </member>
+        <member name="T:Rsdn.Framework.Formatting.JetBrains.Annotations.InvokerParameterNameAttribute">
+            <summary>
+            Indicates that the function argument should be string literal and match one  of the parameters of the caller function.
+            For example, <see cref="T:System.ArgumentNullException"/> has such parameter.
+            </summary>
+        </member>
+        <member name="T:Rsdn.Framework.Formatting.JetBrains.Annotations.AssertionMethodAttribute">
+            <summary>
+            Indicates that the marked method is assertion method, i.e. it halts control flow if one of the conditions is satisfied. 
+            To set the condition, mark one of the parameters with <see cref="T:Rsdn.Framework.Formatting.JetBrains.Annotations.AssertionConditionAttribute"/> attribute
+            </summary>
+            <seealso cref="T:Rsdn.Framework.Formatting.JetBrains.Annotations.AssertionConditionAttribute"/>
+        </member>
+        <member name="T:Rsdn.Framework.Formatting.JetBrains.Annotations.AssertionConditionAttribute">
+            <summary>
+            Indicates the condition parameter of the assertion method. 
+            The method itself should be marked by <see cref="T:Rsdn.Framework.Formatting.JetBrains.Annotations.AssertionMethodAttribute"/> attribute.
+            The mandatory argument of the attribute is the assertion type.
+            </summary>
+            <seealso cref="T:Rsdn.Framework.Formatting.JetBrains.Annotations.AssertionConditionType"/>
+        </member>
+        <member name="M:Rsdn.Framework.Formatting.JetBrains.Annotations.AssertionConditionAttribute.#ctor(Rsdn.Framework.Formatting.JetBrains.Annotations.AssertionConditionType)">
+            <summary>
+            Initializes new instance of AssertionConditionAttribute
+            </summary>
+            <param name="conditionType">Specifies condition type</param>
+        </member>
+        <member name="P:Rsdn.Framework.Formatting.JetBrains.Annotations.AssertionConditionAttribute.ConditionType">
+            <summary>
+            Gets condition type
+            </summary>
+        </member>
+        <member name="T:Rsdn.Framework.Formatting.JetBrains.Annotations.AssertionConditionType">
+            <summary>
+            Specifies assertion type. If the assertion method argument satisifes the condition, then the execution continues. 
+            Otherwise, execution is assumed to be halted
+            </summary>
+        </member>
+        <member name="F:Rsdn.Framework.Formatting.JetBrains.Annotations.AssertionConditionType.IsTrue">
+            <summary>
+            Indicates that the marked parameter should be evaluated to true
+            </summary>
+        </member>
+        <member name="F:Rsdn.Framework.Formatting.JetBrains.Annotations.AssertionConditionType.IsFalse">
+            <summary>
+            Indicates that the marked parameter should be evaluated to false
+            </summary>
+        </member>
+        <member name="F:Rsdn.Framework.Formatting.JetBrains.Annotations.AssertionConditionType.IsNull">
+            <summary>
+            Indicates that the marked parameter should be evaluated to null value
+            </summary>
+        </member>
+        <member name="F:Rsdn.Framework.Formatting.JetBrains.Annotations.AssertionConditionType.IsNotNull">
+            <summary>
+            Indicates that the marked parameter should be evaluated to not null value
+            </summary>
+        </member>
+        <member name="T:Rsdn.Framework.Formatting.JetBrains.Annotations.TerminatesProgramAttribute">
+            <summary>
+            Indicates that the marked method unconditionally terminates control flow execution.
+            For example, it could unconditionally throw exception
+            </summary>
+        </member>
+        <member name="T:Rsdn.Framework.Formatting.JetBrains.Annotations.CanBeNullAttribute">
+            <summary>
+            Indicates that the value of marked element could be <c>null</c> sometimes, so the check for <c>null</c> is necessary before its usage
+            </summary>
+        </member>
+        <member name="T:Rsdn.Framework.Formatting.JetBrains.Annotations.NotNullAttribute">
+            <summary>
+            Indicates that the value of marked element could never be <c>null</c>
+            </summary>
+        </member>
+        <member name="T:Rsdn.Framework.Formatting.JetBrains.Annotations.CannotApplyEqualityOperatorAttribute">
+            <summary>
+            Indicates that the value of marked type (or its derivatives) cannot be compared using '==' or '!=' operators.
+            There is only exception to compare with <c>null</c>, it is permitted
+            </summary>
+        </member>
+        <member name="T:Rsdn.Framework.Formatting.JetBrains.Annotations.BaseTypeRequiredAttribute">
+            <summary>
+            When applied to target attribute, specifies a requirement for any type which is marked with 
+            target attribute to implement or inherit specific type or types
+            </summary>
+            <example>
+            <code>
+            [BaseTypeRequired(typeof(IComponent)] // Specify requirement
+            public class ComponentAttribute : Attribute 
+            {}
+            
+            [Component] // ComponentAttribute requires implementing IComponent interface
+            public class MyComponent : IComponent
+            {}
+            </code>
+            </example>
+        </member>
+        <member name="M:Rsdn.Framework.Formatting.JetBrains.Annotations.BaseTypeRequiredAttribute.#ctor(System.Type[])">
+            <summary>
+            Initializes new instance of BaseTypeRequiredAttribute
+            </summary>
+            <param name="baseTypes">Specifies which types are required</param>
+        </member>
+        <member name="P:Rsdn.Framework.Formatting.JetBrains.Annotations.BaseTypeRequiredAttribute.BaseTypes">
+            <summary>
+            Gets enumerations of specified base types
+            </summary>
+        </member>
+        <member name="T:Rsdn.Framework.Formatting.JetBrains.Annotations.UsedImplicitlyAttribute">
+            <summary>
+            Indicates that the marked symbol is used implicitly (e.g. via reflection, in external library),
+            so this symbol will not be marked as unused (as well as by other usage inspections)
+            </summary>
+        </member>
+        <member name="M:Rsdn.Framework.Formatting.JetBrains.Annotations.UsedImplicitlyAttribute.#ctor">
+            <summary>
+            Initializes new instance of UsedImplicitlyAttribute
+            </summary>
+        </member>
+        <member name="M:Rsdn.Framework.Formatting.JetBrains.Annotations.UsedImplicitlyAttribute.#ctor(Rsdn.Framework.Formatting.JetBrains.Annotations.ImplicitUseFlags)">
+            <summary>
+            Initializes new instance of UsedImplicitlyAttribute with specified flags
+            </summary>
+            <param name="flags">Value of type <see cref="T:Rsdn.Framework.Formatting.JetBrains.Annotations.ImplicitUseFlags"/> indicating usage kind</param>
+        </member>
+        <member name="P:Rsdn.Framework.Formatting.JetBrains.Annotations.UsedImplicitlyAttribute.Flags">
+            <summary>
+            Gets value indicating what is meant to be used
+            </summary>
+        </member>
+        <member name="T:Rsdn.Framework.Formatting.JetBrains.Annotations.MeansImplicitUseAttribute">
+            <summary>
+            Should be used on attributes and causes ReSharper to not mark symbols marked with such attributes as unused (as well as by other usage inspections)
+            </summary>
+        </member>
+        <member name="M:Rsdn.Framework.Formatting.JetBrains.Annotations.MeansImplicitUseAttribute.#ctor">
+            <summary>
+            Initializes new instance of MeansImplicitUseAttribute
+            </summary>
+        </member>
+        <member name="M:Rsdn.Framework.Formatting.JetBrains.Annotations.MeansImplicitUseAttribute.#ctor(Rsdn.Framework.Formatting.JetBrains.Annotations.ImplicitUseFlags)">
+            <summary>
+            Initializes new instance of MeansImplicitUseAttribute with specified flags
+            </summary>
+            <param name="flags">Value of type <see cref="T:Rsdn.Framework.Formatting.JetBrains.Annotations.ImplicitUseFlags"/> indicating usage kind</param>
+        </member>
+        <member name="P:Rsdn.Framework.Formatting.JetBrains.Annotations.MeansImplicitUseAttribute.Flags">
+            <summary>
+            Gets value indicating what is meant to be used
+            </summary>
+        </member>
+        <member name="T:Rsdn.Framework.Formatting.JetBrains.Annotations.ImplicitUseFlags">
+            <summary>
+            Specify what is considered used implicitly when marked with <see cref="T:Rsdn.Framework.Formatting.JetBrains.Annotations.MeansImplicitUseAttribute"/> or <see cref="T:Rsdn.Framework.Formatting.JetBrains.Annotations.UsedImplicitlyAttribute"/>
+            </summary>
+        </member>
+        <member name="F:Rsdn.Framework.Formatting.JetBrains.Annotations.ImplicitUseFlags.Default">
+            <summary>
+            Only entity marked with attribute considered used
+            </summary>
+        </member>
+        <member name="F:Rsdn.Framework.Formatting.JetBrains.Annotations.ImplicitUseFlags.IncludeMembers">
+            <summary>
+            Entity marked with attribute and all its members considered used
+            </summary>
+        </member>
+    </members>
+</doc>

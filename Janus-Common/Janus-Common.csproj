@@ -1,0 +1,264 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{3F0703D6-B568-492C-9AE2-807C490826C5}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Rsdn.Janus</RootNamespace>
+    <AssemblyName>Janus-Common</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>none</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>
+    </DocumentationFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="BLToolkit.3, Version=3.2.0.0, Culture=neutral, PublicKeyToken=b1d3f6ab3aadaca3, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Dependencies\bltoolkit\BLToolkit.3.dll</HintPath>
+    </Reference>
+    <Reference Include="R.SAT-Common, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Dependencies\R.SAT\R.SAT-Common.dll</HintPath>
+    </Reference>
+    <Reference Include="R.SAT-Model, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Dependencies\R.SAT\R.SAT-Model.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Reactive, Version=1.0.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Dependencies\R.SAT\System.Reactive.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.XML" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="TreeGrid3, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Dependencies\TreeGrid3\TreeGrid3.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CoreServices\CheckState\CheckStateGetterAttribute.cs" />
+    <Compile Include="CoreServices\CheckState\CheckStateService.cs" />
+    <Compile Include="CoreServices\CheckState\CheckStateSource.cs" />
+    <Compile Include="CoreServices\CheckState\CheckStateSubscriberAttribute.cs" />
+    <Compile Include="CoreServices\CheckState\CheckStateNamesValidator.cs" />
+    <Compile Include="CoreServices\CheckState\CheckStateMethodAttribute.cs" />
+    <Compile Include="CoreServices\Commands\CommandContextHelper.cs" />
+    <Compile Include="CoreServices\Commands\CommandHandlerService.cs" />
+    <Compile Include="CoreServices\Commands\CommandInfo.cs" />
+    <Compile Include="CoreServices\Commands\CommandContext.cs" />
+    <Compile Include="CoreServices\Commands\CommandTarget\CommandExecutorAttribute.cs" />
+    <Compile Include="CoreServices\Commands\CommandHelper.cs" />
+    <Compile Include="CoreServices\Commands\CommandParameterInfo.cs" />
+    <Compile Include="CoreServices\Commands\CommandService.cs" />
+    <Compile Include="CoreServices\Commands\CommandTarget\CommandStatusGetterAttribute.cs" />
+    <Compile Include="CoreServices\Commands\CommandTarget\CommandTarget.cs" />
+    <Compile Include="CoreServices\Commands\CommandTarget\CommandStatusSubscriberAttribute.cs" />
+    <Compile Include="CoreServices\Commands\CommandTarget\CommandMethodAttribute.cs" />
+    <Compile Include="CoreServices\Commands\DefaultCommandService.cs" />
+    <Compile Include="CoreServices\Commands\CommandNamesValidator.cs" />
+    <Compile Include="CoreServices\Commands\ResourceCommandProvider.cs" />
+    <Compile Include="CoreServices\Commands\CommandStatusHelper.cs" />
+    <Compile Include="CoreServices\Menu\MenuGroup.cs" />
+    <Compile Include="CoreServices\Menu\MenuMergingHelper.cs" />
+    <Compile Include="CoreServices\Menu\MenuRoot.cs" />
+    <Compile Include="CoreServices\Menu\MenuItems\Menu.cs" />
+    <Compile Include="CoreServices\Menu\MenuItems\MenuCheckCommand.cs" />
+    <Compile Include="CoreServices\Menu\MenuItems\MenuCommand.cs" />
+    <Compile Include="CoreServices\Menu\MenuItems\MenuItem.cs" />
+    <Compile Include="CoreServices\Menu\MenuItems\MenuItemWithTextAndImage.cs" />
+    <Compile Include="CoreServices\Menu\MenuItems\MenuSplitButton.cs" />
+    <Compile Include="CoreServices\Menu\MenuNamesValidator.cs" />
+    <Compile Include="CoreServices\Menu\MenuService.cs" />
+    <Compile Include="CoreServices\Menu\StripMenuGenerator.cs" />
+    <Compile Include="CoreServices\Menu\XmlMenuLoader.cs" />
+    <Compile Include="CoreServices\NavigationHistory\NavigationHistoryService.cs" />
+    <Compile Include="CoreServices\NavigationPages\NavigationPageBase.cs" />
+    <Compile Include="CoreServices\NavigationPages\NavigationPageFactoryService.cs" />
+    <Compile Include="CoreServices\NavigationPages\NavigationPageService.cs" />
+    <Compile Include="CoreServices\NavigationPages\SimpleNavigationPageProviderBase.cs" />
+    <Compile Include="CoreServices\NavigationPages\StaticNavigationItemHeader.cs" />
+    <Compile Include="CoreServices\NavigationTree\NavigationTreeHelper.cs" />
+    <Compile Include="CoreServices\NavigationTree\NavigationTreeNode.cs" />
+    <Compile Include="CoreServices\NavigationTree\NavigationTreeNodeExtension.cs" />
+    <Compile Include="CoreServices\NavigationTree\NavigationTreeService.cs" />
+    <Compile Include="CoreServices\StyleImageManager\StyleImageManagerHelper.cs" />
+    <Compile Include="CoreServices\TextMacros\TextMacros.cs" />
+    <Compile Include="CoreServices\TextMacros\TextMacrosHelper.cs" />
+    <Compile Include="CoreServices\TextMacros\TextMacrosService.cs" />
+    <Compile Include="Database\DatabaseResources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DatabaseResources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Database\EmptyJanusRWLock.cs" />
+    <Compile Include="Database\FavoritesHelper.cs" />
+    <Compile Include="Database\StandardJanusRWLock.cs" />
+    <Compile Include="JanusBaseForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="JanusBaseForm.Designer.cs">
+      <DependentUpon>JanusBaseForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="rsdn.ru\ForumDBHelper.cs" />
+    <Compile Include="rsdn.ru\OutboxHelper.cs" />
+    <Compile Include="rsdn.ru\UserHelper.cs" />
+    <Compile Include="Synchronization\NetSync\WebResponseProxy.cs" />
+    <Compile Include="Utils\AsyncHelper.cs" />
+    <Compile Include="CoreServices\Menu\ResourceMenuProvider.cs" />
+    <Compile Include="Utils\HttpUtility.cs" />
+    <Compile Include="Utils\ObservableHelper.cs" />
+    <Compile Include="Utils\Parsers\CharParsers\CharInput.cs" />
+    <Compile Include="Utils\Parsers\CharParsers\CharParsers.cs" />
+    <Compile Include="Utils\CommonRegexes.cs" />
+    <Compile Include="Utils\CommonTypesSchema.cs" />
+    <Compile Include="Utils\LambdaEqualityComparer.cs" />
+    <Compile Include="Utils\Parsers\CharParsers\CharWithPosition.cs" />
+    <Compile Include="Utils\Parsers\CharParsers\StringInput.cs" />
+    <Compile Include="Utils\Parsers\ParserExtensions.cs" />
+    <Compile Include="Utils\Parsers\Parsers.cs" />
+    <Compile Include="Utils\Parsers\Delegates.cs" />
+    <Compile Include="Utils\Parsers\ParsingResult.cs" />
+    <Compile Include="Utils\ResourceHelper.cs" />
+    <Compile Include="Utils\SafeRunExtensions.cs" />
+    <Compile Include="Utils\Collections\ObservableList.cs" />
+    <Compile Include="Utils\ProgressWorker.cs" />
+    <Compile Include="Database\ConfigSDb.cs" />
+    <Compile Include="Database\DataHelper.cs" />
+    <Compile Include="Database\DBConfigControlBase.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Database\DBConfigControlBase.Designer.cs">
+      <DependentUpon>DBConfigControlBase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Database\DBSchemaDriverBase.cs" />
+    <Compile Include="Database\Schema\SchemaChangeException.cs" />
+    <Compile Include="Database\Schema\SchemaHelper.cs" />
+    <Compile Include="Database\Schema\SchemaResources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SchemaResources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Database\SqlFormatterBase.cs" />
+    <Compile Include="Database\UnBracket.cs" />
+    <Compile Include="ExtensionInfoProviderBase.cs" />
+    <Compile Include="CoreServices\Logger\LogHelper.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Statistics\StatisticsContainer.cs" />
+    <Compile Include="Statistics\StatisticsHelper.cs" />
+    <Compile Include="Synchronization\EmptyTaskIndicator.cs" />
+    <Compile Include="Synchronization\NetSync\DownloadTrafficStatsFormatter.cs" />
+    <Compile Include="Synchronization\NetSync\NetworkSyncHelper.cs" />
+    <Compile Include="Synchronization\NetSync\TrafficStat.cs" />
+    <Compile Include="Synchronization\NetSync\TrafficStatsFormatter.cs" />
+    <Compile Include="Synchronization\NetSync\UploadTrafficStatsFormatter.cs" />
+    <Compile Include="Synchronization\SyncDisplayNameAttribute.cs" />
+    <Compile Include="Synchronization\SyncHelper.cs" />
+    <Compile Include="Synchronization\SyncResources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SyncResources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Statistics\StatisticsFormatterBase.cs" />
+    <Compile Include="Synchronization\TaskIndicator.cs" />
+    <Compile Include="Synchronization\WebSvcSync\SimpleSyncTask.cs" />
+    <Compile Include="Synchronization\WebSvcSync\WebServiceSyncProvider.cs" />
+    <Compile Include="Utils\Collections\CollectionHelper.cs" />
+    <Compile Include="Utils\EncryptionHelper.cs" />
+    <Compile Include="Utils\EnvironmentHelper.cs" />
+    <Compile Include="Utils\Collections\ReadOnlyDictionary.cs" />
+    <Compile Include="Utils\RusNumber.cs" />
+    <Compile Include="Utils\SpecialByteConverter.cs" />
+    <Compile Include="Utils\StringHelper.cs" />
+    <Compile Include="Utils\WinFormsHelper.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Database\DBConfigControlBase.resx">
+      <DependentUpon>DBConfigControlBase.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Database\Schema\SchemaResources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>SchemaResources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Database\Schema\SchemaResources.ru.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="JanusBaseForm.resx">
+      <DependentUpon>JanusBaseForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Synchronization\SyncResources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>SyncResources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Synchronization\SyncResources.ru.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Janus-Model\Janus-Model.csproj">
+      <Project>{8B6FB1B4-141C-46DA-82B8-6A2220D7D868}</Project>
+      <Name>Janus-Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PropertyGridCustomizer\PropertyGridCustomizer.csproj">
+      <Project>{56213B95-F028-49A2-9CC9-3138E69E3251}</Project>
+      <Name>PropertyGridCustomizer</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="CoreServices\Menu\JanusMenuDescriptor.xsd" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="CoreServices\Commands\JanusCommandDescriptor.xsd" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Database\DatabaseResources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>DatabaseResources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Database\DatabaseResources.ru.resx" />
+    <EmbeddedResource Include="Utils\CommonTypes.xsd" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

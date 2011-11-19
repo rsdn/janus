@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="windows-1251"?>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1251">
+<meta http-equiv="Expires" content="1">
+<script type="text/javascript" language="JavaScript">
+
+//debugger
+// RegExp проверки на то, что ссылка принадлежит сайту RSDN
+// Варианты ссылок:
+// http://gzip.rsdn.ru/Forum/message/1130666.aspx
+// http://rsdn.ru/forum/?action=message&gid=5&mid=367
+// http://www.rsdn.ru/forum/message.asp?mid=8073
+// http://www.rsdn.ru/forum/?gid=3&mid=7755&tid=7444
+// http://gzip.rsdn.ru/Forum/Message.aspx?mid=1123201&only=1
+// http://gzip.rsdn.ru/Forum/?mid=975381
+// http://gzip.rsdn.ru/forum/message.1171387.aspx
+  
+	var _regex1 = new RegExp("http://(gzip\\.|www\\.)?rsdn\\.ru/forum/(message/|\\?action=message&gid=\\d+&mid=|\\?mid=|message\\.aspx?\\?mid=|\\?gid=\\d+&mid=|message\.)(\\d+)(\\.aspx)?","gi");
+	var _url = "";
+	var _eType = window.external.menuArguments.event.type;
+	var _srcObject = window.external.menuArguments.event.srcElement;
+	while((_srcObject.tagName.toLowerCase() != "a") && _srcObject)
+		_srcObject = _srcObject.parentElement;
+	if(_eType == "MenuExtUnknown" || _eType == "MenuExtImage" || _eType == "MenuExtAnchor")
+	{
+		if(_srcObject.tagName.toLowerCase() == "a") _url = _srcObject.href;
+	}
+	if(!_url || _url == "")
+	{
+		alert("Не удалось получить путь ссылки!");
+	}
+	else if(!_regex1.test(_url))
+	{
+		alert("Сcылка не указывает на сообщение форума на сайте RSDN!");
+	}
+	else
+	{
+		try
+		{
+			var gojanus = new ActiveXObject("Janus.GoUrl");
+			var _mid = parseInt(RegExp.$3);
+			//alert(_mid);
+			gojanus.ShowMessageInJanus(_mid);
+		}
+		catch(e)
+		{
+			alert("Модуль GoJanusNet.dll не установлен или зарегистрирован неправильно!");
+		}
+	}
+</script>

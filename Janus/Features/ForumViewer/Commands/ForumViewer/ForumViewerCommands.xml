@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<commands xmlns="http://rsdn.ru/projects/Janus/JanusCommandDescriptor.xsd">
+
+  <command name="Janus.Forum.GoToMessageWithPrompt"
+           type="RequiresInteraction"
+           displayNameTextResource="GoToMessageWithPrompt.DisplayName"
+           descriptionTextResource="GoToMessageWithPrompt.Description"/>
+
+  <command name="Janus.Forum.GoToMessage"
+           displayNameTextResource="GoToMessage.DisplayName"
+           descriptionTextResource="GoToMessage.Description">
+    <parameter name="messageId" isOptional="true"/>
+  </command>
+
+  <command name="Janus.Forum.SelectMessageByAttribute"
+           displayNameTextResource="SelectMessageByAttribute.DisplayName"
+           descriptionTextResource="SelectMessageByAttribute.Description">
+    <parameter name="direction"/>
+    <parameter name="attribute"/>
+    <parameter name="searchArea"/>
+  </command>
+
+  <command name="Janus.Forum.SmartJump"
+           displayNameTextResource="SmartJump.DisplayName"
+           descriptionTextResource="SmartJump.Description"/>
+
+  <command name="Janus.Forum.CollapseTopicAndSelectRoot"
+           displayNameTextResource="CollapseTopicAndSelectRoot.DisplayName"
+           descriptionTextResource="CollapseTopicAndSelectRoot.Description"/>
+
+  <command name="Janus.Forum.ExpandUnreadBranches"
+           displayNameTextResource="ExpandUnreadBranches.DisplayName"
+           descriptionTextResource="ExpandUnreadBranches.Description"/>
+
+  <command name="Janus.Forum.LoadAllMessagesInForum"
+           displayNameTextResource="LoadAllMessagesInForum.DisplayName"
+           descriptionTextResource="LoadAllMessagesInForum.Description"/>
+
+  <command name="Janus.Forum.NavigateBackward"
+           displayNameTextResource="NavigateBackward.DisplayName"
+           descriptionTextResource="NavigateBackward.Description"/>
+
+  <command name="Janus.Forum.NavigateForward"
+           displayNameTextResource="NavigateForward.DisplayName"
+           descriptionTextResource="NavigateForward.Description"/>
+
+</commands>

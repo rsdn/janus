@@ -1,0 +1,1162 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<MetaDataSet>
+	<xs:schema id="NewDataSet" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+		<xs:element name="NewDataSet" msdata:IsDataSet="true">
+			<xs:complexType>
+				<xs:choice minOccurs="0" maxOccurs="unbounded">
+					<xs:element name="MetaDataCollections" msdata:MinimumCapacity="3">
+						<xs:complexType>
+							<xs:sequence>
+								<xs:element name="CollectionName" type="xs:string" minOccurs="0" />
+								<xs:element name="NumberOfRestrictions" type="xs:int" minOccurs="0" />
+								<xs:element name="NumberOfIdentifierParts" type="xs:int" minOccurs="0" />
+							</xs:sequence>
+						</xs:complexType>
+					</xs:element>
+					<xs:element name="Restrictions" msdata:MinimumCapacity="3">
+						<xs:complexType>
+							<xs:sequence>
+								<xs:element name="CollectionName" type="xs:string" minOccurs="0" />
+								<xs:element name="RestrictionName" type="xs:string" minOccurs="0" />
+								<xs:element name="RestrictionDefault" type="xs:string" minOccurs="0" />
+								<xs:element name="RestrictionNumber" type="xs:int" minOccurs="0" />
+							</xs:sequence>
+						</xs:complexType>
+					</xs:element>
+					<xs:element name="SqlClauses" msdata:MinimumCapacity="3">
+						<xs:complexType>
+							<xs:sequence>
+								<xs:element name="CollectionName" type="xs:string" minOccurs="0" />
+								<xs:element name="SelectMain" type="xs:string" minOccurs="0" />
+								<xs:element name="Where1" type="xs:string" minOccurs="0" />
+								<xs:element name="Where2" type="xs:string" minOccurs="0" />
+								<xs:element name="Where3" type="xs:string" minOccurs="0" />
+								<xs:element name="Where4" type="xs:string" minOccurs="0" />
+								<xs:element name="Where5" type="xs:string" minOccurs="0" />
+								<xs:element name="Where6" type="xs:string" minOccurs="0" />
+								<xs:element name="Where7" type="xs:string" minOccurs="0" />
+								<xs:element name="Order1" type="xs:string" minOccurs="0" />
+								<xs:element name="Version" type="xs:string" minOccurs="0" />
+							</xs:sequence>
+						</xs:complexType>
+					</xs:element>
+				</xs:choice>
+			</xs:complexType>
+		</xs:element>
+	</xs:schema>
+
+	<MetaDataCollections>
+		<CollectionName>CheckConstraints</CollectionName>
+		<NumberOfRestrictions>3</NumberOfRestrictions>
+		<NumberOfIdentifierParts>0</NumberOfIdentifierParts>
+	</MetaDataCollections>
+	<MetaDataCollections>
+		<CollectionName>Columns</CollectionName>
+		<NumberOfRestrictions>4</NumberOfRestrictions>
+		<NumberOfIdentifierParts>0</NumberOfIdentifierParts>
+	</MetaDataCollections>
+	<MetaDataCollections>
+		<CollectionName>DefaultConstraints</CollectionName>
+		<NumberOfRestrictions>3</NumberOfRestrictions>
+		<NumberOfIdentifierParts>0</NumberOfIdentifierParts>
+	</MetaDataCollections>
+	<MetaDataCollections>
+		<CollectionName>ForeignKeys</CollectionName>
+		<NumberOfRestrictions>4</NumberOfRestrictions>
+		<NumberOfIdentifierParts>0</NumberOfIdentifierParts>
+	</MetaDataCollections>
+	<MetaDataCollections>
+		<CollectionName>Indexes</CollectionName>
+		<NumberOfRestrictions>4</NumberOfRestrictions>
+		<NumberOfIdentifierParts>0</NumberOfIdentifierParts>
+	</MetaDataCollections>
+	<MetaDataCollections>
+		<CollectionName>PrimaryKeys</CollectionName>
+		<NumberOfRestrictions>3</NumberOfRestrictions>
+		<NumberOfIdentifierParts>0</NumberOfIdentifierParts>
+	</MetaDataCollections>
+	<MetaDataCollections>
+		<CollectionName>Procedures</CollectionName>
+		<NumberOfRestrictions>3</NumberOfRestrictions>
+		<NumberOfIdentifierParts>0</NumberOfIdentifierParts>
+	</MetaDataCollections>
+	<MetaDataCollections>
+		<CollectionName>Tables</CollectionName>
+		<NumberOfRestrictions>4</NumberOfRestrictions>
+		<NumberOfIdentifierParts>0</NumberOfIdentifierParts>
+	</MetaDataCollections>
+	<MetaDataCollections>
+		<CollectionName>Triggers</CollectionName>
+		<NumberOfRestrictions>4</NumberOfRestrictions>
+		<NumberOfIdentifierParts>0</NumberOfIdentifierParts>
+	</MetaDataCollections>
+	<MetaDataCollections>
+		<CollectionName>UniqueKeys</CollectionName>
+		<NumberOfRestrictions>3</NumberOfRestrictions>
+		<NumberOfIdentifierParts>0</NumberOfIdentifierParts>
+	</MetaDataCollections>
+	<MetaDataCollections>
+		<CollectionName>Views</CollectionName>
+		<NumberOfRestrictions>3</NumberOfRestrictions>
+		<NumberOfIdentifierParts>0</NumberOfIdentifierParts>
+	</MetaDataCollections>
+
+
+	<Restrictions>
+		<CollectionName>CheckConstraints</CollectionName>
+		<RestrictionName>Catalog</RestrictionName>
+		<RestrictionDefault>constraint_catalog</RestrictionDefault>
+		<RestrictionNumber>1</RestrictionNumber>
+	</Restrictions>
+	<Restrictions>
+		<CollectionName>CheckConstraints</CollectionName>
+		<RestrictionName>Schema</RestrictionName>
+		<RestrictionDefault>constraint_schema</RestrictionDefault>
+		<RestrictionNumber>2</RestrictionNumber>
+	</Restrictions>
+	<Restrictions>
+		<CollectionName>CheckConstraints</CollectionName>
+		<RestrictionName>Name</RestrictionName>
+		<RestrictionDefault>constraint_name</RestrictionDefault>
+		<RestrictionNumber>3</RestrictionNumber>
+	</Restrictions>
+	<Restrictions>
+		<CollectionName>Columns</CollectionName>
+		<RestrictionName>TableCatalog</RestrictionName>
+		<RestrictionDefault>table_catalog</RestrictionDefault>
+		<RestrictionNumber>1</RestrictionNumber>
+	</Restrictions>
+	<Restrictions>
+		<CollectionName>Columns</CollectionName>
+		<RestrictionName>TableSchema</RestrictionName>
+		<RestrictionDefault>table_schema</RestrictionDefault>
+		<RestrictionNumber>2</RestrictionNumber>
+	</Restrictions>
+	<Restrictions>
+		<CollectionName>Columns</CollectionName>
+		<RestrictionName>TableName</RestrictionName>
+		<RestrictionDefault>table_name</RestrictionDefault>
+		<RestrictionNumber>3</RestrictionNumber>
+	</Restrictions>
+	<Restrictions>
+		<CollectionName>Columns</CollectionName>
+		<RestrictionName>ColumnName</RestrictionName>
+		<RestrictionDefault>column_name</RestrictionDefault>
+		<RestrictionNumber>4</RestrictionNumber>
+	</Restrictions>
+	<Restrictions>
+		<CollectionName>DefaultConstraints</CollectionName>
+		<RestrictionName>Catalog</RestrictionName>
+		<RestrictionDefault>constraint_catalog</RestrictionDefault>
+		<RestrictionNumber>1</RestrictionNumber>
+	</Restrictions>
+	<Restrictions>
+		<CollectionName>DefaultConstraints</CollectionName>
+		<RestrictionName>Schema</RestrictionName>
+		<RestrictionDefault>constraint_schema</RestrictionDefault>
+		<RestrictionNumber>2</RestrictionNumber>
+	</Restrictions>
+	<Restrictions>
+		<CollectionName>DefaultConstraints</CollectionName>
+		<RestrictionName>Name</RestrictionName>
+		<RestrictionDefault>constraint_name</RestrictionDefault>
+		<RestrictionNumber>3</RestrictionNumber>
+	</Restrictions>
+	<Restrictions>
+		<CollectionName>ForeignKeys</CollectionName>
+		<RestrictionName>ConstraintCatalog</RestrictionName>
+		<RestrictionDefault>constraint_catalog</RestrictionDefault>
+		<RestrictionNumber>1</RestrictionNumber>
+	</Restrictions>
+	<Restrictions>
+		<CollectionName>ForeignKeys</CollectionName>
+		<RestrictionName>ConstraintSchema</RestrictionName>
+		<RestrictionDefault>constraint_schema</RestrictionDefault>
+		<RestrictionNumber>2</RestrictionNumber>
+	</Restrictions>
+	<Restrictions>
+		<CollectionName>ForeignKeys</CollectionName>
+		<RestrictionName>TableName</RestrictionName>
+		<RestrictionDefault>table_name</RestrictionDefault>
+		<RestrictionNumber>3</RestrictionNumber>
+	</Restrictions>
+	<Restrictions>
+		<CollectionName>ForeignKeys</CollectionName>
+		<RestrictionName>ConstraintName</RestrictionName>
+		<RestrictionDefault>constraint_name</RestrictionDefault>
+		<RestrictionNumber>4</RestrictionNumber>
+	</Restrictions>
+	<Restrictions>
+		<CollectionName>Indexes</CollectionName>
+		<RestrictionName>TableCatalog</RestrictionName>
+		<RestrictionDefault>table_catalog</RestrictionDefault>
+		<RestrictionNumber>1</RestrictionNumber>
+	</Restrictions>
+	<Restrictions>
+		<CollectionName>Indexes</CollectionName>
+		<RestrictionName>TableSchema</RestrictionName>
+		<RestrictionDefault>table_schema</RestrictionDefault>
+		<RestrictionNumber>2</RestrictionNumber>
+	</Restrictions>
+	<Restrictions>
+		<CollectionName>Indexes</CollectionName>
+		<RestrictionName>TableName</RestrictionName>
+		<RestrictionDefault>table_name</RestrictionDefault>
+		<RestrictionNumber>3</RestrictionNumber>
+	</Restrictions>
+	<Restrictions>
+		<CollectionName>Indexes</CollectionName>
+		<RestrictionName>IndexName</RestrictionName>
+		<RestrictionDefault>index_name</RestrictionDefault>
+		<RestrictionNumber>4</RestrictionNumber>
+	</Restrictions>
+	<Restrictions>
+		<CollectionName>PrimaryKeys</CollectionName>
+		<RestrictionName>TableCatalog</RestrictionName>
+		<RestrictionDefault>table_catalog</RestrictionDefault>
+		<RestrictionNumber>1</RestrictionNumber>
+	</Restrictions>
+	<Restrictions>
+		<CollectionName>PrimaryKeys</CollectionName>
+		<RestrictionName>TableSchema</RestrictionName>
+		<RestrictionDefault>table_schema</RestrictionDefault>
+		<RestrictionNumber>2</RestrictionNumber>
+	</Restrictions>
+	<Restrictions>
+		<CollectionName>PrimaryKeys</CollectionName>
+		<RestrictionName>TableName</RestrictionName>
+		<RestrictionDefault>table_name</RestrictionDefault>
+		<RestrictionNumber>3</RestrictionNumber>
+	</Restrictions>
+	<Restrictions>
+		<CollectionName>Procedures</CollectionName>
+		<RestrictionName>ProcedureCatalog</RestrictionName>
+		<RestrictionDefault>procedure_catalog</RestrictionDefault>
+		<RestrictionNumber>1</RestrictionNumber>
+	</Restrictions>
+	<Restrictions>
+		<CollectionName>Procedures</CollectionName>
+		<RestrictionName>ProcedureSchema</RestrictionName>
+		<RestrictionDefault>procedure_schema</RestrictionDefault>
+		<RestrictionNumber>2</RestrictionNumber>
+	</Restrictions>
+	<Restrictions>
+		<CollectionName>Procedures</CollectionName>
+		<RestrictionName>Name</RestrictionName>
+		<RestrictionDefault>procedure_name</RestrictionDefault>
+		<RestrictionNumber>3</RestrictionNumber>
+	</Restrictions>
+	<Restrictions>
+		<CollectionName>Tables</CollectionName>
+		<RestrictionName>Catalog</RestrictionName>
+		<RestrictionDefault>table_catalog</RestrictionDefault>
+		<RestrictionNumber>1</RestrictionNumber>
+	</Restrictions>
+	<Restrictions>
+		<CollectionName>Tables</CollectionName>
+		<RestrictionName>Schema</RestrictionName>
+		<RestrictionDefault>table_schema</RestrictionDefault>
+		<RestrictionNumber>2</RestrictionNumber>
+	</Restrictions>
+	<Restrictions>
+		<CollectionName>Tables</CollectionName>
+		<RestrictionName>Name</RestrictionName>
+		<RestrictionDefault>table_name</RestrictionDefault>
+		<RestrictionNumber>3</RestrictionNumber>
+	</Restrictions>
+	<Restrictions>
+		<CollectionName>Tables</CollectionName>
+		<RestrictionName>TableType</RestrictionName>
+		<RestrictionDefault>table_type</RestrictionDefault>
+		<RestrictionNumber>4</RestrictionNumber>
+	</Restrictions>
+	<Restrictions>
+		<CollectionName>Triggers</CollectionName>
+		<RestrictionName>TableCatalog</RestrictionName>
+		<RestrictionDefault>table_catalog</RestrictionDefault>
+		<RestrictionNumber>1</RestrictionNumber>
+	</Restrictions>
+	<Restrictions>
+		<CollectionName>Triggers</CollectionName>
+		<RestrictionName>TableSchema</RestrictionName>
+		<RestrictionDefault>table_schema</RestrictionDefault>
+		<RestrictionNumber>2</RestrictionNumber>
+	</Restrictions>
+	<Restrictions>
+		<CollectionName>Triggers</CollectionName>
+		<RestrictionName>TableName</RestrictionName>
+		<RestrictionDefault>table_name</RestrictionDefault>
+		<RestrictionNumber>3</RestrictionNumber>
+	</Restrictions>
+	<Restrictions>
+		<CollectionName>Triggers</CollectionName>
+		<RestrictionName>Name</RestrictionName>
+		<RestrictionDefault>trigger_name</RestrictionDefault>
+		<RestrictionNumber>4</RestrictionNumber>
+	</Restrictions>
+	<Restrictions>
+		<CollectionName>UniqueKeys</CollectionName>
+		<RestrictionName>TableCatalog</RestrictionName>
+		<RestrictionDefault>table_catalog</RestrictionDefault>
+		<RestrictionNumber>1</RestrictionNumber>
+	</Restrictions>
+	<Restrictions>
+		<CollectionName>UniqueKeys</CollectionName>
+		<RestrictionName>TableSchema</RestrictionName>
+		<RestrictionDefault>table_schema</RestrictionDefault>
+		<RestrictionNumber>2</RestrictionNumber>
+	</Restrictions>
+	<Restrictions>
+		<CollectionName>UniqueKeys</CollectionName>
+		<RestrictionName>TableName</RestrictionName>
+		<RestrictionDefault>table_name</RestrictionDefault>
+		<RestrictionNumber>3</RestrictionNumber>
+	</Restrictions>
+	<Restrictions>
+		<CollectionName>Views</CollectionName>
+		<RestrictionName>Catalog</RestrictionName>
+		<RestrictionDefault>view_catalog</RestrictionDefault>
+		<RestrictionNumber>1</RestrictionNumber>
+	</Restrictions>
+	<Restrictions>
+		<CollectionName>Views</CollectionName>
+		<RestrictionName>Schema</RestrictionName>
+		<RestrictionDefault>view_schema</RestrictionDefault>
+		<RestrictionNumber>2</RestrictionNumber>
+	</Restrictions>
+	<Restrictions>
+		<CollectionName>Views</CollectionName>
+		<RestrictionName>Name</RestrictionName>
+		<RestrictionDefault>view_name</RestrictionDefault>
+		<RestrictionNumber>3</RestrictionNumber>
+	</Restrictions>
+
+
+	<SqlClauses>
+		<CollectionName>CheckConstraints</CollectionName>
+		<SelectMain>
+			<![CDATA[
+			select
+				db_name() as [TABLE_CATALOG],
+				sch.[name] as [TABLE_SCHEMA],
+				stbl.[name] as [TABLE_NAME],
+				scnt.[name] as [CONSTRAINT_NAME],
+				'' as [SOURCE],
+				objectproperty(scnt.[object_id],'CnstIsNotRepl') as [IS_NOTFORREPLICATION],
+				objectproperty(scnt.[object_id],'CnstIsDisabled') as [IS_DISABLED],
+				scnt.[object_id] as [HELPER_CID]
+			from 
+				sys.objects stbl with (nolock)
+				inner join sys.objects scnt with (nolock) on stbl.[object_id] = scnt.[parent_object_id]
+				inner join sys.schemas sch with (nolock) on stbl.[schema_id] = sch.[schema_id]
+			]]>
+		</SelectMain>
+		<Where1>objectproperty(scnt.[object_id], 'IsCheckCnst') = 1</Where1>
+		<Where2>sch.[name] = @p{0}</Where2>
+		<Where3>stbl.[name] = @p{0}</Where3>
+		<Version>9</Version>
+	</SqlClauses>
+	<SqlClauses>
+		<CollectionName>CheckConstraints</CollectionName>
+		<SelectMain>
+			<![CDATA[
+			select
+				db_name() as [TABLE_CATALOG],
+				user_name(stbl.uid) as [TABLE_SCHEMA],
+				stbl.name as [TABLE_NAME],
+				scnt.name as [CONSTRAINT_NAME],
+				'' as [SOURCE],
+				objectproperty(scnt.id,'CnstIsNotRepl') as 'IS_NOTFORREPLICATION',
+				objectproperty(scnt.id,'CnstIsDisabled') as 'IS_DISABLED',
+				scnt.id as [HELPER_CID]
+			from 
+				sysobjects stbl with (nolock)
+				inner join sysobjects scnt with (nolock) on stbl.id = scnt.parent_obj
+			]]>
+		</SelectMain>
+		<Where1>objectproperty(scnt.id, 'IsCheckCnst') = 1</Where1>
+		<Where2>user_name(stbl.uid) = @p{0}</Where2>
+		<Where3>stbl.[name] = @p{0}</Where3>
+		<Version>8</Version>
+	</SqlClauses>
+	<SqlClauses>
+		<CollectionName>Columns</CollectionName>
+		<SelectMain>
+			<![CDATA[
+			select
+				db_name() as [TABLE_CATALOG],
+				sch.[name] as [TABLE_SCHEMA],
+				stbl.[name] as [TABLE_NAME],
+				scols.[name] as [COLUMN_NAME],
+				'' as [COLUMN_DEFAULT],
+				'' as [COMPUTED_SOURCE],
+				scols.[default_object_id] as [HELPER_DID],
+				stbl.[object_id] as [HELPER_OID],
+				scols.[column_id] as [HELPER_COLID],
+				scols.[is_computed] as [IS_COMPUTED],
+				type_name(scols.system_type_id) AS [COLUMN_DATA_TYPE],
+				case -- char/varchar/text/ntext/nvarchar/nchar
+					when scols.system_type_id in (/*175, 167, 35, 99,*/ 231 ,239) then scols.[max_length]/2
+					else scols.[max_length]
+				end as [COLUMN_SIZE],
+				scols.[precision] as [NUMERIC_PRECISION],
+				scols.[scale] as [NUMERIC_SCALE],
+				scols.[collation_name] as [COLLATION_NAME],
+				scols.[is_nullable] as [IS_NULLABLE],
+				scols.[is_identity] as [IS_IDENTITY],
+				scols.[is_replicated] as [IS_IDNOTFORREPLICATION],
+				scols.[is_rowguidcol] as [IS_ROWGUIDCOL],
+				'ALWAYS' as [IDENTITY_GENERATION],
+				case
+					when (scols.[is_identity] <> 0)
+					then IDENT_SEED('[' + sch.[name] + '].[' + stbl.[name] + ']') 
+					else 0 
+				end as [IDENTITY_SEED], 
+				case
+					when (scols.[is_identity] <> 0)
+					then IDENT_INCR('[' + sch.[name] + '].[' + stbl.[name] + ']')
+					else 0
+				end as [IDENTITY_INCREMENT]
+			from 
+				sys.objects stbl with (nolock)
+				inner join sys.columns scols with (nolock) on stbl.object_id = scols.object_id
+				inner join sys.schemas sch with (nolock) on stbl.schema_id = sch.schema_id
+			]]>
+		</SelectMain>
+		<Where1>objectproperty(stbl.[object_id],'IsTable')=1</Where1>
+		<Where2>sch.[name] = @p{0}</Where2>
+		<Where3>stbl.[name] = @p{0}</Where3>
+		<Where4>scols.[name] = @p{0}</Where4>
+		<Order1>scols.[column_id]</Order1>
+		<Version>9</Version>
+	</SqlClauses>
+	<SqlClauses>
+		<CollectionName>Columns</CollectionName>
+		<SelectMain>
+			<![CDATA[
+			select
+				db_name() as [TABLE_CATALOG],
+				user_name(stbl.uid) as [TABLE_SCHEMA],
+				stbl.[name] as [TABLE_NAME],
+				scols.[name] AS [COLUMN_NAME], 
+				'' as [COLUMN_DEFAULT],
+				'' as [COMPUTED_SOURCE],
+				scols.cdefault as [HELPER_DID],
+				scols.[id] as [HELPER_OID],
+				scols.[colid] as [HELPER_COLID],
+				columnproperty(scols.[id], scols.[name], 'IsComputed') AS [IS_COMPUTED],
+				type_name(scols.[xtype]) AS [COLUMN_DATA_TYPE],
+				case -- char/varchar/text/ntext/nvarchar/nchar
+					when scols.[xtype] in (/*175, 167, 35,*/ 99, 231 ,239) then scols.[length]/2
+					else scols.[length]
+				end as [COLUMN_SIZE],
+				convert(tinyint,
+					case -- int/decimal/numeric/real/float/money    
+						when scols.[xtype] IN (48, 52, 56, 59, 60, 62, 106, 108, 122, 127) then
+							case 
+								when scols.[xtype] in (34, 35, 99) then null
+								when scols.[xtype] = 36 then scols.[prec]
+								when scols.[length] = -1 then -1
+								else odbcprec(scols.[xtype], scols.[length], scols.[prec])
+							end
+					end) as [NUMERIC_PRECISION],
+				convert(int,
+					case -- datetime/smalldatetime
+						when scols.[xtype] IN (58, 61) then NULL
+						else odbcscale(scols.[xtype], scols.[scale])
+					end) as [NUMERIC_SCALE],
+				scols.collation as [COLLATION_NAME],
+				columnproperty(scols.[id], scols.[name], N'AllowsNull') as [IS_NULLABLE],
+				columnproperty(scols.[id], scols.[name], N'IsIdentity') as [IS_IDENTITY],
+				columnproperty(scols.[id], scols.[name], N'IsIdNotForRepl') as [IS_IDNOTFORREPLICATION],
+				columnproperty(scols.[id], scols.[name],N'IsRowGuidCol') as [IS_ROWGUIDCOL],
+				'ALWAYS' as [IDENTITY_GENERATION],
+				case
+					when (columnproperty(scols.[id], scols.[name], N'IsIdentity') <> 0)
+					then IDENT_SEED('[' + susr.[name] + '].[' + stbl.[name] + ']') 
+					else 0 
+				end as [IDENTITY_SEED], 
+				case
+					when (columnproperty(scols.[id], scols.[name], N'IsIdentity') <> 0)
+					then IDENT_INCR('[' + susr.[name] + '].[' + stbl.[name] + ']')
+					else 0
+				end as [IDENTITY_INCREMENT]
+			from
+				dbo.sysobjects stbl with (nolock) inner join dbo.syscolumns scols with (nolock) on stbl.[id] = scols.[id]
+				inner join dbo.sysusers susr with (nolock) on stbl.uid = susr.uid
+			]]>
+		</SelectMain>
+		<Where1>objectproperty(stbl.[id],'IsTable')=1</Where1>
+		<Where2>user_name(stbl.uid) = @p{0}</Where2>
+		<Where3>stbl.[name] = @p{0}</Where3>
+		<Where4>scols.[name] = @p{0}</Where4>
+		<Order1>scols.[colid]</Order1>
+		<Version>8</Version>
+	</SqlClauses>
+	<SqlClauses>
+	<CollectionName>DefaultConstraints</CollectionName>
+	<SelectMain>
+		<![CDATA[
+			select
+				db_name() as [TABLE_CATALOG],
+				sch.[name] as [TABLE_SCHEMA],
+				stbl.[name] as [TABLE_NAME],
+				scls.[name] as [COLUMN_NAME],
+				scnt.[name] as [CONSTRAINT_NAME],
+				'' as [SOURCE],
+				objectproperty(scnt.[object_id],'CnstIsNotRepl') as 'IS_NOTFORREPLICATION',
+				objectproperty(scnt.[object_id],'CnstIsDisabled') as 'IS_DISABLED',
+				scnt.[object_id] as [HELPER_CID]
+			from 
+				sys.objects stbl with (nolock)
+				inner join sys.objects scnt with (nolock) on stbl.[object_id] = scnt.[parent_object_id]
+				inner join sys.schemas sch with (nolock) on stbl.[schema_id] = sch.[schema_id]
+				inner join sys.columns scls with (nolock) on scnt.[object_id] = scls.[default_object_id]
+			]]>
+	</SelectMain>
+	<Where1>objectproperty(scnt.[object_id], 'IsDefaultCnst') = 1</Where1>
+	<Where2>sch.[name] = @p{0}</Where2>
+	<Where3>stbl.[name] = @p{0}</Where3>
+	<Version>9</Version>
+	</SqlClauses>
+	<SqlClauses>
+		<CollectionName>DefaultConstraints</CollectionName>
+		<SelectMain>
+			<![CDATA[
+			select
+				db_name() as [TABLE_CATALOG],
+				user_name(stbl.[uid]) as [TABLE_SCHEMA],
+				stbl.[name] as [TABLE_NAME],
+				scls.[name] as [COLUMN_NAME],
+				scnt.[name] as [CONSTRAINT_NAME],
+				'' as [SOURCE],
+				objectproperty(scnt.[id],'CnstIsNotRepl') as 'IS_NOTFORREPLICATION',
+				objectproperty(scnt.[id],'CnstIsDisabled') as 'IS_DISABLED',
+				scnt.[id] as [HELPER_CID]
+			from 
+				sysobjects stbl with (nolock)
+				inner join sysobjects scnt with (nolock) on stbl.[id] = scnt.[parent_obj]
+				inner join syscolumns scls with (nolock) on scnt.[id] = scls.[cdefault]
+			]]>
+		</SelectMain>
+		<Where1>objectproperty(scnt.id, 'IsDefaultCnst') = 1</Where1>
+		<Where2>user_name(stbl.[uid]) = @p{0}</Where2>
+		<Where3>stbl.[name] = @p{0}</Where3>
+		<Version>8</Version>
+	</SqlClauses>
+	<SqlClauses>
+		<CollectionName>ForeignKeys</CollectionName>
+		<SelectMain>
+			<![CDATA[
+			select
+				db_name() as [TABLE_CATALOG],
+				sfsch.[name] as [FK_TABLE_SCHEMA],
+				sftbl.[name] as [FK_TABLE_NAME],
+				scnt.[name] as [CONSTRAINT_NAME],
+				sfcol.[name] as [FK_COLUMN_NAME],
+				case sfcol.[column_id]
+					when sref.fkey1 then 1
+					when sref.fkey2 then 2
+					when sref.fkey3 then 3
+					when sref.fkey4 then 4
+					when sref.fkey5 then 5
+					when sref.fkey6 then 6
+					when sref.fkey7 then 7
+					when sref.fkey8 then 8
+					when sref.fkey9 then 9
+					when sref.fkey10 then 10
+					when sref.fkey11 then 11
+					when sref.fkey12 then 12
+					when sref.fkey13 then 13
+					when sref.fkey14 then 14
+					when sref.fkey15 then 15
+					when sref.fkey16 then 16
+				end as [ORDINAL_POSITION],
+				srsch.[name]	as [PK_TABLE_SCHEMA],
+				srtbl.[name] as [PK_TABLE_NAME],
+				srcol.[name] as [PK_COLUMN_NAME],
+				case
+					when objectproperty(scnt.[object_id],'CnstIsDeleteCascade')=1 then 'CASCADE'
+					else 'RESTRICT'
+				end as [DELETE_RULE],
+				case
+					when objectproperty(scnt.[object_id],'CnstIsUpdateCascade')=1 then 'CASCADE'
+					else 'RESTRICT'
+				end as [UPDATE_RULE],
+				objectproperty(scnt.[object_id],'CnstIsNotRepl') as 'IS_NOTFORREPLICATION',
+				objectproperty(scnt.[object_id],'CnstIsDisabled') as 'IS_DISABLED'
+			from
+				sys.objects scnt with (nolock) 
+				inner join sys.sysreferences sref with (nolock) on sref.[constid] = scnt.[object_id]
+				inner join sys.objects sftbl with (nolock) on sref.[fkeyid] = sftbl.[object_id]
+				inner join sys.schemas sfsch with (nolock) on sftbl.[schema_id] = sfsch.[schema_id]
+				inner join sys.objects srtbl with (nolock) on sref.[rkeyid] = srtbl.[object_id]
+				inner join sys.schemas srsch with (nolock) on srtbl.[schema_id] = srsch.[schema_id]
+				inner join sys.columns sfcol  with (nolock) on sfcol.[column_id] in
+					(sref.fkey1,sref.fkey2,sref.fkey3,sref.fkey4,sref.fkey5,sref.fkey6,
+					sref.fkey7,sref.fkey8,sref.fkey9,sref.fkey10,sref.fkey11,sref.fkey12,
+					sref.fkey13,sref.fkey14,sref.fkey15,sref.fkey16) and sfcol.[object_id] = sftbl.[object_id]
+				inner join sys.columns srcol with (nolock) on srcol.[column_id] in
+					(sref.rkey1,sref.rkey2,sref.rkey3,sref.rkey4,sref.rkey5,sref.rkey6,
+					sref.rkey7,sref.rkey8,sref.rkey9,sref.rkey10,sref.rkey11,sref.rkey12,
+					sref.rkey13,sref.rkey14,sref.rkey15,sref.rkey16) and srcol.[object_id] = srtbl.[object_id]
+			]]>
+		</SelectMain>
+		<Where1>
+			srcol.[column_id] =
+			case sfcol.[column_id]
+				when sref.fkey1 then sref.rkey1
+				when sref.fkey2 then sref.rkey2
+				when sref.fkey3 then sref.rkey3
+				when sref.fkey4 then sref.rkey4
+				when sref.fkey5 then sref.rkey5
+				when sref.fkey6 then sref.rkey6
+				when sref.fkey7 then sref.rkey7
+				when sref.fkey8 then sref.rkey8
+				when sref.fkey9 then sref.rkey9
+				when sref.fkey10 then sref.rkey10
+				when sref.fkey11 then sref.rkey11
+				when sref.fkey12 then sref.rkey12
+				when sref.fkey13 then sref.rkey13
+				when sref.fkey14 then sref.rkey14
+				when sref.fkey15 then sref.rkey15
+				when sref.fkey16 then sref.rkey16
+			end and objectproperty(scnt.[object_id], 'IsForeignKey') = 1
+		</Where1>
+		<Where2>srsch.[name] = @p{0}</Where2>
+		<Where3>srtbl.[name] = @p{0}</Where3>
+		<Where4>sfsch.[name] = @p{0}</Where4>
+		<Where5>sftbl.[name] = @p{0}</Where5>
+		<Where6>scnt.[name] = @p{0}</Where6>
+		<Order1>sftbl.[name], scnt.[name], sfcol.[name]</Order1>
+		<Version>9</Version>
+	</SqlClauses>
+	<SqlClauses>
+		<CollectionName>ForeignKeys</CollectionName>
+		<SelectMain>
+			<![CDATA[
+				select
+					db_name() as [TABLE_CATALOG],
+					user_name(sftbl.uid) as [FK_TABLE_SCHEMA],
+					sftbl.name as [FK_TABLE_NAME],
+					scnt.name as [CONSTRAINT_NAME],
+					sfcol.name as [FK_COLUMN_NAME],
+					case sfcol.colid
+						when sref.fkey1 then 1
+						when sref.fkey2 then 2
+						when sref.fkey3 then 3
+						when sref.fkey4 then 4
+						when sref.fkey5 then 5
+						when sref.fkey6 then 6
+						when sref.fkey7 then 7
+						when sref.fkey8 then 8
+						when sref.fkey9 then 9
+						when sref.fkey10 then 10
+						when sref.fkey11 then 11
+						when sref.fkey12 then 12
+						when sref.fkey13 then 13
+						when sref.fkey14 then 14
+						when sref.fkey15 then 15
+						when sref.fkey16 then 16
+					end as [ORDINAL_POSITION],
+					user_name(srtbl.uid) as [PK_TABLE_SCHEMA],
+					srtbl.name as [PK_TABLE_NAME],
+					srcol.name as [PK_COLUMN_NAME],
+					case
+						when objectproperty(scnt.id,'CnstIsDeleteCascade')=1 then 'CASCADE'
+						else 'RESTRICT'
+					end as [DELETE_RULE],
+					case
+						when objectproperty(scnt.id,'CnstIsUpdateCascade')=1 then 'CASCADE'
+						else 'RESTRICT'
+					end as [UPDATE_RULE],
+					objectproperty(scnt.id,'CnstIsNotRepl') as 'IS_NOTFORREPLICATION',
+					objectproperty(scnt.id,'CnstIsDisabled') as 'IS_DISABLED'
+				from
+					sysobjects scnt with (nolock) 
+					inner join sysreferences sref with (nolock) on sref.constid = scnt.id
+					inner join sysobjects sftbl with (nolock) on sref.fkeyid = sftbl.id
+					inner join sysobjects srtbl with (nolock) on sref.rkeyid = srtbl.id
+					inner join syscolumns sfcol  with (nolock) on sfcol.colid in
+						(sref.fkey1,sref.fkey2,sref.fkey3,sref.fkey4,sref.fkey5,sref.fkey6,
+						sref.fkey7,sref.fkey8,sref.fkey9,sref.fkey10,sref.fkey11,sref.fkey12,
+						sref.fkey13,sref.fkey14,sref.fkey15,sref.fkey16) and sfcol.id = sftbl.id
+					inner join syscolumns srcol with (nolock) on srcol.colid in
+						(sref.rkey1,sref.rkey2,sref.rkey3,sref.rkey4,sref.rkey5,sref.rkey6,
+						sref.rkey7,sref.rkey8,sref.rkey9,sref.rkey10,sref.rkey11,sref.rkey12,
+						sref.rkey13,sref.rkey14,sref.rkey15,sref.rkey16) and srcol.id = srtbl.id
+			]]>
+		</SelectMain>
+		<Where1>
+			srcol.colid =
+			case sfcol.colid
+				when sref.fkey1 then sref.rkey1
+				when sref.fkey2 then sref.rkey2
+				when sref.fkey3 then sref.rkey3
+				when sref.fkey4 then sref.rkey4
+				when sref.fkey5 then sref.rkey5
+				when sref.fkey6 then sref.rkey6
+				when sref.fkey7 then sref.rkey7
+				when sref.fkey8 then sref.rkey8
+				when sref.fkey9 then sref.rkey9
+				when sref.fkey10 then sref.rkey10
+				when sref.fkey11 then sref.rkey11
+				when sref.fkey12 then sref.rkey12
+				when sref.fkey13 then sref.rkey13
+				when sref.fkey14 then sref.rkey14
+				when sref.fkey15 then sref.rkey15
+				when sref.fkey16 then sref.rkey16
+			end and scnt.xtype IN ('F')
+		</Where1>
+		<Where2>user_name(stbl.[uid]) = @p{0}</Where2>
+		<Where3>srtbl.[name] = @p{0}</Where3>
+		<Where4>user_name(sftbl.[uid]) = @p{0}</Where4>
+		<Where5>sftbl.[name] = @p{0}</Where5>
+		<Where6>scnt.[name] = @p{0}</Where6>
+		<Order1>sftbl.[name], scnt.[name], sfcol.[name]</Order1>
+		<Version>8</Version>
+	</SqlClauses>
+	<SqlClauses>
+		<CollectionName>Indexes</CollectionName>
+		<SelectMain>
+			<![CDATA[
+			select
+				db_name() as [TABLE_CATALOG],
+				sch.[name] as [TABLE_SCHEMA],
+				stbl.[name] as [TABLE_NAME],
+				sidx.[name] as [INDEX_NAME],
+				sidx.[index_id] as [ORDINAL_POSITION],
+				case sicl.[is_included_column]
+					when 0 then index_col(db_name() + '.' + sch.[name] + '.' + stbl.[name], sidx.index_id, sicl.key_ordinal)
+					else col_name(stbl.[object_id], sicl.[column_id])
+				end as [COLUMN_NAME],
+				sicl.[key_ordinal] as [COLUMN_ORDINAL_POSITION],
+				indexproperty(stbl.[object_id], sidx.[name], N'IsClustered') as [IS_CLUSTERED],
+				indexproperty(stbl.[object_id], sidx.[name], N'IndexFillFactor') as [FILL_FACTOR],
+				indexproperty(stbl.[object_id], sidx.[name], N'IsPadIndex') as [IS_PADINDEX],
+				indexproperty(stbl.[object_id], sidx.[name], N'IsUnique') as [IS_UNIQUE],
+				indexproperty(stbl.[object_id], sidx.[name], N'IsStatistics') as [IS_STATISTICS],
+				indexproperty(stbl.[object_id], sidx.[name], N'IsAutoStatistics') as [IS_AUTOSTATISTICS],
+				indexproperty(stbl.[object_id], sidx.[name], N'IsHypothetical') as [IS_HYPOTTETICAL],
+				indexkey_property(stbl.object_id, sidx.index_id, sicl.key_ordinal,'IsDescending') as [IS_DESCENDING],
+				indexproperty(stbl.[object_id], sidx.[name], N'IsDisabled') as [IS_DISABLED],
+				indexproperty(stbl.[object_id], sidx.[name], N'IsUnique') as [IS_UNIQUE],
+				indexproperty(stbl.[object_id], sidx.[name], N'IsPageLockDisallowed') as [IS_PAGELOCKDISALLOWED],
+				indexproperty(stbl.[object_id], sidx.[name], N'IsRowLockDisallowed') as [IS_ROWLOCKDISALLOWED],
+				sicl.[is_included_column] as [IS_INCLUDED_COLUMN],
+				sidx.[ignore_dup_key] as [IS_IGNORE_DUP_KEY],
+				filegroup_name(sidx.[data_space_id]) as [FILE_GROUP]
+			from
+				sys.objects stbl with (nolock)
+				inner join sys.indexes sidx with (nolock) on sidx.object_id = stbl.object_id
+				left join sys.schemas sch with (nolock) on sch.schema_id = stbl.schema_id
+				inner join sys.index_columns sicl  with (nolock) on sicl.object_id = sidx.object_id and sidx.index_id = sicl.index_id
+				inner join sys.columns scol  with (nolock) on scol.object_id = sidx.object_id and sicl.column_id = scol.column_id
+			]]>
+		</SelectMain>
+		<Where1>objectproperty(stbl.object_id,'IsTable')=1 and objectproperty(stbl.object_id,'IsSystemTable')=0</Where1>
+		<Where2>sch.[name] = @p{0}</Where2>
+		<Where3>stbl.[name] = @p{0}</Where3>
+		<Where4>sidx.[name] = @p{0}</Where4>
+		<Version>9</Version>
+	</SqlClauses>
+	<SqlClauses>
+		<CollectionName>Indexes</CollectionName>
+		<SelectMain>
+			<![CDATA[
+			select
+				db_name() as [TABLE_CATALOG],
+				user_name(stbl.uid) as [TABLE_SCHEMA],
+				stbl.name as [TABLE_NAME],
+				sidx.name as [INDEX_NAME],
+				sidx.indid as [ORDINAL_POSITION],
+				index_col(stbl.name,sidx.indid,v.number) as [COLUMN_NAME],
+				v.number as [COLUMN_ORDINAL_POSITION],
+				indexproperty(stbl.[id], sidx.[name], 'IsClustered') as [IS_CLUSTERED],
+				indexproperty(stbl.[id], sidx.[name], 'IndexFillFactor') as [FILL_FACTOR],
+				indexproperty(stbl.[id], sidx.[name], 'IsPadIndex') as [IS_PADINDEX],
+				indexproperty(stbl.[id], sidx.[name], 'IsUnique') as [IS_UNIQUE],
+				indexproperty(stbl.[id], sidx.[name], N'IsStatistics') as [IS_STATISTICS],
+				indexproperty(stbl.[id], sidx.[name], N'IsAutoStatistics') as [IS_AUTOSTATISTICS],
+				indexproperty(stbl.[id], sidx.[name], N'IsHypothetical') as [IS_HYPOTTETICAL],
+				indexkey_property(stbl.[id], sidx.[indid], v.[number], 'IsDescending') as [IS_DESCENDING],
+				indexproperty(stbl.[id], sidx.[name], N'IsDisabled') as [IS_DISABLED],
+				indexproperty(stbl.[id], sidx.[name], N'IsUnique') as [IS_UNIQUE],
+				indexproperty(stbl.[id], sidx.[name], N'IsPageLockDisallowed') as [IS_PAGELOCKDISALLOWED],
+				indexproperty(stbl.[id], sidx.[name], N'IsRowLockDisallowed') as [IS_ROWLOCKDISALLOWED],
+				0 as [IS_INCLUDED_COLUMN],
+				0 as [IS_IGNORE_DUP_KEY],
+				filegroup_name(sidx.groupid)  as [FILE_GROUP]
+			from
+				sysobjects stbl with (nolock) 
+				inner join sysindexes sidx with (nolock) on sidx.id = stbl.id
+				inner join master.dbo.spt_values v  with (nolock) on v.number 	> 0 and v.number 	<= sidx.keycnt and v.type 	= 'P'
+				inner join syscolumns scol  with (nolock) on sidx.id = scol.id 	and index_col(stbl.name,sidx.indid,v.number) = scol.name
+			]]>
+		</SelectMain>
+		<Where1>objectproperty(stbl.id,'IsTable')=1 and objectproperty(stbl.id,'IsSystemTable')=0</Where1>
+		<Where2>user_name(stbl.uid) = @p{0}</Where2>
+		<Where3>stbl.[name] = @p{0}</Where3>
+		<Where4>sidx.[name] = @p{0}</Where4>
+		<Version>8</Version>
+	</SqlClauses>
+	<SqlClauses>
+		<CollectionName>PrimaryKeys</CollectionName>
+		<SelectMain>
+			<![CDATA[
+			select
+				db_name() as [TABLE_CATALOG],
+				sch.[name] as [TABLE_SCHEMA],
+				stbl.[name] as [TABLE_NAME],
+				scnt.[name] as [CONSTRAINT_NAME],
+				index_col(db_name() + '.' + sch.[name] + '.' + stbl.[name], sidx.[index_id], sicl.[key_ordinal]) as [COLUMN_NAME],
+				sicl.[key_ordinal] as [ORDINAL_POSITION],
+				indexproperty(stbl.[object_id], sidx.[name], 'IsClustered') as [IS_CLUSTERED],
+				objectproperty(scnt.[object_id],'CnstIsDisabled') as 'IS_DISABLED'
+			from
+				sys.objects scnt with (nolock)
+				inner join sys.schemas sch with (nolock) on scnt.[schema_id]=sch.[schema_id]
+				inner join sys.indexes sidx with (nolock) on sidx.[object_id] = scnt.[parent_object_id] and sidx.[name] = scnt.[name]
+				inner join sys.index_columns sicl  with (nolock) on sicl.[object_id] = sidx.[object_id] and sidx.[index_id] = sicl.[index_id]
+				inner join sys.objects stbl with (nolock) on scnt.[parent_object_id] = stbl.[object_id]
+			]]>
+		</SelectMain>
+		<Where1>objectproperty(scnt.[object_id], 'IsPrimaryKey') = 1</Where1>
+		<Where2>sch.[name] = @p{0}</Where2>
+		<Where3>stbl.[name] = @p{0}</Where3>
+		<Order1>stbl.[name]</Order1>
+		<Version>9</Version>
+	</SqlClauses>
+	<SqlClauses>
+		<CollectionName>PrimaryKeys</CollectionName>
+		<SelectMain>
+			<![CDATA[
+			select
+				db_name() as [TABLE_CATALOG],
+				user_name(stbl.[uid]) as [TABLE_SCHEMA],
+				stbl.[name] as [TABLE_NAME],
+				scnt.[name] as [CONSTRAINT_NAME],
+				index_col(stbl.[name], sidx.[indid], v.number) as [COLUMN_NAME],
+				v.number as [ORDINAL_POSITION],
+				indexproperty(stbl.[id], sidx.[name], 'IsClustered') as [IS_CLUSTERED],
+				objectproperty(scnt.[id], 'CnstIsDisabled') as [IS_DISABLED]
+			from
+				sysobjects scnt with (nolock) left join sysindexes sidx on sidx.id = scnt.parent_obj and sidx.name = scnt.name
+				inner join sysobjects stbl with (nolock) on scnt.parent_obj = stbl.id
+				inner join master.dbo.spt_values v  with (nolock) on v.number 	> 0 and v.number 	<= sidx.keycnt and v.type 	= 'P'
+				inner join syscolumns scol  with (nolock) on sidx.id = scol.id 	and index_col(stbl.name,sidx.indid,v.number) = scol.name
+			]]>
+		</SelectMain>
+		<Where1>scnt.xtype IN ('PK')</Where1>
+		<Where2>user_name(stbl.uid) = @p{0}</Where2>
+		<Where3>stbl.name = @p{0}</Where3>
+		<Order1>stbl.[name]</Order1>
+		<Version>8</Version>
+	</SqlClauses>
+	<SqlClauses>
+		<CollectionName>Procedures</CollectionName>
+		<SelectMain>
+			<![CDATA[
+			select
+				db_name() as [PROCEDURE_CATALOG],
+				sch.[name] as [PROCEDURE_SCHEMA],
+				sproc.[name] as [PROCEDURE_NAME],
+				objectproperty(sproc.[object_id],'ExecIsQuotedIdentOn') as [IS_EXECQUOTEDIDENTON],
+				objectproperty(sproc.[object_id],'ExecIsAnsiNullsOn') as [IS_EXECANSINULLSON],
+				objectproperty(sproc.[object_id],'IsQuotedIdentOn') as [IS_QUOTEDIDENTON],
+				objectproperty(sproc.[object_id],'IsAnsiNullsOn') as [IS_ANSINULLSON],
+				objectproperty(sproc.[object_id],'ExecIsStartup') as [IS_STARTUP],
+				0 as [MS_DBTOOLS_SUPPORT],
+				(select count(*) from sys.columns scls where scls.[object_id] = sproc.[object_id]) as [PARAM_COUNT],
+				'' as [SOURCE],
+				sproc.[object_id] as [HELPER_PID]
+			from
+				sys.objects as sproc with (nolock)
+				inner join sys.schemas sch with (nolock) on sproc.[schema_id] = sch.[schema_id]
+			]]>
+		</SelectMain>
+		<Where1>objectproperty(sproc.[object_id],'IsProcedure') = 1 and objectproperty(sproc.[object_id],'IsMSShipped') = 0</Where1>
+		<Where2>sch.[name] = @p{0}</Where2>
+		<Where3>sproc.name = @p{0}</Where3>
+		<Order1>sproc.name</Order1>
+		<Version>9</Version>
+	</SqlClauses>
+	<SqlClauses>
+		<CollectionName>Procedures</CollectionName>
+		<SelectMain>
+			<![CDATA[
+			select
+				db_name() as [PROCEDURE_CATALOG],
+				user_name(sproc.uid) as [PROCEDURE_SCHEMA],
+				sproc.name as [PROCEDURE_NAME],
+				objectproperty(sproc.id,'ExecIsQuotedIdentOn') as [IS_EXECQUOTEDIDENTON],
+				objectproperty(sproc.id,'ExecIsAnsiNullsOn') as [IS_EXECANSINULLSON],
+				objectproperty(sproc.id,'IsQuotedIdentOn') as [IS_QUOTEDIDENTON],
+				objectproperty(sproc.id,'IsAnsiNullsOn') as [IS_ANSINULLSON],
+				objectproperty(sproc.id,'ExecIsStartup') as [IS_STARTUP],
+				0 as [MS_DBTOOLS_SUPPORT],
+				(select count(*) from syscolumns where id = sproc.id) as [PARAM_COUNT],
+				'' as [SOURCE],
+				sproc.id as [HELPER_PID]
+			from
+				sysobjects as sproc with (nolock)
+			]]>
+		</SelectMain>
+		<Where1>sproc.xtype = 'P' and objectproperty(sproc.id,'IsMSShipped') = 0</Where1>
+		<Where2>user_name(stbl.uid) = @p{0}</Where2>
+		<Where3>sproc.name = @p{0}</Where3>
+		<Order1>sproc.name</Order1>
+		<Version>8</Version>
+	</SqlClauses>
+	<SqlClauses>
+		<CollectionName>Tables</CollectionName>
+		<SelectMain>
+			<![CDATA[
+			select
+				db_name() as [TABLE_CATALOG],
+				sch.[name] as [TABLE_SCHEMA],
+				stbl.name as [TABLE_NAME],
+				case stbl.[type]
+				when 'U' then 'BASE TABLE'
+				when 'S' then 'BASE TABLE'
+				when 'V' then 'VIEW'
+				end as [TABLE_TYPE],
+				objectproperty(stbl.object_id,'IsSystemTable') as [IS_SYSTEM],
+				null as [MS_DBTOOLS_SUPPORT],
+				coalesce(filegroup_name(sidx.data_space_id), sfgp.[name], '') as [FILE_GROUP],
+				coalesce(filegroup_name(sidx1.data_space_id), sfgp.[name], '') as [TEXTIMAGE_ON]
+			from
+				sys.objects as stbl with (nolock)
+				left join sys.indexes as sidx with (nolock) on stbl.object_id = sidx.object_id and sidx.index_id = 0
+				left join sys.indexes as sidx1 with (nolock) on stbl.object_id = sidx1.object_id and sidx1.index_id = 255
+				inner join sys.filegroups as sfgp  with (nolock) on filegroupproperty(sfgp.[name],'IsDefault')=1
+				left join sys.schemas sch on sch.schema_id = stbl.schema_id
+			]]>
+		</SelectMain>
+		<Where1>objectproperty(stbl.object_id,'IsTable') = 1 and objectproperty(stbl.object_id,'IsMSShipped')=0</Where1>
+		<Where2>sch.[name] = @p{0}</Where2>
+		<Where3>stbl.[name] = @p{0}</Where3>
+		<Where4>stbl.xtype = 'V'</Where4>
+		<Where5>objectproperty(stbl.object_id,'IsSystemTable')=1</Where5>
+		<Where6>objectproperty(stbl.object_id,'IsSystemTable')=0</Where6>
+		<Order1>stbl.[name]</Order1>
+		<Version>9</Version>
+	</SqlClauses>
+	<SqlClauses>
+		<CollectionName>Tables</CollectionName>
+		<SelectMain>
+			<![CDATA[
+			select
+				db_name() as [TABLE_CATALOG],
+				user_name(stbl.uid) as [TABLE_SCHEMA],
+				stbl.[name] as [TABLE_NAME],
+				case stbl.xtype
+				when 'U' then 'BASE TABLE'
+				when 'S' then 'BASE TABLE'
+				when 'V' then 'VIEW'
+				end as [TABLE_TYPE],
+				objectproperty(stbl.id,'IsSystemTable') as [IS_SYSTEM],
+				null as [MS_DBTOOLS_SUPPORT],
+				coalesce(filegroup_name(sidx.groupid), sfgp.groupname, '') as [FILE_GROUP],
+				coalesce(filegroup_name(sidx1.groupid), sfgp.groupname, '') as [TEXTIMAGE_ON]
+			from
+				dbo.sysobjects as stbl with (nolock)
+				left join sysindexes as sidx with (nolock) on stbl.id = sidx.id and sidx.indid = 0
+				left join sysindexes as sidx1 with (nolock) on stbl.id = sidx1.id and sidx1.indid = 255
+				inner join sysfilegroups as sfgp  with (nolock) on filegroupproperty(sfgp.groupname,'IsDefault')=1
+			]]>
+		</SelectMain>
+		<Where1>objectproperty(stbl.[id],'IsTable') = 1 and objectproperty(stbl.[id],'IsMSShipped')=0</Where1>
+		<Where2>user_name(stbl.[uid]) = @p{0}</Where2>
+		<Where3>stbl.[name] = @p{0}</Where3>
+		<Where4>stbl.xtype = 'V'</Where4>
+		<Where5>objectproperty(stbl.[id],'IsSystemTable')=1</Where5>
+		<Where6>objectproperty(stbl.[id],'IsSystemTable')=0</Where6>
+		<Order1>stbl.[name]</Order1>
+		<Version>8</Version>
+	</SqlClauses>
+	<SqlClauses>
+		<CollectionName>Triggers</CollectionName>
+		<SelectMain>
+			<![CDATA[
+			select
+				db_name() as [TRIGGER_CATALOG],
+				sch.[name] as [TRIGGER_SCHEMA],
+				stbl.[name] as [TABLE_NAME],
+				strg.[name] as [TRIGGER_NAME],
+				'' as [SOURCE],
+				strg.[object_id] as [HELPER_TID],
+				objectproperty(strg.[object_id],'ExecIsDeleteTrigger') as [IS_DELETE_TRIGGER],
+				objectproperty(strg.[object_id],'ExecIsInsertTrigger') as [IS_INSERT_TRIGGER],
+				objectproperty(strg.[object_id],'ExecIsUpdateTrigger') as [IS_UPDATE_TRIGGER],
+				objectproperty(strg.[object_id],'ExecIsInsteadOfTrigger') as [IS_INSTEADOF_TRIGGER],
+				objectproperty(strg.[object_id],'ExecIsTriggerDisabled') as [IS_INACTIVE],
+				objectproperty(strg.[object_id],'ExecIsFirstDeleteTrigger') as [IS_FIRST_DELETE_TRIGGER],
+				objectproperty(strg.[object_id],'ExecIsFirstInsertTrigger') as [IS_FIRST_INSERT_TRIGGER],
+				objectproperty(strg.[object_id],'ExecIsFirstUpdateTrigger') as [IS_FIRST_UPDATE_TRIGGER],
+				objectproperty(strg.[object_id],'ExecIsLastDeleteTrigger') as [IS_LAST_DELETE_TRIGGER],
+				objectproperty(strg.[object_id],'ExecIsLastInsertTrigger') as [IS_LAST_INSERT_TRIGGER],
+				objectproperty(strg.[object_id],'ExecIsLastUpdateTrigger') as [IS_LAST_UPDATE_TRIGGER],
+				objectproperty(strg.[object_id],'ExecIsQuotedIdentOn') as [IS_EXECQUOTEDIDENTON],
+				objectproperty(strg.[object_id],'ExecIsAnsiNullsOn') as [IS_EXECANSINULLSON],
+				objectproperty(strg.[object_id],'IsQuotedIdentOn') as [IS_QUOTEDIDENTON],
+				objectproperty(strg.[object_id],'IsAnsiNullsOn') as [IS_ANSINULLSON]
+			from
+				sys.objects as strg with (nolock)
+				inner join sys.objects as stbl with (nolock) on strg.[parent_object_id] = stbl.[object_id]
+				inner join sys.schemas as sch with (nolock) on stbl.[schema_id] = sch.[schema_id]
+			]]>
+		</SelectMain>
+		<Where1>objectproperty(strg.[object_id], 'IsTrigger') = 1</Where1>
+		<Where2>sch.[name] = @p{0}</Where2>
+		<Where3>stbl.[name] = @p{0}</Where3>
+		<Where4>strg.[name] = @p{0}</Where4>
+		<Order1>strg.[name]</Order1>
+		<Version>9</Version>
+	</SqlClauses>
+	<SqlClauses>
+		<CollectionName>Triggers</CollectionName>
+		<SelectMain>
+			<![CDATA[
+			select
+				db_name() as [TRIGGER_CATALOG],
+				user_name(strg.uid) as [TRIGGER_SCHEMA],
+				stbl.name as [TABLE_NAME],
+				strg.name as [TRIGGER_NAME],
+				'' as [SOURCE],
+				strg.id as [HELPER_TID],
+				objectproperty(strg.id,'ExecIsDeleteTrigger') as [IS_DELETE_TRIGGER],
+				objectproperty(strg.id,'ExecIsInsertTrigger') as [IS_INSERT_TRIGGER],
+				objectproperty(strg.id,'ExecIsUpdateTrigger') as [IS_UPDATE_TRIGGER],
+				objectproperty(strg.id,'ExecIsInsteadOfTrigger') as [IS_INSTEADOF_TRIGGER],
+				objectproperty(strg.id,'ExecIsTriggerDisabled') as [IS_INACTIVE],
+				objectproperty(strg.id,'ExecIsFirstDeleteTrigger') as [IS_FIRST_DELETE_TRIGGER],
+				objectproperty(strg.id,'ExecIsFirstInsertTrigger') as [IS_FIRST_INSERT_TRIGGER],
+				objectproperty(strg.id,'ExecIsFirstUpdateTrigger') as [IS_FIRST_UPDATE_TRIGGER],
+				objectproperty(strg.id,'ExecIsLastDeleteTrigger') as [IS_LAST_DELETE_TRIGGER],
+				objectproperty(strg.id,'ExecIsLastInsertTrigger') as [IS_LAST_INSERT_TRIGGER],
+				objectproperty(strg.id,'ExecIsLastUpdateTrigger') as [IS_LAST_UPDATE_TRIGGER],
+				objectproperty(strg.id,'ExecIsQuotedIdentOn') as [IS_EXECQUOTEDIDENTON],
+				objectproperty(strg.id,'ExecIsAnsiNullsOn') as [IS_EXECANSINULLSON],
+				objectproperty(strg.id,'IsQuotedIdentOn') as [IS_QUOTEDIDENTON],
+				objectproperty(strg.id,'IsAnsiNullsOn') as [IS_ANSINULLSON]
+			from
+				sysobjects as strg with (nolock)
+				inner join sysobjects as stbl with (nolock) on strg.parent_obj = stbl.id
+			]]>
+		</SelectMain>
+		<Where1>objectproperty(strg.id, 'IsTrigger') = 1</Where1>
+		<Where2>user_name(stbl.uid) = @p{0}</Where2>
+		<Where3>stbl.[name] = @p{0}</Where3>
+		<Where4>strg.[name] = @p{0}</Where4>
+		<Order1>strg.[name]</Order1>
+		<Version>8</Version>
+	</SqlClauses>
+	<SqlClauses>
+		<CollectionName>UniqueKeys</CollectionName>
+		<SelectMain>
+			<![CDATA[
+			select
+				db_name() as [TABLE_CATALOG],
+				sch.[name] as [TABLE_SCHEMA],
+				stbl.[name] as [TABLE_NAME],
+				scnt.[name] as [CONSTRAINT_NAME],
+				index_col(db_name() + '.' + sch.[name] + '.' + stbl.[name], sidx.[index_id], sicl.[key_ordinal]) as [COLUMN_NAME],
+				sicl.[key_ordinal] as [ORDINAL_POSITION],
+				indexproperty(stbl.[object_id], sidx.[name], 'IsClustered') as [IS_CLUSTERED],
+				objectproperty(scnt.[object_id],'CnstIsDisabled') as 'IS_DISABLED'
+			from
+				sys.objects scnt with (nolock)
+				inner join sys.schemas sch with (nolock) on scnt.[schema_id]=sch.[schema_id]
+				inner join sys.indexes sidx with (nolock) on sidx.[object_id] = scnt.[parent_object_id] and sidx.[name] = scnt.[name]
+				inner join sys.index_columns sicl  with (nolock) on sicl.[object_id] = sidx.[object_id] and sidx.[index_id] = sicl.[index_id]
+				inner join sys.objects stbl with (nolock) on scnt.[parent_object_id] = stbl.[object_id]
+			]]>
+		</SelectMain>
+		<Where1>objectproperty(scnt.[object_id], 'IsUniqueCnst') = 1</Where1>
+		<Where2>sch.[name] = @p{0}</Where2>
+		<Where3>stbl.[name] = @p{0}</Where3>
+		<Order1>stbl.[name]</Order1>
+		<Version>9</Version>
+	</SqlClauses>
+	<SqlClauses>
+		<CollectionName>UniqueKeys</CollectionName>
+		<SelectMain>
+			<![CDATA[
+			select
+				db_name() as [TABLE_CATALOG],
+				user_name(stbl.uid) as [TABLE_SCHEMA],
+				stbl.name as [TABLE_NAME],
+				scnt.name as [CONSTRAINT_NAME],
+				index_col(stbl.name,sidx.indid,v.number) as [COLUMN_NAME],
+				v.number as [ORDINAL_POSITION],
+				indexproperty(stbl.id, sidx.name, 'IsClustered') as [IS_CLUSTERED]
+			from
+				sysobjects scnt with (nolock) left join sysindexes sidx on sidx.id = scnt.parent_obj and sidx.name = scnt.name
+				inner join sysobjects stbl with (nolock) on scnt.parent_obj = stbl.id
+				inner join master.dbo.spt_values v  with (nolock) on v.number 	> 0 and v.number 	<= sidx.keycnt and v.type 	= 'P'
+				inner join syscolumns scol  with (nolock) on sidx.id = scol.id 	and index_col(stbl.name,sidx.indid,v.number) = scol.name
+			]]>
+		</SelectMain>
+		<Where1>scnt.xtype IN ('UQ')</Where1>
+		<Where2>user_name(stbl.uid) = @p{0}</Where2>
+		<Where3>stbl.[name] = @p{0}</Where3>
+		<Order1>stbl.[name]</Order1>
+		<Version>8</Version>
+	</SqlClauses>
+	<SqlClauses>
+		<CollectionName>Views</CollectionName>
+		<SelectMain>
+			<![CDATA[
+			select
+				db_name() as [VIEW_CATALOG],
+				sch.[name] as [VIEW_SCHEMA],
+				sviews.[name] as [VIEW_NAME],
+				objectproperty(sviews.[object_id],'ExecIsQuotedIdentOn') as [IS_EXECQUOTEDIDENTON],
+				objectproperty(sviews.[object_id],'ExecIsAnsiNullsOn') as [IS_EXECANSINULLSON],
+				objectproperty(sviews.[object_id],'IsQuotedIdentOn') as [IS_QUOTEDIDENTON],
+				objectproperty(sviews.[object_id],'IsAnsiNullsOn') as [IS_ANSINULLSON],
+				objectproperty(sviews.[object_id],'ExecIsStartup') as [IS_STARTUP],
+				'' as [MS_DBTOOLS_SUPPORT],
+				(select count(*) from sys.columns scl where scl.[object_id] = sviews.[object_id]) as [PARAM_COUNT],
+				'' as [SOURCE],
+				sviews.[object_id] as [HELPER_PID]
+			from
+				sys.objects sviews with (nolock)
+				inner join sys.schemas sch with (nolock) on sviews.[schema_id] = sch.[schema_id]
+			]]>
+		</SelectMain>
+		<Where1>objectproperty(sviews.[object_id], 'IsView') = 1 and objectproperty(sviews.[object_id],'IsMSShipped') = 0</Where1>
+		<Where2>sch.[name] = @p{0}</Where2>
+		<Where3>sviews.[name] = @p{0}</Where3>
+		<Version>9</Version>
+	</SqlClauses>
+	<SqlClauses>
+		<CollectionName>Views</CollectionName>
+		<SelectMain>
+			<![CDATA[
+			select
+				db_name() as [VIEW_CATALOG],
+				user_name(sviews.uid) as [VIEW_SCHEMA],
+				sviews.name as [VIEW_NAME],
+				objectproperty(sviews.id,'ExecIsQuotedIdentOn') as [IS_EXECQUOTEDIDENTON],
+				objectproperty(sviews.id,'ExecIsAnsiNullsOn') as [IS_EXECANSINULLSON],
+				objectproperty(sviews.id,'IsQuotedIdentOn') as [IS_QUOTEDIDENTON],
+				objectproperty(sviews.id,'IsAnsiNullsOn') as [IS_ANSINULLSON],
+				objectproperty(sviews.id,'ExecIsStartup') as [IS_STARTUP],
+				coalesce((select [value] from fn_listextendedproperty ('microsoft_database_tools_support', 'schema', 'dbo', 'procedure',sviews.[name], null, null)),0)
+					as [MS_DBTOOLS_SUPPORT],
+				(select count(*) from syscolumns where id = sviews.id) as [PARAM_COUNT],
+				'' as [SOURCE],
+				sviews.id as [HELPER_PID]
+			from
+				sysobjects as sviews with (nolock)
+			]]>
+		</SelectMain>
+		<Where1>objectproperty(sviews.id, 'IsView') = 1 and objectproperty(sviews.id,'IsMSShipped') = 0</Where1>
+		<Where2>user_name(stbl.uid) = @p{0}</Where2>
+		<Where3>sviews.[name] = @p{0}</Where3>
+		<Version>8</Version>
+	</SqlClauses>
+
+</MetaDataSet>

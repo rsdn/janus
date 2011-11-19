@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="windows-1251" ?>
+<ARTICLE>
+<TITLE>Проект Janus. Локализация.</TITLE>
+<SUBTITLE>Принципы и примеры локализации в проекте Janus.</SUBTITLE>
+<AUTHOR company="The RSDN Group" >Andrew</AUTHOR>
+
+
+<VERSION>1.0</VERSION>
+<CONTENTS/>
+<PART><HEADER>Введение</HEADER>
+<P>В проекте Janus при отображении пользовательского интерфейса возможно выбрать язык, на котором оно будет происходить. Для обеспечения этого существует внутрипрограммный механизм локализации. Он основан на механизме локализации .NET Framework. Этот механиз подразумевает наличие так называемого языка по умолчанию и набора языков локализации. Константы варианта по умолчанию находятся в основной сборке, константы других вариантов в специальных сборках-сателлитах. Эти сборки создаются автоматически компилятором, если компилятор обнаруживает в проекте resx-файлы с именем такого формата: ИмяФайла.ИмяЛокали.resx. Для русского языка ИмяЛокали равно ru-RU.</P>
+<P>Однако в каждом конкретном случае механика создания и использования этих файлов различна.</P>
+</PART>
+<PART><HEADER>Локализация форм</HEADER>
+<P>Этот вид локализации поддерживается редактором Visual Studio. Порядок создания локализованной формы такой:</P>
+<P>Создаем форму, заполняя свойства на <B>английском</B> языке.</P>
+<IMG src="FormLoc1.png"/>
+<P>После создания формы в ее свойствах устанавливаем Localizable в true</P>
+<IMG src="FormLoc2.png"/>
+<P>После этого в свойстве Language выбираем Russian (Russia)</P>
+<IMG src="FormLoc3.png"/>
+<P>После этого перебиваем все строковые свойства на русский язык. Допускается так же изменение размеров и позиций элементов, если русский текст не влезает в элемент управления.</P>
+<WARNING><P>Будьте внимательны – изменения формы, не относящиеся к локализации необходимо производить только при установленном в (Default) свойстве Language.</P>
+</WARNING>
+<P>Если вы все сделали правильно, то теперь при переключении свойства Language форма автоматически будет переключаться на соответствующий языковый вариант.</P>
+<P>Теперь осталось сделать еще небольшое дополнительное действие. Необходимо избавится от лишней сателлитной сборки. Для этого необходимо переключиться в Solution Explorer и нажать <B>в его </B>панели инструментов кнопку  Show All Files. После этого в подчиненных форме файлах нужно найти файл ИмяФормы.ru.resx и удалить его. Должны остаться файлы ИмяФормы.cs, ИмяФормы.resx и ИмяФормы.ru-RU.resx.</P>
+<IMG src="FormLoc4.png"/>
+</PART>
+<PART><HEADER>Локализация строковых констант</HEADER>
+<P>Не все выводимые в пользовательском интерфейсе строки создаются в дизайнере форм. Для таких строк предназначен механизм локализации, находящийся в сборке Rsdn.Localization.</P>
+<P>Главный класс этой сборки, LocalizationManager, является синглтоном и облегчает выбор локализованных строк из сборок-сателлитов.</P>
+<P>Для выборки строк предназначен метод GetResourceString. Этот метод имеет несколько вариантов.</P>
+<CODE>
+<COMMENT>/// &lt;summary&gt;</COMMENT>
+<COMMENT>/// Возвращает локализованную строку ресурсов</COMMENT>
+<COMMENT>/// &lt;/summary&gt;</COMMENT>
+<COMMENT>/// &lt;param name="resAsm"&gt;сборка с ресурсами&lt;/param&gt;</COMMENT>
+<COMMENT>/// &lt;param name="resFileName"&gt;имя файла ресурса&lt;/param&gt;</COMMENT>
+<COMMENT>/// &lt;param name="resName"&gt;имя ресурса&lt;/param&gt;</COMMENT>
+<COMMENT>/// &lt;returns&gt;локализованную строку&lt;/returns&gt;</COMMENT>
+<KEYWORD>public</KEYWORD> <KEYWORD>string</KEYWORD> GetResourceString(Assembly resAsm, <KEYWORD>string</KEYWORD> resFileName, <KEYWORD>string</KEYWORD> resName)
+
+<COMMENT>/// &lt;summary&gt;</COMMENT>
+<COMMENT>/// Возвращает локализованную строку ресурсов из вызвавшей сборки</COMMENT>
+<COMMENT>/// &lt;/summary&gt;</COMMENT>
+<COMMENT>/// &lt;param name="resFileName"&gt;имя файла ресурса&lt;/param&gt;</COMMENT>
+<COMMENT>/// &lt;param name="resName"&gt;имя ресурса&lt;/param&gt;</COMMENT>
+<COMMENT>/// &lt;returns&gt;локализованную строку&lt;/returns&gt;</COMMENT>
+<KEYWORD>public</KEYWORD> <KEYWORD>string</KEYWORD> GetResourceString(<KEYWORD>string</KEYWORD> resFileName, <KEYWORD>string</KEYWORD> resName)
+
+<COMMENT>/// &lt;summary&gt;</COMMENT>
+<COMMENT>/// Возвращает локализованную строку ресурсов из вызвавшей сборки, из файла</COMMENT>
+<COMMENT>/// &amp;lt;namespace класса&amp;gt;.LocStringsResource</COMMENT>
+<COMMENT>/// &lt;/summary&gt;</COMMENT>
+<COMMENT>/// &lt;param name="resName"&gt;имя ресурса&lt;/param&gt;</COMMENT>
+<COMMENT>/// &lt;param name="resClass"&gt;класс&lt;/param&gt;</COMMENT>
+<COMMENT>/// &lt;returns&gt;локализованную строку&lt;/returns&gt;</COMMENT>
+<KEYWORD>public</KEYWORD> <KEYWORD>string</KEYWORD> GetResourceString(Type resClass, <KEYWORD>string</KEYWORD> resName)
+
+<COMMENT>/// &lt;summary&gt;</COMMENT>
+<COMMENT>/// Возвращает локализованную строку ресурсов из вызвавшей сборки, из файла</COMMENT>
+<COMMENT>/// &amp;lt;namespace вызвавшего класса&amp;gt;.LocStringsResource</COMMENT>
+<COMMENT>/// &lt;/summary&gt;</COMMENT>
+<COMMENT>/// &lt;param name="resName"&gt;имя ресурса&lt;/param&gt;</COMMENT>
+<COMMENT>/// &lt;returns&gt;локализованную строку&lt;/returns&gt;</COMMENT>
+<KEYWORD>public</KEYWORD> <KEYWORD>string</KEYWORD> GetResourceString(<KEYWORD>string</KEYWORD> resName)
+</CODE>
+<P>Первый вариант возвращает ресурс из указанной сборки, указанного имени файла ресурсов с указанным именем. Это самый сложный и наиболее гибкий вариант метода. Во втором варианте отсутствует имя сборки. В этом случае будет использована та сборка, которая вызвала этот метод. В третьем варианте вместо сборки указывается класс из этой сборки, а в качестве имени ресурсного файла используется комбинация из пространства имен переданного класса и имени LocStringResource. В четвертом варианте указывается только имя ресурса. Этот метод аналогичен предыдущему, но в качестве класса используется вызвавший.</P>
+<WARNING><P>Не пытайтесь добавлять локализационные ресурсы в resx-файлы форм. При каждом редактировании дизайнер уничтожит все ваши исправления.</P>
+</WARNING>
+<P>Порядок использования строковых ресурсов в проекте следующий:</P>
+<OL><LI>В файлы LocStringResource.*.resx в корне проекта добавляется переменная с одинаковым во всех файлах именем, но с разным содержанием, локализованным в зависимости от локализации файла. Например:</LI>
+<LI>LocStringResource.resx</LI>
+</OL>
+<CODE>
+&lt;data name="ForumLoadAllMsg"&gt;
+&lt;value&gt;Load all message&lt;/value&gt;
+&lt;/data&gt;
+</CODE>
+<OL><LI>LocStringResource.ru-RU.resx</LI>
+</OL>
+<CODE>
+&lt;data name="ForumLoadAllMsg"&gt;
+&lt;value&gt;Загрузить все сообщения форума&lt;/value&gt; 
+&lt;/data&gt;
+</CODE>
+<P>Для облегчения совместного редактирования файлов в проекте есть утилитка, находящаяся в каталоге LocalizationUtil. Эта утилита считывает все локализационные файлы и позволяет редактировать все варианты в одной строке грида.</P>
+<IMG src="StrLoc1.png"/>
+<WARNING><P>Не пытайтесь отредактировать при помощи этой утилиты resx-файлы форм. Она не рассчитана на такое применение и испортит все бинарные ресурсы.</P>
+</WARNING>
+<P>Далее, в том месте кода, где необходимо использовать строковую константу, вызываете метод GetResourceString</P>
+<CODE>
+_button.Text = LocalizationManager.Instance.GetResourceString(<STRING>"ForumLoadAllMsg"</STRING>);
+</CODE>
+</PART>
+<PART><HEADER>Локализация меню и панелей инструментов</HEADER>
+<P>В проекте Janus меню и панели инструментов создаются на основе специальных xml-файлов. В этих файлах подразумевается использование не самих строк, а идентификаторов ресурсов. Поэтому для добавления своего элемента необходимо создать локализованный ресурс, как это описано в предыдущей части и указать его имя в xml-файле.</P>
+<CODE>
+&lt;bar&gt;
+	&lt;items&gt;
+		&lt;button text="<B>ForumReplyMessage</B>" event-id="reply" small-image="reply"/&gt;
+		&lt;button text="<B>SearchClearList</B>" event-id="clear" small-image="clear"/&gt;
+		&lt;separator/&gt;
+		&lt;button text="<B>ForumSaveMessage</B>" event-id="savemsg" small-image="save"/&gt;
+	&lt;/items&gt;
+&lt;/bar&gt;
+</CODE>
+</PART>
+<PART><HEADER>Локализация класса конфигурации</HEADER>
+<P>В этом классе строковые константы задаются в атрибутах, поэтому описанные выше способы к нему не применимы. Для локализации этого файла предназначены специальные версии атрибутов – JanusDisplayNameAttribute, JanusCategoryAttribute и JanusDescriptionAttribute. Они ни чем не отличаются от прототипов, однако в качестве параметра требуют не саму строку, а имя ресурса, ее содержащее.</P>
+<CODE>
+<B>[JanusDisplayName(<STRING>"DisplayNameQueryBeforeExit"</STRING>)]
+[JanusDescription(<STRING>"DescriptionQueryBeforeExit"</STRING>)]
+[JanusCategory(<STRING>"CategoryNameCommon"</STRING>)]
+</B>[DefaultValue(<KEYWORD>true</KEYWORD>)]
+[SortIndex(1)]
+<KEYWORD>public</KEYWORD> <KEYWORD>bool</KEYWORD> ConfirmClosing
+{
+	get {<KEYWORD>return</KEYWORD> confirmClosing;}
+	set {confirmClosing = value;}
+}
+</CODE>
+<P></P>
+</PART>
+</ARTICLE>

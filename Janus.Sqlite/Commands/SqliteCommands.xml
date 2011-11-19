@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<commands xmlns="http://rsdn.ru/projects/Janus/JanusCommandDescriptor.xsd">
+
+<command name="Janus.Sqlite.CompactDb"
+		 displayNameTextResource="CompactDb"/>
+
+<command name="Janus.Sqlite.UpdateStatistics"
+		 displayNameTextResource="UpdateStatistics"/>
+
+</commands>

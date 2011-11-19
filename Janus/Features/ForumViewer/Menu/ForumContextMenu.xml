@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<root xmlns="http://rsdn.ru/projects/Janus/JanusMenuDescriptor.xsd"
+	  name="NavigationBox.ContextMenu">
+
+	<group name="Open">
+		<menuCommand command="Janus.Forum.OpenForumOnRsdn" image="ExtBrowser"/>
+	</group>
+
+	<group name="ReadMark">
+	<menuCommand command="Janus.Forum.SetAllMessagesInForumReadMark"
+				 textResource="Forum.Menu.Message.ReadMark.MarkAllMessagesInForumAsRead"
+				 image="markallread">
+	  <parameter name="isRead">true</parameter>
+	</menuCommand>
+	<menuCommand command="Janus.Forum.SetAllMessagesInForumReadMark"
+				 textResource="Forum.Menu.Message.ReadMark.MarkAllMessagesInForumAsUnread"
+				 image="markallunread">
+		<parameter name="isRead">false</parameter>
+	</menuCommand>
+	</group>
+
+	<group name="Subscribtion">
+		<menuCommand command="Janus.Forum.SubscribeOrUnsubscribeForum" image="subscribe"/>
+	</group>
+
+	<group name="ForumItems">
+		<menuCommand command="Janus.Forum.ShowForumArticles" image="articleitem"/>
+		<menuCommand command="Janus.Forum.ShowForumFaq" image="faqitem"/>
+	</group>
+
+</root>

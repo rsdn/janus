@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<root xmlns="http://rsdn.ru/projects/Janus/JanusMenuDescriptor.xsd"
+	  name="MainForm.Menu">
+
+	<group name="Main">
+
+		<menu name="View" orderIndex="20" textResource="MainForm.Menu.View.Text">
+			<group name="Panes">
+				<menuCheckCommand textResource="MainForm.Menu.View.NavigationPane"
+								  checkStateName="Janus.Navigation.NavigationWindowVisibility">
+					<checkCommand name="Janus.Navigation.ToggleNavigationWindowVisibility"/>
+					<uncheckCommand name="Janus.Navigation.ToggleNavigationWindowVisibility"/>
+				</menuCheckCommand>
+			</group>
+		</menu>
+
+	</group>
+
+</root>

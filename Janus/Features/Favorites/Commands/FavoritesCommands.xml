@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<commands xmlns="http://rsdn.ru/projects/Janus/JanusCommandDescriptor.xsd">
+
+	<command name="Janus.Favorites.AddLink"
+			 type="RequiresInteraction"
+			 displayNameTextResource="Favorites.Commands.AddLink.DisplayName"/>
+
+	<command name="Janus.Favorites.CreateFolder"
+			 type="RequiresInteraction"
+			 displayNameTextResource="Favorites.Commands.CreateFolder.DisplayName"/>
+
+	<command name="Janus.Favorites.OpenLink"
+			 displayNameTextResource="Favorites.Commands.OpenLink.DisplayName"/>
+
+	<command name="Janus.Favorites.EditLink"
+			 type="RequiresInteraction"
+			 displayNameTextResource="Favorites.Commands.EditLink.DisplayName"/>
+
+	<command name="Janus.Favorites.RenameFolder"
+			 type="RequiresInteraction"
+			 displayNameTextResource="Favorites.Commands.RenameFolder.DisplayName"/>
+
+	<command name="Janus.Favorites.MoveItem"
+			 type="RequiresInteraction"
+			 displayNameTextResource="Favorites.Commands.MoveItem.DisplayName"/>
+
+	<command name="Janus.Favorites.DeleteItem"
+			 displayNameTextResource="Favorites.Commands.DeleteItem.DisplayName"/>
+
+</commands>

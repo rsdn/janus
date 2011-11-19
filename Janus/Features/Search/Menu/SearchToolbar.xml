@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<root name="MainForm.Toolbar"
+	  xmlns="http://rsdn.ru/projects/Janus/JanusMenuDescriptor.xsd">
+
+	<group name="SearchResult" orderIndex="30">
+		<menuCommand command="Janus.Search.ClearSearchResult" image="clear"/>
+	</group>
+
+</root>

@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<root xmlns="http://rsdn.ru/projects/Janus/JanusMenuDescriptor.xsd"
+	  name="Favorites.ContextMenu">
+
+	<group name="Open">
+		<menuCommand command="Janus.Favorites.OpenLink" image="openurl"/>
+	</group>
+
+	<group name="Edit">
+		<menuCommand command="Janus.Favorites.EditLink" image="faveditcomment"/>
+	</group>
+
+	<group name="Create">
+		<menuCommand command="Janus.Favorites.AddLink" image="fav"/>
+		<menuCommand command="Janus.Favorites.CreateFolder" image="favnewfolder"/>
+	</group>
+
+	<group name="FavoritesManagement">
+		<menuCommand command="Janus.Favorites.MoveItem" image="favmove"/>
+		<menuCommand command="Janus.Favorites.DeleteItem" image="favdel"/>
+		<menuCommand command="Janus.Favorites.RenameFolder" image="favrenamefolder"/>
+	</group>
+
+</root>

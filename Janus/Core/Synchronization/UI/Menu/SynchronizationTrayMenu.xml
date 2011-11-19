@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<root xmlns="http://rsdn.ru/projects/Janus/JanusMenuDescriptor.xsd"
+	  name="Application.TrayMenu">
+
+	<group name="Synchronization" orderIndex="20">
+		<menuCommand command="Janus.Synchronization.Synchronize" image="sync"/>
+	</group>
+
+</root>

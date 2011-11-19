@@ -1,0 +1,40 @@
+// gojanus.idl : IDL source for gojanus.dll
+//
+
+// This file will be processed by the MIDL tool to
+// produce the type library (gojanus.tlb) and marshalling code.
+
+import "oaidl.idl";
+import "ocidl.idl";
+	[
+		object,
+		uuid(F62E4659-8C5D-4FCD-A795-C70FEC3DADF6),
+		dual,
+		helpstring("Igourl Interface"),
+		pointer_default(unique)
+	]
+	interface Igourl : IDispatch
+	{
+		[id(1), helpstring("This method send message ID to running Janus instance")] HRESULT SendURLToJanus(LONG messageID, BSTR linkText);
+		[id(2), helpstring("This method show message in running Janus instance")] HRESULT ShowMessageInJanus(LONG messageID);
+	};
+
+[
+	uuid(95C28612-01AD-4B26-9F6C-C85448DF47FF),
+	version(1.0),
+	helpstring("gojanus 1.0 Type Library")
+]
+library GOJANUSLib
+{
+	importlib("stdole32.tlb");
+	importlib("stdole2.tlb");
+
+	[
+		uuid(63C4751A-5B1B-41DD-862B-C1230691B403),
+		helpstring("gourl Class")
+	]
+	coclass gourl
+	{
+		[default] interface Igourl;
+	};
+};

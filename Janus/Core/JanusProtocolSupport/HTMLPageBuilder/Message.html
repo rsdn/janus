@@ -1,0 +1,27 @@
+﻿<!--
+	0 - subject
+	1 - forum name
+	2 - headers tr
+	3 - text
+	4 - tagline
+-->
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<title>{0} - {1}</title>
+		<link href="janus://style/forum.css" rel="stylesheet" type="text/css">
+		<link href="janus://style/janus.css" rel="stylesheet" type="text/css">
+		<link href="janus://formatter/formatter.css" rel="stylesheet" type="text/css">
+		<script src="janus://formatter/formatter.js"></script>
+	</head>
+	<body marginwidth="0" marginheight="0" style="overflow-y:hidden;">
+		{2}
+		<div style="overflow-x: auto; overflow-y: auto; width: 100%; height: expression(document.body.clientHeight - this.offsetTop);">
+			<div class="m" style="width: 100%;">
+			{3}
+			<div class="o">{4}</div>
+			</div>
+		</div>
+	</body>
+</html>

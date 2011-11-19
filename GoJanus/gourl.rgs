@@ -1,0 +1,52 @@
+HKCR
+{
+	gojanus.gourl.1 = s 'gourl Class'
+	{
+		CLSID = s '{63C4751A-5B1B-41DD-862B-C1230691B403}'
+	}
+	gojanus.gourl = s 'gourl Class'
+	{
+		CLSID = s '{63C4751A-5B1B-41DD-862B-C1230691B403}'
+		CurVer = s 'gojanus.gourl.1'
+	}
+	NoRemove CLSID
+	{
+		ForceRemove {63C4751A-5B1B-41DD-862B-C1230691B403} = s 'gourl Class'
+		{
+			ProgID = s 'gojanus.gourl.1'
+			VersionIndependentProgID = s 'gojanus.gourl'
+			ForceRemove 'Programmable'
+			InprocServer32 = s '%MODULE%'
+			{
+				val ThreadingModel = s 'Apartment'
+			}
+			'TypeLib' = s '{95C28612-01AD-4B26-9F6C-C85448DF47FF}'
+		}
+	}
+}
+
+HKCU
+{
+	NoRemove Software
+	{
+		NoRemove Microsoft
+		{
+			NoRemove 'Internet Explorer'
+			{
+				NoRemove MenuExt
+				{
+					ForceRemove 'RSDN@Home: загрузить тему при след.синхр.' = s '%MODULE%.html'
+					{
+						val contexts = d '32'
+						val '{63C4751A-5B1B-41DD-862B-C1230691B403}' = s ''
+					}
+					ForceRemove 'RSDN@Home: открыть сообщение в клиенте' = s '%MODULE%_gm.html'
+					{
+						val contexts = d '32'
+						val '{63C4751A-5B1B-41DD-862B-C1230691B403}' = s ''
+					}
+				}
+			}
+		}
+	}
+}

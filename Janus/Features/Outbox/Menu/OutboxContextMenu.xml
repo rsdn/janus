@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<root xmlns="http://rsdn.ru/projects/Janus/JanusMenuDescriptor.xsd"
+	  name="Outbox.ContextMenu">
+
+	<group name="Edit">
+		<menuCommand command="Janus.Outbox.EditItem" image="editmsg"/>
+	</group>
+
+	<group name="ItemsManagement">
+		<menuCommand command="Janus.Outbox.DeleteItem" image="del"/>
+	</group>
+
+</root>

@@ -1,0 +1,9 @@
+; gojanus.def : Declares the module parameters.
+
+LIBRARY      "gojanus.DLL"
+
+EXPORTS
+	DllCanUnloadNow     PRIVATE
+	DllGetClassObject   PRIVATE
+	DllRegisterServer   PRIVATE
+	DllUnregisterServer	PRIVATE

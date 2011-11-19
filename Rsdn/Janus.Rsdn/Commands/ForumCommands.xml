@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<commands xmlns="http://rsdn.ru/projects/Janus/JanusCommandDescriptor.xsd">
+
+  <command name="Janus.Forum.SubscribeOrUnsubscribeForum"
+         displayNameTextResource="SubscribeOrUnsubscribeForum.DisplayName"
+         descriptionTextResource="SubscribeOrUnsubscribeForum.Description">
+    <parameter name="forumId" isOptional="true"/>
+  </command>
+
+	<command name="Janus.Forum.Subscription"
+           type="RequiresInteraction"
+           displayNameTextResource="Subscription.DisplayName"
+           descriptionTextResource="Subscription.Description"/>
+
+</commands>

@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="JanusExtensionDescriptor"
+    targetNamespace="http://rsdn.ru/projects/Janus/JanusExtensionDescriptor.xsd"
+    elementFormDefault="qualified"
+    xmlns="http://rsdn.ru/projects/Janus/JanusExtensionDescriptor.xsd"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"
+>
+	<xs:element name="janus-extension-assemblies">
+		<xs:complexType>
+			<xs:sequence minOccurs="1" maxOccurs="unbounded">
+				<xs:element name="extension-assembly" type="xs:string"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

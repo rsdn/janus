@@ -1,0 +1,169 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{05DB1D31-EC6E-4AF8-A554-57FF1C5F4171}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Rsdn.Janus</RootNamespace>
+    <AssemblyName>Janus.Rsdn</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\Janus\bin\Debug\Rsdn\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\..\Janus\bin\Release\Rsdn\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="BLToolkit.3">
+      <HintPath>..\..\Dependencies\bltoolkit\BLToolkit.3.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="R.SAT-Common, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Dependencies\R.SAT\R.SAT-Common.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="R.SAT-Model, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Dependencies\R.SAT\R.SAT-Model.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Reactive">
+      <HintPath>..\..\Dependencies\R.SAT\System.Reactive.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Commands\ForumCommandTarget.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="Commands\ForumCommandProvider.cs" />
+    <Compile Include="Subscription\ForumsSubscriptionHelper.cs" />
+    <Compile Include="Subscription\ForumSubscriptionRequest.cs" />
+    <Compile Include="Subscription\SubscribeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Subscription\SubscribeForm.Designer.cs">
+      <DependentUpon>SubscribeForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Synchronization\JanusAT.Custom.cs" />
+    <Compile Include="Synchronization\JanusATHelper.cs" />
+    <Compile Include="Synchronization\JanusATServiceReference.cs" />
+    <Compile Include="Synchronization\JanusATSyncProvider.cs" />
+    <Compile Include="Synchronization\Stats\FailedOutboundMessagesStatsFormatter.cs" />
+    <Compile Include="Synchronization\Stats\ForumsStatsFormatter.cs" />
+    <Compile Include="Synchronization\Stats\IndexedMessagesStatsFormatter.cs" />
+    <Compile Include="Synchronization\Stats\MessagesStatsFormatter.cs" />
+    <Compile Include="Synchronization\Stats\ModeratorialsStatsFormatter.cs" />
+    <Compile Include="Synchronization\Stats\OutboudMessagesStatsFormatter.cs" />
+    <Compile Include="Synchronization\Stats\OutboundRatesStatsFormatter.cs" />
+    <Compile Include="Synchronization\Stats\RatesStatsFormatter.cs" />
+    <Compile Include="Synchronization\Stats\UsersStatsFormatter.cs" />
+    <Compile Include="Synchronization\SyncRefreshActivePart.cs" />
+    <Compile Include="Synchronization\Tasks\ForumsSyncTask.cs" />
+    <Compile Include="Synchronization\Tasks\MessagesSyncHelper.cs" />
+    <Compile Include="Synchronization\Tasks\MessagesSyncTask.cs" />
+    <Compile Include="Synchronization\Tasks\PostMessagesSyncTask.cs" />
+    <Compile Include="Synchronization\Tasks\RsdnSyncTask.cs" />
+    <Compile Include="Synchronization\Tasks\TopicSyncTask.cs" />
+    <Compile Include="Synchronization\Tasks\UsersSyncTask.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="Janus.Extension">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Janus-Common\Janus-Common.csproj">
+      <Project>{3F0703D6-B568-492C-9AE2-807C490826C5}</Project>
+      <Name>Janus-Common</Name>
+      <Private>False</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Janus-Model\Janus-Model.csproj">
+      <Project>{8B6FB1B4-141C-46DA-82B8-6A2220D7D868}</Project>
+      <Name>Janus-Model</Name>
+      <Private>False</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\Janus.Rsdn-Model\Janus.Rsdn-Model.csproj">
+      <Project>{B9BFC129-BB15-46B7-A445-FE1592B2B6DE}</Project>
+      <Name>Janus.Rsdn-Model</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.ru.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Commands\ForumCommandResources.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Commands\ForumCommandResources.ru.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Subscription\SubscribeForm.resx">
+      <DependentUpon>SubscribeForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Subscription\SubscribeForm.ru.resx">
+      <DependentUpon>SubscribeForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Commands\ForumCommands.xml" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

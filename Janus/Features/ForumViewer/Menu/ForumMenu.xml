@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<root xmlns="http://rsdn.ru/projects/Janus/JanusMenuDescriptor.xsd"
+      name="MainForm.Menu">
+
+  <group name="Main">
+
+    <menu name="Forums" textResource="Forum.Menu.Forums.Text" orderIndex="30">
+      
+      <group name="ForumSubscribtion" orderIndex="10">
+        <menuCommand command="Janus.Forum.Subscription" image="subscribe"/>
+      </group>
+      
+      <group name="GoTo" orderIndex="20">
+        <menuCommand command="Janus.Forum.GoToMessageWithPrompt" image="show"/>
+      </group>
+      
+      <group name="TopicDownload" orderIndex="30">
+        <menuCommand command="Janus.Forum.TopicDownload" image="downloadtopic"/>
+      </group>
+
+      <group name="ToDateReadMark" orderIndex="35">
+        <menuCommand command="Janus.Forum.SetMessagesReadMarkByDate" image="markreaddate"/>
+      </group>
+      
+      <group name="UserRate" orderIndex="40">
+        <menuCommand command="Janus.Forum.ShowUserRatingIn" image="userratein" orderIndex="1"/>
+        <menuCommand command="Janus.Forum.ShowUserRatingOut" image="userrateout" orderIndex="2"/>
+      </group>
+      
+      <group name="Articles" orderIndex="50">
+        <menuCommand command="Janus.Forum.ShowAllArticles" image="articleall" orderIndex="1"/>
+        <menuCommand command="Janus.Forum.ShowForumArticles" image="articleitem" orderIndex="2"/>
+      </group>
+      
+      <group name="Faq" orderIndex="60">
+        <menuCommand command="Janus.Forum.ShowAllFaq" image="faqall" orderIndex="1"/>
+        <menuCommand command="Janus.Forum.ShowForumFaq" image="faqitem" orderIndex="2"/>
+      </group>
+      
+      <group name="TeamList" orderIndex="70">
+        <menuCommand command="Janus.Forum.ShowTeamList" image="admin"/>
+      </group>
+      
+      <group name="ImportAndExport" orderIndex="80">
+        <menu name="Main" textResource="Forum.Menu.Forums.ImportAndExport.Text">
+          <group name="Messages">
+            <menuCommand image="export" command="Janus.Forum.MessageExport"/>
+          </group>
+          <group name="State">
+            <menuCommand image="export" command="Janus.Forum.StateExport"/>
+            <menuCommand image="export" command="Janus.Forum.StateImport"/>
+          </group>
+        </menu>
+      </group>
+      
+      <group name="LoadAllMessagesInForum" orderIndex="90">
+        <menuCommand command="Janus.Forum.LoadAllMessagesInForum" image="ShowAllMsgs"/>
+      </group>
+      
+    </menu>
+
+    <menu name="Service" textResource="MainForm.Menu.Service.Text" orderIndex="40">
+      <group name="FileUpload" orderIndex="45">
+        <menuCommand command="Janus.Forum.OpenFileUploadOnRsdn" image="openurl"/>
+      </group>
+    </menu>
+
+  </group>
+
+</root>

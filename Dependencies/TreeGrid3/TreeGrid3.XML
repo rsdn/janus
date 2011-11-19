@@ -1,0 +1,462 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>TreeGrid3</name>
+    </assembly>
+    <members>
+        <member name="M:Rsdn.TreeGrid.TreeGrid.TogleDoubleBuffer">
+            <summary>
+            Sets Double_Buffering and BorderSelect style
+            </summary>
+        </member>
+        <member name="M:Rsdn.TreeGrid.TreeGrid.SetExStyles(Rsdn.TreeGrid.LVS_EX)">
+            <summary>
+            Sets ListViewExtended Styles
+            </summary>
+            <param name="exStyle">The Styles you wish to set.</param>
+        </member>
+        <member name="M:Rsdn.TreeGrid.TreeGrid.RetrieveData(Rsdn.TreeGrid.ITreeNode)">
+            <summary>
+            Производит извлечение данных отрисовки из узла.
+            </summary>
+        </member>
+        <member name="F:Rsdn.TreeGrid.TreeGrid._scrollOnSetItemCount">
+            <summary>
+            Если установить эту переменную в true и изменить значение свойства
+            VirtualListSize, то ListView не будет прокручивать свое содержимое.
+            </summary>
+        </member>
+        <member name="M:Rsdn.TreeGrid.TreeGrid.GetExpandSubNodeCount(Rsdn.TreeGrid.ITreeNode)">
+            <summary>
+             Рассчитывает количество раскрытых подветок. Учитывая вложенные.
+            </summary>
+            <param name="node">Ветка для которой нужно произвести рассчет.</param>
+            <returns>Количество расскрытых подветок.</returns>
+        </member>
+        <member name="M:Rsdn.TreeGrid.TreeGrid.NotifyAddNode(Rsdn.TreeGrid.ITreeNode,System.Int32)">
+            <summary>
+            Позволяет оповестить о динамически добавленной ветке. Если необходимо
+            произвести массовые модификации коллекции, лучше отключить коллекцию
+            от TreeGrid, изменить ее и подключить обратно.
+            Если нужно добавить несколько веток к одному родителю, лучше 
+            воспользоваться методом NotifyAddNodes.
+            </summary>
+            <param name="node">Добавляемая ветка.</param>
+            <param name="insertIndex">Индекс в родительской ветке по которому 
+            будет производиться вставка.</param>
+        </member>
+        <member name="M:Rsdn.TreeGrid.TreeGrid.NotifyAddNodes(Rsdn.TreeGrid.ITreeNode,System.Collections.Generic.List{Rsdn.TreeGrid.ITreeNode},System.Int32)">
+            <summary>
+            Позволяет оповестить о динамическом добавлении нескольких ветке к 
+            одной родительской. Если необходимо произвести массовые модификации 
+            коллекции, лучше отключить коллекцию от TreeGrid, изменить ее и 
+            подключить обратно.
+            Если нужно добавить одну ветку воспользуйтесь методом NotifyAddNode.
+            </summary>
+            <param name="parent">Родительская ветка.</param>
+            <param name="newNodes">Массив содержаций добавляемые ветки.</param>
+            <param name="insertIndex">Индекс в родительской ветке по которому 
+            будет производиться вставка.</param>
+        </member>
+        <member name="F:Rsdn.TreeGrid.TreeGrid._setActiveNodeIndexLock">
+            <summary>
+            Этот блокиратор, не равный 0, говорит, что в данный момент происходит
+            изменение индекса текущей ветки.
+            </summary>
+        </member>
+        <member name="M:Rsdn.TreeGrid.TreeGrid.CollapseNode(System.Int32,Rsdn.TreeGrid.ITreeNode)">
+            <summary>
+            Схлопывает ветку скрывая ее подветки в ListView.
+            </summary>
+            <param name="index"></param>
+            <param name="node"></param>
+        </member>
+        <member name="F:Rsdn.TreeGrid.TreeGrid.components">
+            <summary> 
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Rsdn.TreeGrid.TreeGrid.Dispose(System.Boolean)">
+            <summary> 
+            Clean up any resources being used.
+            </summary>
+        </member>
+        <member name="M:Rsdn.TreeGrid.TreeGrid.InitializeComponent">
+            <summary> 
+            Required method for Designer support - do not modify 
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="P:Rsdn.TreeGrid.TreeGrid.TreeColumnIndex">
+            <summary>
+            Индекс колонки в которой отображается дерево.
+            </summary>
+        </member>
+        <member name="P:Rsdn.TreeGrid.TreeGrid.DefaultTextFormat">
+            <summary>
+            Формат текста ячейки по умолчанию.
+            </summary>
+        </member>
+        <member name="T:Rsdn.TreeGrid.ITreeNode">
+            <summary>
+            Интерфейс узла дерева
+            </summary>
+        </member>
+        <member name="T:Rsdn.TreeGrid.CellPosition">
+            <summary>
+            Позиция ячейки
+            </summary>
+        </member>
+        <member name="T:Rsdn.TreeGrid.NativeMethods">
+            <summary>
+            Обертка для Win API
+            </summary>
+        </member>
+        <member name="M:Rsdn.TreeGrid.NativeMethods.SaveDC(System.IntPtr)">
+            <summary>
+            The SaveDC function saves the current state of the specified device 
+            context (DC) by copying data describing selected objects and graphic 
+            modes (such as the bitmap, brush, palette, font, pen, region, drawing 
+            mode, and mapping mode) to a context stack.
+            </summary>
+            <param name="hdc">handle to DC</param>
+            <returns>
+            If the function succeeds, the return value identifies the saved state. 
+            If the function fails, the return value is zero.
+            </returns>
+        </member>
+        <member name="M:Rsdn.TreeGrid.NativeMethods.RestoreDC(System.IntPtr,System.Int32)">
+            <summary>
+            The RestoreDC function restores a device context (DC) to the specified
+            state. The DC is restored by popping state information off a stack
+            created by earlier calls to the SaveDC function. 
+            </summary>
+            <param name="hdc">handle to DC</param>
+            <param name="nSavedDC">restore state</param>
+            <returns>
+            If the function succeeds, the return value is nonzero.
+            If the function fails, the return value is zero.
+            </returns>
+        </member>
+        <member name="M:Rsdn.TreeGrid.NativeMethods.DeleteDC(System.IntPtr)">
+            <summary>
+            
+            </summary>
+            <param name="hdc">handle to DC</param>
+            <returns>
+            If the function succeeds, the return value is nonzero.
+            If the function fails, the return value is zero. 
+            </returns>
+        </member>
+        <member name="M:Rsdn.TreeGrid.NativeMethods.CreateCompatibleDC(System.IntPtr)">
+            <summary>
+            Creates a memory device context (DC) compatible with the specified 
+            device. 
+            </summary>
+            <param name="hdc">handle to DC</param>
+            <returns>handle to compatible DC</returns>
+        </member>
+        <member name="M:Rsdn.TreeGrid.NativeMethods.CreateCompatibleBitmap(System.IntPtr,System.Int32,System.Int32)">
+            <summary>
+            Creates a bitmap compatible with the device that is associated with 
+            the specified device context.
+            </summary>
+            <param name="hdc">handle to DC</param>
+            <param name="width">width of bitmap, in pixels</param>
+            <param name="height">height of bitmap, in pixels</param>
+            <returns></returns>
+        </member>
+        <member name="M:Rsdn.TreeGrid.NativeMethods.SetViewportOrgEx(System.IntPtr,System.Int32,System.Int32,System.Drawing.Point@)">
+            <summary>
+            Specifies which device point maps to the window origin (0,0).
+            </summary>
+            <param name="hdc">handle to device context</param>
+            <param name="x">new x-coordinate of viewport origin</param>
+            <param name="y">new y-coordinate of viewport origin</param>
+            <param name="point">original viewport origin</param>
+            <returns></returns>
+        </member>
+        <member name="M:Rsdn.TreeGrid.NativeMethods.SetViewportOrgEx(System.IntPtr,System.Int32,System.Int32,System.IntPtr)">
+            <summary>
+            Specifies which device point maps to the window origin (0,0).
+            </summary>
+            <param name="hdc">handle to device context</param>
+            <param name="x">new x-coordinate of viewport origin</param>
+            <param name="y">new y-coordinate of viewport origin</param>
+            <param name="pPoint">original viewport origin</param>
+            <returns></returns>
+        </member>
+        <member name="M:Rsdn.TreeGrid.NativeMethods.BitBlt(System.IntPtr,System.Int32,System.Int32,System.Int32,System.Int32,System.IntPtr,System.Int32,System.Int32,Rsdn.TreeGrid.NativeMethods.Rop)">
+            <summary>
+            The BitBlt function performs a bit-block transfer of the color data 
+            corresponding to a rectangle of pixels from the specified source 
+            device context into a destination device context.
+            </summary>
+            <param name="hdcDest">handle to destination DC</param>
+            <param name="xDest">x-coord of destination upper-left corner</param>
+            <param name="yDest">y-coord of destination upper-left corner</param>
+            <param name="width">width of destination rectangle</param>
+            <param name="height">height of destination rectangle</param>
+            <param name="hdcSrc">handle to source DC</param>
+            <param name="xSrc">x-coordinate of source upper-left corner</param>
+            <param name="ySrc">y-coordinate of source upper-left corner</param>
+            <param name="rop">raster operation code</param>
+            <returns></returns>
+        </member>
+        <member name="M:Rsdn.TreeGrid.NativeMethods.Verify(System.Boolean)">
+            <summary>
+            Проверяет значение параметра <paramref name="test"/> и возбуждает
+            исключение Win32Exception если оно равно false.
+            </summary>
+        </member>
+        <member name="T:Rsdn.TreeGrid.NativeMethods.Rop">
+            <summary>
+            Ternary raster operation codes
+            </summary>
+        </member>
+        <member name="F:Rsdn.TreeGrid.NativeMethods.Rop.SrcCopy">
+            <summary>dest = source</summary>
+        </member>
+        <member name="F:Rsdn.TreeGrid.NativeMethods.Rop.SrcPaint">
+            <summary>dest = source OR dest</summary>
+        </member>
+        <member name="F:Rsdn.TreeGrid.NativeMethods.Rop.SrcAND">
+            <summary>dest = source AND dest</summary>
+        </member>
+        <member name="F:Rsdn.TreeGrid.NativeMethods.Rop.SrcInvert">
+            <summary>dest = source XOR dest</summary>
+        </member>
+        <member name="F:Rsdn.TreeGrid.NativeMethods.Rop.SrcErase">
+            <summary>dest = source AND (NOT dest )</summary>
+        </member>
+        <member name="F:Rsdn.TreeGrid.NativeMethods.Rop.NotSrcCopy">
+            <summary>dest = (NOT source)</summary>
+        </member>
+        <member name="F:Rsdn.TreeGrid.NativeMethods.Rop.NotSrcErase">
+            <summary>dest = (NOT src) AND (NOT dest)</summary>
+        </member>
+        <member name="F:Rsdn.TreeGrid.NativeMethods.Rop.MergeCopy">
+            <summary>dest = (source AND pattern)</summary>
+        </member>
+        <member name="F:Rsdn.TreeGrid.NativeMethods.Rop.MergePaint">
+            <summary>dest = (NOT source) OR dest</summary>
+        </member>
+        <member name="F:Rsdn.TreeGrid.NativeMethods.Rop.PatCopy">
+            <summary>dest = pattern</summary>
+        </member>
+        <member name="F:Rsdn.TreeGrid.NativeMethods.Rop.PatPaint">
+            <summary>dest = DPSnoo</summary>
+        </member>
+        <member name="F:Rsdn.TreeGrid.NativeMethods.Rop.PatInvert">
+            <summary>dest = pattern XOR dest</summary>
+        </member>
+        <member name="F:Rsdn.TreeGrid.NativeMethods.Rop.DstInvert">
+            <summary>dest = (NOT dest)</summary>
+        </member>
+        <member name="F:Rsdn.TreeGrid.NativeMethods.Rop.Blackness">
+            <summary>dest = BLACK
+            <para>Fills the destination rectangle using the color associated with 
+            index 0 in the physical palette. (This color is black for the 
+            default physical palette.)</para>
+            </summary>
+        </member>
+        <member name="F:Rsdn.TreeGrid.NativeMethods.Rop.Whiteness">
+            <summary>dest = WHITE</summary>
+        </member>
+        <member name="F:Rsdn.TreeGrid.NativeMethods.Rop.NoMirrorBitmap">
+            <summary>Do not Mirror the bitmap in this call</summary>
+        </member>
+        <member name="F:Rsdn.TreeGrid.NativeMethods.Rop.CaptureBlt">
+            <summary>Include layered windows</summary>
+        </member>
+        <member name="T:Rsdn.TreeGrid.NodeInfo">
+            <summary>
+            Информация об узле дерева
+            </summary>
+        </member>
+        <member name="T:Rsdn.TreeGrid.FlagsEditor">
+            <summary>
+            Редактор перечислений с возможностью множественного выбора.
+            </summary>
+        </member>
+        <member name="M:Rsdn.TreeGrid.FlagsEditor.EditValue(System.ComponentModel.ITypeDescriptorContext,System.IServiceProvider,System.Object)">
+            <summary>
+            Overrides the method used to provide basic behaviour for selecting editor.
+            Shows our custom control for editing the value.
+            </summary>
+            <param name="context">The context of the editing control</param>
+            <param name="provider">A valid service provider</param>
+            <param name="value">The current value of the object to edit</param>
+            <returns>The new value of the object</returns>
+        </member>
+        <member name="M:Rsdn.TreeGrid.FlagsEditor.GetEditStyle(System.ComponentModel.ITypeDescriptorContext)">
+            <summary>
+            Shows a dropdown icon in the property editor
+            </summary>
+            <param name="context">The context of the editing control</param>
+            <returns>Returns <c>UITypeEditorEditStyle.DropDown</c></returns>
+        </member>
+        <member name="M:Rsdn.TreeGrid.FlagsEditor.OnMouseDown(System.Object,System.Windows.Forms.MouseEventArgs)">
+            <summary>
+            When got the focus, handle the lost focus event.
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Rsdn.TreeGrid.FlagsEditor.OnMouseMoved(System.Object,System.Windows.Forms.MouseEventArgs)">
+            <summary>
+            Occurs when the mouse is moved over the checkedlistbox. 
+            Sets the tooltip of the item under the pointer
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Rsdn.TreeGrid.FlagsEditor.ValueChanged(System.Object,System.EventArgs)">
+            <summary>
+            Close the dropdowncontrol when the user has selected a value
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="T:Rsdn.TreeGrid.FlagsEditor.ClbItem">
+            <summary>
+            Internal class used for storing custom data in listviewitems
+            </summary>
+        </member>
+        <member name="M:Rsdn.TreeGrid.FlagsEditor.ClbItem.ToString">
+            <summary>
+            Gets the name of this item
+            </summary>
+            <returns>The name passed in the constructor</returns>
+        </member>
+        <member name="P:Rsdn.TreeGrid.FlagsEditor.ClbItem.Value">
+            <summary>
+            Gets the int value for this item
+            </summary>
+        </member>
+        <member name="P:Rsdn.TreeGrid.FlagsEditor.ClbItem.Tooltip">
+            <summary>
+            Gets the tooltip for this item
+            </summary>
+        </member>
+        <member name="T:Rsdn.TreeGrid.GetDataEventArgs">
+            <summary>
+            Аргументы события GetData
+            </summary>
+        </member>
+        <member name="M:Rsdn.TreeGrid.GetDataEventArgs.#ctor(Rsdn.TreeGrid.ITreeNode,Rsdn.TreeGrid.NodeInfo,Rsdn.TreeGrid.CellInfo[])">
+            <summary>
+            Инициализирует экземпляр
+            </summary>
+        </member>
+        <member name="P:Rsdn.TreeGrid.GetDataEventArgs.Node">
+            <summary>
+            Узел, для которого запрашиваются данные.
+            </summary>
+        </member>
+        <member name="P:Rsdn.TreeGrid.GetDataEventArgs.NodeInfo">
+            <summary>
+            Данные об отрисовке узла.
+            </summary>
+        </member>
+        <member name="P:Rsdn.TreeGrid.GetDataEventArgs.CellInfos">
+            <summary>
+            Доступ к данным форматирования ячеек.
+            </summary>
+        </member>
+        <member name="T:Rsdn.TreeGrid.PaintCache">
+            <summary>
+            Этот класс кэширует ресурсы вроде шрифтов на время отрисовки.
+            Если отрисовка происходит для отдельных ячеек грида или разорвана
+            в следствии каких-то других причин, перехватите сообщение WM_PAINT
+            и перед его стандартной обработкой создайте экземлпяр данного класса.
+            После окончания стандартной отрисовки вызовите Dispose() этому экземпляру.
+            </summary>
+        </member>
+        <member name="F:Rsdn.TreeGrid.PaintCache._globalFontMap">
+            <summary>
+            Временный кэш для хэндлов шрифтов. Очищается в Dispose().
+            </summary>
+        </member>
+        <member name="F:Rsdn.TreeGrid.PaintCache._lastForeColor">
+            <summary>
+            Последний использованный цвет текста. Если он не изменялся,
+            используется предыдущий цвет выбранный в контексте отрисовки.
+            </summary>
+        </member>
+        <member name="M:Rsdn.TreeGrid.PaintCache.DrawText(System.Drawing.IDeviceContext,System.String,System.Drawing.Font,System.Drawing.Color,System.Drawing.Rectangle,System.Windows.Forms.TextFormatFlags)">
+            <summary>
+            Отрисовывает текст с соотвествующим форматриованием.
+            Прочтите описание класса перед перед использованием этого метода!
+            </summary>
+            <param name="dc">Контекст отрисовки.</param>
+            <param name="text">Выводимый текст.</param>
+            <param name="font">Шрифт которым будет производиться отрисовка.</param>
+            <param name="foreColor">Цвет которым будет выводиться текст.</param>
+            <param name="rect">Область в конткроле в которую будет выведен текст.
+            </param>
+            <param name="format">Настройки формата (выравниваине...).</param>
+        </member>
+        <member name="M:Rsdn.TreeGrid.PaintCache.FillSolidRect(System.Drawing.IDeviceContext,System.Drawing.Rectangle,System.Drawing.Color)">
+            <summary>
+            Рисует прямоугольник заданным цветом. Т.е. вывод текста на фоне, но без текста.
+            </summary>
+            <param name="dc">контекст устройства</param>
+            <param name="rect">Прямоугольник для закрашивания</param>
+            <param name="backColor">Цвет для закрашивания</param>
+        </member>
+        <member name="T:Rsdn.TreeGrid.CellInfo">
+            <summary>
+            Описание ячейки
+            </summary>
+        </member>
+        <member name="P:Rsdn.TreeGrid.CellInfo.ImageIndex">
+            <summary>
+            Индекс картинки.
+            </summary>
+        </member>
+        <member name="P:Rsdn.TreeGrid.CellInfo.ImageKey">
+            <summary>
+            Ключ картинки.
+            </summary>
+        </member>
+        <member name="P:Rsdn.TreeGrid.CellInfo.Image">
+            <summary>
+            Картинка.
+            </summary>
+        </member>
+        <member name="P:Rsdn.TreeGrid.CellInfo.CellImageType">
+            <summary>
+            Тип картинки.
+            </summary>
+        </member>
+        <member name="P:Rsdn.TreeGrid.CellInfo.Text">
+            <summary>
+            Текст ячейки.
+            </summary>
+        </member>
+        <member name="P:Rsdn.TreeGrid.CellInfo.TextFormat">
+            <summary>
+            Формат отрисовки текста.
+            </summary>
+        </member>
+        <member name="T:Rsdn.TreeGrid.GdiSelectorHelper">
+            <summary>
+            Класс помощник, обеспечивающий миграцию Модели WinGDI 
+            (Select-Unselect) в модель using/dispose
+            </summary>
+        </member>
+        <member name="M:Rsdn.TreeGrid.GdiSelectorHelper.#ctor(System.IntPtr,System.IntPtr)">
+            <summary>
+            Конструктор. Автоматически выбирает переданный объект в контекст устройства
+            </summary>
+            <param name="hdc">Контекст устройства</param>
+            <param name="selectObject">Выбираемый объект</param>
+        </member>
+        <member name="M:Rsdn.TreeGrid.GdiSelectorHelper.Dispose">
+            <summary>
+            <see cref="M:System.IDisposable.Dispose"/>
+            </summary>
+        </member>
+    </members>
+</doc>

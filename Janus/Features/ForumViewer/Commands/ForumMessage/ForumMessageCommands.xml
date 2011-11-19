@@ -1,0 +1,100 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<commands xmlns="http://rsdn.ru/projects/Janus/JanusCommandDescriptor.xsd">
+
+  <command name="Janus.Forum.AddForumMessageToFavorites"
+           type="RequiresInteraction"
+           displayNameTextResource="AddForumMessageToFavorites.DisplayName"
+           descriptionTextResource="AddForumMessageToFavorites.Description">
+    <parameter name="messageId" isOptional="true"/>
+  </command>
+
+  <command name="Janus.Forum.CopyMessageAddress"
+           displayNameTextResource="CopyMessageAddress.DisplayName"
+           descriptionTextResource="CopyMessageAddress.Description">
+    <parameter name="messageId" isOptional="true"/>
+  </command>
+
+  <command name="Janus.Forum.CopyMessageAuthorAddress"
+           displayNameTextResource="CopyMessageAuthorAddress.DisplayName"
+           descriptionTextResource="CopyMessageAuthorAddress.Description">
+    <parameter name="messageId" isOptional="true"/>
+  </command>
+
+  <command name="Janus.Forum.OpenMessageInJBrowser"
+           displayNameTextResource="OpenMessageInJBrowser.DisplayName"
+           descriptionTextResource="OpenMessageInJBrowser.Description">
+    <parameter name="messageId" isOptional="true"/>
+  </command>
+
+  <command name="Janus.Forum.OpenMessageOnRsdn"
+           displayNameTextResource="OpenMessageOnRsdn.DisplayName"
+           descriptionTextResource="OpenMessageOnRsdn.Description">
+    <parameter name="messageId" isOptional="true"/>
+  </command>
+
+  <command name="Janus.Forum.Moderating"
+           type="RequiresInteraction"
+           displayNameTextResource="Moderating.DisplayName"
+           descriptionTextResource="Moderating.Description">
+    <parameter name="messageId" isOptional="true"/>
+  </command>
+
+  <command name="Janus.Forum.OpenModeratingOnRsdn"
+           displayNameTextResource="OpenModeratingOnRsdn.DisplayName"
+           descriptionTextResource="OpenModeratingOnRsdn.Description">
+    <parameter name="messageId" isOptional="true"/>
+  </command>
+
+  <command name="Janus.Forum.RateMessage"
+           displayNameTextResource="RateMessage.DisplayName"
+           descriptionTextResource="RateMessage.Description">
+    <parameter name="messageIds" isOptional="true"/>
+    <parameter name="rate"/>
+  </command>
+
+  <command name="Janus.Forum.OpenMessageRatingOnRsdn"
+           displayNameTextResource="OpenMessageRatingOnRsdn.DisplayName"
+           descriptionTextResource="OpenMessageRatingOnRsdn.Description">
+    <parameter name="messageId" isOptional="true"/>
+  </command>
+
+  <command name="Janus.Forum.ShowMessageRating"
+           displayNameTextResource="ShowMessageRating.DisplayName"
+           descriptionTextResource="ShowMessageRating.Description">
+    <parameter name="messageId" isOptional="true"/>
+  </command>
+
+  <command name="Janus.Forum.RegetTopic"
+           displayNameTextResource="RegetTopic.DisplayName"
+           descriptionTextResource="RegetTopic.Description">
+    <parameter name="messageIds" isOptional="true"/>
+  </command>
+
+  <command name="Janus.Forum.SetTopicReadMark">
+    <parameter name="messageIds" isOptional="true"/>
+    <parameter name="isRead"/>
+  </command>
+
+  <command name="Janus.Forum.SetMessagesReadMark"
+           displayNameTextResource="SetMessageReadMark.DisplayName"
+           descriptionTextResource="SetMessageReadMark.Description">
+    <parameter name="messageIds" isOptional="true"/>
+    <parameter name="isRead"/>
+    <parameter name="markChilds"/>
+  </command>
+
+  <command name="Janus.Forum.SetMessagesRepliesAutoReadMark"
+           displayNameTextResource="SetMessageRepliesAutoReadMark.DisplayName"
+           descriptionTextResource="SetMessageRepliesAutoReadMark.Description">
+    <parameter name="messageIds" isOptional="true"/>
+    <parameter name="isEnabled"/>
+  </command>
+
+  <command name="Janus.Forum.ReplyMessage"
+           type="RequiresInteraction"
+           displayNameTextResource="ReplyMessage.DisplayName"
+           descriptionTextResource="ReplyMessage.Description">
+    <parameter name="messageId" isOptional="true"/>
+  </command>
+
+</commands>
