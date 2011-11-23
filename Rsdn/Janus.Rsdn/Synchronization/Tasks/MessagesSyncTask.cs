@@ -33,16 +33,24 @@ namespace Rsdn.Janus
 						.SubscribedForums()
 						.Select(
 							f =>
-								new RequestForumInfo
+							new RequestForumInfo
 								{
 									forumId = f.ID,
 									isFirstRequest = f.LastSync < 0
-								});
-				foreach (var rq in forums)
-					yield return rq;
+								})
+						.ToArray();
+
+				if (forums.Count() != 0)
+				{
+					foreach (var rq in forums)
+						yield return rq;
+
+					// форумы мусора нужны для отслеживания удаленных сообщений
+					var trashFirstRequest = forums.All(rfi => rfi.isFirstRequest);
+					yield return new RequestForumInfo {forumId = 0, isFirstRequest = trashFirstRequest}; // trash 1
+					yield return new RequestForumInfo {forumId = 58, isFirstRequest = trashFirstRequest}; // trash 2
+				}
 			}
-			yield return new RequestForumInfo { forumId = 0, isFirstRequest = false }; // trash 1
-			yield return new RequestForumInfo { forumId = 58, isFirstRequest = false }; // trash 2
 		}
 
 		protected override ChangeRequest PrepareRequest(ISyncContext context)
@@ -76,9 +84,9 @@ namespace Rsdn.Janus
 			SetSelfID(response.userId);
 			MessagesSyncHelper.AddNewMessages(
 				context,
-				response.newMessages,
-				response.newRating,
-				response.newModerate,
+				response.newMessages ?? new JanusMessageInfo[] {},
+				response.newRating ?? new JanusRatingInfo[] {},
+				response.newModerate ?? new JanusModerateInfo[] {},
 				response.userId);
 			context.DBVars()[_lastRatingRVName] = response.lastRatingRowVersion.ToHexString();
 			context.DBVars()[_lastForumRVName] = response.lastForumRowVersion.ToHexString();
