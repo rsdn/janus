@@ -316,6 +316,6 @@
   </Target>
   -->
   <PropertyGroup>
-    <PreBuildEvent>"$(SolutionDir)\SvnRevision/$(OutDir)SvnRevision.exe" "$(SolutionDir)/" "$(ProjectDir)ApplicationInfo.template.cs" "$(ProjectDir)ApplicationInfo.cs"</PreBuildEvent>
+    <PreBuildEvent>rem "$(SolutionDir)\SvnRevision/$(OutDir)SvnRevision.exe" "$(SolutionDir)/" "$(ProjectDir)ApplicationInfo.template.cs" "$(ProjectDir)ApplicationInfo.cs"</PreBuildEvent>
   </PropertyGroup>
 </Project>

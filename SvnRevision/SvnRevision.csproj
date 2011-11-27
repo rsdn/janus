@@ -155,7 +155,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
-    <None Include="Migrated rules for SvnRevision.ruleset" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />

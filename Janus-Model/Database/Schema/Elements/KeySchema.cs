@@ -90,9 +90,7 @@ namespace Rsdn.Janus
 
 		public override int GetHashCode()
 		{
-			var result = _deleteRule.GetHashCode();
-			result = 29*result + _updateRule.GetHashCode();
-			result = 29*result + (Columns != null ? Columns.GetHashCode() : 0);
+			var result = (Columns != null ? Columns.GetHashCode() : 0);
 			result = 29*result + KeyType.GetHashCode();
 			result = 29*result + (RelTable != null ? RelTable.GetHashCode() : 0);
 			result = 29*result + (RelColumns != null ? RelColumns.GetHashCode() : 0);

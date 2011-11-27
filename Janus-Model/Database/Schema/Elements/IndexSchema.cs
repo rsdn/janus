@@ -79,9 +79,7 @@ namespace Rsdn.Janus
 
 		public override int GetHashCode()
 		{
-			var result = _sortOrder.GetHashCode();
-			result = 29*result + _isActive.GetHashCode();
-			result = 29*result + (Columns != null ? Columns.GetHashCode() : 0);
+			var result = (Columns != null ? Columns.GetHashCode() : 0);
 			result = 29*result + Clustered.GetHashCode();
 			result = 29*result + NullAllowances.GetHashCode();
 			result = 29*result + PrimaryKey.GetHashCode();
