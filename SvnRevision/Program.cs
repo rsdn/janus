@@ -29,20 +29,20 @@ namespace SvnRevision
 
 		private const string _separateLine = "----------------------------------------------";
 
-		private const string _svnAspDotNetHack              = "SVN_ASP_DOT_NET_HACK";
+		private const string _svnAspDotNetHack = "SVN_ASP_DOT_NET_HACK";
 		private const string _svnDirectoryNameAspDotNetHack = "_svn";
-		private const string _svnDirectoryNameCommon        = ".svn";
+		private const string _svnDirectoryNameCommon = ".svn";
 
-		private const string _svnEntriesFileName            = "entries";
-		private const string _svnFormatFileName             = "format";
-		private const string _xpathRevision                 = @"ns:wc-entries/ns:entry/@revision";
+		private const string _svnEntriesFileName = "entries";
+		private const string _svnFormatFileName = "format";
+		private const string _xpathRevision = @"ns:wc-entries/ns:entry/@revision";
 
-	    private const string _svnDBFileName                 = "wc.db";
-		
+		private const string _svnDBFileName = "wc.db";
+
 		private static readonly string _svnDirectoryName =
 			Environment.GetEnvironmentVariable(_svnAspDotNetHack) != null
-									? _svnDirectoryNameAspDotNetHack
-									: _svnDirectoryNameCommon;
+				? _svnDirectoryNameAspDotNetHack
+				: _svnDirectoryNameCommon;
 
 		[STAThread]
 		private static int Main(string[] args)
@@ -54,23 +54,23 @@ namespace SvnRevision
 				if (args.Length != 3)
 					throw new ArgumentException(_argumentInfo);
 
-				var workingFolder   = args[0];
-				var templatePath    = args[1];
+				var workingFolder = args[0];
+				var templatePath = args[1];
 				var destinationPath = args[2];
 
 
-    	        if (!Directory.Exists(workingFolder))
-			        throw new DirectoryNotFoundException();
+				if (!Directory.Exists(workingFolder))
+					throw new DirectoryNotFoundException();
 
-			    if (!File.Exists(templatePath))
-			        throw new FileNotFoundException(string.Empty, templatePath);
+				if (!File.Exists(templatePath))
+					throw new FileNotFoundException(string.Empty, templatePath);
 
-			    var revision = FindRevision(new DirectoryInfo(workingFolder), 0);
-			    Console.WriteLine("Current Revision is {0}", revision);
+				var revision = FindRevision(new DirectoryInfo(workingFolder), 0);
+				Console.WriteLine("Current Revision is {0}", revision);
 
-			    ProcessTemplate(templatePath, destinationPath, revision);
+				ProcessTemplate(templatePath, destinationPath, revision);
 
-			    return 0;
+				return 0;
 			}
 			catch (Exception e)
 			{
@@ -82,10 +82,10 @@ namespace SvnRevision
 			}
 		}
 
-		private static void ProcessTemplate(string templatePath, 
+		private static void ProcessTemplate(string templatePath,
 			string destinationPath, int revision)
 		{
-			var encoding  = Encoding.Default;
+			var encoding = Encoding.Default;
 			var destination = string.Empty;
 
 			string template;
@@ -147,10 +147,13 @@ namespace SvnRevision
 
 				switch (version.TrimEnd())
 				{
-					case "4": return GetRevisionVer4;
+					case "4":
+						return GetRevisionVer4;
 					case "8":
-					case "9": return GetRevisionVer8;
-                    case "12": return GetRevisionVer12;
+					case "9":
+						return GetRevisionVer8;
+					case "12":
+						return GetRevisionVer12;
 				}
 			}
 			else
@@ -185,37 +188,37 @@ namespace SvnRevision
 
 			using (var reader = new StreamReader(filePath))
 			{
-				var  doc = new XPathDocument(reader);
+				var doc = new XPathDocument(reader);
 				var nav = doc.CreateNavigator();
 
-			    if (nav.NameTable != null)
-			    {
-			        var manager = new XmlNamespaceManager(nav.NameTable);
-			        manager.AddNamespace("ns", "svn:");
+				if (nav.NameTable != null)
+				{
+					var manager = new XmlNamespaceManager(nav.NameTable);
+					manager.AddNamespace("ns", "svn:");
 
-			        var expr = nav.Compile(_xpathRevision);
-			        expr.SetContext(manager);
+					var expr = nav.Compile(_xpathRevision);
+					expr.SetContext(manager);
 
-			        var iterator = nav.Select(expr);
+					var iterator = nav.Select(expr);
 
-			        while (iterator.MoveNext())
-			        {
-			            try
-			            {
-			                if (iterator.Current != null)
-			                {
-			                    var revision = int.Parse(iterator.Current.Value,
-			                                             NumberStyles.Integer, CultureInfo.InvariantCulture);
+					while (iterator.MoveNext())
+					{
+						try
+						{
+							if (iterator.Current != null)
+							{
+								var revision = int.Parse(iterator.Current.Value,
+									NumberStyles.Integer, CultureInfo.InvariantCulture);
 
-			                    if (revision > maxRevision)
-			                        maxRevision = revision;
-			                }
-			            }
-			            catch (FormatException)
-			            {
-			            }
-			        }
-			    }
+								if (revision > maxRevision)
+									maxRevision = revision;
+							}
+						}
+						catch (FormatException)
+						{
+						}
+					}
+				}
 			}
 
 			return maxRevision;
@@ -239,7 +242,7 @@ namespace SvnRevision
 					{
 						if (lineCounter == 3)
 						{
-							var revision = int.Parse(line, 
+							var revision = int.Parse(line,
 								NumberStyles.Integer, CultureInfo.InvariantCulture);
 
 							if (revision > maxRevision)
@@ -261,17 +264,17 @@ namespace SvnRevision
 
 		private static int GetRevisionVer12(DirectoryInfo dir, int maxRevision)
 		{
-			string filePath = Path.Combine(dir.FullName, _svnDBFileName);
+			var filePath = Path.Combine(dir.FullName, _svnDBFileName);
 
 			if (!File.Exists(filePath))
 				return maxRevision;
 
-			string connectionString = string.Format("Data Source={0};Read Only=True", filePath);
+			var connectionString = string.Format("Data Source={0};Read Only=True", filePath);
 
-			using (var conn = new SQLiteConnection { ConnectionString = connectionString })
+			using (var conn = new SQLiteConnection {ConnectionString = connectionString})
 			{
 				conn.Open();
-				using (SQLiteCommand cmd = conn.CreateCommand())
+				using (var cmd = conn.CreateCommand())
 				{
 					cmd.CommandText = "SELECT MAX(revision) FROM nodes;";
 					maxRevision = Convert.ToInt32(cmd.ExecuteScalar(), CultureInfo.InvariantCulture);

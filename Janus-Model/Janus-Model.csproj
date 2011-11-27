@@ -306,7 +306,9 @@
       <Name>PropertyGridCustomizer</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
@@ -316,6 +318,7 @@
   </Target>
   -->
   <PropertyGroup>
-    <PreBuildEvent>rem "$(SolutionDir)\SvnRevision/$(OutDir)SvnRevision.exe" "$(SolutionDir)/" "$(ProjectDir)ApplicationInfo.template.cs" "$(ProjectDir)ApplicationInfo.cs"</PreBuildEvent>
+    <PreBuildEvent>rem "$(SolutionDir)\SvnRevision/$(OutDir)SvnRevision.exe" "$(SolutionDir)/" "$(ProjectDir)ApplicationInfo.template.cs" "$(ProjectDir)ApplicationInfo.cs"
+"$(SolutionDir)\HgVersion/$(OutDir)HgVersion.exe" "$(SolutionDir)/" "$(ProjectDir)ApplicationInfo.template.cs" "$(ProjectDir)ApplicationInfo.cs"</PreBuildEvent>
   </PropertyGroup>
 </Project>

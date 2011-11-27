@@ -10,7 +10,12 @@ namespace Rsdn.Janus
 	public class ApplicationInfo
 	{
 		public const string ApplicationName = "RSDN@Home";
-		public const string VersionString = "1.2.0.$WCREV$";
+
+		public const string VersionMajor = "$VER_MAJOR$";
+		public const string VersionMinor = "$VER_MINOR$";
+		public const string VersionBuild = "$VER_BUILD$";
+		public const string VersionRevision = "$VER_REVISION$";
+		public const string VersionString = VersionMajor + "." + VersionMinor + "." + VersionBuild + "." + VersionRevision;
 		public const string Release = "alpha 5";
 		public const string Company = "RSDN Team";
 		public const string Copyright = "Copyright © by RSDN Team (http://rsdn.ru), 2002-2011";
