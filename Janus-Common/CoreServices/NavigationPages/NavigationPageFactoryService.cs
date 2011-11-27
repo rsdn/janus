@@ -24,8 +24,8 @@ namespace Rsdn.Janus
 		#region Implementation of INavigationPageFactoryService
 
 		public INavigationPage CreatePage(
-			[NotNull] IServiceProvider serviceProvider,
-			[NotNull] string name,
+			IServiceProvider serviceProvider,
+			string name,
 			NavigationPageState state)
 		{
 			if (serviceProvider == null)
@@ -41,9 +41,7 @@ namespace Rsdn.Janus
 			return provider.CreateNavigationPage(serviceProvider, name, state);
 		}
 
-		public bool CanCreatePage(
-			[NotNull] IServiceProvider serviceProvider,
-			[NotNull] string name)
+		public bool CanCreatePage(IServiceProvider serviceProvider, string name)
 		{
 			if (serviceProvider == null)
 				throw new ArgumentNullException("serviceProvider");

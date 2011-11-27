@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Reactive.Subjects;
-using JetBrains.Annotations;
 
 using Rsdn.SmartApp;
 
@@ -26,7 +25,7 @@ namespace Rsdn.Janus
 
 		#region Implementation of INavigationHistoryService
 
-		public void SetHistoryStep([NotNull] NavigationHistoryStep step)
+		public void SetHistoryStep(NavigationHistoryStep step)
 		{
 			if (step == null)
 				throw new ArgumentNullException("step");

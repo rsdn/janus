@@ -40,18 +40,18 @@ namespace Rsdn.Janus
 							dynamicMenuProvider.MenuChanged.Subscribe(
 								arg => _menuChanged.OnNext(dynamicMenuProvider.MenuName));
 					});
-			
+
 			_menuCache = new ElementsCache<string, IMenuRoot>(CreateMenu);
 		}
 
 		#region IMenuService Members
 
-		public IMenuRoot GetMenu([NotNull] string menuName)
+		public IMenuRoot GetMenu(string menuName)
 		{
 			if (menuName == null)
 				throw new ArgumentNullException("menuName");
 			if (!MenuNamesValidator.IsValidMenuName(menuName))
-				throw new ArgumentException(@"Агрумент имеет некорректный формат.", "menuName");
+				throw new ArgumentException(@"Аргумент имеет некорректный формат.", "menuName");
 			if (!_menuProvidersLookup.Contains(menuName))
 				throw new ApplicationException(
 					"Меню с идентификатором '{0}' не может создать ни один провайдер меню.".FormatStr(menuName));

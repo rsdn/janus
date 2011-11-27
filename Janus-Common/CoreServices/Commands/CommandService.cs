@@ -38,7 +38,7 @@ namespace Rsdn.Janus
 			get { return _commands.Values; }
 		}
 
-		public ICommandInfo GetCommandInfo([NotNull] string commandName)
+		public ICommandInfo GetCommandInfo(string commandName)
 		{
 			if (commandName == null)
 				throw new ArgumentNullException("commandName");
@@ -51,7 +51,7 @@ namespace Rsdn.Janus
 			return result;
 		}
 
-		public bool IsCommandExists([NotNull] string commandName)
+		public bool IsCommandExists(string commandName)
 		{
 			if (commandName == null)
 				throw new ArgumentNullException("commandName");
