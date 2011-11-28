@@ -123,29 +123,63 @@
   <data name="colDescription.Text" xml:space="preserve">
     <value>Описание</value>
   </data>
+  <data name="btnCancel.Text" xml:space="preserve">
+    <value>Отмена</value>
+  </data>
+  <data name="label2.Text" xml:space="preserve">
+    <value>Форумы:</value>
+  </data>
   <data name="_exceptAnswersMeCheck.Text" xml:space="preserve">
     <value>Исключая ответы мне</value>
   </data>
-  <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>252, 20</value>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="_unCheckAllButton.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABIAAAASCAYAAABWzo5XAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAN9JREFUOE+llAEK
+        gzAQBP1IP9Uf9aGl1GClIkgI1saaXFlhJYg1VwwEFZPN7t1ocTpfRDuLvQGRsryKMTepqrvUtZGmeUjb
+        PqXrWrG2k75382FZoV8iEMMchpdOaMtJKuL9WyeEONzIOHgeR79MVTTWBJtRk1QEbqbpo3NEN7zSCURw
+        H0LQCW3FYV3UaGAh4jhnl3qgS3DyFxpYnIowFuuiRiNnfQ8NHqrq6BqNdUNYgiz1KRpbXT2MBmMdQiNt
+        SIxRxxjRwB8g/WQQCW4wVMUGGhABWySdInCjFsrhwfdfkC/Vf6ubeWkAAAAASUVORK5CYII=
+</value>
   </data>
-  <data name="label2.Text" xml:space="preserve">
-    <value>Пометить сообщения только в форумах:</value>
+  <data name="_checkAllButton.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABIAAAASCAYAAABWzo5XAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAMxJREFUOE/tlFEK
+        gzAQRL1IfzxSb9Sj9GCl1GClEggi1saarIywEAoxc4AGoh+S5+zMaHU6X4Td1dECpGluYsxd2vYhXWek
+        759i7UucszIMTqZp3F9WBB1B6mst8/zmQDklgGB7/+FAGAcH0nEUgvuyeA4ET/QgPEkhULOuXw4EJenh
+        dCSoCSFwIE3nVwlbiz1RXDDOOA57zGqu+kJXAyCFIGZ4Aoj6QlejJP9fjfJ3mKuGBhJj5DqWqwZSRVGx
+        qD9DrhqAQA0NKtVDn2+Qo4QufkN4LQAAAABJRU5ErkJggg==
+</value>
+  </data>
+  <data name="_checkInvertButton.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABIAAAASCAYAAABWzo5XAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAOJJREFUOE+dlFEK
+        g0AMRL1IfzxSb9Sj9GClVLFSEUTE2rVqZISRVHDNdiGuH85jkgxGp/NFrBX5DiBJcpM0vUuWPSTPUymK
+        p5TlS6qqlLqulnd8dwg6gphBPieAOPexOUI7EGzbIaTvnQ3EmUDImRACN8PwtYHohjfELLgZx9EG0tvR
+        EGsslo3igXaappa2bX6cWKIBzQoipOveCwjtcC6+aMTXWKBZQb4W9qIBCCooGhDoaBCCOygaFGKWGhIc
+        DS3WLf0Vja0TLmSaJlvGdDQ4XEIQVBzTn2EvGoDAjRlkTfcM94CsGlP8LUwAAAAASUVORK5CYII=
+</value>
+  </data>
+  <data name="_markBeforeRadio.Size" type="System.Drawing.Size, System.Drawing">
+    <value>186, 18</value>
   </data>
   <data name="_markBeforeRadio.Text" xml:space="preserve">
-    <value>Пометить сообщения до даты</value>
+    <value>Отметить сообщения до даты:</value>
   </data>
   <data name="_markBetweenRadio.Size" type="System.Drawing.Size, System.Drawing">
-    <value>211, 17</value>
+    <value>219, 18</value>
   </data>
   <data name="_markBetweenRadio.Text" xml:space="preserve">
-    <value>Пометить сообщения между датами</value>
+    <value>Отметить сообщения между датами:</value>
   </data>
   <data name="_markAfterRadio.Size" type="System.Drawing.Size, System.Drawing">
-    <value>196, 17</value>
+    <value>204, 18</value>
   </data>
   <data name="_markAfterRadio.Text" xml:space="preserve">
-    <value>Пометить сообщения после даты</value>
+    <value>Отметить сообщения после даты:</value>
   </data>
   <data name="_markAsCombo.Items" xml:space="preserve">
     <value>как прочитанные</value>
@@ -162,7 +196,32 @@
   <data name="_currentForumButton.Text" xml:space="preserve">
     <value>Текущий</value>
   </data>
-  <data name="$this.Text" xml:space="preserve">
-    <value>Пометка сообщений</value>
+  <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        AAABAAEAEBAAAAAAAABoBQAAFgAAACgAAAAQAAAAIAAAAAEACAAAAAAAAAEAAAAAAAAAAAAAAAEAAAAB
+        AAAAAAAAAACAAACAAAAAgIAAgAAAAIAAgACAgAAAwMDAAMDcwADwyqYABAQEAAgICAAMDAwAERERABYW
+        FgAcHBwAIiIiACkpKQBVVVUATU1NAEJCQgA5OTkAgHz/AFBQ/wCTANYA/+zMAMbW7wDW5+cAkKmtAAAA
+        MwAAAGYAAACZAAAAzAAAMwAAADMzAAAzZgAAM5kAADPMAAAz/wAAZgAAAGYzAABmZgAAZpkAAGbMAABm
+        /wAAmQAAAJkzAACZZgAAmZkAAJnMAACZ/wAAzAAAAMwzAADMZgAAzJkAAMzMAADM/wAA/2YAAP+ZAAD/
+        zAAzAAAAMwAzADMAZgAzAJkAMwDMADMA/wAzMwAAMzMzADMzZgAzM5kAMzPMADMz/wAzZgAAM2YzADNm
+        ZgAzZpkAM2bMADNm/wAzmQAAM5kzADOZZgAzmZkAM5nMADOZ/wAzzAAAM8wzADPMZgAzzJkAM8zMADPM
+        /wAz/zMAM/9mADP/mQAz/8wAM///AGYAAABmADMAZgBmAGYAmQBmAMwAZgD/AGYzAABmMzMAZjNmAGYz
+        mQBmM8wAZjP/AGZmAABmZjMAZmZmAGZmmQBmZswAZpkAAGaZMwBmmWYAZpmZAGaZzABmmf8AZswAAGbM
+        MwBmzJkAZszMAGbM/wBm/wAAZv8zAGb/mQBm/8wAzAD/AP8AzACZmQAAmTOZAJkAmQCZAMwAmQAAAJkz
+        MwCZAGYAmTPMAJkA/wCZZgAAmWYzAJkzZgCZZpkAmWbMAJkz/wCZmTMAmZlmAJmZmQCZmcwAmZn/AJnM
+        AACZzDMAZsxmAJnMmQCZzMwAmcz/AJn/AACZ/zMAmcxmAJn/mQCZ/8wAmf//AMwAAACZADMAzABmAMwA
+        mQDMAMwAmTMAAMwzMwDMM2YAzDOZAMwzzADMM/8AzGYAAMxmMwCZZmYAzGaZAMxmzACZZv8AzJkAAMyZ
+        MwDMmWYAzJmZAMyZzADMmf8AzMwAAMzMMwDMzGYAzMyZAMzMzADMzP8AzP8AAMz/MwCZ/2YAzP+ZAMz/
+        zADM//8AzAAzAP8AZgD/AJkAzDMAAP8zMwD/M2YA/zOZAP8zzAD/M/8A/2YAAP9mMwDMZmYA/2aZAP9m
+        zADMZv8A/5kAAP+ZMwD/mWYA/5mZAP+ZzAD/mf8A/8wAAP/MMwD/zGYA/8yZAP/MzAD/zP8A//8zAMz/
+        ZgD//5kA///MAGZm/wBm/2YAZv//AP9mZgD/Zv8A//9mACEApQBfX18Ad3d3AIaGhgCWlpYAy8vLALKy
+        sgDX19cA3d3dAOPj4wDq6uoA8fHxAPj4+ADw+/8ApKCgAICAgAAAAP8AAP8AAAD//wD/AAAA/wD/AP//
+        AAD///8AAAAAAAAAAAC1tQAAAAAAAAAAAAAAAAAJCRkZtbW1AAAAAAAAAAAJ3AnzGa6uCQnvAAAAAAAJ
+        CQkJ8/OurgkJ7wAAAAAACQncCfTzrq4ZCe8AAAAAAAlTU1P/9PMZGRnvAAAAAABTU1NTU//08xnxtQAA
+        AK2nU1NTU1N1//TzbgAAAKampk5TU1NTU3X/TAAAAACmrKxOgVNTU1NTUwAAAACsrKxOsrKyU1MAAEYA
+        AAAArKwuVrKysgICAAAAAAAAAABPVnh427ICAgAAAAAAAAAAl5cIwVayigAAAAAAAAAAAAAAmHhWsgAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAP8/AAD+AwAA/AAAAPgAAAD4AAAA+AAAAPgAAADgAQAAwAMAAMAH
+        AACANwAAgD8AAMA/AADAfwAA8P8AAP//AAA=
+</value>
   </data>
 </root>

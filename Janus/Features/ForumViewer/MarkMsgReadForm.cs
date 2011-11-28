@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
 
+// TODO: Добавлять картинки форумов нужно из StyleManager, а не закатывать в ресурсы
+
 namespace Rsdn.Janus
 {
 	/// <summary>
