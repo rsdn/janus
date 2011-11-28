@@ -51,6 +51,7 @@ namespace Rsdn.Janus
 			ICommandContext context, int? forumId)
 		{
 			MessageEditor.EditMessage(
+				context,
 				MessageFormMode.Add,
 				new MessageInfo(GetForumId(context, forumId)));
 		}

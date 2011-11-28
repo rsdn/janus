@@ -68,7 +68,10 @@ namespace Rsdn.Janus
 
 					var rootManager = new ServiceManager(true);
 
-					rootManager.Publish<IUIShell>(new UIShell(() => ApplicationManager.Instance.MainForm));
+					rootManager.Publish<IUIShell>(
+						new UIShell(
+							() => ApplicationManager.Instance.MainForm,
+							freeze => ApplicationManager.Instance.MainForm.Enabled = freeze));
 
 					if (Config.Instance.ShowSplash)
 					{

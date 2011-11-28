@@ -146,7 +146,7 @@ namespace Rsdn.Janus
 					DatabaseManager.GetMessageBody(context, msg.ID),
 					msg.UserNick));
 
-			MessageEditor.EditMessage(MessageFormMode.Reply, messageInfo);
+			MessageEditor.EditMessage(context, MessageFormMode.Reply, messageInfo);
 		}
 
 		[CommandStatusGetter("Janus.Forum.ReplyMessage")]

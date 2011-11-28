@@ -172,9 +172,10 @@ namespace Rsdn.Janus
 		[CommandStatusGetter("Janus.Forum.MessageEditor.Close")]
 		public CommandStatus QueryEditorCommandStatus(ICommandContext context)
 		{
-			return context.GetService<IMessageEditorService>() != null
-				? CommandStatus.Normal
-				: CommandStatus.Unavailable;
+			return
+				context.GetService<IMessageEditorService>() != null
+					? CommandStatus.Normal
+					: CommandStatus.Unavailable;
 		}
 	}
 }

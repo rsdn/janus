@@ -51,6 +51,7 @@ namespace Rsdn.Janus
 				msg.Set(_ => _.Hold, _ => true).Update();
 			}
 			MessageEditor.EditMessage(
+				_provider,
 				MessageFormMode.Edit,
 				info);
 			_provider

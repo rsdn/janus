@@ -198,14 +198,14 @@ namespace Rsdn.Janus
 						SmartIndent();
 					break;
 				case '[':
-					_messageEditor.ShowAutocomplete(1,
+					_messageEditor.ShowAutocomplete(
+						1,
 						_knownTags
 							.OrderBy(pair => pair.Key)
 							.Select(pair => (pair.Value ? "[{0}][/{0}]" : "[{0}]").FormatStr(pair.Key)));
 					break;
 				case ':':
-					_messageEditor.ShowAutocomplete(
-						1, _knownSmiles.OrderBy(smile => smile));
+					_messageEditor.ShowAutocomplete(1, _knownSmiles.OrderBy(smile => smile));
 					break;
 			}
 		}

@@ -25,7 +25,7 @@ namespace Rsdn.Janus
 		private const int _bugReportTopicId = 2855740;
 		private const int _bugReportForumId = 30;
 
-		private OutboxDummyForm _outboxForm;
+		private volatile OutboxDummyForm _outboxForm;
 		private readonly ITreeNode[] _collections;
 
 		public OutboxManager(IServiceProvider serviceProvider)
@@ -140,8 +140,11 @@ namespace Rsdn.Janus
 			return ((IPreviewSource)_previewSources[num]).GetData();
 		}
 
-		public void AddBugReport(string bugName, string bugDescription,
-			string stackTrace, bool showEditor)
+		public void AddBugReport(
+			string bugName,
+			string bugDescription,
+			string stackTrace,
+			bool showEditor)
 		{
 			var mi = new MessageInfo(_bugReportForumId, _bugReportTopicId,
 				bugName, string.Format(
@@ -152,7 +155,7 @@ namespace Rsdn.Janus
 					stackTrace));
 
 			if (showEditor)
-				MessageEditor.EditMessage(MessageFormMode.Add, mi);
+				MessageEditor.EditMessage(_serviceProvider, MessageFormMode.Add, mi);
 			else
 				NewMessages.Add(mi);
 		}

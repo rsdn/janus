@@ -711,9 +711,7 @@
     <Compile Include="Features\ForumViewer\MessageEditor\Menu\TagsBarProvider.cs" />
     <Compile Include="Features\ForumViewer\FeatureActiveForumService.cs" />
     <Compile Include="Features\ForumViewer\FeatureActiveMessageService.cs" />
-    <Compile Include="Core\Commands\Extensibility\CommandProviderStrategiesFactory.cs" />
-    <Compile Include="Core\Commands\Extensibility\CommandTargetStrategy.cs" />
-    <Compile Include="Core\Commands\Extensibility\CommandTargetStrategiesFactory.cs" />
+    <Compile Include="Core\Commands\CommandStrategiesFactory.cs" />
     <Compile Include="Core\ApplicationCommands\ApplicationCommandProvider.cs" />
     <Compile Include="Core\ApplicationCommands\ApplicationCommandTarget.cs" />
     <Compile Include="Core\DataManagement\Commands\DatabaseCommandProvider.cs" />
@@ -1828,8 +1826,8 @@
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PreBuildEvent>"$(SolutionDir)\LocUtil2/$(OutDir)LocUtil2.exe" "$(ProjectDir)SR.resx" "Rsdn.Janus" "public" "$(ProjectDir)/"
-"$(SolutionDir)\ImageUtil/$(OutDir)ImageUtil.exe" "$(ProjectDir)images" "$(ProjectDir)Resources/Images.resx"</PreBuildEvent>
+    <PreBuildEvent>"$(SolutionDir)LocUtil2\$(OutDir)LocUtil2.exe" "$(ProjectDir)SR.resx" "Rsdn.Janus" "public" "$(ProjectDir)/"
+"$(SolutionDir)ImageUtil\$(OutDir)ImageUtil.exe" "$(ProjectDir)images" "$(ProjectDir)Resources/Images.resx"</PreBuildEvent>
     <PostBuildEvent>mkdir "$(TargetDir)udf\"
 mkdir "$(TargetDir)intl\"
 set FBDIR=$(SolutionDir)\Dependencies\firebird\

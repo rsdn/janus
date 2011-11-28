@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Threading;
 using System.Windows.Forms;
+
+using JetBrains.Annotations;
+
 using Rsdn.Janus.ObjectModel;
 using Rsdn.SmartApp;
 
@@ -11,15 +14,18 @@ namespace Rsdn.Janus
 	internal class UIShell : IUIShell
 	{
 		private readonly Func<IWin32Window> _parentWindowGetter;
+		private readonly Action<bool> _uiFreezer;
 		private readonly AsyncOperation _ctorAsyncOperation;
 		private readonly HashSet<UIFreezer> _freezers = new HashSet<UIFreezer>();
 		private readonly SynchronizationContext _uiSyncContext = SynchronizationContext.Current;
 
-		public UIShell(Func<IWin32Window> parentWindowGetter)
+		public UIShell(Func<IWin32Window> parentWindowGetter, [NotNull] Action<bool> uiFreezer)
 		{
 			if (parentWindowGetter == null)
 				throw new ArgumentNullException("parentWindowGetter");
+			if (uiFreezer == null) throw new ArgumentNullException("uiFreezer");
 			_parentWindowGetter = parentWindowGetter;
+			_uiFreezer = uiFreezer;
 			_ctorAsyncOperation = AsyncHelper.CreateOperation();
 		}
 
@@ -61,7 +67,7 @@ namespace Rsdn.Janus
 					_ctorAsyncOperation.Post(
 						() =>
 						{
-							ApplicationManager.Instance.MainForm.Enabled = false;
+							_uiFreezer(false);
 							var notifyIconSvc = provider.GetService<INotifyIconService>();
 							if (notifyIconSvc != null)
 								notifyIconSvc.Enabled = false;
@@ -78,8 +84,8 @@ namespace Rsdn.Janus
 							{
 								_ctorAsyncOperation.Post(
 									() =>
-									{
-										ApplicationManager.Instance.MainForm.Enabled = true;
+										{
+											_uiFreezer(true);
 										var notifyIconSvc = provider.GetService<INotifyIconService>();
 										if (notifyIconSvc != null)
 											notifyIconSvc.Enabled = true;

@@ -1,13 +1,15 @@
-﻿namespace Rsdn.Janus
+﻿using System;
+
+namespace Rsdn.Janus
 {
 	/// <summary>
 	/// Редактор сообщений.
 	/// </summary>
 	public static class MessageEditor
 	{
-		public static void EditMessage(MessageFormMode mode, MessageInfo msgInfo)
+		public static void EditMessage(IServiceProvider provider, MessageFormMode mode, MessageInfo msgInfo)
 		{
-			new MessageForm(ApplicationManager.Instance.ServiceProvider, mode, msgInfo).Show();
+			new MessageForm(provider, mode, msgInfo).Show();
 		}
 	}
 }
