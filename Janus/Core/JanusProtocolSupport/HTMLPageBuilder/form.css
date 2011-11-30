@@ -44,7 +44,7 @@ table.nm
 	border-color: #65a7cb;
 	font-family: verdana, tahoma;
 	background-color: #cfe5f0;
-	cursor: pointer; cursor: hand;
+	cursor: pointer;
 }
 
 .fbg
@@ -54,7 +54,7 @@ table.nm
 	border-color: #999999;
 	font-family: verdana, tahoma;
 	background-color: #D4D4D4;
-	cursor: pointer; cursor: hand;
+	cursor: pointer;
 }
 
 th.ghr

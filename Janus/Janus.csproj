@@ -78,11 +78,11 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\Dependencies\lucene\Lucene.Net.dll</HintPath>
     </Reference>
-    <Reference Include="R.SAT-Common, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="R.SAT-Common, Version=1.2.10360.0, Culture=neutral, PublicKeyToken=16a3f5b3eba07693, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\Dependencies\R.SAT\R.SAT-Common.dll</HintPath>
     </Reference>
-    <Reference Include="R.SAT-Model, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="R.SAT-Model, Version=1.2.10360.0, Culture=neutral, PublicKeyToken=16a3f5b3eba07693, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\Dependencies\R.SAT\R.SAT-Model.dll</HintPath>
     </Reference>

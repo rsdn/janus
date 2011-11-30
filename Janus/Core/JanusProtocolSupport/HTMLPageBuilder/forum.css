@@ -80,7 +80,7 @@ td.lp
 	background-color: #F4FFF4;
 	padding: 0px 0px;
 	width: 32px;
-	cursor: pointer; cursor: hand;
+	cursor: pointer;
 }
 
 td.li
@@ -160,7 +160,7 @@ td.copyCode a:hover   { text-decoration: none; color: navy; }
 td.copyCode
 {
     margin:           0;
-    padding:          2px 2x 2px 10px;
+    padding:          2px 2px 2px 10px;
     background-color: rgb(239, 239, 247);
     font-size:        8pt;
     font-family:      Arial;
@@ -234,7 +234,7 @@ textarea.nm
 .nmb
 {
 	border:1px solid #BFD8C4; background-color: #E4F4E8;
-	cursor: pointer; cursor: hand;
+	cursor: pointer;
 	
 }
 
