@@ -9,7 +9,6 @@ using System.Windows.Forms;
 
 using Rsdn.Framework.Formatting;
 using Rsdn.Janus.Framework.Imaging;
-using Rsdn.Janus.ObjectModel;
 using Rsdn.SmartApp;
 
 namespace Rsdn.Janus
@@ -100,7 +99,7 @@ namespace Rsdn.Janus
 									Export2Text(messages, fs, pd);
 									break;
 								case ExportFormat.HTML:
-									Export2HTML(messages, fs, pd);
+									Export2HTML(provider, messages, fs, pd);
 									break;
 								case ExportFormat.MHT:
 									Export2Mht(provider, messages, fs, pd);
@@ -285,10 +284,10 @@ namespace Rsdn.Janus
 		#region Экспорт в html
 
 		#region Собственно в html
-		private static void Export2HTML(IList<IMsg> msgs, Stream fs, ProgressDelegate pd)
+		private static void Export2HTML(IServiceProvider provider, IList<IMsg> msgs, Stream fs, ProgressDelegate pd)
 		{
 			using (var sw = new StreamWriter(fs, Encoding.Default))
-				sw.Write(BuildHTMLPage(msgs, pd, false));
+				sw.Write(BuildHTMLPage(provider, msgs, pd, false));
 		}
 		#endregion
 
@@ -335,7 +334,7 @@ Content-Transfer-Encoding: binary
 					codePage));
 				sw.Flush();
 
-				var htmlText = BuildHTMLPage(msgs, pd, true);
+				var htmlText = BuildHTMLPage(provider, msgs, pd, true);
 				var page = Encoding.GetEncoding(codePage).GetBytes(htmlText);
 				fs.Write(page, 0, page.Length);
 
@@ -374,12 +373,15 @@ Content-Transfer-Encoding: binary
 		private const string _messageFormatResource = _resourcePrefix + "MessageFormat.html";
 		private const string _resourcePrefix = "Rsdn.Janus.Features.ForumViewer.Export.";
 
-		private static string BuildHTMLPage(IList<IMsg> msgs,
-			ProgressDelegate pd, bool processSmiles)
+		private static string BuildHTMLPage(
+			IServiceProvider provider,
+			IList<IMsg> msgs,
+			ProgressDelegate pd,
+			bool processSmiles)
 		{
 			var formatter = new TextFormatter();
 			var sb = new StringBuilder();
-			var forum = Forum.CreateInstance();
+			var forum = new Forum(provider);
 			forum.LoadData(msgs[0].ForumID);
 			sb.AppendFormat(
 				@"<tr><td class='s' colspan='2' align='center'>{0}&nbsp;<font size='1'>[{1}]</font></td></tr>",

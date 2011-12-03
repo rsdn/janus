@@ -5,7 +5,6 @@ using System.Reactive.Disposables;
 using System.Windows.Forms;
 
 using BLToolkit.Mapping;
-using BLToolkit.Reflection;
 
 using Rsdn.Janus.ObjectModel;
 using Rsdn.TreeGrid;
@@ -389,10 +388,5 @@ namespace Rsdn.Janus
 		}
 
 		#endregion
-
-		public static Forum CreateInstance()
-		{
-			return TypeAccessor<Forum>.CreateInstance();
-		}
 	}
 }
