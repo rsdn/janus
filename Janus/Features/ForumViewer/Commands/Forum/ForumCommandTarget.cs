@@ -26,8 +26,7 @@ namespace Rsdn.Janus
 		}
 
 		[CommandExecutor("Janus.Forum.ShowForumArticles")]
-		public void ExecuteShowForumArticles(
-			ICommandContext context, int? forumId)
+		public void ExecuteShowForumArticles(ICommandContext context, int? forumId)
 		{
 			context.OpenUrlInBrowser(
 				JanusProtocolDispatcher.FormatURI(
@@ -194,9 +193,10 @@ namespace Rsdn.Janus
 			if (forumId != null)
 				return forumId.Value;
 
-			var currentForum = provider
-				.GetRequiredService<IActiveForumService>()
-				.ActiveForum;
+			var currentForum =
+				provider
+					.GetRequiredService<IActiveForumService>()
+					.ActiveForum;
 			return currentForum != null ? currentForum.ID : -1;
 		}
 	}

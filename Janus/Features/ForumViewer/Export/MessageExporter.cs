@@ -25,14 +25,6 @@ namespace Rsdn.Janus
 		private static readonly string _exportPrepareText =
 			SR.Forum.ExportMessages.ExportPrepareMessage;
 
-		private static readonly string[] _smiles =
-			new[]
-			{
-				"beer", "biggrin", "confused", "crash", "down", "frown", "lol",
-				"maniac", "no", "shuffle", "smile", "smirk", "sup", "super",
-				"user", "wink", "wow", "xz"
-			};
-
 		private delegate void ProgressDelegate(int count, int total);
 		#endregion
 
@@ -54,7 +46,11 @@ namespace Rsdn.Janus
 							.GetMainWindowParent()) != DialogResult.OK)
 					return;
 
-				ProgressWorker.Run(provider, false,
+				var uiInfo = new {emd.FileName, emd.ExportMode, emd.ExportFormat, emd.UnreadMessagesOnly};
+
+				ProgressWorker.Run(
+					provider,
+					false,
 					pi =>
 					{
 						pi.SetProgressText(_exportPrepareText);
@@ -64,25 +60,25 @@ namespace Rsdn.Janus
 						// Prepare msg list
 						IList<IMsg> messages = null;
 
-						switch (emd.ExportMode)
+						switch (uiInfo.ExportMode)
 						{
 							case ExportMode.Messages:
 								messages = new List<IMsg>(
-									emd.UnreadMessagesOnly
-									? activeMsgSvc.ActiveMessages
-									: activeMsgSvc.ActiveMessages.Where(msg => !msg.IsRead));
+									uiInfo.UnreadMessagesOnly
+										? activeMsgSvc.ActiveMessages
+										: activeMsgSvc.ActiveMessages.Where(msg => !msg.IsRead));
 								break;
 
 							case ExportMode.Topics:
 								messages = new List<IMsg>(100);
 								foreach (var msg in activeMsgSvc.ActiveMessages)
-									GetAllChildren(msg.Topic, messages, emd.UnreadMessagesOnly);
+									GetAllChildren(msg.Topic, messages, uiInfo.UnreadMessagesOnly);
 								break;
 
 							case ExportMode.Forum:
 								messages = new List<IMsg>(1000);
 								foreach (IMsg msg in Forums.Instance.ActiveForum.Msgs)
-									GetAllChildren(msg, messages, emd.UnreadMessagesOnly);
+									GetAllChildren(msg, messages, uiInfo.UnreadMessagesOnly);
 								break;
 						}
 
@@ -93,8 +89,8 @@ namespace Rsdn.Janus
 								pi.ReportProgress(total, count);
 							};
 
-						using (var fs = new FileStream(emd.FileName, FileMode.Create))
-							switch (emd.ExportFormat)
+						using (var fs = new FileStream(uiInfo.FileName, FileMode.Create))
+							switch (uiInfo.ExportFormat)
 							{
 								case ExportFormat.Text:
 									Export2Text(messages, fs, pd);
@@ -345,20 +341,19 @@ Content-Transfer-Encoding: Base64
 				var page = encoding.GetBytes(htmlText);
 				fs.Write(page, 0, page.Length);
 
-				/* Здесь надобы поиск по странице - Page
-				 * надо найти какие картинки встречаются - типа smile.gif.., 
-				 * (я в таком поиске не силен.... :( )
-				 * создать список таких файлов и добалять тока их.
-				 * Может и надо, но пока все таки запихивать весь каталог images не стоит, 
-				 * смайлов там едва половина
-				 */
+				var usedSmileFiles =
+					msgs
+						.SelectMany(msg => TextFormatter.GetSmileFiles(msg.Body))
+						.Distinct();
 
 				const string prefix = @"ForumImages\";
 
-				foreach (var smileName in _smiles)
+				foreach (var smileName in usedSmileFiles)
 				{
-					var smileImage = provider.GetRequiredService<IStyleImageManager>()
-						.GetImage(prefix + smileName, StyleImageType.ConstSize);
+					var smileImage =
+						provider
+							.GetRequiredService<IStyleImageManager>()
+							.GetImage(prefix + smileName, StyleImageType.ConstSize);
 					var ifi = ImageFormatInfo.FromImageFormat(smileImage.RawFormat);
 
 					sw.Write(string.Format(_mhtContentImageHeader,
@@ -398,8 +393,7 @@ Content-Transfer-Encoding: Base64
 				forum.Description, forum.Name);
 
 			string messageFormat;
-			using (var rd = new StreamReader(Assembly.GetExecutingAssembly()
-					.GetRequiredResourceStream(_messageFormatResource)))
+			using (var rd = new StreamReader(Assembly.GetExecutingAssembly().GetRequiredResourceStream(_messageFormatResource)))
 				messageFormat = rd.ReadToEnd();
 
 			var i = 0;
@@ -407,7 +401,8 @@ Content-Transfer-Encoding: Base64
 			{
 				var formattedRating = msg.GetFormattedRating();
 
-				sb.AppendFormat(messageFormat,
+				sb.AppendFormat(
+					messageFormat,
 					msg.ID,
 					msg.Subject,
 					msg.ParentID,

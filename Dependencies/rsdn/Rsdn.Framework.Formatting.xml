@@ -4,6 +4,239 @@
         <name>Rsdn.Framework.Formatting</name>
     </assembly>
     <members>
+        <member name="T:Rsdn.Framework.Formatting.FormatterHelper">
+            <summary>
+            Helper methods for use with formatter.
+            </summary>
+        </member>
+        <member name="M:Rsdn.Framework.Formatting.FormatterHelper.Trim(System.Text.StringBuilder,System.Char[])">
+            <summary>
+            Trim sides of string.
+            </summary>
+        </member>
+        <member name="M:Rsdn.Framework.Formatting.FormatterHelper.IsEmpty(System.Text.StringBuilder)">
+            <summary>
+            Returns true is StringBuilder is empty.
+            </summary>
+        </member>
+        <member name="M:Rsdn.Framework.Formatting.FormatterHelper.Replace(System.Text.RegularExpressions.Regex,System.Text.StringBuilder,System.String)">
+            <summary>
+            Replace parts of StringBuilder by Regex.
+            </summary>
+        </member>
+        <member name="M:Rsdn.Framework.Formatting.FormatterHelper.Replace(System.Text.RegularExpressions.Regex,System.Text.StringBuilder,System.Text.RegularExpressions.MatchEvaluator)">
+            <summary>
+            Replace parts of StringBuilder by Regex.
+            </summary>
+        </member>
+        <member name="M:Rsdn.Framework.Formatting.FormatterHelper.Replace(System.Text.StringBuilder,System.String,System.String)">
+            <summary>
+            Replace parts of StringBuilder by Regex.
+            </summary>
+        </member>
+        <member name="M:Rsdn.Framework.Formatting.FormatterHelper.ReplaceTagsWQ(System.Text.StringBuilder)">
+            <summary>
+            Заменяет служебные символы HTML на их аналоги исключая '"'.
+            </summary>
+            <param name="sb">Исходный текст.</param>
+            <returns>Результат.</returns>
+        </member>
+        <member name="M:Rsdn.Framework.Formatting.FormatterHelper.ReplaceTagsWQ(System.String)">
+            <summary>
+            Заменяет служебные символы HTML на их аналоги исключая '"'.
+            </summary>
+            <param name="str">Исходный текст.</param>
+            <returns>Результат.</returns>
+        </member>
+        <member name="M:Rsdn.Framework.Formatting.FormatterHelper.ReplaceTags(System.String)">
+            <summary>
+            Заменяет служебные символы HTML на их аналоги.
+            </summary>
+            <param name="str">Исходный текст.</param>
+            <returns>Результат.</returns>
+        </member>
+        <member name="M:Rsdn.Framework.Formatting.FormatterHelper.ReplaceTags(System.Object)">
+            <summary>
+            Заменяет служебные символы HTML на их аналоги.
+            </summary>
+            <param name="str">Исходный текст.</param>
+            <returns>Результат.</returns>
+        </member>
+        <member name="M:Rsdn.Framework.Formatting.FormatterHelper.EncodeJScriptText(System.String)">
+            <summary>
+            Подготавливает текст для JScript.
+            </summary>
+            <warning>Текст не должен содержать спецмаркеры :quotes:, :apostroph: !</warning>
+            <param name="str">Исходная строка.</param>
+            <returns>Преобразованная строка.</returns>
+        </member>
+        <member name="M:Rsdn.Framework.Formatting.FormatterHelper.EncodeAgainstXSS(System.String)">
+            <summary>
+            Подготавливает текст для предотовращения XSS (Cross Site Scripting)
+            Используется, в основном для кодирования адресов (ссылок, картинок).
+            </summary>
+            <param name="value">Исходный текст.</param>
+            <returns>Преобразованный текст.</returns>
+        </member>
+        <member name="M:Rsdn.Framework.Formatting.FormatterHelper.ToInt(System.Object)">
+            <summary>
+            Преобразует object в int. 
+            В случае возникновения исключения возвращается 0.
+            </summary>
+            <param name="o">Преобразуемый объект.</param>
+            <returns>Результат.</returns>
+        </member>
+        <member name="M:Rsdn.Framework.Formatting.FormatterHelper.ToInt(System.Object,System.Int32)">
+            <summary>
+            Преобразует object в int. 
+            В случае возникновения исключения возвращается errorValue.
+            </summary>
+            <param name="o">Преобразуемый объект.</param>
+            <param name="errorValue">Значение возвращаемое если произошла ошибка.</param>
+            <returns>Результат.</returns>
+        </member>
+        <member name="M:Rsdn.Framework.Formatting.FormatterHelper.ToDouble(System.Object)">
+            <summary>
+            Преобразует object в double. 
+            В случае возникновения исключения возвращается 0.
+            </summary>
+            <param name="o">Преобразуемый объект.</param>
+            <returns>Результат.</returns>
+        </member>
+        <member name="F:Rsdn.Framework.Formatting.FormatterHelper._tagsExtractor">
+            <summary>
+            Message tag extractor
+            </summary>
+        </member>
+        <member name="M:Rsdn.Framework.Formatting.FormatterHelper.ExtractTags(System.String)">
+            <summary>
+            Extract tags from string
+            </summary>
+            <param name="tags"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Rsdn.Framework.Formatting.FormatterHelper.ExtractTags(System.String,System.Text.RegularExpressions.MatchEvaluator)">
+            <summary>
+            Format tags
+            </summary>
+            <param name="tags"></param>
+            <param name="eval">Tag transformer</param>
+        </member>
+        <member name="M:Rsdn.Framework.Formatting.FormatterHelper.RemoveQuotations(System.String)">
+            <summary>
+             Убирает цитирование из текста сообщения.
+            </summary>
+             <param name="msg">Сообщение.</param>
+             <returns>Обработанное сообщение</returns>
+        </member>
+        <member name="M:Rsdn.Framework.Formatting.FormatterHelper.GetLangInfos">
+            <summary>
+            Returns all supported language infos.
+            </summary>
+        </member>
+        <member name="M:Rsdn.Framework.Formatting.FormatterHelper.GetCodeFormatter(System.String)">
+            <summary>
+            Returns code formatter by language name.
+            </summary>
+        </member>
+        <member name="M:Rsdn.Framework.Formatting.FormatterHelper.GetCodeFormatter(Rsdn.Framework.Formatting.CodeLangInfo)">
+            <summary>
+            Returns code formatter by language info.
+            </summary>
+        </member>
+        <member name="M:Rsdn.Framework.Formatting.FormatterHelper.MarkupCode(System.String,System.String)">
+            <summary>
+            Markup code with xml.
+            </summary>
+        </member>
+        <member name="M:Rsdn.Framework.Formatting.FormatterHelper.MarkupCode(Rsdn.Framework.Formatting.CodeLangInfo,System.String)">
+            <summary>
+            Markup code with xml.
+            </summary>
+        </member>
+        <member name="M:Rsdn.Framework.Formatting.FormatterHelper.GetCodeTagNames">
+            <summary>
+            Returns all known tag names.
+            </summary>
+        </member>
+        <member name="M:Rsdn.Framework.Formatting.FormatterHelper.GetCodeFormatterByTag(System.String)">
+            <summary>
+            Returns code formatter by tag name.
+            </summary>
+        </member>
+        <member name="M:Rsdn.Framework.Formatting.FormatterHelper.MarkupCodeByTag(System.String,System.String)">
+            <summary>
+            Markup code with xml.
+            </summary>
+        </member>
+        <member name="T:Rsdn.Framework.Formatting.CodeLangInfo">
+            <summary>
+            Information about supported code language.
+            </summary>
+        </member>
+        <member name="M:Rsdn.Framework.Formatting.CodeLangInfo.#ctor(System.String,System.String)">
+            <summary>
+            Initialize instance.
+            </summary>
+        </member>
+        <member name="P:Rsdn.Framework.Formatting.CodeLangInfo.Name">
+            <summary>
+            Unique language name.
+            </summary>
+        </member>
+        <member name="P:Rsdn.Framework.Formatting.CodeLangInfo.DisplayName">
+            <summary>
+            User friendly language name.
+            </summary>
+        </member>
+        <member name="T:Rsdn.Framework.Formatting.Resources.ResourceHandler">
+            <summary>
+            HTTP handler for images in resources.
+            </summary>
+        </member>
+        <member name="M:Rsdn.Framework.Formatting.Resources.ResourceHandler.FormatLink(System.String)">
+            <summary>
+            Format link for handler.
+            </summary>
+        </member>
+        <member name="P:Rsdn.Framework.Formatting.Resources.ResourceHandler.HandlerName">
+            <summary>
+            Returns handler name.
+            </summary>
+        </member>
+        <member name="T:Rsdn.Framework.Formatting.Matcher">
+            <summary>
+            Helper class for counting of matches.
+            </summary>
+        </member>
+        <member name="M:Rsdn.Framework.Formatting.Matcher.#ctor(System.String)">
+            <summary>
+            Class constructor
+            </summary>
+            <param name="pattern">Match replacement pattern</param>
+        </member>
+        <member name="M:Rsdn.Framework.Formatting.Matcher.Match(System.Text.RegularExpressions.Match)">
+            <summary>
+            Match evaluator
+            </summary>
+            <param name="match">Match</param>
+            <returns>Replacement string</returns>
+        </member>
+        <member name="M:Rsdn.Framework.Formatting.Matcher.Reset">
+            <summary>
+            Reset evaluator
+            </summary>
+        </member>
+        <member name="P:Rsdn.Framework.Formatting.Matcher.Count">
+            <summary>
+            Get count of matches
+            </summary>
+        </member>
+        <member name="P:Rsdn.Framework.Formatting.Matcher.Item(System.Int32)">
+            <summary>
+            Get evaluated match by number
+            </summary>
+        </member>
         <member name="T:Rsdn.Framework.Formatting.QueryBuilder">
             <summary>
             Summary description for QueryBuilder.
@@ -63,37 +296,194 @@
             </param>
             <returns>String presentation of query parameters.</returns>
         </member>
-        <member name="T:Rsdn.Framework.Formatting.Matcher">
+        <member name="T:Rsdn.Framework.Formatting.Lazy`1">
             <summary>
-            Helper class for counting of matches.
+            Lazy&lt;T&gt; from FW4
+            </summary>
+            <remarks>Not thread safe</remarks>
+        </member>
+        <member name="T:Rsdn.Framework.Formatting.JetBrains.Annotations.StringFormatMethodAttribute">
+            <summary>
+            Indicates that marked method builds string by format pattern and (optional) arguments. 
+            Parameter, which contains format string, should be given in constructor.
+            The format string should be in <see cref="M:System.String.Format(System.IFormatProvider,System.String,System.Object[])"/> -like form
             </summary>
         </member>
-        <member name="M:Rsdn.Framework.Formatting.Matcher.#ctor(System.String)">
+        <member name="M:Rsdn.Framework.Formatting.JetBrains.Annotations.StringFormatMethodAttribute.#ctor(System.String)">
             <summary>
-            Class constructor
+            Initializes new instance of StringFormatMethodAttribute
             </summary>
-            <param name="pattern">Match replacement pattern</param>
+            <param name="formatParameterName">Specifies which parameter of an annotated method should be treated as format-string</param>
         </member>
-        <member name="M:Rsdn.Framework.Formatting.Matcher.Match(System.Text.RegularExpressions.Match)">
+        <member name="P:Rsdn.Framework.Formatting.JetBrains.Annotations.StringFormatMethodAttribute.FormatParameterName">
             <summary>
-            Match evaluator
-            </summary>
-            <param name="match">Match</param>
-            <returns>Replacement string</returns>
-        </member>
-        <member name="M:Rsdn.Framework.Formatting.Matcher.Reset">
-            <summary>
-            Reset evaluator
+            Gets format parameter name
             </summary>
         </member>
-        <member name="P:Rsdn.Framework.Formatting.Matcher.Count">
+        <member name="T:Rsdn.Framework.Formatting.JetBrains.Annotations.InvokerParameterNameAttribute">
             <summary>
-            Get count of matches
+            Indicates that the function argument should be string literal and match one  of the parameters of the caller function.
+            For example, <see cref="T:System.ArgumentNullException"/> has such parameter.
             </summary>
         </member>
-        <member name="P:Rsdn.Framework.Formatting.Matcher.Item(System.Int32)">
+        <member name="T:Rsdn.Framework.Formatting.JetBrains.Annotations.AssertionMethodAttribute">
             <summary>
-            Get evaluated match by number
+            Indicates that the marked method is assertion method, i.e. it halts control flow if one of the conditions is satisfied. 
+            To set the condition, mark one of the parameters with <see cref="T:Rsdn.Framework.Formatting.JetBrains.Annotations.AssertionConditionAttribute"/> attribute
+            </summary>
+            <seealso cref="T:Rsdn.Framework.Formatting.JetBrains.Annotations.AssertionConditionAttribute"/>
+        </member>
+        <member name="T:Rsdn.Framework.Formatting.JetBrains.Annotations.AssertionConditionAttribute">
+            <summary>
+            Indicates the condition parameter of the assertion method. 
+            The method itself should be marked by <see cref="T:Rsdn.Framework.Formatting.JetBrains.Annotations.AssertionMethodAttribute"/> attribute.
+            The mandatory argument of the attribute is the assertion type.
+            </summary>
+            <seealso cref="T:Rsdn.Framework.Formatting.JetBrains.Annotations.AssertionConditionType"/>
+        </member>
+        <member name="M:Rsdn.Framework.Formatting.JetBrains.Annotations.AssertionConditionAttribute.#ctor(Rsdn.Framework.Formatting.JetBrains.Annotations.AssertionConditionType)">
+            <summary>
+            Initializes new instance of AssertionConditionAttribute
+            </summary>
+            <param name="conditionType">Specifies condition type</param>
+        </member>
+        <member name="P:Rsdn.Framework.Formatting.JetBrains.Annotations.AssertionConditionAttribute.ConditionType">
+            <summary>
+            Gets condition type
+            </summary>
+        </member>
+        <member name="T:Rsdn.Framework.Formatting.JetBrains.Annotations.AssertionConditionType">
+            <summary>
+            Specifies assertion type. If the assertion method argument satisifes the condition, then the execution continues. 
+            Otherwise, execution is assumed to be halted
+            </summary>
+        </member>
+        <member name="F:Rsdn.Framework.Formatting.JetBrains.Annotations.AssertionConditionType.IsTrue">
+            <summary>
+            Indicates that the marked parameter should be evaluated to true
+            </summary>
+        </member>
+        <member name="F:Rsdn.Framework.Formatting.JetBrains.Annotations.AssertionConditionType.IsFalse">
+            <summary>
+            Indicates that the marked parameter should be evaluated to false
+            </summary>
+        </member>
+        <member name="F:Rsdn.Framework.Formatting.JetBrains.Annotations.AssertionConditionType.IsNull">
+            <summary>
+            Indicates that the marked parameter should be evaluated to null value
+            </summary>
+        </member>
+        <member name="F:Rsdn.Framework.Formatting.JetBrains.Annotations.AssertionConditionType.IsNotNull">
+            <summary>
+            Indicates that the marked parameter should be evaluated to not null value
+            </summary>
+        </member>
+        <member name="T:Rsdn.Framework.Formatting.JetBrains.Annotations.TerminatesProgramAttribute">
+            <summary>
+            Indicates that the marked method unconditionally terminates control flow execution.
+            For example, it could unconditionally throw exception
+            </summary>
+        </member>
+        <member name="T:Rsdn.Framework.Formatting.JetBrains.Annotations.CanBeNullAttribute">
+            <summary>
+            Indicates that the value of marked element could be <c>null</c> sometimes, so the check for <c>null</c> is necessary before its usage
+            </summary>
+        </member>
+        <member name="T:Rsdn.Framework.Formatting.JetBrains.Annotations.NotNullAttribute">
+            <summary>
+            Indicates that the value of marked element could never be <c>null</c>
+            </summary>
+        </member>
+        <member name="T:Rsdn.Framework.Formatting.JetBrains.Annotations.CannotApplyEqualityOperatorAttribute">
+            <summary>
+            Indicates that the value of marked type (or its derivatives) cannot be compared using '==' or '!=' operators.
+            There is only exception to compare with <c>null</c>, it is permitted
+            </summary>
+        </member>
+        <member name="T:Rsdn.Framework.Formatting.JetBrains.Annotations.BaseTypeRequiredAttribute">
+            <summary>
+            When applied to target attribute, specifies a requirement for any type which is marked with 
+            target attribute to implement or inherit specific type or types
+            </summary>
+            <example>
+            <code>
+            [BaseTypeRequired(typeof(IComponent)] // Specify requirement
+            public class ComponentAttribute : Attribute 
+            {}
+            
+            [Component] // ComponentAttribute requires implementing IComponent interface
+            public class MyComponent : IComponent
+            {}
+            </code>
+            </example>
+        </member>
+        <member name="M:Rsdn.Framework.Formatting.JetBrains.Annotations.BaseTypeRequiredAttribute.#ctor(System.Type[])">
+            <summary>
+            Initializes new instance of BaseTypeRequiredAttribute
+            </summary>
+            <param name="baseTypes">Specifies which types are required</param>
+        </member>
+        <member name="P:Rsdn.Framework.Formatting.JetBrains.Annotations.BaseTypeRequiredAttribute.BaseTypes">
+            <summary>
+            Gets enumerations of specified base types
+            </summary>
+        </member>
+        <member name="T:Rsdn.Framework.Formatting.JetBrains.Annotations.UsedImplicitlyAttribute">
+            <summary>
+            Indicates that the marked symbol is used implicitly (e.g. via reflection, in external library),
+            so this symbol will not be marked as unused (as well as by other usage inspections)
+            </summary>
+        </member>
+        <member name="M:Rsdn.Framework.Formatting.JetBrains.Annotations.UsedImplicitlyAttribute.#ctor">
+            <summary>
+            Initializes new instance of UsedImplicitlyAttribute
+            </summary>
+        </member>
+        <member name="M:Rsdn.Framework.Formatting.JetBrains.Annotations.UsedImplicitlyAttribute.#ctor(Rsdn.Framework.Formatting.JetBrains.Annotations.ImplicitUseFlags)">
+            <summary>
+            Initializes new instance of UsedImplicitlyAttribute with specified flags
+            </summary>
+            <param name="flags">Value of type <see cref="T:Rsdn.Framework.Formatting.JetBrains.Annotations.ImplicitUseFlags"/> indicating usage kind</param>
+        </member>
+        <member name="P:Rsdn.Framework.Formatting.JetBrains.Annotations.UsedImplicitlyAttribute.Flags">
+            <summary>
+            Gets value indicating what is meant to be used
+            </summary>
+        </member>
+        <member name="T:Rsdn.Framework.Formatting.JetBrains.Annotations.MeansImplicitUseAttribute">
+            <summary>
+            Should be used on attributes and causes ReSharper to not mark symbols marked with such attributes as unused (as well as by other usage inspections)
+            </summary>
+        </member>
+        <member name="M:Rsdn.Framework.Formatting.JetBrains.Annotations.MeansImplicitUseAttribute.#ctor">
+            <summary>
+            Initializes new instance of MeansImplicitUseAttribute
+            </summary>
+        </member>
+        <member name="M:Rsdn.Framework.Formatting.JetBrains.Annotations.MeansImplicitUseAttribute.#ctor(Rsdn.Framework.Formatting.JetBrains.Annotations.ImplicitUseFlags)">
+            <summary>
+            Initializes new instance of MeansImplicitUseAttribute with specified flags
+            </summary>
+            <param name="flags">Value of type <see cref="T:Rsdn.Framework.Formatting.JetBrains.Annotations.ImplicitUseFlags"/> indicating usage kind</param>
+        </member>
+        <member name="P:Rsdn.Framework.Formatting.JetBrains.Annotations.MeansImplicitUseAttribute.Flags">
+            <summary>
+            Gets value indicating what is meant to be used
+            </summary>
+        </member>
+        <member name="T:Rsdn.Framework.Formatting.JetBrains.Annotations.ImplicitUseFlags">
+            <summary>
+            Specify what is considered used implicitly when marked with <see cref="T:Rsdn.Framework.Formatting.JetBrains.Annotations.MeansImplicitUseAttribute"/> or <see cref="T:Rsdn.Framework.Formatting.JetBrains.Annotations.UsedImplicitlyAttribute"/>
+            </summary>
+        </member>
+        <member name="F:Rsdn.Framework.Formatting.JetBrains.Annotations.ImplicitUseFlags.Default">
+            <summary>
+            Only entity marked with attribute considered used
+            </summary>
+        </member>
+        <member name="F:Rsdn.Framework.Formatting.JetBrains.Annotations.ImplicitUseFlags.IncludeMembers">
+            <summary>
+            Entity marked with attribute and all its members considered used
             </summary>
         </member>
         <member name="T:Rsdn.Framework.Formatting.Format">
@@ -366,292 +756,6 @@
         <member name="F:Rsdn.Framework.Formatting.AppConstants.Copyright">
             <summary>
             Copyright.
-            </summary>
-        </member>
-        <member name="T:Rsdn.Framework.Formatting.Lazy`1">
-            <summary>
-            Lazy&lt;T&gt; from FW4
-            </summary>
-            <remarks>Not thread safe</remarks>
-        </member>
-        <member name="T:Rsdn.Framework.Formatting.FormatterHelper">
-            <summary>
-            Helper methods for use with formatter.
-            </summary>
-        </member>
-        <member name="M:Rsdn.Framework.Formatting.FormatterHelper.GetLangInfos">
-            <summary>
-            Returns all supported language infos.
-            </summary>
-        </member>
-        <member name="M:Rsdn.Framework.Formatting.FormatterHelper.GetCodeFormatter(System.String)">
-            <summary>
-            Returns code formatter by language name.
-            </summary>
-        </member>
-        <member name="M:Rsdn.Framework.Formatting.FormatterHelper.GetCodeFormatter(Rsdn.Framework.Formatting.CodeLangInfo)">
-            <summary>
-            Returns code formatter by language info.
-            </summary>
-        </member>
-        <member name="M:Rsdn.Framework.Formatting.FormatterHelper.MarkupCode(System.String,System.String)">
-            <summary>
-            Markup code with xml.
-            </summary>
-        </member>
-        <member name="M:Rsdn.Framework.Formatting.FormatterHelper.MarkupCode(Rsdn.Framework.Formatting.CodeLangInfo,System.String)">
-            <summary>
-            Markup code with xml.
-            </summary>
-        </member>
-        <member name="M:Rsdn.Framework.Formatting.FormatterHelper.GetCodeTagNames">
-            <summary>
-            Returns all known tag names.
-            </summary>
-        </member>
-        <member name="M:Rsdn.Framework.Formatting.FormatterHelper.GetCodeFormatterByTag(System.String)">
-            <summary>
-            Returns code formatter by tag name.
-            </summary>
-        </member>
-        <member name="M:Rsdn.Framework.Formatting.FormatterHelper.MarkupCodeByTag(System.String,System.String)">
-            <summary>
-            Markup code with xml.
-            </summary>
-        </member>
-        <member name="M:Rsdn.Framework.Formatting.FormatterHelper.Trim(System.Text.StringBuilder,System.Char[])">
-            <summary>
-            Trim sides of string.
-            </summary>
-        </member>
-        <member name="M:Rsdn.Framework.Formatting.FormatterHelper.IsEmpty(System.Text.StringBuilder)">
-            <summary>
-            Returns true is StringBuilder is empty.
-            </summary>
-        </member>
-        <member name="M:Rsdn.Framework.Formatting.FormatterHelper.Replace(System.Text.RegularExpressions.Regex,System.Text.StringBuilder,System.String)">
-            <summary>
-            Replace parts of StringBuilder by Regex.
-            </summary>
-        </member>
-        <member name="M:Rsdn.Framework.Formatting.FormatterHelper.Replace(System.Text.RegularExpressions.Regex,System.Text.StringBuilder,System.Text.RegularExpressions.MatchEvaluator)">
-            <summary>
-            Replace parts of StringBuilder by Regex.
-            </summary>
-        </member>
-        <member name="M:Rsdn.Framework.Formatting.FormatterHelper.Replace(System.Text.StringBuilder,System.String,System.String)">
-            <summary>
-            Replace parts of StringBuilder by Regex.
-            </summary>
-        </member>
-        <member name="M:Rsdn.Framework.Formatting.FormatterHelper.ReplaceTagsWQ(System.Text.StringBuilder)">
-            <summary>
-            Заменяет служебные символы HTML на их аналоги исключая '"'.
-            </summary>
-            <param name="sb">Исходный текст.</param>
-            <returns>Результат.</returns>
-        </member>
-        <member name="M:Rsdn.Framework.Formatting.FormatterHelper.ReplaceTagsWQ(System.String)">
-            <summary>
-            Заменяет служебные символы HTML на их аналоги исключая '"'.
-            </summary>
-            <param name="str">Исходный текст.</param>
-            <returns>Результат.</returns>
-        </member>
-        <member name="M:Rsdn.Framework.Formatting.FormatterHelper.ReplaceTags(System.String)">
-            <summary>
-            Заменяет служебные символы HTML на их аналоги.
-            </summary>
-            <param name="str">Исходный текст.</param>
-            <returns>Результат.</returns>
-        </member>
-        <member name="M:Rsdn.Framework.Formatting.FormatterHelper.ReplaceTags(System.Object)">
-            <summary>
-            Заменяет служебные символы HTML на их аналоги.
-            </summary>
-            <param name="str">Исходный текст.</param>
-            <returns>Результат.</returns>
-        </member>
-        <member name="M:Rsdn.Framework.Formatting.FormatterHelper.EncodeJScriptText(System.String)">
-            <summary>
-            Подготавливает текст для JScript.
-            </summary>
-            <warning>Текст не должен содержать спецмаркеры :quotes:, :apostroph: !</warning>
-            <param name="str">Исходная строка.</param>
-            <returns>Преобразованная строка.</returns>
-        </member>
-        <member name="M:Rsdn.Framework.Formatting.FormatterHelper.EncodeAgainstXSS(System.String)">
-            <summary>
-            Подготавливает текст для предотовращения XSS (Cross Site Scripting)
-            Используется, в основном для кодирования адресов (ссылок, картинок).
-            </summary>
-            <param name="value">Исходный текст.</param>
-            <returns>Преобразованный текст.</returns>
-        </member>
-        <member name="M:Rsdn.Framework.Formatting.FormatterHelper.ToInt(System.Object)">
-            <summary>
-            Преобразует object в int. 
-            В случае возникновения исключения возвращается 0.
-            </summary>
-            <param name="o">Преобразуемый объект.</param>
-            <returns>Результат.</returns>
-        </member>
-        <member name="M:Rsdn.Framework.Formatting.FormatterHelper.ToInt(System.Object,System.Int32)">
-            <summary>
-            Преобразует object в int. 
-            В случае возникновения исключения возвращается errorValue.
-            </summary>
-            <param name="o">Преобразуемый объект.</param>
-            <param name="errorValue">Значение возвращаемое если произошла ошибка.</param>
-            <returns>Результат.</returns>
-        </member>
-        <member name="M:Rsdn.Framework.Formatting.FormatterHelper.ToDouble(System.Object)">
-            <summary>
-            Преобразует object в double. 
-            В случае возникновения исключения возвращается 0.
-            </summary>
-            <param name="o">Преобразуемый объект.</param>
-            <returns>Результат.</returns>
-        </member>
-        <member name="F:Rsdn.Framework.Formatting.FormatterHelper._tagsExtractor">
-            <summary>
-            Message tag extractor
-            </summary>
-        </member>
-        <member name="M:Rsdn.Framework.Formatting.FormatterHelper.ExtractTags(System.String)">
-            <summary>
-            Extract tags from string
-            </summary>
-            <param name="tags"></param>
-            <returns></returns>
-        </member>
-        <member name="M:Rsdn.Framework.Formatting.FormatterHelper.ExtractTags(System.String,System.Text.RegularExpressions.MatchEvaluator)">
-            <summary>
-            Format tags
-            </summary>
-            <param name="tags"></param>
-            <param name="eval">Tag transformer</param>
-        </member>
-        <member name="M:Rsdn.Framework.Formatting.FormatterHelper.RemoveQuotations(System.String)">
-            <summary>
-             Убирает цитирование из текста сообщения.
-            </summary>
-             <param name="msg">Сообщение.</param>
-             <returns>Обработанное сообщение</returns>
-        </member>
-        <member name="T:Rsdn.Framework.Formatting.FormatterException">
-            <summary>
-             Formatter exceptions class.
-            </summary>
-        </member>
-        <member name="M:Rsdn.Framework.Formatting.FormatterException.#ctor">
-            <summary>
-            Initialize instance.
-            </summary>
-        </member>
-        <member name="M:Rsdn.Framework.Formatting.FormatterException.#ctor(System.String)">
-            <summary>
-            Initialize instance with supplied message;
-            </summary>
-        </member>
-        <member name="M:Rsdn.Framework.Formatting.FormatterException.#ctor(System.String,System.Exception)">
-            <summary>
-            Initialize instance with supplied message and inner exception.
-            </summary>
-        </member>
-        <member name="M:Rsdn.Framework.Formatting.FormatterException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
-            <summary>
-            Deserialization constructor.
-            </summary>
-        </member>
-        <member name="T:Rsdn.Framework.Formatting.CodeLangInfo">
-            <summary>
-            Information about supported code language.
-            </summary>
-        </member>
-        <member name="M:Rsdn.Framework.Formatting.CodeLangInfo.#ctor(System.String,System.String)">
-            <summary>
-            Initialize instance.
-            </summary>
-        </member>
-        <member name="P:Rsdn.Framework.Formatting.CodeLangInfo.Name">
-            <summary>
-            Unique language name.
-            </summary>
-        </member>
-        <member name="P:Rsdn.Framework.Formatting.CodeLangInfo.DisplayName">
-            <summary>
-            User friendly language name.
-            </summary>
-        </member>
-        <member name="T:Rsdn.Framework.Formatting.CodeFormatter">
-            <summary>
-            Класс, для раскраски исходников
-            Загружает правила раскраски из xml-файла
-            </summary>
-        </member>
-        <member name="F:Rsdn.Framework.Formatting.CodeFormatter._xmlSchemas">
-            <summary>
-            Source XML validating schemas (XSD)
-            </summary>
-        </member>
-        <member name="F:Rsdn.Framework.Formatting.CodeFormatter.ColorerRegex">
-            <summary>
-            Регулярное выражение, используемое при расераске.
-            Получается после преобразования исходных данных.
-            </summary>
-        </member>
-        <member name="F:Rsdn.Framework.Formatting.CodeFormatter.GroupNames">
-            <summary>
-            Массив имен именованых групп в регулярном выражении
-            Используется при поиске имени группы по ее номеру
-            </summary>
-        </member>
-        <member name="F:Rsdn.Framework.Formatting.CodeFormatter.CountGroups">
-            <summary>
-            Число групп в регулярном выражении
-            </summary>
-        </member>
-        <member name="M:Rsdn.Framework.Formatting.CodeFormatter.#ctor(System.IO.Stream)">
-            <summary>
-            Создание экземпляра раскрасивальщика.
-            </summary>
-            <param name="xmlSource">Исходный xml-поток</param>
-        </member>
-        <member name="M:Rsdn.Framework.Formatting.CodeFormatter.#ctor(System.IO.Stream,System.Text.RegularExpressions.RegexOptions)">
-            <summary>
-            Создание экземпляра раскрасивальщика с дополнительными опциями для регулярного выражения.
-            </summary>
-            <param name="xmlSource">Исходный xml-поток</param>
-            <param name="options">Regex опции</param>
-        </member>
-        <member name="M:Rsdn.Framework.Formatting.CodeFormatter.Transform(System.String)">
-            <summary>
-            Преобразование текста раскрасивальщиком
-            </summary>
-            <param name="sourceText">Исходный текст</param>
-            <returns>Преобразованный текст</returns>
-        </member>
-        <member name="M:Rsdn.Framework.Formatting.CodeFormatter.ReplaceEvaluator(System.Text.RegularExpressions.Match)">
-            <summary>
-            Функция обработки найденного выражения во время трансформации
-            </summary>
-            <param name="match">Соответсвие</param>
-            <returns>Обработанное соответсвие</returns>
-        </member>
-        <member name="T:Rsdn.Framework.Formatting.Resources.ResourceHandler">
-            <summary>
-            HTTP handler for images in resources.
-            </summary>
-        </member>
-        <member name="M:Rsdn.Framework.Formatting.Resources.ResourceHandler.FormatLink(System.String)">
-            <summary>
-            Format link for handler.
-            </summary>
-        </member>
-        <member name="P:Rsdn.Framework.Formatting.Resources.ResourceHandler.HandlerName">
-            <summary>
-            Returns handler name.
             </summary>
         </member>
         <member name="T:Rsdn.Framework.Formatting.TextFormatter">
@@ -960,8 +1064,11 @@
             <summary>
             Проверяет на наличие модераторского текста в сообщении
             </summary>
-            <param name="text"></param>
-            <returns></returns>
+        </member>
+        <member name="M:Rsdn.Framework.Formatting.TextFormatter.GetSmileFiles(System.String)">
+            <summary>
+            Возвращает список имен файлов смайликов, задействованных в сообщении.
+            </summary>
         </member>
         <member name="M:Rsdn.Framework.Formatting.TextFormatter.ParseUrl(System.String)">
             <summary>
@@ -1025,189 +1132,85 @@
             Delegate to process URLs.
             </summary>
         </member>
-        <member name="T:Rsdn.Framework.Formatting.JetBrains.Annotations.StringFormatMethodAttribute">
+        <member name="T:Rsdn.Framework.Formatting.FormatterException">
             <summary>
-            Indicates that marked method builds string by format pattern and (optional) arguments. 
-            Parameter, which contains format string, should be given in constructor.
-            The format string should be in <see cref="M:System.String.Format(System.IFormatProvider,System.String,System.Object[])"/> -like form
+             Formatter exceptions class.
             </summary>
         </member>
-        <member name="M:Rsdn.Framework.Formatting.JetBrains.Annotations.StringFormatMethodAttribute.#ctor(System.String)">
+        <member name="M:Rsdn.Framework.Formatting.FormatterException.#ctor">
             <summary>
-            Initializes new instance of StringFormatMethodAttribute
-            </summary>
-            <param name="formatParameterName">Specifies which parameter of an annotated method should be treated as format-string</param>
-        </member>
-        <member name="P:Rsdn.Framework.Formatting.JetBrains.Annotations.StringFormatMethodAttribute.FormatParameterName">
-            <summary>
-            Gets format parameter name
+            Initialize instance.
             </summary>
         </member>
-        <member name="T:Rsdn.Framework.Formatting.JetBrains.Annotations.InvokerParameterNameAttribute">
+        <member name="M:Rsdn.Framework.Formatting.FormatterException.#ctor(System.String)">
             <summary>
-            Indicates that the function argument should be string literal and match one  of the parameters of the caller function.
-            For example, <see cref="T:System.ArgumentNullException"/> has such parameter.
+            Initialize instance with supplied message;
             </summary>
         </member>
-        <member name="T:Rsdn.Framework.Formatting.JetBrains.Annotations.AssertionMethodAttribute">
+        <member name="M:Rsdn.Framework.Formatting.FormatterException.#ctor(System.String,System.Exception)">
             <summary>
-            Indicates that the marked method is assertion method, i.e. it halts control flow if one of the conditions is satisfied. 
-            To set the condition, mark one of the parameters with <see cref="T:Rsdn.Framework.Formatting.JetBrains.Annotations.AssertionConditionAttribute"/> attribute
-            </summary>
-            <seealso cref="T:Rsdn.Framework.Formatting.JetBrains.Annotations.AssertionConditionAttribute"/>
-        </member>
-        <member name="T:Rsdn.Framework.Formatting.JetBrains.Annotations.AssertionConditionAttribute">
-            <summary>
-            Indicates the condition parameter of the assertion method. 
-            The method itself should be marked by <see cref="T:Rsdn.Framework.Formatting.JetBrains.Annotations.AssertionMethodAttribute"/> attribute.
-            The mandatory argument of the attribute is the assertion type.
-            </summary>
-            <seealso cref="T:Rsdn.Framework.Formatting.JetBrains.Annotations.AssertionConditionType"/>
-        </member>
-        <member name="M:Rsdn.Framework.Formatting.JetBrains.Annotations.AssertionConditionAttribute.#ctor(Rsdn.Framework.Formatting.JetBrains.Annotations.AssertionConditionType)">
-            <summary>
-            Initializes new instance of AssertionConditionAttribute
-            </summary>
-            <param name="conditionType">Specifies condition type</param>
-        </member>
-        <member name="P:Rsdn.Framework.Formatting.JetBrains.Annotations.AssertionConditionAttribute.ConditionType">
-            <summary>
-            Gets condition type
+            Initialize instance with supplied message and inner exception.
             </summary>
         </member>
-        <member name="T:Rsdn.Framework.Formatting.JetBrains.Annotations.AssertionConditionType">
+        <member name="M:Rsdn.Framework.Formatting.FormatterException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
             <summary>
-            Specifies assertion type. If the assertion method argument satisifes the condition, then the execution continues. 
-            Otherwise, execution is assumed to be halted
+            Deserialization constructor.
             </summary>
         </member>
-        <member name="F:Rsdn.Framework.Formatting.JetBrains.Annotations.AssertionConditionType.IsTrue">
+        <member name="T:Rsdn.Framework.Formatting.CodeFormatter">
             <summary>
-            Indicates that the marked parameter should be evaluated to true
+            Класс, для раскраски исходников
+            Загружает правила раскраски из xml-файла
             </summary>
         </member>
-        <member name="F:Rsdn.Framework.Formatting.JetBrains.Annotations.AssertionConditionType.IsFalse">
+        <member name="F:Rsdn.Framework.Formatting.CodeFormatter._xmlSchemas">
             <summary>
-            Indicates that the marked parameter should be evaluated to false
+            Source XML validating schemas (XSD)
             </summary>
         </member>
-        <member name="F:Rsdn.Framework.Formatting.JetBrains.Annotations.AssertionConditionType.IsNull">
+        <member name="F:Rsdn.Framework.Formatting.CodeFormatter.ColorerRegex">
             <summary>
-            Indicates that the marked parameter should be evaluated to null value
+            Регулярное выражение, используемое при расераске.
+            Получается после преобразования исходных данных.
             </summary>
         </member>
-        <member name="F:Rsdn.Framework.Formatting.JetBrains.Annotations.AssertionConditionType.IsNotNull">
+        <member name="F:Rsdn.Framework.Formatting.CodeFormatter.GroupNames">
             <summary>
-            Indicates that the marked parameter should be evaluated to not null value
+            Массив имен именованых групп в регулярном выражении
+            Используется при поиске имени группы по ее номеру
             </summary>
         </member>
-        <member name="T:Rsdn.Framework.Formatting.JetBrains.Annotations.TerminatesProgramAttribute">
+        <member name="F:Rsdn.Framework.Formatting.CodeFormatter.CountGroups">
             <summary>
-            Indicates that the marked method unconditionally terminates control flow execution.
-            For example, it could unconditionally throw exception
+            Число групп в регулярном выражении
             </summary>
         </member>
-        <member name="T:Rsdn.Framework.Formatting.JetBrains.Annotations.CanBeNullAttribute">
+        <member name="M:Rsdn.Framework.Formatting.CodeFormatter.#ctor(System.IO.Stream)">
             <summary>
-            Indicates that the value of marked element could be <c>null</c> sometimes, so the check for <c>null</c> is necessary before its usage
+            Создание экземпляра раскрасивальщика.
             </summary>
+            <param name="xmlSource">Исходный xml-поток</param>
         </member>
-        <member name="T:Rsdn.Framework.Formatting.JetBrains.Annotations.NotNullAttribute">
+        <member name="M:Rsdn.Framework.Formatting.CodeFormatter.#ctor(System.IO.Stream,System.Text.RegularExpressions.RegexOptions)">
             <summary>
-            Indicates that the value of marked element could never be <c>null</c>
+            Создание экземпляра раскрасивальщика с дополнительными опциями для регулярного выражения.
             </summary>
+            <param name="xmlSource">Исходный xml-поток</param>
+            <param name="options">Regex опции</param>
         </member>
-        <member name="T:Rsdn.Framework.Formatting.JetBrains.Annotations.CannotApplyEqualityOperatorAttribute">
+        <member name="M:Rsdn.Framework.Formatting.CodeFormatter.Transform(System.String)">
             <summary>
-            Indicates that the value of marked type (or its derivatives) cannot be compared using '==' or '!=' operators.
-            There is only exception to compare with <c>null</c>, it is permitted
+            Преобразование текста раскрасивальщиком
             </summary>
+            <param name="sourceText">Исходный текст</param>
+            <returns>Преобразованный текст</returns>
         </member>
-        <member name="T:Rsdn.Framework.Formatting.JetBrains.Annotations.BaseTypeRequiredAttribute">
+        <member name="M:Rsdn.Framework.Formatting.CodeFormatter.ReplaceEvaluator(System.Text.RegularExpressions.Match)">
             <summary>
-            When applied to target attribute, specifies a requirement for any type which is marked with 
-            target attribute to implement or inherit specific type or types
+            Функция обработки найденного выражения во время трансформации
             </summary>
-            <example>
-            <code>
-            [BaseTypeRequired(typeof(IComponent)] // Specify requirement
-            public class ComponentAttribute : Attribute 
-            {}
-            
-            [Component] // ComponentAttribute requires implementing IComponent interface
-            public class MyComponent : IComponent
-            {}
-            </code>
-            </example>
-        </member>
-        <member name="M:Rsdn.Framework.Formatting.JetBrains.Annotations.BaseTypeRequiredAttribute.#ctor(System.Type[])">
-            <summary>
-            Initializes new instance of BaseTypeRequiredAttribute
-            </summary>
-            <param name="baseTypes">Specifies which types are required</param>
-        </member>
-        <member name="P:Rsdn.Framework.Formatting.JetBrains.Annotations.BaseTypeRequiredAttribute.BaseTypes">
-            <summary>
-            Gets enumerations of specified base types
-            </summary>
-        </member>
-        <member name="T:Rsdn.Framework.Formatting.JetBrains.Annotations.UsedImplicitlyAttribute">
-            <summary>
-            Indicates that the marked symbol is used implicitly (e.g. via reflection, in external library),
-            so this symbol will not be marked as unused (as well as by other usage inspections)
-            </summary>
-        </member>
-        <member name="M:Rsdn.Framework.Formatting.JetBrains.Annotations.UsedImplicitlyAttribute.#ctor">
-            <summary>
-            Initializes new instance of UsedImplicitlyAttribute
-            </summary>
-        </member>
-        <member name="M:Rsdn.Framework.Formatting.JetBrains.Annotations.UsedImplicitlyAttribute.#ctor(Rsdn.Framework.Formatting.JetBrains.Annotations.ImplicitUseFlags)">
-            <summary>
-            Initializes new instance of UsedImplicitlyAttribute with specified flags
-            </summary>
-            <param name="flags">Value of type <see cref="T:Rsdn.Framework.Formatting.JetBrains.Annotations.ImplicitUseFlags"/> indicating usage kind</param>
-        </member>
-        <member name="P:Rsdn.Framework.Formatting.JetBrains.Annotations.UsedImplicitlyAttribute.Flags">
-            <summary>
-            Gets value indicating what is meant to be used
-            </summary>
-        </member>
-        <member name="T:Rsdn.Framework.Formatting.JetBrains.Annotations.MeansImplicitUseAttribute">
-            <summary>
-            Should be used on attributes and causes ReSharper to not mark symbols marked with such attributes as unused (as well as by other usage inspections)
-            </summary>
-        </member>
-        <member name="M:Rsdn.Framework.Formatting.JetBrains.Annotations.MeansImplicitUseAttribute.#ctor">
-            <summary>
-            Initializes new instance of MeansImplicitUseAttribute
-            </summary>
-        </member>
-        <member name="M:Rsdn.Framework.Formatting.JetBrains.Annotations.MeansImplicitUseAttribute.#ctor(Rsdn.Framework.Formatting.JetBrains.Annotations.ImplicitUseFlags)">
-            <summary>
-            Initializes new instance of MeansImplicitUseAttribute with specified flags
-            </summary>
-            <param name="flags">Value of type <see cref="T:Rsdn.Framework.Formatting.JetBrains.Annotations.ImplicitUseFlags"/> indicating usage kind</param>
-        </member>
-        <member name="P:Rsdn.Framework.Formatting.JetBrains.Annotations.MeansImplicitUseAttribute.Flags">
-            <summary>
-            Gets value indicating what is meant to be used
-            </summary>
-        </member>
-        <member name="T:Rsdn.Framework.Formatting.JetBrains.Annotations.ImplicitUseFlags">
-            <summary>
-            Specify what is considered used implicitly when marked with <see cref="T:Rsdn.Framework.Formatting.JetBrains.Annotations.MeansImplicitUseAttribute"/> or <see cref="T:Rsdn.Framework.Formatting.JetBrains.Annotations.UsedImplicitlyAttribute"/>
-            </summary>
-        </member>
-        <member name="F:Rsdn.Framework.Formatting.JetBrains.Annotations.ImplicitUseFlags.Default">
-            <summary>
-            Only entity marked with attribute considered used
-            </summary>
-        </member>
-        <member name="F:Rsdn.Framework.Formatting.JetBrains.Annotations.ImplicitUseFlags.IncludeMembers">
-            <summary>
-            Entity marked with attribute and all its members considered used
-            </summary>
+            <param name="match">Соответсвие</param>
+            <returns>Обработанное соответсвие</returns>
         </member>
     </members>
 </doc>
