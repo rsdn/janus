@@ -57,6 +57,7 @@
     <ProjectReference Include="..\..\Janus-Model\Janus-Model.csproj">
       <Project>{8B6FB1B4-141C-46DA-82B8-6A2220D7D868}</Project>
       <Name>Janus-Model</Name>
+      <Private>False</Private>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
