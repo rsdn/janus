@@ -230,7 +230,10 @@ namespace Rsdn.Janus
 
 		public IEnumerable<IMsg> SelectedMessages
 		{
-			get { return _tgMsgs.SelectedNodes.OfType<IMsg>(); }
+			get
+			{
+				return _asyncOperation.Send(() => _tgMsgs.SelectedNodes.OfType<IMsg>().ToArray());
+			}
 		}
 
 		public event EventHandler SelectedMessagesChanged;

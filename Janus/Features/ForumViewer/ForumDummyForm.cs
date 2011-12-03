@@ -1238,9 +1238,7 @@ namespace Rsdn.Janus
 		{
 			get
 			{
-				IEnumerable<IMsg> result = null;
-				_asyncOperation.Send(() => result = _tgMsgs.SelectedNodes.OfType<IMsg>());
-				return result;
+				return _asyncOperation.Send(() => _tgMsgs.SelectedNodes.OfType<IMsg>());
 			}
 		}
 

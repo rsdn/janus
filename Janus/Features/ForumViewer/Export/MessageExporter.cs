@@ -64,7 +64,7 @@ namespace Rsdn.Janus
 						{
 							case ExportMode.Messages:
 								messages = new List<IMsg>(
-									uiInfo.UnreadMessagesOnly
+									!uiInfo.UnreadMessagesOnly
 										? activeMsgSvc.ActiveMessages
 										: activeMsgSvc.ActiveMessages.Where(msg => !msg.IsRead));
 								break;
