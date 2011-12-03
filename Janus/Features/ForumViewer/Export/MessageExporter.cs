@@ -37,6 +37,7 @@ namespace Rsdn.Janus
 		#endregion
 
 		#region Показ диалога и сбор сообщений
+		// TODO: Весь связанный с UI код вынести в отдельный класс
 		public static void Export(IServiceProvider provider)
 		{
 			var activeMessagesSvc = provider.GetService<IActiveMessagesService>();
@@ -287,11 +288,27 @@ namespace Rsdn.Janus
 		private static void Export2HTML(IServiceProvider provider, IList<IMsg> msgs, Stream fs, ProgressDelegate pd)
 		{
 			using (var sw = new StreamWriter(fs, Encoding.Default))
-				sw.Write(BuildHTMLPage(provider, msgs, pd, false));
+				sw.Write(BuildHTMLPage(provider, msgs, pd, false, Encoding.UTF8));
 		}
 		#endregion
 
 		#region В mht "архив"
+		private const string _mhtHeader =
+			@"From: <RSDN@Home>
+Subject: RSDN@Home
+Date: {0}
+MIME-Version: 1.0
+Content-Type: multipart/related; boundary=""----=_NextPart_""
+X-MimeOLE: Produced By RSDN@Home Message Exporter
+
+This is a multi-part message in MIME format.
+
+------=_NextPart_
+Content-Type: text/html; charset=""{1}""
+Content-Transfer-Encoding: 8-bit
+
+";
+
 		// Прим. Content-Location настроен на папку картинок стандартного форматтера.
 		private const string _mhtContentImageHeader =
 			@"
@@ -303,20 +320,10 @@ Content-Transfer-Encoding: Base64
 
 ";
 
-		private const string _mhtHeader =
-			@"From: <Сохранено RSDN@Home>
-Subject: RSDN@Home
-Date: {0}
-MIME-Version: 1.0
-Content-Type: multipart/related; boundary=""----=_NextPart_""
-X-MimeOLE: Produced By RSDN@Home Message Exporter
+		private const string _mhtFooter =
+			@"
 
-This is a multi-part message in MIME format.
-
-------=_NextPart_
-Content-Type: text/html; charset=""windows-{1}""
-Content-Transfer-Encoding: binary
-
+------=_NextPart_--
 ";
 
 		private static void Export2Mht(
@@ -325,17 +332,17 @@ Content-Transfer-Encoding: binary
 			Stream fs,
 			ProgressDelegate pd)
 		{
+			var encoding = Encoding.UTF8;
 			using (var sw = new StreamWriter(fs, Encoding.Default))
 			{
-				const int codePage = 1251;
-				sw.Write(string.Format(_mhtHeader,
-					DateTime.Now.ToString("ddd, d MMM yyyy h:m:s zz00",
-						CultureInfo.InvariantCulture.DateTimeFormat),
-					codePage));
+				sw.Write(
+					_mhtHeader,
+					DateTime.Now.ToString("ddd, d MMM yyyy h:m:s zz00", CultureInfo.InvariantCulture),
+					encoding.HeaderName);
 				sw.Flush();
 
-				var htmlText = BuildHTMLPage(provider, msgs, pd, true);
-				var page = Encoding.GetEncoding(codePage).GetBytes(htmlText);
+				var htmlText = BuildHTMLPage(provider, msgs, pd, true, Encoding.UTF8);
+				var page = encoding.GetBytes(htmlText);
 				fs.Write(page, 0, page.Length);
 
 				/* Здесь надобы поиск по странице - Page
@@ -363,6 +370,8 @@ Content-Transfer-Encoding: binary
 						sw.Write(Convert.ToBase64String(ms.ToArray(), Base64FormattingOptions.InsertLineBreaks));
 					}
 				}
+
+				sw.Write(_mhtFooter);
 			}
 		}
 		#endregion
@@ -377,7 +386,8 @@ Content-Transfer-Encoding: binary
 			IServiceProvider provider,
 			IList<IMsg> msgs,
 			ProgressDelegate pd,
-			bool processSmiles)
+			bool processSmiles,
+			Encoding encoding)
 		{
 			var formatter = new TextFormatter();
 			var sb = new StringBuilder();
@@ -389,7 +399,7 @@ Content-Transfer-Encoding: binary
 
 			string messageFormat;
 			using (var rd = new StreamReader(Assembly.GetExecutingAssembly()
-				.GetRequiredResourceStream(_messageFormatResource)))
+					.GetRequiredResourceStream(_messageFormatResource)))
 				messageFormat = rd.ReadToEnd();
 
 			var i = 0;
@@ -415,8 +425,7 @@ Content-Transfer-Encoding: binary
 			}
 
 			string exportPageFormat;
-			using (var rd = new StreamReader(Assembly.GetExecutingAssembly()
-				.GetRequiredResourceStream(_exportPageResource)))
+			using (var rd = new StreamReader(Assembly.GetExecutingAssembly().GetRequiredResourceStream(_exportPageResource)))
 				exportPageFormat = rd.ReadToEnd();
 
 			string exportForumStyle;
@@ -424,10 +433,13 @@ Content-Transfer-Encoding: binary
 				.GetRequiredResourceStream(_exportForumResource)))
 				exportForumStyle = rd.ReadToEnd();
 
-			return string.Format(exportPageFormat,
-				forum.Description + " [" + forum.Name + "]",
-				exportForumStyle,
-				sb);
+			return
+				string.Format(
+					exportPageFormat,
+					forum.Description + " [" + forum.Name + "]",
+					encoding.HeaderName,
+					exportForumStyle,
+					sb);
 		}
 		#endregion
 
