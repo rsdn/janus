@@ -8,6 +8,7 @@ using System.Text;
 using System.Windows.Forms;
 
 using Rsdn.Framework.Formatting;
+
 using Rsdn.Janus.Framework.Imaging;
 using Rsdn.SmartApp;
 
@@ -38,16 +39,15 @@ namespace Rsdn.Janus
 			var activeForumSvc = provider.GetService<IActiveForumService>();
 			var canExportForum = activeForumSvc != null && activeForumSvc.ActiveForum != null;
 
+			var mainWnd = provider.GetRequiredService<IUIShell>().GetMainWindowParent();
 			using (var emd = new ExportMessageDialog(canExportMessages, canExportForum))
 			{
-				if (emd.ShowDialog(
-						provider
-							.GetRequiredService<IUIShell>()
-							.GetMainWindowParent()) != DialogResult.OK)
+				if (emd.ShowDialog(mainWnd) != DialogResult.OK)
 					return;
 
 				var uiInfo = new {emd.FileName, emd.ExportMode, emd.ExportFormat, emd.UnreadMessagesOnly};
 
+				var noMessages = false;
 				ProgressWorker.Run(
 					provider,
 					false,
@@ -80,6 +80,14 @@ namespace Rsdn.Janus
 								foreach (IMsg msg in Forums.Instance.ActiveForum.Msgs)
 									GetAllChildren(msg, messages, uiInfo.UnreadMessagesOnly);
 								break;
+
+							default:
+								throw new ArgumentException("Unknown export mode");
+						}
+						if (messages.Count == 0)
+						{
+							noMessages = true;
+							return;
 						}
 
 						ProgressDelegate pd =
@@ -103,6 +111,8 @@ namespace Rsdn.Janus
 									break;
 							}
 					});
+				if (noMessages)
+					MessageBox.Show(mainWnd, ExportResources.NoMessages);
 			}
 		}
 

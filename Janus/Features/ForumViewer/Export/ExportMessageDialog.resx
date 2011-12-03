@@ -117,488 +117,107 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <metadata name="_fileNameBox.Locked" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="_fileNameBox.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Left, Right</value>
-  </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="_fileNameBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 28</value>
+  <data name="_unreadOnlyCheckBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>133, 17</value>
   </data>
-  <data name="_fileNameBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>254, 20</value>
+  <data name="_forumRadioButton.Text" xml:space="preserve">
+    <value>All forum</value>
+  </data>
+  <data name="&gt;&gt;_unreadOnlyCheckBox.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Export Messages</value>
+  </data>
+  <data name="_exportModeGroup.Size" type="System.Drawing.Size, System.Drawing">
+    <value>278, 118</value>
+  </data>
+  <data name="_mhtFormatRadioButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>8, 68</value>
+  </data>
+  <data name="_exportModeGroup.Text" xml:space="preserve">
+    <value>Export mode</value>
+  </data>
+  <data name="&gt;&gt;_okButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="_mhtFormatRadioButton.Text" xml:space="preserve">
+    <value>Web archive (mht)</value>
+  </data>
+  <data name="&gt;&gt;_exportModeGroup.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>ExportMessageDialog</value>
   </data>
   <assembly alias="mscorlib" name="mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="_fileNameBox.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
-  <data name="&gt;&gt;_fileNameBox.Name" xml:space="preserve">
-    <value>_fileNameBox</value>
+  <data name="_browseFileButton.Text" xml:space="preserve">
+    <value>...</value>
   </data>
-  <data name="&gt;&gt;_fileNameBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="_formatGroup.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left, Right</value>
   </data>
-  <data name="&gt;&gt;_fileNameBox.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;_fileNameBox.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
-  <metadata name="_fileNameLabel.Locked" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <data name="_fileNameLabel.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="_fileNameLabel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+  <data name="_browseFileButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
   <data name="_fileNameLabel.Location" type="System.Drawing.Point, System.Drawing">
     <value>5, 9</value>
   </data>
-  <data name="_fileNameLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>58, 13</value>
-  </data>
-  <data name="_fileNameLabel.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="_fileNameLabel.Text" xml:space="preserve">
-    <value>File name :</value>
-  </data>
-  <data name="&gt;&gt;_fileNameLabel.Name" xml:space="preserve">
-    <value>_fileNameLabel</value>
-  </data>
-  <data name="&gt;&gt;_fileNameLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;_fileNameLabel.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;_fileNameLabel.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <metadata name="_browseFileButton.Locked" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <data name="_browseFileButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="_browseFileButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>262, 27</value>
-  </data>
-  <data name="_browseFileButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>24, 22</value>
-  </data>
-  <data name="_browseFileButton.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="_browseFileButton.Text" xml:space="preserve">
-    <value>...</value>
-  </data>
-  <data name="&gt;&gt;_browseFileButton.Name" xml:space="preserve">
-    <value>_browseFileButton</value>
-  </data>
-  <data name="&gt;&gt;_browseFileButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;_browseFileButton.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;_browseFileButton.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <metadata name="_exportModeGroup.Locked" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <data name="_exportModeGroup.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Left, Right</value>
-  </data>
-  <metadata name="_unreadOnlyCheckBox.Locked" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <data name="_unreadOnlyCheckBox.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="_unreadOnlyCheckBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 91</value>
-  </data>
-  <data name="_unreadOnlyCheckBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>133, 17</value>
-  </data>
-  <data name="_unreadOnlyCheckBox.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="_unreadOnlyCheckBox.Text" xml:space="preserve">
-    <value>Unread messages only</value>
-  </data>
-  <data name="&gt;&gt;_unreadOnlyCheckBox.Name" xml:space="preserve">
-    <value>_unreadOnlyCheckBox</value>
-  </data>
-  <data name="&gt;&gt;_unreadOnlyCheckBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;_unreadOnlyCheckBox.Parent" xml:space="preserve">
-    <value>_exportModeGroup</value>
-  </data>
-  <data name="&gt;&gt;_unreadOnlyCheckBox.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <metadata name="_forumRadioButton.Locked" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <data name="_forumRadioButton.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="_forumRadioButton.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
-    <value>System</value>
-  </data>
-  <data name="_forumRadioButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="_forumRadioButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 67</value>
-  </data>
-  <data name="_forumRadioButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>71, 18</value>
-  </data>
-  <data name="_forumRadioButton.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="_forumRadioButton.Text" xml:space="preserve">
-    <value>All forum</value>
-  </data>
-  <data name="&gt;&gt;_forumRadioButton.Name" xml:space="preserve">
-    <value>_forumRadioButton</value>
+  <data name="_cancelButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 23</value>
   </data>
   <data name="&gt;&gt;_forumRadioButton.Type" xml:space="preserve">
     <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;_forumRadioButton.Parent" xml:space="preserve">
-    <value>_exportModeGroup</value>
+  <data name="&gt;&gt;_browseFileButton.Name" xml:space="preserve">
+    <value>_browseFileButton</value>
   </data>
-  <data name="&gt;&gt;_forumRadioButton.ZOrder" xml:space="preserve">
-    <value>1</value>
+  <data name="&gt;&gt;_unreadOnlyCheckBox.Name" xml:space="preserve">
+    <value>_unreadOnlyCheckBox</value>
   </data>
-  <metadata name="_topicRadioButton.Locked" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <data name="_topicRadioButton.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="_topicRadioButton.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
-    <value>System</value>
-  </data>
-  <data name="_topicRadioButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="_topicRadioButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 43</value>
-  </data>
-  <data name="_topicRadioButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>104, 18</value>
-  </data>
-  <data name="_topicRadioButton.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="_topicRadioButton.Text" xml:space="preserve">
-    <value>Selected topics</value>
-  </data>
-  <data name="&gt;&gt;_topicRadioButton.Name" xml:space="preserve">
-    <value>_topicRadioButton</value>
-  </data>
-  <data name="&gt;&gt;_topicRadioButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;_topicRadioButton.Parent" xml:space="preserve">
-    <value>_exportModeGroup</value>
-  </data>
-  <data name="&gt;&gt;_topicRadioButton.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <metadata name="_selectedMessagesRadioButton.Locked" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <data name="_selectedMessagesRadioButton.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="_selectedMessagesRadioButton.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
-    <value>System</value>
-  </data>
-  <data name="_selectedMessagesRadioButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="_selectedMessagesRadioButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 19</value>
-  </data>
-  <data name="_selectedMessagesRadioButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>123, 18</value>
-  </data>
-  <data name="_selectedMessagesRadioButton.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="_selectedMessagesRadioButton.Text" xml:space="preserve">
-    <value>Selected messages</value>
-  </data>
-  <data name="&gt;&gt;_selectedMessagesRadioButton.Name" xml:space="preserve">
-    <value>_selectedMessagesRadioButton</value>
-  </data>
-  <data name="&gt;&gt;_selectedMessagesRadioButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;_selectedMessagesRadioButton.Parent" xml:space="preserve">
-    <value>_exportModeGroup</value>
-  </data>
-  <data name="&gt;&gt;_selectedMessagesRadioButton.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="_exportModeGroup.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 54</value>
-  </data>
-  <data name="_exportModeGroup.Size" type="System.Drawing.Size, System.Drawing">
-    <value>278, 118</value>
-  </data>
-  <data name="_exportModeGroup.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="_exportModeGroup.Text" xml:space="preserve">
-    <value>Export mode</value>
-  </data>
-  <data name="&gt;&gt;_exportModeGroup.Name" xml:space="preserve">
-    <value>_exportModeGroup</value>
-  </data>
-  <data name="&gt;&gt;_exportModeGroup.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;_exportModeGroup.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;_exportModeGroup.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <metadata name="_formatGroup.Locked" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <data name="_formatGroup.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Left, Right</value>
-  </data>
-  <metadata name="_mhtFormatRadioButton.Locked" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <data name="_mhtFormatRadioButton.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="_mhtFormatRadioButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="_mhtFormatRadioButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 68</value>
-  </data>
-  <data name="_mhtFormatRadioButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>112, 17</value>
-  </data>
-  <data name="_mhtFormatRadioButton.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="_mhtFormatRadioButton.Text" xml:space="preserve">
-    <value>Web archive (mht)</value>
-  </data>
-  <data name="&gt;&gt;_mhtFormatRadioButton.Name" xml:space="preserve">
-    <value>_mhtFormatRadioButton</value>
-  </data>
-  <data name="&gt;&gt;_mhtFormatRadioButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;_mhtFormatRadioButton.Parent" xml:space="preserve">
-    <value>_formatGroup</value>
-  </data>
-  <data name="&gt;&gt;_mhtFormatRadioButton.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <metadata name="_htmlFormatRadioButton.Locked" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <data name="_htmlFormatRadioButton.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="_htmlFormatRadioButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="_htmlFormatRadioButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 44</value>
-  </data>
-  <data name="_htmlFormatRadioButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>55, 17</value>
-  </data>
-  <data name="_htmlFormatRadioButton.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="_htmlFormatRadioButton.Text" xml:space="preserve">
-    <value>HTML</value>
-  </data>
-  <data name="&gt;&gt;_htmlFormatRadioButton.Name" xml:space="preserve">
-    <value>_htmlFormatRadioButton</value>
-  </data>
-  <data name="&gt;&gt;_htmlFormatRadioButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;_htmlFormatRadioButton.Parent" xml:space="preserve">
-    <value>_formatGroup</value>
-  </data>
-  <data name="&gt;&gt;_htmlFormatRadioButton.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <metadata name="_textFormatRadioButton.Locked" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <data name="_textFormatRadioButton.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="_textFormatRadioButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
+  <data name="_unreadOnlyCheckBox.Text" xml:space="preserve">
+    <value>Unread messages only</value>
   </data>
   <data name="_textFormatRadioButton.Location" type="System.Drawing.Point, System.Drawing">
     <value>8, 20</value>
   </data>
-  <data name="_textFormatRadioButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>68, 17</value>
-  </data>
-  <data name="_textFormatRadioButton.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="_textFormatRadioButton.Text" xml:space="preserve">
-    <value>Plain text</value>
-  </data>
-  <data name="&gt;&gt;_textFormatRadioButton.Name" xml:space="preserve">
-    <value>_textFormatRadioButton</value>
-  </data>
-  <data name="&gt;&gt;_textFormatRadioButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;_textFormatRadioButton.Parent" xml:space="preserve">
-    <value>_formatGroup</value>
-  </data>
-  <data name="&gt;&gt;_textFormatRadioButton.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="_formatGroup.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 178</value>
-  </data>
-  <data name="_formatGroup.Size" type="System.Drawing.Size, System.Drawing">
-    <value>278, 96</value>
-  </data>
-  <data name="_formatGroup.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
-  </data>
-  <data name="_formatGroup.Text" xml:space="preserve">
-    <value>Format</value>
-  </data>
-  <data name="&gt;&gt;_formatGroup.Name" xml:space="preserve">
-    <value>_formatGroup</value>
-  </data>
-  <data name="&gt;&gt;_formatGroup.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;_formatGroup.Parent" xml:space="preserve">
+  <data name="&gt;&gt;_fileNameLabel.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;_formatGroup.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <metadata name="_okButton.Locked" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <data name="_htmlFormatRadioButton.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
-  </metadata>
-  <data name="_okButton.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Bottom, Right</value>
+  </data>
+  <data name="&gt;&gt;_fileNameLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;_browseFileButton.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;_selectedMessagesRadioButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="_fileNameLabel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="&gt;&gt;_fileNameLabel.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="_mhtFormatRadioButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>112, 17</value>
+  </data>
+  <data name="_selectedMessagesRadioButton.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>System</value>
   </data>
   <data name="_okButton.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
-  <data name="_okButton.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
-    <value>System</value>
-  </data>
-  <data name="_okButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="_okButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>126, 283</value>
-  </data>
-  <data name="_okButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 23</value>
-  </data>
-  <data name="_okButton.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
-  </data>
-  <data name="_okButton.Text" xml:space="preserve">
-    <value>OK</value>
-  </data>
-  <data name="&gt;&gt;_okButton.Name" xml:space="preserve">
-    <value>_okButton</value>
-  </data>
-  <data name="&gt;&gt;_okButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;_okButton.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;_okButton.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <metadata name="_cancelButton.Locked" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <data name="_cancelButton.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Bottom, Right</value>
-  </data>
-  <data name="_cancelButton.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
-    <value>System</value>
-  </data>
-  <data name="_cancelButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="_cancelButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>207, 283</value>
-  </data>
-  <data name="_cancelButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 23</value>
-  </data>
-  <data name="_cancelButton.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
-  </data>
-  <data name="_cancelButton.Text" xml:space="preserve">
-    <value>Cancel</value>
-  </data>
-  <data name="&gt;&gt;_cancelButton.Name" xml:space="preserve">
-    <value>_cancelButton</value>
-  </data>
-  <data name="&gt;&gt;_cancelButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;_cancelButton.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;_cancelButton.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <metadata name="_saveFileDialog.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
-  </metadata>
-  <data name="_saveFileDialog.Filter" xml:space="preserve">
-    <value>Plain text|*.txt|HTML|*.html|Web archive (mht)|*.mht</value>
-  </data>
-  <data name="_saveFileDialog.Title" xml:space="preserve">
-    <value>Export file name</value>
-  </data>
-  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="$this.Locked" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>294, 314</value>
+  <data name="_textFormatRadioButton.Text" xml:space="preserve">
+    <value>Plain text</value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -628,22 +247,406 @@
         AACANwAAgD8AAMA/AADAfwAA8P8AAP//AAA=
 </value>
   </data>
-  <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
-    <value>CenterParent</value>
+  <data name="_okButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 23</value>
   </data>
-  <data name="$this.Text" xml:space="preserve">
-    <value>Export Messages</value>
+  <data name="_cancelButton.Text" xml:space="preserve">
+    <value>Cancel</value>
   </data>
-  <data name="&gt;&gt;_saveFileDialog.Name" xml:space="preserve">
-    <value>_saveFileDialog</value>
+  <data name="&gt;&gt;_mhtFormatRadioButton.Parent" xml:space="preserve">
+    <value>_formatGroup</value>
+  </data>
+  <data name="_okButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="_exportModeGroup.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left, Right</value>
+  </data>
+  <data name="&gt;&gt;_browseFileButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;_exportModeGroup.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;_formatGroup.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;_textFormatRadioButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="_selectedMessagesRadioButton.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;_fileNameBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="_fileNameLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;_okButton.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;_selectedMessagesRadioButton.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;_formatGroup.Name" xml:space="preserve">
+    <value>_formatGroup</value>
+  </data>
+  <data name="&gt;&gt;_forumRadioButton.Name" xml:space="preserve">
+    <value>_forumRadioButton</value>
+  </data>
+  <data name="_cancelButton.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Right</value>
+  </data>
+  <data name="&gt;&gt;_mhtFormatRadioButton.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;_unreadOnlyCheckBox.Parent" xml:space="preserve">
+    <value>_exportModeGroup</value>
+  </data>
+  <data name="_selectedMessagesRadioButton.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="_topicRadioButton.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="_browseFileButton.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="_fileNameBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>8, 28</value>
+  </data>
+  <data name="_topicRadioButton.Text" xml:space="preserve">
+    <value>Selected topics</value>
+  </data>
+  <data name="_okButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>126, 283</value>
+  </data>
+  <data name="&gt;&gt;_forumRadioButton.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="_htmlFormatRadioButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>8, 44</value>
+  </data>
+  <data name="_unreadOnlyCheckBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>8, 91</value>
+  </data>
+  <data name="&gt;&gt;_fileNameLabel.Name" xml:space="preserve">
+    <value>_fileNameLabel</value>
+  </data>
+  <data name="_cancelButton.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="_unreadOnlyCheckBox.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="_textFormatRadioButton.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="_forumRadioButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>8, 67</value>
+  </data>
+  <data name="_fileNameLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>58, 13</value>
+  </data>
+  <data name="&gt;&gt;_htmlFormatRadioButton.Name" xml:space="preserve">
+    <value>_htmlFormatRadioButton</value>
+  </data>
+  <data name="&gt;&gt;_textFormatRadioButton.Name" xml:space="preserve">
+    <value>_textFormatRadioButton</value>
+  </data>
+  <data name="&gt;&gt;_topicRadioButton.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="_cancelButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="&gt;&gt;_selectedMessagesRadioButton.Parent" xml:space="preserve">
+    <value>_exportModeGroup</value>
+  </data>
+  <data name="_fileNameLabel.Text" xml:space="preserve">
+    <value>File name :</value>
+  </data>
+  <data name="&gt;&gt;_fileNameBox.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="_forumRadioButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="&gt;&gt;_unreadOnlyCheckBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;_htmlFormatRadioButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="_unreadOnlyCheckBox.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="_saveFileDialog.Title" xml:space="preserve">
+    <value>Export file name</value>
+  </data>
+  <data name="_selectedMessagesRadioButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="_selectedMessagesRadioButton.Text" xml:space="preserve">
+    <value>Selected messages</value>
+  </data>
+  <data name="_okButton.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;_fileNameBox.Name" xml:space="preserve">
+    <value>_fileNameBox</value>
+  </data>
+  <data name="_textFormatRadioButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>68, 17</value>
+  </data>
+  <data name="&gt;&gt;_okButton.Name" xml:space="preserve">
+    <value>_okButton</value>
+  </data>
+  <data name="_formatGroup.Location" type="System.Drawing.Point, System.Drawing">
+    <value>8, 178</value>
+  </data>
+  <data name="_browseFileButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>24, 22</value>
+  </data>
+  <data name="&gt;&gt;_browseFileButton.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;_forumRadioButton.Parent" xml:space="preserve">
+    <value>_exportModeGroup</value>
+  </data>
+  <data name="_formatGroup.Size" type="System.Drawing.Size, System.Drawing">
+    <value>278, 96</value>
+  </data>
+  <data name="&gt;&gt;_htmlFormatRadioButton.Parent" xml:space="preserve">
+    <value>_formatGroup</value>
+  </data>
+  <data name="_mhtFormatRadioButton.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;_textFormatRadioButton.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="_fileNameBox.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left, Right</value>
+  </data>
+  <data name="_htmlFormatRadioButton.Text" xml:space="preserve">
+    <value>HTML</value>
+  </data>
+  <data name="_topicRadioButton.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>System</value>
+  </data>
+  <data name="_saveFileDialog.Filter" xml:space="preserve">
+    <value>Plain text|*.txt|HTML|*.html|Web archive (mht)|*.mht</value>
+  </data>
+  <data name="_forumRadioButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>71, 18</value>
+  </data>
+  <data name="_mhtFormatRadioButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="&gt;&gt;_saveFileDialog.Type" xml:space="preserve">
     <value>System.Windows.Forms.SaveFileDialog, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;$this.Name" xml:space="preserve">
-    <value>ExportMessageDialog</value>
-  </data>
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
     <value>System.Windows.Forms.Form, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="&gt;&gt;_mhtFormatRadioButton.Name" xml:space="preserve">
+    <value>_mhtFormatRadioButton</value>
+  </data>
+  <data name="_formatGroup.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="_okButton.Text" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="_forumRadioButton.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>System</value>
+  </data>
+  <data name="&gt;&gt;_topicRadioButton.Name" xml:space="preserve">
+    <value>_topicRadioButton</value>
+  </data>
+  <data name="_okButton.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>System</value>
+  </data>
+  <data name="_selectedMessagesRadioButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>8, 19</value>
+  </data>
+  <data name="&gt;&gt;_cancelButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="_topicRadioButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>104, 18</value>
+  </data>
+  <data name="_htmlFormatRadioButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="_selectedMessagesRadioButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>123, 18</value>
+  </data>
+  <data name="_htmlFormatRadioButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>55, 17</value>
+  </data>
+  <data name="_browseFileButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>262, 27</value>
+  </data>
+  <data name="&gt;&gt;_fileNameBox.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="_forumRadioButton.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="_textFormatRadioButton.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="_exportModeGroup.Location" type="System.Drawing.Point, System.Drawing">
+    <value>8, 54</value>
+  </data>
+  <data name="_htmlFormatRadioButton.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="_topicRadioButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="&gt;&gt;_cancelButton.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
+    <value>CenterParent</value>
+  </data>
+  <data name="_formatGroup.Text" xml:space="preserve">
+    <value>Format</value>
+  </data>
+  <data name="&gt;&gt;_topicRadioButton.Parent" xml:space="preserve">
+    <value>_exportModeGroup</value>
+  </data>
+  <data name="_mhtFormatRadioButton.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>294, 314</value>
+  </data>
+  <data name="&gt;&gt;_exportModeGroup.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;_selectedMessagesRadioButton.Name" xml:space="preserve">
+    <value>_selectedMessagesRadioButton</value>
+  </data>
+  <data name="_fileNameLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;_htmlFormatRadioButton.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;_okButton.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="_okButton.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Right</value>
+  </data>
+  <data name="_forumRadioButton.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;_exportModeGroup.Name" xml:space="preserve">
+    <value>_exportModeGroup</value>
+  </data>
+  <data name="&gt;&gt;_cancelButton.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;_formatGroup.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;_cancelButton.Name" xml:space="preserve">
+    <value>_cancelButton</value>
+  </data>
+  <data name="_textFormatRadioButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="&gt;&gt;_topicRadioButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="_topicRadioButton.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;_saveFileDialog.Name" xml:space="preserve">
+    <value>_saveFileDialog</value>
+  </data>
+  <data name="&gt;&gt;_mhtFormatRadioButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="_topicRadioButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>8, 43</value>
+  </data>
+  <data name="_cancelButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>207, 283</value>
+  </data>
+  <data name="&gt;&gt;_textFormatRadioButton.Parent" xml:space="preserve">
+    <value>_formatGroup</value>
+  </data>
+  <data name="&gt;&gt;_formatGroup.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="_fileNameBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>254, 20</value>
+  </data>
+  <data name="_exportModeGroup.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="_cancelButton.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>System</value>
+  </data>
+  <metadata name="_cancelButton.Locked" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="_htmlFormatRadioButton.Locked" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="$this.Language" type="System.Globalization.CultureInfo, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>ru</value>
+  </metadata>
+  <metadata name="_saveFileDialog.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
+  <metadata name="_formatGroup.Locked" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="_fileNameLabel.Locked" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="_textFormatRadioButton.Locked" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="_exportModeGroup.Locked" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="$this.Locked" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="_unreadOnlyCheckBox.Locked" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="_okButton.Locked" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="_forumRadioButton.Locked" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="_mhtFormatRadioButton.Locked" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="_topicRadioButton.Locked" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="_selectedMessagesRadioButton.Locked" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="_fileNameBox.Locked" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="_browseFileButton.Locked" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
 </root>

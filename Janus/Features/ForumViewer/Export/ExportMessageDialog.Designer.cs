@@ -153,8 +153,8 @@
 			// ExportMessageDialog
 			// 
 			this.AcceptButton = this._okButton;
-			this.CancelButton = this._cancelButton;
 			resources.ApplyResources(this, "$this");
+			this.CancelButton = this._cancelButton;
 			this.Controls.Add(this._cancelButton);
 			this.Controls.Add(this._okButton);
 			this.Controls.Add(this._formatGroup);

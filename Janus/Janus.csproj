@@ -178,6 +178,13 @@
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Features\ForumViewer\Commands\Forum\ForumCommands.xml" />
+    <EmbeddedResource Include="Features\ForumViewer\Export\ExportResources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>ExportResources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+      <CustomToolNamespace>Rsdn.Janus</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Features\ForumViewer\Export\ExportResources.ru.resx" />
     <EmbeddedResource Include="Features\ForumViewer\MarkMsgReadForm.ru.resx">
       <DependentUpon>MarkMsgReadForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -632,6 +639,11 @@
     </Compile>
     <Compile Include="Features\ForumViewer\ExpectedMessageClickedForm.Designer.cs">
       <DependentUpon>ExpectedMessageClickedForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Features\ForumViewer\Export\ExportResources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ExportResources.resx</DependentUpon>
     </Compile>
     <Compile Include="Features\ForumViewer\ForumsAggregatesService.cs" />
     <Compile Include="Features\ForumViewer\MarkMsgReadForm.Designer.cs">
