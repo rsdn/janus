@@ -398,8 +398,7 @@ namespace Rsdn.Janus
 		/// <param name="protocolInfo">В случае удачи - информация о протоколе,
 		/// иначе - <c>null</c>.</param>
 		/// <returns><c>true</c> - если адрес распознан.</returns>
-		private static bool TryExternalUrlParse(string url,
-												out JanusProtocolInfo protocolInfo)
+		private static bool TryExternalUrlParse(string url, out JanusProtocolInfo protocolInfo)
 		{
 			#region Сообщение
 
@@ -446,12 +445,13 @@ namespace Rsdn.Janus
 			return false;
 		}
 
-		private static bool Make(JanusProtocolResourceType resourceType, string parameters,
-								 string url, out JanusProtocolInfo protocolInfo)
+		private static bool Make(
+			JanusProtocolResourceType resourceType,
+			string parameters,
+			string url,
+			out JanusProtocolInfo protocolInfo)
 		{
-			protocolInfo = new JanusProtocolInfo(
-				resourceType, parameters, url);
-
+			protocolInfo = new JanusProtocolInfo(resourceType, parameters, url);
 			return true;
 		}
 

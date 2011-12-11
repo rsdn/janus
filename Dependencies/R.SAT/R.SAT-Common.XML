@@ -1657,6 +1657,11 @@
             Returns delegate parameter infos.
             </summary>
         </member>
+        <member name="M:Rsdn.SmartApp.ReflectionHelper.IsImplemented(System.Type,System.String)">
+            <summary>
+            Returns true, if type implements or inherits specified contract.
+            </summary>
+        </member>
         <member name="T:Rsdn.SmartApp.ExtensionsCache`3">
             <summary>
             Keyed extension instances cache.

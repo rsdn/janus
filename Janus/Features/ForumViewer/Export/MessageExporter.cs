@@ -434,8 +434,7 @@ Content-Transfer-Encoding: Base64
 				exportPageFormat = rd.ReadToEnd();
 
 			string exportForumStyle;
-			using (var rd = new StreamReader(Assembly.GetExecutingAssembly()
-				.GetRequiredResourceStream(_exportForumResource)))
+			using (var rd = new StreamReader(Assembly.GetExecutingAssembly().GetRequiredResourceStream(_exportForumResource)))
 				exportForumStyle = rd.ReadToEnd();
 
 			return

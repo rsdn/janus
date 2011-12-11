@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Diagnostics;
 using System.IO;
+
+using System.Linq;
+
 using System.Reflection;
 using System.Xml;
 using System.Xml.Schema;
@@ -43,6 +46,14 @@ namespace Rsdn.Janus
 
 		}
 
+		private IEnumerable<string> GetExtensionDirs(string extDir)
+		{
+			return
+				Directory
+					.GetDirectories(extDir)
+					.Where(dir => File.Exists(Path.Combine(dir, _extensionDescriptorFileName)));
+		}
+
 		private IEnumerable<string> GetExtensionAssemblies(string extDir)
 		{
 			var stream = GetType().Assembly
@@ -52,11 +63,9 @@ namespace Rsdn.Janus
 				null);
 			var readerSettings = new XmlReaderSettings();
 			readerSettings.Schemas.Add(schema);
-			foreach (var dir in Directory.GetDirectories(extDir))
+			foreach (var dir in GetExtensionDirs(extDir))
 			{
 				var descFile = Path.Combine(dir, _extensionDescriptorFileName);
-				if (!File.Exists(descFile))
-					continue;
 				var reader = XmlReader.Create(descFile, readerSettings);
 				var xDoc = new XmlDocument();
 				var nsMgr = new XmlNamespaceManager(xDoc.NameTable);
@@ -80,11 +89,18 @@ namespace Rsdn.Janus
 			// Добавляем Janus-Common
 			asmHelper.AddAssembly(typeof(ExtensionInfoProviderBase).Assembly);
 			// Добавляем сборки всех расширений
-			foreach (var asmPath in GetExtensionAssemblies(EnvironmentHelper.GetJanusRootDir()))
+			var rootDir = EnvironmentHelper.GetJanusRootDir();
+			foreach (var asmPath in GetExtensionAssemblies(rootDir))
 			{
 				asmHelper.AddAssembly(Assembly.LoadFrom(asmPath));
 				Trace.WriteLine("Use extension assembly '{0}'".FormatStr(asmPath));
 			}
+
+			//Ресолвинг сборок расширений
+			foreach (var dir in GetExtensionDirs(rootDir).Select(dir => Path.GetFileName(dir)))
+#pragma warning disable 612,618
+				AppDomain.CurrentDomain.AppendPrivatePath(dir);
+#pragma warning restore 612,618
 
 			var extensionManager = new ExtensionManager(_serviceManager);
 			StrategyFactoryStrategy.RegisterAndScan(

@@ -54,6 +54,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ConfigResources.resx</DependentUpon>
     </Compile>
+    <Compile Include="CoreServices\MessageViewer\IMessageFormatter.cs" />
+    <Compile Include="CoreServices\MessageViewer\MessageFormatterAttribute.cs" />
+    <Compile Include="CoreServices\MessageViewer\MessageFormatterInfo.cs" />
     <Compile Include="CoreServices\Search\ISearchService.cs" />
     <Compile Include="CoreServices\Search\MessageSearchInfo.cs" />
     <Compile Include="CoreServices\WebConnection\IProxyConfig.cs" />

@@ -646,6 +646,7 @@
       <DependentUpon>ExportResources.resx</DependentUpon>
     </Compile>
     <Compile Include="Features\ForumViewer\ForumsAggregatesService.cs" />
+    <Compile Include="Features\ForumViewer\ForumViewerStrategyFactory.cs" />
     <Compile Include="Features\ForumViewer\MarkMsgReadForm.Designer.cs">
       <DependentUpon>MarkMsgReadForm.cs</DependentUpon>
     </Compile>

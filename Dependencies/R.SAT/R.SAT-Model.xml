@@ -229,12 +229,12 @@
             Описание active part.
             </summary>
         </member>
-        <member name="M:Rsdn.SmartApp.ActivePartInfo.#ctor(System.Type)">
+        <member name="M:Rsdn.SmartApp.ActivePartInfo.#ctor(System.String)">
             <summary>
             Инициализирует экземпляр.
             </summary>
         </member>
-        <member name="P:Rsdn.SmartApp.ActivePartInfo.Type">
+        <member name="P:Rsdn.SmartApp.ActivePartInfo.TypeName">
             <summary>
             Тип, реализующий расширение.
             </summary>

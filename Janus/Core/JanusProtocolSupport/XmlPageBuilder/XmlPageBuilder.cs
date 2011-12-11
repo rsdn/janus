@@ -26,6 +26,7 @@ namespace Rsdn.Janus
 
 		private readonly HtmlPageBuilder _pageBuilder;
 		private readonly IServiceProvider _serviceProvider;
+		private readonly Lazy<FormatterData[]> _formatters;
 
 // ReSharper disable RedundantDefaultFieldInitializer
 // ReSharper disable ConvertToConstant
@@ -45,6 +46,14 @@ namespace Rsdn.Janus
 
 			using (XmlReader xr = new XmlTextReader(xslStream))
 				_xslTransform.Load(xr, null, null);
+
+			_formatters =
+				new Lazy<FormatterData[]>(
+					() =>
+						serviceProvider
+							.GetRegisteredElements<MessageFormatterInfo>()
+							.Select(info => new FormatterData(info, (IMessageFormatter)info.FormatterType.CreateInstance(serviceProvider)))
+							.ToArray());
 		}
 
 		/// <summary>
@@ -61,9 +70,29 @@ namespace Rsdn.Janus
 			if (!msgExists)
 				return _pageBuilder.GetNotFoundMessage(mid);
 
-			var message = XmlBuilder.BuildMessage(_serviceProvider, _dbManager, mid);
+			var fs = _formatters
+				.Value
+				.Where(data => data.Info.FormatSource)
+				.ToArray();
 
-			return TransformMessage(message);
+			var message =
+				XmlBuilder.BuildMessage(
+					_serviceProvider,
+					_dbManager,
+					mid,
+					src =>
+						_formatters
+							.Value
+							.Where(data => data.Info.FormatSource)
+							.Aggregate(src, (current, fmt) => fmt.Formatter.FormatSource(current)));
+
+			var html = TransformMessage(message);
+			html =
+				_formatters
+					.Value
+					.Where(data => data.Info.FormatHtml)
+					.Aggregate(html, (current, fmt) => fmt.Formatter.FormatHtml(current));
+			return html;
 		}
 
 		/// <summary>
@@ -121,5 +150,29 @@ namespace Rsdn.Janus
 				return tr.ReadToEnd();
 			}
 		}
+
+		#region FormatterData class
+		private class FormatterData
+		{
+			private readonly MessageFormatterInfo _info;
+			private readonly IMessageFormatter _formatter;
+
+			public FormatterData(MessageFormatterInfo info, IMessageFormatter formatter)
+			{
+				_info = info;
+				_formatter = formatter;
+			}
+
+			public MessageFormatterInfo Info
+			{
+				get { return _info; }
+			}
+
+			public IMessageFormatter Formatter
+			{
+				get { return _formatter; }
+			}
+		}
+		#endregion
 	}
 }

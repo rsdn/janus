@@ -2,6 +2,8 @@
 
 using System.Linq;
 
+using JetBrains.Annotations;
+
 namespace Rsdn.Janus
 {
 	internal static class XmlBuilder
@@ -9,7 +11,8 @@ namespace Rsdn.Janus
 		public static XmlMessage BuildMessage(
 			IServiceProvider provider,
 			IJanusDatabaseManager dbMgr,
-			int mid)
+			int mid,
+			[CanBeNull] Func<string, string> sourceFormatter)
 		{
 			using (var db = dbMgr.CreateDBContext())
 			{
@@ -36,6 +39,7 @@ namespace Rsdn.Janus
 									Agrees = m.AgreeCount(),
 									Disagrees = m.DisagreeCount()
 								});
+				var body = sourceFormatter != null ? sourceFormatter(msg.Message) : msg.Message;
 				var formatter = provider.GetFormatter();
 				var xmlMessage =
 					new XmlMessage
@@ -65,10 +69,9 @@ namespace Rsdn.Janus
 						ArticleID = msg.ArticleId.GetValueOrDefault(),
 						Name = msg.Name,
 						Subject = msg.Subject,
-						Content = formatter.Format(msg.Message, true),
+						Content = formatter.Format(body, true),
 						Origin = formatter.Format(msg.Origin, true),
-						Rate =
-							{Summary = JanusFormatMessage.FormatRates(msg.Rating, msg.Smiles, msg.Agrees, msg.Disagrees)}
+						Rate = {Summary = JanusFormatMessage.FormatRates(msg.Rating, msg.Smiles, msg.Agrees, msg.Disagrees)}
 					};
 
 				if (Config.Instance.ForumDisplayConfig.Envelope.ShowRateFrame)
