@@ -233,10 +233,6 @@
     <Content Include="NgenAll.cmd">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <None Include="Properties\Settings.settings">
-      <Generator>SettingsSingleFileGenerator</Generator>
-      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
-    </None>
     <EmbeddedResource Include="Core\JanusProtocolSupport\HtmlPageBuilder\AbsentMessage.html" />
     <EmbeddedResource Include="Core\JanusProtocolSupport\HtmlPageBuilder\ArticleList.html" />
     <EmbeddedResource Include="Core\JanusProtocolSupport\HtmlPageBuilder\ArticleListNotFound.html" />
@@ -1423,11 +1419,6 @@
     </Compile>
     <Compile Include="Framework\Utils\WindowActivator.cs">
       <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Properties\Settings.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTimeSharedInput>True</DesignTimeSharedInput>
-      <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
     <Compile Include="rsdn.ru\ForumViewer\RsdnForumConfig.cs" />
     <Compile Include="rsdn.ru\ForumViewer\RsdnForumService.cs" />
