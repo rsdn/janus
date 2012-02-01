@@ -1,0 +1,4 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<janus-extension-assemblies xmlns="http://rsdn.ru/projects/Janus/JanusExtensionDescriptor.xsd">
+	<extension-assembly>Janus.Rsdn.Admin.dll</extension-assembly>
+</janus-extension-assemblies>

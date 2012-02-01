@@ -524,13 +524,8 @@
       <DependentUpon>SchemaManagementResources.resx</DependentUpon>
     </Compile>
     <Compile Include="Core\JanusProtocolSupport\XmlPageBuilder\XsltFormatUtils.cs" />
-    <Compile Include="Core\JBrowserManagement\BrowserHelper.cs" />
+    <Compile Include="Core\JBrowserManagement\BrowserConfigService.cs" />
     <Compile Include="Core\JBrowserManagement\JBrowserActiveMessageService.cs" />
-    <Compile Include="Core\JBrowserManagement\JBrowserResources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>JBrowserResources.resx</DependentUpon>
-    </Compile>
     <Compile Include="Core\JBrowserManagement\JBrowserService.cs" />
     <Compile Include="Core\LoggingManagement\Commands\LogCommandProvider.cs" />
     <Compile Include="Core\LoggingManagement\Commands\LogCommandTarget.cs" />
@@ -626,8 +621,8 @@
     <Compile Include="Features\Favorites\IFavoritesManager.cs" />
     <Compile Include="Features\Favorites\Menu\FavoritesContextMenuProvider.cs" />
     <Compile Include="Features\Favorites\Menu\FavoritesToolbarProvider.cs" />
-    <Compile Include="Features\ForumViewer\Commands\ForumMessage\ForumMessageCommandProvider.cs" />
     <Compile Include="Features\ForumViewer\Commands\ForumMessage\ForumMessageCommandHelper.cs" />
+    <Compile Include="Features\ForumViewer\Commands\ForumMessage\ForumMessageCommandProvider.cs" />
     <Compile Include="Features\ForumViewer\Commands\Forums\ForumsCommandProvider.cs" />
     <Compile Include="Features\ForumViewer\Commands\ForumViewer\ForumViewerCommandProvider.cs" />
     <Compile Include="Features\ForumViewer\EnterTopicMessageIdForm.Designer.cs">
@@ -713,7 +708,6 @@
       <DependentUpon>MsgViewer.cs</DependentUpon>
     </Compile>
     <Compile Include="Features\ForumViewer\Navigation\HistoryNavigationType.cs" />
-    <Compile Include="Features\ForumViewer\IActiveMessagesService.cs" />
     <Compile Include="Features\ForumViewer\IForumViewerService.cs" />
     <Compile Include="Features\ForumViewer\IMessagesFeature.cs" />
     <Compile Include="Features\ForumViewer\MessageEditor\Commands\MessageEditorCommandProvider.cs" />
@@ -816,7 +810,6 @@
     <Compile Include="Core\Configuration\ConfirmationConfig.cs" />
     <Compile Include="Core\Configuration\DetailStyleTab.cs" />
     <Compile Include="Core\Configuration\EnvelopeConfig.cs" />
-    <Compile Include="Core\Configuration\UrlBehavior.cs" />
     <Compile Include="Core\Configuration\ForumDisplayConfig.cs" />
     <Compile Include="Core\Configuration\ForumExportConfig.cs" />
     <Compile Include="Core\Configuration\JanusCategoryAttribute.cs" />
@@ -1499,14 +1492,6 @@
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Core\JBrowserManagement\Commands\JBrowserCommandResources.ru.resx">
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Core\JBrowserManagement\JBrowserResources.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>JBrowserResources.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Core\JBrowserManagement\JBrowserResources.ru.resx">
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Core\JBrowserManagement\Menu\JBrowserMenuResources.resx">

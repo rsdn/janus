@@ -64,15 +64,16 @@ namespace Rsdn.Janus
 						{
 							case ExportMode.Messages:
 								messages = new List<IMsg>(
-									!uiInfo.UnreadMessagesOnly
+									(!uiInfo.UnreadMessagesOnly
 										? activeMsgSvc.ActiveMessages
-										: activeMsgSvc.ActiveMessages.Where(msg => !msg.IsRead));
+										: activeMsgSvc.ActiveMessages.Where(msg => !msg.IsRead))
+										.Cast<IMsg>());
 								break;
 
 							case ExportMode.Topics:
 								messages = new List<IMsg>(100);
 								foreach (var msg in activeMsgSvc.ActiveMessages)
-									GetAllChildren(msg.Topic, messages, uiInfo.UnreadMessagesOnly);
+									GetAllChildren((IMsg)msg.Topic, messages, uiInfo.UnreadMessagesOnly);
 								break;
 
 							case ExportMode.Forum:

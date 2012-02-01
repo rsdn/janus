@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 
-using Rsdn.Janus.ObjectModel;
 using Rsdn.SmartApp;
 
 namespace Rsdn.Janus
@@ -32,7 +31,7 @@ namespace Rsdn.Janus
 
 		#region IActiveMessageService Members
 
-		public IEnumerable<IMsg> ActiveMessages
+		public IEnumerable<IForumMessageInfo> ActiveMessages
 		{
 			get
 			{
@@ -43,7 +42,7 @@ namespace Rsdn.Janus
 					if (msg != null)
 						return new[] { msg };
 				}
-				return Enumerable.Empty<IMsg>();
+				return Enumerable.Empty<IForumMessageInfo>();
 			}
 		}
 

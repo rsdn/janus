@@ -15,13 +15,14 @@ namespace Rsdn.Janus
 			if (provider == null)
 				throw new ArgumentNullException("provider");
 			if (string.IsNullOrEmpty(url))
-				throw new ArgumentException("Аргумент не должен быть null или пустой строкой", "url");
+				throw new ArgumentNullException("url");
 
+			var cfg = provider.GetRequiredService<IBrowserConfigService>();
 			var urlsBehavior = new Uri(url).Scheme.Equals(
-					JanusProtocolInfo.JanusUriScheme,
+					JanusProtocolConstants.JanusUriScheme,
 					StringComparison.InvariantCultureIgnoreCase)
 				? UrlBehavior.InternalBrowser
-				: Config.Instance.Behavior;
+				: cfg.Behavior;
 
 			provider.OpenUrlInBrowser(url, urlsBehavior);
 		}
@@ -32,7 +33,7 @@ namespace Rsdn.Janus
 			if (provider == null)
 				throw new ArgumentNullException("provider");
 			if (string.IsNullOrEmpty(url))
-				throw new ArgumentException("Аргумент не должен быть null или пустой строкой", "url");
+				throw new ArgumentNullException("url");
 
 			if (behavior == UrlBehavior.InternalBrowser)
 				provider.GetRequiredService<IBrowserService>().OpenUrl(url);

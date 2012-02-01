@@ -17,7 +17,7 @@ namespace Rsdn.Janus
 	/// Базовый класс для сообщения форума.
 	/// </summary>
 	
-public abstract class MsgBase : IMsg, ICollection<MsgBase>, IGetData, ISupportMapping
+public abstract class MsgBase : IMsg, ICollection<MsgBase>, IGetData, ISupportMapping, IForumMessageInfo
 	{
 		private const string _reSubj = "…{0}: {1}";
 		private static readonly Regex _reRx =
@@ -75,10 +75,22 @@ public abstract class MsgBase : IMsg, ICollection<MsgBase>, IGetData, ISupportMa
 		protected int Moderatorials { private get; set; }	// Количество бомбочек текущего сообщения
 		[MapField("a_agree")]
 		protected int RepliesAgree { private get; set; }
+
+		IForumMessageInfo IForumMessageInfo.Topic
+		{
+			get { return (IForumMessageInfo) Topic; }
+		}
+
 		[MapField("a_count")]
 		public int RepliesCount { get; set; }
 		[MapField("a_unread")]
 		public int RepliesUnread { get; protected set; }
+
+		IForumMessageInfo IForumMessageInfo.Parent
+		{
+			get { return Parent; }
+		}
+
 		[MapField("a_rate")]
 		protected int RepliesRate { private get; set; }			// Общий ретинг по дочерним сообщениям.
 		[MapField("a_smiles")]

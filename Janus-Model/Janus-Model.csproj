@@ -54,6 +54,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ConfigResources.resx</DependentUpon>
     </Compile>
+    <Compile Include="CoreServices\Browser\UrlBehavior.cs" />
+    <Compile Include="CoreServices\Browser\IBrowserConfigService.cs" />
+    <Compile Include="CoreServices\JanusProtocolConstants.cs" />
     <Compile Include="CoreServices\MessageViewer\IMessageFormatter.cs" />
     <Compile Include="CoreServices\MessageViewer\MessageFormatterAttribute.cs" />
     <Compile Include="CoreServices\MessageViewer\MessageFormatterInfo.cs" />
@@ -148,11 +151,13 @@
     <Compile Include="rsdn.ru\Database\Forums\DataModel\IServerForum.cs" />
     <Compile Include="rsdn.ru\Database\Forums\DataModel\ISubscribedForum.cs" />
     <Compile Include="rsdn.ru\Database\Forums\DataModel\ITopicInfo.cs" />
+    <Compile Include="rsdn.ru\Database\Forums\IForumMessageInfo.cs" />
     <Compile Include="rsdn.ru\Database\Users\DataModel\IUser.cs" />
     <Compile Include="rsdn.ru\Database\Forums\MsgMark\ForumEntryChangedEventArgs.cs" />
     <Compile Include="rsdn.ru\Database\Forums\MsgMark\ForumEntryChangeType.cs" />
     <Compile Include="rsdn.ru\Forums\ForumEventNames.cs" />
     <Compile Include="rsdn.ru\Forums\IActiveForumService.cs" />
+    <Compile Include="rsdn.ru\Forums\IActiveMessagesService.cs" />
     <Compile Include="rsdn.ru\Forums\IForumsAggregatesService.cs" />
     <Compile Include="rsdn.ru\Forums\IJanusFormatter.cs" />
     <Compile Include="rsdn.ru\Forums\IMessageEditorService.cs" />

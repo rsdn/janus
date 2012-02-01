@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<root xmlns="http://rsdn.ru/projects/Janus/JanusMenuDescriptor.xsd" name="ForumMessage.ContextMenu">
+
+	<group name="Open">
+		<menuCommand command="Janus.Rsdn.Admin.ModerateMessage" image="openurl"/>
+	</group>
+
+</root>

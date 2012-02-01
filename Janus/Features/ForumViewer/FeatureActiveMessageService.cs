@@ -14,7 +14,7 @@ namespace Rsdn.Janus
 
 		public FeatureActiveMessageService()
 		{
-			Features.Instance.AfterFeatureActivate += Feature_AfterFeatureActivate;
+			Features.Instance.AfterFeatureActivate += AfterFeatureActivate;
 			_activeMessagesFeature = Features.Instance.ActiveFeature as IMessagesFeature;
 			if (_activeMessagesFeature != null)
 				_activeMessagesFeature.ActiveMessagesChanged += Feature_ActiveMessagesChanged;
@@ -22,13 +22,14 @@ namespace Rsdn.Janus
 
 		#region IActiveMessageService Members
 
-		public IEnumerable<IMsg> ActiveMessages
+		public IEnumerable<IForumMessageInfo> ActiveMessages
 		{
 			get
 			{
-				return _activeMessagesFeature != null
-					? _activeMessagesFeature.ActiveMessages 
-					: Enumerable.Empty<IMsg>();
+				return
+					_activeMessagesFeature != null
+						? _activeMessagesFeature.ActiveMessages.Cast<IForumMessageInfo>() 
+						: Enumerable.Empty<IForumMessageInfo>();
 			}
 		}
 
@@ -40,7 +41,7 @@ namespace Rsdn.Janus
 
 		public void Dispose()
 		{
-			Features.Instance.AfterFeatureActivate -= Feature_AfterFeatureActivate;
+			Features.Instance.AfterFeatureActivate -= AfterFeatureActivate;
 			if (_activeMessagesFeature != null)
 				_activeMessagesFeature.ActiveMessagesChanged -= Feature_ActiveMessagesChanged;
 		}
@@ -53,7 +54,7 @@ namespace Rsdn.Janus
 				ActiveMessagesChanged(this, EventArgs.Empty);
 		}
 
-		private void Feature_AfterFeatureActivate(IFeature oldFeature, IFeature newFeature)
+		private void AfterFeatureActivate(IFeature oldFeature, IFeature newFeature)
 		{
 			if (_activeMessagesFeature != null)
 				_activeMessagesFeature.ActiveMessagesChanged -= Feature_ActiveMessagesChanged;

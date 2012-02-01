@@ -78,6 +78,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CoreServices\JBrowser\BrowserHelper.cs" />
     <Compile Include="CoreServices\CheckState\CheckStateGetterAttribute.cs" />
     <Compile Include="CoreServices\CheckState\CheckStateService.cs" />
     <Compile Include="CoreServices\CheckState\CheckStateSource.cs" />
@@ -100,6 +101,11 @@
     <Compile Include="CoreServices\Commands\CommandNamesValidator.cs" />
     <Compile Include="CoreServices\Commands\ResourceCommandProvider.cs" />
     <Compile Include="CoreServices\Commands\CommandStatusHelper.cs" />
+    <Compile Include="CoreServices\JBrowser\JBrowserResources.Designer.cs">
+      <DependentUpon>JBrowserResources.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
     <Compile Include="CoreServices\Menu\MenuGroup.cs" />
     <Compile Include="CoreServices\Menu\MenuMergingHelper.cs" />
     <Compile Include="CoreServices\Menu\MenuRoot.cs" />
@@ -142,6 +148,7 @@
       <DependentUpon>JanusBaseForm.cs</DependentUpon>
     </Compile>
     <Compile Include="rsdn.ru\ForumDBHelper.cs" />
+    <Compile Include="rsdn.ru\ForumMessageCommandHelper.cs" />
     <Compile Include="rsdn.ru\OutboxHelper.cs" />
     <Compile Include="rsdn.ru\UserHelper.cs" />
     <Compile Include="Synchronization\NetSync\WebResponseProxy.cs" />
@@ -214,6 +221,14 @@
     <Compile Include="Utils\WinFormsHelper.cs" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="CoreServices\JBrowser\JBrowserResources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>JBrowserResources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CoreServices\JBrowser\JBrowserResources.ru.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <EmbeddedResource Include="Database\DBConfigControlBase.resx">
       <DependentUpon>DBConfigControlBase.cs</DependentUpon>
       <SubType>Designer</SubType>

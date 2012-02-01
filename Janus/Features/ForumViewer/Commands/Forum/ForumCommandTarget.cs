@@ -123,7 +123,7 @@ namespace Rsdn.Janus
 		[CommandStatusGetter("Janus.Forum.MessageExport")]
 		public CommandStatus QueryMessageExportStatus(ICommandContext context)
 		{
-			return ForumMessageCommandHelper.GetMultipleMessagesCommandStatus(context, null)
+			return ForumCommandHelper.GetMultipleMessagesCommandStatus(context, null)
 				.Or(QueryForumCommandStatus(context, null));
 		}
 
@@ -131,8 +131,7 @@ namespace Rsdn.Janus
 		public IDisposable SubscribeMessageExportStatusChanged(
 			IServiceProvider serviceProvider, Action handler)
 		{
-			return ForumMessageCommandHelper
-				.SubscribeMessageCommandStatusChanged(serviceProvider, handler);
+			return ForumCommandHelper.SubscribeMessageCommandStatusChanged(serviceProvider, handler);
 		}
 
 

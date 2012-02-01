@@ -3,8 +3,6 @@
 using System;
 using System.Collections.Generic;
 
-using Rsdn.Janus.ObjectModel;
-
 namespace Rsdn.Janus
 {
 	/// <summary>
@@ -15,7 +13,7 @@ namespace Rsdn.Janus
 		/// <summary>
 		/// Активные сообщения.
 		/// </summary>
-		IEnumerable<IMsg> ActiveMessages { get; }
+		IEnumerable<IForumMessageInfo> ActiveMessages { get; }
 
 		/// <summary>
 		/// Возникает когда активные сообщения изменились.

@@ -35,7 +35,7 @@ namespace Rsdn.Janus
 				return;
 
 			if (ApplicationManager.Instance.ForumNavigator.SelectMessage(
-					ForumMessageCommandHelper.GetMessageId(context, messageId)))
+					ForumCommandHelper.GetMessageId(context, messageId)))
 			{
 				var mainWindowSvc = context.GetService<IMainWindowService>();
 				if (mainWindowSvc != null)
@@ -54,7 +54,7 @@ namespace Rsdn.Janus
 		public CommandStatus QueryGoToMessageCommandStatus(
 			ICommandContext context, int? messageId)
 		{
-			return ForumMessageCommandHelper.GetSingleMessageCommandStatus(context, messageId)
+			return ForumCommandHelper.GetSingleMessageCommandStatus(context, messageId)
 				.UnavailableIfNot(
 					() => Forums.Instance.ActiveForum == null
 						|| ForumMessageCommandHelper.GetMessage(context, messageId).ForumID !=
@@ -65,8 +65,7 @@ namespace Rsdn.Janus
 		public IDisposable SubscribeGoToCommandStatusChanged(
 			IServiceProvider serviceProvider, Action handler)
 		{
-			return ForumMessageCommandHelper
-				.SubscribeMessageCommandStatusChanged(serviceProvider, handler);
+			return ForumCommandHelper.SubscribeMessageCommandStatusChanged(serviceProvider, handler);
 		}
 
 		[CommandExecutor("Janus.Forum.GoToMessageWithPrompt")]

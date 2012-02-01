@@ -277,8 +277,6 @@ namespace Rsdn.Janus
 
 		#region Константы
 
-		public const string JanusUriScheme = "janus";
-
 		private const string _formatter = "formatter";
 		
 		private const string _message = "message";

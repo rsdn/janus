@@ -2,8 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 
-using Rsdn.Janus.ObjectModel;
-
 namespace Rsdn.Janus
 {
 	internal class MessageViewerActiveMessageService : IActiveMessagesService
@@ -20,13 +18,13 @@ namespace Rsdn.Janus
 
 		#region IActiveMessageService Members
 
-		public IEnumerable<IMsg> ActiveMessages
+		public IEnumerable<IForumMessageInfo> ActiveMessages
 		{
 			get
 			{
 				return _messageViewer.Msg != null
-					? new[] { _messageViewer.Msg }
-					: Enumerable.Empty<IMsg>();
+					? new IForumMessageInfo[] { _messageViewer.Msg }
+					: Enumerable.Empty<IForumMessageInfo>();
 			}
 		}
 

@@ -71,7 +71,7 @@ namespace Rsdn.Janus
 		{
 			var url = JanusProtocolDispatcher.FormatURI(
 				JanusProtocolResourceType.Message,
-				ForumMessageCommandHelper.GetMessageId(context, messageId).ToString());
+				ForumCommandHelper.GetMessageId(context, messageId).ToString());
 
 			context.OpenUrlInBrowser(url, UrlBehavior.InternalBrowser);
 		}
@@ -81,7 +81,7 @@ namespace Rsdn.Janus
 		{
 			context.OpenUrlInBrowser(
 				SiteUrlHelper.GetMessageUrl(
-					ForumMessageCommandHelper.GetMessageId(context, messageId)));
+					ForumCommandHelper.GetMessageId(context, messageId)));
 		}
 
 		[CommandExecutor("Janus.Forum.OpenMessageRatingOnRsdn")]
@@ -89,7 +89,7 @@ namespace Rsdn.Janus
 		{
 			context.OpenUrlInBrowser(
 				SiteUrlHelper.GetRatingUrl(
-					ForumMessageCommandHelper.GetMessageId(context, messageId)));
+					ForumCommandHelper.GetMessageId(context, messageId)));
 		}
 
 
@@ -98,7 +98,7 @@ namespace Rsdn.Janus
 		{
 			using (var frm = new ModeratingForm(
 					context,
-					ForumMessageCommandHelper.GetMessageId(context, messageId)))
+					ForumCommandHelper.GetMessageId(context, messageId)))
 				frm.ShowDialog(context.GetRequiredService<IUIShell>().GetMainWindowParent());
 		}
 
@@ -110,7 +110,7 @@ namespace Rsdn.Janus
 					.DisabledIfNot(
 						() =>
 						{
-							var id = ForumMessageCommandHelper.GetMessageId(context, messageId);
+							var id = ForumCommandHelper.GetMessageId(context, messageId);
 							using (var mgr = context.CreateDBContext())
 								return mgr.Moderatorials().Any(m => m.MessageID == id);
 						});
@@ -121,7 +121,7 @@ namespace Rsdn.Janus
 		{
 			context.OpenUrlInBrowser(
 				SiteUrlHelper.GetSelfModerateUrl(
-					ForumMessageCommandHelper.GetMessageId(context, messageId)));
+					ForumCommandHelper.GetMessageId(context, messageId)));
 		}
 
 		[CommandExecutor("Janus.Forum.ShowMessageRating")]
@@ -129,7 +129,7 @@ namespace Rsdn.Janus
 		{
 			context.OpenUrlInBrowser(
 				SiteUrlHelper.GetRatingUrl(
-					ForumMessageCommandHelper.GetMessageId(context, messageId)));
+					ForumCommandHelper.GetMessageId(context, messageId)));
 		}
 
 
@@ -167,7 +167,7 @@ namespace Rsdn.Janus
 		[CommandStatusGetter("Janus.Forum.ShowMessageRating")]
 		public CommandStatus QueryMessageCommandStatus(ICommandContext context, int? messageId)
 		{
-			return ForumMessageCommandHelper.GetSingleMessageCommandStatus(context, messageId);
+			return ForumCommandHelper.GetSingleMessageCommandStatus(context, messageId);
 		}
 
 
@@ -179,7 +179,7 @@ namespace Rsdn.Janus
 						context
 							.GetRequiredService<IUIShell>()
 							.GetMainWindowParent()) == DialogResult.Yes)
-					ForumMessageCommandHelper
+					ForumCommandHelper
 						.GetMessageIds(context, messageIds)
 						.ForEach(
 							msgId =>
@@ -214,7 +214,7 @@ namespace Rsdn.Janus
 		[CommandStatusGetter("Janus.Forum.RegetTopic")]
 		public CommandStatus QueryMessagesCommandStatus(ICommandContext context, int[] messageIds)
 		{
-			return ForumMessageCommandHelper.GetMultipleMessagesCommandStatus(context, messageIds);
+			return ForumCommandHelper.GetMultipleMessagesCommandStatus(context, messageIds);
 		}
 
 
@@ -253,10 +253,10 @@ namespace Rsdn.Janus
 				ForumDummyForm.Instance.StopMarkTimer();
 
 			ForumHelper.MarkMsgRead(
-			   context,
-			   ForumMessageCommandHelper.GetMessages(context, messageIds).Cast<MsgBase>(),
-			   isRead,
-			   markChilds);
+				context,
+				ForumMessageCommandHelper.GetMessages(context, messageIds).Cast<MsgBase>(),
+				isRead,
+				markChilds);
 		}
 
 		[CommandStatusGetter("Janus.Forum.SetMessagesReadMark")]
@@ -338,8 +338,7 @@ namespace Rsdn.Janus
 		public IDisposable SubscribeMessageCommandStatusChanged(
 			IServiceProvider serviceProvider, Action handler)
 		{
-			return ForumMessageCommandHelper
-				.SubscribeMessageCommandStatusChanged(serviceProvider, handler);
+			return ForumCommandHelper.SubscribeMessageCommandStatusChanged(serviceProvider, handler);
 		}
 	}
 }
