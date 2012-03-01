@@ -28,18 +28,7 @@ namespace Rsdn.Janus
 		{
 			using (var mgr = provider.CreateDBContext())
 			{
-				var forums =
-					mgr
-						.SubscribedForums()
-						.Select(
-							f =>
-							new RequestForumInfo
-								{
-									forumId = f.ID,
-									isFirstRequest = f.LastSync < 0
-								})
-						.ToArray();
-
+				var forums = JanusATHelper.GetSubscribedForums(mgr);
 				if (forums.Count() != 0)
 				{
 					foreach (var rq in forums)

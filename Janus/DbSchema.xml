@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <DbSchema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 		  xmlns:xsd="http://www.w3.org/2001/XMLSchema"
-		  version="27">
+		  version="29">
 
 	<table name="download_topics">
 		<column name="id" 
@@ -662,5 +662,21 @@
 			   clustered="false"
 			   allow-nulls="Allow"
 			   unique="false"/>
+	</table>
+
+	<table name="violations">
+		<column name="messageId"
+		        type="Integer"
+		        nullable="false"/>
+		<column name="reason"
+		        type="NCharacterVaring"
+		        nullable="false"
+		        size="512"/>
+		<column name="penaltyType"
+		        type="Integer"
+		        nullable="false"/>
+		<column name="create"
+		        type="Timestamp"
+		        nullable="false"/>
 	</table>
 </DbSchema>

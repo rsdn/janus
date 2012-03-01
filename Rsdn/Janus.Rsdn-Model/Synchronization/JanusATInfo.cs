@@ -64,5 +64,6 @@
 		public const string TopicSyncTaskName = "TopicSync";
 		public const string UsersSyncTaskName = "UsersSync";
 		public const string PostMessagesSyncTaskName = "PostMessagesSync";
+		public const string ViolationsSyncTaskName = "ViolationsSync";
 	}
 }

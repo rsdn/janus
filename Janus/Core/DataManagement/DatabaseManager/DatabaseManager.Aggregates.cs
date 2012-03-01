@@ -130,7 +130,6 @@ namespace Rsdn.Janus
 			return updated;
 		}
 
-
 		private static void UpdateTopicInfo(IDataContext db, int tid)
 		{
 			UpdateTopicInfoByFilter(
@@ -191,13 +190,9 @@ namespace Rsdn.Janus
 								{
 									TopicID = tid,
 									UnreadCount =
-										msgs
-											.Where(m => !m.IsRead && m.TopicID == tid)
-											.Count(),
+										msgs.Count(m => !m.IsRead && m.TopicID == tid),
 									MeUnreadCount =
-										msgs
-											.Where(m => !m.IsRead && m.UserID == Config.Instance.SelfId && m.TopicID == tid)
-											.Count()
+										msgs.Count(m => !m.IsRead && m.UserID == Config.Instance.SelfId && m.TopicID == tid)
 								})
 						.ToList();
 

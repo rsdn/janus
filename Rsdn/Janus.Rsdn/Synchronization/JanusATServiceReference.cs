@@ -45,6 +45,8 @@ namespace Rsdn.Janus.AT
 
 		private System.Threading.SendOrPostCallback CheckOperationCompleted;
 
+		private System.Threading.SendOrPostCallback GetNewViolationsOperationCompleted;
+
 		private bool useDefaultCredentialsSetExplicitly;
 
 		/// <remarks/>
@@ -113,6 +115,9 @@ namespace Rsdn.Janus.AT
 
 		/// <remarks/>
 		public event CheckCompletedEventHandler CheckCompleted;
+
+		/// <remarks/>
+		public event GetNewViolationsCompletedEventHandler GetNewViolationsCompleted;
 
 		/// <remarks/>
 		[System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://rsdn.ru/Janus/GetTopicByMessage", RequestNamespace = "http://rsdn.ru/Janus/", ResponseNamespace = "http://rsdn.ru/Janus/", Use = System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle = System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
@@ -448,6 +453,41 @@ namespace Rsdn.Janus.AT
 		}
 
 		/// <remarks/>
+		[System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://rsdn.ru/Janus/GetNewViolations", RequestNamespace = "http://rsdn.ru/Janus/", ResponseNamespace = "http://rsdn.ru/Janus/", Use = System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle = System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+		public ViolationResponse GetNewViolations(ViolationRequest request)
+		{
+			object[] results = this.Invoke("GetNewViolations", new object[] {
+                        request});
+			return ((ViolationResponse)(results[0]));
+		}
+
+		/// <remarks/>
+		public void GetNewViolationsAsync(ViolationRequest request)
+		{
+			this.GetNewViolationsAsync(request, null);
+		}
+
+		/// <remarks/>
+		public void GetNewViolationsAsync(ViolationRequest request, object userState)
+		{
+			if ((this.GetNewViolationsOperationCompleted == null))
+			{
+				this.GetNewViolationsOperationCompleted = new System.Threading.SendOrPostCallback(this.OnGetNewViolationsOperationCompleted);
+			}
+			this.InvokeAsync("GetNewViolations", new object[] {
+                        request}, this.GetNewViolationsOperationCompleted, userState);
+		}
+
+		private void OnGetNewViolationsOperationCompleted(object arg)
+		{
+			if ((this.GetNewViolationsCompleted != null))
+			{
+				System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+				this.GetNewViolationsCompleted(this, new GetNewViolationsCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+			}
+		}
+
+		/// <remarks/>
 		public new void CancelAsync(object userState)
 		{
 			base.CancelAsync(userState);
@@ -467,6 +507,205 @@ namespace Rsdn.Janus.AT
 				return true;
 			}
 			return false;
+		}
+	}
+
+	/// <remarks/>
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.233")]
+	[System.SerializableAttribute()]
+	[System.Diagnostics.DebuggerStepThroughAttribute()]
+	[System.ComponentModel.DesignerCategoryAttribute("code")]
+	[System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://rsdn.ru/Janus/")]
+	public partial class JanusViolationInfo
+	{
+
+		private int messageIDField;
+
+		private string reasonField;
+
+		private System.DateTime createdOnField;
+
+		private PenaltyType penaltyTypeField;
+
+		private byte[] rowVersionField;
+
+		/// <remarks/>
+		public int MessageID
+		{
+			get
+			{
+				return this.messageIDField;
+			}
+			set
+			{
+				this.messageIDField = value;
+			}
+		}
+
+		/// <remarks/>
+		public string Reason
+		{
+			get
+			{
+				return this.reasonField;
+			}
+			set
+			{
+				this.reasonField = value;
+			}
+		}
+
+		/// <remarks/>
+		public System.DateTime CreatedOn
+		{
+			get
+			{
+				return this.createdOnField;
+			}
+			set
+			{
+				this.createdOnField = value;
+			}
+		}
+
+		/// <remarks/>
+		public PenaltyType PenaltyType
+		{
+			get
+			{
+				return this.penaltyTypeField;
+			}
+			set
+			{
+				this.penaltyTypeField = value;
+			}
+		}
+
+		/// <remarks/>
+		[System.Xml.Serialization.XmlElementAttribute(DataType = "base64Binary")]
+		public byte[] RowVersion
+		{
+			get
+			{
+				return this.rowVersionField;
+			}
+			set
+			{
+				this.rowVersionField = value;
+			}
+		}
+	}
+
+	/// <remarks/>
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.233")]
+	[System.SerializableAttribute()]
+	[System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://rsdn.ru/Janus/")]
+	public enum PenaltyType
+	{
+
+		/// <remarks/>
+		Ban,
+
+		/// <remarks/>
+		Close,
+
+		/// <remarks/>
+		Warning,
+	}
+
+	/// <remarks/>
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.233")]
+	[System.SerializableAttribute()]
+	[System.Diagnostics.DebuggerStepThroughAttribute()]
+	[System.ComponentModel.DesignerCategoryAttribute("code")]
+	[System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://rsdn.ru/Janus/")]
+	public partial class ViolationResponse
+	{
+
+		private JanusViolationInfo[] violationsField;
+
+		/// <remarks/>
+		public JanusViolationInfo[] Violations
+		{
+			get
+			{
+				return this.violationsField;
+			}
+			set
+			{
+				this.violationsField = value;
+			}
+		}
+	}
+
+	/// <remarks/>
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.17379")]
+	[System.SerializableAttribute()]
+	[System.Diagnostics.DebuggerStepThroughAttribute()]
+	[System.ComponentModel.DesignerCategoryAttribute("code")]
+	[System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://rsdn.ru/Janus/")]
+	public partial class ViolationRequest
+	{
+
+		private string userNameField;
+
+		private string passwordField;
+
+		private RequestForumInfo[] subscribedForumsField;
+
+		private byte[] lastRowVersionField;
+
+		/// <remarks/>
+		public string UserName
+		{
+			get
+			{
+				return this.userNameField;
+			}
+			set
+			{
+				this.userNameField = value;
+			}
+		}
+
+		/// <remarks/>
+		public string Password
+		{
+			get
+			{
+				return this.passwordField;
+			}
+			set
+			{
+				this.passwordField = value;
+			}
+		}
+
+		/// <remarks/>
+		public RequestForumInfo[] SubscribedForums
+		{
+			get
+			{
+				return this.subscribedForumsField;
+			}
+			set
+			{
+				this.subscribedForumsField = value;
+			}
+		}
+
+		/// <remarks/>
+		[System.Xml.Serialization.XmlElementAttribute(DataType = "base64Binary")]
+		public byte[] LastRowVersion
+		{
+			get
+			{
+				return this.lastRowVersionField;
+			}
+			set
+			{
+				this.lastRowVersionField = value;
+			}
 		}
 	}
 
@@ -2695,6 +2934,36 @@ namespace Rsdn.Janus.AT
 	/// <remarks/>
 	[System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30128.1")]
 	public delegate void CheckCompletedEventHandler(object sender, System.ComponentModel.AsyncCompletedEventArgs e);
+
+	/// <remarks/>
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.1")]
+	public delegate void GetNewViolationsCompletedEventHandler(object sender, GetNewViolationsCompletedEventArgs e);
+
+	/// <remarks/>
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.1")]
+	[System.Diagnostics.DebuggerStepThroughAttribute()]
+	[System.ComponentModel.DesignerCategoryAttribute("code")]
+	public partial class GetNewViolationsCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs
+	{
+
+		private object[] results;
+
+		internal GetNewViolationsCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) :
+			base(exception, cancelled, userState)
+		{
+			this.results = results;
+		}
+
+		/// <remarks/>
+		public ViolationResponse Result
+		{
+			get
+			{
+				this.RaiseExceptionIfNecessary();
+				return ((ViolationResponse)(this.results[0]));
+			}
+		}
+	}
 }
 
 #pragma warning restore 1591

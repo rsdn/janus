@@ -115,6 +115,7 @@
     <Compile Include="Synchronization\Tasks\RsdnSyncTask.cs" />
     <Compile Include="Synchronization\Tasks\TopicSyncTask.cs" />
     <Compile Include="Synchronization\Tasks\UsersSyncTask.cs" />
+    <Compile Include="Synchronization\Tasks\ViolationsSyncTask.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />

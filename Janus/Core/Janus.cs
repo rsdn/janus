@@ -150,7 +150,7 @@ namespace Rsdn.Janus
 												try
 												{
 													DBSchemaManager.Restruct(host);
-													DatabaseManager.ClearTopicInfo(host);
+													//DatabaseManager.ClearTopicInfo(host);
 													Config.Instance.BadRestruct = false;
 												}
 												catch

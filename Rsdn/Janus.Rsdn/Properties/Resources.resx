@@ -258,6 +258,9 @@
   <data name="QueryNewUsers" xml:space="preserve">
     <value>Query new user profiles from server</value>
   </data>
+  <data name="QueryNewViolations" xml:space="preserve">
+    <value>Query new violations</value>
+  </data>
   <data name="SubscribeMessage" xml:space="preserve">
     <value>Subscribe to forum(s)…</value>
   </data>

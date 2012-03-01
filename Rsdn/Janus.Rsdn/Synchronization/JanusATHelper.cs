@@ -1,4 +1,8 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+
+using BLToolkit.Data.Linq;
 
 namespace Rsdn.Janus.AT
 {
@@ -22,6 +26,21 @@ namespace Rsdn.Janus.AT
 				priority,
 				syncFinishedHandler,
 				activateUI);
+		}
+
+		internal static RequestForumInfo[] GetSubscribedForums(IDataContext db)
+		{
+			return
+				db
+					.SubscribedForums()
+					.Select(
+						f =>
+							new RequestForumInfo
+							{
+								forumId = f.ID,
+								isFirstRequest = f.LastSync < 0
+							})
+					.ToArray();
 		}
 	}
 }

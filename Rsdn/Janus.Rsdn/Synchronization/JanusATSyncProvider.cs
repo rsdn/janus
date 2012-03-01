@@ -28,24 +28,28 @@ namespace Rsdn.Janus
 		private static IEnumerable<IWebSvcSyncTask<JanusAT>> CreateSyncTasks(
 			IServiceProvider provider)
 		{
-			return new IWebSvcSyncTask<JanusAT>[]
+			return
+				new IWebSvcSyncTask<JanusAT>[]
 				{
 					new ForumsSyncTask(provider, JanusATInfo.ForumsSyncTaskName),
 					new MessagesSyncTask(provider, JanusATInfo.MessagesSyncTaskName),
 					new PostMessagesSyncTask(provider, JanusATInfo.PostMessagesSyncTaskName),
 					new TopicSyncTask(provider, JanusATInfo.TopicSyncTaskName),
-					new UsersSyncTask(provider, JanusATInfo.UsersSyncTaskName)
+					new UsersSyncTask(provider, JanusATInfo.UsersSyncTaskName),
+					new ViolationsSyncTask(provider, JanusATInfo.ViolationsSyncTaskName)
 				};
 		}
 
 		protected override string[] GetPeriodicTaskNames()
 		{
-			return new[]
+			return
+				new[]
 				{
 					JanusATInfo.PostMessagesSyncTaskName,
 					JanusATInfo.MessagesSyncTaskName,
 					JanusATInfo.TopicSyncTaskName,
-					JanusATInfo.UsersSyncTaskName
+					JanusATInfo.UsersSyncTaskName,
+					JanusATInfo.ViolationsSyncTaskName
 				};
 		}
 

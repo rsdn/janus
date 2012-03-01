@@ -258,6 +258,9 @@
   <data name="QueryNewUsers" xml:space="preserve">
     <value>Запрос новых пользователей</value>
   </data>
+  <data name="QueryNewViolations" xml:space="preserve">
+    <value>Запрос новых нарушений</value>
+  </data>
   <data name="SubscribeMessage" xml:space="preserve">
     <value>Подписка на форум(-ы)…</value>
   </data>
