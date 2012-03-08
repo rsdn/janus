@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Rsdn.Janus
+namespace Rsdn.Janus.Sqlite
 {
 	[MenuProvider]
 	internal sealed class SqliteMenuProvider : ResourceMenuProvider

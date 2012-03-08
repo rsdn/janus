@@ -1,11 +1,11 @@
 ﻿using System;
 
-namespace Rsdn.Janus
+namespace Rsdn.Janus.Jet
 {
 	[MenuProvider]
-	internal sealed class MssqlMenuProvider : ResourceMenuProvider
+	internal sealed class JetMenuProvider : ResourceMenuProvider
 	{
-		public MssqlMenuProvider(IServiceProvider serviceProvider)
+		public JetMenuProvider(IServiceProvider serviceProvider)
 			: base(
 				serviceProvider,
 				"Rsdn.Janus.Jet.Menu.JetMenu.xml",

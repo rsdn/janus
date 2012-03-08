@@ -1,9 +1,9 @@
 ﻿namespace Rsdn.Janus.Jet
 {
 	[CommandProvider]
-	internal sealed class FirebirdCommandProvider : ResourceCommandProvider
+	internal sealed class JetCommandProvider : ResourceCommandProvider
 	{
-		public FirebirdCommandProvider()
+		public JetCommandProvider()
 			: base("Rsdn.Janus.Jet.Commands.JetCommands.xml", "Rsdn.Janus.Jet.Resources") { }
 	}
 }

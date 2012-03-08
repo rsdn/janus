@@ -5,9 +5,7 @@ using System.Data.SQLite;
 using System.IO;
 using System.Windows.Forms;
 
-using Rsdn.Janus.Sqlite;
-
-namespace Rsdn.Janus
+namespace Rsdn.Janus.Sqlite
 {
 	public partial class SqliteConfigControl : DBConfigControlBase
 	{

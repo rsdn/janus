@@ -1,4 +1,4 @@
-﻿namespace Rsdn.Janus
+﻿namespace Rsdn.Janus.Jet
 {
 	partial class JetConfigControl
 	{

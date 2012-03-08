@@ -4,9 +4,7 @@ using System.Data.Common;
 using System.IO;
 using System.Windows.Forms;
 
-using Rsdn.Janus.Jet;
-
-namespace Rsdn.Janus
+namespace Rsdn.Janus.Jet
 {
 	public partial class JetConfigControl : DBConfigControlBase
 	{

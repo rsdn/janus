@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Data.Common;
 
-namespace Rsdn.Janus
+namespace Rsdn.Janus.Jet
 {
 	public class JetConnectionStringBuilder : DbConnectionStringBuilder
 	{
