@@ -18,7 +18,7 @@ namespace Rsdn.Janus
 		public const string VersionString = VersionMajor + "." + VersionMinor + "." + VersionBuild + "." + VersionRevision;
 		public const string Release = "alpha 5";
 		public const string Company = "RSDN Team";
-		public const string Copyright = "Copyright © by RSDN Team (http://rsdn.ru), 2002-2011";
+		public const string Copyright = "Copyright © by RSDN Team (http://rsdn.ru), 2002-2012";
 
 		public const string ResourcesNamespace = "Rsdn.Janus.Resources.";
 		
