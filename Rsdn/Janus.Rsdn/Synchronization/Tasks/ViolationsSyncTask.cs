@@ -4,8 +4,6 @@ using Rsdn.Janus.AT;
 using Rsdn.Janus.Framework;
 using Rsdn.Janus.Properties;
 
-using Janus.Rsdn.Janus;
-
 using BLToolkit.Data.Linq;
 
 namespace Rsdn.Janus
@@ -68,7 +66,7 @@ namespace Rsdn.Janus
 						.Violations()
 							// ReSharper disable AccessToModifiedClosure
 							.Value(_ => _.MessageID, () => violation.MessageID)
-							.Value(_ => _.PenaltyType, () => (global::Janus.Rsdn.Janus.PenaltyType) violation.PenaltyType)
+							.Value(_ => _.PenaltyType, () => (PenaltyType) violation.PenaltyType)
 							.Value(_ => _.Reason, () => violation.Reason)
 							.Value(_ => _.Create, () => violation.CreatedOn)
 							// ReSharper restore AccessToModifiedClosure

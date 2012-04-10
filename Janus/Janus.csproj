@@ -446,7 +446,9 @@
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="DbSchema.xml" />
-    <EmbeddedResource Include="Core\JanusProtocolSupport\XmlPageBuilder\Message.xsl" />
+    <EmbeddedResource Include="Core\JanusProtocolSupport\XmlPageBuilder\Message.xsl">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <EmbeddedResource Include="Core\JanusProtocolSupport\XmlPageBuilder\CopyCode.js" />
     <EmbeddedResource Include="Core\JanusProtocolSupport\XmlPageBuilder\Media.js" />
     <EmbeddedResource Include="Core\LoggingManagement\HintIcon.ico" />

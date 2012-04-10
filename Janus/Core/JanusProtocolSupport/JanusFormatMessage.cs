@@ -81,19 +81,61 @@ namespace Rsdn.Janus
 			bool isMarked,
 			bool isArticle)
 		{
-			string path;
-			
+			return GetMessageImagePath(provider, isRead, isMarked, isArticle, PenaltyType.Ban, null);
+		}
+
+		/// <summary>
+		/// Возвращает путь к иконке сообщения.
+		/// </summary>
+		/// <param name="provider"></param>
+		/// <param name="isRead">Сообщение прочитано</param>
+		/// <param name="isMarked">Помечено ли сообщение флагом (очками).</param>
+		/// <param name="isArticle">Является ли сообщение статьей.</param>
+		/// <param name="violationPenaltyType">Тип бана</param>
+		/// <param name="violationReason">Основание для бана</param>
+		/// <returns>Путь к иконке сообщения.</returns>
+		public static string GetMessageImagePath(
+			IServiceProvider provider,
+			bool isRead,
+			bool isMarked,
+			bool isArticle,
+			PenaltyType violationPenaltyType,
+			string violationReason)
+		{
+			string path = null;
+
 			if (isArticle)
 			{
 				path = isRead
-					? isMarked ? "MsgArticleMarked"        : "MsgArticle"
+					? isMarked ? "MsgArticleMarked" : "MsgArticle"
 					: isMarked ? "MsgArticleUnread2Marked" : "MsgArticleUnread";
 			}
 			else
 			{
-				path = isRead
-					? isMarked ? "MsgMarked"        : "Msg"
-					: isMarked ? "MsgUnread2Marked" : "MsgUnread";
+				if (!string.IsNullOrEmpty(violationReason))
+				{
+					switch (violationPenaltyType)
+					{
+						case PenaltyType.Ban:
+							path = "PenaltyBan";
+							break;
+
+						case PenaltyType.Close:
+							path = "PenaltyClose";
+							break;
+
+						case PenaltyType.Warning:
+							path = "PenaltyWarning";
+							break;
+					}
+				}
+
+				if (path == null)
+				{
+					path = isRead
+						? isMarked ? "MsgMarked" : "Msg"
+						: isMarked ? "MsgUnread2Marked" : "MsgUnread";
+				}
 			}
 
 			return GetImageUri(provider, @"MessageTree\" + path, StyleImageType.ConstSize);

@@ -90,5 +90,7 @@ namespace Rsdn.Janus
 		public string Subject { get; set; }
 		public string Content { get; set; }
 		public string Origin { get; set; }
+		public int ViolationPenaltyType { get; set; }
+		public string ViolationReason { get; set; }
 	}
 }

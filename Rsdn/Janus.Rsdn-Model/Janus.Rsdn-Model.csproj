@@ -56,9 +56,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Database\Violations\IViolation.cs" />
-    <Compile Include="Database\Violations\PenaltyType.cs" />
-    <Compile Include="Database\Violations\ViolationHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Synchronization\JanusATInfo.cs" />
   </ItemGroup>

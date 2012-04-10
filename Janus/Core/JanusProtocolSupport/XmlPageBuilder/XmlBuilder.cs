@@ -37,7 +37,9 @@ namespace Rsdn.Janus
 									Rating = m.Rating(),
 									Smiles = m.SmileCount(),
 									Agrees = m.AgreeCount(),
-									Disagrees = m.DisagreeCount()
+									Disagrees = m.DisagreeCount(),
+									m.Violation.PenaltyType,
+									m.Violation.Reason
 								});
 				var body = sourceFormatter != null ? sourceFormatter(msg.Message) : msg.Message;
 				var formatter = provider.GetFormatter();
@@ -71,7 +73,9 @@ namespace Rsdn.Janus
 						Subject = msg.Subject,
 						Content = formatter.Format(body, true),
 						Origin = formatter.Format(msg.Origin, true),
-						Rate = {Summary = JanusFormatMessage.FormatRates(msg.Rating, msg.Smiles, msg.Agrees, msg.Disagrees)}
+						Rate = {Summary = JanusFormatMessage.FormatRates(msg.Rating, msg.Smiles, msg.Agrees, msg.Disagrees)},
+						ViolationPenaltyType = (int) msg.PenaltyType,
+						ViolationReason = msg.Reason
 					};
 
 				if (Config.Instance.ForumDisplayConfig.Envelope.ShowRateFrame)

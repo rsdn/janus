@@ -151,7 +151,9 @@
     <Compile Include="rsdn.ru\Database\Forums\DataModel\IServerForum.cs" />
     <Compile Include="rsdn.ru\Database\Forums\DataModel\ISubscribedForum.cs" />
     <Compile Include="rsdn.ru\Database\Forums\DataModel\ITopicInfo.cs" />
+    <Compile Include="rsdn.ru\Database\Forums\DataModel\IViolation.cs" />
     <Compile Include="rsdn.ru\Database\Forums\IForumMessageInfo.cs" />
+    <Compile Include="rsdn.ru\Database\Forums\PenaltyType.cs" />
     <Compile Include="rsdn.ru\Database\Users\DataModel\IUser.cs" />
     <Compile Include="rsdn.ru\Database\Forums\MsgMark\ForumEntryChangedEventArgs.cs" />
     <Compile Include="rsdn.ru\Database\Forums\MsgMark\ForumEntryChangeType.cs" />

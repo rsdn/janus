@@ -54,10 +54,12 @@ namespace Rsdn.Janus
 
 		[UsedImplicitly]
 		public string GetMessageImagePath(bool isRead,
-			bool isMarked, bool isArticle)
+			bool isMarked, bool isArticle,
+			int violationPenaltyType,
+			string violationReason)
 		{
 			return JanusFormatMessage
-				.GetMessageImagePath(_serviceProvider, isRead, isMarked, isArticle);
+				.GetMessageImagePath(_serviceProvider, isRead, isMarked, isArticle, (PenaltyType) violationPenaltyType, violationReason);
 		}
 
 		[UsedImplicitly]

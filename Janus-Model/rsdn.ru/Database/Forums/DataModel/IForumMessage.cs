@@ -71,5 +71,8 @@ namespace Rsdn.Janus.DataModel
 
 		[Association(ThisKey = "ID", OtherKey = "TopicID")]
 		IList<IForumMessage> TopicAnswers { get; }
+
+		[Association(ThisKey = "ID", OtherKey = "MessageID", CanBeNull = true)]
+		IViolation Violation { get; }
 	}
 }

@@ -50,6 +50,18 @@ namespace Rsdn.Janus
 			if (predicate == null) throw new ArgumentNullException("predicate");
 			return db.GetTable(predicate);
 		}
+
+		public static Table<IViolation> Violations([NotNull] this IDataContext db)
+		{
+			return db.GetTable<IViolation>();
+		}
+
+		public static IQueryable<IViolation> Violations(
+			[NotNull] this IDataContext db,
+			Expression<Func<IViolation, bool>> predicate)
+		{
+			return db.GetTable(predicate);
+		}
 		#endregion
 
 		#region Forum helpers
