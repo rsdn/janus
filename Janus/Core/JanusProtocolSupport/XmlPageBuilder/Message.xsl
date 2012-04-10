@@ -158,16 +158,16 @@
 							colspan="4">
 							<xsl:text>&nbsp;</xsl:text>
 
-							<img>
+							<img style="vertical-align: middle">
 								<xsl:attribute name="src">
 									<xsl:value-of select="XsltFormatUtils:GetMessageImagePath(IsUnread = 'false', IsMarked = 'true', number(ArticleID) > 0, ViolationPenaltyType , ViolationReason)" />
 								</xsl:attribute>
-                <xsl:if test="ViolationReason != ''">
-                  <xsl:attribute name="alt">
-                    <xsl:value-of select="ViolationReason"/>
-                  </xsl:attribute>
-                </xsl:if>
-              </img>
+								<xsl:if test="ViolationReason != ''">
+									<xsl:attribute name="alt">
+										<xsl:value-of select="ViolationReason" />
+									</xsl:attribute>
+								</xsl:if>
+							</img>
 
 							<xsl:text>&nbsp;</xsl:text>
 							<xsl:value-of select="Subject"/>

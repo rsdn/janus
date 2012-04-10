@@ -105,15 +105,12 @@ namespace Rsdn.Janus
 			string path = null;
 
 			if (isArticle)
-			{
 				path = isRead
 					? isMarked ? "MsgArticleMarked" : "MsgArticle"
 					: isMarked ? "MsgArticleUnread2Marked" : "MsgArticleUnread";
-			}
 			else
 			{
 				if (!string.IsNullOrEmpty(violationReason))
-				{
 					switch (violationPenaltyType)
 					{
 						case PenaltyType.Ban:
@@ -128,7 +125,6 @@ namespace Rsdn.Janus
 							path = "PenaltyWarning";
 							break;
 					}
-				}
 
 				if (path == null)
 				{

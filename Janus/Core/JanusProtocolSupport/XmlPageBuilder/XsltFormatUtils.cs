@@ -53,8 +53,10 @@ namespace Rsdn.Janus
 		}
 
 		[UsedImplicitly]
-		public string GetMessageImagePath(bool isRead,
-			bool isMarked, bool isArticle,
+		public string GetMessageImagePath(
+			bool isRead,
+			bool isMarked,
+			bool isArticle,
 			int violationPenaltyType,
 			string violationReason)
 		{
