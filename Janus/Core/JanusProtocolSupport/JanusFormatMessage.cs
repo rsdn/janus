@@ -105,9 +105,14 @@ namespace Rsdn.Janus
 			string path = null;
 
 			if (isArticle)
-				path = isRead
-					? isMarked ? "MsgArticleMarked" : "MsgArticle"
-					: isMarked ? "MsgArticleUnread2Marked" : "MsgArticleUnread";
+				path =
+					isRead
+						? isMarked
+							? "MsgArticleMarked"
+							: "MsgArticle"
+						: isMarked
+							? "MsgArticleUnread2Marked"
+							: "MsgArticleUnread";
 			else
 			{
 				if (!string.IsNullOrEmpty(violationReason))
@@ -127,11 +132,14 @@ namespace Rsdn.Janus
 					}
 
 				if (path == null)
-				{
-					path = isRead
-						? isMarked ? "MsgMarked" : "Msg"
-						: isMarked ? "MsgUnread2Marked" : "MsgUnread";
-				}
+					path =
+						isRead
+							? isMarked
+								? "MsgMarked"
+								: "Msg"
+							: isMarked
+								? "MsgUnread2Marked"
+								: "MsgUnread";
 			}
 
 			return GetImageUri(provider, @"MessageTree\" + path, StyleImageType.ConstSize);

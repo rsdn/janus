@@ -4,6 +4,8 @@ using System.Linq;
 
 using JetBrains.Annotations;
 
+using Rsdn.SmartApp;
+
 namespace Rsdn.Janus
 {
 	internal static class XmlBuilder
@@ -39,10 +41,12 @@ namespace Rsdn.Janus
 									Agrees = m.AgreeCount(),
 									Disagrees = m.DisagreeCount(),
 									m.Violation.PenaltyType,
-									m.Violation.Reason
+									m.Violation.Reason,
+									ViolationDate = m.Violation.Create
 								});
 				var body = sourceFormatter != null ? sourceFormatter(msg.Message) : msg.Message;
 				var formatter = provider.GetFormatter();
+				var dateFormat = Config.Instance.ForumDisplayConfig.DateFormat;
 				var xmlMessage =
 					new XmlMessage
 					{
@@ -60,7 +64,7 @@ namespace Rsdn.Janus
 							},
 						Date =
 							{
-								Value = msg.Date.ToString(Config.Instance.ForumDisplayConfig.DateFormat),
+								Value = msg.Date.ToString(dateFormat),
 								IsOutdate =
 									DateTime.Now.AddDays(-Config.Instance.ForumDisplayConfig.DaysToOutdate) > msg.Date
 									&& Config.Instance.ForumDisplayConfig.DaysToOutdate != 0,
@@ -75,7 +79,10 @@ namespace Rsdn.Janus
 						Origin = formatter.Format(msg.Origin, true),
 						Rate = {Summary = JanusFormatMessage.FormatRates(msg.Rating, msg.Smiles, msg.Agrees, msg.Disagrees)},
 						ViolationPenaltyType = (int) msg.PenaltyType,
-						ViolationReason = msg.Reason
+						ViolationReason =
+							msg.Reason.IsNullOrEmpty()
+								? null
+								: msg.ViolationDate.ToString(dateFormat) + " " + msg.Reason
 					};
 
 				if (Config.Instance.ForumDisplayConfig.Envelope.ShowRateFrame)
