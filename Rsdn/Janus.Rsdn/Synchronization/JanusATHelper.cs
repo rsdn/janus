@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
 
 using BLToolkit.Data.Linq;
@@ -28,7 +27,7 @@ namespace Rsdn.Janus.AT
 				activateUI);
 		}
 
-		internal static RequestForumInfo[] GetSubscribedForums(IDataContext db)
+		internal static RequestForumInfo[] GetSubscribedForums(this IDataContext db)
 		{
 			return
 				db

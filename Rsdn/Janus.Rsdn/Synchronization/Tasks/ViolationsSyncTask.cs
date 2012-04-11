@@ -31,7 +31,7 @@ namespace Rsdn.Janus
 						UserName = cfg.Login,
 						Password = cfg.Password,
 						LastRowVersion = context.DBVars()[_rvVarSlotName].FromHexString(),
-						SubscribedForums = JanusATHelper.GetSubscribedForums(db)
+						SubscribedForums = db.GetSubscribedForums()
 					};
 		}
 
@@ -80,7 +80,8 @@ namespace Rsdn.Janus
 				foreach (var v in response.Violations)
 					if (max == null || RVValue(max.RowVersion) < RVValue(v.RowVersion))
 						max = v;
-				context.DBVars()[_rvVarSlotName] = max.RowVersion.ToHexString();
+				if (max != null)
+					context.DBVars()[_rvVarSlotName] = max.RowVersion.ToHexString();
 			}
 		}
 	}

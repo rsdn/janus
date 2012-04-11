@@ -11,21 +11,32 @@ namespace Rsdn.Janus
 		internal EnterTopicMessageIdForm()
 		{
 			InitializeComponent();
+
+			// Попытаться извлечь дефолтный номер сообщения из буфера обмена.
+			var dto = Clipboard.GetDataObject();
+			if (dto != null)
+				if (dto.GetDataPresent(DataFormats.Text))
+				{
+					var data = (string) dto.GetData(DataFormats.Text);
+					var info = JanusProtocolInfo.Parse(data);
+					if (info != null && info.ResourceType == JanusProtocolResourceType.Message && info.IsId)
+						_idBox.Text = data;
+				}
 		}
 
 		public int MessageId { get; private set; }
 
-		private void _idBox_TextChanged(object sender, EventArgs e)
+		private void IdBoxTextChanged(object sender, EventArgs e)
 		{
-			bool isValid = true;
+			var isValid = true;
 
 			try
 			{
-				string input = _idBox.Text;
+				var input = _idBox.Text;
 
 				if (!string.IsNullOrEmpty(input))
 				{
-					JanusProtocolInfo janusProtocolInfo = JanusProtocolInfo.Parse(input);
+					var janusProtocolInfo = JanusProtocolInfo.Parse(input);
 					if (null != janusProtocolInfo && janusProtocolInfo.IsId)
 						MessageId = janusProtocolInfo.Id;
 					else

@@ -7,7 +7,7 @@ namespace Rsdn.Janus.Admin.Commands
 	[CommandTarget]
 	public class AdminCommandTarget : CommandTarget
 	{
-		private const string s_ModUrlTemplate = "http://rsdn.ru/Admin/ModerateMessage/{0}";
+		private const string _modUrlTemplate = "http://rsdn.ru/Admin/ModerateMessage/{0}";
 
 		public AdminCommandTarget(IServiceProvider serviceProvider) : base(serviceProvider)
 		{}
@@ -16,7 +16,7 @@ namespace Rsdn.Janus.Admin.Commands
 		public void ExecuteOpenMessageInJBrowser(ICommandContext context, int? messageId)
 		{
 			context.OpenUrlInBrowser(
-				s_ModUrlTemplate.FormatStr(
+				_modUrlTemplate.FormatStr(
 					ForumCommandHelper.GetMessageId(context, messageId)));
 		}
 

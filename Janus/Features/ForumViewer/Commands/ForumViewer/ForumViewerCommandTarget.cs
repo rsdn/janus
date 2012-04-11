@@ -71,55 +71,31 @@ namespace Rsdn.Janus
 		[CommandExecutor("Janus.Forum.GoToMessageWithPrompt")]
 		public void ExecuteGoToMessageWithPrompt(ICommandContext context)
 		{
-			int? defaultMsgId = null;
+			var parentWindow = context.GetRequiredService<IUIShell>().GetMainWindowParent();
 
-			// Попытаться извлечь дефолтный номер сообщения из буфера обмена.
-			var dto = Clipboard.GetDataObject();
-			if (dto != null)
-				if (dto.GetDataPresent(DataFormats.Text))
-				{
-					var info = JanusProtocolInfo.Parse((string)dto.GetData(DataFormats.Text));
-					if (info != null && info.ResourceType == JanusProtocolResourceType.Message && info.IsId)
-						defaultMsgId = info.Id;
-				}
-
-			//Или из текущего активного сообщения
-			if (defaultMsgId == null)
-			{
-				var activeMsgSvc = context.GetService<IActiveMessagesService>();
-				if (activeMsgSvc != null)
-				{
-					var defaultMsg = activeMsgSvc.ActiveMessages.FirstOrDefault();
-					if (defaultMsg != null)
-						defaultMsgId = defaultMsg.ID;
-				}
-			}
-
-			using (var goToForm = new GoToForm(defaultMsgId ?? 0))
-			{
-				var parentWindow = context.GetRequiredService<IUIShell>().GetMainWindowParent();
-
-				if (goToForm.ShowDialog(parentWindow) != DialogResult.OK)
+			int mid;
+			using (var etf = new EnterTopicMessageIdForm())
+				if (etf.ShowDialog(parentWindow) == DialogResult.OK)
+					mid = etf.MessageId;
+				else
 					return;
 
-				var mid = goToForm.MessageId;
-				if (ApplicationManager.Instance.ForumNavigator.SelectMessage(mid))
-				{
-					var mainWindowSvc = context.GetService<IMainWindowService>();
-					if (mainWindowSvc != null)
-						mainWindowSvc.EnsureVisible();
-				}
-				else if (MessageBox.Show(
-							parentWindow,
-							SR.Forum.GoToMessage.NotFound.FormatStr(mid),
-							SR.Search.Error,
-							MessageBoxButtons.YesNo,
-							MessageBoxIcon.Exclamation,
-							MessageBoxDefaultButton.Button2) == DialogResult.Yes)
-					context
-						.GetRequiredService<IOutboxManager>()
-						.AddTopicForDownload(mid);
+			if (ApplicationManager.Instance.ForumNavigator.SelectMessage(mid))
+			{
+				var mainWindowSvc = context.GetService<IMainWindowService>();
+				if (mainWindowSvc != null)
+					mainWindowSvc.EnsureVisible();
 			}
+			else if (MessageBox.Show(
+				parentWindow,
+				SR.Forum.GoToMessage.NotFound.FormatStr(mid),
+				SR.Search.Error,
+				MessageBoxButtons.YesNo,
+				MessageBoxIcon.Exclamation,
+				MessageBoxDefaultButton.Button2) == DialogResult.Yes)
+				context
+					.GetRequiredService<IOutboxManager>()
+					.AddTopicForDownload(mid);
 		}
 
 		[CommandExecutor("Janus.Forum.SmartJump")]

@@ -32,7 +32,7 @@
 			// 
 			resources.ApplyResources(this._idBox, "_idBox");
 			this._idBox.Name = "_idBox";
-			this._idBox.TextChanged += new System.EventHandler(this._idBox_TextChanged);
+			this._idBox.TextChanged += new System.EventHandler(this.IdBoxTextChanged);
 			// 
 			// _okButton
 			// 
