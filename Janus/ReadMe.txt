@@ -31,4 +31,4 @@ http://janus.dmitriid.com/
 
 
 
-Copyright © 2002-2011 RSDN Team
+Copyright © 2002-2012 RSDN Team

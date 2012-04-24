@@ -39,7 +39,7 @@ namespace Rsdn.Janus
 			try
 			{
 				Console.WriteLine(
-					@"Janus project. Copyright (C) 2002-2011 by Rsdn Team. " +
+					@"Janus project. Copyright (C) 2002-2012 by Rsdn Team. " +
 					@"See rsdn.ru for more information.");
 
 				// Проверка на единственность экземпляра приложения.
