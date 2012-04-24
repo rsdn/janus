@@ -14,7 +14,7 @@ namespace Rsdn.LocUtil.Model
 		/// <summary>
 		/// Инициализирует экземпляр.
 		/// </summary>
-		public ItemBase(string name, Category parent)
+		protected ItemBase(string name, Category parent)
 		{
 			_parent = parent;
 			_name = name;

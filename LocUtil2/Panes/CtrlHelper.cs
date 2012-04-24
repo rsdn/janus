@@ -8,12 +8,8 @@ namespace Rsdn.LocUtil
 	/// 
 	/// Ported by Andre from VB and adapted
 	/// </summary>
-	public sealed class CtrlHelper
+	public static class CtrlHelper
 	{
-		private CtrlHelper()
-		{
-		}
-
 		/// <summary>
 		/// 
 		/// </summary>

@@ -227,7 +227,7 @@ namespace Rsdn.Janus.Framework.Ipc
 		/// process to connect to an instance of a named pipe.
 		/// </summary>
 		/// <param name="hHandle">Handle to the server end of a named pipe instance.</param>
-		/// <param name="lpOverlapped">Pointer to an 
+		/// <param name="lpOverlapped">Pointer to an </param>
 		/// <returns>If the function succeeds, the return value is nonzero.</returns>
 		[DllImport("kernel32.dll")]
 		public static extern bool ConnectNamedPipe(
@@ -296,7 +296,7 @@ namespace Rsdn.Janus.Framework.Ipc
 		/// <param name="lpBuffer">Pointer to the buffer that receives the data read from the file.</param>
 		/// <param name="nNumberOfBytesToRead">Number of bytes to be read from the file.</param>
 		/// <param name="lpNumberOfBytesRead">Pointer to the variable that receives the number of bytes read.</param>
-		/// <param name="lpOverlapped">Pointer to an 
+		/// <param name="lpOverlapped">Pointer to an </param>
 		/// <returns>The ReadFile function returns when one of the following 
 		/// conditions is met: a write operation completes on the write end of 
 		/// the pipe, the number of bytes requested has been read, or an error occurs.</returns>
@@ -316,7 +316,7 @@ namespace Rsdn.Janus.Framework.Ipc
 		/// <param name="lpBuffer">Pointer to the buffer containing the data to be written to the file.</param>
 		/// <param name="nNumberOfBytesToWrite"></param>
 		/// <param name="lpNumberOfBytesWritten">Pointer to the variable that receives the number of bytes written.</param>
-		/// <param name="lpOverlapped">Pointer to an 
+		/// <param name="lpOverlapped">Pointer to an </param>
 		/// <returns>If the function succeeds, the return value is nonzero.</returns>
 		[DllImport("kernel32.dll")]
 		public static extern bool WriteFile(

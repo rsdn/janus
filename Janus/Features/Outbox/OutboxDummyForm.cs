@@ -87,13 +87,11 @@ namespace Rsdn.Janus
 
 		public event EventHandler SelectedNodesChanged;
 
-		private delegate void Simple();
-
 		public void RefreshList()
 		{
 			if (InvokeRequired)
 			{
-				Invoke((Simple)RefreshList);
+				Invoke((Action)RefreshList);
 				return;
 			}
 
