@@ -213,7 +213,7 @@ namespace Rsdn.Janus
 				result
 					.AddRange(
 						topDocs
-							.scoreDocs
+							.ScoreDocs
 							.Select(scored => searcher.Doc(scored.doc).Get("mid")));
 			}
 			finally
