@@ -289,6 +289,6 @@
     <value>WebBrowserForm</value>
   </data>
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
-    <value>Rsdn.Janus.JanusBaseForm, Janus-Common, Version=1.2.0.1511, Culture=neutral, PublicKeyToken=null</value>
+    <value>Rsdn.Janus.JanusBaseForm, Janus-Common, Version=1.2.0.31, Culture=neutral, PublicKeyToken=null</value>
   </data>
 </root>

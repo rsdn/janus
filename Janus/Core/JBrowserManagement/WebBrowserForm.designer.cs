@@ -29,8 +29,8 @@
 			// _statusStrip
 			// 
 			this._statusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-			this._stateStatusLabel,
-			this._statusProgressBar});
+            this._stateStatusLabel,
+            this._statusProgressBar});
 			resources.ApplyResources(this._statusStrip, "_statusStrip");
 			this._statusStrip.Name = "_statusStrip";
 			// 
@@ -67,9 +67,11 @@
 			// 
 			// _webBrowser
 			// 
+			this._webBrowser.CausesValidation = false;
 			resources.ApplyResources(this._webBrowser, "_webBrowser");
 			this._webBrowser.MinimumSize = new System.Drawing.Size(20, 20);
 			this._webBrowser.Name = "_webBrowser";
+			this._webBrowser.ScriptErrorsSuppressed = true;
 			// 
 			// WebBrowserForm
 			// 

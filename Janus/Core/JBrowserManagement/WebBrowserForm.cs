@@ -54,7 +54,7 @@ namespace Rsdn.Janus
 			var styleImageManager = _serviceManager.GetService<IStyleImageManager>();
 			if (styleImageManager != null)
 			{
-				Image image = styleImageManager.TryGetImage("jbrowser", StyleImageType.Large);
+				var image = styleImageManager.TryGetImage("jbrowser", StyleImageType.Large);
 				if (image != null) 
 					Icon = image.ToIcon();
 			}
@@ -277,11 +277,9 @@ namespace Rsdn.Janus
 			{
 				_statusProgressBar.Visible = true;
 				_statusProgressBar.Maximum = (int)e.MaximumProgress;
-				long currentProgress = e.CurrentProgress;
+				var currentProgress = e.CurrentProgress;
 				if (currentProgress > e.MaximumProgress)
-				{
 					currentProgress = e.MaximumProgress;
-				}
 				_statusProgressBar.Value = (int)currentProgress;
 			}
 		}
