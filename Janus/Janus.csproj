@@ -226,7 +226,6 @@
     <EmbeddedResource Include="Features\ForumViewer\Commands\Forums\ForumsCommands.xml" />
     <EmbeddedResource Include="Features\ForumViewer\Commands\ForumViewer\ForumViewerCommands.xml" />
     <Content Include="Features\ForumViewer\MessageEditor\StandardEditorShortcuts.txt" />
-    <Content Include="Features\Search\RU\Package.html" />
     <Content Include="JanusDoc.chm">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
