@@ -193,15 +193,15 @@ namespace Rsdn.Janus
 				var searchTextQuery = new BooleanQuery();
 				if (searchInText)
 					searchTextQuery.Add(
-						new QueryParser(Version.LUCENE_CURRENT, "message", analyzer).Parse(searchText),
+						new QueryParser(Version.LUCENE_29, "message", analyzer).Parse(searchText),
 						BooleanClause.Occur.SHOULD);
 				if (searchInSubject)
 					searchTextQuery.Add(
-						new QueryParser(Version.LUCENE_CURRENT, "subject", analyzer).Parse(searchText),
+						new QueryParser(Version.LUCENE_29, "subject", analyzer).Parse(searchText),
 						BooleanClause.Occur.SHOULD);
 				if (searchAuthor)
 					searchTextQuery.Add(
-						new QueryParser(Version.LUCENE_CURRENT, "usernick", analyzer).Parse(searchText),
+						new QueryParser(Version.LUCENE_29, "usernick", analyzer).Parse(searchText),
 						BooleanClause.Occur.SHOULD);
 				query.Add(searchTextQuery, BooleanClause.Occur.MUST);
 			}
