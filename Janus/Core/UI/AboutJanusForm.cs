@@ -209,19 +209,18 @@ namespace Rsdn.Janus
 			Array.Sort(asmArray, new AssemblyComparer());
 
 			foreach (var asm in asmArray)
-			{
-				if (!(asm is AssemblyBuilder) && asm.Location != string.Empty)
+				if (!asm.IsDynamic && asm.Location != string.Empty)
 				{
-					sb.AppendFormat(_tableRow, 
+					sb.AppendFormat(
+						_tableRow,
 						columnsCount%2 == 0 ? "#F4FFF4" : "#E4FFF4",
 						GetInfoString(asm.FullName, AssemblyListColumn.Name),
 						GetInfoString(asm.FullName, AssemblyListColumn.Ver),
 						GetInfoString(asm.FullName, AssemblyListColumn.Loc),
 						GetInfoString(asm.FullName, AssemblyListColumn.Key));
-					
+
 					columnsCount++;
 				}
-			}
 
 			_webBrowser.DocumentText = string.Format(GetTemplate(), 
 				SR.About.AssemblyInfo,

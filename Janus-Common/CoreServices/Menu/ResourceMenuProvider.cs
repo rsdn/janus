@@ -2,7 +2,6 @@
 using System.ComponentModel;
 
 using JetBrains.Annotations;
-using Rsdn.SmartApp;
 
 namespace Rsdn.Janus
 {

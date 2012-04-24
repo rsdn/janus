@@ -10,8 +10,9 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Rsdn.Janus.Mssql</RootNamespace>
     <AssemblyName>Janus.Mssql</AssemblyName>
-    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
     <DebugSymbols>true</DebugSymbols>
@@ -112,10 +113,8 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="BLToolkit.3, Version=3.2.0.0, Culture=neutral, PublicKeyToken=b1d3f6ab3aadaca3, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\Dependencies\bltoolkit\BLToolkit.3.dll</HintPath>
-      <Private>False</Private>
+    <Reference Include="BLToolkit.4">
+      <HintPath>..\Dependencies\bltoolkit\BLToolkit.4.dll</HintPath>
     </Reference>
     <Reference Include="R.SAT-Common, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>

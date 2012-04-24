@@ -2,7 +2,7 @@
 using System.Diagnostics;
 using System.Windows.Forms;
 
-using Rsdn.Janus.Core.JBrowserManagement;
+using Rsdn.Janus.CoreServices.JBrowser;
 using Rsdn.SmartApp;
 
 namespace Rsdn.Janus
