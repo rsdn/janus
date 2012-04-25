@@ -340,7 +340,6 @@
   </Target>
   -->
   <PropertyGroup>
-    <PreBuildEvent>rem "$(SolutionDir)\SvnRevision/$(OutDir)SvnRevision.exe" "$(SolutionDir)/" "$(ProjectDir)ApplicationInfo.template.cs" "$(ProjectDir)ApplicationInfo.cs"
-"$(SolutionDir)\HgVersion/$(OutDir)HgVersion.exe" "$(SolutionDir)/" "$(ProjectDir)ApplicationInfo.template.cs" "$(ProjectDir)ApplicationInfo.cs"</PreBuildEvent>
+    <PreBuildEvent>"$(SolutionDir)\HgVersion/$(OutDir)HgVersion.exe" "$(SolutionDir)/" "$(ProjectDir)ApplicationInfo.template.cs" "$(ProjectDir)ApplicationInfo.cs"</PreBuildEvent>
   </PropertyGroup>
 </Project>

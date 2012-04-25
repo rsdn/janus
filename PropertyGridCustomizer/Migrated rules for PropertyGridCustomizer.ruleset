@@ -1,6 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<RuleSet Name="Migrated rules for PropertyGridCustomizer.ruleset" Description="This rule set was created from the CodeAnalysisRules property for the &quot;Debug (x64)&quot; configuration in project &quot;C:\Work\Janus.TrunkNew\PropertyGridCustomizer\PropertyGridCustomizer.csproj&quot;." ToolsVersion="10.0">
-  <RuleHintPaths>
-    <Path>\rules</Path>
-  </RuleHintPaths>
-</RuleSet>

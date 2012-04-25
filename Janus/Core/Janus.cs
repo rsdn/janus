@@ -5,6 +5,8 @@ using System.Globalization;
 using System.Threading;
 using System.Windows.Forms;
 
+using BLToolkit.Data;
+
 using Rsdn.Janus.Framework;
 using Rsdn.SmartApp;
 
