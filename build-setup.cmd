@@ -1,1 +1,4 @@
-%SYSTEMROOT%\Microsoft.NET\Framework\v3.5\msbuild.exe master.build /t:BuildSetup %*
+@ECHO OFF
+
+SET msbuild="%windir%\Microsoft.NET\Framework\v4.0.30319\msbuild.exe"
+%msbuild% master.build /t:BuildSetup %*

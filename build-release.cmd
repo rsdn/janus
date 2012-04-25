@@ -1,2 +1,5 @@
 @ECHO OFF
-%SYSTEMROOT%\Microsoft.NET\Framework\v3.5\msbuild.exe master.build /t:BuildRelease %*
+
+SET msbuild="%windir%\Microsoft.NET\Framework\v4.0.30319\msbuild.exe"
+
+%msbuild% master.build /t:Build /p:Configuration=Release /v:M /fl /flp:LogFile=msbuild.log;Verbosity=Normal /nr:false

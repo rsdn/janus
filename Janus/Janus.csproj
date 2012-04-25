@@ -115,6 +115,7 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\Dependencies\R.SAT\System.Reactive.dll</HintPath>
     </Reference>
+    <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Web.Services">
       <Name>System.Web.Services</Name>
     </Reference>
