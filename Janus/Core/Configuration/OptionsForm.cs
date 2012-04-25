@@ -54,8 +54,12 @@ namespace Rsdn.Janus
 			_appPropertyGrid.SelectedGridItem = _appPropertyGrid
 				.SelectedGridItem.Parent.Parent.GridItems[0];
 
-			_dialogContainer = ApplicationManager.Instance.MainForm
-				.ShortcutManager.GetDesignDialog();
+			_dialogContainer =
+				ApplicationManager
+					.Instance
+					.MainForm
+					.ShortcutManager
+					.GetDesignDialog();
 			_hotKeysTab.Controls.Add(_dialogContainer.GetDialog());
 
 			EliminateDesignerBug(_stylePropertyGrid);
@@ -100,22 +104,22 @@ namespace Rsdn.Janus
 
 
 
-		private void _okButton_Click(object sender, EventArgs e)
+		private void OKButtonClick(object sender, EventArgs e)
 		{
 			AcceptChanges();
 		}
 
-		private void _cancelButton_Click(object sender, EventArgs e)
+		private void CancelButtonClick(object sender, EventArgs e)
 		{
 			StyleConfig.NewStyleConfig(_savedConfig);
 		}
 
-		private void _saveButton_Click(object sender, EventArgs e)
+		private void SaveButtonClick(object sender, EventArgs e)
 		{
 			Config.Save();
 		}
 
-		private void _saveSchemeButton_Click(object sender, EventArgs e)
+		private void SaveSchemeButtonClick(object sender, EventArgs e)
 		{
 			using (var fd = new SaveFileDialog())
 			{
@@ -125,7 +129,7 @@ namespace Rsdn.Janus
 			}
 		}
 
-		private void _loadSchemeButton_Click(object sender, EventArgs e)
+		private void LoadSchemeButtonClick(object sender, EventArgs e)
 		{
 			using (var fd = new OpenFileDialog())
 			{
@@ -140,7 +144,8 @@ namespace Rsdn.Janus
 			}
 		}
 
-		private void _appPropertyGrid_PropertyValueChanged(object s,
+		private void PropertyGridPropertyValueChanged(
+			object s,
 			PropertyValueChangedEventArgs e)
 		{
 			var t = typeof (ChangePropertyAttribute);
@@ -155,12 +160,12 @@ namespace Rsdn.Janus
 
 		private static void CheckAttribute(object sender, CheckAttributeEventArgs e)
 		{
-			if ((typeof (DescriptionAttribute).IsAssignableFrom(e.Attribute.GetType()) &&
-				!(typeof (JanusDescriptionAttribute).IsAssignableFrom(e.Attribute.GetType()))) ||
-					(typeof (CategoryAttribute).IsAssignableFrom(e.Attribute.GetType()) &&
-						!(typeof (JanusCategoryAttribute).IsAssignableFrom(e.Attribute.GetType()))) ||
-							(typeof (DisplayNameAttribute).IsAssignableFrom(e.Attribute.GetType()) &&
-								!(typeof (JanusDisplayNameAttribute).IsAssignableFrom(e.Attribute.GetType()))))
+			if (e.Attribute is DescriptionAttribute
+				&& !(e.Attribute is JanusDescriptionAttribute)
+				|| e.Attribute is CategoryAttribute
+				&& !(e.Attribute is JanusCategoryAttribute)
+				|| e.Attribute is DisplayNameAttribute
+				&& !(e.Attribute is JanusDisplayNameAttribute))
 			{
 				e.Checked = false;
 #if DEBUG

@@ -1,5 +1,5 @@
 ﻿using System;
-using System.Collections;
+using System.Collections.Generic;
 using System.ComponentModel;
 using System.Configuration;
 using System.Drawing;
@@ -871,7 +871,7 @@ namespace Rsdn.Janus
 
 		#region Последние прочитанные сообщения
 		[XmlIgnore]
-		public Hashtable LastReadMessage = new Hashtable();
+		public readonly IDictionary<int, int> LastReadMessage = new Dictionary<int, int>();
 
 		//Для сериализации
 		public struct PositionEntry
@@ -887,10 +887,10 @@ namespace Rsdn.Janus
 			{
 				var pea = new PositionEntry[LastReadMessage.Count];
 				var i = 0;
-				foreach (DictionaryEntry de in LastReadMessage)
+				foreach (var pair in LastReadMessage)
 				{
-					pea[i].forumId = (int)de.Key;
-					pea[i].msgId = (int)de.Value;
+					pea[i].forumId = pair.Key;
+					pea[i].msgId = pair.Value;
 					i++;
 				}
 				return pea;

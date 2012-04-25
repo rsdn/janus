@@ -67,21 +67,21 @@ namespace Rsdn.Janus
 			// 
 			resources.ApplyResources(this._saveButton, "_saveButton");
 			this._saveButton.Name = "_saveButton";
-			this._saveButton.Click += new System.EventHandler(this._saveButton_Click);
+			this._saveButton.Click += new System.EventHandler(this.SaveButtonClick);
 			// 
 			// _okButton
 			// 
 			resources.ApplyResources(this._okButton, "_okButton");
 			this._okButton.DialogResult = System.Windows.Forms.DialogResult.OK;
 			this._okButton.Name = "_okButton";
-			this._okButton.Click += new System.EventHandler(this._okButton_Click);
+			this._okButton.Click += new System.EventHandler(this.OKButtonClick);
 			// 
 			// _cancelButton
 			// 
 			resources.ApplyResources(this._cancelButton, "_cancelButton");
 			this._cancelButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
 			this._cancelButton.Name = "_cancelButton";
-			this._cancelButton.Click += new System.EventHandler(this._cancelButton_Click);
+			this._cancelButton.Click += new System.EventHandler(this.CancelButtonClick);
 			// 
 			// _pluginsTreeImages
 			// 
@@ -116,7 +116,7 @@ namespace Rsdn.Janus
 			this._appPropertyGrid.PropertySort = System.Windows.Forms.PropertySort.Categorized;
 			this._appPropertyGrid.ToolbarVisible = false;
 			this._appPropertyGrid.ViewBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(244)))), ((int)(((byte)(255)))));
-			this._appPropertyGrid.PropertyValueChanged += new System.Windows.Forms.PropertyValueChangedEventHandler(this._appPropertyGrid_PropertyValueChanged);
+			this._appPropertyGrid.PropertyValueChanged += new System.Windows.Forms.PropertyValueChangedEventHandler(this.PropertyGridPropertyValueChanged);
 			// 
 			// _hotKeysTab
 			// 
@@ -141,13 +141,13 @@ namespace Rsdn.Janus
 			// 
 			resources.ApplyResources(this._saveSchemeButton, "_saveSchemeButton");
 			this._saveSchemeButton.Name = "_saveSchemeButton";
-			this._saveSchemeButton.Click += new System.EventHandler(this._saveSchemeButton_Click);
+			this._saveSchemeButton.Click += new System.EventHandler(this.SaveSchemeButtonClick);
 			// 
 			// _loadSchemeButton
 			// 
 			resources.ApplyResources(this._loadSchemeButton, "_loadSchemeButton");
 			this._loadSchemeButton.Name = "_loadSchemeButton";
-			this._loadSchemeButton.Click += new System.EventHandler(this._loadSchemeButton_Click);
+			this._loadSchemeButton.Click += new System.EventHandler(this.LoadSchemeButtonClick);
 			// 
 			// _stylePropertyGrid
 			// 

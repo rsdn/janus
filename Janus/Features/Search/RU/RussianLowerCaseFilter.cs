@@ -35,20 +35,19 @@ namespace Lucene.Net.Analysis.Ru
 			_charset = charset;
 		}
 
+		[Obsolete]
 		public override Token Next() 
 		{
-			Token t = input.Next();
+			var t = input.Next();
 
 			if (t == null)
 				return null;
 
-			String txt = t.TermText();
+			var txt = t.TermText();
 
-			char[] chArray = txt.ToCharArray();
-			for (int i = 0; i < chArray.Length; i++)
-			{
+			var chArray = txt.ToCharArray();
+			for (var i = 0; i < chArray.Length; i++)
 				chArray[i] = RussianCharsets.ToLowerCase(chArray[i], _charset);
-			}
 
 			var newTxt = new String(chArray);
 			// create new token

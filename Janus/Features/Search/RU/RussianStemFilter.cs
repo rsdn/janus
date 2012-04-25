@@ -45,22 +45,16 @@ namespace Lucene.Net.Analysis.Ru
 		/// 
 		/// </summary>
 		/// <returns>Returns the next token in the stream, or null at EOS</returns>
+		[Obsolete]
 		public override Token Next() 
 		{
 			if ((_token = input.Next()) == null)
-			{
 				return null;
-			}
-			else
-			{
-				String s = _stemmer.Stem(_token.TermText());
-				if (!s.Equals(_token.TermText()))
-				{
-					return new Token(s, _token.StartOffset(), _token.EndOffset(),
-						_token.Type());
-				}
-				return _token;
-			}
+			var s = _stemmer.Stem(_token.TermText());
+			if (!s.Equals(_token.TermText()))
+				return new Token(s, _token.StartOffset(), _token.EndOffset(),
+				                 _token.Type());
+			return _token;
 		}
 
 		/// <summary>

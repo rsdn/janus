@@ -118,9 +118,9 @@ namespace Rsdn.Janus
 					var config = Config.Instance;
 
 					if (config.RestoreForumPosition
-						&& config.LastReadMessage.Contains(ID))
+						&& config.LastReadMessage.ContainsKey(ID))
 					{
-						var i = (int)config.LastReadMessage[ID];
+						var i = config.LastReadMessage[ID];
 
 						if (i >= 0)
 							_activeMsgId = i;

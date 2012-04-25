@@ -1263,7 +1263,6 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Framework\Controls\TreeGrid\PathKey.cs" />
-    <Compile Include="Framework\Utils\DataSetHelper.cs" />
     <Compile Include="Framework\DockingRsdn\ContentDummyForm.cs">
       <SubType>Form</SubType>
     </Compile>
