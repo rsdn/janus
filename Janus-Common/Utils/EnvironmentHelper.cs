@@ -100,7 +100,7 @@ namespace Rsdn.Janus
 					.Segments
 					.Skip(1)
 					.Take(uri.Segments.Length - 2)
-					.Select<string, string>(HttpUtility.UrlDecode)
+					.Select(HttpUtility.UrlDecode)
 					.JoinStrings();
 		}
 

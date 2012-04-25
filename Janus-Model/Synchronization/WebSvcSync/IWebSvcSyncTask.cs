@@ -3,7 +3,7 @@
 	/// <summary>
 	/// Задача синхронизации - AT.
 	/// </summary>
-	public interface IWebSvcSyncTask<T>
+	public interface IWebSvcSyncTask<in T>
 	{
 		/// <summary>
 		/// Имя задачи.

@@ -1,6 +1,6 @@
 ﻿namespace Rsdn.Janus
 {
-	public interface IMenuItemVisitor<TContext>
+	public interface IMenuItemVisitor<in TContext>
 	{
 		void Visit(IMenu menu, TContext context);
 		void Visit(IMenuCommand menuCommand, TContext context);

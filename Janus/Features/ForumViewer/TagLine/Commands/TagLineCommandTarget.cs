@@ -101,13 +101,11 @@ namespace Rsdn.Janus
 			for (var i = 0; ; i++)
 			{
 				var name = "TagLine" + (i == 0 ? string.Empty : i.ToString());
-				var founded = false;
-				foreach (var tgi in provider.GetRequiredService<ITagLineListFormService>().TagLines)
-					if (tgi.Name == name)
-					{
-						founded = true;
-						break;
-					}
+				var founded =
+					provider
+						.GetRequiredService<ITagLineListFormService>()
+						.TagLines
+						.Any(tgi => tgi.Name == name);
 				if (!founded)
 					return name;
 			}

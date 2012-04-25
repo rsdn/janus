@@ -5,8 +5,6 @@ using System.Globalization;
 using System.Threading;
 using System.Windows.Forms;
 
-using BLToolkit.Data;
-
 using Rsdn.Janus.Framework;
 using Rsdn.SmartApp;
 
@@ -139,7 +137,7 @@ namespace Rsdn.Janus
 									TraceVerbose("User cancelled");
 								}
 
-								AutoResetEvent signal = new AutoResetEvent(true);
+								var signal = new AutoResetEvent(true);
 								if (DBSchemaManager.IsNeedRestructuring(host))
 								{
 									signal.Reset();
@@ -179,7 +177,7 @@ namespace Rsdn.Janus
 								rootManager.Publish<IMainWindowService>(
 									new MainWindowService(() => ApplicationManager.Instance.MainForm));
 								rootManager.Publish(
-									new DockManager(() => ApplicationManager.Instance.MainForm.DockPanel));
+									new DockManager(rootManager, () => ApplicationManager.Instance.MainForm.DockPanel));
 
 								Application.ThreadException +=
 									(sender, e) =>

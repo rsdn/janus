@@ -4,8 +4,7 @@ namespace Rsdn.Janus
 {
 	public class EmptyJanusRWLock : IJanusRWLock
 	{
-		public static readonly EmptyJanusRWLock Instance =
-			new EmptyJanusRWLock();
+		public static readonly EmptyJanusRWLock LockInstance = new EmptyJanusRWLock();
 
 		private EmptyJanusRWLock()
 		{}
@@ -30,8 +29,7 @@ namespace Rsdn.Janus
 		#region EmptyDisposable class
 		private class EmptyDisposable : IDisposable
 		{
-			public static readonly EmptyDisposable Instance =
-				new EmptyDisposable();
+			public static readonly EmptyDisposable Instance = new EmptyDisposable();
 
 			private EmptyDisposable()
 			{}

@@ -51,7 +51,7 @@ namespace Rsdn.Janus
 		{
 			if (commandName == null && parameters != null)
 				throw new ArgumentException(
-					@"Параметры команды должны быть ранвы null, когда имя команды равно null.",
+					"Параметры команды должны быть ранвы null, когда имя команды равно null.",
 					"parameters");
 
 			CommandName = commandName;

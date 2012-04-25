@@ -1,26 +1,12 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Data;
 using System.Linq;
 
 namespace Rsdn.Janus.Framework
 {
 	internal static class Algorithms
 	{
-		/// <summary>
-		/// Получить перечислитель заданной колонки таблицы.
-		/// </summary>
-		/// <typeparam name="T">тип к которому привести значение колонки</typeparam>
-		/// <param name="table">таблица</param>
-		/// <param name="name">имя колонки для получения</param>
-		/// <returns>перечислитель колонки таблицы</returns>
-		public static IEnumerable<T> GetTableColumn<T>(DataTable table, string name)
-		{
-			foreach (DataRow row in table.Rows)
-				yield return (T)row[name];
-		}
-
 		#region GetFirstElements<T>(collection, count)
 		public static ICollection<T> GetFirstElements<T>(ICollection<T> collection, int count)
 		{

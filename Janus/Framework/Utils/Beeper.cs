@@ -16,17 +16,12 @@ namespace Rsdn.Janus.Framework
 		[DllImport("kernel32.dll")]
 		private static extern bool Beep(int dwFreq, int dwDuration);
 
-		public static void DoBeep(string sound)
+		public static void DoBeep(string sound = _defaultSound)
 		{
 			if (string.IsNullOrEmpty(sound))
 				Beep(1000, 500);
 			else
 				sndPlaySound(sound, SoundFlags.Asynchronous);
-		}
-
-		public static void DoBeep()
-		{
-			DoBeep(_defaultSound);
 		}
 
 		#region Nested type: SoundFlags

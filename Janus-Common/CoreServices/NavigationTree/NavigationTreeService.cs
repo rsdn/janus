@@ -117,7 +117,7 @@ namespace Rsdn.Janus
 			return 
 				nodeSources
 					.GroupBy(node => node.Name)
-					.Select(grp => MergeNode(grp))
+					.Select(MergeNode)
 					.Sort(node => node.OrderIndex);
 		}
 
@@ -139,7 +139,7 @@ namespace Rsdn.Janus
 							{
 								var defintionNode = source as INavigationTreeNode;
 								if (defintionNode != null)
-									return defintionNode.Childrens.Cast<INavigationTreeNodeSource>();
+									return defintionNode.Childrens;
 								var extensionNode = source as INavigationTreeNodeExtension;
 								if (extensionNode != null)
 									return extensionNode.Childrens;

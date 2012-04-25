@@ -24,9 +24,7 @@ namespace Rsdn.Janus
 
 		public FavoritesLink(IServiceProvider provider)
 		{
-			_favManager =
-				new Lazy<IFavoritesManager>(
-					() => provider.GetRequiredService<IFavoritesManager>());
+			_favManager = new Lazy<IFavoritesManager>(provider.GetRequiredService<IFavoritesManager>);
 		}
 
 		public int FolderId { get; set; }

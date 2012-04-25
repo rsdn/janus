@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections;
+using System.Linq;
 
 namespace Rsdn.TreeGrid
 {
@@ -58,13 +59,13 @@ namespace Rsdn.TreeGrid
 			}
 			if (!parent.HasChildren)
 				return null;
-			foreach (ITreeNode tn in parent)
-			{
-				var kn = tn as IKeyedNode;
-				if ((kn != null) && (kn.Key == key))
-					return tn;
-			}
-			return null;
+			return
+				parent
+					.Cast<ITreeNode>()
+					.Select(tn => new {tn, kn = tn as IKeyedNode})
+					.Where(t => t.kn != null && t.kn.Key == key)
+					.Select(t => t.tn)
+					.FirstOrDefault();
 		}
 
 		/// <summary>

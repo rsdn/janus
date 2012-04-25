@@ -1,11 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 
 using Rsdn.Janus.Framework;
 using Rsdn.Janus.Log;
 
 using WeifenLuo.WinFormsUI.Docking;
+
+using Rsdn.SmartApp;
 
 namespace Rsdn.Janus
 {
@@ -14,6 +17,7 @@ namespace Rsdn.Janus
 	/// </summary>
 	public class DockManager : IInitable
 	{
+		private readonly IServiceProvider _provider;
 		private readonly Func<DockPanel> _dockPanelGetter;
 		private const string _cfgFilePostfix = "DockingConfig.xml";
 
@@ -21,10 +25,11 @@ namespace Rsdn.Janus
 		private readonly SortedDictionary<string, DockContent> _panes =
 			new SortedDictionary<string, DockContent>();
 
-		internal DockManager(Func<DockPanel> dockPanelGetter)
+		internal DockManager(IServiceProvider provider, Func<DockPanel> dockPanelGetter)
 		{
 			if (dockPanelGetter == null)
 				throw new ArgumentNullException("dockPanelGetter");
+			_provider = provider;
 			_dockPanelGetter = dockPanelGetter;
 		}
 
@@ -35,7 +40,7 @@ namespace Rsdn.Janus
 				if (_dockPanel == null)
 				{
 					_dockPanel = _dockPanelGetter();
-					_dockPanel.ParentForm.FormClosing += DockManager_Closed;
+					_dockPanel.ParentForm.FormClosing += DockManagerClosed;
 				}
 				return _dockPanel;
 			}
@@ -57,10 +62,11 @@ namespace Rsdn.Janus
 
 		public JanusDockPane FindPaneByText(string text)
 		{
-			foreach (JanusDockPane jdp in _panes.Values)
-				if (jdp.Text == text)
-					return jdp;
-			return null;
+			return
+				_panes
+					.Values
+					.Cast<JanusDockPane>()
+					.FirstOrDefault(jdp => jdp.Text == text);
 		}
 
 		private ContentDummyForm CreateContentPane()
@@ -93,21 +99,17 @@ namespace Rsdn.Janus
 		{
 			var cfgName = GetConfigFileName();
 			if (File.Exists(cfgName))
-			{
 				try
 				{
 					DockPanel.LoadFromXml(cfgName, DeserializeHandler);
 				}
 				catch (Exception ex)
 				{
-					ApplicationManager.Instance.Logger.LogError(ex.Message);
+					_provider.GetRequiredService<ILogger>().LogError(ex.Message);
 					DefaultInit();
 				}
-			}
 			else
-			{
 				DefaultInit();
-			}
 		}
 
 		private void DefaultInit()
@@ -128,7 +130,7 @@ namespace Rsdn.Janus
 			DockPanel.SaveAsXml(GetConfigFileName());
 		}
 
-		private void DockManager_Closed(object sender, EventArgs e)
+		private void DockManagerClosed(object sender, EventArgs e)
 		{
 			Save();
 		}

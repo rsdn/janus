@@ -32,12 +32,7 @@ namespace Rsdn.Janus.ObjectModel
 
 		public SearchDummyForm SearchForm
 		{
-			get
-			{
-				if (_searchForm == null)
-					_searchForm = new SearchDummyForm(_provider);
-				return _searchForm;
-			}
+			get { return _searchForm ?? (_searchForm = new SearchDummyForm(_provider)); }
 		}
 
 		#region IFeatureGui

@@ -22,8 +22,7 @@ namespace Rsdn.Janus
 			Flags = NodeFlags.None;
 			_showLinks = true;
 			_manager =
-				new Lazy<IFavoritesManager>(
-					() => provider.GetRequiredService<IFavoritesManager>());
+				new Lazy<IFavoritesManager>(provider.GetRequiredService<IFavoritesManager>);
 		}
 
 		public string Name { get; set; }

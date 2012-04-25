@@ -304,7 +304,7 @@ namespace Rsdn.Janus
 
 			if (mids.Count > maxInClause)
 				mids = Algorithms.GetFirstElements(mids, maxInClause);
-			var intMids = mids.Select(mid => int.Parse(mid));
+			var intMids = mids.Select(int.Parse);
 
 			using (var db = provider.CreateDBContext())
 			{

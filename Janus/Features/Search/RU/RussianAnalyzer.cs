@@ -220,15 +220,13 @@ namespace Lucene.Net.Analysis.Ru
 		private static String[] MakeStopWords(char[] charset)
 		{
 			var res = new String[RUSSIAN_STOP_WORDS.Length];
-			for (int i = 0; i < res.Length; i++)
+			for (var i = 0; i < res.Length; i++)
 			{
-				char[] theStopWord = RUSSIAN_STOP_WORDS[i];
+				var theStopWord = RUSSIAN_STOP_WORDS[i];
 				// translate the word,using the charset
 				var theWord = new StringBuilder();
-				for (int j = 0; j < theStopWord.Length; j++)
-				{
-					theWord.Append(charset[theStopWord[j]]);
-				}
+				foreach (var t in theStopWord)
+					theWord.Append(charset[t]);
 				res[i] = theWord.ToString();
 			}
 			return res;

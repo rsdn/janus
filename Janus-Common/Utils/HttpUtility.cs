@@ -999,7 +999,7 @@ namespace System.Web
 				string name;
 				if (valuePos == -1)
 				{
-					name = null;
+					name = "";
 					valuePos = namePos;
 				}
 				else

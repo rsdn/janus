@@ -21,8 +21,8 @@ namespace Rsdn.Janus
 	{
 		private const string _sizeGroup = "size";
 		private const string _nameGroup = "name";
-		public const string ImagesResource = ApplicationInfo.ResourcesNamespace + "Images.resources";
-		public const string DefaultTheme = "_default";
+		private const string _imagesResource = ApplicationInfo.ResourcesNamespace + "Images.resources";
+		private const string _defaultTheme = "_default";
 
 		private static readonly Regex _imageNameRx = new Regex(
 			@"(?:(?'" + _nameGroup + @"'.+)(?'" + _sizeGroup + @"'16|24)\Z)|" +
@@ -46,15 +46,15 @@ namespace Rsdn.Janus
 			using (var rr = new ResourceReader(imagesResource))
 			{
 				LoadImages(rr, StyleConfig.Instance.Theme + Path.DirectorySeparatorChar, false);
-				if (StyleConfig.Instance.Theme != DefaultTheme)
-					LoadImages(rr, DefaultTheme + Path.DirectorySeparatorChar, false);
+				if (StyleConfig.Instance.Theme != _defaultTheme)
+					LoadImages(rr, _defaultTheme + Path.DirectorySeparatorChar, false);
 			}
 		}
 
 		private static Stream GetImagesResource()
 		{
 			var imagesResource = 
-				EnvironmentHelper.JanusAssembly.GetManifestResourceStream(ImagesResource);
+				EnvironmentHelper.JanusAssembly.GetManifestResourceStream(_imagesResource);
 			if (imagesResource == null)
 				throw new ApplicationException("Could not load style images resource");
 			return imagesResource;
@@ -91,8 +91,7 @@ namespace Rsdn.Janus
 					dirs.Add(dirName, true);
 				}
 
-			foreach (var dirName in dirs.Keys)
-				yield return dirName;
+			return dirs.Keys;
 		}
 
 		private void LoadImages(IResourceReader rr, string dir, bool replaceExisting)

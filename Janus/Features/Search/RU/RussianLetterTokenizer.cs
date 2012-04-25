@@ -21,6 +21,7 @@
 
 using System;
 using System.IO;
+using System.Linq;
 
 namespace Lucene.Net.Analysis.Ru
 {
@@ -45,18 +46,9 @@ namespace Lucene.Net.Analysis.Ru
 		/// <summary>
 		/// Collects only characters which satisfy Char.IsLetter(char).
 		/// </summary>
-		/// <param name="c"></param>
-		/// <returns></returns>
 		protected override bool IsTokenChar(char c)
 		{
-			if (Char.IsLetter(c))
-				return true;
-			for (int i = 0; i < _charset.Length; i++)
-			{
-				if (c == _charset[i])
-					return true;
-			}
-			return false;
+			return Char.IsLetter(c) || _charset.Any(t => c == t);
 		}
 	}
 }

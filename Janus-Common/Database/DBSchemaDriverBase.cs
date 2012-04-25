@@ -574,7 +574,7 @@ namespace Rsdn.Janus
 			{
 				var keyColumns = table.KeyPrimary().Columns.Split(new[] {',', ' '},
 					StringSplitOptions.RemoveEmptyEntries);
-				keyColumns = Array.ConvertAll(keyColumns, s => MakeDdlElementName(s));
+				keyColumns = Array.ConvertAll(keyColumns, MakeDdlElementName);
 				query += "\nORDER BY\n\t" + string.Join(",\n\t", keyColumns);
 			}
 
@@ -584,7 +584,7 @@ namespace Rsdn.Janus
 		public virtual string MakeInsert(TableSchema table)
 		{
 			var columns = Array.ConvertAll(table.Columns, column => MakeDdlElementName(column.Name));
-			var parameters = Array.ConvertAll(table.Columns, s => MakeParameterName(s));
+			var parameters = Array.ConvertAll(table.Columns, MakeParameterName);
 
 			var query =
 				string.Format("INSERT INTO\n\t{0}\n\t({1})\nVALUES\n\t({2})",

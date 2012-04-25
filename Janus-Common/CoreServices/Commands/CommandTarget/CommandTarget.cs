@@ -77,10 +77,7 @@ namespace Rsdn.Janus
 
 					var subscribeAttr = attribute as CommandStatusSubscriberAttribute;
 					if (subscribeAttr != null)
-					{
 						subscribeCommands.Add(subscribeAttr.CommandName);
-						continue;
-					}
 				}
 
 				if (subscribeCommands.Count > 0)

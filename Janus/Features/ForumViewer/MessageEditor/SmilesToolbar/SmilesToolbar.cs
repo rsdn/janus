@@ -14,13 +14,13 @@ namespace Rsdn.Janus
 	/// в свойстве ButtonInfos.
 	/// </summary>
 	[DefaultEvent("ButtonClick")]
-	public partial class SmilesToolbar : UserControl
+	public sealed partial class SmilesToolbar : UserControl
 	{
 		/// <summary>
 		/// Если в списке кнопок найдётся кнопка со следующем текстом, то следующие за ней кнопки
 		/// будут отрисовываться с новой строки. Сама кнопка показана не будет.
 		/// </summary>
-		public static readonly string NewLineButtonText = Environment.NewLine;
+		private static readonly string _newLineButtonText = Environment.NewLine;
 
 		public SmilesToolbar()
 		{
@@ -52,7 +52,7 @@ namespace Rsdn.Janus
 
 			if (!IsSpecialButton(buttonInfo))
 			{
-				button.Click += SmilesToolbar_Click;
+				button.Click += SmilesToolbarClick;
 				button.Cursor = Cursors.Hand;
 				_toolTip.SetToolTip(button, buttonInfo.Hint ?? buttonInfo.Text);
 			}
@@ -69,7 +69,7 @@ namespace Rsdn.Janus
 		{
 			for (int i = 0, len = Controls.Count; i < len; i++)
 			{
-				Control control = Controls[i];
+				var control = Controls[i];
 				if (control.Tag == buttonInfo)
 					return i;
 			}
@@ -79,13 +79,13 @@ namespace Rsdn.Janus
 
 		private void ButtonInfoRemoved(ButtonInfoCollection sender, ButtonInfo buttonInfo)
 		{
-			int index = FindButton(buttonInfo);
+			var index = FindButton(buttonInfo);
 			if (index < 0) // кнопка не найдена
 				throw new ApplicationException(
 					"Кнопка '" + buttonInfo.Text + "' не может быть удалена, так как она отсуствует в списке.");
 
-			Control control = Controls[index];
-			control.Click -= SmilesToolbar_Click;
+			var control = Controls[index];
+			control.Click -= SmilesToolbarClick;
 			_toolTip.SetToolTip(control, ((ButtonInfo)control.Tag).Hint);
 			Controls.RemoveAt(index);
 
@@ -132,11 +132,11 @@ namespace Rsdn.Janus
 			if (endIndex >= Controls.Count)
 				throw new ArgumentOutOfRangeException("endIndex");
 
-			int maxHeight = 0;
+			var maxHeight = 0;
 
-			for (int i = startIndex; i <= endIndex; i++)
+			for (var i = startIndex; i <= endIndex; i++)
 			{
-				Control control = Controls[i];
+				var control = Controls[i];
 				maxHeight = Math.Max(maxHeight, control.Height);
 			}
 
@@ -146,7 +146,7 @@ namespace Rsdn.Janus
 		/// <summary>
 		/// Размер отступа между кнопками.
 		/// </summary>
-		private const int separatorSize = 5;
+		private const int _separatorSize = 5;
 
 		/// <summary>
 		/// Распологает кнопки в контроле в порядке в котором 
@@ -158,39 +158,39 @@ namespace Rsdn.Janus
 				return;
 
 			// Сдвижка текущего ряда кнопок (в пикселях) от верха контрола.
-			int topOffset = separatorSize;
+			var topOffset = _separatorSize;
 			SuspendLayout();
 			try
 			{
 				// Ширина контрола с учетом отступов.
-				int width = Width - separatorSize * 2;
-				int leftOffset = separatorSize; // Сдвижка слева (в пикселях)
+				var width = Width - _separatorSize * 2;
+				var leftOffset = _separatorSize; // Сдвижка слева (в пикселях)
 				// Индекс контрола находящегося в начале строки
-				int startRowControl = 0;
+				var startRowControl = 0;
 				// Индекс верхней границы массива контролов.
-				int lowerBound = Controls.Count - 1;
+				var lowerBound = Controls.Count - 1;
 				// Перебираем все контролы/кнопки...
-				for (int i = 0; i <= lowerBound; i++)
+				for (var i = 0; i <= lowerBound; i++)
 				{
-					Control control = Controls[i];
-					ButtonInfo buttonInfo = (ButtonInfo)control.Tag;
+					var control = Controls[i];
+					var buttonInfo = (ButtonInfo)control.Tag;
 					//control.BackColor = Color.Brown;
 					// Рассчитываем новый отступ с лева
-					int newLeftOffset = leftOffset + control.Width + separatorSize;
+					var newLeftOffset = leftOffset + control.Width + _separatorSize;
 					// Если это последняя строка, или текст равен разрыву строки, 
 					// или следующий контрол заходит за границы кортрола...
 					if (i == lowerBound ||
-						buttonInfo.Text == NewLineButtonText ||
+						buttonInfo.Text == _newLineButtonText ||
 						newLeftOffset + Controls[i + 1].Width >= width)
 					{
 						// Выполняем расчет высоты ряда
-						int rowHeight = CalcMaxHeight(startRowControl, i);
+						var rowHeight = CalcMaxHeight(startRowControl, i);
 						// Располагаем кнопки друг за другом
 						AlignRowOfControls(topOffset, rowHeight, startRowControl, i);
 						// Инициализируем значения для нового ряда...
 						startRowControl = i + 1;
-						topOffset += rowHeight + separatorSize;
-						leftOffset = separatorSize;
+						topOffset += rowHeight + _separatorSize;
+						leftOffset = _separatorSize;
 						continue;
 					}
 
@@ -205,7 +205,7 @@ namespace Rsdn.Janus
 				// Поэтому посылаем PostMessage в котором и производим изменение
 				// размеров контрола.
 				if (Site == null) // Деалаем это только если мы не в дизантайме.
-					PostMessage(Handle, WM_UpdateHeight, topOffset, 0);
+					PostMessage(Handle, _wmUpdateHeight, topOffset, 0);
 			}
 		}
 
@@ -213,11 +213,11 @@ namespace Rsdn.Janus
 		/// Идентификатор сообщения при приходе которого обнавляется 
 		/// размеры контрола.
 		/// </summary>
-		private const int WM_UpdateHeight = NativeMethods.WM_USER + 0x100;
+		private const int _wmUpdateHeight = NativeMethods.WM_USER + 0x100;
 
 		protected override void WndProc(ref Message m)
 		{
-			if (m.Msg == WM_UpdateHeight)
+			if (m.Msg == _wmUpdateHeight)
 			{
 				// Объновляем высотку контрола... только если не находимся 
 				// в дизантайме (Site == null).
@@ -229,7 +229,7 @@ namespace Rsdn.Janus
 		}
 
 		[DllImport("user32.dll")]
-		private static extern bool PostMessage(IntPtr hWnd, int Msg, int wParam, int lParam);
+		private static extern bool PostMessage(IntPtr hWnd, int msg, int wParam, int lParam);
 
 		/// <summary>
 		/// Распологает контролы из переданного диапазана друг за другом.
@@ -248,15 +248,15 @@ namespace Rsdn.Janus
 				throw new ArgumentOutOfRangeException("endIndex");
 
 			// Отступ слева.
-			int leftOffset = separatorSize;
+			var leftOffset = _separatorSize;
 
 			// Перебираем контролы и выравниваем их.
-			for (int i = startIndex; i <= endIndex; i++)
+			for (var i = startIndex; i <= endIndex; i++)
 			{
-				Control control = Controls[i];
+				var control = Controls[i];
 				control.Top = topOffset + (rowHeight - control.Height) / 2;
 				control.Left = leftOffset;
-				leftOffset += separatorSize + control.Width;
+				leftOffset += _separatorSize + control.Width;
 			}
 		}
 
@@ -268,9 +268,9 @@ namespace Rsdn.Janus
 
 		// Ловим назатие на кнопки и транслируем событие ButtonClick 
 		// криенту.
-		private void SmilesToolbar_Click(object sender, EventArgs e)
+		private void SmilesToolbarClick(object sender, EventArgs e)
 		{
-			ButtonInfo info = (ButtonInfo)((Control)sender).Tag;
+			var info = (ButtonInfo)((Control)sender).Tag;
 			OnButtonClick(info);
 		}
 
@@ -283,7 +283,7 @@ namespace Rsdn.Janus
 		/// Вызвает событие ButtonClick.
 		/// </summary>
 		/// <param name="buttonInfo">Описание нажатой кнопки</param>
-		protected virtual void OnButtonClick(ButtonInfo buttonInfo)
+		private void OnButtonClick(ButtonInfo buttonInfo)
 		{
 			if (ButtonClick != null)
 				ButtonClick(this, buttonInfo);
@@ -300,7 +300,7 @@ namespace Rsdn.Janus
 			if (buttonInfo == null)
 				throw new ArgumentNullException("buttonInfo");
 
-			return buttonInfo.Text == NewLineButtonText;
+			return buttonInfo.Text == _newLineButtonText;
 		}
 	}
 }

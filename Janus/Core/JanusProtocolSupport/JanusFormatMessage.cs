@@ -74,23 +74,6 @@ namespace Rsdn.Janus
 		/// <param name="isRead">Сообщение прочитано</param>
 		/// <param name="isMarked">Помечено ли сообщение флагом (очками).</param>
 		/// <param name="isArticle">Является ли сообщение статьей.</param>
-		/// <returns>Путь к иконке сообщения.</returns>
-		public static string GetMessageImagePath(
-			IServiceProvider provider,
-			bool isRead,
-			bool isMarked,
-			bool isArticle)
-		{
-			return GetMessageImagePath(provider, isRead, isMarked, isArticle, PenaltyType.Ban, null);
-		}
-
-		/// <summary>
-		/// Возвращает путь к иконке сообщения.
-		/// </summary>
-		/// <param name="provider"></param>
-		/// <param name="isRead">Сообщение прочитано</param>
-		/// <param name="isMarked">Помечено ли сообщение флагом (очками).</param>
-		/// <param name="isArticle">Является ли сообщение статьей.</param>
 		/// <param name="violationPenaltyType">Тип бана</param>
 		/// <param name="violationReason">Основание для бана</param>
 		/// <returns>Путь к иконке сообщения.</returns>
@@ -99,8 +82,8 @@ namespace Rsdn.Janus
 			bool isRead,
 			bool isMarked,
 			bool isArticle,
-			PenaltyType violationPenaltyType,
-			string violationReason)
+			PenaltyType violationPenaltyType = PenaltyType.Ban,
+			string violationReason = null)
 		{
 			string path = null;
 

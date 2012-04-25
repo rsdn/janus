@@ -14,7 +14,7 @@ namespace Rsdn.Janus.Framework
 			_cancelButton.Visible = allowCancel;
 		}
 
-		private void _cancelButton_Click(object sender, System.EventArgs e)
+		private void CancelButtonClick(object sender, System.EventArgs e)
 		{
 			CancelRequested = true;
 			_cancelButton.Enabled = false;
@@ -47,7 +47,7 @@ namespace Rsdn.Janus.Framework
 
 		public void Complete()
 		{
-			_asyncOp.PostOperationCompleted(() => Dispose());
+			_asyncOp.PostOperationCompleted(Dispose);
 		}
 
 		public bool CancelRequested

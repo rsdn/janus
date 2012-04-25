@@ -1,6 +1,6 @@
 ﻿namespace Rsdn.Janus
 {
-	public partial class SmilesToolbar
+	public sealed partial class SmilesToolbar
 	{
 		private System.ComponentModel.IContainer components;
 

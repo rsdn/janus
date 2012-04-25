@@ -9,11 +9,8 @@ namespace Rsdn.Janus
 	public partial class FavoritesFolderForm : Form
 	{
 		#region Constructor(s
-		public FavoritesFolderForm(string name, string comment)
-			: this(name, comment, false)
-		{}
 
-		public FavoritesFolderForm(string name, string comment, bool showAsRootButton)
+		public FavoritesFolderForm(string name, string comment, bool showAsRootButton = false)
 		{
 			InitializeComponent();
 

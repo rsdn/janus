@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 
 using JetBrains.Annotations;
 
@@ -12,7 +13,7 @@ namespace Rsdn.Janus
 	[Service(typeof (ITagLineManager))]
 	internal class TagLineManager : ITagLineManager
 	{
-		private const int MaxTagLength = 128;
+		private const int _maxTagLength = 128;
 
 		private readonly IServiceProvider _serviceProvider;
 
@@ -34,8 +35,8 @@ namespace Rsdn.Janus
 
 			var res = TextMacrosHelper.ReplaceMacroses(_serviceProvider, format);
 
-			return res.Length > MaxTagLength
-				? res.Substring(0, MaxTagLength)
+			return res.Length > _maxTagLength
+				? res.Substring(0, _maxTagLength)
 				: res;
 		}
 
@@ -55,10 +56,8 @@ namespace Rsdn.Janus
 
 					if (tgi.Forums[0] == TagLineInfo.AllForums)
 						defaultTagLine = tgi.Format;
-					else
-						foreach (var fid in tgi.Forums)
-							if (fid == forumId)
-								return tgi.Format;
+					else if (tgi.Forums.Any(fid => fid == forumId))
+						return tgi.Format;
 				}
 
 			return defaultTagLine;

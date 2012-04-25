@@ -97,7 +97,7 @@ namespace Rsdn.Janus
 			}
 
 			//Ресолвинг сборок расширений
-			foreach (var dir in GetExtensionDirs(rootDir).Select(dir => Path.GetFileName(dir)))
+			foreach (var dir in GetExtensionDirs(rootDir).Select(Path.GetFileName))
 #pragma warning disable 612,618
 				AppDomain.CurrentDomain.AppendPrivatePath(dir);
 #pragma warning restore 612,618

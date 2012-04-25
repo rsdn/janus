@@ -15,8 +15,6 @@ namespace Rsdn.Janus
 	[AttributeUsage(AttributeTargets.Property)]
 	public sealed class DetailedAttribute : Attribute
 	{
-		private readonly bool _detail;
-
 		private static readonly DetailedAttribute _detailed = new DetailedAttribute(true);
 
 		public static DetailedAttribute DetailedInstance
@@ -26,17 +24,10 @@ namespace Rsdn.Janus
 
 		public DetailedAttribute()
 		{
-			_detail = true;
 		}
 
-		public DetailedAttribute(bool detail)
+		private DetailedAttribute(bool detail)
 		{
-			_detail = detail;
-		}
-
-		public bool Detailed
-		{
-			get { return _detail; }
 		}
 	}
 
@@ -47,37 +38,37 @@ namespace Rsdn.Janus
 	{
 		#region Настройки по умолчанию
 
-		public static readonly Color DefaultMessageTreeBack = Color.FromArgb(224, 240, 224);
-		public static readonly Font  DefaultMessageTreeFont = new Font("Tahoma", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 204);
+		private static readonly Color _defaultMessageTreeBack = Color.FromArgb(224, 240, 224);
+		private static readonly Font  _defaultMessageTreeFont = new Font("Tahoma", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 204);
 
-		public static readonly Color DefaultMessageColor              = Color.Black;
-		public static readonly Color DefaultSelfMessageColor          = Color.SteelBlue;
-		public static readonly Color DefaultRepliesToSelfMessageColor = Color.DarkRed;
+		private static readonly Color _defaultMessageColor              = Color.Black;
+		private static readonly Color _defaultSelfMessageColor          = Color.SteelBlue;
+		private static readonly Color _defaultRepliesToSelfMessageColor = Color.DarkRed;
 
-		public static readonly Color DefaultFavoriteMessageColor = Color.Chocolate;
+		private static readonly Color _defaultFavoriteMessageColor = Color.Chocolate;
 
-		public static readonly Color DefaultParentActiveMessageBackColor = Color.LightSteelBlue;
-		public static readonly Color DefaultChildActiveMessageBackColor = Color.PowderBlue;
+		private static readonly Color _defaultParentActiveMessageBackColor = Color.LightSteelBlue;
+		private static readonly Color _defaultChildActiveMessageBackColor = Color.PowderBlue;
 
-		public static readonly Color DefaultNavigationTreeForumColor = Color.Black;
-		public static readonly Color DefaultNavigationTreeBack       = Color.FromArgb(244, 255, 244);
-		public static readonly Font  DefaultNavigationTreeFont       = new Font("Tahoma", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 204);
+		private static readonly Color _defaultNavigationTreeForumColor = Color.Black;
+		private static readonly Color _defaultNavigationTreeBack       = Color.FromArgb(244, 255, 244);
+		private static readonly Font  _defaultNavigationTreeFont       = new Font("Tahoma", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 204);
 
-		public static readonly Color DefaultOptionsGridBack     = Color.FromArgb(192, 192, 244);
-		public static readonly Color DefaultOptionsGridViewBack = Color.FromArgb(244, 244, 255);
-		public static readonly Color DefaultOptionsGridLine     = Color.FromArgb(224, 224, 244);
-		public static readonly Color DefaultOptionsGridText     = SystemColors.WindowText;
+		private static readonly Color _defaultOptionsGridBack     = Color.FromArgb(192, 192, 244);
+		private static readonly Color _defaultOptionsGridViewBack = Color.FromArgb(244, 244, 255);
+		private static readonly Color _defaultOptionsGridLine     = Color.FromArgb(224, 224, 244);
+		private static readonly Color _defaultOptionsGridText     = SystemColors.WindowText;
 
-		public static readonly Color DefaultQuotaPrefixColor = Color.FromArgb(0, 60, 180);
+		private static readonly Color _defaultQuotaPrefixColor = Color.FromArgb(0, 60, 180);
 
-		public static readonly Color[] DefaultQuotaColors = new[]
+		private static readonly Color[] _defaultQuotaColors = new[]
 			{
 				Color.FromArgb(  0,  85,   0),
 				Color.FromArgb( 60, 140,  60),
 				Color.FromArgb(120, 200, 120)
 			};
 
-		public static readonly Color[] DefaultForumPriorityColor = new[]
+		private static readonly Color[] _defaultForumPriorityColor = new[]
 			{
 				Color.FromArgb(  0, 0,   0),
 				Color.FromArgb(100, 0,   0),
@@ -93,8 +84,8 @@ namespace Rsdn.Janus
 
 		#endregion
 
-		protected static ColorConverter _colorConverter = new ColorConverter();
-		protected static FontConverter _fontConverter = new FontConverter();
+		private static readonly ColorConverter _colorConverter = new ColorConverter();
+		private static readonly FontConverter _fontConverter = new FontConverter();
 
 		#region 1.Общие настройки
 
@@ -171,12 +162,12 @@ namespace Rsdn.Janus
 			get { return _msgTreeFont; }
 			set
 			{
-				_msgTreeFont = value ?? DefaultMessageTreeFont;
+				_msgTreeFont = value ?? _defaultMessageTreeFont;
 				OnStyleChangeEvent(StyleChangeEventArgs.FontColorStyle);
 			}
 		}
 
-		private Font _msgTreeFont = DefaultMessageTreeFont;
+		private Font _msgTreeFont = _defaultMessageTreeFont;
 
 		[Browsable(false)]
 		public string MessageTreeFontStr
@@ -197,17 +188,17 @@ namespace Rsdn.Janus
 		public Color MessageTreeBack
 		{
 			get { return _msgTreeBack; }
-			set { SetColorNonTransp(ref _msgTreeBack, value, DefaultMessageTreeBack); }
+			set { SetColorNonTransp(out _msgTreeBack, value, _defaultMessageTreeBack); }
 		}
 
 		[Browsable(false)]
 		public string MessageTreeBackStr
 		{
 			get { return _colorConverter.ConvertToInvariantString(_msgTreeBack); }
-			set { SetColorNonTranspStr(ref _msgTreeBack, value, DefaultMessageTreeBack); }
+			set { SetColorNonTranspStr(out _msgTreeBack, value, _defaultMessageTreeBack); }
 		}
 
-		private Color _msgTreeBack = DefaultMessageTreeBack;
+		private Color _msgTreeBack = _defaultMessageTreeBack;
 
 		[JanusDisplayName("Config.StyleConfig.MessageColor.DisplayName")]
 		[JanusCategory("Config.CategoryName.Style.MessageTree")]
@@ -216,17 +207,17 @@ namespace Rsdn.Janus
 		public Color MessageColor
 		{
 			get { return _msgColor; }
-			set { SetColorNonTransp(ref _msgColor, value, DefaultMessageColor); }
+			set { SetColorNonTransp(out _msgColor, value, _defaultMessageColor); }
 		}
 
 		[Browsable(false)]
 		public string MessageColorStr
 		{
 			get { return _colorConverter.ConvertToInvariantString(_msgColor); }
-			set { SetColorNonTranspStr(ref _msgColor, value, DefaultMessageColor); }
+			set { SetColorNonTranspStr(out _msgColor, value, _defaultMessageColor); }
 		}
 
-		private Color _msgColor = DefaultMessageColor;
+		private Color _msgColor = _defaultMessageColor;
 
 		[JanusDisplayName("Config.StyleConfig.OwnMessagesColor.DisplayName")]
 		[JanusCategory("Config.CategoryName.Style.MessageTree")]
@@ -235,17 +226,17 @@ namespace Rsdn.Janus
 		public Color SelfMessageColor
 		{
 			get { return _selfMsgColor; }
-			set { SetColorNonTransp(ref _selfMsgColor, value, DefaultSelfMessageColor); }
+			set { SetColorNonTransp(out _selfMsgColor, value, _defaultSelfMessageColor); }
 		}
 
 		[Browsable(false)]
 		public string SelfMessageColorStr
 		{
 			get { return _colorConverter.ConvertToInvariantString(_selfMsgColor); }
-			set { SetColorNonTranspStr(ref _selfMsgColor, value, DefaultSelfMessageColor); }
+			set { SetColorNonTranspStr(out _selfMsgColor, value, _defaultSelfMessageColor); }
 		}
 
-		private Color _selfMsgColor = DefaultSelfMessageColor;
+		private Color _selfMsgColor = _defaultSelfMessageColor;
 
 		[JanusDisplayName("Config.StyleConfig.MessagesAnswerColor.DisplayName")]
 		[JanusCategory("Config.CategoryName.Style.MessageTree")]
@@ -254,17 +245,17 @@ namespace Rsdn.Janus
 		public Color RepliesToSelfMessageColor
 		{
 			get { return _repliesMsgColor; }
-			set { SetColorNonTransp(ref _repliesMsgColor, value, DefaultRepliesToSelfMessageColor); }
+			set { SetColorNonTransp(out _repliesMsgColor, value, _defaultRepliesToSelfMessageColor); }
 		}
 
 		[Browsable(false)]
 		public string RepliesToSelfMessageColorStr
 		{
 			get { return _colorConverter.ConvertToInvariantString(_repliesMsgColor); }
-			set { SetColorNonTranspStr(ref _repliesMsgColor, value, DefaultRepliesToSelfMessageColor); }
+			set { SetColorNonTranspStr(out _repliesMsgColor, value, _defaultRepliesToSelfMessageColor); }
 		}
 
-		private Color _repliesMsgColor = DefaultRepliesToSelfMessageColor;
+		private Color _repliesMsgColor = _defaultRepliesToSelfMessageColor;
 
 		[JanusDisplayName("Config.StyleConfig.BrokenColor.DisplayName")]
 		[JanusCategory("Config.CategoryName.Style.MessageTree")]
@@ -273,19 +264,19 @@ namespace Rsdn.Janus
 		public Color MissingTopicColor
 		{
 			get { return _missingTopicColor; }
-			set { SetColorNonTransp(ref _missingTopicColor, value, Color.FromKnownColor(KnownColor.Green)); }
+			set { SetColorNonTransp(out _missingTopicColor, value, Color.FromKnownColor(KnownColor.Green)); }
 		}
 
-		protected Color _missingTopicColor = Color.FromKnownColor(KnownColor.Green);
+		private Color _missingTopicColor = Color.FromKnownColor(KnownColor.Green);
 
 		[Browsable(false)]
 		public string MissingTopicColorStr
 		{
 			get { return _colorConverter.ConvertToInvariantString(_missingTopicColor); }
-			set { SetColorNonTranspStr(ref _missingTopicColor, value, Color.FromKnownColor(KnownColor.Green)); }
+			set { SetColorNonTranspStr(out _missingTopicColor, value, Color.FromKnownColor(KnownColor.Green)); }
 		}
 
-		protected Color _favoriteMessageColor = DefaultFavoriteMessageColor;
+		private Color _favoriteMessageColor = _defaultFavoriteMessageColor;
 
 		[JanusDisplayName("Config.StyleConfig.FavoriteMessageColor.DisplayName")]
 		[JanusCategory("Config.CategoryName.Style.MessageTree")]
@@ -294,17 +285,17 @@ namespace Rsdn.Janus
 		public Color FavoriteMessageColor
 		{
 			get { return _favoriteMessageColor; }
-			set { SetColorNonTransp(ref _favoriteMessageColor, value, DefaultFavoriteMessageColor); }
+			set { SetColorNonTransp(out _favoriteMessageColor, value, _defaultFavoriteMessageColor); }
 		}
 
 		[Browsable(false)]
 		public string FavoritesMessageColorStr
 		{
 			get { return _colorConverter.ConvertToInvariantString(_favoriteMessageColor); }
-			set { SetColorNonTranspStr(ref _favoriteMessageColor, value, DefaultFavoriteMessageColor); }
+			set { SetColorNonTranspStr(out _favoriteMessageColor, value, _defaultFavoriteMessageColor); }
 		}
 
-		protected Color _parentActiveMessageColor = DefaultParentActiveMessageBackColor;
+		private Color _parentActiveMessageColor = _defaultParentActiveMessageBackColor;
 
 		[JanusDisplayName("Config.StyleConfig.ParentActiveMessageBackgroundColor.DisplayName")]
 		[JanusCategory("Config.CategoryName.Style.MessageTree")]
@@ -313,17 +304,17 @@ namespace Rsdn.Janus
 		public Color ParentActiveMessageBackColor
 		{
 			get { return _parentActiveMessageColor; }
-			set { SetColorNonTransp(ref _parentActiveMessageColor, value, DefaultParentActiveMessageBackColor); }
+			set { SetColorNonTransp(out _parentActiveMessageColor, value, _defaultParentActiveMessageBackColor); }
 		}
 
 		[Browsable(false)]
 		public string ParentActiveMessageBackColorStr
 		{
 			get { return _colorConverter.ConvertToInvariantString(_parentActiveMessageColor); }
-			set { SetColorNonTranspStr(ref _parentActiveMessageColor, value, DefaultParentActiveMessageBackColor); }
+			set { SetColorNonTranspStr(out _parentActiveMessageColor, value, _defaultParentActiveMessageBackColor); }
 		}
-		
-		protected Color ChildActiveMessageColor = DefaultChildActiveMessageBackColor;
+
+		private Color _childActiveMessageColor = _defaultChildActiveMessageBackColor;
 		
 		[JanusDisplayName("Config.StyleConfig.ChildActiveMessageBackgroundColor.DisplayName")]
 		[JanusCategory("Config.CategoryName.Style.MessageTree")]
@@ -331,15 +322,15 @@ namespace Rsdn.Janus
 		[XmlIgnore]
 		public Color ChildActiveMessageBackColor
 		{
-			get { return ChildActiveMessageColor; }
-			set { SetColorNonTransp(ref ChildActiveMessageColor, value, DefaultChildActiveMessageBackColor); }
+			get { return _childActiveMessageColor; }
+			set { SetColorNonTransp(out _childActiveMessageColor, value, _defaultChildActiveMessageBackColor); }
 		}
 
 		[Browsable(false)]
 		public string ChildActiveMessageBackColorStr
 		{
-			get { return _colorConverter.ConvertToInvariantString(ChildActiveMessageColor); }
-			set { SetColorNonTranspStr(ref ChildActiveMessageColor, value, DefaultChildActiveMessageBackColor); }
+			get { return _colorConverter.ConvertToInvariantString(_childActiveMessageColor); }
+			set { SetColorNonTranspStr(out _childActiveMessageColor, value, _defaultChildActiveMessageBackColor); }
 		}
 
 		#endregion
@@ -355,7 +346,7 @@ namespace Rsdn.Janus
 			get { return _navTreeFont; }
 			set
 			{
-				_navTreeFont = value ?? DefaultNavigationTreeFont;
+				_navTreeFont = value ?? _defaultNavigationTreeFont;
 				OnStyleChangeEvent(StyleChangeEventArgs.FontColorStyle);
 			}
 		}
@@ -371,7 +362,7 @@ namespace Rsdn.Janus
 			}
 		}
 
-		private Font _navTreeFont = DefaultNavigationTreeFont;
+		private Font _navTreeFont = _defaultNavigationTreeFont;
 
 		[JanusDisplayName("StyleConfigDisplayNameForumNamesColor")]
 		[JanusCategory("Config.CategoryName.Style.NavigationTree")]
@@ -381,17 +372,17 @@ namespace Rsdn.Janus
 		public Color NavigationTreeForumColor
 		{
 			get { return _navTreeForumColor; }
-			set { SetColorNonTransp(ref _navTreeForumColor, value, DefaultNavigationTreeForumColor); }
+			set { SetColorNonTransp(out _navTreeForumColor, value, _defaultNavigationTreeForumColor); }
 		}
 
 		[Browsable(false)]
 		public string NavigationTreeForumColorStr
 		{
 			get { return _colorConverter.ConvertToInvariantString(_navTreeForumColor); }
-			set { SetColorNonTranspStr(ref _navTreeForumColor, value, DefaultNavigationTreeForumColor); }
+			set { SetColorNonTranspStr(out _navTreeForumColor, value, _defaultNavigationTreeForumColor); }
 		}
 
-		private Color _navTreeForumColor = DefaultNavigationTreeForumColor;
+		private Color _navTreeForumColor = _defaultNavigationTreeForumColor;
 
 		[JanusDisplayName("StyleConfigDisplayNameNavigationTreeBackground")]
 		[JanusCategory("Config.CategoryName.Style.NavigationTree")]
@@ -401,22 +392,22 @@ namespace Rsdn.Janus
 		public Color NavigationTreeBack
 		{
 			get { return _navTreeBack; }
-			set { SetColorNonTransp(ref _navTreeBack, value, DefaultNavigationTreeBack); }
+			set { SetColorNonTransp(out _navTreeBack, value, _defaultNavigationTreeBack); }
 		}
 
 		[Browsable(false)]
 		public string NavigationTreeBackStr
 		{
 			get { return _colorConverter.ConvertToInvariantString(_navTreeBack); }
-			set { SetColorNonTranspStr(ref _navTreeBack, value, DefaultNavigationTreeBack); }
+			set { SetColorNonTranspStr(out _navTreeBack, value, _defaultNavigationTreeBack); }
 		}
 
-		private Color _navTreeBack = DefaultNavigationTreeBack;
+		private Color _navTreeBack = _defaultNavigationTreeBack;
 
 		[Browsable(false)]
 		public Color[] ForumPriorityColor
 		{
-			get { return DefaultForumPriorityColor; }
+			get { return _defaultForumPriorityColor; }
 		}
 
 		#endregion
@@ -431,17 +422,17 @@ namespace Rsdn.Janus
 		public Color OptionsGridBack
 		{
 			get { return _propGridBack; }
-			set { SetColorNonTransp(ref _propGridBack, value, DefaultOptionsGridBack); }
+			set { SetColorNonTransp(out _propGridBack, value, _defaultOptionsGridBack); }
 		}
 
 		[Browsable(false)]
 		public string OptionsGridBackStr
 		{
 			get { return _colorConverter.ConvertToInvariantString(_propGridBack); }
-			set { SetColorNonTranspStr(ref _propGridBack, value, DefaultOptionsGridBack); }
+			set { SetColorNonTranspStr(out _propGridBack, value, _defaultOptionsGridBack); }
 		}
 
-		private Color _propGridBack = DefaultOptionsGridBack;
+		private Color _propGridBack = _defaultOptionsGridBack;
 
 		[JanusDisplayName("StyleConfigDisplayNameOptionsBackgroundColor")]
 		[JanusCategory("Config.CategoryName.Style.OptionsDialog")]
@@ -451,17 +442,17 @@ namespace Rsdn.Janus
 		public Color OptionsGridViewBack
 		{
 			get { return _propGridViewBack; }
-			set { SetColorNonTransp(ref _propGridViewBack, value, DefaultOptionsGridViewBack); }
+			set { SetColorNonTransp(out _propGridViewBack, value, _defaultOptionsGridViewBack); }
 		}
 
 		[Browsable(false)]
 		public string OptionsGridViewBackStr
 		{
 			get { return _colorConverter.ConvertToInvariantString(_propGridViewBack); }
-			set { SetColorNonTranspStr(ref _propGridViewBack, value, DefaultOptionsGridViewBack); }
+			set { SetColorNonTranspStr(out _propGridViewBack, value, _defaultOptionsGridViewBack); }
 		}
 
-		private Color _propGridViewBack = DefaultOptionsGridViewBack;
+		private Color _propGridViewBack = _defaultOptionsGridViewBack;
 
 		[JanusDisplayName("StyleConfigDisplayNameOptionsGridLinesColor")]
 		[JanusCategory("Config.CategoryName.Style.OptionsDialog")]
@@ -471,17 +462,17 @@ namespace Rsdn.Janus
 		public Color OptionsGridLine
 		{
 			get { return _propGridLine; }
-			set { SetColorNonTransp(ref _propGridLine, value, DefaultOptionsGridLine); }
+			set { SetColorNonTransp(out _propGridLine, value, _defaultOptionsGridLine); }
 		}
 
 		[Browsable(false)]
 		public string OptionsGridLineStr
 		{
 			get { return _colorConverter.ConvertToInvariantString(_propGridLine); }
-			set { SetColorNonTranspStr(ref _propGridLine, value, DefaultOptionsGridLine); }
+			set { SetColorNonTranspStr(out _propGridLine, value, _defaultOptionsGridLine); }
 		}
 
-		private Color _propGridLine = DefaultOptionsGridLine;
+		private Color _propGridLine = _defaultOptionsGridLine;
 
 		[JanusDisplayName("StyleConfigDisplayNameOptionsTextColor")]
 		[JanusCategory("Config.CategoryName.Style.OptionsDialog")]
@@ -491,17 +482,17 @@ namespace Rsdn.Janus
 		public Color OptionsGridText
 		{
 			get { return _propGridText; }
-			set { SetColorNonTransp(ref _propGridText, value, DefaultOptionsGridText); }
+			set { SetColorNonTransp(out _propGridText, value, _defaultOptionsGridText); }
 		}
 
 		[Browsable(false)]
 		public string OptionsGridTextStr
 		{
 			get { return _colorConverter.ConvertToInvariantString(_propGridText); }
-			set { SetColorNonTranspStr(ref _propGridText, value, DefaultOptionsGridText); }
+			set { SetColorNonTranspStr(out _propGridText, value, _defaultOptionsGridText); }
 		}
 
-		private Color _propGridText = DefaultOptionsGridText;
+		private Color _propGridText = _defaultOptionsGridText;
 
 		#endregion
 
@@ -511,7 +502,7 @@ namespace Rsdn.Janus
 
 		#region 4.Редактирование сообщений
 
-		private readonly Color[] _levelQuotaColors = (Color[])DefaultQuotaColors.Clone();
+		private readonly Color[] _levelQuotaColors = (Color[])_defaultQuotaColors.Clone();
 
 		[JanusDisplayName("WriteMessageQuotaLevel1Color")]
 		[JanusDescription("WriteMessageQuotaLevel1Color")]
@@ -521,7 +512,7 @@ namespace Rsdn.Janus
 		public Color Level1QuotaColor
 		{
 			get { return _levelQuotaColors[0]; }
-			set { SetColorNonTransp(ref _levelQuotaColors[0], value, DefaultQuotaColors[0]); }
+			set { SetColorNonTransp(out _levelQuotaColors[0], value, _defaultQuotaColors[0]); }
 		}
 
 		[JanusDisplayName("WriteMessageQuotaLevel2Color")]
@@ -532,7 +523,7 @@ namespace Rsdn.Janus
 		public Color Level2QuotaColor
 		{
 			get { return _levelQuotaColors[1]; }
-			set { SetColorNonTransp(ref _levelQuotaColors[1], value, DefaultQuotaColors[1]); }
+			set { SetColorNonTransp(out _levelQuotaColors[1], value, _defaultQuotaColors[1]); }
 		}
 
 		[JanusDisplayName("WriteMessageQuotaLevel3Color")]
@@ -543,7 +534,7 @@ namespace Rsdn.Janus
 		public Color Level3QuotaColor
 		{
 			get { return _levelQuotaColors[2]; }
-			set { SetColorNonTransp(ref _levelQuotaColors[2], value, DefaultQuotaColors[2]); }
+			set { SetColorNonTransp(out _levelQuotaColors[2], value, _defaultQuotaColors[2]); }
 		}
 
 		[Browsable(false)]
@@ -560,11 +551,11 @@ namespace Rsdn.Janus
 			{
 				var min = Math.Min(value.Length, _levelQuotaColors.Length);
 				for (var i = 0; i < min; i++)
-					SetColorNonTranspStr(ref _levelQuotaColors[i], value[i], DefaultQuotaColors[i]);
+					SetColorNonTranspStr(out _levelQuotaColors[i], value[i], _defaultQuotaColors[i]);
 			}
 		}
 
-		private Color _quotaPrefixColor = DefaultQuotaPrefixColor;
+		private Color _quotaPrefixColor = _defaultQuotaPrefixColor;
 
 		[JanusDisplayName("QuotaPrefixColor")]
 		[JanusDescription("QuotaPrefixColor")]
@@ -574,14 +565,14 @@ namespace Rsdn.Janus
 		public Color QuotaPrefixColor
 		{
 			get { return _quotaPrefixColor; }
-			set { SetColorNonTransp(ref _quotaPrefixColor, value, DefaultQuotaPrefixColor); }
+			set { SetColorNonTransp(out _quotaPrefixColor, value, _defaultQuotaPrefixColor); }
 		}
 
 		[Browsable(false)]
 		public string QuotaPrefixColorStr
 		{
 			get { return _colorConverter.ConvertToInvariantString(_quotaPrefixColor); }
-			set { SetColorNonTranspStr(ref _quotaPrefixColor, value, DefaultQuotaPrefixColor); }
+			set { SetColorNonTranspStr(out _quotaPrefixColor, value, _defaultQuotaPrefixColor); }
 
 		}
 
@@ -604,7 +595,7 @@ namespace Rsdn.Janus
 		#region Менеджмент синглтона и событий
 
 		//----------------- Служебные данные и методы----------------------
-		private static readonly object lockFlag = new object();
+		private static readonly object _lockFlag = new object();
 		private static StyleConfig _instance;
 
 		/// <summary>
@@ -616,7 +607,7 @@ namespace Rsdn.Janus
 			get
 			{
 				//Config.Instance; // Force config to load
-				lock (lockFlag)
+				lock (_lockFlag)
 				{
 					if (_instance == null)
 					{
@@ -665,20 +656,20 @@ namespace Rsdn.Janus
 
 		#region Вспомогательные методы
 
-		private void SetColorNonTransp(ref Color _store, Color val, Color def)
+		private void SetColorNonTransp(out Color store, Color val, Color def)
 		{
 			// Прозрачные цвета не подходят
-			_store = val.A != 0xff ? def : val;
+			store = val.A != 0xff ? def : val;
 
 			OnStyleChangeEvent(StyleChangeEventArgs.FontColorStyle);
 		}
 
-		private void SetColorNonTranspStr(ref Color _store, string val, Color def)
+		private void SetColorNonTranspStr(out Color store, string val, Color def)
 		{
 			// Прозрачные цвета не подходят
-			_store = (Color) _colorConverter.ConvertFromInvariantString(val);
-			if (_store.A != 0xff)
-				_store = def;
+			store = (Color) _colorConverter.ConvertFromInvariantString(val);
+			if (store.A != 0xff)
+				store = def;
 
 			OnStyleChangeEvent(StyleChangeEventArgs.FontColorStyle);
 		}
@@ -687,18 +678,11 @@ namespace Rsdn.Janus
 
 		#region Загрузка/сохранение
 
-		private static XmlSerializer serializer;
+		private static XmlSerializer _serializer;
 
 		private static XmlSerializer Serializer
 		{
-			get
-			{
-				if (serializer == null)
-				{
-					serializer = new XmlSerializer(typeof (StyleConfig));
-				}
-				return serializer;
-			}
+			get { return _serializer ?? (_serializer = new XmlSerializer(typeof (StyleConfig))); }
 		}
 
 		/// <summary>
@@ -707,7 +691,7 @@ namespace Rsdn.Janus
 		/// <param name="path">Файл, откуда будет загружена схема.</param>
 		public static void Load(string path)
 		{
-			lock (lockFlag)
+			lock (_lockFlag)
 			{
 				try
 				{
@@ -729,7 +713,7 @@ namespace Rsdn.Janus
 		/// <param name="path">Файл, куда сохранить схему</param>
 		public static void Save(string path)
 		{
-			lock (lockFlag)
+			lock (_lockFlag)
 			{
 				var ms = new MemoryStream();
 				Serializer.Serialize(ms, Instance);
@@ -774,7 +758,7 @@ namespace Rsdn.Janus
 
 		private readonly Style _style;
 
-		public StyleChangeEventArgs(Style style)
+		private StyleChangeEventArgs(Style style)
 		{
 			_style = style;
 		}

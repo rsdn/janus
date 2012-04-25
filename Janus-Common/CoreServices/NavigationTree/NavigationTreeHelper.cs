@@ -1,7 +1,6 @@
 ﻿using System;
-using JetBrains.Annotations;
 
-using Rsdn.SmartApp;
+using JetBrains.Annotations;
 
 namespace Rsdn.Janus
 {
@@ -36,28 +35,28 @@ namespace Rsdn.Janus
 			//    navigationTreeService.GetOffsetNode(navigationTreeService.CurrentPath, -1);
 		}
 
-		[CanBeNull]
-		private static INavigationTreeNode GetPrevNode(
-			[NotNull] INavigationTreeNode parent,
-			[NotNull] INavigationTreeNode current)
-		{
-			var nodes = parent.Childrens;
-			var nodeIndex = nodes.IndexOf(current);
-			return nodeIndex > 0 ? nodes[nodeIndex - 1] : parent;
-		}
+		//[CanBeNull]
+		//private static INavigationTreeNode GetPrevNode(
+		//  [NotNull] INavigationTreeNode parent,
+		//  [NotNull] INavigationTreeNode current)
+		//{
+		//  var nodes = parent.Childrens;
+		//  var nodeIndex = nodes.IndexOf(current);
+		//  return nodeIndex > 0 ? nodes[nodeIndex - 1] : parent;
+		//}
 
-		[CanBeNull]
-		private static Path<INavigationTreeNode> GetNextNode(
-			[NotNull] Path<INavigationTreeNode> parents,
-			[NotNull] INavigationTreeNode current)
-		{
-			var nodes = parents.LastPathComponent.Childrens;
-			var nodeIndex = nodes.IndexOf(current);
-			return nodeIndex < nodes.Count - 1
-				? parents.Add(nodes[nodeIndex + 1])
-				: parents.ParentPath != null
-					? GetNextNode(parents.ParentPath, parents.LastPathComponent)
-					: null;
-		}
+		//[CanBeNull]
+		//private static Path<INavigationTreeNode> GetNextNode(
+		//  [NotNull] Path<INavigationTreeNode> parents,
+		//  [NotNull] INavigationTreeNode current)
+		//{
+		//  var nodes = parents.LastPathComponent.Childrens;
+		//  var nodeIndex = nodes.IndexOf(current);
+		//  return nodeIndex < nodes.Count - 1
+		//    ? parents.Add(nodes[nodeIndex + 1])
+		//    : parents.ParentPath != null
+		//      ? GetNextNode(parents.ParentPath, parents.LastPathComponent)
+		//      : null;
+		//}
 	}
 }

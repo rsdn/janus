@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Linq;
 
 using Rsdn.TreeGrid;
 
@@ -57,14 +58,10 @@ namespace Rsdn.Janus.Framework
 			if (find == null)
 				throw new ArgumentNullException("find");
 
-			foreach (var node in Items)
-			{
-				var check = DeepFind(node, find);
-				if (check != null)
-					return check;
-			} //for
-
-			return null;
+			return
+				Items
+					.Select(node => DeepFind(node, find))
+					.FirstOrDefault(check => check != null);
 		}
 
 		public bool ContainsRecursion(ITreeNode label)
@@ -72,9 +69,8 @@ namespace Rsdn.Janus.Framework
 			if (label == null)
 				throw new ArgumentNullException("label");
 
-			foreach (var node in Items)
-				if (node.Parent == label)
-					return true;
+			if (Items.Any(node => node.Parent == label))
+				return true;
 
 			for (var node = label; node != null; node = node.Parent)
 				if (DeepFind(node) != null)
@@ -88,11 +84,7 @@ namespace Rsdn.Janus.Framework
 			if (type == null)
 				throw new ArgumentNullException("type");
 
-			foreach (var node in Items)
-				if (!type.IsAssignableFrom(node.GetType()))
-					return false;
-
-			return true;
+			return Items.All(type.IsInstanceOfType);
 		}
 		#endregion Tree support
 	}

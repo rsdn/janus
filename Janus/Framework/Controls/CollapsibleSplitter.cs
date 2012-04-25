@@ -16,7 +16,7 @@ namespace Rsdn.Janus.Framework
 	{
 		Mozilla = 0,
 		XP,
-		Win9x,
+		Win9X,
 		DoubleDots,
 		Lines
 	}
@@ -41,27 +41,27 @@ namespace Rsdn.Janus.Framework
 	{
 		#region Private Properties
 		// declare and define some base properties
-		private readonly Timer animationTimer;
-		private readonly Color hotColor = CalculateColor(SystemColors.Highlight, SystemColors.Window, 70);
-		private int animationDelay = 20;
-		private int animationStep = 20;
+		private readonly Timer _animationTimer;
+		private readonly Color _hotColor = CalculateColor(SystemColors.Highlight, SystemColors.Window, 70);
+		private int _animationDelay = 20;
+		private int _animationStep = 20;
 
 		// Border added in version 1.3
-		private Border3DStyle borderStyle = Border3DStyle.Flat;
+		private Border3DStyle _borderStyle = Border3DStyle.Flat;
 
 		// animation controls introduced in version 1.22
-		private int controlHeight;
-		private Control controlToHide;
-		private int controlWidth;
-		private SplitterState currentState;
-		private bool expandParentForm;
-		private bool hot;
-		private Form parentForm;
-		private int parentFormHeight;
-		private int parentFormWidth;
-		private Rectangle rr;
-		private bool useAnimations;
-		private VisualStyle visualStyle;
+		private int _controlHeight;
+		private Control _controlToHide;
+		private int _controlWidth;
+		private SplitterState _currentState;
+		private bool _expandParentForm;
+		private bool _hot;
+		private Form _parentForm;
+		private int _parentFormHeight;
+		private int _parentFormWidth;
+		private Rectangle _rr;
+		private bool _useAnimations;
+		private VisualStyle _visualStyle;
 		#endregion
 
 		#region Public Properties
@@ -78,8 +78,8 @@ namespace Rsdn.Janus.Framework
 		{
 			get
 			{
-				if (controlToHide != null)
-					return !controlToHide.Visible;
+				if (_controlToHide != null)
+					return !_controlToHide.Visible;
 				return true;
 			}
 		}
@@ -93,8 +93,8 @@ namespace Rsdn.Janus.Framework
 		[Description("The System.Windows.Forms.Control that the splitter will collapse")]
 		public Control ControlToHide
 		{
-			get { return controlToHide; }
-			set { controlToHide = value; }
+			get { return _controlToHide; }
+			set { _controlToHide = value; }
 		}
 
 		/// <summary>
@@ -106,8 +106,8 @@ namespace Rsdn.Janus.Framework
 		[Description("Determines if the collapse and expanding actions will be animated")]
 		public bool UseAnimations
 		{
-			get { return useAnimations; }
-			set { useAnimations = value; }
+			get { return _useAnimations; }
+			set { _useAnimations = value; }
 		}
 
 		/// <summary>
@@ -119,8 +119,8 @@ namespace Rsdn.Janus.Framework
 		[Description("The delay in millisenconds between animation steps")]
 		public int AnimationDelay
 		{
-			get { return animationDelay; }
-			set { animationDelay = value; }
+			get { return _animationDelay; }
+			set { _animationDelay = value; }
 		}
 
 		/// <summary>
@@ -132,8 +132,8 @@ namespace Rsdn.Janus.Framework
 		[Description("The amount of pixels moved in each animation step")]
 		public int AnimationStep
 		{
-			get { return animationStep; }
-			set { animationStep = value; }
+			get { return _animationStep; }
+			set { _animationStep = value; }
 		}
 
 		/// <summary>
@@ -147,8 +147,8 @@ namespace Rsdn.Janus.Framework
 			)]
 		public bool ExpandParentForm
 		{
-			get { return expandParentForm; }
-			set { expandParentForm = value; }
+			get { return _expandParentForm; }
+			set { _expandParentForm = value; }
 		}
 
 		/// <summary>
@@ -160,10 +160,10 @@ namespace Rsdn.Janus.Framework
 		[Description("The visual style that will be painted on the control")]
 		public VisualStyle VisualStyle
 		{
-			get { return visualStyle; }
+			get { return _visualStyle; }
 			set
 			{
-				visualStyle = value;
+				_visualStyle = value;
 				Invalidate();
 			}
 		}
@@ -177,10 +177,10 @@ namespace Rsdn.Janus.Framework
 		[Description("An optional border style to paint on the control. Set to Flat for no border")]
 		public Border3DStyle BorderStyle3D
 		{
-			get { return borderStyle; }
+			get { return _borderStyle; }
 			set
 			{
-				borderStyle = value;
+				_borderStyle = value;
 				Invalidate();
 			}
 		}
@@ -203,8 +203,8 @@ namespace Rsdn.Janus.Framework
 			MouseMove += OnMouseMove;
 
 			// Setup the animation timer control
-			animationTimer = new Timer {Interval = animationDelay};
-			animationTimer.Tick += animationTimerTick;
+			_animationTimer = new Timer {Interval = _animationDelay};
+			_animationTimer.Tick += AnimationTimerTick;
 		}
 		#endregion
 
@@ -212,11 +212,11 @@ namespace Rsdn.Janus.Framework
 		protected override void OnHandleCreated(EventArgs e)
 		{
 			base.OnHandleCreated(e);
-			parentForm = FindForm();
+			_parentForm = FindForm();
 
 			// set the current state
-			if (controlToHide != null)
-				currentState = controlToHide.Visible ? SplitterState.Expanded : SplitterState.Collapsed;
+			if (_controlToHide != null)
+				_currentState = _controlToHide.Visible ? SplitterState.Expanded : SplitterState.Collapsed;
 		}
 
 		protected override void OnEnabledChanged(EventArgs e)
@@ -230,8 +230,8 @@ namespace Rsdn.Janus.Framework
 		protected override void OnMouseDown(MouseEventArgs e)
 		{
 			// if the hider control isn't hot, let the base resize action occur
-			if (controlToHide != null)
-				if (!hot && controlToHide.Visible)
+			if (_controlToHide != null)
+				if (!_hot && _controlToHide.Visible)
 					base.OnMouseDown(e);
 		}
 
@@ -245,27 +245,27 @@ namespace Rsdn.Janus.Framework
 		private void OnMouseMove(object sender, MouseEventArgs e)
 		{
 			// check to see if the mouse cursor position is within the bounds of our control
-			if (e.X >= rr.X && e.X <= rr.X + rr.Width && e.Y >= rr.Y && e.Y <= rr.Y + rr.Height)
+			if (e.X >= _rr.X && e.X <= _rr.X + _rr.Width && e.Y >= _rr.Y && e.Y <= _rr.Y + _rr.Height)
 			{
-				if (!hot)
+				if (!_hot)
 				{
-					hot = true;
+					_hot = true;
 					Cursor = Cursors.Hand;
 					Invalidate();
 				}
 			}
 			else
 			{
-				if (hot)
+				if (_hot)
 				{
-					hot = false;
+					_hot = false;
 					Invalidate();
 				}
 
 				Cursor = Cursors.Default;
 
-				if (controlToHide != null)
-					if (!controlToHide.Visible)
+				if (_controlToHide != null)
+					if (!_controlToHide.Visible)
 						Cursor = Cursors.Default;
 					else // Changed in v1.2 to support Horizontal Splitters
 						if (Dock == DockStyle.Left || Dock == DockStyle.Right)
@@ -278,82 +278,82 @@ namespace Rsdn.Janus.Framework
 		private void OnMouseLeave(object sender, EventArgs e)
 		{
 			// ensure that the hot state is removed
-			hot = false;
+			_hot = false;
 			Invalidate();
 		}
 
 		private void OnClick(object sender, EventArgs e)
 		{
-			if (controlToHide != null && hot &&
-				currentState != SplitterState.Collapsing &&
-					currentState != SplitterState.Expanding)
+			if (_controlToHide != null && _hot &&
+				_currentState != SplitterState.Collapsing &&
+					_currentState != SplitterState.Expanding)
 				ToggleSplitter();
 		}
 
 		private void ToggleSplitter()
 		{
 			// if an animation is currently in progress for this control, drop out
-			if (currentState == SplitterState.Collapsing || currentState == SplitterState.Expanding)
+			if (_currentState == SplitterState.Collapsing || _currentState == SplitterState.Expanding)
 				return;
 
-			controlWidth = controlToHide.Width;
-			controlHeight = controlToHide.Height;
+			_controlWidth = _controlToHide.Width;
+			_controlHeight = _controlToHide.Height;
 
-			if (controlToHide.Visible)
-				if (useAnimations)
+			if (_controlToHide.Visible)
+				if (_useAnimations)
 				{
-					currentState = SplitterState.Collapsing;
+					_currentState = SplitterState.Collapsing;
 
-					if (parentForm != null)
+					if (_parentForm != null)
 						if (Dock == DockStyle.Left || Dock == DockStyle.Right)
-							parentFormWidth = parentForm.Width - controlWidth;
+							_parentFormWidth = _parentForm.Width - _controlWidth;
 						else
-							parentFormHeight = parentForm.Height - controlHeight;
+							_parentFormHeight = _parentForm.Height - _controlHeight;
 
-					animationTimer.Enabled = true;
+					_animationTimer.Enabled = true;
 				}
 				else
 				{
 					// no animations, so just toggle the visible state
-					currentState = SplitterState.Collapsed;
-					controlToHide.Visible = false;
-					if (expandParentForm && parentForm != null)
+					_currentState = SplitterState.Collapsed;
+					_controlToHide.Visible = false;
+					if (_expandParentForm && _parentForm != null)
 						if (Dock == DockStyle.Left || Dock == DockStyle.Right)
-							parentForm.Width -= controlToHide.Width;
+							_parentForm.Width -= _controlToHide.Width;
 						else
-							parentForm.Height -= controlToHide.Height;
+							_parentForm.Height -= _controlToHide.Height;
 				}
 			else
 				// control to hide is collapsed
-				if (useAnimations)
+				if (_useAnimations)
 				{
-					currentState = SplitterState.Expanding;
+					_currentState = SplitterState.Expanding;
 
 					if (Dock == DockStyle.Left || Dock == DockStyle.Right)
 					{
-						if (parentForm != null)
-							parentFormWidth = parentForm.Width + controlWidth;
-						controlToHide.Width = 0;
+						if (_parentForm != null)
+							_parentFormWidth = _parentForm.Width + _controlWidth;
+						_controlToHide.Width = 0;
 					}
 					else
 					{
-						if (parentForm != null)
-							parentFormHeight = parentForm.Height + controlHeight;
-						controlToHide.Height = 0;
+						if (_parentForm != null)
+							_parentFormHeight = _parentForm.Height + _controlHeight;
+						_controlToHide.Height = 0;
 					}
-					controlToHide.Visible = true;
-					animationTimer.Enabled = true;
+					_controlToHide.Visible = true;
+					_animationTimer.Enabled = true;
 				}
 				else
 				{
 					// no animations, so just toggle the visible state
-					currentState = SplitterState.Expanded;
-					controlToHide.Visible = true;
-					if (expandParentForm && parentForm != null)
+					_currentState = SplitterState.Expanded;
+					_controlToHide.Visible = true;
+					if (_expandParentForm && _parentForm != null)
 						if (Dock == DockStyle.Left || Dock == DockStyle.Right)
-							parentForm.Width += controlToHide.Width;
+							_parentForm.Width += _controlToHide.Width;
 						else
-							parentForm.Height += controlToHide.Height;
+							_parentForm.Height += _controlToHide.Height;
 				}
 		}
 		#endregion
@@ -361,50 +361,50 @@ namespace Rsdn.Janus.Framework
 		#region Implementation
 
 		#region Animation Timer Tick
-		private void animationTimerTick(object sender, EventArgs e)
+		private void AnimationTimerTick(object sender, EventArgs e)
 		{
-			switch (currentState)
+			switch (_currentState)
 			{
 				case SplitterState.Collapsing:
 
 					if (Dock == DockStyle.Left || Dock == DockStyle.Right)
 						// vertical splitter
-						if (controlToHide.Width > animationStep)
+						if (_controlToHide.Width > _animationStep)
 						{
-							if (expandParentForm && parentForm.WindowState != FormWindowState.Maximized
-								&& parentForm != null)
-								parentForm.Width -= animationStep;
-							controlToHide.Width -= animationStep;
+							if (_expandParentForm && _parentForm.WindowState != FormWindowState.Maximized
+								&& _parentForm != null)
+								_parentForm.Width -= _animationStep;
+							_controlToHide.Width -= _animationStep;
 						}
 						else
 						{
-							if (expandParentForm && parentForm.WindowState != FormWindowState.Maximized
-								&& parentForm != null)
-								parentForm.Width = parentFormWidth;
-							controlToHide.Visible = false;
-							animationTimer.Enabled = false;
-							controlToHide.Width = controlWidth;
-							currentState = SplitterState.Collapsed;
+							if (_expandParentForm && _parentForm.WindowState != FormWindowState.Maximized
+								&& _parentForm != null)
+								_parentForm.Width = _parentFormWidth;
+							_controlToHide.Visible = false;
+							_animationTimer.Enabled = false;
+							_controlToHide.Width = _controlWidth;
+							_currentState = SplitterState.Collapsed;
 							Invalidate();
 						}
 					else
 						// horizontal splitter
-						if (controlToHide.Height > animationStep)
+						if (_controlToHide.Height > _animationStep)
 						{
-							if (expandParentForm && parentForm.WindowState != FormWindowState.Maximized
-								&& parentForm != null)
-								parentForm.Height -= animationStep;
-							controlToHide.Height -= animationStep;
+							if (_expandParentForm && _parentForm.WindowState != FormWindowState.Maximized
+								&& _parentForm != null)
+								_parentForm.Height -= _animationStep;
+							_controlToHide.Height -= _animationStep;
 						}
 						else
 						{
-							if (expandParentForm && parentForm.WindowState != FormWindowState.Maximized
-								&& parentForm != null)
-								parentForm.Height = parentFormHeight;
-							controlToHide.Visible = false;
-							animationTimer.Enabled = false;
-							controlToHide.Height = controlHeight;
-							currentState = SplitterState.Collapsed;
+							if (_expandParentForm && _parentForm.WindowState != FormWindowState.Maximized
+								&& _parentForm != null)
+								_parentForm.Height = _parentFormHeight;
+							_controlToHide.Visible = false;
+							_animationTimer.Enabled = false;
+							_controlToHide.Height = _controlHeight;
+							_currentState = SplitterState.Collapsed;
 							Invalidate();
 						}
 					break;
@@ -413,42 +413,42 @@ namespace Rsdn.Janus.Framework
 
 					if (Dock == DockStyle.Left || Dock == DockStyle.Right)
 						// vertical splitter
-						if (controlToHide.Width < (controlWidth - animationStep))
+						if (_controlToHide.Width < (_controlWidth - _animationStep))
 						{
-							if (expandParentForm && parentForm.WindowState != FormWindowState.Maximized
-								&& parentForm != null)
-								parentForm.Width += animationStep;
-							controlToHide.Width += animationStep;
+							if (_expandParentForm && _parentForm.WindowState != FormWindowState.Maximized
+								&& _parentForm != null)
+								_parentForm.Width += _animationStep;
+							_controlToHide.Width += _animationStep;
 						}
 						else
 						{
-							if (expandParentForm && parentForm.WindowState != FormWindowState.Maximized
-								&& parentForm != null)
-								parentForm.Width = parentFormWidth;
-							controlToHide.Width = controlWidth;
-							controlToHide.Visible = true;
-							animationTimer.Enabled = false;
-							currentState = SplitterState.Expanded;
+							if (_expandParentForm && _parentForm.WindowState != FormWindowState.Maximized
+								&& _parentForm != null)
+								_parentForm.Width = _parentFormWidth;
+							_controlToHide.Width = _controlWidth;
+							_controlToHide.Visible = true;
+							_animationTimer.Enabled = false;
+							_currentState = SplitterState.Expanded;
 							Invalidate();
 						}
 					else
 						// horizontal splitter
-						if (controlToHide.Height < (controlHeight - animationStep))
+						if (_controlToHide.Height < (_controlHeight - _animationStep))
 						{
-							if (expandParentForm && parentForm.WindowState != FormWindowState.Maximized
-								&& parentForm != null)
-								parentForm.Height += animationStep;
-							controlToHide.Height += animationStep;
+							if (_expandParentForm && _parentForm.WindowState != FormWindowState.Maximized
+								&& _parentForm != null)
+								_parentForm.Height += _animationStep;
+							_controlToHide.Height += _animationStep;
 						}
 						else
 						{
-							if (expandParentForm && parentForm.WindowState != FormWindowState.Maximized
-								&& parentForm != null)
-								parentForm.Height = parentFormHeight;
-							controlToHide.Height = controlHeight;
-							controlToHide.Visible = true;
-							animationTimer.Enabled = false;
-							currentState = SplitterState.Expanded;
+							if (_expandParentForm && _parentForm.WindowState != FormWindowState.Maximized
+								&& _parentForm != null)
+								_parentForm.Height = _parentFormHeight;
+							_controlToHide.Height = _controlHeight;
+							_controlToHide.Visible = true;
+							_animationTimer.Enabled = false;
+							_currentState = SplitterState.Expanded;
 							Invalidate();
 						}
 					break;
@@ -472,36 +472,37 @@ namespace Rsdn.Janus.Framework
 			if (Dock == DockStyle.Left || Dock == DockStyle.Right)
 			{
 				// create a new rectangle in the vertical center of the splitter for our collapse control button
-				rr = new Rectangle(r.X, r.Y + ((r.Height - 115)/2), 8, 115);
+				_rr = new Rectangle(r.X, r.Y + ((r.Height - 115)/2), 8, 115);
 				// force the width to 8px so that everything always draws correctly
 				Width = 8;
 
 				// draw the background color for our control image
-				if (hot)
-					g.FillRectangle(new SolidBrush(hotColor), new Rectangle(rr.X + 1, rr.Y, 6, 115));
-				else
-					g.FillRectangle(new SolidBrush(BackColor), new Rectangle(rr.X + 1, rr.Y, 6, 115));
+				g.FillRectangle(
+					_hot
+						? new SolidBrush(_hotColor)
+						: new SolidBrush(BackColor),
+					new Rectangle(_rr.X + 1, _rr.Y, 6, 115));
 
 				// draw the top & bottom lines for our control image
-				g.DrawLine(new Pen(SystemColors.ControlDark, 1), rr.X + 1, rr.Y, rr.X + rr.Width - 2, rr.Y);
-				g.DrawLine(new Pen(SystemColors.ControlDark, 1), rr.X + 1, rr.Y + rr.Height, rr.X + rr.Width - 2,
-					rr.Y + rr.Height);
+				g.DrawLine(new Pen(SystemColors.ControlDark, 1), _rr.X + 1, _rr.Y, _rr.X + _rr.Width - 2, _rr.Y);
+				g.DrawLine(new Pen(SystemColors.ControlDark, 1), _rr.X + 1, _rr.Y + _rr.Height, _rr.X + _rr.Width - 2,
+					_rr.Y + _rr.Height);
 
 				if (Enabled)
 				{
 					// draw the arrows for our control image
 					// the ArrowPointArray is a point array that defines an arrow shaped polygon
-					g.FillPolygon(new SolidBrush(SystemColors.ControlDarkDark), ArrowPointArray(rr.X + 2, rr.Y + 3));
+					g.FillPolygon(new SolidBrush(SystemColors.ControlDarkDark), ArrowPointArray(_rr.X + 2, _rr.Y + 3));
 					g.FillPolygon(new SolidBrush(SystemColors.ControlDarkDark),
-						ArrowPointArray(rr.X + 2, rr.Y + rr.Height - 9));
+						ArrowPointArray(_rr.X + 2, _rr.Y + _rr.Height - 9));
 				}
 
 				// draw the dots for our control image using a loop
-				var x = rr.X + 3;
-				var y = rr.Y + 14;
+				var x = _rr.X + 3;
+				var y = _rr.Y + 14;
 
 				// Visual Styles added in version 1.1
-				switch (visualStyle)
+				switch (_visualStyle)
 				{
 					case VisualStyle.Mozilla:
 
@@ -512,10 +513,12 @@ namespace Rsdn.Janus.Framework
 							// dark dot
 							g.DrawLine(new Pen(SystemColors.ControlDarkDark), x + 1, y + 1 + (i*3), x + 2, y + 2 + (i*3));
 							// overdraw the background color as we actually drew 2px diagonal lines, not just dots
-							if (hot)
-								g.DrawLine(new Pen(hotColor), x + 2, y + 1 + (i*3), x + 2, y + 2 + (i*3));
-							else
-								g.DrawLine(new Pen(BackColor), x + 2, y + 1 + (i*3), x + 2, y + 2 + (i*3));
+							g.DrawLine(
+								_hot ? new Pen(_hotColor) : new Pen(BackColor),
+								x + 2,
+								y + 1 + (i*3),
+								x + 2,
+								y + 2 + (i*3));
 						}
 						break;
 
@@ -534,7 +537,7 @@ namespace Rsdn.Janus.Framework
 						}
 						break;
 
-					case VisualStyle.Win9x:
+					case VisualStyle.Win9X:
 
 						g.DrawLine(new Pen(SystemColors.ControlLightLight), x, y, x + 2, y);
 						g.DrawLine(new Pen(SystemColors.ControlLightLight), x, y, x, y + 90);
@@ -567,11 +570,11 @@ namespace Rsdn.Janus.Framework
 				}
 
 				// Added in version 1.3
-				if (borderStyle != Border3DStyle.Flat)
+				if (_borderStyle != Border3DStyle.Flat)
 				{
 					// Paint the control border
-					ControlPaint.DrawBorder3D(e.Graphics, ClientRectangle, borderStyle, Border3DSide.Left);
-					ControlPaint.DrawBorder3D(e.Graphics, ClientRectangle, borderStyle, Border3DSide.Right);
+					ControlPaint.DrawBorder3D(e.Graphics, ClientRectangle, _borderStyle, Border3DSide.Left);
+					ControlPaint.DrawBorder3D(e.Graphics, ClientRectangle, _borderStyle, Border3DSide.Right);
 				}
 			}
 
@@ -583,36 +586,35 @@ namespace Rsdn.Janus.Framework
 			else if (Dock == DockStyle.Top || Dock == DockStyle.Bottom)
 			{
 				// create a new rectangle in the horizontal center of the splitter for our collapse control button
-				rr = new Rectangle(r.X + ((r.Width - 115)/2), r.Y, 115, 8);
+				_rr = new Rectangle(r.X + ((r.Width - 115)/2), r.Y, 115, 8);
 				// force the height to 8px
 				Height = 8;
 
 				// draw the background color for our control image
-				if (hot)
-					g.FillRectangle(new SolidBrush(hotColor), new Rectangle(rr.X, rr.Y + 1, 115, 6));
-				else
-					g.FillRectangle(new SolidBrush(BackColor), new Rectangle(rr.X, rr.Y + 1, 115, 6));
+				g.FillRectangle(
+					_hot ? new SolidBrush(_hotColor) : new SolidBrush(BackColor),
+					new Rectangle(_rr.X, _rr.Y + 1, 115, 6));
 
 				// draw the left & right lines for our control image
-				g.DrawLine(new Pen(SystemColors.ControlDark, 1), rr.X, rr.Y + 1, rr.X, rr.Y + rr.Height - 2);
-				g.DrawLine(new Pen(SystemColors.ControlDark, 1), rr.X + rr.Width, rr.Y + 1, rr.X + rr.Width,
-					rr.Y + rr.Height - 2);
+				g.DrawLine(new Pen(SystemColors.ControlDark, 1), _rr.X, _rr.Y + 1, _rr.X, _rr.Y + _rr.Height - 2);
+				g.DrawLine(new Pen(SystemColors.ControlDark, 1), _rr.X + _rr.Width, _rr.Y + 1, _rr.X + _rr.Width,
+					_rr.Y + _rr.Height - 2);
 
 				if (Enabled)
 				{
 					// draw the arrows for our control image
 					// the ArrowPointArray is a point array that defines an arrow shaped polygon
-					g.FillPolygon(new SolidBrush(SystemColors.ControlDarkDark), ArrowPointArray(rr.X + 3, rr.Y + 2));
+					g.FillPolygon(new SolidBrush(SystemColors.ControlDarkDark), ArrowPointArray(_rr.X + 3, _rr.Y + 2));
 					g.FillPolygon(new SolidBrush(SystemColors.ControlDarkDark),
-						ArrowPointArray(rr.X + rr.Width - 9, rr.Y + 2));
+						ArrowPointArray(_rr.X + _rr.Width - 9, _rr.Y + 2));
 				}
 
 				// draw the dots for our control image using a loop
-				var x = rr.X + 14;
-				var y = rr.Y + 3;
+				var x = _rr.X + 14;
+				var y = _rr.Y + 3;
 
 				// Visual Styles added in version 1.1
-				switch (visualStyle)
+				switch (_visualStyle)
 				{
 					case VisualStyle.Mozilla:
 
@@ -623,10 +625,9 @@ namespace Rsdn.Janus.Framework
 							// dark dot
 							g.DrawLine(new Pen(SystemColors.ControlDarkDark), x + 1 + (i*3), y + 1, x + 2 + (i*3), y + 2);
 							// overdraw the background color as we actually drew 2px diagonal lines, not just dots
-							if (hot)
-								g.DrawLine(new Pen(hotColor), x + 1 + (i*3), y + 2, x + 2 + (i*3), y + 2);
-							else
-								g.DrawLine(new Pen(BackColor), x + 1 + (i*3), y + 2, x + 2 + (i*3), y + 2);
+							g.DrawLine(
+								_hot ? new Pen(_hotColor) : new Pen(BackColor),
+								x + 1 + (i*3), y + 2, x + 2 + (i*3), y + 2);
 						}
 						break;
 
@@ -646,7 +647,7 @@ namespace Rsdn.Janus.Framework
 						}
 						break;
 
-					case VisualStyle.Win9x:
+					case VisualStyle.Win9X:
 
 						g.DrawLine(new Pen(SystemColors.ControlLightLight), x, y, x, y + 2);
 						g.DrawLine(new Pen(SystemColors.ControlLightLight), x, y, x + 88, y);
@@ -679,11 +680,11 @@ namespace Rsdn.Janus.Framework
 				}
 
 				// Added in version 1.3
-				if (borderStyle != Border3DStyle.Flat)
+				if (_borderStyle != Border3DStyle.Flat)
 				{
 					// Paint the control border
-					ControlPaint.DrawBorder3D(e.Graphics, ClientRectangle, borderStyle, Border3DSide.Top);
-					ControlPaint.DrawBorder3D(e.Graphics, ClientRectangle, borderStyle, Border3DSide.Bottom);
+					ControlPaint.DrawBorder3D(e.Graphics, ClientRectangle, _borderStyle, Border3DSide.Top);
+					ControlPaint.DrawBorder3D(e.Graphics, ClientRectangle, _borderStyle, Border3DSide.Bottom);
 				}
 			}
 
@@ -704,11 +705,11 @@ namespace Rsdn.Janus.Framework
 		{
 			var point = new Point[3];
 
-			if (controlToHide != null)
+			if (_controlToHide != null)
 				// decide which direction the arrow will point
 				if (
-					(Dock == DockStyle.Right && controlToHide.Visible)
-						|| (Dock == DockStyle.Left && !controlToHide.Visible)
+					(Dock == DockStyle.Right && _controlToHide.Visible)
+						|| (Dock == DockStyle.Left && !_controlToHide.Visible)
 					)
 				{
 					// right arrow
@@ -717,8 +718,8 @@ namespace Rsdn.Janus.Framework
 					point[2] = new Point(x, y + 6);
 				}
 				else if (
-					(Dock == DockStyle.Right && !controlToHide.Visible)
-						|| (Dock == DockStyle.Left && controlToHide.Visible)
+					(Dock == DockStyle.Right && !_controlToHide.Visible)
+						|| (Dock == DockStyle.Left && _controlToHide.Visible)
 					)
 				{
 					// left arrow
@@ -729,8 +730,8 @@ namespace Rsdn.Janus.Framework
 
 					// Up/Down arrows added in v1.2
 				else if (
-					(Dock == DockStyle.Top && controlToHide.Visible)
-						|| (Dock == DockStyle.Bottom && !controlToHide.Visible)
+					(Dock == DockStyle.Top && _controlToHide.Visible)
+						|| (Dock == DockStyle.Bottom && !_controlToHide.Visible)
 					)
 				{
 					// up arrow
@@ -739,8 +740,8 @@ namespace Rsdn.Janus.Framework
 					point[2] = new Point(x, y + 4);
 				}
 				else if (
-					(Dock == DockStyle.Top && !controlToHide.Visible)
-						|| (Dock == DockStyle.Bottom && controlToHide.Visible)
+					(Dock == DockStyle.Top && !_controlToHide.Visible)
+						|| (Dock == DockStyle.Bottom && _controlToHide.Visible)
 					)
 				{
 					// down arrow

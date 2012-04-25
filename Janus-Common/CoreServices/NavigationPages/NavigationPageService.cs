@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Reactive.Subjects;
+
 using JetBrains.Annotations;
 
 using Rsdn.SmartApp;
@@ -38,7 +38,7 @@ namespace Rsdn.Janus
 					return;
 
 				if (value != null && !_openedPagesWithSubscriptions.ContainsKey(value))
-					throw new ArgumentException(@"Page not found.", "value");
+					throw new ArgumentException("Page not found.", "value");
 
 				_currentPage = value;
 
@@ -105,7 +105,7 @@ namespace Rsdn.Janus
 			if (page == null)
 				throw new ArgumentNullException("page");
 			if (!_openedPagesWithSubscriptions.ContainsKey(page))
-				throw new ArgumentException(@"Страница не найдена.", "page");
+				throw new ArgumentException("Страница не найдена.", "page");
 
 			var newPage = _navigationPageFactory.CreatePage(serviceProvider, page.Name, page.State);
 
@@ -124,7 +124,7 @@ namespace Rsdn.Janus
 
 		public void Dispose()
 		{
-			OpenedPages.Cast<IDisposable>().DisposeAll();
+			OpenedPages.DisposeAll();
 			_currentPageChanged.OnCompleted();
 			_openedPagesChanged.OnCompleted();
 		}

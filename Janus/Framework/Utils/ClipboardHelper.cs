@@ -17,12 +17,7 @@ namespace Rsdn.Janus.Framework
 			get { return _messageSubjectFormat; }
 		}
 
-		public static void CopyUrl(string url)
-		{
-			CopyUrl(url, null);
-		}
-
-		public static void CopyUrl(string url, string name)
+		public static void CopyUrl(string url, string name = null)
 		{
 			var dto = new DataObject(DataFormats.Html, string.Format(_htmlTemplate, url));
 			dto.SetData(DataFormats.Text, url);

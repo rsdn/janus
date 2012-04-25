@@ -31,7 +31,7 @@ namespace Rsdn.Janus
 			_currentDriver = _drvManager.GetDriver(_currentDriverName);
 			_bltDataProvider = _currentDriver.CreateDataProvider();
 			_connectionString = Config.Instance.ConnectionString;
-			_rwLock = info.LockRequired ? (IJanusRWLock)new StandardJanusRWLock() : EmptyJanusRWLock.Instance;
+			_rwLock = info.LockRequired ? (IJanusRWLock)new StandardJanusRWLock() : EmptyJanusRWLock.LockInstance;
 		}
 
 		#region IJanusDatabaseManager Members
