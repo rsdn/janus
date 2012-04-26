@@ -45,6 +45,7 @@
   <ItemGroup>
     <Reference Include="BLToolkit.4">
       <HintPath>..\..\Dependencies\bltoolkit\BLToolkit.4.dll</HintPath>
+      <Private>False</Private>
     </Reference>
     <Reference Include="R.SAT-Model">
       <HintPath>..\..\Dependencies\R.SAT\R.SAT-Model.dll</HintPath>
