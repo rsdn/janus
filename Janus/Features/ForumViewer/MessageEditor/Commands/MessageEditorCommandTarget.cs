@@ -138,6 +138,7 @@ namespace Rsdn.Janus
 			switch (start)
 			{
 				case "c#":
+				case "nemerle":
 				case "msil":
 				case "midl":
 				case "asm":

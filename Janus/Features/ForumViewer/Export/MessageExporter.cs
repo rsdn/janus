@@ -253,6 +253,7 @@ namespace Rsdn.Janus
 			sourceString = RemoveTag(sourceString, "q", "--===--");
 			sourceString = RemoveTag(sourceString, "img", "");
 			sourceString = RemoveTag(sourceString, "c#", "");
+			sourceString = RemoveTag(sourceString, "nemerle", "");
 			sourceString = RemoveTag(sourceString, "b", "_");
 			sourceString = RemoveTag(sourceString, "i", "~");
 			sourceString = RemoveTag(sourceString, "msil", "");
