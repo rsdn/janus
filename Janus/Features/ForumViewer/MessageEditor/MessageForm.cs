@@ -83,6 +83,7 @@ namespace Rsdn.Janus
 					{ "s", true },
 					{ "sub", true },
 					{ "sup", true },
+					{ "tt", true },
 					{ "c#", true },
 					{ "nemerle", true },
 					{ "url", true },
