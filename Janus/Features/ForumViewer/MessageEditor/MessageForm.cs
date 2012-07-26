@@ -84,6 +84,7 @@ namespace Rsdn.Janus
 					{ "sub", true },
 					{ "sup", true },
 					{ "c#", true },
+					{ "nemerle", true },
 					{ "url", true },
 					{ "img", true },
 					{ "msil", true },
@@ -527,6 +528,18 @@ namespace Rsdn.Janus
 				new Dictionary<string, object>
 				{
 					{ "start", "c#" }, { "end", "c#" }, { "newLine", true }
+				});
+		}
+
+		[MethodShortcut(Shortcut.Alt4, "Код Nemerle ([nemerle])",
+			"Поместить выделенный блок как код на языке Nemerle.")]
+		public void InsertNemerleTag()
+		{
+			_serviceManager.TryExecuteCommand(
+				"Janus.Forum.MessageEditor.InsertPairTag",
+				new Dictionary<string, object>
+				{
+					{ "start", "nemerle" }, { "end", "nemerle" }, { "newLine", true }
 				});
 		}
 

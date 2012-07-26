@@ -197,7 +197,15 @@
 			<parameter name="newLine">true</parameter>
 		</menuCommand>
 
-		<menuCommand command="Janus.Forum.MessageEditor.InsertPairTag"
+    <menuCommand command="Janus.Forum.MessageEditor.InsertPairTag"
+						 textResource="Code.Nemerle.Text"
+						 description="Code.Nemerle.Description">
+      <parameter name="start">nemerle</parameter>
+      <parameter name="end">nemerle</parameter>
+      <parameter name="newLine">true</parameter>
+    </menuCommand>
+
+    <menuCommand command="Janus.Forum.MessageEditor.InsertPairTag"
 						 textResource="Code.C.Text"
 						 description="Code.C.Description">
 			<parameter name="start">ccode</parameter>

@@ -288,7 +288,7 @@ namespace Rsdn.Janus.Mssql
 							.Select(col =>
 										{
 											if (eTable.IsColumnExist(col.Name))
-												return col.Name;
+												return MakeDdlElementName(col.Name);
 											if (col.DefaultValue == null)
 											{
 												if (!col.Nullable)
