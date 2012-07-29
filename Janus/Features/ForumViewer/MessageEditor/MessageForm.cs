@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Drawing;
@@ -36,107 +35,17 @@ namespace Rsdn.Janus
 			@"(?m)^(?'prefix'\s*\S{0,5}?(?'level'>+))[^>]",
 			RegexOptions.Compiled);
 
-		private static readonly Regex _tagRx = new Regex(
-			@"\[/?(?<tag>[^\[\]=]+)=*[^\]]*\]",
-			RegexOptions.Compiled);
-
-		// TODO : генерировать автоматом из _knownSmiles и _knownTags
-		private static readonly Regex _smileRx = new Regex(
-			@":up:|:down:|:super:|:shuffle:" +
-			@"|:crash:|:maniac:|:user:|:wow:|:beer:|:team:|:no:|" +
-			@":nopont:|:xz:|(?<!:):-?\)\)\)|(?<!:):-?\)\)|(?<!:):-?\)|" +
-			@"(?<!;|amp|gt|lt|quot);[-oO]?\)|(?<!:):-?\(|(?<!:):-[\\/]|:\?\?\?:");
-
-		private static readonly HashSet<string> _knownSmiles =
-			new HashSet<string>
-				{
-					":", // not smile, but for prevention of automatic replacement ':' by ':)'
-					":)",
-					":))",
-					":)))",
-					":(",
-					//";)", // this single smile, not started with ':', not used in autocomplete
-					":-\\",
-					":)",
-					":up:",
-					":down:",
-					":super:",
-					":shuffle:",
-					":crash:",
-					":maniac:",
-					":user:",
-					":wow:",
-					":beer:",
-					":team:",
-					":no:",
-					":nopont:",
-					":xz:",
-					":???:?0" // scintilla use '?' as image marker, '?0' is never used
-				};
-
-		private static readonly Dictionary<string, bool> _knownTags =
-			new Dictionary<string, bool>
-				{
-					{ "b", true },
-					{ "i", true },
-					{ "u", true },
-					{ "s", true },
-					{ "sub", true },
-					{ "sup", true },
-					{ "tt", true },
-					{ "c#", true },
-					{ "nemerle", true },
-					{ "url", true },
-					{ "img", true },
-					{ "msil", true },
-					{ "list", true },
-					{ "*", false },
-					{ "midl", true },
-					{ "asm", true },
-					{ "ccode", true },
-					{ "code", true },
-					{ "pascal", true },
-					{ "vb", true },
-					{ "sql", true },
-					{ "java", true },
-					{ "email", true },
-					{ "msdn", true },
-					{ "perl", true },
-					{ "php", true },
-					{ "erlang", true },
-					{ "haskell", true },
-					{ "lisp", true },
-					{ "ml", true },
-					{ "py", true },
-					{ "rb", true },
-					{ "prolog", true },
-					{ "q", true },
-					{ "hr", false },
-					{ "article", false },
-					{ "h1", true },
-					{ "h2", true },
-					{ "h3", true },
-					{ "h4", true },
-					{ "h5", true },
-					{ "h6", true },
-					{ "t", true },
-					{ "th", true },
-					{ "tr", true },
-					{ "td", true },
-					{ "xml", true }
-				};
-
 		private const int _level1Style = 1;
 		private const int _level2Style = 10;
 		private const int _level3Style = 11;
 		private const int _quotaPrefixStyle = 2;
 		#endregion
 
-		#region Declarations
 		/// <summary>
 		/// Режим формы
 		/// </summary>
 		private MessageFormMode _formMode;
+
 		/// <summary>
 		/// DTO для данных формы
 		/// </summary>
@@ -149,9 +58,9 @@ namespace Rsdn.Janus
 		private readonly StripMenuGenerator _toolbarGenerator;
 		private readonly SmilesToolbarGenerator _tagsbarGenerator;
 		private bool _isModified;
-		#endregion
+		private readonly IEditorSyntaxExtensibilityService _syntaxExtSvc;
+		private IDictionary<string, AutocompleteItem> _lastAutocompleteItems;
 
-		#region Constructor(s)
 		public MessageForm(
 			[NotNull] IServiceProvider provider,
 			MessageFormMode mode,
@@ -176,8 +85,9 @@ namespace Rsdn.Janus
 			_menuGenerator = new StripMenuGenerator(_serviceManager, _menuStrip, "MessageEditor.Menu");
 			_toolbarGenerator = new StripMenuGenerator(_serviceManager, _toolStrip, "MessageEditor.Toolbar");
 			_tagsbarGenerator = new SmilesToolbarGenerator(_serviceManager, "Forum.MessageEditor.TagsBar", _tagsBar);
+
+			_syntaxExtSvc = provider.GetRequiredService<IEditorSyntaxExtensibilityService>();
 		}
-		#endregion
 
 		#region Scintilla Events
 		private void MessageEditorCharAdded(object sender, KeyPressEventArgs e)
@@ -203,15 +113,16 @@ namespace Rsdn.Janus
 					else
 						SmartIndent();
 					break;
-				case '[':
-					_messageEditor.ShowAutocomplete(
-						1,
-						_knownTags
-							.OrderBy(pair => pair.Key)
-							.Select(pair => (pair.Value ? "[{0}][/{0}]" : "[{0}]").FormatStr(pair.Key)));
-					break;
-				case ':':
-					_messageEditor.ShowAutocomplete(1, _knownSmiles.OrderBy(smile => smile));
+				default :
+					var items =
+						_syntaxExtSvc
+							.GetAutocompleteList(e.KeyChar)
+							.ToDictionary(i => i.ItemText);
+					if (items.Count > 0)
+					{
+						_lastAutocompleteItems = items;
+						_messageEditor.ShowAutocomplete(1, _lastAutocompleteItems.Keys.OrderBy(s => s));
+					}
 					break;
 			}
 		}
@@ -280,41 +191,30 @@ namespace Rsdn.Janus
 				}
 				else
 				{
-					var tm = _tagRx.Match(line);
-					var tags = new Hashtable();
-
-					while (tm.Success)
-					{
-						tags.Add(tm.Index, tm);
-						tm = tm.NextMatch();
-					}
-
-					var sm = _smileRx.Match(line);
-					var smiles = new Dictionary<int, Match>();
-
-					while (sm.Success)
-					{
-						smiles.Add(sm.Index, sm);
-						sm = sm.NextMatch();
-					}
+					var extHls = _syntaxExtSvc.GetHighlightings(line).ToDictionary(hl => hl.Position);
 
 					var j = 0;
+					Highlighting highlighting;
 					while (j < line.Length)
-						if (tags.Contains(j))
+						if (extHls.TryGetValue(j, out highlighting))
 						{
-							var cm = (Match)tags[j];
-							var style = _knownTags.ContainsKey(cm.Groups["tag"].Value)
-								? _messageEditor.TextStyles[3]
-								: _messageEditor.TextStyles[5];
-
-							_messageEditor.SetStyling(cm.Length, style);
-							j += cm.Length;
-						}
-						else if (smiles.ContainsKey(j))
-						{
-							var cm = smiles[j];
-							_messageEditor.SetStyling(cm.Length, _messageEditor.TextStyles[4]);
-							j += cm.Length;
+							TextStyle style;
+							switch (highlighting.Type)
+							{
+								case HighlightType.Emoticons:
+									style = _messageEditor.TextStyles[4];
+									break;
+								case HighlightType.KnownTags:
+									style = _messageEditor.TextStyles[3];
+									break;
+								case HighlightType.UnknownTags:
+									style = _messageEditor.TextStyles[5];
+									break;
+								default:
+									throw new ArgumentOutOfRangeException();
+							}
+							_messageEditor.SetStyling(highlighting.Length, style);
+							j += highlighting.Length;
 						}
 						else
 						{
@@ -327,13 +227,15 @@ namespace Rsdn.Janus
 
 		private void MessageEditorAutocompleteSelected(object sender, AutocompleteSelectedEventArgs e)
 		{
-			if (e.Text[0] == '[')
+			if (_lastAutocompleteItems != null)
 			{
-				var middlePos = e.Text.IndexOf(']') + 1;
-				SynchronizationContext
-					.Current
-					.Post(state => _messageEditor.CaretPosition = e.WordStart + middlePos, null);
+				AutocompleteItem item;
+				if (_lastAutocompleteItems.TryGetValue(e.Text, out item) && item.CaretShiftCalculator != null)
+					SynchronizationContext
+						.Current
+						.Post(state => _messageEditor.CaretPosition = e.WordStart + item.CaretShiftCalculator(e.Text), null);
 			}
+			_lastAutocompleteItems = null;
 		}
 
 		private void MessageEditorIsModifiedChanged(object sender, EventArgs e)

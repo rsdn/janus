@@ -265,12 +265,14 @@
             <summary>
             Создание экземпляра раскрасивальщика.
             </summary>
+            <param name="name">Имя схемы</param>
             <param name="xmlSource">Исходный xml-поток</param>
         </member>
         <member name="M:Rsdn.Framework.Formatting.CodeFormatter.#ctor(System.String,System.IO.Stream,System.Text.RegularExpressions.RegexOptions)">
             <summary>
             Создание экземпляра раскрасивальщика с дополнительными опциями для регулярного выражения.
             </summary>
+            <param name="name">Имя схемы</param>
             <param name="xmlSource">Исходный xml-поток</param>
             <param name="options">Regex опции</param>
         </member>
@@ -866,7 +868,6 @@
             Раскраска кода
             </summary>
             <param name="codeMatch">Вхождение кода (группа tag содержит тип кода)</param>
-            <returns></returns>
         </member>
         <member name="F:Rsdn.Framework.Formatting.TextFormatter._rxSetFont01">
             <summary>

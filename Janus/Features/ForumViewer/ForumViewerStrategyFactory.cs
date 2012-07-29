@@ -13,7 +13,11 @@ namespace Rsdn.Janus
 				new[]
 				{
 					provider.CreateStrategy<MessageFormatterInfo, MessageFormatterAttribute>(
-						(ctx, attr) => new MessageFormatterInfo(ctx.Type, attr.FormatSource, attr.FormatHtml))
+						(ctx, attr) => new MessageFormatterInfo(ctx.Type, attr.FormatSource, attr.FormatHtml)),
+					provider.CreateStrategy<AutocompleteProviderInfo, AutocompleteProviderAttribute>(
+						(ctx, attr) => new AutocompleteProviderInfo(ctx.Type)),
+					provider.CreateStrategy<EditorHighlightingProviderInfo, EditorHighlightingProviderAttribute>(
+						(ctx, attr) => new EditorHighlightingProviderInfo(ctx.Type))
 				};
 		}
 	}

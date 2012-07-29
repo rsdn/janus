@@ -55,6 +55,7 @@
     </Compile>
     <Compile Include="Commands\AdminCommandTarget.cs" />
     <Compile Include="Menu\MessageContextMenuProvider.cs" />
+    <Compile Include="ModeratorAutocompleteProvider.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -644,6 +644,7 @@
       <DependentUpon>MarkMsgReadForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Features\ForumViewer\Menu\HistoryMenuProvider.cs" />
+    <Compile Include="Features\ForumViewer\MessageEditor\Extensibility\EditorSyntaxExtensibilityService.cs" />
     <Compile Include="Features\ForumViewer\MessageEditor\FindDialogForm.Designer.cs">
       <DependentUpon>FindDialogForm.cs</DependentUpon>
     </Compile>

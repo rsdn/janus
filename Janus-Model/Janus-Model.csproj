@@ -61,6 +61,16 @@
     <Compile Include="CoreServices\MessageViewer\IMessageFormatter.cs" />
     <Compile Include="CoreServices\MessageViewer\MessageFormatterAttribute.cs" />
     <Compile Include="CoreServices\MessageViewer\MessageFormatterInfo.cs" />
+    <Compile Include="CoreServices\MsgEditor\Autocomplete\AutocompleteItem.cs" />
+    <Compile Include="CoreServices\MsgEditor\Autocomplete\AutocompleteProviderInfo.cs" />
+    <Compile Include="CoreServices\MsgEditor\Autocomplete\IAutocompleteProvider.cs" />
+    <Compile Include="CoreServices\MsgEditor\Highlighting\Highlighting.cs" />
+    <Compile Include="CoreServices\MsgEditor\Highlighting\HighlightType.cs" />
+    <Compile Include="CoreServices\MsgEditor\IEditorSyntaxExtensibilityService.cs" />
+    <Compile Include="CoreServices\MsgEditor\Autocomplete\AutocompleteProviderAttribute.cs" />
+    <Compile Include="CoreServices\MsgEditor\Highlighting\EditorHighlightingProviderAttribute.cs" />
+    <Compile Include="CoreServices\MsgEditor\Highlighting\EditorHighlightingProviderInfo.cs" />
+    <Compile Include="CoreServices\MsgEditor\Highlighting\IHighlightingProvider.cs" />
     <Compile Include="CoreServices\Search\ISearchService.cs" />
     <Compile Include="CoreServices\Search\MessageSearchInfo.cs" />
     <Compile Include="CoreServices\WebConnection\IProxyConfig.cs" />
@@ -183,7 +193,7 @@
     <Compile Include="CoreServices\Stats\StatisticsFormatterAttribute.cs" />
     <Compile Include="CoreServices\Styles\IStyleImageManager.cs" />
     <Compile Include="CoreServices\Styles\StyleImageType.cs" />
-    <Compile Include="CoreServices\TagLine\ITagLineManager.cs" />
+    <Compile Include="CoreServices\MsgEditor\TagLine\ITagLineManager.cs" />
     <Compile Include="rsdn.ru\Database\Forums\IForum.cs" />
     <Compile Include="rsdn.ru\Database\Forums\IForumMessageHeader.cs" />
     <Compile Include="rsdn.ru\Database\Forums\MsgMark\ForumEntryIds.cs" />
@@ -331,6 +341,7 @@
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
