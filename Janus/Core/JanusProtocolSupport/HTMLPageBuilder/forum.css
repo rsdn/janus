@@ -361,3 +361,9 @@ H6.formatter
     font-size:x-small;                                    
     text-align:right;          
     font-weight:lighter; }
+
+tt
+{
+  font-size: 12px;
+  background-color: #EEEEEE;
+}
