@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<root xmlns="http://rsdn.ru/projects/Janus/JanusMenuDescriptor.xsd" name="MainForm.Menu">
+
+	<group name="Main">
+
+		<menu name="Forums">
+			<group name="Admin" orderIndex="300">
+				<menuCommand command="Janus.Rsdn.Admin.OpenReasonsEditor" image="openurl" />
+				<menuCommand command="Janus.Rsdn.Admin.OpenViolationReps" image="openurl" />
+			</group>
+		</menu>
+
+	</group>
+
+</root>

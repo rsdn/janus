@@ -129,7 +129,7 @@ namespace Rsdn.Janus
 				return
 					name =>
 						resSets
-							.Select(rs => rs.GetString(name))
+							.Select(rs => rs.GetString(name ?? ""))
 							.FirstOrDefault(s => s != null);
 			}
 			return

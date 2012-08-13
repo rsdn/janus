@@ -7,4 +7,14 @@
 		<parameter name="messageId" isOptional="true"/>
 	</command>
 
+	<command name="Janus.Rsdn.Admin.OpenReasonsEditor"
+					 displayNameTextResource="OpenReasonsEditor_DisplayName"
+					 descriptionTextResource="OpenReasonsEditor_Description">
+	</command>
+
+	<command name="Janus.Rsdn.Admin.OpenViolationReps"
+					 displayNameTextResource="OpenViolationReps_DisplayName"
+					 descriptionTextResource="OpenViolationReps_Description">
+	</command>
+
 </commands>

@@ -112,15 +112,27 @@
     <value>2.0</value>
   </resheader>
   <resheader name="reader">
-    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <resheader name="writer">
-    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="AdminModerateMessage_Description" xml:space="preserve">
     <value>Shows moderating page (moderator)</value>
   </data>
   <data name="AdminModerateMessage_DisplayName" xml:space="preserve">
     <value>Moderating (moderator)</value>
+  </data>
+  <data name="OpenReasonsEditor_Description" xml:space="preserve">
+    <value>Open violation reasons editor</value>
+  </data>
+  <data name="OpenReasonsEditor_DisplayName" xml:space="preserve">
+    <value>Open violation reasons editor</value>
+  </data>
+  <data name="OpenViolationReps_Description" xml:space="preserve">
+    <value>Open violation reports</value>
+  </data>
+  <data name="OpenViolationReps_DisplayName" xml:space="preserve">
+    <value>Open violation reports</value>
   </data>
 </root>

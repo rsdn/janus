@@ -112,15 +112,27 @@
     <value>2.0</value>
   </resheader>
   <resheader name="reader">
-    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <resheader name="writer">
-    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="AdminModerateMessage_Description" xml:space="preserve">
     <value>Показать страничку модерирования (модератор)</value>
   </data>
   <data name="AdminModerateMessage_DisplayName" xml:space="preserve">
     <value>Модерирование (модератор)</value>
+  </data>
+  <data name="OpenReasonsEditor_Description" xml:space="preserve">
+    <value>Открыть редактор причин нарушений</value>
+  </data>
+  <data name="OpenReasonsEditor_DisplayName" xml:space="preserve">
+    <value>Открыть редактор причин нарушений</value>
+  </data>
+  <data name="OpenViolationReps_Description" xml:space="preserve">
+    <value>Открыть сообщения о нарушениях</value>
+  </data>
+  <data name="OpenViolationReps_DisplayName" xml:space="preserve">
+    <value>Открыть сообщения о нарушениях</value>
   </data>
 </root>

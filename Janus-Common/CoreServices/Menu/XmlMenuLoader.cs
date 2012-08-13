@@ -86,17 +86,19 @@ namespace Rsdn.Janus
 			Func<string, string> resourceStringGetter)
 		{
 			if (itemElement.Name == XName.Get("menu", _menuDescriptorSchemaUri))
-				return new Menu(
-					(string)itemElement.Attribute(XName.Get("name")),
-					itemElement.Elements().Select(
-						sub => LoadMenuGroup(serviceProvider, sub, resourceStringGetter)),
-					resourceStringGetter((string)itemElement.Attribute(XName.Get("textResource"))),
-					(string)itemElement.Attribute(XName.Get("image")),
-					(string)itemElement.Attribute(XName.Get("description")),
-					(MenuItemDisplayStyle)Enum.Parse(
-						typeof(MenuItemDisplayStyle),
-						(string)itemElement.Attribute(XName.Get("displayStyle"))),
-					(int)itemElement.Attribute(XName.Get("orderIndex")));
+				return
+					new Menu(
+						(string)itemElement.Attribute(XName.Get("name")),
+						itemElement
+							.Elements()
+							.Select(sub => LoadMenuGroup(serviceProvider, sub, resourceStringGetter)),
+						resourceStringGetter((string)itemElement.Attribute(XName.Get("textResource"))),
+						(string)itemElement.Attribute(XName.Get("image")),
+						(string)itemElement.Attribute(XName.Get("description")),
+						(MenuItemDisplayStyle)Enum.Parse(
+							typeof(MenuItemDisplayStyle),
+							(string)itemElement.Attribute(XName.Get("displayStyle"))),
+						(int)itemElement.Attribute(XName.Get("orderIndex")));
 
 			if (itemElement.Name == XName.Get("menuCommand", _menuDescriptorSchemaUri))
 			{

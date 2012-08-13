@@ -54,6 +54,7 @@
       <DependentUpon>AdminCommandResources.resx</DependentUpon>
     </Compile>
     <Compile Include="Commands\AdminCommandTarget.cs" />
+    <Compile Include="Menu\ForumMenuProvider.cs" />
     <Compile Include="Menu\MessageContextMenuProvider.cs" />
     <Compile Include="ModeratorAutocompleteProvider.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -87,6 +88,9 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Menu\MessageContextMenu.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Menu\ForumMenu.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
