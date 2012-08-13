@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<commands xmlns="http://rsdn.ru/projects/Janus/JanusCommandDescriptor.xsd">
+
+	<command name="Janus.Forum.OpenModeratingOnRsdn"
+				 displayNameTextResource="OpenModeratingOnRsdnDisplayName"
+				 descriptionTextResource="OpenModeratingOnRsdnDescription">
+		<parameter name="messageId" isOptional="true"/>
+	</command>
+
+	<command name="Janus.Forum.WarnModeratorOnRsdn"
+					 displayNameTextResource="WarnModeratorOnRsdnDisplayName">
+		<parameter name="messageId" isOptional="true" />
+	</command>
+</commands>
