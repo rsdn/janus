@@ -39,12 +39,6 @@
     <parameter name="messageId" isOptional="true"/>
   </command>
 
-  <command name="Janus.Forum.OpenModeratingOnRsdn"
-           displayNameTextResource="OpenModeratingOnRsdn.DisplayName"
-           descriptionTextResource="OpenModeratingOnRsdn.Description">
-    <parameter name="messageId" isOptional="true"/>
-  </command>
-
   <command name="Janus.Forum.RateMessage"
            displayNameTextResource="RateMessage.DisplayName"
            descriptionTextResource="RateMessage.Description">

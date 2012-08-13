@@ -73,6 +73,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Commands\ForumMessageCommandProvider.cs" />
+    <Compile Include="Commands\ForumMessageCommandTarget.cs" />
+    <Compile Include="Menus\MessageViewerToolBarProvider.cs" />
     <Compile Include="Editor\RsdnAutocompleteProvider.cs" />
     <Compile Include="Commands\ForumCommandTarget.cs" />
     <Compile Include="Editor\RsdnHighlightingProvider.cs" />
@@ -88,6 +91,7 @@
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
     <Compile Include="Commands\ForumCommandProvider.cs" />
+    <Compile Include="RsdnUrlHelper.cs" />
     <Compile Include="Subscription\ForumsSubscriptionHelper.cs" />
     <Compile Include="Subscription\ForumSubscriptionRequest.cs" />
     <Compile Include="Subscription\SubscribeForm.cs">
@@ -171,6 +175,12 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Commands\ForumCommands.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Menus\MessageViewerToolbar.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Commands\ForumMessageCommands.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

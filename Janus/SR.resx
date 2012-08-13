@@ -112,10 +112,10 @@
     <value>2.0</value>
   </resheader>
   <resheader name="reader">
-    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <resheader name="writer">
-    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="AltTextShowImages" xml:space="preserve">
     <value>Left click to view.</value>
@@ -1645,30 +1645,6 @@ Use "Favorites" tab to specify them.</value>
   </data>
   <data name="Forum.MessageViewer.Moderating" xml:space="preserve">
     <value>Moderating …</value>
-  </data>
-  <data name="Forum.MessageViewer.Rate.Agree.Text" xml:space="preserve">
-    <value>Agree</value>
-  </data>
-  <data name="Forum.MessageViewer.Rate.Delete.Text" xml:space="preserve">
-    <value>Delete rate</value>
-  </data>
-  <data name="Forum.MessageViewer.Rate.Disagree.Text" xml:space="preserve">
-    <value>Disagree</value>
-  </data>
-  <data name="Forum.MessageViewer.Rate.One.Text" xml:space="preserve">
-    <value>Interesting</value>
-  </data>
-  <data name="Forum.MessageViewer.Rate.Plus1.Text" xml:space="preserve">
-    <value>Hard One</value>
-  </data>
-  <data name="Forum.MessageViewer.Rate.Smile.Text" xml:space="preserve">
-    <value>Funny</value>
-  </data>
-  <data name="Forum.MessageViewer.Rate.Three.Text" xml:space="preserve">
-    <value>Super!</value>
-  </data>
-  <data name="Forum.MessageViewer.Rate.Two.Text" xml:space="preserve">
-    <value>Thank You</value>
   </data>
   <data name="Forum.Moderatorial.CloseTopic" xml:space="preserve">
     <value>Close topic</value>

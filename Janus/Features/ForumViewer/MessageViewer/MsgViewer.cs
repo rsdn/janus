@@ -17,8 +17,6 @@ namespace Rsdn.Janus
 		private readonly StripMenuGenerator _toolbarGenerator;
 		private bool _blockExternalNavigation;
 
-		#region Constructor(s) & Dispose
-
 		public MsgViewer(IServiceProvider provider)
 		{
 			_serviceManager = new ServiceManager(provider);
@@ -48,10 +46,6 @@ namespace Rsdn.Janus
 			base.Dispose(disposing);
 		}
 
-		#endregion
-
-		#region Private methods
-
 		private static string FormatURI(
 			JanusProtocolResourceType resourceType, string parameters)
 		{
@@ -66,8 +60,6 @@ namespace Rsdn.Janus
 
 		//    return HttpUtility.UrlDecode(url, encoding);
 		//}
-
-		#endregion
 
 		#region Public members
 

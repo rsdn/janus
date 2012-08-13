@@ -112,10 +112,10 @@
     <value>2.0</value>
   </resheader>
   <resheader name="reader">
-    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <resheader name="writer">
-    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="BrokenTopicMessage1" xml:space="preserve">
     <value>Найдена {0} оборванная ветка ({1})</value>
@@ -198,6 +198,30 @@
   <data name="Messages5" xml:space="preserve">
     <value>сообщений</value>
   </data>
+  <data name="MessageViewerRateAgree" xml:space="preserve">
+    <value>Согласен</value>
+  </data>
+  <data name="MessageViewerRateDelete" xml:space="preserve">
+    <value>Удалить оценку</value>
+  </data>
+  <data name="MessageViewerRateDisagree" xml:space="preserve">
+    <value>Не согласен</value>
+  </data>
+  <data name="MessageViewerRateOne" xml:space="preserve">
+    <value>Интересно</value>
+  </data>
+  <data name="MessageViewerRatePlus1" xml:space="preserve">
+    <value>Неумножаемая единица</value>
+  </data>
+  <data name="MessageViewerRateSmile" xml:space="preserve">
+    <value>Смешно</value>
+  </data>
+  <data name="MessageViewerRateThree" xml:space="preserve">
+    <value>Супер!</value>
+  </data>
+  <data name="MessageViewerRateTwo" xml:space="preserve">
+    <value>Спасибо</value>
+  </data>
   <data name="Moderatorials1" xml:space="preserve">
     <value>модерирование</value>
   </data>
@@ -278,5 +302,14 @@
   </data>
   <data name="WarningOnUnsubscribeForumCaption" xml:space="preserve">
     <value>Внимание!</value>
+  </data>
+  <data name="WarnModeratorOnRsdnDisplayName" xml:space="preserve">
+    <value>Сообщить модератору</value>
+  </data>
+  <data name="OpenModeratingOnRsdnDescription" xml:space="preserve">
+    <value>Открыть модерирование на сайте RSDN.</value>
+  </data>
+  <data name="OpenModeratingOnRsdnDisplayName" xml:space="preserve">
+    <value>Модерирование</value>
   </data>
 </root>

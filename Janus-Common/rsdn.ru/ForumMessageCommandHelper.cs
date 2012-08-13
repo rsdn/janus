@@ -67,12 +67,13 @@ namespace Rsdn.Janus
 		/// </summary>
 		public static int GetMessageId(IServiceProvider serviceProvider, int? messageId)
 		{
-			return messageId
-				?? serviceProvider
-					.GetRequiredService<IActiveMessagesService>()
-					.ActiveMessages
-					.Single()
-					.ID;
+			return
+				messageId
+					?? serviceProvider
+						.GetRequiredService<IActiveMessagesService>()
+						.ActiveMessages
+						.Single()
+						.ID;
 		}
 
 		/// <summary>

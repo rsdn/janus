@@ -366,7 +366,6 @@
       <DependentUpon>ForumDummyForm.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="Features\ForumViewer\MessageViewer\Menu\MessageViewerToolbar.xml" />
     <EmbeddedResource Include="Features\ForumViewer\MessageViewer\MsgViewer.resx">
       <DependentUpon>MsgViewer.cs</DependentUpon>
       <SubType>Designer</SubType>
@@ -750,7 +749,6 @@
     <Compile Include="Features\ForumViewer\Menu\ForumContextMenuProvider.cs" />
     <Compile Include="Features\ForumViewer\Menu\ForumMenuProvider.cs" />
     <Compile Include="Features\ForumViewer\Menu\ForumToolBarProvider.cs" />
-    <Compile Include="Features\ForumViewer\MessageViewer\Menu\MessageViewerToolBarProvider.cs" />
     <Compile Include="Features\Outbox\Commands\OutboxCommandProvider.cs" />
     <Compile Include="Features\Outbox\Commands\OutboxCommandTarget.cs" />
     <Compile Include="Features\Outbox\DownloadTopic\DownloadTopicImpl.cs" />

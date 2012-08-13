@@ -112,10 +112,10 @@
     <value>2.0</value>
   </resheader>
   <resheader name="reader">
-    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <resheader name="writer">
-    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="BrokenTopicMessage1" xml:space="preserve">
     <value>Found {0} broken topic ({1})</value>
@@ -198,6 +198,30 @@
   <data name="Messages5" xml:space="preserve">
     <value>messages</value>
   </data>
+  <data name="MessageViewerRateAgree" xml:space="preserve">
+    <value>Agree</value>
+  </data>
+  <data name="MessageViewerRateDelete" xml:space="preserve">
+    <value>Delete rate</value>
+  </data>
+  <data name="MessageViewerRateDisagree" xml:space="preserve">
+    <value>Disagree</value>
+  </data>
+  <data name="MessageViewerRateOne" xml:space="preserve">
+    <value>Interesting</value>
+  </data>
+  <data name="MessageViewerRatePlus1" xml:space="preserve">
+    <value>Hard One</value>
+  </data>
+  <data name="MessageViewerRateSmile" xml:space="preserve">
+    <value>Funny</value>
+  </data>
+  <data name="MessageViewerRateThree" xml:space="preserve">
+    <value>Super!</value>
+  </data>
+  <data name="MessageViewerRateTwo" xml:space="preserve">
+    <value>Thank You</value>
+  </data>
   <data name="Moderatorials1" xml:space="preserve">
     <value>moderatorial</value>
   </data>
@@ -278,5 +302,14 @@
   </data>
   <data name="WarningOnUnsubscribeForumCaption" xml:space="preserve">
     <value>Warning!</value>
+  </data>
+  <data name="WarnModeratorOnRsdnDisplayName" xml:space="preserve">
+    <value>Report to moderator</value>
+  </data>
+  <data name="OpenModeratingOnRsdnDescription" xml:space="preserve">
+    <value>Open moderating on RSDN site.</value>
+  </data>
+  <data name="OpenModeratingOnRsdnDisplayName" xml:space="preserve">
+    <value>Moderating</value>
   </data>
 </root>

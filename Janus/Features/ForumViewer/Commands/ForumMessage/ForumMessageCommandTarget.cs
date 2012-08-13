@@ -116,14 +116,6 @@ namespace Rsdn.Janus
 						});
 		}
 
-		[CommandExecutor("Janus.Forum.OpenModeratingOnRsdn")]
-		public void ExecuteOpenModeratingOnRsdn(ICommandContext context, int? messageId)
-		{
-			context.OpenUrlInBrowser(
-				SiteUrlHelper.GetSelfModerateUrl(
-					ForumCommandHelper.GetMessageId(context, messageId)));
-		}
-
 		[CommandExecutor("Janus.Forum.ShowMessageRating")]
 		public void ExecuteShowMessageRating(ICommandContext context, int? messageId)
 		{
@@ -163,7 +155,6 @@ namespace Rsdn.Janus
 		[CommandStatusGetter("Janus.Forum.OpenMessageInJBrowser")]
 		[CommandStatusGetter("Janus.Forum.OpenMessageOnRsdn")]
 		[CommandStatusGetter("Janus.Forum.OpenMessageRatingOnRsdn")]
-		[CommandStatusGetter("Janus.Forum.OpenModeratingOnRsdn")]
 		[CommandStatusGetter("Janus.Forum.ShowMessageRating")]
 		public CommandStatus QueryMessageCommandStatus(ICommandContext context, int? messageId)
 		{
@@ -327,7 +318,6 @@ namespace Rsdn.Janus
 		[CommandStatusSubscriber("Janus.Forum.OpenMessageOnRsdn")]
 		[CommandStatusSubscriber("Janus.Forum.OpenMessageRatingOnRsdn")]
 		[CommandStatusSubscriber("Janus.Forum.Moderating")]
-		[CommandStatusSubscriber("Janus.Forum.OpenModeratingOnRsdn")]
 		[CommandStatusSubscriber("Janus.Forum.ShowMessageRating")]
 		[CommandStatusSubscriber("Janus.Forum.ReplyMessage")]
 		[CommandStatusSubscriber("Janus.Forum.RateMessage")]
