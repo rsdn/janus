@@ -6,8 +6,8 @@
 
 		<menu name="Forums">
 			<group name="Admin" orderIndex="300">
-				<menuCommand command="Janus.Rsdn.Admin.OpenReasonsEditor" image="openurl" />
 				<menuCommand command="Janus.Rsdn.Admin.OpenViolationReps" image="openurl" />
+				<menuCommand command="Janus.Rsdn.Admin.OpenReasonsEditor" image="openurl" />
 			</group>
 		</menu>
 

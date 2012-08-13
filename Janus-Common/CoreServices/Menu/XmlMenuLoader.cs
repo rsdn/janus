@@ -159,12 +159,12 @@ namespace Rsdn.Janus
 
 			if (itemElement.Name == XName.Get("menuCheckCommand", _menuDescriptorSchemaUri))
 			{
-				var checkCommandElement = itemElement.Element(
+				var checkCommandElement = itemElement.RequiredElement(
 					XName.Get("checkCommand", _menuDescriptorSchemaUri));
 				var checkCommandName = (string)checkCommandElement.Attribute(XName.Get("name"));
 				var checkCommandParameters = LoadCommandParameters(checkCommandElement);
 
-				var uncheckCommandElement = itemElement.Element(
+				var uncheckCommandElement = itemElement.RequiredElement(
 					XName.Get("uncheckCommand", _menuDescriptorSchemaUri));
 				var uncheckCommandName = (string)uncheckCommandElement.Attribute(XName.Get("name"));
 				var uncheckCommandParameters = LoadCommandParameters(uncheckCommandElement);
@@ -184,8 +184,7 @@ namespace Rsdn.Janus
 					(int)itemElement.Attribute(XName.Get("orderIndex")));
 			}
 
-			throw new ApplicationException(
-				"Неизвестный элемент '{0}'.".FormatStr(itemElement));
+			throw new ApplicationException("Неизвестный элемент '{0}'.".FormatStr(itemElement));
 		}
 
 		private static void GetMenuCommandTextAndDescription(

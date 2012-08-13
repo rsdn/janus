@@ -4,466 +4,9 @@
         <name>R.SAT-Model</name>
     </assembly>
     <members>
-        <member name="T:Rsdn.SmartApp.IServiceDataManager">
+        <member name="T:Rsdn.SmartApp.ActivePartAttribute">
             <summary>
-            Менеджер персистентных служебных данных.
-            </summary>
-        </member>
-        <member name="M:Rsdn.SmartApp.IServiceDataManager.GetServiceDataInstance``1">
-            <summary>
-            Получить экземпляр сервисных данных.
-            </summary>
-        </member>
-        <member name="M:Rsdn.SmartApp.IServiceDataManager.ResetCache">
-            <summary>
-            Сбросить кеш экземпляров.
-            </summary>
-        </member>
-        <member name="E:Rsdn.SmartApp.IServiceDataManager.PropertyChanged">
-            <summary>
-            Вызывается при изменении свойства в данных.
-            </summary>
-        </member>
-        <member name="T:Rsdn.SmartApp.PropertyChangedHandler">
-            <summary>
-            Обработчки события изменеия свойства.
-            </summary>
-        </member>
-        <member name="T:Rsdn.SmartApp.IExtensionAttachmentStrategy">
-            <summary>
-            Стратегия подключения расширения.
-            </summary>
-        </member>
-        <member name="M:Rsdn.SmartApp.IExtensionAttachmentStrategy.Attach(Rsdn.SmartApp.ExtensionAttachmentContext,System.Reflection.CustomAttributeData)">
-            <summary>
-            Attach extension.
-            </summary>
-        </member>
-        <member name="T:Rsdn.SmartApp.Configuration.IConfigSectionSerializer">
-            <summary>
-            Сериализатор секции конфигурации.
-            </summary>
-        </member>
-        <member name="M:Rsdn.SmartApp.Configuration.IConfigSectionSerializer.Deserialize(System.Xml.XmlReader)">
-            <summary>
-            Десериализовать секцию.
-            </summary>
-        </member>
-        <member name="M:Rsdn.SmartApp.Configuration.IConfigSectionSerializer.CreateDefaultSection">
-            <summary>
-            Создать секцию по умолчанию.
-            </summary>
-        </member>
-        <member name="T:Rsdn.SmartApp.ExtensionStrategyFactoryInfo">
-            <summary>
-            Информация о зарегистрированной фабрике стратегий.
-            </summary>
-        </member>
-        <member name="T:Rsdn.SmartApp.IKeyedElementInfo`1">
-            <summary>
-            Интерфейс именованного элемента.
-            </summary>
-        </member>
-        <member name="P:Rsdn.SmartApp.IKeyedElementInfo`1.Key">
-            <summary>
-            Ключ.
-            </summary>
-        </member>
-        <member name="M:Rsdn.SmartApp.ExtensionStrategyFactoryInfo.#ctor(System.Type)">
-            <summary>
-            Инициализирует экземпляр.
-            </summary>
-        </member>
-        <member name="P:Rsdn.SmartApp.ExtensionStrategyFactoryInfo.Type">
-            <summary>
-            Тип фабрики.
-            </summary>
-        </member>
-        <member name="P:Rsdn.SmartApp.ExtensionStrategyFactoryInfo.Rsdn#SmartApp#IKeyedElementInfo{System#Type}#Key">
-            <summary>
-            Ключ.
-            </summary>
-        </member>
-        <member name="T:Rsdn.SmartApp.ServiceNotFoundException">
-            <summary>
-            Выбрасывается при отсутствии требуемого сервиса.
-            </summary>
-        </member>
-        <member name="M:Rsdn.SmartApp.ServiceNotFoundException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
-            <summary>
-            Для сериализации.
-            </summary>
-        </member>
-        <member name="M:Rsdn.SmartApp.ServiceNotFoundException.#ctor">
-            <summary>
-            Инициализирует экземпляр.
-            </summary>
-        </member>
-        <member name="M:Rsdn.SmartApp.ServiceNotFoundException.#ctor(System.String)">
-            <summary>
-            Инициализирует экземпляр с указанием сообщения.
-            </summary>
-        </member>
-        <member name="M:Rsdn.SmartApp.ServiceNotFoundException.#ctor(System.Type)">
-            <summary>
-            Инициализирует экземпляр с указанием типа отсутствующего сервиса.
-            </summary>
-        </member>
-        <member name="T:Rsdn.SmartApp.IServiceRegistrationCookie">
-            <summary>
-            Cookie, описывающий опубликованный сервис.
-            </summary>
-        </member>
-        <member name="T:Rsdn.SmartApp.CommandLine.CommandLineRulesProviderInfo">
-            <summary>
-            Information about command line rules provider.
-            </summary>
-        </member>
-        <member name="M:Rsdn.SmartApp.CommandLine.CommandLineRulesProviderInfo.#ctor(System.Type)">
-            <summary>
-            Initializes a new instance.
-            </summary>
-        </member>
-        <member name="P:Rsdn.SmartApp.CommandLine.CommandLineRulesProviderInfo.ProviderType">
-            <summary>
-            Provider type.
-            </summary>
-        </member>
-        <member name="T:Rsdn.SmartApp.CommandLine.OptionRule">
-            <summary>
-            Option rule.
-            </summary>
-        </member>
-        <member name="M:Rsdn.SmartApp.CommandLine.OptionRule.#ctor(System.String)">
-            <summary>
-            Initializes a new instance.
-            </summary>
-        </member>
-        <member name="M:Rsdn.SmartApp.CommandLine.OptionRule.#ctor(System.String,System.String)">
-            <summary>
-            Initializes a new instance.
-            </summary>
-        </member>
-        <member name="M:Rsdn.SmartApp.CommandLine.OptionRule.#ctor(System.String,Rsdn.SmartApp.CommandLine.OptionType)">
-            <summary>
-            Initializes a new instance.
-            </summary>
-        </member>
-        <member name="M:Rsdn.SmartApp.CommandLine.OptionRule.#ctor(System.String,System.String,Rsdn.SmartApp.CommandLine.OptionType)">
-            <summary>
-            Initializes a new instance.
-            </summary>
-        </member>
-        <member name="M:Rsdn.SmartApp.CommandLine.OptionRule.#ctor(System.String,Rsdn.SmartApp.CommandLine.OptionType,System.Boolean)">
-            <summary>
-            Initializes a new instance.
-            </summary>
-        </member>
-        <member name="M:Rsdn.SmartApp.CommandLine.OptionRule.#ctor(System.String,System.String,Rsdn.SmartApp.CommandLine.OptionType,System.Boolean)">
-            <summary>
-            Initializes a new instance.
-            </summary>
-        </member>
-        <member name="M:Rsdn.SmartApp.CommandLine.OptionRule.#ctor(System.String,Rsdn.SmartApp.CommandLine.OptionType,System.Boolean,System.String[])">
-            <summary>
-            Initializes a new instance.
-            </summary>
-        </member>
-        <member name="M:Rsdn.SmartApp.CommandLine.OptionRule.#ctor(System.String,System.String,Rsdn.SmartApp.CommandLine.OptionType,System.Boolean,System.String[])">
-            <summary>
-            Initializes a new instance.
-            </summary>
-        </member>
-        <member name="P:Rsdn.SmartApp.CommandLine.OptionRule.Name">
-            <summary>
-            Option name.
-            </summary>
-        </member>
-        <member name="P:Rsdn.SmartApp.CommandLine.OptionRule.Description">
-            <summary>
-            Option description.
-            </summary>
-        </member>
-        <member name="P:Rsdn.SmartApp.CommandLine.OptionRule.Type">
-            <summary>
-            Option type.
-            </summary>
-        </member>
-        <member name="P:Rsdn.SmartApp.CommandLine.OptionRule.Required">
-            <summary>
-            Option required.
-            </summary>
-        </member>
-        <member name="P:Rsdn.SmartApp.CommandLine.OptionRule.DependOnCommands">
-            <summary>
-            List of command names, that option depend on.
-            </summary>
-        </member>
-        <member name="T:Rsdn.SmartApp.CommandLine.CommandRule">
-            <summary>
-             Command rule.
-            </summary>
-        </member>
-        <member name="M:Rsdn.SmartApp.CommandLine.CommandRule.#ctor(System.String,System.String)">
-            <summary>
-            Initializes a new instance.
-            </summary>
-        </member>
-        <member name="M:Rsdn.SmartApp.CommandLine.CommandRule.#ctor(System.String)">
-            <summary>
-            Initializes a new instance.
-            </summary>
-        </member>
-        <member name="P:Rsdn.SmartApp.CommandLine.CommandRule.Name">
-            <summary>
-            Command name.
-            </summary>
-        </member>
-        <member name="P:Rsdn.SmartApp.CommandLine.CommandRule.Description">
-            <summary>
-            Command description.
-            </summary>
-        </member>
-        <member name="T:Rsdn.SmartApp.ActivePartInfo">
-            <summary>
-            Описание active part.
-            </summary>
-        </member>
-        <member name="M:Rsdn.SmartApp.ActivePartInfo.#ctor(System.String)">
-            <summary>
-            Инициализирует экземпляр.
-            </summary>
-        </member>
-        <member name="P:Rsdn.SmartApp.ActivePartInfo.TypeName">
-            <summary>
-            Тип, реализующий расширение.
-            </summary>
-        </member>
-        <member name="T:Rsdn.SmartApp.IActivePart">
-            <summary>
-            Active part interface.
-            </summary>
-        </member>
-        <member name="M:Rsdn.SmartApp.IActivePart.Activate">
-            <summary>
-            Activate part.
-            </summary>
-        </member>
-        <member name="M:Rsdn.SmartApp.IActivePart.Passivate">
-            <summary>
-            Passivate part.
-            </summary>
-        </member>
-        <member name="T:Rsdn.SmartApp.ServiceCreator">
-            <summary>
-            Делегат, создающий сервис.
-            </summary>
-        </member>
-        <member name="T:Rsdn.SmartApp.IServicePublisher">
-            <summary>
-            Интерфейс сервиса, позволяющего публиковать сервисы.
-            </summary>
-        </member>
-        <member name="M:Rsdn.SmartApp.IServicePublisher.Publish(System.Type,System.Object)">
-            <summary>
-            Публикует экземпляр сервиса типа Т.
-            </summary>
-        </member>
-        <member name="M:Rsdn.SmartApp.IServicePublisher.Publish(System.Type,Rsdn.SmartApp.ServiceCreator)">
-            <summary>
-            Публикует сервис типа Т с отложенной инициализацией.
-            </summary>
-        </member>
-        <member name="M:Rsdn.SmartApp.IServicePublisher.Unpublish(Rsdn.SmartApp.IServiceRegistrationCookie)">
-            <summary>
-            Убирает публикацию сервиса.
-            </summary>
-        </member>
-        <member name="T:Rsdn.SmartApp.InvalidExtensionTypeException">
-            <summary>
-            Исключение, возбуждаемое при неверном типе расширения.
-            </summary>
-        </member>
-        <member name="T:Rsdn.SmartApp.ExtensibilityException">
-            <summary>
-            Исключение, возбуждаемое в процессе подключения расширений.
-            </summary>
-        </member>
-        <member name="M:Rsdn.SmartApp.ExtensibilityException.#ctor">
-            <summary>
-            Инициализирует экземпляр.
-            </summary>
-        </member>
-        <member name="M:Rsdn.SmartApp.ExtensibilityException.#ctor(System.String)">
-            <summary>
-            Инициализирует экземпляр значением сообщения.
-            </summary>
-        </member>
-        <member name="M:Rsdn.SmartApp.ExtensibilityException.#ctor(System.String,System.Exception)">
-            <summary>
-            Инициализирует экземпляр значением сообщения и вложенным исключением.
-            </summary>
-        </member>
-        <member name="M:Rsdn.SmartApp.ExtensibilityException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
-            <summary>
-            Конструктор для сериализации.
-            Смотри <see cref="M:System.Exception.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)"/>
-            </summary>
-        </member>
-        <member name="M:Rsdn.SmartApp.InvalidExtensionTypeException.#ctor">
-            <summary>
-            Инициализирует экземпляр.
-            </summary>
-        </member>
-        <member name="M:Rsdn.SmartApp.InvalidExtensionTypeException.#ctor(System.String)">
-            <summary>
-            Инициализирует экземпляр значением сообщения.
-            </summary>
-        </member>
-        <member name="M:Rsdn.SmartApp.InvalidExtensionTypeException.#ctor(System.String,System.Exception)">
-            <summary>
-            Инициализирует экземпляр значением сообщения и вложенным исключением.
-            </summary>
-        </member>
-        <member name="M:Rsdn.SmartApp.InvalidExtensionTypeException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
-            <summary>
-            Конструктор для сериализации.
-            Смотри <see cref="M:System.Exception.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)"/>
-            </summary>
-        </member>
-        <member name="T:Rsdn.SmartApp.CommandLine.CommandLineRulesProviderAttribute">
-            <summary>
-            Mark command line rules provider.
-            </summary>
-        </member>
-        <member name="T:Rsdn.SmartApp.Configuration.ConfigSectionInfo">
-            <summary>
-            Описание секции конфигурации.
-            </summary>
-        </member>
-        <member name="M:Rsdn.SmartApp.Configuration.ConfigSectionInfo.#ctor(System.String,System.String,System.Boolean,System.Type,Rsdn.SmartApp.Configuration.IConfigSectionSerializer)">
-            <summary>
-            Инициализирует экземпляр.
-            </summary>
-        </member>
-        <member name="P:Rsdn.SmartApp.Configuration.ConfigSectionInfo.Name">
-            <summary>
-            Имя секции.
-            </summary>
-        </member>
-        <member name="P:Rsdn.SmartApp.Configuration.ConfigSectionInfo.Namespace">
-            <summary>
-            XML_пространство имен.
-            </summary>
-        </member>
-        <member name="P:Rsdn.SmartApp.Configuration.ConfigSectionInfo.AllowMerge">
-            <summary>
-            Разрешено ли слияние секций в разных файлах.
-            </summary>
-        </member>
-        <member name="P:Rsdn.SmartApp.Configuration.ConfigSectionInfo.ContractType">
-            <summary>
-            Тип контракта секции.
-            </summary>
-        </member>
-        <member name="P:Rsdn.SmartApp.Configuration.ConfigSectionInfo.Serializer">
-            <summary>
-            Сериализатор.
-            </summary>
-        </member>
-        <member name="P:Rsdn.SmartApp.Configuration.ConfigSectionInfo.Rsdn#SmartApp#IKeyedElementInfo{System#Type}#Key">
-            <summary>
-            Имя.
-            </summary>
-        </member>
-        <member name="T:Rsdn.SmartApp.ExpectServiceAttribute">
-            <summary>
-            Помечает поля, ожидающие сервиса.
-            </summary>
-        </member>
-        <member name="M:Rsdn.SmartApp.ExpectServiceAttribute.#ctor">
-            <summary>
-            Инициализирует экземпляр.
-            </summary>
-        </member>
-        <member name="P:Rsdn.SmartApp.ExpectServiceAttribute.Required">
-            <summary>
-            Признак обязательности наличия сервиса.
-            </summary>
-        </member>
-        <member name="T:Rsdn.SmartApp.IRegElementsService`1">
-            <summary>
-            Сервис регистрации элементов.
-            </summary>
-        </member>
-        <member name="M:Rsdn.SmartApp.IRegElementsService`1.Register(`0)">
-            <summary>
-            Зарегистрировать элемент.
-            </summary>
-        </member>
-        <member name="M:Rsdn.SmartApp.IRegElementsService`1.GetRegisteredElements">
-            <summary>
-            Получить список зарегистрированных элементов.
-            </summary>
-        </member>
-        <member name="T:Rsdn.SmartApp.IRegKeyedElementsService`2">
-            <summary>
-            Сервис регистрации именованных элементов.
-            </summary>
-        </member>
-        <member name="M:Rsdn.SmartApp.IRegKeyedElementsService`2.ContainsElement(`0)">
-            <summary>
-            Проверяет, есть ли зарегистрированный элемент с указанным именем.
-            </summary>
-        </member>
-        <member name="M:Rsdn.SmartApp.IRegKeyedElementsService`2.GetElement(`0)">
-            <summary>
-            Возвращает элемент по его ключу.
-            </summary>
-        </member>
-        <member name="T:Rsdn.SmartApp.EventHandlerAttribute">
-            <summary>
-            Атрибут, помечающий обработчик события.
-            </summary>
-        </member>
-        <member name="M:Rsdn.SmartApp.EventHandlerAttribute.#ctor(System.String)">
-            <summary>
-            Инициализиурет экземпляр.
-            </summary>
-        </member>
-        <member name="P:Rsdn.SmartApp.EventHandlerAttribute.EventName">
-            <summary>
-            Имя события.
-            </summary>
-        </member>
-        <member name="T:Rsdn.SmartApp.Configuration.ConfigXmlConstants">
-            <summary>
-            Константы, связанные с XML-представлением конфигурации.
-            </summary>
-        </member>
-        <member name="F:Rsdn.SmartApp.Configuration.ConfigXmlConstants.XmlNamespace">
-            <summary>
-            XML-неймспейс.
-            </summary>
-        </member>
-        <member name="F:Rsdn.SmartApp.Configuration.ConfigXmlConstants.XmlSchemaResource">
-            <summary>
-            Имя ресурса со схемой.
-            </summary>
-        </member>
-        <member name="F:Rsdn.SmartApp.Configuration.ConfigXmlConstants.IncludeTagName">
-            <summary>
-            Имя тега с инклюдом.
-            </summary>
-        </member>
-        <member name="F:Rsdn.SmartApp.Configuration.ConfigXmlConstants.VariableTagName">
-            <summary>
-            Имя тега с переменной.
-            </summary>
-        </member>
-        <member name="F:Rsdn.SmartApp.Configuration.ConfigXmlConstants.VariableNameAttribute">
-            <summary>
-            Имя атрибута с именем переменной.
+            Помечает active part класс.
             </summary>
         </member>
         <member name="T:Rsdn.SmartApp.ActivePartManagerState">
@@ -496,179 +39,60 @@
             Manager in invalid state.
             </summary>
         </member>
-        <member name="T:Rsdn.SmartApp.Configuration.IConfigDataProvider">
+        <member name="T:Rsdn.SmartApp.IActivePart">
             <summary>
-            Поставщик данных с конфигурационной информацией.
+            Active part interface.
             </summary>
         </member>
-        <member name="M:Rsdn.SmartApp.Configuration.IConfigDataProvider.ReadData">
+        <member name="M:Rsdn.SmartApp.IActivePart.Activate">
             <summary>
-            Читает данные конфигурации.
-            </summary>
-            <remarks>Ридер будет уничтожен вызывающим кодом</remarks>
-        </member>
-        <member name="M:Rsdn.SmartApp.Configuration.IConfigDataProvider.ResolveInclude(System.String)">
-            <summary>
-            Разрешает include.
+            Activate part.
             </summary>
         </member>
-        <member name="E:Rsdn.SmartApp.Configuration.IConfigDataProvider.ConfigChanged">
+        <member name="M:Rsdn.SmartApp.IActivePart.Passivate">
             <summary>
-            Происходит при изменении файла конфигурации внешними средствами.
+            Passivate part.
             </summary>
         </member>
-        <member name="T:Rsdn.SmartApp.IExtensionStrategyFactory">
+        <member name="T:Rsdn.SmartApp.IActivePartManager">
             <summary>
-            Интерфейс класса, предоставляющего специфические стратегии.
+            Менеджер active parts.
             </summary>
         </member>
-        <member name="M:Rsdn.SmartApp.IExtensionStrategyFactory.CreateStrategies(System.IServiceProvider)">
+        <member name="M:Rsdn.SmartApp.IActivePartManager.GetPartInstance(System.Type)">
             <summary>
-            Создает стратегии.
+            Получить экземпляр active part.
             </summary>
         </member>
-        <member name="T:Rsdn.SmartApp.Configuration.IConfigService">
+        <member name="M:Rsdn.SmartApp.IActivePartManager.Activate">
             <summary>
-            Сервис конфигурации.
+            Activate all registered parts.
             </summary>
         </member>
-        <member name="M:Rsdn.SmartApp.Configuration.IConfigService.GetSection``1">
+        <member name="M:Rsdn.SmartApp.IActivePartManager.Passivate">
             <summary>
-            Получить содержимое секции.
+            Passivate all active parts.
             </summary>
         </member>
-        <member name="E:Rsdn.SmartApp.Configuration.IConfigService.ConfigChanged">
+        <member name="P:Rsdn.SmartApp.IActivePartManager.State">
             <summary>
-            Вызывается при изменении конфигурации.
+            Current state.
             </summary>
         </member>
-        <member name="T:Rsdn.SmartApp.DefaultConstructorAttribute">
+        <member name="T:Rsdn.SmartApp.ActivePartInfo">
             <summary>
-            Помечает конструктор по умолчанию, если класс содержит несколько публичных конструкторов.
+            Описание active part.
             </summary>
         </member>
-        <member name="T:Rsdn.SmartApp.CommandLine.ICommandLineService">
-            <summary>
-            Command line service contract.
-            </summary>
-        </member>
-        <member name="M:Rsdn.SmartApp.CommandLine.ICommandLineService.GetProgramName">
-            <summary>
-            Returns file name, that used to execute program.
-            </summary>
-        </member>
-        <member name="M:Rsdn.SmartApp.CommandLine.ICommandLineService.GetCommands">
-            <summary>
-            Return all specified commands.
-            </summary>
-        </member>
-        <member name="M:Rsdn.SmartApp.CommandLine.ICommandLineService.IsCommandDefined(System.String)">
-            <summary>
-            Returns true, if specified command defined.
-            </summary>
-        </member>
-        <member name="M:Rsdn.SmartApp.CommandLine.ICommandLineService.GetOptions">
-            <summary>
-            Return all specified options.
-            </summary>
-        </member>
-        <member name="M:Rsdn.SmartApp.CommandLine.ICommandLineService.IsOptionDefined(System.String)">
-            <summary>
-            Returns true, if specified option defined.
-            </summary>
-        </member>
-        <member name="M:Rsdn.SmartApp.CommandLine.ICommandLineService.GetBoolOptionValue(System.String)">
-            <summary>
-            Return value of bool option.
-            </summary>
-        </member>
-        <member name="M:Rsdn.SmartApp.CommandLine.ICommandLineService.GetValueOptionValue(System.String)">
-            <summary>
-            Return value of value option.
-            </summary>
-        </member>
-        <member name="T:Rsdn.SmartApp.InstancingCustomParam">
-            <summary>
-            Описатель дополнительных параметров конструктора.
-            </summary>
-        </member>
-        <member name="M:Rsdn.SmartApp.InstancingCustomParam.#ctor(System.String,System.Object)">
-            <summary>
-            Инициализирует экземпляр опциональным параметром.
-            </summary>
-        </member>
-        <member name="M:Rsdn.SmartApp.InstancingCustomParam.#ctor(System.String,System.Object,System.Boolean)">
+        <member name="M:Rsdn.SmartApp.ActivePartInfo.#ctor(System.String)">
             <summary>
             Инициализирует экземпляр.
             </summary>
         </member>
-        <member name="P:Rsdn.SmartApp.InstancingCustomParam.Name">
+        <member name="P:Rsdn.SmartApp.ActivePartInfo.TypeName">
             <summary>
-            Имя параметра.
+            Тип, реализующий расширение.
             </summary>
-        </member>
-        <member name="P:Rsdn.SmartApp.InstancingCustomParam.Value">
-            <summary>
-            Значение параметра.
-            </summary>
-        </member>
-        <member name="P:Rsdn.SmartApp.InstancingCustomParam.Optional">
-            <summary>
-            Опциональный.
-            </summary>
-        </member>
-        <member name="T:Rsdn.SmartApp.EventSourceAttribute">
-            <summary>
-            Атрибут, помечающий источник события.
-            </summary>
-        </member>
-        <member name="M:Rsdn.SmartApp.EventSourceAttribute.#ctor(System.String)">
-            <summary>
-            Initialize instance.
-            </summary>
-        </member>
-        <member name="P:Rsdn.SmartApp.EventSourceAttribute.EventName">
-            <summary>
-            Event name.
-            </summary>
-        </member>
-        <member name="T:Rsdn.SmartApp.CommandLine.OptionType">
-            <summary>
-            Type of option node.
-            </summary>
-        </member>
-        <member name="F:Rsdn.SmartApp.CommandLine.OptionType.Valueless">
-            <summary>
-            Option without value.
-            </summary>
-        </member>
-        <member name="F:Rsdn.SmartApp.CommandLine.OptionType.Bool">
-            <summary>
-            Bool option.
-            </summary>
-        </member>
-        <member name="F:Rsdn.SmartApp.CommandLine.OptionType.Value">
-            <summary>
-            Option with value.
-            </summary>
-        </member>
-        <member name="T:Rsdn.SmartApp.CommandLine.CommandLineCheckException">
-            <summary>
-            Command line check exception.
-            </summary>
-        </member>
-        <member name="M:Rsdn.SmartApp.CommandLine.CommandLineCheckException.#ctor(System.String)">
-            <summary>
-            Initializes a new instance of the <see cref="T:System.ApplicationException"/> class with a specified error message.
-            </summary>
-            <param name="message">A message that describes the error.</param>
-        </member>
-        <member name="M:Rsdn.SmartApp.CommandLine.CommandLineCheckException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
-            <summary>
-            Initializes a new instance of the <see cref="T:System.ApplicationException"/> class with serialized data.
-            </summary>
-            <param name="info">The object that holds the serialized object data.</param>
-            <param name="context">The contextual information about the source or destination.</param>
         </member>
         <member name="T:JetBrains.Annotations.LocalizationRequiredAttribute">
             <summary>
@@ -1134,24 +558,479 @@
             Options.
             </summary>
         </member>
-        <member name="T:Rsdn.SmartApp.ExtensionStrategyFactoryAttribute">
+        <member name="T:Rsdn.SmartApp.CommandLine.CommandLineCheckException">
             <summary>
-            Атрибут, помечающий реализацию <see cref="T:Rsdn.SmartApp.IExtensionStrategyFactory"/>
+            Command line check exception.
             </summary>
         </member>
-        <member name="T:Rsdn.SmartApp.IExtensionManager">
+        <member name="M:Rsdn.SmartApp.CommandLine.CommandLineCheckException.#ctor(System.String)">
             <summary>
-            Extension manager contract.
+            Initializes a new instance of the <see cref="T:System.ApplicationException"/> class with a specified error message.
+            </summary>
+            <param name="message">A message that describes the error.</param>
+        </member>
+        <member name="M:Rsdn.SmartApp.CommandLine.CommandLineCheckException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+            Initializes a new instance of the <see cref="T:System.ApplicationException"/> class with serialized data.
+            </summary>
+            <param name="info">The object that holds the serialized object data.</param>
+            <param name="context">The contextual information about the source or destination.</param>
+        </member>
+        <member name="T:Rsdn.SmartApp.CommandLine.CommandQuantifier">
+            <summary>
+            Command quantifier.
             </summary>
         </member>
-        <member name="M:Rsdn.SmartApp.IExtensionManager.Scan(Rsdn.SmartApp.IExtensionAttachmentStrategy,System.Reflection.Assembly[])">
+        <member name="F:Rsdn.SmartApp.CommandLine.CommandQuantifier.ZeroOrOne">
             <summary>
-            Scan assembly.
+            Single optional command.
             </summary>
         </member>
-        <member name="M:Rsdn.SmartApp.IExtensionManager.Scan(Rsdn.SmartApp.IExtensionAttachmentStrategy,System.Type[])">
+        <member name="F:Rsdn.SmartApp.CommandLine.CommandQuantifier.ZeroOrMultiple">
             <summary>
-            Scan specific type.
+            Any command quantity.
+            </summary>
+        </member>
+        <member name="F:Rsdn.SmartApp.CommandLine.CommandQuantifier.One">
+            <summary>
+            One and only one command.
+            </summary>
+        </member>
+        <member name="F:Rsdn.SmartApp.CommandLine.CommandQuantifier.OneOrMultiple">
+            <summary>
+            At least one command.
+            </summary>
+        </member>
+        <member name="T:Rsdn.SmartApp.CommandLine.CommandRule">
+            <summary>
+             Command rule.
+            </summary>
+        </member>
+        <member name="M:Rsdn.SmartApp.CommandLine.CommandRule.#ctor(System.String,System.String)">
+            <summary>
+            Initializes a new instance.
+            </summary>
+        </member>
+        <member name="M:Rsdn.SmartApp.CommandLine.CommandRule.#ctor(System.String)">
+            <summary>
+            Initializes a new instance.
+            </summary>
+        </member>
+        <member name="P:Rsdn.SmartApp.CommandLine.CommandRule.Name">
+            <summary>
+            Command name.
+            </summary>
+        </member>
+        <member name="P:Rsdn.SmartApp.CommandLine.CommandRule.Description">
+            <summary>
+            Command description.
+            </summary>
+        </member>
+        <member name="T:Rsdn.SmartApp.CommandLine.OptionRule">
+            <summary>
+            Option rule.
+            </summary>
+        </member>
+        <member name="M:Rsdn.SmartApp.CommandLine.OptionRule.#ctor(System.String)">
+            <summary>
+            Initializes a new instance.
+            </summary>
+        </member>
+        <member name="M:Rsdn.SmartApp.CommandLine.OptionRule.#ctor(System.String,System.String)">
+            <summary>
+            Initializes a new instance.
+            </summary>
+        </member>
+        <member name="M:Rsdn.SmartApp.CommandLine.OptionRule.#ctor(System.String,Rsdn.SmartApp.CommandLine.OptionType)">
+            <summary>
+            Initializes a new instance.
+            </summary>
+        </member>
+        <member name="M:Rsdn.SmartApp.CommandLine.OptionRule.#ctor(System.String,System.String,Rsdn.SmartApp.CommandLine.OptionType)">
+            <summary>
+            Initializes a new instance.
+            </summary>
+        </member>
+        <member name="M:Rsdn.SmartApp.CommandLine.OptionRule.#ctor(System.String,Rsdn.SmartApp.CommandLine.OptionType,System.Boolean)">
+            <summary>
+            Initializes a new instance.
+            </summary>
+        </member>
+        <member name="M:Rsdn.SmartApp.CommandLine.OptionRule.#ctor(System.String,System.String,Rsdn.SmartApp.CommandLine.OptionType,System.Boolean)">
+            <summary>
+            Initializes a new instance.
+            </summary>
+        </member>
+        <member name="M:Rsdn.SmartApp.CommandLine.OptionRule.#ctor(System.String,Rsdn.SmartApp.CommandLine.OptionType,System.Boolean,System.String[])">
+            <summary>
+            Initializes a new instance.
+            </summary>
+        </member>
+        <member name="M:Rsdn.SmartApp.CommandLine.OptionRule.#ctor(System.String,System.String,Rsdn.SmartApp.CommandLine.OptionType,System.Boolean,System.String[])">
+            <summary>
+            Initializes a new instance.
+            </summary>
+        </member>
+        <member name="P:Rsdn.SmartApp.CommandLine.OptionRule.Name">
+            <summary>
+            Option name.
+            </summary>
+        </member>
+        <member name="P:Rsdn.SmartApp.CommandLine.OptionRule.Description">
+            <summary>
+            Option description.
+            </summary>
+        </member>
+        <member name="P:Rsdn.SmartApp.CommandLine.OptionRule.Type">
+            <summary>
+            Option type.
+            </summary>
+        </member>
+        <member name="P:Rsdn.SmartApp.CommandLine.OptionRule.Required">
+            <summary>
+            Option required.
+            </summary>
+        </member>
+        <member name="P:Rsdn.SmartApp.CommandLine.OptionRule.DependOnCommands">
+            <summary>
+            List of command names, that option depend on.
+            </summary>
+        </member>
+        <member name="T:Rsdn.SmartApp.CommandLine.CommandLineRulesProviderAttribute">
+            <summary>
+            Mark command line rules provider.
+            </summary>
+        </member>
+        <member name="T:Rsdn.SmartApp.CommandLine.CommandLineRulesProviderInfo">
+            <summary>
+            Information about command line rules provider.
+            </summary>
+        </member>
+        <member name="M:Rsdn.SmartApp.CommandLine.CommandLineRulesProviderInfo.#ctor(System.Type)">
+            <summary>
+            Initializes a new instance.
+            </summary>
+        </member>
+        <member name="P:Rsdn.SmartApp.CommandLine.CommandLineRulesProviderInfo.ProviderType">
+            <summary>
+            Provider type.
+            </summary>
+        </member>
+        <member name="T:Rsdn.SmartApp.CommandLine.ICommandLineRulesProvider">
+            <summary>
+            Command line rules provider.
+            </summary>
+        </member>
+        <member name="M:Rsdn.SmartApp.CommandLine.ICommandLineRulesProvider.GetCommands">
+            <summary>
+            Returns command rules.
+            </summary>
+        </member>
+        <member name="M:Rsdn.SmartApp.CommandLine.ICommandLineRulesProvider.GetOptions">
+            <summary>
+            Returns option rules.
+            </summary>
+        </member>
+        <member name="T:Rsdn.SmartApp.CommandLine.ICommandLineService">
+            <summary>
+            Command line service contract.
+            </summary>
+        </member>
+        <member name="M:Rsdn.SmartApp.CommandLine.ICommandLineService.GetProgramName">
+            <summary>
+            Returns file name, that used to execute program.
+            </summary>
+        </member>
+        <member name="M:Rsdn.SmartApp.CommandLine.ICommandLineService.GetCommands">
+            <summary>
+            Return all specified commands.
+            </summary>
+        </member>
+        <member name="M:Rsdn.SmartApp.CommandLine.ICommandLineService.IsCommandDefined(System.String)">
+            <summary>
+            Returns true, if specified command defined.
+            </summary>
+        </member>
+        <member name="M:Rsdn.SmartApp.CommandLine.ICommandLineService.GetOptions">
+            <summary>
+            Return all specified options.
+            </summary>
+        </member>
+        <member name="M:Rsdn.SmartApp.CommandLine.ICommandLineService.IsOptionDefined(System.String)">
+            <summary>
+            Returns true, if specified option defined.
+            </summary>
+        </member>
+        <member name="M:Rsdn.SmartApp.CommandLine.ICommandLineService.GetBoolOptionValue(System.String)">
+            <summary>
+            Return value of bool option.
+            </summary>
+        </member>
+        <member name="M:Rsdn.SmartApp.CommandLine.ICommandLineService.GetValueOptionValue(System.String)">
+            <summary>
+            Return value of value option.
+            </summary>
+        </member>
+        <member name="T:Rsdn.SmartApp.CommandLine.OptionType">
+            <summary>
+            Type of option node.
+            </summary>
+        </member>
+        <member name="F:Rsdn.SmartApp.CommandLine.OptionType.Valueless">
+            <summary>
+            Option without value.
+            </summary>
+        </member>
+        <member name="F:Rsdn.SmartApp.CommandLine.OptionType.Bool">
+            <summary>
+            Bool option.
+            </summary>
+        </member>
+        <member name="F:Rsdn.SmartApp.CommandLine.OptionType.Value">
+            <summary>
+            Option with value.
+            </summary>
+        </member>
+        <member name="T:Rsdn.SmartApp.Configuration.ConfigSectionAttribute">
+            <summary>
+            Атрибут, поменчающий секцию конфигурации.
+            </summary>
+        </member>
+        <member name="M:Rsdn.SmartApp.Configuration.ConfigSectionAttribute.#ctor(System.String,System.String)">
+            <summary>
+            Инициализирует экземпляр. 
+            </summary>
+        </member>
+        <member name="M:Rsdn.SmartApp.Configuration.ConfigSectionAttribute.CreateSerializer(System.Type)">
+            <summary>
+            Создать сериалайзер.
+            </summary>
+        </member>
+        <member name="P:Rsdn.SmartApp.Configuration.ConfigSectionAttribute.Name">
+            <summary>
+            Имя секции.
+            </summary>
+        </member>
+        <member name="P:Rsdn.SmartApp.Configuration.ConfigSectionAttribute.Namespace">
+            <summary>
+            Пространство имен.
+            </summary>
+        </member>
+        <member name="P:Rsdn.SmartApp.Configuration.ConfigSectionAttribute.AllowMerge">
+            <summary>
+            Признак допустимости слияния секций.
+            </summary>
+        </member>
+        <member name="T:Rsdn.SmartApp.Configuration.ConfigSectionInfo">
+            <summary>
+            Описание секции конфигурации.
+            </summary>
+        </member>
+        <member name="T:Rsdn.SmartApp.IKeyedElementInfo`1">
+            <summary>
+            Интерфейс именованного элемента.
+            </summary>
+        </member>
+        <member name="P:Rsdn.SmartApp.IKeyedElementInfo`1.Key">
+            <summary>
+            Ключ.
+            </summary>
+        </member>
+        <member name="M:Rsdn.SmartApp.Configuration.ConfigSectionInfo.#ctor(System.String,System.String,System.Boolean,System.Type,Rsdn.SmartApp.Configuration.IConfigSectionSerializer)">
+            <summary>
+            Инициализирует экземпляр.
+            </summary>
+        </member>
+        <member name="P:Rsdn.SmartApp.Configuration.ConfigSectionInfo.Name">
+            <summary>
+            Имя секции.
+            </summary>
+        </member>
+        <member name="P:Rsdn.SmartApp.Configuration.ConfigSectionInfo.Namespace">
+            <summary>
+            XML_пространство имен.
+            </summary>
+        </member>
+        <member name="P:Rsdn.SmartApp.Configuration.ConfigSectionInfo.AllowMerge">
+            <summary>
+            Разрешено ли слияние секций в разных файлах.
+            </summary>
+        </member>
+        <member name="P:Rsdn.SmartApp.Configuration.ConfigSectionInfo.ContractType">
+            <summary>
+            Тип контракта секции.
+            </summary>
+        </member>
+        <member name="P:Rsdn.SmartApp.Configuration.ConfigSectionInfo.Serializer">
+            <summary>
+            Сериализатор.
+            </summary>
+        </member>
+        <member name="P:Rsdn.SmartApp.Configuration.ConfigSectionInfo.Rsdn#SmartApp#IKeyedElementInfo{System#Type}#Key">
+            <summary>
+            Имя.
+            </summary>
+        </member>
+        <member name="T:Rsdn.SmartApp.Configuration.ConfigXmlConstants">
+            <summary>
+            Константы, связанные с XML-представлением конфигурации.
+            </summary>
+        </member>
+        <member name="F:Rsdn.SmartApp.Configuration.ConfigXmlConstants.XmlNamespace">
+            <summary>
+            XML-неймспейс.
+            </summary>
+        </member>
+        <member name="F:Rsdn.SmartApp.Configuration.ConfigXmlConstants.XmlSchemaResource">
+            <summary>
+            Имя ресурса со схемой.
+            </summary>
+        </member>
+        <member name="F:Rsdn.SmartApp.Configuration.ConfigXmlConstants.IncludeTagName">
+            <summary>
+            Имя тега с инклюдом.
+            </summary>
+        </member>
+        <member name="F:Rsdn.SmartApp.Configuration.ConfigXmlConstants.VariableTagName">
+            <summary>
+            Имя тега с переменной.
+            </summary>
+        </member>
+        <member name="F:Rsdn.SmartApp.Configuration.ConfigXmlConstants.VariableNameAttribute">
+            <summary>
+            Имя атрибута с именем переменной.
+            </summary>
+        </member>
+        <member name="T:Rsdn.SmartApp.Configuration.IConfigDataProvider">
+            <summary>
+            Поставщик данных с конфигурационной информацией.
+            </summary>
+        </member>
+        <member name="M:Rsdn.SmartApp.Configuration.IConfigDataProvider.ReadData">
+            <summary>
+            Читает данные конфигурации.
+            </summary>
+            <remarks>Ридер будет уничтожен вызывающим кодом</remarks>
+        </member>
+        <member name="M:Rsdn.SmartApp.Configuration.IConfigDataProvider.ResolveInclude(System.String)">
+            <summary>
+            Разрешает include.
+            </summary>
+        </member>
+        <member name="E:Rsdn.SmartApp.Configuration.IConfigDataProvider.ConfigChanged">
+            <summary>
+            Происходит при изменении файла конфигурации внешними средствами.
+            </summary>
+        </member>
+        <member name="T:Rsdn.SmartApp.Configuration.IConfigSectionSerializer">
+            <summary>
+            Сериализатор секции конфигурации.
+            </summary>
+        </member>
+        <member name="M:Rsdn.SmartApp.Configuration.IConfigSectionSerializer.Deserialize(System.Xml.XmlReader)">
+            <summary>
+            Десериализовать секцию.
+            </summary>
+        </member>
+        <member name="M:Rsdn.SmartApp.Configuration.IConfigSectionSerializer.CreateDefaultSection">
+            <summary>
+            Создать секцию по умолчанию.
+            </summary>
+        </member>
+        <member name="T:Rsdn.SmartApp.Configuration.IConfigService">
+            <summary>
+            Сервис конфигурации.
+            </summary>
+        </member>
+        <member name="M:Rsdn.SmartApp.Configuration.IConfigService.GetSection``1">
+            <summary>
+            Получить содержимое секции.
+            </summary>
+        </member>
+        <member name="E:Rsdn.SmartApp.Configuration.IConfigService.ConfigChanged">
+            <summary>
+            Вызывается при изменении конфигурации.
+            </summary>
+        </member>
+        <member name="T:Rsdn.SmartApp.EventHandlerAttribute">
+            <summary>
+            Атрибут, помечающий обработчик события.
+            </summary>
+        </member>
+        <member name="M:Rsdn.SmartApp.EventHandlerAttribute.#ctor(System.String)">
+            <summary>
+            Инициализиурет экземпляр.
+            </summary>
+        </member>
+        <member name="P:Rsdn.SmartApp.EventHandlerAttribute.EventName">
+            <summary>
+            Имя события.
+            </summary>
+        </member>
+        <member name="T:Rsdn.SmartApp.EventSourceAttribute">
+            <summary>
+            Атрибут, помечающий источник события.
+            </summary>
+        </member>
+        <member name="M:Rsdn.SmartApp.EventSourceAttribute.#ctor(System.String)">
+            <summary>
+            Initialize instance.
+            </summary>
+        </member>
+        <member name="P:Rsdn.SmartApp.EventSourceAttribute.EventName">
+            <summary>
+            Event name.
+            </summary>
+        </member>
+        <member name="T:Rsdn.SmartApp.IEventBroker">
+            <summary>
+            Брокер событий.
+            </summary>
+        </member>
+        <member name="M:Rsdn.SmartApp.IEventBroker.Fire``1(System.String,``0)">
+            <summary>
+            Оповестить подписчиков о событии.
+            </summary>
+        </member>
+        <member name="M:Rsdn.SmartApp.IEventBroker.Subscribe``1(System.String,System.IObserver{``0})">
+            <summary>
+            Подписаться на событие.
+            </summary>
+        </member>
+        <member name="T:Rsdn.SmartApp.EventHandler`1">
+            <summary>
+            Обработчик события без аргументов.
+            </summary>
+        </member>
+        <member name="T:Rsdn.SmartApp.EventHandler`2">
+            <summary>
+            Обработчик события с аргументами.
+            </summary>
+        </member>
+        <member name="T:Rsdn.SmartApp.ExtensibilityException">
+            <summary>
+            Исключение, возбуждаемое в процессе подключения расширений.
+            </summary>
+        </member>
+        <member name="M:Rsdn.SmartApp.ExtensibilityException.#ctor">
+            <summary>
+            Инициализирует экземпляр.
+            </summary>
+        </member>
+        <member name="M:Rsdn.SmartApp.ExtensibilityException.#ctor(System.String)">
+            <summary>
+            Инициализирует экземпляр значением сообщения.
+            </summary>
+        </member>
+        <member name="M:Rsdn.SmartApp.ExtensibilityException.#ctor(System.String,System.Exception)">
+            <summary>
+            Инициализирует экземпляр значением сообщения и вложенным исключением.
+            </summary>
+        </member>
+        <member name="M:Rsdn.SmartApp.ExtensibilityException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+            Конструктор для сериализации.
+            Смотри <see cref="M:System.Exception.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)"/>
             </summary>
         </member>
         <member name="T:Rsdn.SmartApp.ExtensionAttachmentContext">
@@ -1189,129 +1068,250 @@
             Returns true, if scan on assembly level.
             </summary>
         </member>
-        <member name="T:Rsdn.SmartApp.EventHandler`1">
+        <member name="T:Rsdn.SmartApp.IExtensionAttachmentStrategy">
             <summary>
-            Обработчик события без аргументов.
+            Стратегия подключения расширения.
             </summary>
         </member>
-        <member name="T:Rsdn.SmartApp.EventHandler`2">
+        <member name="M:Rsdn.SmartApp.IExtensionAttachmentStrategy.Attach(Rsdn.SmartApp.ExtensionAttachmentContext,System.Reflection.CustomAttributeData)">
             <summary>
-            Обработчик события с аргументами.
+            Attach extension.
             </summary>
         </member>
-        <member name="T:Rsdn.SmartApp.Configuration.ConfigSectionAttribute">
+        <member name="T:Rsdn.SmartApp.IExtensionManager">
             <summary>
-            Атрибут, поменчающий секцию конфигурации.
+            Extension manager contract.
             </summary>
         </member>
-        <member name="M:Rsdn.SmartApp.Configuration.ConfigSectionAttribute.#ctor(System.String,System.String)">
+        <member name="M:Rsdn.SmartApp.IExtensionManager.Scan(Rsdn.SmartApp.IExtensionAttachmentStrategy,System.Reflection.Assembly[])">
             <summary>
-            Инициализирует экземпляр. 
+            Scan assembly.
             </summary>
         </member>
-        <member name="M:Rsdn.SmartApp.Configuration.ConfigSectionAttribute.CreateSerializer(System.Type)">
+        <member name="M:Rsdn.SmartApp.IExtensionManager.Scan(Rsdn.SmartApp.IExtensionAttachmentStrategy,System.Type[])">
             <summary>
-            Создать сериалайзер.
+            Scan specific type.
             </summary>
         </member>
-        <member name="P:Rsdn.SmartApp.Configuration.ConfigSectionAttribute.Name">
+        <member name="T:Rsdn.SmartApp.ExtensionStrategyFactoryAttribute">
             <summary>
-            Имя секции.
+            Атрибут, помечающий реализацию <see cref="T:Rsdn.SmartApp.IExtensionStrategyFactory"/>
             </summary>
         </member>
-        <member name="P:Rsdn.SmartApp.Configuration.ConfigSectionAttribute.Namespace">
+        <member name="T:Rsdn.SmartApp.ExtensionStrategyFactoryInfo">
             <summary>
-            Пространство имен.
+            Информация о зарегистрированной фабрике стратегий.
             </summary>
         </member>
-        <member name="P:Rsdn.SmartApp.Configuration.ConfigSectionAttribute.AllowMerge">
+        <member name="M:Rsdn.SmartApp.ExtensionStrategyFactoryInfo.#ctor(System.Type)">
             <summary>
-            Признак допустимости слияния секций.
+            Инициализирует экземпляр.
             </summary>
         </member>
-        <member name="T:Rsdn.SmartApp.CommandLine.CommandQuantifier">
+        <member name="P:Rsdn.SmartApp.ExtensionStrategyFactoryInfo.Type">
             <summary>
-            Command quantifier.
+            Тип фабрики.
             </summary>
         </member>
-        <member name="F:Rsdn.SmartApp.CommandLine.CommandQuantifier.ZeroOrOne">
+        <member name="P:Rsdn.SmartApp.ExtensionStrategyFactoryInfo.Rsdn#SmartApp#IKeyedElementInfo{System#Type}#Key">
             <summary>
-            Single optional command.
+            Ключ.
             </summary>
         </member>
-        <member name="F:Rsdn.SmartApp.CommandLine.CommandQuantifier.ZeroOrMultiple">
+        <member name="T:Rsdn.SmartApp.IExtensionStrategyFactory">
             <summary>
-            Any command quantity.
+            Интерфейс класса, предоставляющего специфические стратегии.
             </summary>
         </member>
-        <member name="F:Rsdn.SmartApp.CommandLine.CommandQuantifier.One">
+        <member name="M:Rsdn.SmartApp.IExtensionStrategyFactory.CreateStrategies(System.IServiceProvider)">
             <summary>
-            One and only one command.
+            Создает стратегии.
             </summary>
         </member>
-        <member name="F:Rsdn.SmartApp.CommandLine.CommandQuantifier.OneOrMultiple">
+        <member name="T:Rsdn.SmartApp.InvalidExtensionTypeException">
             <summary>
-            At least one command.
+            Исключение, возбуждаемое при неверном типе расширения.
             </summary>
         </member>
-        <member name="T:Rsdn.SmartApp.IActivePartManager">
+        <member name="M:Rsdn.SmartApp.InvalidExtensionTypeException.#ctor">
             <summary>
-            Менеджер active parts.
+            Инициализирует экземпляр.
             </summary>
         </member>
-        <member name="M:Rsdn.SmartApp.IActivePartManager.GetPartInstance(System.Type)">
+        <member name="M:Rsdn.SmartApp.InvalidExtensionTypeException.#ctor(System.String)">
             <summary>
-            Получить экземпляр active part.
+            Инициализирует экземпляр значением сообщения.
             </summary>
         </member>
-        <member name="M:Rsdn.SmartApp.IActivePartManager.Activate">
+        <member name="M:Rsdn.SmartApp.InvalidExtensionTypeException.#ctor(System.String,System.Exception)">
             <summary>
-            Activate all registered parts.
+            Инициализирует экземпляр значением сообщения и вложенным исключением.
             </summary>
         </member>
-        <member name="M:Rsdn.SmartApp.IActivePartManager.Passivate">
+        <member name="M:Rsdn.SmartApp.InvalidExtensionTypeException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
             <summary>
-            Passivate all active parts.
+            Конструктор для сериализации.
+            Смотри <see cref="M:System.Exception.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)"/>
             </summary>
         </member>
-        <member name="P:Rsdn.SmartApp.IActivePartManager.State">
+        <member name="T:Rsdn.SmartApp.IRegElementsService`1">
             <summary>
-            Current state.
+            Сервис регистрации элементов.
             </summary>
         </member>
-        <member name="T:Rsdn.SmartApp.ActivePartAttribute">
+        <member name="M:Rsdn.SmartApp.IRegElementsService`1.Register(`0)">
             <summary>
-            Помечает active part класс.
+            Зарегистрировать элемент.
             </summary>
         </member>
-        <member name="T:Rsdn.SmartApp.IEventBroker">
+        <member name="M:Rsdn.SmartApp.IRegElementsService`1.GetRegisteredElements">
             <summary>
-            Брокер событий.
+            Получить список зарегистрированных элементов.
             </summary>
         </member>
-        <member name="M:Rsdn.SmartApp.IEventBroker.Fire``1(System.String,``0)">
+        <member name="T:Rsdn.SmartApp.IRegKeyedElementsService`2">
             <summary>
-            Оповестить подписчиков о событии.
+            Сервис регистрации именованных элементов.
             </summary>
         </member>
-        <member name="M:Rsdn.SmartApp.IEventBroker.Subscribe``1(System.String,System.IObserver{``0})">
+        <member name="M:Rsdn.SmartApp.IRegKeyedElementsService`2.ContainsElement(`0)">
             <summary>
-            Подписаться на событие.
+            Проверяет, есть ли зарегистрированный элемент с указанным именем.
             </summary>
         </member>
-        <member name="T:Rsdn.SmartApp.CommandLine.ICommandLineRulesProvider">
+        <member name="M:Rsdn.SmartApp.IRegKeyedElementsService`2.GetElement(`0)">
             <summary>
-            Command line rules provider.
+            Возвращает элемент по его ключу.
             </summary>
         </member>
-        <member name="M:Rsdn.SmartApp.CommandLine.ICommandLineRulesProvider.GetCommands">
+        <member name="T:Rsdn.SmartApp.InstancingCustomParam">
             <summary>
-            Returns command rules.
+            Описатель дополнительных параметров конструктора.
             </summary>
         </member>
-        <member name="M:Rsdn.SmartApp.CommandLine.ICommandLineRulesProvider.GetOptions">
+        <member name="M:Rsdn.SmartApp.InstancingCustomParam.#ctor(System.String,System.Object)">
             <summary>
-            Returns option rules.
+            Инициализирует экземпляр опциональным параметром.
+            </summary>
+        </member>
+        <member name="M:Rsdn.SmartApp.InstancingCustomParam.#ctor(System.String,System.Object,System.Boolean)">
+            <summary>
+            Инициализирует экземпляр.
+            </summary>
+        </member>
+        <member name="P:Rsdn.SmartApp.InstancingCustomParam.Name">
+            <summary>
+            Имя параметра.
+            </summary>
+        </member>
+        <member name="P:Rsdn.SmartApp.InstancingCustomParam.Value">
+            <summary>
+            Значение параметра.
+            </summary>
+        </member>
+        <member name="P:Rsdn.SmartApp.InstancingCustomParam.Optional">
+            <summary>
+            Опциональный.
+            </summary>
+        </member>
+        <member name="T:Rsdn.SmartApp.DefaultConstructorAttribute">
+            <summary>
+            Помечает конструктор по умолчанию, если класс содержит несколько публичных конструкторов.
+            </summary>
+        </member>
+        <member name="T:Rsdn.SmartApp.IServiceDataManager">
+            <summary>
+            Менеджер персистентных служебных данных.
+            </summary>
+        </member>
+        <member name="M:Rsdn.SmartApp.IServiceDataManager.GetServiceDataInstance``1">
+            <summary>
+            Получить экземпляр сервисных данных.
+            </summary>
+        </member>
+        <member name="M:Rsdn.SmartApp.IServiceDataManager.ResetCache">
+            <summary>
+            Сбросить кеш экземпляров.
+            </summary>
+        </member>
+        <member name="E:Rsdn.SmartApp.IServiceDataManager.PropertyChanged">
+            <summary>
+            Вызывается при изменении свойства в данных.
+            </summary>
+        </member>
+        <member name="T:Rsdn.SmartApp.PropertyChangedHandler">
+            <summary>
+            Обработчки события изменеия свойства.
+            </summary>
+        </member>
+        <member name="T:Rsdn.SmartApp.ExpectServiceAttribute">
+            <summary>
+            Помечает поля, ожидающие сервиса.
+            </summary>
+        </member>
+        <member name="M:Rsdn.SmartApp.ExpectServiceAttribute.#ctor">
+            <summary>
+            Инициализирует экземпляр.
+            </summary>
+        </member>
+        <member name="P:Rsdn.SmartApp.ExpectServiceAttribute.Required">
+            <summary>
+            Признак обязательности наличия сервиса.
+            </summary>
+        </member>
+        <member name="T:Rsdn.SmartApp.IServiceRegistrationCookie">
+            <summary>
+            Cookie, описывающий опубликованный сервис.
+            </summary>
+        </member>
+        <member name="T:Rsdn.SmartApp.IServicePublisher">
+            <summary>
+            Интерфейс сервиса, позволяющего публиковать сервисы.
+            </summary>
+        </member>
+        <member name="M:Rsdn.SmartApp.IServicePublisher.Publish(System.Type,System.Object)">
+            <summary>
+            Публикует экземпляр сервиса типа Т.
+            </summary>
+        </member>
+        <member name="M:Rsdn.SmartApp.IServicePublisher.Publish(System.Type,Rsdn.SmartApp.ServiceCreator)">
+            <summary>
+            Публикует сервис типа Т с отложенной инициализацией.
+            </summary>
+        </member>
+        <member name="M:Rsdn.SmartApp.IServicePublisher.Unpublish(Rsdn.SmartApp.IServiceRegistrationCookie)">
+            <summary>
+            Убирает публикацию сервиса.
+            </summary>
+        </member>
+        <member name="T:Rsdn.SmartApp.ServiceCreator">
+            <summary>
+            Делегат, создающий сервис.
+            </summary>
+        </member>
+        <member name="T:Rsdn.SmartApp.ServiceNotFoundException">
+            <summary>
+            Выбрасывается при отсутствии требуемого сервиса.
+            </summary>
+        </member>
+        <member name="M:Rsdn.SmartApp.ServiceNotFoundException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+            Для сериализации.
+            </summary>
+        </member>
+        <member name="M:Rsdn.SmartApp.ServiceNotFoundException.#ctor">
+            <summary>
+            Инициализирует экземпляр.
+            </summary>
+        </member>
+        <member name="M:Rsdn.SmartApp.ServiceNotFoundException.#ctor(System.String)">
+            <summary>
+            Инициализирует экземпляр с указанием сообщения.
+            </summary>
+        </member>
+        <member name="M:Rsdn.SmartApp.ServiceNotFoundException.#ctor(System.Type)">
+            <summary>
+            Инициализирует экземпляр с указанием типа отсутствующего сервиса.
             </summary>
         </member>
     </members>
