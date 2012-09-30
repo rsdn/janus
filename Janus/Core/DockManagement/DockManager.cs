@@ -105,7 +105,9 @@ namespace Rsdn.Janus
 				}
 				catch (Exception ex)
 				{
-					_provider.GetRequiredService<ILogger>().LogError(ex.Message);
+					var logger = _provider.GetService<ILogger>();
+					if (logger != null)
+						logger.LogError(ex.Message);
 					DefaultInit();
 				}
 			else
