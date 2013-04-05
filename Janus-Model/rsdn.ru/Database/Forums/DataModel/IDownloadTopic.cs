@@ -5,9 +5,9 @@ namespace Rsdn.Janus.DataModel
 	[Table("download_topics")]
 	public interface IDownloadTopic
 	{
-		int ID { get; }
-		string Source { get; }
-		int MessageID { get; }
-		string Hint { get; }
+		[Column] int ID { get; }
+		[Column] string Source { get; }
+		[Column] int MessageID { get; }
+		[Column] string Hint { get; }
 	}
 }

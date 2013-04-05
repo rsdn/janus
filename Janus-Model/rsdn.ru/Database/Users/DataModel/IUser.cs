@@ -8,14 +8,19 @@ namespace Rsdn.Janus.DataModel
 		[Column("uid")]
 		int ID { get; }
 
+		[Column]
 		string HomePage { get; }
 
+		[Column]
 		string Origin { get; }
 
+		[Column]
 		string RealName { get; }
 
+		[Column]
 		string Spec { get; }
 
+		[Column]
 		UserClass UserClass { get; }
 
 		[Column("username")]
@@ -24,6 +29,7 @@ namespace Rsdn.Janus.DataModel
 		[Column("usernick")]
 		string Nick { get; }
 
+		[Column]
 		string WhereFrom { get; }
 	}
 }

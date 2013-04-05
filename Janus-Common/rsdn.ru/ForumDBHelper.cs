@@ -13,7 +13,7 @@ namespace Rsdn.Janus
 	public static class ForumDBHelper
 	{
 		#region ForumMessage helpers
-		public static Table<IForumMessage> Messages([NotNull] this IDataContext db)
+		public static ITable<IForumMessage> Messages([NotNull] this IDataContext db)
 		{
 			return db.GetTable<IForumMessage>();
 		}
@@ -38,7 +38,7 @@ namespace Rsdn.Janus
 					.FirstOrDefault();
 		}
 
-		public static Table<ITopicInfo> TopicInfos([NotNull] this IDataContext db)
+		public static ITable<ITopicInfo> TopicInfos([NotNull] this IDataContext db)
 		{
 			return db.GetTable<ITopicInfo>();
 		}
@@ -51,7 +51,7 @@ namespace Rsdn.Janus
 			return db.GetTable(predicate);
 		}
 
-		public static Table<IViolation> Violations([NotNull] this IDataContext db)
+		public static ITable<IViolation> Violations([NotNull] this IDataContext db)
 		{
 			return db.GetTable<IViolation>();
 		}
@@ -65,7 +65,7 @@ namespace Rsdn.Janus
 		#endregion
 
 		#region Forum helpers
-		public static Table<IServerForum> ServerForums([NotNull] this IDataContext db)
+		public static ITable<IServerForum> ServerForums([NotNull] this IDataContext db)
 		{
 			return db.GetTable<IServerForum>();
 		}
@@ -77,7 +77,7 @@ namespace Rsdn.Janus
 			return db.GetTable(predicate);
 		}
 
-		public static Table<ISubscribedForum> SubscribedForums([NotNull] this IDataContext db)
+		public static ITable<ISubscribedForum> SubscribedForums([NotNull] this IDataContext db)
 		{
 			return db.GetTable<ISubscribedForum>();
 		}
@@ -91,7 +91,7 @@ namespace Rsdn.Janus
 		#endregion
 
 		#region Moderatorial helpers
-		public static Table<IModeratorial> Moderatorials([NotNull] this IDataContext db)
+		public static ITable<IModeratorial> Moderatorials([NotNull] this IDataContext db)
 		{
 			return db.GetTable<IModeratorial>();
 		}
@@ -124,7 +124,7 @@ namespace Rsdn.Janus
 		#endregion
 
 		#region Rate helpers
-		public static Table<IRate> Rates([NotNull] this IDataContext db)
+		public static ITable<IRate> Rates([NotNull] this IDataContext db)
 		{
 			return db.GetTable<IRate>();
 		}

@@ -29,6 +29,7 @@ namespace Rsdn.Janus.DataModel
 		[Association(ThisKey = "ForumID", OtherKey = "ID", CanBeNull = true)]
 		IServerForum ServerForum { get; }
 
+		[Column]
 		string Subject { get; }
 
 		[Column("dte")]
@@ -43,23 +44,31 @@ namespace Rsdn.Janus.DataModel
 		[Column("uclass")]
 		UserClass UserClass { get; }
 
+		[Column]
 		string UserNick { get; }
 
+		[Column]
 		string Name { get; }
 
 		[Column("article_id")]
 		int? ArticleId { get; }
 
+		[Column]
 		DateTime? LastModerated { get; }
 
+		[Column]
 		bool Closed { get; }
 
+		[Column]
 		string Message { get; }
 
+		[Column]
 		bool IsMarked { get; }
 
+		[Column]
 		bool IsRead { get; }
 
+		[Column]
 		bool ReadReplies { get; }
 
 		[Association(ThisKey = "ID", OtherKey = "MessageID")]

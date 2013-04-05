@@ -47,7 +47,7 @@ namespace Rsdn.Janus
 			return AnonymousDisplayName;
 		}
 
-		public static Table<IUser> Users([NotNull] this IDataContext db)
+		public static ITable<IUser> Users([NotNull] this IDataContext db)
 		{
 			if (db == null) throw new ArgumentNullException("db");
 			return db.GetTable<IUser>();

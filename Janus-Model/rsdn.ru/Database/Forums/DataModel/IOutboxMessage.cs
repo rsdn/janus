@@ -22,13 +22,16 @@ namespace Rsdn.Janus.DataModel
 		[Column("dte")]
 		DateTime Date { get; }
 
+		[Column]
 		string Subject { get; }
 
 		[Column("message")]
 		string Body { get; }
 
+		[Column]
 		string Tagline { get; }
 
+		[Column]
 		bool Hold { get; }
 	}
 }

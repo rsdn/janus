@@ -5,6 +5,7 @@ namespace Rsdn.Janus.DataModel
 	[Table("rate_outbox")]
 	public interface IOutboxRate
 	{
+		[Column] 
 		int ID { get; }
 
 		[Column("mid")]

@@ -57,7 +57,7 @@ namespace Rsdn.Janus
 			return source.SplitToSeries(provider.MaxInClauseElements());
 		}
 
-		public static Table<IVariable> Vars([NotNull] this IDataContext db)
+		public static ITable<IVariable> Vars([NotNull] this IDataContext db)
 		{
 			if (db == null) throw new ArgumentNullException("db");
 			return db.GetTable<IVariable>();

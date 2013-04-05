@@ -7,6 +7,7 @@ namespace Rsdn.Janus.DataModel
 	[Table("rating")]
 	public interface IRate
 	{
+		[Column]
 		int ID { get; }
 
 		[Column("dte")]

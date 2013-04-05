@@ -22,7 +22,7 @@ namespace Rsdn.Janus
 
 		#region Messages
 		[NotNull]
-		public static Table<DataModel.IOutboxMessage> OutboxMessages([NotNull] this IDataContext db)
+		public static ITable<DataModel.IOutboxMessage> OutboxMessages([NotNull] this IDataContext db)
 		{
 			return db.GetTable<DataModel.IOutboxMessage>();
 		}
@@ -60,7 +60,7 @@ namespace Rsdn.Janus
 
 		#region Rates
 		[NotNull]
-		public static Table<DataModel.IOutboxRate> OutboxRates(
+		public static ITable<DataModel.IOutboxRate> OutboxRates(
 			[NotNull] this IDataContext db)
 		{
 			return db.GetTable<DataModel.IOutboxRate>();
@@ -77,7 +77,7 @@ namespace Rsdn.Janus
 
 		#region Download topics
 		[NotNull]
-		public static Table<DataModel.IDownloadTopic> DownloadTopics([NotNull] this IDataContext db)
+		public static ITable<DataModel.IDownloadTopic> DownloadTopics([NotNull] this IDataContext db)
 		{
 			return db.GetTable<DataModel.IDownloadTopic>();
 		}

@@ -7,9 +7,9 @@ namespace Rsdn.Janus.DataModel
 	[Table("violations")]
 	public interface IViolation
 	{
-		int MessageID { get; }
-		string Reason { get; }
-		PenaltyType PenaltyType { get; }
-		DateTime Create { get; }
+		[Column] int MessageID { get; }
+		[Column] string Reason { get; }
+		[Column] PenaltyType PenaltyType { get; }
+		[Column] DateTime Create { get; }
 	}
 }
