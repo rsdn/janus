@@ -1,8 +1,5 @@
-﻿using BLToolkit.TypeBuilder;
-
-namespace Rsdn.Janus
+﻿namespace Rsdn.Janus
 {
-	[AutoImplementInterface]
 	public interface IUserForumMessagesStats
 	{
 		int ForumId { get; }

@@ -1,10 +1,9 @@
 ﻿using System;
 using System.Linq;
 using System.Linq.Expressions;
-
-using BLToolkit.Data.Linq;
-
 using JetBrains.Annotations;
+
+using LinqToDB;
 
 using Rsdn.Janus.Database;
 using Rsdn.Janus.DataModel;
@@ -76,7 +75,7 @@ namespace Rsdn.Janus
 					.FirstOrDefault();
 		}
 
-		[MethodExpression("DisplayNameExpression")]
+		[ExpressionMethod("DisplayNameExpression")]
 		public static string DisplayName(this IUser user)
 		{
 			throw new NotSupportedException();

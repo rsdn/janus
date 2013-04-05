@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections;
 
-using BLToolkit.Mapping;
+using LinqToDB.Mapping;
 
 using Rsdn.TreeGrid;
 using Rsdn.SmartApp;
@@ -29,11 +29,11 @@ namespace Rsdn.Janus
 
 		public int FolderId { get; set; }
 
-		[MapField("MsgId")]
+		[Column("MsgId")]
 		[Nullable]
 		public int MessageId { get; set; }
 
-		[MapField("Url")]
+		[Column("Url")]
 		[Nullable]
 		public string Url { get; set; }
 

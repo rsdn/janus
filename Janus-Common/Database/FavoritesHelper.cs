@@ -2,9 +2,10 @@
 using System.Linq;
 using System.Linq.Expressions;
 
-using BLToolkit.Data.Linq;
-
 using JetBrains.Annotations;
+
+using LinqToDB;
+using LinqToDB.Linq;
 
 using Rsdn.Janus.DataModel;
 

@@ -1,12 +1,11 @@
-﻿using BLToolkit.DataAccess;
-using BLToolkit.Mapping;
+﻿using LinqToDB.Mapping;
 
 namespace Rsdn.Janus.DataModel
 {
-	[TableName("users")]
+	[Table("users")]
 	public interface IUser
 	{
-		[MapField("uid")]
+		[Column("uid")]
 		int ID { get; }
 
 		string HomePage { get; }
@@ -19,10 +18,10 @@ namespace Rsdn.Janus.DataModel
 
 		UserClass UserClass { get; }
 
-		[MapField("username")]
+		[Column("username")]
 		string Name { get; }
 
-		[MapField("usernick")]
+		[Column("usernick")]
 		string Nick { get; }
 
 		string WhereFrom { get; }

@@ -1,14 +1,13 @@
-﻿using BLToolkit.DataAccess;
-using BLToolkit.Mapping;
+﻿using LinqToDB.Mapping;
 
 namespace Rsdn.Janus.DataModel
 {
-	[TableName("favorites_folders")]
+	[Table("favorites_folders")]
 	public interface IFavoritesFolder
 	{
 		int ID { get; }
 		string Name { get; }
-		[MapField("pid")]
+		[Column("pid")]
 		int ParentID { get; }
 		string Comment { get; }
 	}

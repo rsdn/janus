@@ -1,10 +1,10 @@
 ﻿using System;
 
-using BLToolkit.DataAccess;
+using LinqToDB.Mapping;
 
 namespace Rsdn.Janus.DataModel
 {
-	[TableName("violations")]
+	[Table("violations")]
 	public interface IViolation
 	{
 		int MessageID { get; }

@@ -2,7 +2,8 @@
 using System.Data.Common;
 using System.Data.SqlClient;
 
-using BLToolkit.Data.DataProvider;
+using LinqToDB.DataProvider;
+using LinqToDB.DataProvider.SqlServer;
 
 namespace Rsdn.Janus.Mssql
 {
@@ -64,9 +65,9 @@ namespace Rsdn.Janus.Mssql
 		/// <summary>
 		/// Создать провайдер для BLToolkit.
 		/// </summary>
-		public DataProviderBase CreateDataProvider()
+		public IDataProvider CreateDataProvider()
 		{
-			return new SqlDataProvider();
+			return new SqlServerDataProvider("mssql", LinqToDB.DataProvider.SqlServer.SqlServerVersion.v2005);
 		}
 
 		/// <summary>

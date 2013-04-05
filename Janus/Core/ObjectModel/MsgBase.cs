@@ -5,8 +5,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Text.RegularExpressions;
 
-using BLToolkit.Mapping;
-using BLToolkit.Reflection;
+using LinqToDB.Mapping;
 
 using Rsdn.TreeGrid;
 using Rsdn.SmartApp;
@@ -17,7 +16,7 @@ namespace Rsdn.Janus
 	/// Базовый класс для сообщения форума.
 	/// </summary>
 	
-public abstract class MsgBase : IMsg, ICollection<MsgBase>, IGetData, ISupportMapping, IForumMessageInfo
+public abstract class MsgBase : IMsg, ICollection<MsgBase>, IGetData
 	{
 		private const string _reSubj = "…{0}: {1}";
 		private static readonly Regex _reRx =
@@ -49,41 +48,41 @@ public abstract class MsgBase : IMsg, ICollection<MsgBase>, IGetData, ISupportMa
 			get { return _serviceProvider; }
 		}
 
-		[MapField("mid")]
+		[Column("mid")]
 		public int ID { get; set; }
-		[MapField("pid")]
+		[Column("pid")]
 		public int ParentID { get; set; }
-		[MapField("gid")]
+		[Column("gid")]
 		public int ForumID { get; set; }
-		[MapField("name")]
+		[Column("name")]
 		public string Name { get; set; }
-		[MapField("lastmoderated")]
+		[Column("lastmoderated")]
 		public DateTime? LastModerated { get; protected set; }
-		[MapField("dte")]
+		[Column("dte")]
 		public DateTime Date { get; set; }
-		[MapField("smiles")]
+		[Column("smiles")]
 		// ReSharper disable MemberCanBePrivate.Global
 		public int Smiles { get; set; } // Количество :)г текущего сообщения
-		[MapField("agree")]
+		[Column("agree")]
 		public int Agrees { get; set; } // Количество + в текущем сообщении.
-		[MapField("disagree")]
+		[Column("disagree")]
 		public int Disagrees { get; set; } // Количество - в текущем сообщении.
-		[MapField("rate"), Nullable]
+		[Column("rate"), Nullable]
 		public int Rating { get; set; } // Рейтинг текущего сообщения
 		// ReSharper restore MemberCanBePrivate.Global
-		[MapField("moders")]
+		[Column("moders")]
 		protected int Moderatorials { private get; set; }	// Количество бомбочек текущего сообщения
-		[MapField("a_agree")]
+		[Column("a_agree")]
 		protected int RepliesAgree { private get; set; }
 
 		IForumMessageInfo IForumMessageInfo.Topic
 		{
-			get { return (IForumMessageInfo) Topic; }
+			get { return Topic; }
 		}
 
-		[MapField("a_count")]
+		[Column("a_count")]
 		public int RepliesCount { get; set; }
-		[MapField("a_unread")]
+		[Column("a_unread")]
 		public int RepliesUnread { get; protected set; }
 
 		IForumMessageInfo IForumMessageInfo.Parent
@@ -91,38 +90,38 @@ public abstract class MsgBase : IMsg, ICollection<MsgBase>, IGetData, ISupportMa
 			get { return Parent; }
 		}
 
-		[MapField("a_rate")]
+		[Column("a_rate")]
 		protected int RepliesRate { private get; set; }			// Общий ретинг по дочерним сообщениям.
-		[MapField("a_smiles")]
+		[Column("a_smiles")]
 		protected int RepliesSmiles { private get; set; }		// Количество :) в дочерних сообщениях.
-		[MapField("a_disagree")]
+		[Column("a_disagree")]
 		protected int RepliesDisagree { private get; set; }		// Количество - в дочерних сообщениях.
-		[MapField("a_me_unread")]
+		[Column("a_me_unread")]
 		public int RepliesToMeUnread { get; protected set; } // Количество ответов текущему пользователю в дочерних сообщениях.
-		[MapField("a_marked")]
+		[Column("a_marked")]
 		public int RepliesMarked { get; protected set; } // Количество помеченых ответов на сообщение.
-		[MapField("a_moders")]
+		[Column("a_moders")]
 		protected int RepliesModeratorials { private get; set; }	// Количество бомбочек в дочерних сообщениях.
 
-		[MapField("isread"), NullValue(true)]
+		[Column("isread")]
 		public bool IsRead { get; set; }
-		[MapField("tid")]
+		[Column("tid")]
 		public int TopicIDInternal { protected get; set; }
 
-		[MapField("subject"), NullValue("<Не задана>")]
+		[Column("subject")]
 		public string Subject { get; set; }
-		[MapField("article_id"), NullValue(-1)]
+		[Column("article_id")]
 		public int? ArticleId { get; set; }
-		[MapField("ismarked"), NullValue(false)]
+		[Column("ismarked")]
 		public bool IsMarked { get; set; }
-		[MapField("uclass"), NullValue((short)-1)]
+		[Column("uclass")]
 		public short UserClass { get; set; }
-		[MapField("uid"), NullValue(-2)]
+		[Column("uid")]
 		public int UserID { get; set; }
-		[MapField("readreplies"), NullValue(false)]
+		[Column("readreplies")]
 		public bool ReadReplies { get; set; }
 
-		[MapField("closed"), NullValue(false)]
+		[Column("closed")]
 		public bool Closed { get; protected set; }
 
 		#region IForumMessageHeader Members
@@ -132,40 +131,40 @@ public abstract class MsgBase : IMsg, ICollection<MsgBase>, IGetData, ISupportMa
 		}
 		#endregion
 
-		[MapField("usernick"), Nullable]
+		[Column("usernick"), Nullable]
 		public string UserNick { get; set; }
 
-		[MapIgnore]
+		[NotColumn]
 		public MsgBase Parent { get; protected set; }
 
 		// Есть ли помеченные ответы.
-		[MapIgnore]
+		[NotColumn]
 		public bool Marked { get { return IsMarked; } } // Есть ли помеченные ответы.
-		[MapIgnore]
+		[NotColumn]
 		public bool HasRepliesUnread { get { return RepliesUnread > 0; } } // Еслить ли нечитанные ответы на данное сообщение.
 
-		[MapIgnore]
+		[NotColumn]
 		public IMsg Topic { get { return GetTopic(); } } // Возвращает корневое сообщение (тему).
-		[MapIgnore]
+		[NotColumn]
 		public int TopicID { get { return GetTopicId(); } } // Возвращает ID корневого сообщения (темы).
 
-		[MapIgnore]
+		[NotColumn]
 		protected bool IsChild { private get; set; }
 
-		[MapIgnore]
+		[NotColumn]
 		private string DisplaySubject { get; set; }
 
 		/// <summary>
 		/// Сообщение помечено как не прочитанное.
 		/// </summary>
-		[MapIgnore]
+		[NotColumn]
 		public bool IsUnread
 		{ // Состояние этого поля храним во флагах.
 			get { return (_flags & NodeFlags.Highlight) != 0; }
 		}
 
 		/// <summary>Текст сообщения.</summary>
-		[MapIgnore]
+		[NotColumn]
 		public string Body
 		{
 			get { return DatabaseManager.GetMessageBody(ServiceProvider, ID); }
@@ -495,10 +494,6 @@ public abstract class MsgBase : IMsg, ICollection<MsgBase>, IGetData, ISupportMa
 			return ID + (Subject == null ? " <<root>>" : " '" + Subject + "'");
 		}
 
-		public void BeginMapping(InitContext initContext)
-		{
-		}
-
 		private static bool IsAutoReSubj(string subject, string parentSubject)
 		{
 			var match = _reRx.Match(subject);
@@ -514,7 +509,7 @@ public abstract class MsgBase : IMsg, ICollection<MsgBase>, IGetData, ISupportMa
 
 		private int _reNum;
 
-		public void EndMapping(InitContext initContext)
+		public void EndMapping()
 		{
 			UserNick = UserNick.ToUserDisplayName((UserClass)UserClass);
 

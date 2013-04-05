@@ -2,9 +2,9 @@
 using System.Linq;
 using System.Linq.Expressions;
 
-using BLToolkit.Data.Linq;
-
 using JetBrains.Annotations;
+
+using LinqToDB;
 
 using Rsdn.Janus.DataModel;
 
@@ -103,7 +103,7 @@ namespace Rsdn.Janus
 			return db.GetTable(predicate);
 		}
 
-		[MethodExpression("ActiveModeratorialCountExpression")]
+		[ExpressionMethod("ActiveModeratorialCountExpression")]
 		public static int ActiveModeratorialCount(this IForumMessage message)
 		{
 			throw new NotSupportedException();
@@ -136,7 +136,7 @@ namespace Rsdn.Janus
 			return db.GetTable(predicate);
 		}
 
-		[MethodExpression("RatingExpression")]
+		[ExpressionMethod("RatingExpression")]
 		public static int Rating(this IForumMessage message)
 		{
 			throw new NotSupportedException();
@@ -154,7 +154,7 @@ namespace Rsdn.Janus
 						.Sum(r => (short)r.RateType * r.Multiplier));
 		}
 
-		[MethodExpression("SmileCountExpression")]
+		[ExpressionMethod("SmileCountExpression")]
 		public static int SmileCount(this IForumMessage message)
 		{
 			throw new NotSupportedException();
@@ -168,7 +168,7 @@ namespace Rsdn.Janus
 				(m => m.Rates.Count(r => r.RateType == MessageRates.Smile));
 		}
 
-		[MethodExpression("AgreeCountExpression")]
+		[ExpressionMethod("AgreeCountExpression")]
 		public static int AgreeCount(this IForumMessage message)
 		{
 			throw new NotSupportedException();
@@ -182,7 +182,7 @@ namespace Rsdn.Janus
 				(m => m.Rates.Count(r => r.RateType == MessageRates.Agree));
 		}
 
-		[MethodExpression("DisagreeCountExpression")]
+		[ExpressionMethod("DisagreeCountExpression")]
 		public static int DisagreeCount(this IForumMessage message)
 		{
 			throw new NotSupportedException();

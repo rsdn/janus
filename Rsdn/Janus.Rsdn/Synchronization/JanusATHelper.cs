@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Linq;
 
-using BLToolkit.Data.Linq;
+using LinqToDB;
 
 namespace Rsdn.Janus.AT
 {

@@ -1,6 +1,6 @@
 ﻿using System;
 
-using BLToolkit.Mapping;
+using LinqToDB.Mapping;
 
 namespace Rsdn.Janus
 {
@@ -31,21 +31,21 @@ namespace Rsdn.Janus
 			_message = msg;
 		}
 
-		[MapField("mid")]
+		[Column("mid")]
 		public int ID { get; set; }
 
-		[MapField("gid")]
+		[Column("gid")]
 		public int ForumId { get; set; }
 
-		[MapField("reply")]
+		[Column("reply")]
 		public int ReplyId { get; set; }
 
-		[MapField("hold")]
+		[Column("hold")]
 		public bool Hold { get; set; }
 
 		private string _subject = String.Empty;
 
-		[MapField("subject")]
+		[Column("subject")]
 		public string Subject
 		{
 			get { return _subject; }
@@ -54,7 +54,7 @@ namespace Rsdn.Janus
 
 		private string _message = String.Empty;
 
-		[MapField("message")]
+		[Column("message")]
 		public string Message
 		{
 			get { return _message; }

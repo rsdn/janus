@@ -107,7 +107,7 @@ namespace Rsdn.Janus
 					.Cast<MsgBase>()
 					.ToList();
 				foreach (var msg in msgs)
-					msg.EndMapping(null);
+					msg.EndMapping();
 			}
 		}
 
@@ -330,7 +330,7 @@ namespace Rsdn.Janus
 					m.RepliesModeratorials = tuple.RepliesModeratorials;
 
 					m._partiallyLoaded = false;
-					m.EndMapping(null);
+					m.EndMapping();
 					i++;
 				}
 			}
@@ -442,7 +442,7 @@ namespace Rsdn.Janus
 						.Cast<MsgBase>()
 						.ToList();
 				foreach (var msg in msgs)
-					msg.EndMapping(null);
+					msg.EndMapping();
 				return msgs;
 			}
 		}

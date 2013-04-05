@@ -34,26 +34,28 @@
 			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
 			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
 			this._syncTaskList = new System.Windows.Forms.ListView();
-			this._nameCol = new System.Windows.Forms.ColumnHeader();
-			this._startTimeCol = new System.Windows.Forms.ColumnHeader();
-			this._durationCol = new System.Windows.Forms.ColumnHeader();
-			this._statusCol = new System.Windows.Forms.ColumnHeader();
+			this._nameCol = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+			this._startTimeCol = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+			this._durationCol = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+			this._statusCol = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
 			this._splitContainer = new System.Windows.Forms.SplitContainer();
 			this._compressPicture = new System.Windows.Forms.PictureBox();
 			this._progressLabel = new System.Windows.Forms.Label();
 			this._progressPie = new Rsdn.Janus.Framework.ProgressPieControl();
 			this._errorsGroup = new System.Windows.Forms.GroupBox();
 			this._errorsGrid = new System.Windows.Forms.DataGridView();
-			this._errTypeCol = new System.Windows.Forms.DataGridViewImageColumn();
-			this._errTaskCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this._errTextCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this._iconsImages = new System.Windows.Forms.ImageList(this.components);
 			this._pinCheck = new System.Windows.Forms.CheckBox();
 			this._cancelButton = new System.Windows.Forms.Button();
 			this._refreshDurationTimer = new System.Windows.Forms.Timer(this.components);
 			this._copyButton = new System.Windows.Forms.Button();
+			this._errTypeCol = new System.Windows.Forms.DataGridViewImageColumn();
+			this._errTaskCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this._errTextCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this._errLinkColumn = new System.Windows.Forms.DataGridViewLinkColumn();
 			_syncTasksGroup = new System.Windows.Forms.GroupBox();
 			_syncTasksGroup.SuspendLayout();
+			((System.ComponentModel.ISupportInitialize)(this._splitContainer)).BeginInit();
 			this._splitContainer.Panel1.SuspendLayout();
 			this._splitContainer.Panel2.SuspendLayout();
 			this._splitContainer.SuspendLayout();
@@ -74,10 +76,10 @@
 			// 
 			this._syncTaskList.BorderStyle = System.Windows.Forms.BorderStyle.None;
 			this._syncTaskList.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-			this._nameCol,
-			this._startTimeCol,
-			this._durationCol,
-			this._statusCol});
+            this._nameCol,
+            this._startTimeCol,
+            this._durationCol,
+            this._statusCol});
 			resources.ApplyResources(this._syncTaskList, "_syncTaskList");
 			this._syncTaskList.FullRowSelect = true;
 			this._syncTaskList.Name = "_syncTaskList";
@@ -156,45 +158,14 @@
 			this._errorsGrid.BorderStyle = System.Windows.Forms.BorderStyle.None;
 			this._errorsGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
 			this._errorsGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-			this._errTypeCol,
-			this._errTaskCol,
-			this._errTextCol});
+            this._errTypeCol,
+            this._errTaskCol,
+            this._errTextCol,
+            this._errLinkColumn});
 			resources.ApplyResources(this._errorsGrid, "_errorsGrid");
 			this._errorsGrid.Name = "_errorsGrid";
 			this._errorsGrid.RowHeadersVisible = false;
 			this._errorsGrid.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this._errorsGrid_CellFormatting);
-			// 
-			// _errTypeCol
-			// 
-			this._errTypeCol.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-			this._errTypeCol.DataPropertyName = "Type";
-			dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
-			dataGridViewCellStyle1.NullValue = ((object)(resources.GetObject("dataGridViewCellStyle1.NullValue")));
-			this._errTypeCol.DefaultCellStyle = dataGridViewCellStyle1;
-			this._errTypeCol.Frozen = true;
-			resources.ApplyResources(this._errTypeCol, "_errTypeCol");
-			this._errTypeCol.Name = "_errTypeCol";
-			this._errTypeCol.ReadOnly = true;
-			this._errTypeCol.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-			// 
-			// _errTaskCol
-			// 
-			this._errTaskCol.DataPropertyName = "TaskName";
-			resources.ApplyResources(this._errTaskCol, "_errTaskCol");
-			this._errTaskCol.Name = "_errTaskCol";
-			this._errTaskCol.ReadOnly = true;
-			// 
-			// _errTextCol
-			// 
-			this._errTextCol.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-			this._errTextCol.DataPropertyName = "Text";
-			dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopLeft;
-			dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-			this._errTextCol.DefaultCellStyle = dataGridViewCellStyle2;
-			resources.ApplyResources(this._errTextCol, "_errTextCol");
-			this._errTextCol.Name = "_errTextCol";
-			this._errTextCol.ReadOnly = true;
-			this._errTextCol.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
 			// 
 			// _iconsImages
 			// 
@@ -233,6 +204,44 @@
 			this._copyButton.UseVisualStyleBackColor = true;
 			this._copyButton.Click += new System.EventHandler(this._copyButton_Click);
 			// 
+			// _errTypeCol
+			// 
+			this._errTypeCol.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+			this._errTypeCol.DataPropertyName = "Type";
+			dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
+			dataGridViewCellStyle1.NullValue = ((object)(resources.GetObject("dataGridViewCellStyle1.NullValue")));
+			this._errTypeCol.DefaultCellStyle = dataGridViewCellStyle1;
+			this._errTypeCol.Frozen = true;
+			resources.ApplyResources(this._errTypeCol, "_errTypeCol");
+			this._errTypeCol.Name = "_errTypeCol";
+			this._errTypeCol.ReadOnly = true;
+			this._errTypeCol.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+			// 
+			// _errTaskCol
+			// 
+			this._errTaskCol.DataPropertyName = "TaskName";
+			resources.ApplyResources(this._errTaskCol, "_errTaskCol");
+			this._errTaskCol.Name = "_errTaskCol";
+			this._errTaskCol.ReadOnly = true;
+			// 
+			// _errTextCol
+			// 
+			this._errTextCol.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+			this._errTextCol.DataPropertyName = "Text";
+			dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopLeft;
+			dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+			this._errTextCol.DefaultCellStyle = dataGridViewCellStyle2;
+			resources.ApplyResources(this._errTextCol, "_errTextCol");
+			this._errTextCol.Name = "_errTextCol";
+			this._errTextCol.ReadOnly = true;
+			this._errTextCol.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+			// 
+			// _errLinkColumn
+			// 
+			resources.ApplyResources(this._errLinkColumn, "_errLinkColumn");
+			this._errLinkColumn.Name = "_errLinkColumn";
+			this._errLinkColumn.ReadOnly = true;
+			// 
 			// SyncForm
 			// 
 			resources.ApplyResources(this, "$this");
@@ -247,6 +256,7 @@
 			_syncTasksGroup.ResumeLayout(false);
 			this._splitContainer.Panel1.ResumeLayout(false);
 			this._splitContainer.Panel2.ResumeLayout(false);
+			((System.ComponentModel.ISupportInitialize)(this._splitContainer)).EndInit();
 			this._splitContainer.ResumeLayout(false);
 			((System.ComponentModel.ISupportInitialize)(this._compressPicture)).EndInit();
 			this._errorsGroup.ResumeLayout(false);
@@ -272,9 +282,10 @@
 		private System.Windows.Forms.SplitContainer _splitContainer;
 		private System.Windows.Forms.Label _progressLabel;
 		private System.Windows.Forms.Button _copyButton;
+		private System.Windows.Forms.PictureBox _compressPicture;
 		private System.Windows.Forms.DataGridViewImageColumn _errTypeCol;
 		private System.Windows.Forms.DataGridViewTextBoxColumn _errTaskCol;
 		private System.Windows.Forms.DataGridViewTextBoxColumn _errTextCol;
-		private System.Windows.Forms.PictureBox _compressPicture;
+		private System.Windows.Forms.DataGridViewLinkColumn _errLinkColumn;
 	}
 }

@@ -351,7 +351,7 @@ namespace Rsdn.Janus
 						.Cast<MsgBase>()
 						.ToList();
 				foreach (var msg in list)
-					msg.EndMapping(null);
+					msg.EndMapping();
 				return list;
 			}
 		}

@@ -1,14 +1,14 @@
-﻿using BLToolkit.DataAccess;
-using BLToolkit.Mapping;
+﻿using LinqToDB.Mapping;
 
 namespace Rsdn.Janus.DataModel
 {
-	[TableName("vars")]
+	[Table("vars")]
 	public interface IVariable
 	{
+		[Column]
 		string Name { get; }
 
-		[MapField("varvalue")]
+		[Column("varvalue")]
 		string Value { get; }
 	}
 }

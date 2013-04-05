@@ -1,25 +1,31 @@
 ﻿using System.Collections.Generic;
 
-using BLToolkit.DataAccess;
-using BLToolkit.Mapping;
+using LinqToDB.Mapping;
 
 namespace Rsdn.Janus.DataModel
 {
-	[TableName("subscribed_forums")]
+	[Table("subscribed_forums")]
 	public interface ISubscribedForum
 	{
+		[Column]
 		int ID { get; }
 
+		[Column]
 		string Name { get; }
 
+		[Column]
 		string Descript { get; }
 
+		[Column]
 		int LastSync { get; }
 
+		[Column]
 		int UrCount { get; }
 
+		[Column]
 		bool IsSync { get; }
 
+		[Column]
 		int? Priority { get; }
 
 		[Association(ThisKey = "ID", OtherKey = "ID", CanBeNull = true)]

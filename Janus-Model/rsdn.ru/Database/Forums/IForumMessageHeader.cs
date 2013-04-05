@@ -1,10 +1,7 @@
 ﻿using System;
 
-using BLToolkit.TypeBuilder;
-
 namespace Rsdn.Janus
 {
-	[AutoImplementInterface]
 	public interface IForumMessageHeader
 	{
 		int ID { get; }

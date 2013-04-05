@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections;
 
-using BLToolkit.Reflection;
-
 using Rsdn.TreeGrid;
 
 namespace Rsdn.Janus
@@ -14,11 +12,6 @@ namespace Rsdn.Janus
 	public abstract class DownloadTopic : IDownloadTopic, ITreeNode, IGetData, IKeyedNode
 	{
 		private readonly DownloadTopicCollection _parent;
-
-		protected DownloadTopic(InitContext data)
-		{
-			_parent = (DownloadTopicCollection)data.Parameters[0];
-		}
 
 		protected DownloadTopic(DownloadTopicCollection parent)
 		{

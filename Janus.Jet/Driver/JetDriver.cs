@@ -2,7 +2,8 @@
 using System.Data.Common;
 using System.Data.OleDb;
 
-using BLToolkit.Data.DataProvider;
+using LinqToDB.DataProvider;
+using LinqToDB.DataProvider.Access;
 
 namespace Rsdn.Janus.Jet
 {
@@ -69,7 +70,7 @@ namespace Rsdn.Janus.Jet
 		/// <summary>
 		/// Создать провайдер для BLToolkit.
 		/// </summary>
-		public DataProviderBase CreateDataProvider()
+		public IDataProvider CreateDataProvider()
 		{
 			return new AccessDataProvider();
 		}

@@ -1,23 +1,28 @@
 ﻿using System.Collections.Generic;
 
-using BLToolkit.DataAccess;
-using BLToolkit.Mapping;
+using LinqToDB.Mapping;
 
 namespace Rsdn.Janus.DataModel
 {
-	[TableName("server_forums")]
+	[Table("server_forums")]
 	public interface IServerForum
 	{
+		[Column]
 		int ID { get; }
 
+		[Column]
 		string Name { get; }
 
+		[Column]
 		string Descript { get; }
 
+		[Column]
 		bool Rated { get; }
 
+		[Column]
 		bool InTop { get; }
 
+		[Column]
 		int RateLimit { get; }
 
 		[Association(ThisKey = "ID", OtherKey = "ID", CanBeNull = true)]

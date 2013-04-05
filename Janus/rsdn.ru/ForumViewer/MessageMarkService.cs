@@ -3,8 +3,10 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
 using System.Threading;
-using BLToolkit.Data.Linq;
+
 using JetBrains.Annotations;
+
+using LinqToDB;
 
 using Rsdn.SmartApp;
 
@@ -104,7 +106,7 @@ namespace Rsdn.Janus
 			bool isRead)
 		{
 			var msgIdsArray = msgIds.ToArray();
-			if (!msgIdsArray.All(ids => ids.GetEntryType() == ForumEntryType.Message))
+			if (msgIdsArray.Any(ids => ids.GetEntryType() != ForumEntryType.Message))
 				throw new ArgumentException(@"Элемент последовательности не является сообщением.", "msgIds");
 
 			using (var db = provider.CreateDBContext())

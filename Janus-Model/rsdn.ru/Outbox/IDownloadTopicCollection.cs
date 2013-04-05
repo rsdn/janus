@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-using BLToolkit.Data.Linq;
+using LinqToDB;
 
 namespace Rsdn.Janus
 {

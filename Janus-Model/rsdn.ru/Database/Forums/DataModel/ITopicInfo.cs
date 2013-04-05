@@ -1,65 +1,64 @@
 ﻿using System;
 
-using BLToolkit.DataAccess;
-using BLToolkit.Mapping;
+using LinqToDB.Mapping;
 
 namespace Rsdn.Janus.DataModel
 {
-	[TableName("topic_info")]
+	[Table("topic_info")]
 	public interface ITopicInfo
 	{
-		[MapField("mid")]
+		[Column("mid")]
 		int MessageID { get; }
 
 		[Association(ThisKey = "MessageID", OtherKey = "ID", CanBeNull = false)]
 		IForumMessage Message { get; }
 
-		[MapField("gid")]
+		[Column("gid")]
 		int ForumID { get; }
 
-		[MapField("this_rate")]
+		[Column("this_rate")]
 		int SelfRates { get; }
 
-		[MapField("this_smile")]
+		[Column("this_smile")]
 		int SelfSmiles { get; }
 
-		[MapField("this_agree")]
+		[Column("this_agree")]
 		int SelfAgrees { get; }
 
-		[MapField("this_disagree")]
+		[Column("this_disagree")]
 		int SelfDisagrees { get; }
 
-		[MapField("this_mod_count")]
+		[Column("this_mod_count")]
 		int SelfModeratorials { get; }
 
-		[MapField("answers_count")]
+		[Column("answers_count")]
 		int AnswersCount { get; }
 
-		[MapField("answers_unread")]
+		[Column("answers_unread")]
 		int AnswersUnread { get; }
 
-		[MapField("answers_me_unread")]
+		[Column("answers_me_unread")]
 		int AnswersToMeUnread { get; }
 
-		[MapField("answers_rate")]
+		[Column("answers_rate")]
 		int AnswersRates { get; }
 
-		[MapField("answers_smile")]
+		[Column("answers_smile")]
 		int AnswersSmiles { get; }
 
-		[MapField("answers_agree")]
+		[Column("answers_agree")]
 		int AnswersAgrees { get; }
 
-		[MapField("answers_disagree")]
+		[Column("answers_disagree")]
 		int AnswersDisagrees { get; }
 
-		[MapField("answers_mod_count")]
+		[Column("answers_mod_count")]
 		int AnswersModeratorials { get; }
 
-		[MapField("answers_marked")]
+		[Column("answers_marked")]
 		int AnswersMarked { get; }
 
-		[MapField("answers_last_update_date")]
+		[Column("answers_last_update_date")]
 		DateTime? LastUpdateDate { get; }
 	}
 }

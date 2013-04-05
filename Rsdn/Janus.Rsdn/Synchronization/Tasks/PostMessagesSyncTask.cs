@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-using BLToolkit.Data.Linq;
+using LinqToDB;
 
 using Rsdn.Janus.AT;
 using Rsdn.Janus.Properties;
@@ -86,9 +86,9 @@ namespace Rsdn.Janus
 			var max = provider.MaxInClauseElements();
 			using (var db = provider.CreateDBContext())
 				foreach (var series in mids.SplitToSeries(max))
-// ReSharper disable AccessToModifiedClosure
+					// ReSharper disable AccessToForEachVariableInClosure
 					db.OutboxMessages(m => series.Contains(m.ID)).Delete();
-// ReSharper restore AccessToModifiedClosure
+					// ReSharper restore AccessToForEachVariableInClosure
 		}
 
 		private static void ClearRatesOutbox(IServiceProvider provider)

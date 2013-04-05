@@ -1,31 +1,30 @@
 ﻿using System;
 
-using BLToolkit.DataAccess;
-using BLToolkit.Mapping;
+using LinqToDB.Mapping;
 
 namespace Rsdn.Janus.DataModel
 {
-	[TableName("messages_outbox")]
+	[Table("messages_outbox")]
 	public interface IOutboxMessage
 	{
-		[MapField("mid")]
+		[Column("mid")]
 		int ID { get; }
 
-		[MapField("gid")]
+		[Column("gid")]
 		int ForumID { get; }
 
 		[Association(ThisKey = "ForumID", OtherKey = "ID", CanBeNull = true)]
 		IServerForum ServerForum { get; }
 
-		[MapField("reply")]
+		[Column("reply")]
 		int ReplyToID { get; }
 
-		[MapField("dte")]
+		[Column("dte")]
 		DateTime Date { get; }
 
 		string Subject { get; }
 
-		[MapField("message")]
+		[Column("message")]
 		string Body { get; }
 
 		string Tagline { get; }

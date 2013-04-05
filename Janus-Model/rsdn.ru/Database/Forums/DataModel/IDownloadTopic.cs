@@ -1,8 +1,8 @@
-﻿using BLToolkit.DataAccess;
+﻿using LinqToDB.Mapping;
 
 namespace Rsdn.Janus.DataModel
 {
-	[TableName("download_topics")]
+	[Table("download_topics")]
 	public interface IDownloadTopic
 	{
 		int ID { get; }

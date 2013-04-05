@@ -4,9 +4,10 @@ using System.Diagnostics;
 using System.Linq;
 using System.Windows.Forms;
 
-using BLToolkit.Data.Linq;
-
 using JetBrains.Annotations;
+
+using LinqToDB;
+
 using Rsdn.Janus.AT;
 using Rsdn.SmartApp;
 

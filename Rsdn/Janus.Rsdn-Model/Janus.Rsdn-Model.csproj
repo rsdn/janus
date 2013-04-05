@@ -43,10 +43,6 @@
     <CodeAnalysisRuleDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="BLToolkit.4">
-      <HintPath>..\..\Dependencies\bltoolkit\BLToolkit.4.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
     <Reference Include="R.SAT-Model">
       <HintPath>..\..\Dependencies\R.SAT\R.SAT-Model.dll</HintPath>
     </Reference>

@@ -43,9 +43,8 @@
     <CodeAnalysisRuleDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="BLToolkit.4">
-      <HintPath>..\..\Dependencies\bltoolkit\BLToolkit.4.dll</HintPath>
-      <Private>False</Private>
+    <Reference Include="linq2db">
+      <HintPath>..\..\Dependencies\linq2db\linq2db.dll</HintPath>
     </Reference>
     <Reference Include="R.SAT-Common, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>

@@ -1,10 +1,10 @@
 ﻿using System;
 
+using LinqToDB;
+
 using Rsdn.Janus.AT;
 using Rsdn.Janus.Framework;
 using Rsdn.Janus.Properties;
-
-using BLToolkit.Data.Linq;
 
 namespace Rsdn.Janus
 {

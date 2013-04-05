@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-using BLToolkit.Data.Linq;
+using LinqToDB;
 
 using Rsdn.SmartApp;
 

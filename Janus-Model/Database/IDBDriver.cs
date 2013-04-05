@@ -1,6 +1,6 @@
 ﻿using System.Data.Common;
 
-using BLToolkit.Data.DataProvider;
+using LinqToDB.DataProvider;
 
 namespace Rsdn.Janus
 {
@@ -42,7 +42,7 @@ namespace Rsdn.Janus
 		/// <summary>
 		/// Создать провайдер для BLToolkit.
 		/// </summary>
-		DataProviderBase CreateDataProvider();
+		IDataProvider CreateDataProvider();
 
 		/// <summary>
 		/// Обработать запрос перед выполнением.

@@ -5,7 +5,7 @@ using System.Reflection;
 using System.Text;
 using System.Web;
 
-using BLToolkit.Data.Linq;
+using LinqToDB;
 
 using Rsdn.SmartApp;
 

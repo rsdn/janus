@@ -1,30 +1,29 @@
 ﻿using System;
 using System.Collections.Generic;
 
-using BLToolkit.DataAccess;
-using BLToolkit.Mapping;
-
 using JetBrains.Annotations;
+
+using LinqToDB.Mapping;
 
 namespace Rsdn.Janus.DataModel
 {
-	[TableName("messages"), UsedImplicitly]
+	[Table("messages"), UsedImplicitly]
 	public interface IForumMessage
 	{
 		[Identity]
-		[MapField("mid")]
+		[Column("mid")]
 		int ID { get; }
 
-		[MapField("tid")]
+		[Column("tid")]
 		int TopicID { get; }
 
-		[MapField("pid")]
+		[Column("pid")]
 		int ParentID { get; }
 
 		[Association(ThisKey = "ParentID", OtherKey = "ID", CanBeNull = true)]
 		IForumMessage Parent { get; }
 
-		[MapField("gid")]
+		[Column("gid")]
 		int ForumID { get; }
 
 		[Association(ThisKey = "ForumID", OtherKey = "ID", CanBeNull = true)]
@@ -32,23 +31,23 @@ namespace Rsdn.Janus.DataModel
 
 		string Subject { get; }
 
-		[MapField("dte")]
+		[Column("dte")]
 		DateTime Date { get; }
 
-		[MapField("uid")]
+		[Column("uid")]
 		int UserID { get; }
 
 		[Association(ThisKey = "UserID", OtherKey = "ID", CanBeNull = true)]
 		IUser User { get; }
 
-		[MapField("uclass")]
+		[Column("uclass")]
 		UserClass UserClass { get; }
 
 		string UserNick { get; }
 
 		string Name { get; }
 
-		[MapField("article_id")]
+		[Column("article_id")]
 		int? ArticleId { get; }
 
 		DateTime? LastModerated { get; }

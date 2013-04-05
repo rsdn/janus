@@ -101,9 +101,8 @@
       <HintPath>..\Dependencies\ado-interop\adodb.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="BLToolkit.4">
-      <HintPath>..\Dependencies\bltoolkit\BLToolkit.4.dll</HintPath>
-      <Private>False</Private>
+    <Reference Include="linq2db">
+      <HintPath>..\Janus-Model\bin\Debug\linq2db.dll</HintPath>
     </Reference>
     <Reference Include="R.SAT-Common, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>

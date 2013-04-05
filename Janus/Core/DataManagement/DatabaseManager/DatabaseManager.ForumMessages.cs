@@ -1,7 +1,8 @@
 ﻿using System;
 using System.Linq;
 using System.Linq.Expressions;
-using BLToolkit.Data.Linq;
+
+using LinqToDB;
 
 namespace Rsdn.Janus
 {

@@ -1,11 +1,10 @@
 ﻿using System;
 
-using BLToolkit.DataAccess;
-using BLToolkit.Mapping;
+using LinqToDB.Mapping;
 
 namespace Rsdn.Janus.DataModel
 {
-	[TableName("moderatorials")]
+	[Table("moderatorials")]
 	public interface IModeratorial
 	{
 		int MessageID { get; }

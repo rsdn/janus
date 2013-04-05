@@ -4,7 +4,7 @@ using System.ComponentModel;
 using System.Linq;
 using System.Threading;
 
-using BLToolkit.Data.Linq;
+using LinqToDB;
 
 using Rsdn.SmartApp;
 

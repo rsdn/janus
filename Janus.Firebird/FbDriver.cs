@@ -4,9 +4,10 @@ using System.Data.Common;
 using System.Linq;
 using System.Text.RegularExpressions;
 
-using BLToolkit.Data.DataProvider;
-
 using FirebirdSql.Data.FirebirdClient;
+
+using LinqToDB.DataProvider;
+using LinqToDB.DataProvider.Firebird;
 
 namespace Rsdn.Janus.Firebird
 {
@@ -73,9 +74,9 @@ namespace Rsdn.Janus.Firebird
 		/// <summary>
 		/// Создать провайдер для BLToolkit.
 		/// </summary>
-		public DataProviderBase CreateDataProvider()
+		public IDataProvider CreateDataProvider()
 		{
-			return new FdpDataProvider();
+			return new FirebirdDataProvider();
 		}
 
 		/// <summary>

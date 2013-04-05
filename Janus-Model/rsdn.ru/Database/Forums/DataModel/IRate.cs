@@ -1,34 +1,33 @@
 ﻿using System;
 
-using BLToolkit.DataAccess;
-using BLToolkit.Mapping;
+using LinqToDB.Mapping;
 
 namespace Rsdn.Janus.DataModel
 {
-	[TableName("rating")]
+	[Table("rating")]
 	public interface IRate
 	{
 		int ID { get; }
 
-		[MapField("dte")]
+		[Column("dte")]
 		DateTime Date { get; }
 
-		[MapField("rate")]
+		[Column("rate")]
 		MessageRates RateType { get; }
 
-		[MapField("rby")]
+		[Column("rby")]
 		short Multiplier { get; }
 
-		[MapField("mid")]
+		[Column("mid")]
 		int MessageID { get; }
 
-		[MapField("tid")]
+		[Column("tid")]
 		int TopicID { get; }
 
 		[Association(ThisKey = "MessageID", OtherKey = "ID", CanBeNull = false)]
 		IForumMessage Message { get; }
 
-		[MapField("uid")]
+		[Column("uid")]
 		int UserID { get; }
 
 		[Association(ThisKey = "UserID", OtherKey = "ID", CanBeNull = true)]

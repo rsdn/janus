@@ -112,22 +112,22 @@
     <value>2.0</value>
   </resheader>
   <resheader name="reader">
-    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <resheader name="writer">
-    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <metadata name="_syncTasksGroup.GenerateMember" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <metadata name="_syncTasksGroup.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>False</value>
   </metadata>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="_syncTasksGroup.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Left, Right</value>
   </data>
   <data name="_nameCol.Text" xml:space="preserve">
     <value>Task</value>
   </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="_nameCol.Width" type="System.Int32, mscorlib">
     <value>220</value>
   </data>
@@ -152,7 +152,7 @@
   <data name="_syncTaskList.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
   </data>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="_syncTaskList.Location" type="System.Drawing.Point, System.Drawing">
     <value>3, 16</value>
   </data>
@@ -166,7 +166,7 @@
     <value>_syncTaskList</value>
   </data>
   <data name="&gt;&gt;_syncTaskList.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ListView, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ListView, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;_syncTaskList.Parent" xml:space="preserve">
     <value>_syncTasksGroup</value>
@@ -190,7 +190,7 @@
     <value>_syncTasksGroup</value>
   </data>
   <data name="&gt;&gt;_syncTasksGroup.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;_syncTasksGroup.Parent" xml:space="preserve">
     <value>_splitContainer.Panel1</value>
@@ -209,31 +209,31 @@
   </data>
   <data name="_compressPicture.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        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
+        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
+        Bf6uDQD5Fx7K9YZZNIbAAAAAAElFTkSuQmCC
 </value>
   </data>
   <data name="_compressPicture.Location" type="System.Drawing.Point, System.Drawing">
@@ -252,7 +252,7 @@
     <value>_compressPicture</value>
   </data>
   <data name="&gt;&gt;_compressPicture.Type" xml:space="preserve">
-    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;_compressPicture.Parent" xml:space="preserve">
     <value>_splitContainer.Panel1</value>
@@ -282,7 +282,7 @@
     <value>_progressLabel</value>
   </data>
   <data name="&gt;&gt;_progressLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;_progressLabel.Parent" xml:space="preserve">
     <value>_splitContainer.Panel1</value>
@@ -312,7 +312,7 @@
     <value>_progressPie</value>
   </data>
   <data name="&gt;&gt;_progressPie.Type" xml:space="preserve">
-    <value>Rsdn.Janus.Framework.ProgressPieControl, Janus, Version=1.2.0.1231, Culture=neutral, PublicKeyToken=null</value>
+    <value>Rsdn.Janus.Framework.ProgressPieControl, Janus, Version=1.2.0.66, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;_progressPie.Parent" xml:space="preserve">
     <value>_splitContainer.Panel1</value>
@@ -324,7 +324,7 @@
     <value>_splitContainer.Panel1</value>
   </data>
   <data name="&gt;&gt;_splitContainer.Panel1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.SplitterPanel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.SplitterPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;_splitContainer.Panel1.Parent" xml:space="preserve">
     <value>_splitContainer</value>
@@ -332,24 +332,24 @@
   <data name="&gt;&gt;_splitContainer.Panel1.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <metadata name="_errTypeCol.UserAddedColumn" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <metadata name="_errTypeCol.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
   <data name="dataGridViewCellStyle1.NullValue" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         Qk32AgAAAAAAADYAAAAoAAAADgAAABAAAAABABgAAAAAAAAAAADEDgAAxA4AAAAAAAAAAAAAAAAAAAAA
-        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEBGEgoTGw8bGw8bGw8bGw8bGw8bGw8bG
-        w8bGw8bGw8bGw8bGw8bGw8YAAAAQEYSChP///////////////////////////////////////////8bD
-        xgAAABARhIKE////////////////////////////////////////////xsPGAAAAEBGEgoT/////////
-        ///////////////////////////////////Gw8YAAAAQEYSChP//////////////////////////////
-        /////////////8bDxgAAABARhIKE////////////AAD/AAD/////////AAD/AAD/////////xsPGAAAA
-        EBGEgoT///////////////8AAP8AAP8AAP8AAP/////////////Gw8YAAAAQEYSChP//////////////
-        /////wAA/wAA/////////////////8bDxgAAABARhIKE////////////////AAD/AAD/AAD/AAD/////
-        ////////xsPGAAAAEBGEgoT///////////8AAP8AAP////////8AAP8AAP/////////Gw8YAAAAQEYSC
-        hP///////////////////////////////////////////8bDxgAAABARhIKE////////////////////
-        ////////////////////////xsPGAAAAEBGEgoT/////////////////////////////////////////
-        ///Gw8YAAAAQEYSChP///////////////////////////////////////////8bDxgAAABARhIKEhIKE
-        hIKEhIKEhIKEhIKEhIKEhIKEhIKEhIKEhIKEhIKEhIKEhIKEEBE=
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACEgoTGw8bGw8bGw8bGw8bGw8bGw8bG
+        w8bGw8bGw8bGw8bGw8bGw8YAAAAAAISChP///////////////////////////////////////////8bD
+        xgAAAAAAhIKE////////////////////////////////////////////xsPGAAAAAACEgoT/////////
+        ///////////////////////////////////Gw8YAAAAAAISChP//////////////////////////////
+        /////////////8bDxgAAAAAAhIKE////////////AAD/AAD/////////AAD/AAD/////////xsPGAAAA
+        AACEgoT///////////////8AAP8AAP8AAP8AAP/////////////Gw8YAAAAAAISChP//////////////
+        /////wAA/wAA/////////////////8bDxgAAAAAAhIKE////////////////AAD/AAD/AAD/AAD/////
+        ////////xsPGAAAAAACEgoT///////////8AAP8AAP////////8AAP8AAP/////////Gw8YAAAAAAISC
+        hP///////////////////////////////////////////8bDxgAAAAAAhIKE////////////////////
+        ////////////////////////xsPGAAAAAACEgoT/////////////////////////////////////////
+        ///Gw8YAAAAAAISChP///////////////////////////////////////////8bDxgAAAAAAhIKEhIKE
+        hIKEhIKEhIKEhIKEhIKEhIKEhIKEhIKEhIKEhIKEhIKEhIKEAAA=
 </value>
   </data>
   <data name="_errTypeCol.HeaderText" xml:space="preserve">
@@ -358,7 +358,7 @@
   <data name="_errTypeCol.Width" type="System.Int32, mscorlib">
     <value>35</value>
   </data>
-  <metadata name="_errTaskCol.UserAddedColumn" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <metadata name="_errTaskCol.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
   <data name="_errTaskCol.HeaderText" xml:space="preserve">
@@ -367,11 +367,17 @@
   <data name="_errTaskCol.Width" type="System.Int32, mscorlib">
     <value>220</value>
   </data>
-  <metadata name="_errTextCol.UserAddedColumn" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <metadata name="_errTextCol.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
   <data name="_errTextCol.HeaderText" xml:space="preserve">
     <value>Text</value>
+  </data>
+  <metadata name="_errLinkColumn.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="_errLinkColumn.HeaderText" xml:space="preserve">
+    <value>Error</value>
   </data>
   <data name="_errorsGrid.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
@@ -389,7 +395,7 @@
     <value>_errorsGrid</value>
   </data>
   <data name="&gt;&gt;_errorsGrid.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridView, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.DataGridView, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;_errorsGrid.Parent" xml:space="preserve">
     <value>_errorsGroup</value>
@@ -416,7 +422,7 @@
     <value>_errorsGroup</value>
   </data>
   <data name="&gt;&gt;_errorsGroup.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;_errorsGroup.Parent" xml:space="preserve">
     <value>_splitContainer.Panel2</value>
@@ -428,7 +434,7 @@
     <value>_splitContainer.Panel2</value>
   </data>
   <data name="&gt;&gt;_splitContainer.Panel2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.SplitterPanel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.SplitterPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;_splitContainer.Panel2.Parent" xml:space="preserve">
     <value>_splitContainer</value>
@@ -452,7 +458,7 @@
     <value>_splitContainer</value>
   </data>
   <data name="&gt;&gt;_splitContainer.Type" xml:space="preserve">
-    <value>System.Windows.Forms.SplitContainer, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.SplitContainer, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;_splitContainer.Parent" xml:space="preserve">
     <value>$this</value>
@@ -460,15 +466,15 @@
   <data name="&gt;&gt;_splitContainer.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
-  <metadata name="_iconsImages.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+  <metadata name="_iconsImages.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
   <data name="_iconsImages.ImageStream" mimetype="application/x-microsoft.net.object.binary.base64">
     <value>
-        AAEAAAD/////AQAAAAAAAAAMAgAAAFdTeXN0ZW0uV2luZG93cy5Gb3JtcywgVmVyc2lvbj0yLjAuMC4w
+        AAEAAAD/////AQAAAAAAAAAMAgAAAFdTeXN0ZW0uV2luZG93cy5Gb3JtcywgVmVyc2lvbj00LjAuMC4w
         LCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODkFAQAAACZTeXN0
         ZW0uV2luZG93cy5Gb3Jtcy5JbWFnZUxpc3RTdHJlYW1lcgEAAAAERGF0YQcCAgAAAAkDAAAADwMAAADC
-        CgAAAk1TRnQBSQFMAgEBAwEAAQQBAAEEAQABEAEAARABAAT/AQkBAAj/AUIBTQE2AQQGAAE2AQQCAAEo
+        CgAAAk1TRnQBSQFMAgEBAwEAAQwBAAEMAQABEAEAARABAAT/AQkBAAj/AUIBTQE2AQQGAAE2AQQCAAEo
         AwABQAMAARADAAEBAQABCAYAAQQYAAGAAgABgAMAAoABAAGAAwABgAEAAYABAAKAAgADwAEAAcAB3AHA
         AQAB8AHKAaYBAAEzBQABMwEAATMBAAEzAQACMwIAAxYBAAMcAQADIgEAAykBAANVAQADTQEAA0IBAAM5
         AQABgAF8Af8BAAJQAf8BAAGTAQAB1gEAAf8B7AHMAQABxgHWAe8BAAHWAucBAAGQAakBrQIAAf8BMwMA
@@ -527,19 +533,19 @@
   </data>
   <data name="_pinCheck.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        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
+        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
 </value>
   </data>
   <data name="_pinCheck.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
@@ -564,7 +570,7 @@
     <value>_pinCheck</value>
   </data>
   <data name="&gt;&gt;_pinCheck.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;_pinCheck.Parent" xml:space="preserve">
     <value>$this</value>
@@ -600,7 +606,7 @@
     <value>_cancelButton</value>
   </data>
   <data name="&gt;&gt;_cancelButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;_cancelButton.Parent" xml:space="preserve">
     <value>$this</value>
@@ -608,7 +614,7 @@
   <data name="&gt;&gt;_cancelButton.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
-  <metadata name="_refreshDurationTimer.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+  <metadata name="_refreshDurationTimer.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>141, 17</value>
   </metadata>
   <data name="_copyButton.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
@@ -636,7 +642,7 @@
     <value>_copyButton</value>
   </data>
   <data name="&gt;&gt;_copyButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;_copyButton.Parent" xml:space="preserve">
     <value>$this</value>
@@ -644,7 +650,7 @@
   <data name="&gt;&gt;_copyButton.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
@@ -1088,60 +1094,66 @@
     <value>_nameCol</value>
   </data>
   <data name="&gt;&gt;_nameCol.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;_startTimeCol.Name" xml:space="preserve">
     <value>_startTimeCol</value>
   </data>
   <data name="&gt;&gt;_startTimeCol.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;_durationCol.Name" xml:space="preserve">
     <value>_durationCol</value>
   </data>
   <data name="&gt;&gt;_durationCol.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;_statusCol.Name" xml:space="preserve">
     <value>_statusCol</value>
   </data>
   <data name="&gt;&gt;_statusCol.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;_errTypeCol.Name" xml:space="preserve">
-    <value>_errTypeCol</value>
-  </data>
-  <data name="&gt;&gt;_errTypeCol.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewImageColumn, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;_errTaskCol.Name" xml:space="preserve">
-    <value>_errTaskCol</value>
-  </data>
-  <data name="&gt;&gt;_errTaskCol.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;_errTextCol.Name" xml:space="preserve">
-    <value>_errTextCol</value>
-  </data>
-  <data name="&gt;&gt;_errTextCol.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;_iconsImages.Name" xml:space="preserve">
     <value>_iconsImages</value>
   </data>
   <data name="&gt;&gt;_iconsImages.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ImageList, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ImageList, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;_refreshDurationTimer.Name" xml:space="preserve">
     <value>_refreshDurationTimer</value>
   </data>
   <data name="&gt;&gt;_refreshDurationTimer.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Timer, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Timer, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;_errTypeCol.Name" xml:space="preserve">
+    <value>_errTypeCol</value>
+  </data>
+  <data name="&gt;&gt;_errTypeCol.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewImageColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;_errTaskCol.Name" xml:space="preserve">
+    <value>_errTaskCol</value>
+  </data>
+  <data name="&gt;&gt;_errTaskCol.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;_errTextCol.Name" xml:space="preserve">
+    <value>_errTextCol</value>
+  </data>
+  <data name="&gt;&gt;_errTextCol.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;_errLinkColumn.Name" xml:space="preserve">
+    <value>_errLinkColumn</value>
+  </data>
+  <data name="&gt;&gt;_errLinkColumn.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewLinkColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>SyncForm</value>
   </data>
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
 </root>

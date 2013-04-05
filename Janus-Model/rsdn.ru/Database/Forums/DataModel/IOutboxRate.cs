@@ -1,20 +1,19 @@
-﻿using BLToolkit.DataAccess;
-using BLToolkit.Mapping;
+﻿using LinqToDB.Mapping;
 
 namespace Rsdn.Janus.DataModel
 {
-	[TableName("rate_outbox")]
+	[Table("rate_outbox")]
 	public interface IOutboxRate
 	{
 		int ID { get; }
 
-		[MapField("mid")]
+		[Column("mid")]
 		int MessageID { get; }
 
 		[Association(ThisKey = "MessageID", OtherKey = "ID", CanBeNull = true)]
 		IForumMessage Message { get; }
 
-		[MapField("rate")]
+		[Column("rate")]
 		MessageRates RateType { get; }
 	}
 }

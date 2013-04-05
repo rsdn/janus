@@ -1,8 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using BLToolkit.Data.Linq;
 using JetBrains.Annotations;
+
+using LinqToDB;
 
 using Rsdn.SmartApp;
 

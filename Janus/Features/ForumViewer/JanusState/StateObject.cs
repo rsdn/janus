@@ -5,10 +5,9 @@ using System.IO;
 using System.Linq;
 using System.Xml.Serialization;
 
-using BLToolkit.Data;
-using BLToolkit.Data.Linq;
-
 using JetBrains.Annotations;
+
+using LinqToDB;
 
 using Rsdn.SmartApp;
 

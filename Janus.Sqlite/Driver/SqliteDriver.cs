@@ -2,7 +2,8 @@
 using System.Data.Common;
 using System.Data.SQLite;
 
-using BLToolkit.Data.DataProvider;
+using LinqToDB.DataProvider;
+using LinqToDB.DataProvider.SQLite;
 
 namespace Rsdn.Janus.Sqlite
 {
@@ -67,7 +68,7 @@ namespace Rsdn.Janus.Sqlite
 		/// <summary>
 		/// Создать провайдер для BLToolkit.
 		/// </summary>
-		public DataProviderBase CreateDataProvider()
+		public IDataProvider CreateDataProvider()
 		{
 			return new SQLiteDataProvider();
 		}

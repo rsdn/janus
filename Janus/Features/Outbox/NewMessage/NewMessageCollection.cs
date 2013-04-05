@@ -2,7 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 
-using BLToolkit.Data.Linq;
+using LinqToDB;
 
 using Rsdn.TreeGrid;
 

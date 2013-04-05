@@ -1,7 +1,8 @@
 ﻿using System;
 using System.Data;
-using BLToolkit.Data;
-using BLToolkit.Data.DataProvider;
+
+using LinqToDB.Data;
+using LinqToDB.DataProvider;
 
 using Rsdn.SmartApp;
 
@@ -17,7 +18,7 @@ namespace Rsdn.Janus
 
 		private readonly string _currentDriverName;
 		private readonly IDBDriver _currentDriver;
-		private readonly DataProviderBase _bltDataProvider;
+		private readonly IDataProvider _bltDataProvider;
 		private readonly string _connectionString;
 		private readonly IJanusRWLock _rwLock;
 
@@ -61,22 +62,22 @@ namespace Rsdn.Janus
 
 		public IJanusDataContext CreateDBContext()
 		{
-			var db = new JanusDataContext(_bltDataProvider, _connectionString);
-			db.InitCommand += (sender, ea) => ea.Command.CommandTimeout = 0;
-			return db;
+			return new JanusDataContext(_bltDataProvider, _connectionString);
 		}
 		#endregion
 
 		#region JanusDataContext class
-		private class JanusDataContext : DbManager, IJanusDataContext
+		private class JanusDataContext : DataConnection, IJanusDataContext
 		{
-			public JanusDataContext(DataProviderBase dataProvider, string connectionString) 
-				: base(dataProvider, connectionString)
-			{}
+			public JanusDataContext(IDataProvider dataProvider, string connectionString) : base(dataProvider, connectionString)
+			{
+				CommandTimeout = 0;
+			}
 
 			IDbTransaction IJanusDataContext.BeginTransaction()
 			{
-				return BeginTransaction().Transaction;
+				BeginTransaction();
+				return Transaction;
 			}
 		}
 		#endregion

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Reactive.Disposables;
 using System.Windows.Forms;
 
-using BLToolkit.Mapping;
+using LinqToDB.Mapping;
 
 using Rsdn.Janus.ObjectModel;
 using Rsdn.TreeGrid;
@@ -33,39 +33,39 @@ namespace Rsdn.Janus
 				() => Features.Instance.BeforeFeatureActivate -= InstanceBeforeFeatureActivate);
 		}
 
-		[MapField("id")]
+		[Column("id")]
 		public int ID { get; set; }
-		[MapField("name")]
+		[Column("name")]
 		public string Name { get; set;  }
-		[MapField("lastSync")]
+		[Column("lastSync")]
 		public int LastSync { get; set; }
-		[MapField("subscribed")]
+		[Column("subscribed")]
 		public bool IsSubscribed { get; set; }
-		[MapField("rated")]
+		[Column("rated")]
 		public bool IsRateable { get; set; }
-		[MapField("ratelimit")]
+		[Column("ratelimit")]
 		public bool RateLimit { get; set; }
 
-		[MapField("messagesCount"), Nullable]
+		[Column("messagesCount"), Nullable]
 		public int MessagesCount { get; set; }
-		[MapField("repliesToMeUnread"), Nullable]
+		[Column("repliesToMeUnread"), Nullable]
 		public int RepliesToMeUnread { get; set; }
-		[MapField("unread"), Nullable]
+		[Column("unread"), Nullable]
 		public int Unread { get; set; }
-		[MapField("intop"), Nullable]
+		[Column("intop"), Nullable]
 		public bool InTop { get; set; }
-		[MapField("priority"), Nullable]
+		[Column("priority"), Nullable]
 		public int Priority { get; set; }
-		[MapField("descript")]
+		[Column("descript")]
 		public string ForumDescription { get; set; }
 
-		[MapIgnore]
+		[NotColumn]
 		public string DisplayName
 		{
 			get { return Config.Instance.ForumDisplayConfig.ShowFullForumNames ? Description : Name; }
 		}
 
-		[MapIgnore]
+		[NotColumn]
 		public override string Description
 		{
 			get { return ForumDescription; }
@@ -95,7 +95,7 @@ namespace Rsdn.Janus
 		private int _activeMsgId = -1;
 		private readonly WeakReference _activeMsg = new WeakReference(null);
 
-		[MapIgnore]
+		[NotColumn]
 		public IMsg ActiveMsg
 		{
 			get
@@ -179,7 +179,7 @@ namespace Rsdn.Janus
 		/// </summary>
 		private bool _isLoadAll = true;
 
-		[MapIgnore]
+		[NotColumn]
 		public bool IsAllMsgLoaded
 		{
 			get { return _isLoadAll; }
@@ -190,7 +190,7 @@ namespace Rsdn.Janus
 			return ReadMsg(true);
 		}
 
-		[MapIgnore]
+		[NotColumn]
 		public IMsg Msgs
 		{
 			get
@@ -313,7 +313,7 @@ namespace Rsdn.Janus
 
 		#region IFeature
 
-		[MapIgnore]
+		[NotColumn]
 		public override String Info
 		{
 			get
@@ -325,7 +325,7 @@ namespace Rsdn.Janus
 			}
 		}
 
-		[MapIgnore]
+		[NotColumn]
 		string IFeature.Key
 		{
 			get { return "Outbox" + Name; }

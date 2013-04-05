@@ -5,9 +5,9 @@ using System.Linq;
 using System.Linq.Expressions;
 using System.Windows.Forms;
 
-using BLToolkit.Data.Linq;
-
 using JetBrains.Annotations;
+
+using LinqToDB;
 
 using Rsdn.Janus.DataModel;
 

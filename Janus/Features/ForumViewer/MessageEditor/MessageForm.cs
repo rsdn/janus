@@ -10,9 +10,9 @@ using System.Threading;
 using System.Web;
 using System.Windows.Forms;
 
-using BLToolkit.Data.Linq;
-
 using JetBrains.Annotations;
+
+using LinqToDB;
 
 using Rsdn.Janus.Framework;
 using Rsdn.Janus.Log;

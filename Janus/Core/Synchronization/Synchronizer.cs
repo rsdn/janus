@@ -177,7 +177,7 @@ namespace Rsdn.Janus
 					stats,
 					// ReSharper disable AccessToModifiedClosure
 					() => syncForm != null && syncForm.IsCancelled);
-				// ReSharper restore AccessToModifiedClosure	
+					// ReSharper restore AccessToModifiedClosure	
 
 				if (_lastSyncFormInstance != null)
 					_uiAsyncOp.Send(_lastSyncFormInstance.Dispose);

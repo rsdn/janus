@@ -2,9 +2,9 @@
 using System.Linq;
 using System.Linq.Expressions;
 
-using BLToolkit.Data.Linq;
-
 using JetBrains.Annotations;
+
+using LinqToDB;
 
 using Rsdn.SmartApp;
 

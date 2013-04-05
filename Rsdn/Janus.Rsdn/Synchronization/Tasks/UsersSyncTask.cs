@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-using BLToolkit.Data.Linq;
+using LinqToDB;
 
 using Rsdn.Janus.AT;
 using Rsdn.Janus.Framework;
@@ -82,9 +82,9 @@ namespace Rsdn.Janus
 			IEnumerable<int> userIds)
 		{
 			foreach (var series in userIds.SplitToSeries(provider.MaxInClauseElements()))
-				// ReSharper disable AccessToModifiedClosure
+				// ReSharper disable AccessToForEachVariableInClosure
 				db.Users(u => series.Contains(u.ID)).Delete();
-			// ReSharper restore AccessToModifiedClosure
+				// ReSharper restore AccessToForEachVariableInClosure
 		}
 	}
 }
