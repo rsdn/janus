@@ -8,6 +8,7 @@ using Rsdn.SmartApp;
 
 namespace Rsdn.Janus
 {
+	[UsedImplicitly(ImplicitUseTargetFlags.WithMembers)]
 	internal static class XmlBuilder
 	{
 		public static XmlMessage BuildMessage(
@@ -40,9 +41,9 @@ namespace Rsdn.Janus
 									Smiles = m.SmileCount(),
 									Agrees = m.AgreeCount(),
 									Disagrees = m.DisagreeCount(),
-									m.Violation.PenaltyType,
-									m.Violation.Reason,
-									ViolationDate = m.Violation.Create
+									PenaltyType = m.Violation != null ? m.Violation.PenaltyType : 0,
+									Reason = m.Violation != null ? m.Violation.Reason : null,
+									ViolationDate = m.Violation != null ? m.Violation.Create : DateTime.MinValue
 								});
 				var body = sourceFormatter != null ? sourceFormatter(msg.Message) : msg.Message;
 				var formatter = provider.GetFormatter();

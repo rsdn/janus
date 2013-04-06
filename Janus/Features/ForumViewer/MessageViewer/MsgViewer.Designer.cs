@@ -40,7 +40,6 @@
 			// 
 			// _messageBrowser
 			// 
-			this._messageBrowser.AllowWebBrowserDrop = false;
 			this._messageBrowser.Dock = System.Windows.Forms.DockStyle.Fill;
 			this._messageBrowser.Location = new System.Drawing.Point(1, 1);
 			this._messageBrowser.MinimumSize = new System.Drawing.Size(20, 20);

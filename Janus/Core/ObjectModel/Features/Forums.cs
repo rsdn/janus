@@ -237,7 +237,7 @@ namespace Rsdn.Janus
 					{
 						ID = f.ID,
 						Name = f.Name,
-						LastSync = f.SubscribedForum.LastSync,
+						LastSync = f.SubscribedForum != null ? f.SubscribedForum.LastSync : 0,
 						IsSubscribed = false,
 						IsRateable = f.Rated,
 						RateLimit = f.RateLimit > 0,
