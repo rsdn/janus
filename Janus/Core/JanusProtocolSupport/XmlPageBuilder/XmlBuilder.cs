@@ -43,7 +43,7 @@ namespace Rsdn.Janus
 									Disagrees = m.DisagreeCount(),
 									PenaltyType = m.Violation != null ? m.Violation.PenaltyType : 0,
 									Reason = m.Violation != null ? m.Violation.Reason : null,
-									ViolationDate = m.Violation != null ? m.Violation.Create : DateTime.MinValue
+									ViolationDate = m.Violation != null ? (DateTime?)m.Violation.Create : null
 								});
 				var body = sourceFormatter != null ? sourceFormatter(msg.Message) : msg.Message;
 				var formatter = provider.GetFormatter();
@@ -83,7 +83,7 @@ namespace Rsdn.Janus
 						ViolationReason =
 							msg.Reason.IsNullOrEmpty()
 								? null
-								: msg.ViolationDate.ToString(dateFormat) + " " + msg.Reason
+								: msg.ViolationDate.GetValueOrDefault().ToString(dateFormat) + " " + msg.Reason
 					};
 
 				if (Config.Instance.ForumDisplayConfig.Envelope.ShowRateFrame)
