@@ -29,10 +29,12 @@
         <link href="janus://formatter/formatter.css" rel="stylesheet" type="text/css" />
         <script src="janus://formatter/formatter.js"></script>
         <script type="text/javascript">
-          window.onload = function () {
-            var msgBody = document.getElementById("MsgBody");
-            msgBody.style.height = document.body.clientHeight - msgBody.offsetTop;
+          function UpdateScroll() {
+              var msgBody = document.getElementById("MsgBody");
+              msgBody.style.height = document.body.clientHeight - msgBody.offsetTop;
           }
+          window.onload = function() { UpdateScroll(); }
+          window.onresize = function () { UpdateScroll(); }
         </script>
       </head>
       <body marginwidth="0" marginheight="0" style="overflow-y:hidden;">
