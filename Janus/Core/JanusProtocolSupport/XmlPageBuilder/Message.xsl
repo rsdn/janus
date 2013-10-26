@@ -30,8 +30,9 @@
         <script src="janus://formatter/formatter.js"></script>
         <script type="text/javascript">
           function UpdateScroll() {
-              var msgBody = document.getElementById("MsgBody");
-              msgBody.style.height = document.body.clientHeight - msgBody.offsetTop;
+            var msgBody = document.getElementById("MsgBody");
+            var resultHeight = document.body.clientHeight - msgBody.offsetTop;
+            msgBody.style.height = resultHeight > 0 ? resultHeight : msgBody.offsetTop;
           }
           window.onload = function() { UpdateScroll(); }
           window.onresize = function () { UpdateScroll(); }

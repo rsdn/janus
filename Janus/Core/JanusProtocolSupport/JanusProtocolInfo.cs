@@ -222,7 +222,7 @@ namespace Rsdn.Janus
 		public static string FormatURI(JanusProtocolResourceType resourceType, string parameters)
 		{
 			return string.Format(_janusProtocolTemplate,
-			 					 _janusProtocolPrefix, GetResourceName(resourceType),
+								 _janusProtocolPrefix, GetResourceName(resourceType),
 								 _janusProtocolSeparator, parameters);
 		}
 
@@ -337,10 +337,12 @@ namespace Rsdn.Janus
 		// http://www.rsdn.ru/forum/message/123456.flat.aspx
 		// http://www.rsdn.ru/forum/message/123456.flat.6.aspx
 		// http://www.rsdn.ru/forum/flame.politics/3402512.1.aspx
+		// http://rsdn.ru/forum/life/5343382
+		// http://rsdn.ru/forum/life/5343382.flat
 		private static readonly Regex _msgUrlDetector2Rx =
 			new Regex(
 				_rsdnLinkPattern
-				+ @"(/|\\)[?]?Forum(/|\\)[\w\.]+(/|\\)(?'mid'\d+)\.(flat\.)?(\d+\.)?aspx",
+				+ @"(/|\\)[?]?forum(/|\\)[\w\.]+(/|\\)(?'mid'\d+)(\.flat)?(\.\d+)?(\.aspx)?",
 				RegexOptions.Compiled | RegexOptions.IgnoreCase);
 
 		// Поддержка именованных ресурсов
