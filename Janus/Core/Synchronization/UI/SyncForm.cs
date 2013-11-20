@@ -108,6 +108,7 @@ namespace Rsdn.Janus
 			_syncTaskList.SmallImageList = _taskStateImages;
 			_pinCheck.Checked = Config.Instance.SyncWindowPinned;
 			_splitContainer.Panel2Collapsed = true;
+			_errorsGrid.AutoGenerateColumns = false;
 			_errorsGrid.DataSource = _errors;
 			Height = _normalHeight;
 		}
