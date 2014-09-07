@@ -323,13 +323,10 @@ namespace Rsdn.Janus
 		private const string _rsdnLinkPattern = @"^(http://)?((www|gzip|rsdn|rsdn3).)?rsdn.ru";
 
 		// Варианты ссылок на сообщения
-		// http://rsdn.ru/forum/?action=message&gid=5&mid=367
-		// http://www.rsdn.ru/forum/message.asp?mid=8073
-		// http://www.rsdn.ru/forum/?gid=3&mid=7755&tid=7444
+		// http://rsdn.ru/forum/test/5765306.1
 		private static readonly Regex _msgUrlDetectorRx =
 			new Regex(
-				_rsdnLinkPattern
-				+ @"(/|\\)[?]?Forum(/|\\)?(((Message|Default).(aspx|asp))|(\?(action=message&amp;)?gid=\d\d?))?(\?|\&amp;)mid=(?'mid'\d+)",
+				_rsdnLinkPattern + @"/forum/[a-zA-Z.]+/\d{1,9}(.(1|all|flat(.\d+)?|hot))?",
 				RegexOptions.Compiled | RegexOptions.IgnoreCase);
 
 		// http://www.rsdn.ru/forum/message/4234523.aspx
