@@ -49,9 +49,9 @@
 
   <!-- Projects to Build -->
   <ItemGroup>
-    <ProjectFiles Include="$(MSBuildProjectDirectory)\**\*.sln">
-      <Properties>Configuration=$(BuildConfiguration)</Properties>
-    </ProjectFiles>
+		<ProjectFiles Include="$(MSBuildProjectDirectory)\..\Janus.4.sln">
+			<Properties>Configuration=$(BuildConfiguration)</Properties>
+		</ProjectFiles>
   </ItemGroup>
 
   <Target Name="Compile" DependsOnTargets="Clean;Version">
