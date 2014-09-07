@@ -15,7 +15,7 @@
 
   <PropertyGroup Condition=" '$(BUILD_NUMBER)' != '' ">
     <!-- Build Server Number -->
-    <Version>1.0.0.0</Version>
+    <Version>$(BUILD_NUMBER)</Version>
     <FileVersion>$(BUILD_NUMBER)</FileVersion>
     <InformationalVersion>$(BUILD_NUMBER)</InformationalVersion>
   </PropertyGroup>

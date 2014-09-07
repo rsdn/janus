@@ -47,6 +47,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="..\..\.build\GlobalAssemblyInfo.cs">
+      <Link>Properties\GlobalAssemblyInfo.cs</Link>
+    </Compile>
     <Compile Include="Commands\AdminCommandProvider.cs" />
     <Compile Include="Commands\AdminCommandResources.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -57,7 +60,6 @@
     <Compile Include="Menu\ForumMenuProvider.cs" />
     <Compile Include="Menu\MessageContextMenuProvider.cs" />
     <Compile Include="ModeratorAutocompleteProvider.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Commands\AdminCommandResources.ru.resx" />

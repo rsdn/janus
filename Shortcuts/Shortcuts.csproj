@@ -77,8 +77,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AssemblyInfo.cs">
-      <SubType>Code</SubType>
+    <Compile Include="..\.build\GlobalAssemblyInfo.cs">
+      <Link>GlobalAssemblyInfo.cs</Link>
     </Compile>
     <Compile Include="DesignShortcuts.cs">
       <SubType>Form</SubType>

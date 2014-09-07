@@ -45,6 +45,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="..\.build\GlobalAssemblyInfo.cs">
+      <Link>Properties\GlobalAssemblyInfo.cs</Link>
+    </Compile>
     <Compile Include="Imaging\ImageFormatInfo.cs" />
     <Compile Include="Imaging\Utilities.cs" />
     <Compile Include="Ipc\APipeConnection.cs" />
@@ -62,7 +65,6 @@
     <Compile Include="Networking\Resource.cs" />
     <Compile Include="Networking\IResourceProvider.cs" />
     <Compile Include="Networking\ResourceReader.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -99,6 +99,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="..\.build\GlobalAssemblyInfo.cs">
+      <Link>Properties\GlobalAssemblyInfo.cs</Link>
+    </Compile>
     <Compile Include="ShowResultForm.Designer.cs">
       <DependentUpon>ShowResultForm.cs</DependentUpon>
     </Compile>
@@ -108,9 +111,6 @@
     <Content Include="LocUtil2.ico" />
     <Content Include="ResourceFile.png" />
     <Content Include="ResourceItem.png" />
-    <Compile Include="AssemblyInfo.cs">
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Include="CultureManager\CultureManagerForm.cs">
       <SubType>Form</SubType>
     </Compile>

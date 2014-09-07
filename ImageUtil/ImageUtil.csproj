@@ -55,6 +55,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="..\.build\GlobalAssemblyInfo.cs">
+      <Link>Properties\GlobalAssemblyInfo.cs</Link>
+    </Compile>
     <Compile Include="ImageAddConflictArgs.cs" />
     <Compile Include="ImageInfo.cs" />
     <Compile Include="ImageNameArgs.cs" />
@@ -73,7 +76,6 @@
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="ImageNameForm.resx">
       <SubType>Designer</SubType>
       <DependentUpon>ImageNameForm.cs</DependentUpon>
