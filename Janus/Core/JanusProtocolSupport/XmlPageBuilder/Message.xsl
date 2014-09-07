@@ -180,7 +180,7 @@
 
 		<div id="MsgBody"  style="overflow-y: auto; width: 100%">
 
-			<div class="m" style="font-size:13px">
+			<div class="m">
 
 				<xsl:if test="FormattingOptions/ShowRateFrame = 'true' and count(Rate/RateList/RateItem) &gt; 0">
 					<xsl:apply-templates select="Rate"/>
