@@ -306,7 +306,7 @@ namespace Rsdn.Janus
 		private const string _externalUserRating = @"{0}Forum/?rid={1}";
 		private const string _externalUserOutrating = @"{0}Forum/?rby={1}";
 		private const string _externalUserMessages = @"{0}Forum/?uid={1}";
-		private const string _externalMessage = @"{0}Forum/Message.aspx?mid={1}&only=1";
+		private const string _externalMessage = @"{0}forum/message/{1}.1";
 
 		#endregion
 
