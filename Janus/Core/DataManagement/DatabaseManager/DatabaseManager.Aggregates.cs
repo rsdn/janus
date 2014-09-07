@@ -10,6 +10,7 @@ using JetBrains.Annotations;
 using LinqToDB;
 
 using Rsdn.Janus.DataModel;
+using Rsdn.SmartApp;
 
 namespace Rsdn.Janus
 {
@@ -229,7 +230,8 @@ namespace Rsdn.Janus
 				var sw = Stopwatch.StartNew();
 
 				//db.TopicInfos().Delete();
-				var recordsProcessed = UpdateTopicInfoByFilter(db, null, null);
+
+				var recordsProcessed = UpdateTopicInfoByFilter(db, null, null); ;
 				tx.Commit();
 
 				if (showGui)

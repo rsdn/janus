@@ -10,7 +10,7 @@ namespace Rsdn.Janus.DataModel
 		[Column]
 		int MessageID { get; }
 
-		[Association(ThisKey = "MessageID", OtherKey = "ID", CanBeNull = true)]
+		[Association(ThisKey = "MessageID", OtherKey = "ID", CanBeNull = false)]
 		IForumMessage Message { get; }
 
 		[Column]
