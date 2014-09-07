@@ -2,6 +2,8 @@
 using System.Reactive.Disposables;
 using Rsdn.SmartApp;
 
+using IServiceProvider = System.IServiceProvider;
+
 namespace Rsdn.Janus
 {
 	/// <summary>

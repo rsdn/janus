@@ -2,6 +2,8 @@
 
 using Rsdn.SmartApp;
 
+using IServiceProvider = System.IServiceProvider;
+
 namespace Rsdn.Janus.Admin.Commands
 {
 	[CommandTarget]

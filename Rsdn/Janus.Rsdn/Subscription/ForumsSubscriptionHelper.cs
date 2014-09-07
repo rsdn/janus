@@ -43,7 +43,7 @@ namespace Rsdn.Janus
 		}
 
 		public static void UpdateForumsSubscriptions(
-			[NotNull] IServiceProvider serviceProvider,
+			[NotNull] System.IServiceProvider serviceProvider,
 			[NotNull] IEnumerable<ForumSubscriptionRequest> requests,
 			bool promptToDelete)
 		{
@@ -111,7 +111,7 @@ namespace Rsdn.Janus
 		}
 
 		private static void UpdateForumsSubscriptions(
-			[NotNull] IServiceProvider serviceProvider,
+			[NotNull] System.IServiceProvider serviceProvider,
 			[NotNull] IEnumerable<ForumSubscriptionRequest> requests,
 			[NotNull] DeleteMessagesPredicate deleteMessagesPredicate)
 		{

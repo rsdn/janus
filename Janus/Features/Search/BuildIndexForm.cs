@@ -139,7 +139,7 @@ namespace Rsdn.Janus
 											m.UserID,
 											m.UserNick))
 								.ToList();
-					var reader = IndexReader.Open(writer.GetDirectory(), false);
+					var reader = IndexReader.Open(writer.Directory, false);
 					try
 					{
 						foreach (var item in items)
@@ -167,7 +167,7 @@ namespace Rsdn.Janus
 				{
 					args.Stage = DoWorkStage.Optimizing;
 					bw.ReportProgress(0, args);
-					writer.SetUseCompoundFile(true);
+					writer.UseCompoundFile = true;
 					writer.Optimize();
 				}
 			}

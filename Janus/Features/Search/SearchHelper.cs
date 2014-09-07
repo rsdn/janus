@@ -48,7 +48,7 @@ namespace Rsdn.Janus
 			var w =
 				new IndexWriter(
 					indexPath,
-						new RussianAnalyzer(),
+						new RussianAnalyzer(Version.LUCENE_30),
 						!IndexReader.IndexExists(indexPath),
 						IndexWriter.MaxFieldLength.UNLIMITED);
 			// optimizing
@@ -136,7 +136,7 @@ namespace Rsdn.Janus
 		{
 			var result = new List<string>();
 			var query = new BooleanQuery();
-			var analyzer = new RussianAnalyzer();
+			var analyzer = new RussianAnalyzer(Version.LUCENE_30);
 			var indexPath = GetIndexDir();
 			var searchTextExists = !string.IsNullOrEmpty(searchText);
 
@@ -172,12 +172,12 @@ namespace Rsdn.Janus
 			if (forumID != -1)
 				query.Add(
 					new TermQuery(new Term("gid", forumID.ToString())),
-					BooleanClause.Occur.MUST);
+					Occur.MUST);
 
 			if (searchInMyMessages)
 				query.Add(
 					new TermQuery(new Term("uid", Config.Instance.SelfId.ToString())),
-					BooleanClause.Occur.MUST);
+					Occur.MUST);
 
 			//if (searchInQuestions)
 			//  bq.Add(new TermQuery(new Term("tid", "0")), true, false);
@@ -185,7 +185,7 @@ namespace Rsdn.Janus
 			if (from.Ticks != 0 || to.Ticks != 0)
 			{
 				var rq = new TermRangeQuery("dte", FormatDate(from), FormatDate(to), true, true);
-				query.Add(rq, BooleanClause.Occur.MUST);
+				query.Add(rq, Occur.MUST);
 			}
 			
 			if (searchTextExists)
@@ -194,16 +194,16 @@ namespace Rsdn.Janus
 				if (searchInText)
 					searchTextQuery.Add(
 						new QueryParser(Version.LUCENE_29, "message", analyzer).Parse(searchText),
-						BooleanClause.Occur.SHOULD);
+						Occur.SHOULD);
 				if (searchInSubject)
 					searchTextQuery.Add(
 						new QueryParser(Version.LUCENE_29, "subject", analyzer).Parse(searchText),
-						BooleanClause.Occur.SHOULD);
+						Occur.SHOULD);
 				if (searchAuthor)
 					searchTextQuery.Add(
 						new QueryParser(Version.LUCENE_29, "usernick", analyzer).Parse(searchText),
-						BooleanClause.Occur.SHOULD);
-				query.Add(searchTextQuery, BooleanClause.Occur.MUST);
+						Occur.SHOULD);
+				query.Add(searchTextQuery, Occur.MUST);
 			}
 
 			var searcher = new IndexSearcher(indexPath, true);
@@ -214,7 +214,7 @@ namespace Rsdn.Janus
 					.AddRange(
 						topDocs
 							.ScoreDocs
-							.Select(scored => searcher.Doc(scored.doc).Get("mid")));
+							.Select(scored => searcher.Doc(scored.Doc).Get("mid")));
 			}
 			finally
 			{
