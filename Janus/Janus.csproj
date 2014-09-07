@@ -1416,6 +1416,7 @@
     <Compile Include="rsdn.ru\Sync\RsdnSyncConfig.cs" />
     <Compile Include="rsdn.ru\Sync\RsdnSyncConfigService.cs" />
     <Compile Include="SR.cs" />
+    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Core\ApplicationCommands\ApplicationCommandResources.resx">
