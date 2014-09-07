@@ -15,10 +15,20 @@
 		<link href="janus://style/janus.css" rel="stylesheet" type="text/css">
 		<link href="janus://formatter/formatter.css" rel="stylesheet" type="text/css">
 		<script src="janus://formatter/formatter.js"></script>
+		<script type="text/javascript">
+			function UpdateScroll() {
+				var msgBody = document.getElementById("MsgBody");
+				var resultHeight = document.body.clientHeight - msgBody.offsetTop;
+				msgBody.style.height = resultHeight > 0 ? resultHeight : msgBody.offsetTop;
+			}
+			window.onload = function() { UpdateScroll(); }
+			window.onresize = function () { UpdateScroll(); }
+		</script>
+
 	</head>
 	<body marginwidth="0" marginheight="0" style="overflow-y:hidden;">
 		{2}
-		<div style="overflow-x: auto; overflow-y: auto; width: 100%; height: expression(document.body.clientHeight - this.offsetTop);">
+		<div style="overflow-x: auto; overflow-y: auto; height: expression(document.body.clientHeight - this.offsetTop);">
 			<div class="m" style="width: 100%;">
 			{3}
 			<div class="o">{4}</div>
