@@ -276,10 +276,12 @@
     <Compile Include="Synchronization\WebSvcSync\ITransferNotificator.cs" />
     <Compile Include="Synchronization\WebSvcSync\IWebSvcSyncTask.cs" />
     <Compile Include="Synchronization\WebSvcSync\TransferDirection.cs" />
+    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="linq2db">
-      <HintPath>..\Dependencies\linq2db\linq2db.dll</HintPath>
+    <Reference Include="linq2db, Version=1.0.5.0, Culture=neutral, PublicKeyToken=f19f8aed7feff67e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\linq2db.1.0.5\lib\net40\linq2db.dll</HintPath>
     </Reference>
     <Reference Include="R.SAT-Common, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>

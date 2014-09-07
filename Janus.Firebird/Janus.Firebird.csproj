@@ -68,6 +68,7 @@
     <None Include="Janus.Extension">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="FbConfigControl.resx">
@@ -93,7 +94,8 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="linq2db">
-      <HintPath>..\Dependencies\linq2db\linq2db.dll</HintPath>
+      <HintPath>..\packages\linq2db.1.0.5\lib\net40\linq2db.dll</HintPath>
+      <Private>False</Private>
     </Reference>
     <Reference Include="R.SAT-Common, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>

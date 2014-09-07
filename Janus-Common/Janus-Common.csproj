@@ -45,7 +45,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="linq2db">
-      <HintPath>..\Dependencies\linq2db\linq2db.dll</HintPath>
+      <HintPath>..\packages\linq2db.1.0.5\lib\net40\linq2db.dll</HintPath>
     </Reference>
     <Reference Include="R.SAT-Common, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -279,6 +279,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Database\DatabaseResources.ru.resx" />
     <EmbeddedResource Include="Utils\CommonTypes.xsd" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
