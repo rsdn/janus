@@ -200,8 +200,8 @@
 
 	<xsl:template match="Rate">
 
-		<div style="float: right; margin: 3px; width:10%; background-color: #339933;">
-			<table width="100%" cellspacing="0" class="smallrate">
+		<div class="rate-box">
+			<table cellspacing="0" class="smallrate">
 				<tbody>
 					<tr>
 						<td colspan="2"

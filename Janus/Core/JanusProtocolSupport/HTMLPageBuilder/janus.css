@@ -13,7 +13,7 @@ body
 		font-family: verdana, tahoma, helvetica, arial;
 /*		margin: 2px;*/
 		padding: 0px 0px;
-		font-size: 12px;
+		font-size: 14px !important;
 }
 .himg
 {
@@ -26,7 +26,7 @@ body
 {
 		font-family: verdana, tahoma, helvetica, arial;
 		background-color: #FFFFF4;
-		font-size: x-small;
+		font-size: 13px;
 		text-align: left;
 		padding: 1px 5px;
 }
@@ -54,41 +54,50 @@ body
 /* Тело сообщения с ошибкой */
 .ebody
 {
-		border-style: none;
-		background-color: White;
-		color: black;
-		font-family: verdana, tahoma, helvetica, arial;
-		margin: 10px;
-		padding: 5px 5px;
-		font-size: x-small;
+	border-style: none;
+	background-color: White;
+	color: black;
+	font-family: verdana, tahoma, helvetica, arial;
+	margin: 10px;
+	padding: 5px 5px;
+	font-size: x-small;
 }
 /* Подпись для страницы с ошибкой */
 .etail
 {
-		color: black;
-		font-family: verdana, tahoma, helvetica, arial;
-		font-size: xx-small;
-		font-style: italic;
+	color: black;
+	font-family: verdana, tahoma, helvetica, arial;
+	font-size: 13px;
+	font-style: italic;
 }
 /* Трассировка стека для страницы с ошибкой */
 .etrace
 {
-		color: black;
-		background-color: #EEEEEE;
-		font-family: verdana, tahoma, helvetica, arial;
-		font-size: small;
+	color: black;
+	background-color: #EEEEEE;
+	font-family: verdana, tahoma, helvetica, arial;
+	font-size: small;
 }
+
 /* Панель оценок */
-.smallrate
-{
-		font-family: verdana, tahoma, helvetica, arial;
-		font-size: xx-small;
-		margin: 1px;
+.rate-box {
+	float: right;
+	border: 1px solid #339933;
 }
+
+.rate-box table {
+	font-family: verdana, tahoma, helvetica, arial;
+	font-size: 11px;
+}
+
+.rate-box table td {
+	padding: 3px;
+}
+
 .normalrate
 {
-		font-family: verdana, tahoma, helvetica, arial;
-		font-size: x-small;
+	font-family: verdana, tahoma, helvetica, arial;
+	font-size: 13px;
 }
 .hdr
 {
