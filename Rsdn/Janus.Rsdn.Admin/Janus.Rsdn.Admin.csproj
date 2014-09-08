@@ -34,9 +34,11 @@
   <ItemGroup>
     <Reference Include="R.SAT-Common">
       <HintPath>..\..\Dependencies\R.SAT\R.SAT-Common.dll</HintPath>
+      <Private>False</Private>
     </Reference>
     <Reference Include="R.SAT-Model">
       <HintPath>..\..\Dependencies\R.SAT\R.SAT-Model.dll</HintPath>
+      <Private>False</Private>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />

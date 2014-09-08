@@ -3,6 +3,7 @@
 
 	<group name="Open">
 		<menuCommand command="Janus.Rsdn.Admin.ModerateMessage" image="openurl"/>
+		<menuCommand command="Janus.Rsdn.Admin.EditMessage" image="openurl"/>
 	</group>
 
 </root>

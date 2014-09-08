@@ -2,8 +2,14 @@
 <commands xmlns="http://rsdn.ru/projects/Janus/JanusCommandDescriptor.xsd">
 
 	<command name="Janus.Rsdn.Admin.ModerateMessage"
-         displayNameTextResource="AdminModerateMessage_DisplayName"
-         descriptionTextResource="AdminModerateMessage_Description">
+	         displayNameTextResource="AdminModerateMessage_DisplayName"
+	         descriptionTextResource="AdminModerateMessage_Description">
+		<parameter name="messageId" isOptional="true"/>
+	</command>
+
+	<command name="Janus.Rsdn.Admin.EditMessage"
+	         displayNameTextResource="AdminEditMessage_DisplayName"
+	         descriptionTextResource="AdminEditMessage_Description">
 		<parameter name="messageId" isOptional="true"/>
 	</command>
 

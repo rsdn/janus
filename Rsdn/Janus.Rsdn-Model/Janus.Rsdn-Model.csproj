@@ -45,6 +45,7 @@
   <ItemGroup>
     <Reference Include="R.SAT-Model">
       <HintPath>..\..\Dependencies\R.SAT\R.SAT-Model.dll</HintPath>
+      <Private>False</Private>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -64,6 +65,7 @@
     <ProjectReference Include="..\..\Janus-Common\Janus-Common.csproj">
       <Project>{3F0703D6-B568-492C-9AE2-807C490826C5}</Project>
       <Name>Janus-Common</Name>
+      <Private>False</Private>
     </ProjectReference>
     <ProjectReference Include="..\..\Janus-Model\Janus-Model.csproj">
       <Project>{8B6FB1B4-141C-46DA-82B8-6A2220D7D868}</Project>
