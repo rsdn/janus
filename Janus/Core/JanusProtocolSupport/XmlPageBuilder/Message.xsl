@@ -166,6 +166,9 @@
 									<xsl:attribute name="alt">
 										<xsl:value-of select="ViolationReason" />
 									</xsl:attribute>
+									<xsl:attribute name="title">
+										<xsl:value-of select="ViolationReason" />
+									</xsl:attribute>
 								</xsl:if>
 							</img>
 
