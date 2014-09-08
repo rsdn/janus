@@ -181,7 +181,7 @@
 
 		</xsl:if>
 
-		<div id="MsgBody"  style="overflow-y: auto; width: 100%">
+		<div id="MsgBody">
 
 			<div class="m">
 

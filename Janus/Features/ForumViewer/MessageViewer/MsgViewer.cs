@@ -30,6 +30,9 @@ namespace Rsdn.Janus
 
 			_messageBrowser.Navigating += MessageBrowserNavigating;
 			_messageBrowser.StatusTextChanged += MessageBrowserStatusTextChanged;
+#if DEBUG
+			_messageBrowser.ScriptErrorsSuppressed = false;
+#endif
 
 			_toolbarGenerator = new StripMenuGenerator(_serviceManager, _toolStrip, "MessageViewer.Toolbar", true);
 		}

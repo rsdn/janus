@@ -58,6 +58,10 @@ namespace Rsdn.Janus
 				if (image != null) 
 					Icon = image.ToIcon();
 			}
+
+#if DEBUG
+			_webBrowser.ScriptErrorsSuppressed = false;
+#endif
 		}
 
 		#region Public Members
