@@ -2,9 +2,13 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Reactive;
-using System.Reactive.Disposables;
 using System.Windows.Forms;
-using Rsdn.SmartApp;
+
+using CodeJam;
+using CodeJam.Extensibility;
+using CodeJam.Extensibility.EventBroker;
+
+using Disposable = CodeJam.Disposable;
 
 namespace Rsdn.Janus
 {
@@ -62,7 +66,7 @@ namespace Rsdn.Janus
 			if (Config.Instance.ConfirmationConfig.ConfirmMarkAll
 					&& MessageBox.Show(
 						context.GetRequiredService<IUIShell>().GetMainWindowParent(),
-						SR.Forum.PromptMarkAll.FormatStr(
+						SR.Forum.PromptMarkAll.FormatWith(
 							isRead ? SR.Forum.PromptRead : SR.Forum.PromptUnread),
 						ApplicationInfo.ApplicationName,
 						MessageBoxButtons.YesNo,
@@ -92,7 +96,7 @@ namespace Rsdn.Janus
 				return CommandStatus.Normal;
 
 			var activeForumSvc = context.GetService<IActiveForumService>();
-			return activeForumSvc != null && activeForumSvc.ActiveForum != null
+			return activeForumSvc?.ActiveForum != null
 				? CommandStatus.Normal
 				: CommandStatus.Unavailable;
 		}
@@ -146,7 +150,7 @@ namespace Rsdn.Janus
 				return CommandStatus.Normal;
 
 			var activeForumSvc = context.GetService<IActiveForumService>();
-			return activeForumSvc != null && activeForumSvc.ActiveForum != null
+			return activeForumSvc?.ActiveForum != null
 				? CommandStatus.Normal
 				: CommandStatus.Unavailable;
 		}
@@ -163,10 +167,9 @@ namespace Rsdn.Janus
 			var activeForumSvc = provider.GetService<IActiveForumService>();
 			if (activeForumSvc != null)
 			{
-				SmartApp.EventHandler<IActiveForumService> statusUpdater = sender => handler();
+				CodeJam.Extensibility.EventHandler<IActiveForumService> statusUpdater = sender => handler();
 				activeForumSvc.ActiveForumChanged += statusUpdater;
-				return Disposable.Create(
-					() => activeForumSvc.ActiveForumChanged -= statusUpdater);
+				return Disposable.Create(() => activeForumSvc.ActiveForumChanged -= statusUpdater);
 			}
 			return Disposable.Empty;
 		}
@@ -196,7 +199,7 @@ namespace Rsdn.Janus
 				provider
 					.GetRequiredService<IActiveForumService>()
 					.ActiveForum;
-			return currentForum != null ? currentForum.ID : -1;
+			return currentForum?.ID ?? -1;
 		}
 	}
 }

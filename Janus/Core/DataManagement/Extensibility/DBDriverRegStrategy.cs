@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Resources;
 
-using Rsdn.SmartApp;
+using CodeJam;
+using CodeJam.Extensibility;
+using CodeJam.Extensibility.Registration;
 
 namespace Rsdn.Janus
 {
@@ -18,9 +20,7 @@ namespace Rsdn.Janus
 			JanusDBDriverAttribute attr)
 		{
 			if (!typeof (IDBDriver).IsAssignableFrom(context.Type))
-				throw new ExtensibilityException(
-					"Type '{0}' must implement interface '{1}'"
-					.FormatStr(context.Type, typeof(IDBDriver)));
+				throw new ExtensibilityException($"Type '{context.Type}' must implement interface '{typeof(IDBDriver)}'");
 			return new JanusDBDriverInfo(
 				attr.Name,
 				() => RetreiveResource(

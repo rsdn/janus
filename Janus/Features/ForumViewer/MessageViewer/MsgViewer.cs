@@ -3,7 +3,7 @@ using System.ComponentModel;
 using System.Diagnostics;
 using System.Windows.Forms;
 
-using Rsdn.SmartApp;
+using CodeJam.Extensibility;
 
 namespace Rsdn.Janus
 {
@@ -125,8 +125,7 @@ namespace Rsdn.Janus
 
 		private void OnMsgChanged()
 		{
-			if (MsgChanged != null)
-				MsgChanged(this, EventArgs.Empty);
+			MsgChanged?.Invoke(this, EventArgs.Empty);
 		}
 
 		#region Controls events
@@ -136,7 +135,7 @@ namespace Rsdn.Janus
 			if (!_blockExternalNavigation)
 			{
 				var protocolInfo = JanusProtocolInfo.Parse(e.Url.ToString());
-				var linkType = protocolInfo == null ? LinkType.External : protocolInfo.LinkType;
+				var linkType = protocolInfo?.LinkType ?? LinkType.External;
 				var obManager = _serviceManager.GetRequiredService<IOutboxManager>();
 				var manager = ApplicationManager.Instance;
 

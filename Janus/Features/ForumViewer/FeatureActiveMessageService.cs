@@ -2,8 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 
+using CodeJam.Extensibility;
+
 using Rsdn.Janus.ObjectModel;
-using Rsdn.SmartApp;
 
 namespace Rsdn.Janus
 {
@@ -22,16 +23,8 @@ namespace Rsdn.Janus
 
 		#region IActiveMessageService Members
 
-		public IEnumerable<IForumMessageInfo> ActiveMessages
-		{
-			get
-			{
-				return
-					_activeMessagesFeature != null
-						? _activeMessagesFeature.ActiveMessages.Cast<IForumMessageInfo>() 
-						: Enumerable.Empty<IForumMessageInfo>();
-			}
-		}
+		public IEnumerable<IForumMessageInfo> ActiveMessages =>
+			_activeMessagesFeature?.ActiveMessages ?? Enumerable.Empty<IForumMessageInfo>();
 
 		public event EventHandler ActiveMessagesChanged;
 
@@ -50,8 +43,7 @@ namespace Rsdn.Janus
 
 		private void OnActiveMessagesChanged()
 		{
-			if (ActiveMessagesChanged != null)
-				ActiveMessagesChanged(this, EventArgs.Empty);
+			ActiveMessagesChanged?.Invoke(this, EventArgs.Empty);
 		}
 
 		private void AfterFeatureActivate(IFeature oldFeature, IFeature newFeature)

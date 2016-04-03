@@ -5,10 +5,13 @@ using System.Diagnostics;
 using System.Linq;
 using System.Text.RegularExpressions;
 
+using CodeJam;
+using CodeJam.Extensibility;
+using CodeJam.Extensibility.Model;
+
 using LinqToDB.Mapping;
 
 using Rsdn.TreeGrid;
-using Rsdn.SmartApp;
 
 namespace Rsdn.Janus
 {
@@ -43,10 +46,7 @@ public abstract class MsgBase : IMsg, ICollection<MsgBase>, IGetData
 			IsRead = true;
 		}
 
-		protected IServiceProvider ServiceProvider
-		{
-			get { return _serviceProvider; }
-		}
+		protected IServiceProvider ServiceProvider => _serviceProvider;
 
 		[Column("mid")]
 		public int ID { get; set; }
@@ -75,20 +75,14 @@ public abstract class MsgBase : IMsg, ICollection<MsgBase>, IGetData
 		[Column("a_agree")]
 		protected int RepliesAgree { private get; set; }
 
-		IForumMessageInfo IForumMessageInfo.Topic
-		{
-			get { return Topic; }
-		}
+		IForumMessageInfo IForumMessageInfo.Topic => Topic;
 
 		[Column("a_count")]
 		public int RepliesCount { get; set; }
 		[Column("a_unread")]
 		public int RepliesUnread { get; protected set; }
 
-		IForumMessageInfo IForumMessageInfo.Parent
-		{
-			get { return Parent; }
-		}
+		IForumMessageInfo IForumMessageInfo.Parent => Parent;
 
 		[Column("a_rate")]
 		protected int RepliesRate { private get; set; }			// Общий ретинг по дочерним сообщениям.
@@ -125,10 +119,7 @@ public abstract class MsgBase : IMsg, ICollection<MsgBase>, IGetData
 		public bool Closed { get; protected set; }
 
 		#region IForumMessageHeader Members
-		public bool AutoRead
-		{
-			get { return ReadReplies; }
-		}
+		public bool AutoRead => ReadReplies;
 		#endregion
 
 		[Column("usernick"), Nullable]
@@ -139,14 +130,22 @@ public abstract class MsgBase : IMsg, ICollection<MsgBase>, IGetData
 
 		// Есть ли помеченные ответы.
 		[NotColumn]
-		public bool Marked { get { return IsMarked; } } // Есть ли помеченные ответы.
+		public bool Marked => IsMarked;
+
+// Есть ли помеченные ответы.
 		[NotColumn]
-		public bool HasRepliesUnread { get { return RepliesUnread > 0; } } // Еслить ли нечитанные ответы на данное сообщение.
+		public bool HasRepliesUnread => RepliesUnread > 0;
+
+// Еслить ли нечитанные ответы на данное сообщение.
 
 		[NotColumn]
-		public IMsg Topic { get { return GetTopic(); } } // Возвращает корневое сообщение (тему).
+		public IMsg Topic => GetTopic();
+
+// Возвращает корневое сообщение (тему).
 		[NotColumn]
-		public int TopicID { get { return GetTopicId(); } } // Возвращает ID корневого сообщения (темы).
+		public int TopicID => GetTopicId();
+
+// Возвращает ID корневого сообщения (темы).
 
 		[NotColumn]
 		protected bool IsChild { private get; set; }
@@ -158,17 +157,11 @@ public abstract class MsgBase : IMsg, ICollection<MsgBase>, IGetData
 		/// Сообщение помечено как не прочитанное.
 		/// </summary>
 		[NotColumn]
-		public bool IsUnread
-		{ // Состояние этого поля храним во флагах.
-			get { return (_flags & NodeFlags.Highlight) != 0; }
-		}
+		public bool IsUnread => (_flags & NodeFlags.Highlight) != 0;
 
 		/// <summary>Текст сообщения.</summary>
 		[NotColumn]
-		public string Body
-		{
-			get { return DatabaseManager.GetMessageBody(ServiceProvider, ID); }
-		}
+		public string Body => DatabaseManager.GetMessageBody(ServiceProvider, ID);
 
 		#region Интерфейс сообщения.
 
@@ -284,10 +277,7 @@ public abstract class MsgBase : IMsg, ICollection<MsgBase>, IGetData
 
 		#region ITreeNode - реализация интерфейса.
 
-		ITreeNode ITreeNode.Parent
-		{
-			get { return Parent; }
-		}
+		ITreeNode ITreeNode.Parent => Parent;
 
 		private NodeFlags _flags;
 
@@ -297,17 +287,11 @@ public abstract class MsgBase : IMsg, ICollection<MsgBase>, IGetData
 			set { _flags = value; }
 		}
 
-		public virtual bool HasChildren
-		{
-			get { return RepliesCount > 0; }
-		}
+		public virtual bool HasChildren => RepliesCount > 0;
 
 		protected List<MsgBase> Children { get; set; }
 
-		ITreeNode ITreeNode.this[int index]
-		{
-			get { return Children[index]; }
-		}
+		ITreeNode ITreeNode.this[int index] => Children[index];
 
 		// ICollection - реализация интерфейса.
 		public int Count
@@ -317,7 +301,7 @@ public abstract class MsgBase : IMsg, ICollection<MsgBase>, IGetData
 				if (HasChildren && Children == null)
 					FillChildren();
 
-				return Children == null ? 0 : Children.Count;
+				return Children?.Count ?? 0;
 			}
 		}
 
@@ -326,15 +310,9 @@ public abstract class MsgBase : IMsg, ICollection<MsgBase>, IGetData
 			Children.CopyTo((MsgBase[])array, index);
 		}
 
-		public bool IsSynchronized
-		{
-			get { return false; }
-		}
+		public bool IsSynchronized => false;
 
-		public object SyncRoot
-		{
-			get { return this; }
-		}
+		public object SyncRoot => this;
 
 		public IEnumerator GetEnumerator()
 		{
@@ -418,7 +396,7 @@ public abstract class MsgBase : IMsg, ICollection<MsgBase>, IGetData
 			cellData[_userNameColumn].Image = _imgManager.GetUserImage((UserClass)UserClass);
 
 			var corrReplUnread = IsUnread ? RepliesUnread - 1 : RepliesUnread;
-			var replUnreadStr = corrReplUnread > 0 ? string.Format("({0})", corrReplUnread) : string.Empty;
+			var replUnreadStr = corrReplUnread > 0 ? $"({corrReplUnread})" : string.Empty;
 			var repliesStr = RepliesCount > 0 ? RepliesCount.ToString() : string.Empty;
 			cellData[_replCountColumn].Text = repliesStr + replUnreadStr;
 
@@ -459,10 +437,7 @@ public abstract class MsgBase : IMsg, ICollection<MsgBase>, IGetData
 			Children.CopyTo(array, arrayIndex);
 		}
 
-		public bool IsReadOnly
-		{
-			get { return true; }
-		}
+		public bool IsReadOnly => true;
 
 		/// <exception cref="InvalidOperationException"></exception>
 		public bool Remove(MsgBase item)
@@ -549,10 +524,11 @@ public abstract class MsgBase : IMsg, ICollection<MsgBase>, IGetData
 					}
 				}
 
-				DisplaySubject = _reSubj.FormatStr(UserNick,
-												   !IsAutoReSubj(Subject, Parent.Subject)
-												   ? Subject
-												   : "Re[{0}]".FormatStr(_reNum));
+				DisplaySubject =
+					_reSubj.FormatWith(UserNick,
+						!IsAutoReSubj(Subject, Parent.Subject)
+							? Subject
+							: "Re[{0}]".FormatWith(_reNum));
 			}
 
 			if (IsUnread)

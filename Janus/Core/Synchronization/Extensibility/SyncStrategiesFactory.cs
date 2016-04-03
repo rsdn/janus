@@ -1,6 +1,7 @@
 ﻿using System;
 
-using Rsdn.SmartApp;
+using CodeJam.Extensibility;
+using CodeJam.Extensibility.StratFactories;
 
 namespace Rsdn.Janus
 {

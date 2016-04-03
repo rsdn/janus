@@ -10,7 +10,8 @@ using System.Reflection;
 using System.Xml;
 using System.Xml.Schema;
 
-using Rsdn.SmartApp;
+using CodeJam.Extensibility;
+using CodeJam.Extensibility.EventBroker;
 
 namespace Rsdn.Janus
 {
@@ -46,7 +47,7 @@ namespace Rsdn.Janus
 
 		}
 
-		private IEnumerable<string> GetExtensionDirs(string extDir)
+		private static IEnumerable<string> GetExtensionDirs(string extDir)
 		{
 			return
 				Directory
@@ -93,7 +94,7 @@ namespace Rsdn.Janus
 			foreach (var asmPath in GetExtensionAssemblies(rootDir))
 			{
 				asmHelper.AddAssembly(Assembly.LoadFrom(asmPath));
-				Trace.WriteLine("Use extension assembly '{0}'".FormatStr(asmPath));
+				Trace.WriteLine($"Use extension assembly '{asmPath}'");
 			}
 
 			//Ресолвинг сборок расширений

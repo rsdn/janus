@@ -9,8 +9,6 @@ using System.Resources;
 
 using JetBrains.Annotations;
 
-using Rsdn.SmartApp;
-
 namespace Rsdn.Janus
 {
 	/// <summary>
@@ -25,9 +23,9 @@ namespace Rsdn.Janus
 			[NotNull] this Assembly assembly, [NotNull] string pathToResource)
 		{
 			if (assembly == null)
-				throw new ArgumentNullException("assembly");
+				throw new ArgumentNullException(nameof(assembly));
 			if (pathToResource == null)
-				throw new ArgumentNullException("pathToResource");
+				throw new ArgumentNullException(nameof(pathToResource));
 
 			return Image.FromStream(assembly.GetRequiredResourceStream(pathToResource));
 		}
@@ -39,9 +37,9 @@ namespace Rsdn.Janus
 			[NotNull] this Assembly assembly, [NotNull] string pathToResource)
 		{
 			if (assembly == null)
-				throw new ArgumentNullException("assembly");
+				throw new ArgumentNullException(nameof(assembly));
 			if (pathToResource == null)
-				throw new ArgumentNullException("pathToResource");
+				throw new ArgumentNullException(nameof(pathToResource));
 
 			return new Icon(assembly.GetRequiredResourceStream(pathToResource));
 		}
@@ -53,9 +51,9 @@ namespace Rsdn.Janus
 			[NotNull] this Assembly assembly, [NotNull] string pathToResource)
 		{
 			if (assembly == null)
-				throw new ArgumentNullException("assembly");
+				throw new ArgumentNullException(nameof(assembly));
 			if (pathToResource == null)
-				throw new ArgumentNullException("pathToResource");
+				throw new ArgumentNullException(nameof(pathToResource));
 
 			using (var sr = new StreamReader(assembly.GetRequiredResourceStream(pathToResource)))
 				return sr.ReadToEnd();
@@ -64,23 +62,23 @@ namespace Rsdn.Janus
 		public static string GetDisplayString([NotNull] this ResourceManager resourceManager, string name)
 		{
 			if (resourceManager == null)
-				throw new ArgumentNullException("resourceManager");
+				throw new ArgumentNullException(nameof(resourceManager));
 
 			if (name == null)
 				return null;
 
-			return resourceManager.GetString(name) ?? "<no resource \"{0}\">".FormatStr(name);
+			return resourceManager.GetString(name) ?? $"<no resource \"{name}\">";
 		}
 
 		public static string GetDisplayString([NotNull] this ResourceSet resourceSet, string name)
 		{
 			if (resourceSet == null)
-				throw new ArgumentNullException("resourceSet");
+				throw new ArgumentNullException(nameof(resourceSet));
 
 			if (name == null)
 				return null;
 
-			return resourceSet.GetString(name) ?? "<no resource \"{0}\">".FormatStr(name);
+			return resourceSet.GetString(name) ?? $"<no resource \"{name}\">";
 		}
 
 		public static Stream GetRequiredResourceStream(
@@ -88,14 +86,13 @@ namespace Rsdn.Janus
 			[NotNull] string resourceName)
 		{
 			if (assembly == null)
-				throw new ArgumentNullException("assembly");
+				throw new ArgumentNullException(nameof(assembly));
 			if (resourceName == null)
-				throw new ArgumentNullException("resourceName");
+				throw new ArgumentNullException(nameof(resourceName));
 
 			var stream = assembly.GetManifestResourceStream(resourceName);
 			if (stream == null)
-				throw new ApplicationException(
-					"Resource '{0}' not found in assembly '{1}'.".FormatStr(resourceName, assembly));
+				throw new ApplicationException($"Resource '{resourceName}' not found in assembly '{assembly}'.");
 			return stream;
 		}
 
@@ -111,7 +108,7 @@ namespace Rsdn.Janus
 			CultureInfo culture)
 		{
 			if (assembly == null)
-				throw new ArgumentNullException("assembly");
+				throw new ArgumentNullException(nameof(assembly));
 
 			if (baseName != null)
 			{
@@ -121,7 +118,7 @@ namespace Rsdn.Janus
 				do
 				{
 					resSets.Add(rm.GetResourceSet(curCulture, true, true));
-					if (curCulture.Parent == null || curCulture == curCulture.Parent)
+					if (Equals(curCulture, curCulture.Parent))
 						break;
 					curCulture = curCulture.Parent;
 				} while (true);
@@ -135,8 +132,7 @@ namespace Rsdn.Janus
 			return
 				name =>
 				{
-					throw new ApplicationException(
-						"Запрошена ресурсная строка '{0}', но не указан ресурсный файл.".FormatStr(name));
+					throw new ApplicationException($"Запрошена ресурсная строка '{name}', но не указан ресурсный файл.");
 				};
 		}
 	}

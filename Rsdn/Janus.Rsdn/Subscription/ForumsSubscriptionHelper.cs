@@ -4,13 +4,16 @@ using System.Linq;
 using System.Linq.Expressions;
 using System.Windows.Forms;
 
+using CodeJam;
+using CodeJam.Extensibility;
+using CodeJam.Extensibility.EventBroker;
+
 using JetBrains.Annotations;
 
 using LinqToDB;
 
 using Rsdn.Janus.DataModel;
 using Rsdn.Janus.Properties;
-using Rsdn.SmartApp;
 
 namespace Rsdn.Janus
 {
@@ -43,7 +46,7 @@ namespace Rsdn.Janus
 		}
 
 		public static void UpdateForumsSubscriptions(
-			[NotNull] System.IServiceProvider serviceProvider,
+			[NotNull] IServiceProvider serviceProvider,
 			[NotNull] IEnumerable<ForumSubscriptionRequest> requests,
 			bool promptToDelete)
 		{
@@ -59,7 +62,7 @@ namespace Rsdn.Janus
 						(id, name, descript) =>
 							promptToDelete
 								&& MessageBox.Show(
-									Resources.WarningOnUnsubscribeForum.FormatStr(descript),
+									Resources.WarningOnUnsubscribeForum.FormatWith(descript),
 									Resources.WarningOnUnsubscribeForumCaption,
 									MessageBoxButtons.YesNo,
 									MessageBoxIcon.Question) == DialogResult.Yes);
@@ -111,16 +114,16 @@ namespace Rsdn.Janus
 		}
 
 		private static void UpdateForumsSubscriptions(
-			[NotNull] System.IServiceProvider serviceProvider,
+			[NotNull] IServiceProvider serviceProvider,
 			[NotNull] IEnumerable<ForumSubscriptionRequest> requests,
 			[NotNull] DeleteMessagesPredicate deleteMessagesPredicate)
 		{
 			if (serviceProvider == null)
-				throw new ArgumentNullException("serviceProvider");
+				throw new ArgumentNullException(nameof(serviceProvider));
 			if (requests == null)
-				throw new ArgumentNullException("requests");
+				throw new ArgumentNullException(nameof(requests));
 			if (deleteMessagesPredicate == null)
-				throw new ArgumentNullException("deleteMessagesPredicate");
+				throw new ArgumentNullException(nameof(deleteMessagesPredicate));
 
 			using (var mgr = serviceProvider.CreateDBContext())
 			{

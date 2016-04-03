@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 
+using CodeJam.Extensibility;
+
 using Rsdn.Janus.Framework;
 using Rsdn.Janus.Log;
 
 using WeifenLuo.WinFormsUI.Docking;
-
-using Rsdn.SmartApp;
 
 namespace Rsdn.Janus
 {
@@ -28,7 +28,7 @@ namespace Rsdn.Janus
 		internal DockManager(IServiceProvider provider, Func<DockPanel> dockPanelGetter)
 		{
 			if (dockPanelGetter == null)
-				throw new ArgumentNullException("dockPanelGetter");
+				throw new ArgumentNullException(nameof(dockPanelGetter));
 			_provider = provider;
 			_dockPanelGetter = dockPanelGetter;
 		}
@@ -85,8 +85,7 @@ namespace Rsdn.Janus
 
 		public ContentDummyForm QueryExistingContentPane()
 		{
-			return DockPanel.ActiveDocument is ContentDummyForm
-				? (ContentDummyForm)DockPanel.ActiveDocument : null;
+			return DockPanel.ActiveDocument as ContentDummyForm;
 		}
 
 		private string GetConfigFileName()
@@ -106,8 +105,7 @@ namespace Rsdn.Janus
 				catch (Exception ex)
 				{
 					var logger = _provider.GetService<ILogger>();
-					if (logger != null)
-						logger.LogError(ex.Message);
+					logger?.LogError(ex.Message);
 					DefaultInit();
 				}
 			else

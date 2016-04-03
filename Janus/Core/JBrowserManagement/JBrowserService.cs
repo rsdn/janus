@@ -1,8 +1,8 @@
 ﻿using System;
 
-using JetBrains.Annotations;
+using CodeJam.Extensibility;
 
-using Rsdn.SmartApp;
+using JetBrains.Annotations;
 
 namespace Rsdn.Janus
 {
@@ -15,7 +15,7 @@ namespace Rsdn.Janus
 		public JBrowserService([NotNull] IServiceProvider provider)
 		{
 			if (provider == null)
-				throw new ArgumentNullException("provider");
+				throw new ArgumentNullException(nameof(provider));
 
 			_serviceProvider = provider;
 		}
@@ -25,7 +25,7 @@ namespace Rsdn.Janus
 		public void OpenUrl([NotNull] string url)
 		{
 			if (url == null)
-				throw new ArgumentNullException("url");
+				throw new ArgumentNullException(nameof(url));
 
 			if (_webBrowserForm == null || _webBrowserForm.IsDisposed)
 				_webBrowserForm = new WebBrowserForm(_serviceProvider);

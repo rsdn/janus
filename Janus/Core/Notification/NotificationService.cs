@@ -1,8 +1,9 @@
 ﻿using System;
 
-using JetBrains.Annotations;
+using CodeJam;
+using CodeJam.Extensibility;
 
-using Rsdn.SmartApp;
+using JetBrains.Annotations;
 
 namespace Rsdn.Janus
 {
@@ -14,7 +15,7 @@ namespace Rsdn.Janus
 		public NotificationService([NotNull] IServiceProvider serviceProvider)
 		{
 			if (serviceProvider == null)
-				throw new ArgumentNullException("serviceProvider");
+				throw new ArgumentNullException(nameof(serviceProvider));
 
 			_serviceProvider = serviceProvider;
 		}
@@ -28,8 +29,7 @@ namespace Rsdn.Janus
 			int timeout)
 		{
 			if (text.IsNullOrEmpty())
-				throw new ArgumentException(
-					"Текст оповещения не должен быть null или пустой строкой.", "text");
+				throw new ArgumentException("Текст оповещения не должен быть null или пустой строкой.", nameof(text));
 
 			_serviceProvider
 				.GetRequiredService<INotifyIconService>()

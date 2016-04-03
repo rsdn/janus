@@ -6,9 +6,10 @@ using System.Xml;
 using System.Xml.Linq;
 using System.Xml.Schema;
 
-using JetBrains.Annotations;
+using CodeJam.Extensibility;
+using CodeJam.Xml;
 
-using Rsdn.SmartApp;
+using JetBrains.Annotations;
 
 namespace Rsdn.Janus
 {
@@ -40,11 +41,11 @@ namespace Rsdn.Janus
 			[NotNull] Func<string, string> resourceStringGetter)
 		{
 			if (serviceProvider == null)
-				throw new ArgumentNullException("serviceProvider");
+				throw new ArgumentNullException(nameof(serviceProvider));
 			if (xmlMenuStream == null)
-				throw new ArgumentNullException("xmlMenuStream");
+				throw new ArgumentNullException(nameof(xmlMenuStream));
 			if (resourceStringGetter == null)
-				throw new ArgumentNullException("resourceStringGetter");
+				throw new ArgumentNullException(nameof(resourceStringGetter));
 
 			return LoadMenuRoot(
 				serviceProvider,
@@ -64,7 +65,7 @@ namespace Rsdn.Janus
 						.Elements()
 						.Select(sub => LoadMenuGroup(serviceProvider, sub, resourceStringGetter)));
 
-			throw new ApplicationException("Неизвестный элемент '{0}'.".FormatStr(rootElement));
+			throw new ApplicationException($"Неизвестный элемент '{rootElement}'.");
 		}
 
 		private static IMenuGroup LoadMenuGroup(
@@ -184,7 +185,7 @@ namespace Rsdn.Janus
 					(int)itemElement.Attribute(XName.Get("orderIndex")));
 			}
 
-			throw new ApplicationException("Неизвестный элемент '{0}'.".FormatStr(itemElement));
+			throw new ApplicationException($"Неизвестный элемент '{itemElement}'.");
 		}
 
 		private static void GetMenuCommandTextAndDescription(

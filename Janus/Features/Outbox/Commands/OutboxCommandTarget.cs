@@ -4,8 +4,10 @@ using System.Linq;
 using System.Reactive.Disposables;
 using System.Windows.Forms;
 
+using CodeJam.Extensibility;
+using CodeJam.Extensibility.Instancing;
+
 using Rsdn.Janus.ObjectModel;
-using Rsdn.SmartApp;
 using Rsdn.TreeGrid;
 
 namespace Rsdn.Janus
@@ -59,14 +61,14 @@ namespace Rsdn.Janus
 					MessageBoxIcon.Warning) != DialogResult.Yes)
 				return;
 
-			CreateEditor(
+			foreach (var kvp in CreateEditor(
 					context,
 					context
 						.GetRequiredService<IOutboxManager>()
 						.OutboxForm
 						.SelectedNodes,
-					false)
-				.ForEach(kvp => kvp.Value.Delete(kvp.Key));
+					false))
+				kvp.Value.Delete(kvp.Key);
 		}
 
 		[CommandStatusGetter("Janus.Outbox.DeleteItem")]
@@ -124,7 +126,7 @@ namespace Rsdn.Janus
 				item.GetType(),
 				typeof(OutboxItemEditorAttribute)) as OutboxItemEditorAttribute;
 
-			return ea != null ? ea.EditorType : null;
+			return ea?.EditorType;
 		}
 
 		private readonly Dictionary<Type, IOutboxItemEditor> _editorHash =

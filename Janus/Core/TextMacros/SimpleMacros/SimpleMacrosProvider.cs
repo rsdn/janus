@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+
+using CodeJam;
+
 using Rsdn.Janus.Core.TextMacros.SimpleMacros;
-using Rsdn.SmartApp;
 
 namespace Rsdn.Janus
 {
@@ -23,7 +25,7 @@ namespace Rsdn.Janus
 					"version",
 					SimpleMacrosResources.ApplicationVersion,
 					serviceProvider =>
-					"{0}.{1}.{2}".FormatStr(
+					"{0}.{1}.{2}".FormatWith(
 						ApplicationInfo.Version.Major,
 						ApplicationInfo.Version.Minor,
 						ApplicationInfo.Version.Build)),

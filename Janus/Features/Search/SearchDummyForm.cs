@@ -9,10 +9,12 @@ using System.Linq;
 using Rsdn.Janus.Log;
 using Rsdn.Janus.ObjectModel;
 using Rsdn.Shortcuts;
-using Rsdn.SmartApp;
 using Rsdn.TreeGrid;
 
 using System.ComponentModel;
+
+using CodeJam.Extensibility;
+using CodeJam.Extensibility.Model;
 
 namespace Rsdn.Janus
 {
@@ -206,7 +208,7 @@ namespace Rsdn.Janus
 		private void FillGrid(IEnumerable<MsgBase> messages)
 		{
 			_msgViewer.Msg = null;
-			_tgMsgs.Nodes = new RootNode(messages.Cast<ITreeNode>());
+			_tgMsgs.Nodes = new RootNode(messages);
 			_tgMsgs.ActiveNode = null;
 		}
 		#endregion
@@ -544,8 +546,7 @@ namespace Rsdn.Janus
 
 		private void OnSelectedMessagesChanged()
 		{
-			if (SelectedMessagesChanged != null)
-				SelectedMessagesChanged(this, EventArgs.Empty);
+			SelectedMessagesChanged?.Invoke(this, EventArgs.Empty);
 		}
 		#endregion
 

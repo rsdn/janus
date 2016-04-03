@@ -10,7 +10,6 @@ using JetBrains.Annotations;
 using LinqToDB;
 
 using Rsdn.Janus.DataModel;
-using Rsdn.SmartApp;
 
 namespace Rsdn.Janus
 {
@@ -80,6 +79,7 @@ namespace Rsdn.Janus
 					.Into(db.TopicInfos())
 						.Value(_ => _.MessageID, m => m.ID)
 						.Value(_ => _.ForumID, m => m.ForumID)
+					// ReSharper disable once UseCollectionCountProperty
 						.Value(_ => _.AnswersCount, m => m.TopicAnswers.Count())
 						.Value(
 							_ => _.AnswersRates,

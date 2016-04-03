@@ -6,11 +6,12 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
+using CodeJam.Extensibility;
+
 using Rsdn.Janus.Framework;
 using Rsdn.Janus.ObjectModel;
 using Rsdn.Shortcuts;
 using Rsdn.TreeGrid;
-using Rsdn.SmartApp;
 
 namespace Rsdn.Janus
 {
@@ -45,10 +46,7 @@ namespace Rsdn.Janus
 				sim.AppendImage(prefix + "Link", StyleImageType.ConstSize, _treeImages);
 		}
 
-		internal ImageList TreeImages
-		{
-			get { return _treeImages; }
-		}
+		internal ImageList TreeImages => _treeImages;
 
 		internal int EmptyFolderStartIndex { get; private set; }
 		internal int FolderStartIndex { get; private set; }
@@ -68,15 +66,9 @@ namespace Rsdn.Janus
 			_contextMenuGenerator = new StripMenuGenerator(_serviceManager, _contextMenuStrip, "Favorites.ContextMenu");
 		}
 
-		private static readonly FavoritesDummyForm _instance =
+		public static FavoritesDummyForm Instance { get; } =
 			new FavoritesDummyForm(ApplicationManager.Instance.ServiceProvider);
-
-		public static FavoritesDummyForm Instance
-		{
-			get { return _instance; }
-		}
-
-    	#endregion
+		#endregion
 
 		#region Инициализация
 
@@ -479,8 +471,7 @@ namespace Rsdn.Janus
 
 		private void OnSelectedEntriesChanged(EventArgs e)
 		{
-			if (SelectedEntriesChanged != null)
-				SelectedEntriesChanged(this, e);
+			SelectedEntriesChanged?.Invoke(this, e);
 		}
 	}
 }

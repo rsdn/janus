@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Linq;
 
-using JetBrains.Annotations;
+using CodeJam.Extensibility;
 
-using Rsdn.SmartApp;
+using JetBrains.Annotations;
 
 namespace Rsdn.Janus
 {
@@ -20,7 +20,7 @@ namespace Rsdn.Janus
 		public TagLineManager([NotNull] IServiceProvider serviceProvider)
 		{
 			if (serviceProvider == null) 
-				throw new ArgumentNullException("serviceProvider");
+				throw new ArgumentNullException(nameof(serviceProvider));
 
 			_serviceProvider = serviceProvider;
 		}
@@ -31,7 +31,7 @@ namespace Rsdn.Janus
 		public string GetTagLine([NotNull] string format)
 		{
 			if (format == null)
-				throw new ArgumentNullException("format");
+				throw new ArgumentNullException(nameof(format));
 
 			var res = TextMacrosHelper.ReplaceMacroses(_serviceProvider, format);
 
@@ -48,7 +48,7 @@ namespace Rsdn.Janus
 			var tagLineInfos = Config.Instance.TagLine.TagLineInfos;
 			var defaultTagLine = string.Empty;
 
-			if (tagLineInfos != null && tagLineInfos.Infos != null)
+			if (tagLineInfos?.Infos != null)
 				foreach (var tgi in tagLineInfos.Infos)
 				{
 					if (tgi.Forums.Length == 0)

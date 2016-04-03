@@ -5,8 +5,10 @@ using System.Globalization;
 using System.Threading;
 using System.Windows.Forms;
 
+using CodeJam.Extensibility;
+using CodeJam.Extensibility.Instancing;
+
 using Rsdn.Janus.Framework;
-using Rsdn.SmartApp;
 
 namespace Rsdn.Janus
 {
@@ -221,11 +223,8 @@ namespace Rsdn.Janus
 
 		private static TraceSwitch _traceSwitch;
 
-		private static TraceSwitch TraceSwitch
-		{
-			get { return _traceSwitch ?? (_traceSwitch = new TraceSwitch("EntryPoint", "Program entry point trace switch")); }
-		}
-
+		private static TraceSwitch TraceSwitch =>
+			_traceSwitch ?? (_traceSwitch = new TraceSwitch("EntryPoint", "Program entry point trace switch"));
 		#endregion
 	}
 }

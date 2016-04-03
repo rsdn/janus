@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Threading;
 
-using Rsdn.SmartApp;
+using CodeJam.Threading;
 
 namespace Rsdn.Janus
 {
@@ -24,17 +24,17 @@ namespace Rsdn.Janus
 		#region Implementation of IJanusRWLock
 		public IDisposable GetReaderLock()
 		{
-			return _rwLock.GetReaderLock();
+			return _rwLock.GetReadLock();
 		}
 
 		public IDisposable GetWriterLock()
 		{
-			return _rwLock.GetWriterLock();
+			return _rwLock.GetWriteLock();
 		}
 
 		public IDisposable GetUpgradeableLock()
 		{
-			return _rwLock.GetUpgradeableReaderLock();
+			return _rwLock.GetUpgradeableReadLock();
 		}
 		#endregion
 	}

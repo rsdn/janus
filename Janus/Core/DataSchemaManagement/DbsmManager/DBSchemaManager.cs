@@ -9,8 +9,9 @@ using System.Windows.Forms;
 using System.Xml;
 using System.Xml.Serialization;
 
+using CodeJam.Extensibility;
+
 using Rsdn.Janus.Core.DataSchemaManagement;
-using Rsdn.SmartApp;
 
 namespace Rsdn.Janus
 {

@@ -1,8 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 
+using CodeJam.Extensibility;
+
 using Rsdn.Janus.ObjectModel;
-using Rsdn.SmartApp;
 using Rsdn.TreeGrid;
 
 namespace Rsdn.Janus
@@ -30,15 +31,10 @@ namespace Rsdn.Janus
 
 		#region IOutboxDummyFormService Members
 
-		public List<ITreeNode> ActiveOutboxItems
-		{
-			get
-			{
-				return Features.Instance.ActiveFeature is OutboxFeature
-					? ApplicationManager.Instance.OutboxManager.OutboxForm.SelectedNodes
-					: new List<ITreeNode>();
-			}
-		}
+		public List<ITreeNode> ActiveOutboxItems =>
+			Features.Instance.ActiveFeature is OutboxFeature
+				? ApplicationManager.Instance.OutboxManager.OutboxForm.SelectedNodes
+				: new List<ITreeNode>();
 
 		public event EventHandler ActiveOutboxItemsChanged;
 
@@ -58,8 +54,7 @@ namespace Rsdn.Janus
 
 		private void OnActiveOutboxItemsChanged()
 		{
-			if (ActiveOutboxItemsChanged != null)
-				ActiveOutboxItemsChanged(this, EventArgs.Empty);
+			ActiveOutboxItemsChanged?.Invoke(this, EventArgs.Empty);
 		}
 	}
 }

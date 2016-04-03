@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Reactive.Disposables;
-using Rsdn.SmartApp;
+
+using CodeJam.Extensibility;
 
 using IServiceProvider = System.IServiceProvider;
 
@@ -58,7 +59,7 @@ namespace Rsdn.Janus
 			var activeForumSvc = provider.GetService<IActiveForumService>();
 			if (activeForumSvc != null)
 			{
-				SmartApp.EventHandler<IActiveForumService> statusUpdater = sender => handler();
+				CodeJam.Extensibility.EventHandler<IActiveForumService> statusUpdater = sender => handler();
 				activeForumSvc.ActiveForumChanged += statusUpdater;
 				return Disposable.Create(
 					() => activeForumSvc.ActiveForumChanged -= statusUpdater);

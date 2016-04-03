@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Linq;
 
+using CodeJam.Extensibility;
+using CodeJam.Extensibility.Model;
+
 using Rsdn.Janus.AT;
 using Rsdn.Janus.Properties;
-using Rsdn.SmartApp;
 
 namespace Rsdn.Janus
 {

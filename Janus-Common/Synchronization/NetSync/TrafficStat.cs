@@ -1,5 +1,6 @@
-﻿using Rsdn.Janus.Synchronization;
-using Rsdn.SmartApp;
+﻿using CodeJam;
+
+using Rsdn.Janus.Synchronization;
 
 namespace Rsdn.Janus
 {
@@ -21,7 +22,7 @@ namespace Rsdn.Janus
 			return (_direction == TransferDirection.Receive
 				? SyncResources.Received
 				: SyncResources.Sent)
-				.FormatStr(value.ToInfoSizeString());
+				.FormatWith(value.ToInfoSizeString());
 		}
 		#endregion
 	}

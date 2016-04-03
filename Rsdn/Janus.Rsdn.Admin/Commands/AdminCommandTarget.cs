@@ -1,6 +1,6 @@
 ﻿using System;
 
-using Rsdn.SmartApp;
+using CodeJam;
 
 using IServiceProvider = System.IServiceProvider;
 
@@ -21,15 +21,13 @@ namespace Rsdn.Janus.Admin.Commands
 		[CommandExecutor("Janus.Rsdn.Admin.ModerateMessage")]
 		public void ExecuteModMessage(ICommandContext context, int? messageId)
 		{
-			context.OpenUrlInBrowser(
-				_modUrlTemplate.FormatStr(
-					ForumCommandHelper.GetMessageId(context, messageId)));
+			context.OpenUrlInBrowser(_modUrlTemplate.FormatWith(ForumCommandHelper.GetMessageId(context, messageId)));
 		}
 
 		[CommandExecutor("Janus.Rsdn.Admin.EditMessage")]
 		public void ExecuteEditMessage(ICommandContext context, int? messageId)
 		{
-			context.OpenUrlInBrowser(_editUrlTemplate.FormatStr(ForumCommandHelper.GetMessageId(context, messageId)));
+			context.OpenUrlInBrowser(_editUrlTemplate.FormatWith(ForumCommandHelper.GetMessageId(context, messageId)));
 		}
 
 		[CommandStatusGetter("Janus.Rsdn.Admin.ModerateMessage")]

@@ -1,7 +1,9 @@
 ﻿using System;
 
+using CodeJam;
+using CodeJam.Extensibility;
+
 using Rsdn.Janus.Core.Console;
-using Rsdn.SmartApp;
 
 namespace Rsdn.Janus
 {
@@ -58,7 +60,7 @@ namespace Rsdn.Janus
 			context.WriteLineToOutput(commandInfo.Name);
 			context.WriteLineToOutput(new string('-', commandInfo.Name.Length));
 
-			if (!commandInfo.DisplayName.IsNullOrEmpty())
+			if (commandInfo.DisplayName.NotNullNorEmpty())
 				context.WriteToOutput(commandInfo.DisplayName);
 
 			if (commandInfo.Parameters.Count > 0)
@@ -72,12 +74,12 @@ namespace Rsdn.Janus
 					context.WriteToOutput('\t' + parameter.Name);
 					if (parameter.IsOptional)
 						context.WriteToOutput(" " + ConsoleResources.CommandInfoOptionalParameterMark);
-					if (!parameter.Description.IsNullOrEmpty())
+					if (parameter.Description.NotNullNorEmpty())
 						context.WriteToOutput(" - " + parameter.Description);
 				}
 			}
 
-			if (!commandInfo.Description.IsNullOrEmpty())
+			if (commandInfo.Description.NotNullNorEmpty())
 			{
 				context.WriteLineToOutput();
 				context.WriteLineToOutput();

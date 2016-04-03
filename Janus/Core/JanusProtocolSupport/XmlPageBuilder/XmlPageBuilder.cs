@@ -7,9 +7,11 @@ using System.Xml.Serialization;
 using System.Xml.XPath;
 using System.Xml.Xsl;
 
-using Rsdn.SmartApp;
-
 using System.Linq;
+
+using CodeJam.Extensibility;
+using CodeJam.Extensibility.Instancing;
+using CodeJam.Extensibility.Model;
 
 namespace Rsdn.Janus
 {
@@ -154,24 +156,15 @@ namespace Rsdn.Janus
 		#region FormatterData class
 		private class FormatterData
 		{
-			private readonly MessageFormatterInfo _info;
-			private readonly IMessageFormatter _formatter;
-
 			public FormatterData(MessageFormatterInfo info, IMessageFormatter formatter)
 			{
-				_info = info;
-				_formatter = formatter;
+				Info = info;
+				Formatter = formatter;
 			}
 
-			public MessageFormatterInfo Info
-			{
-				get { return _info; }
-			}
+			public MessageFormatterInfo Info { get; }
 
-			public IMessageFormatter Formatter
-			{
-				get { return _formatter; }
-			}
+			public IMessageFormatter Formatter { get; }
 		}
 		#endregion
 	}

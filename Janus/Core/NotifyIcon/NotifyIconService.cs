@@ -4,9 +4,9 @@ using System.ComponentModel;
 using System.Drawing;
 using System.Windows.Forms;
 
-using JetBrains.Annotations;
+using CodeJam.Extensibility;
 
-using Rsdn.SmartApp;
+using JetBrains.Annotations;
 
 namespace Rsdn.Janus
 {
@@ -25,7 +25,7 @@ namespace Rsdn.Janus
 		public NotifyIconService([NotNull] IServiceProvider serviceProvider)
 		{
 			if (serviceProvider == null)
-				throw new ArgumentNullException("serviceProvider");
+				throw new ArgumentNullException(nameof(serviceProvider));
 
 			_serviceManager = new ServiceManager(serviceProvider);
 			_defaultCommandService = new DefaultCommandService("Janus.Application.ShowMainForm");
@@ -54,7 +54,7 @@ namespace Rsdn.Janus
 			int timeout)
 		{
 			if (tipText == null)
-				throw new ArgumentNullException("tipText");
+				throw new ArgumentNullException(nameof(tipText));
 
 			_uiAsyncOperation.Post(
 				() => _notifyIcon.ShowBalloonTip(timeout, tipTitle, tipText, GetToolTipIcon(notificationType)));

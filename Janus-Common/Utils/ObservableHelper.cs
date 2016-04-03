@@ -1,6 +1,8 @@
 ﻿using System;
-using System.Reactive.Disposables;
 using System.Reactive.Subjects;
+
+using CodeJam;
+
 using JetBrains.Annotations;
 
 namespace Rsdn.Janus
@@ -12,7 +14,7 @@ namespace Rsdn.Janus
 		{
 			return
 				observable == null
-					? Disposable.Empty
+					? (IDisposable) Disposable.Empty
 					: Disposable.Create(observable.OnCompleted);
 		}
 	}

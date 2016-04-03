@@ -2,11 +2,12 @@
 using System.Collections.Generic;
 using System.Linq;
 
+using CodeJam.Extensibility;
+
 using LinqToDB;
 
 using Rsdn.Janus.AT;
 using Rsdn.Janus.Properties;
-using Rsdn.SmartApp;
 
 namespace Rsdn.Janus
 {
@@ -45,7 +46,7 @@ namespace Rsdn.Janus
 									message = m.Body
 										+ (string.IsNullOrEmpty(m.Tagline)
 											? ""
-											: "\r\n[tagline]{0}[/tagline]".FormatStr(m.Tagline)),
+											: $"\r\n[tagline]{m.Tagline}[/tagline]"),
 									parentId = m.ReplyToID,
 									subject = m.Subject
 								})

@@ -1,14 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Reactive.Disposables;
 using System.Windows.Forms;
+
+using CodeJam;
+using CodeJam.Extensibility;
 
 using LinqToDB.Mapping;
 
 using Rsdn.Janus.ObjectModel;
 using Rsdn.TreeGrid;
-using Rsdn.SmartApp;
 
 namespace Rsdn.Janus
 {
@@ -60,16 +61,10 @@ namespace Rsdn.Janus
 		public string ForumDescription { get; set; }
 
 		[NotColumn]
-		public string DisplayName
-		{
-			get { return Config.Instance.ForumDisplayConfig.ShowFullForumNames ? Description : Name; }
-		}
+		public string DisplayName => Config.Instance.ForumDisplayConfig.ShowFullForumNames ? Description : Name;
 
 		[NotColumn]
-		public override string Description
-		{
-			get { return ForumDescription; }
-		}
+		public override string Description => ForumDescription;
 
 		public event EventHandler BeforeLoadData;
 
@@ -168,8 +163,7 @@ namespace Rsdn.Janus
 						curr = curr.Parent;
 					}
 
-					throw new ApplicationException(string.Format(
-													"Сообщение '{0}' отсутствует в списке сообщений.", value));
+					throw new ApplicationException($"Сообщение '{value}' отсутствует в списке сообщений.");
 				}
 			}
 		}
@@ -180,10 +174,7 @@ namespace Rsdn.Janus
 		private bool _isLoadAll = true;
 
 		[NotColumn]
-		public bool IsAllMsgLoaded
-		{
-			get { return _isLoadAll; }
-		}
+		public bool IsAllMsgLoaded => _isLoadAll;
 
 		public IMsg LoadAllMsg()
 		{
@@ -270,8 +261,7 @@ namespace Rsdn.Janus
 		/// </summary>
 		private IMsg ReadMsg(bool isLoadAll)
 		{
-			if (BeforeLoadData != null)
-				BeforeLoadData(this, EventArgs.Empty);
+			BeforeLoadData?.Invoke(this, EventArgs.Empty);
 
 			_isLoadAll = isLoadAll;
 
@@ -314,31 +304,16 @@ namespace Rsdn.Janus
 		#region IFeature
 
 		[NotColumn]
-		public override String Info
-		{
-			get
-			{
-				return string.Format(" {0}/{1}{2}",
-									 RepliesToMeUnread, Unread,
-									 (Config.Instance.ForumDisplayConfig.ShowTotalMessages
-										? "/" + MessagesCount : string.Empty));
-			}
-		}
+		public override string Info =>
+			$" {RepliesToMeUnread}/{Unread}{(Config.Instance.ForumDisplayConfig.ShowTotalMessages ? "/" + MessagesCount : string.Empty)}";
 
 		[NotColumn]
-		string IFeature.Key
-		{
-			get { return "Outbox" + Name; }
-		}
-
+		string IFeature.Key => "Outbox" + Name;
 		#endregion ITreeNode
 
 		#region IMessagesFeature
 
-		public IEnumerable<IMsg> ActiveMessages
-		{
-			get { return ForumDummyForm.Instance.SelectedMessages; }
-		}
+		public IEnumerable<IMsg> ActiveMessages => ForumDummyForm.Instance.SelectedMessages;
 
 		public event EventHandler ActiveMessagesChanged
 		{

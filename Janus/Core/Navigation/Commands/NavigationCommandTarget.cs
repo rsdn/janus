@@ -1,7 +1,8 @@
 ﻿using System;
 
+using CodeJam.Extensibility;
+
 using Rsdn.Janus.ObjectModel;
-using Rsdn.SmartApp;
 
 using WeifenLuo.WinFormsUI.Docking;
 

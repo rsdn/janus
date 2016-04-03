@@ -3,9 +3,9 @@ using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
 
-using JetBrains.Annotations;
+using CodeJam.Extensibility;
 
-using Rsdn.SmartApp;
+using JetBrains.Annotations;
 
 namespace Rsdn.Janus
 {
@@ -29,7 +29,7 @@ namespace Rsdn.Janus
 		public ModeratingForm([NotNull] IServiceProvider provider, int msgId)
 		{
 			if (provider == null)
-				throw new ArgumentNullException("provider");
+				throw new ArgumentNullException(nameof(provider));
 
 			var styleMgr = provider.GetRequiredService<IStyleImageManager>();
 			_mdrExtractImage = styleMgr.AppendImage(
@@ -130,42 +130,25 @@ namespace Rsdn.Janus
 		#region class ModInfo
 		private class ModInfo
 		{
-			private readonly int _forumId;
-			private readonly string _actionDesc;
-			private readonly string _userName;
-			private readonly DateTime _create;
-
 			public ModInfo(
 				int forumId,
 				string actionDesc,
 				string userName,
 				DateTime create)
 			{
-				_forumId = forumId;
-				_actionDesc = actionDesc;
-				_userName = userName;
-				_create = create;
+				ForumId = forumId;
+				ActionDesc = actionDesc;
+				UserName = userName;
+				Create = create;
 			}
 
-			public int ForumId
-			{
-				get { return _forumId; }
-			}
+			public int ForumId { get; }
 
-			public string ActionDesc
-			{
-				get { return _actionDesc; }
-			}
+			public string ActionDesc { get; }
 
-			public string UserName
-			{
-				get { return _userName; }
-			}
+			public string UserName { get; }
 
-			public DateTime Create
-			{
-				get { return _create; }
-			}
+			public DateTime Create { get; }
 		}
 		#endregion
 	}

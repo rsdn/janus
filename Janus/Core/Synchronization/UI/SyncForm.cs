@@ -4,7 +4,7 @@ using System.ComponentModel;
 using System.Drawing;
 using System.Windows.Forms;
 
-using Rsdn.SmartApp;
+using CodeJam.Extensibility;
 
 namespace Rsdn.Janus
 {
@@ -100,7 +100,7 @@ namespace Rsdn.Janus
 		private void InitProgressText()
 		{
 			_progressLabel.Text = _progressText;
-			Text = "{0} - {1}".FormatStr(_emptyCaption, _progressText);
+			Text = $"{_emptyCaption} - {_progressText}";
 		}
 
 		private void CustomInitializeComponent()

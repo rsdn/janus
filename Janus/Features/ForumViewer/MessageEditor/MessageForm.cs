@@ -10,6 +10,9 @@ using System.Threading;
 using System.Web;
 using System.Windows.Forms;
 
+using CodeJam;
+using CodeJam.Extensibility;
+
 using JetBrains.Annotations;
 
 using LinqToDB;
@@ -18,7 +21,6 @@ using Rsdn.Janus.Framework;
 using Rsdn.Janus.Log;
 using Rsdn.Scintilla;
 using Rsdn.Shortcuts;
-using Rsdn.SmartApp;
 
 namespace Rsdn.Janus
 {
@@ -67,7 +69,7 @@ namespace Rsdn.Janus
 			MessageInfo message)
 		{
 			if (provider == null)
-				throw new ArgumentNullException("provider");
+				throw new ArgumentNullException(nameof(provider));
 
 			_serviceManager = new ServiceManager(provider);
 
@@ -647,8 +649,7 @@ namespace Rsdn.Janus
 			_subjectTextBox.Modified = false;
 			OnIsModifiedChanged();
 
-			if (MessageSent != null)
-				MessageSent(this, _messageInfo.ID);
+			MessageSent?.Invoke(this, _messageInfo.ID);
 
 			if (closeOnSave)
 				NativeMethods.PostMessage(Handle, NativeMethods.WM_CLOSE, IntPtr.Zero, IntPtr.Zero);
@@ -658,15 +659,13 @@ namespace Rsdn.Janus
 
 		private void OnModified()
 		{
-			if (Modified != null)
-				Modified(this);
+			Modified?.Invoke(this);
 		}
 
 		private void OnIsModifiedChanged()
 		{
 			_isModified = _messageEditor.IsModified || _subjectTextBox.Modified;
-			if (IsModifiedChanged != null)
-				IsModifiedChanged(this);
+			IsModifiedChanged?.Invoke(this);
 		}
 
 		#endregion
@@ -726,13 +725,13 @@ namespace Rsdn.Janus
 			var tlm = _serviceManager.GetRequiredService<ITagLineManager>();
 			var tl = tlm.GetTagLine(tlm.FindAppropriateTagLine(_forumsComboBox.ForumId));
 
-			return _messagePreviewTemplate.FormatStr(
+			return _messagePreviewTemplate.FormatWith(
 				SR.MessageEditor.PreviewTitle,
 				FormatSubject(),
 				_serviceManager
 					.GetFormatter()
 					.Format(
-						"{0}\r\n[tagline]{1}[/tagline]".FormatStr(_messageEditor.Model.Text, tl),
+						"{0}\r\n[tagline]{1}[/tagline]".FormatWith(_messageEditor.Model.Text, tl),
 					true));
 		}
 		#endregion
@@ -766,15 +765,9 @@ namespace Rsdn.Janus
 			_messageEditor.Redo();
 		}
 
-		public bool CanUndo
-		{
-			get { return _messageEditor.CanUndo; }
-		}
+		public bool CanUndo => _messageEditor.CanUndo;
 
-		public bool CanRedo
-		{
-			get { return _messageEditor.CanRedo; }
-		}
+		public bool CanRedo => _messageEditor.CanRedo;
 
 		public void ShowFindAndReplace()
 		{
@@ -830,7 +823,7 @@ namespace Rsdn.Janus
 
 		public void SurroundText(string start, string end, bool newLine)
 		{
-			_messageEditor.Selection.Text = "{0}{1}{2}{1}{3}".FormatStr(
+			_messageEditor.Selection.Text = "{0}{1}{2}{1}{3}".FormatWith(
 				start, newLine ? Environment.NewLine : string.Empty, _messageEditor.Selection.Text, end);
 		}
 
@@ -839,14 +832,11 @@ namespace Rsdn.Janus
 			_messageEditor.Selection.Text = text;
 		}
 
-		public bool IsModified
-		{
-			get { return _isModified; }
-		}
+		public bool IsModified => _isModified;
 
-		public event SmartApp.EventHandler<MessageForm> Modified;
+		public event CodeJam.Extensibility.EventHandler<MessageForm> Modified;
 
-		public event SmartApp.EventHandler<MessageForm> IsModifiedChanged;
+		public event CodeJam.Extensibility.EventHandler<MessageForm> IsModifiedChanged;
 
 		#endregion
 	}

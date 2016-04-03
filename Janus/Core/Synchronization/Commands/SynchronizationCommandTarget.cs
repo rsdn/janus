@@ -1,7 +1,8 @@
 ﻿using System;
 using System.Reactive;
 using System.Reactive.Disposables;
-using Rsdn.SmartApp;
+
+using CodeJam.Extensibility;
 
 namespace Rsdn.Janus
 {

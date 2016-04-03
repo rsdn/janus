@@ -5,8 +5,6 @@ using System.Data.Common;
 using System.Globalization;
 using FirebirdSql.Data.FirebirdClient;
 
-using Rsdn.SmartApp;
-
 namespace Rsdn.Janus.Firebird
 {
 	internal static class FBSchemaLoader
@@ -289,7 +287,7 @@ namespace Rsdn.Janus.Firebird
 										{
 											Name = trRow["GENERATOR_NAME"].ToString()
 										};
-					cmd.CommandText = string.Format("SELECT gen_id(\"{0}\", 0) FROM rdb$database", eGenerator.Name);
+					cmd.CommandText = $"SELECT gen_id(\"{eGenerator.Name}\", 0) FROM rdb$database";
 					eGenerator.StartValue = Convert.ToInt32(cmd.ExecuteScalar(), CultureInfo.InvariantCulture);
 
 					generators.Add(eGenerator);
@@ -307,15 +305,13 @@ namespace Rsdn.Janus.Firebird
 				result.Locale = CultureInfo.InvariantCulture;
 
 				cmd.CommandText =
-					string.Format(
-						@"
+					$@"
 					SELECT
 						rfr.rdb$default_source AS DEFAULT_SOURCE 
 					FROM
 						rdb$relation_fields rfr  
 					WHERE
-						rfr.rdb$relation_name = '{0}' AND rfr.rdb$field_name='{1}';",
-						tname, cname);
+						rfr.rdb$relation_name = '{tname}' AND rfr.rdb$field_name='{cname}';";
 
 				using (var adapter = new FbDataAdapter(cmd))
 					adapter.Fill(result);
@@ -389,7 +385,7 @@ namespace Rsdn.Janus.Firebird
 				case ColumnType.CharacterVaring:
 					return "VARCHAR(" + column.Size + ")";
 				case ColumnType.NCharacterVaring:
-					return "VARCHAR({0}) CHARACTER SET UNICODE_FSS".FormatStr(column.Size);
+					return $"VARCHAR({column.Size}) CHARACTER SET UNICODE_FSS";
 				case ColumnType.SmallInt:
 				case ColumnType.TinyInt:
 					return "SMALLINT";

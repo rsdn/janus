@@ -3,7 +3,7 @@ using System.Diagnostics;
 using System.Security.Cryptography;
 using System.Text;
 
-using Rsdn.SmartApp;
+using CodeJam;
 
 namespace Rsdn.Janus
 {

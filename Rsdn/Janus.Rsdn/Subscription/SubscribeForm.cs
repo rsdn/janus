@@ -1,15 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Globalization;
 using System.Linq;
 using System.Windows.Forms;
+
+using CodeJam.Extensibility;
 
 using JetBrains.Annotations;
 
 using LinqToDB;
 
 using Rsdn.Janus.AT;
-using Rsdn.SmartApp;
 
 namespace Rsdn.Janus
 {
@@ -29,7 +31,7 @@ namespace Rsdn.Janus
 		public SubscribeForm([NotNull] IServiceProvider provider)
 		{
 			if (provider == null)
-				throw new ArgumentNullException("provider");
+				throw new ArgumentNullException(nameof(provider));
 
 			_provider = provider;
 
@@ -161,7 +163,7 @@ namespace Rsdn.Janus
 		{
 			if (_forumListView.FocusedItem != null)
 				_forumListView.FocusedItem.SubItems[(int)Column.Priority].Text =
-					_priority.Value.ToString();
+					_priority.Value.ToString(CultureInfo.CurrentCulture);
 
 			var subscriptionRequests = new List<ForumSubscriptionRequest>();
 			foreach (ListViewItem item in _forumListView.Items)
@@ -245,7 +247,7 @@ namespace Rsdn.Janus
 				return;
 
 			_forumListView.FocusedItem.SubItems[(int)Column.Priority].Text =
-				_priority.Value.ToString();
+				_priority.Value.ToString(CultureInfo.CurrentCulture);
 		}
 
 		#region Nested type: Column
@@ -270,12 +272,6 @@ namespace Rsdn.Janus
 		#region ForumData class
 		private class ForumData
 		{
-			private readonly int _id;
-			private readonly string _name;
-			private readonly string _descript;
-			private readonly int _priority;
-			private readonly bool _subscribed;
-
 			public ForumData(
 				int id,
 				string name,
@@ -283,37 +279,22 @@ namespace Rsdn.Janus
 				int priority,
 				bool subscribed)
 			{
-				_id = id;
-				_name = name;
-				_descript = descript;
-				_priority = priority;
-				_subscribed = subscribed;
+				ID = id;
+				Name = name;
+				Descript = descript;
+				Priority = priority;
+				Subscribed = subscribed;
 			}
 
-			public int ID
-			{
-				get { return _id; }
-			}
+			public int ID { get; }
 
-			public string Name
-			{
-				get { return _name; }
-			}
+			public string Name { get; }
 
-			public string Descript
-			{
-				get { return _descript; }
-			}
+			public string Descript { get; }
 
-			public int Priority
-			{
-				get { return _priority; }
-			}
+			public int Priority { get; }
 
-			public bool Subscribed
-			{
-				get { return _subscribed; }
-			}
+			public bool Subscribed { get; }
 		}
 		#endregion
 	}

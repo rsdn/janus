@@ -2,8 +2,10 @@
 using System.Linq;
 using System.Windows.Forms;
 
+using CodeJam;
+using CodeJam.Extensibility;
+
 using Rsdn.Janus.Log;
-using Rsdn.SmartApp;
 
 namespace Rsdn.Janus
 {
@@ -60,7 +62,7 @@ namespace Rsdn.Janus
 								mmrf.AfterDate,
 								mmrf.ExceptAnswersMe);
 
-						resText = SR.Forum.MarkMessageResult.FormatStr(
+						resText = SR.Forum.MarkMessageResult.FormatWith(
 							markCount,
 							markCount.GetDeclension(
 								SR.Forum.Message1,

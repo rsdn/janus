@@ -5,9 +5,10 @@ using System.IO;
 using System.Net.Mime;
 using System.Reflection;
 
+using CodeJam.Extensibility;
+
 using Rsdn.Janus.Framework.Imaging;
 using Rsdn.Janus.Framework.Networking;
-using Rsdn.SmartApp;
 using Formatter = Rsdn.Framework.Formatting.Resources;
 
 namespace Rsdn.Janus
@@ -25,7 +26,6 @@ namespace Rsdn.Janus
 		private class JanusProtocolEventArgs : EventArgs
 		{
 			private readonly string _parameters;
-			private Resource _response = new Resource(_mimeTypeHtml, string.Empty);
 
 			public JanusProtocolEventArgs(string parameters)
 			{
@@ -34,25 +34,17 @@ namespace Rsdn.Janus
 			/// <summary>
 			/// Необработанная строка параметров.
 			/// </summary>
-			public string Parameters
-			{
-				get { return _parameters; }
-			}
+			public string Parameters => _parameters;
+
 			/// <summary>
 			/// Результат обработки.
 			/// </summary>
-			public Resource Response
-			{
-				get { return _response; }
-				set { _response = value; }
-			}
+			public Resource Response { get; set; } = new Resource(_mimeTypeHtml, string.Empty);
+
 			/// <summary>
 			/// Параметр, трактуемый как числовой идентификатор.
 			/// </summary>
-			public int Id
-			{
-				get { return int.Parse(_parameters); }
-			}
+			public int Id => int.Parse(_parameters);
 		}
 		
 		#endregion

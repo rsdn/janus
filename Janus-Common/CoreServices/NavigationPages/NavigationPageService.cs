@@ -2,9 +2,10 @@
 using System.Collections.Generic;
 using System.Reactive.Subjects;
 
-using JetBrains.Annotations;
+using CodeJam;
+using CodeJam.Extensibility;
 
-using Rsdn.SmartApp;
+using JetBrains.Annotations;
 
 namespace Rsdn.Janus
 {
@@ -22,7 +23,7 @@ namespace Rsdn.Janus
 		public NavigationPageService([NotNull] IServiceProvider serviceProvider)
 		{
 			if (serviceProvider == null)
-				throw new ArgumentNullException("serviceProvider");
+				throw new ArgumentNullException(nameof(serviceProvider));
 
 			_navigationPageFactory = serviceProvider.GetRequiredService<INavigationPageFactoryService>();
 		}
@@ -38,7 +39,7 @@ namespace Rsdn.Janus
 					return;
 
 				if (value != null && !_openedPagesWithSubscriptions.ContainsKey(value))
-					throw new ArgumentException("Page not found.", "value");
+					throw new ArgumentException("Page not found.", nameof(value));
 
 				_currentPage = value;
 
@@ -46,20 +47,11 @@ namespace Rsdn.Janus
 			}
 		}
 
-		public IObservable<INavigationPage> CurrentPageChanged
-		{
-			get { return _currentPageChanged; }
-		}
+		public IObservable<INavigationPage> CurrentPageChanged => _currentPageChanged;
 
-		public ICollection<INavigationPage> OpenedPages
-		{
-			get { return _openedPagesWithSubscriptions.Keys; }
-		}
+		public ICollection<INavigationPage> OpenedPages => _openedPagesWithSubscriptions.Keys;
 
-		public IObservable<PagesChangedEventArgs> OpenedPagesChanged
-		{
-			get { return _openedPagesChanged; }
-		}
+		public IObservable<PagesChangedEventArgs> OpenedPagesChanged => _openedPagesChanged;
 
 		public void ShowPage(
 			IServiceProvider serviceProvider,
@@ -68,9 +60,9 @@ namespace Rsdn.Janus
 			bool replaceCurrentTab)
 		{
 			if (serviceProvider == null)
-				throw new ArgumentNullException("serviceProvider");
+				throw new ArgumentNullException(nameof(serviceProvider));
 			if (name == null)
-				throw new ArgumentNullException("name");
+				throw new ArgumentNullException(nameof(name));
 
 			INavigationPage oldPage = null;
 			var newPage = _navigationPageFactory.CreatePage(serviceProvider, name, state);
@@ -95,7 +87,7 @@ namespace Rsdn.Janus
 		public bool CanShowPage(IServiceProvider serviceProvider, string name)
 		{
 			if (name == null)
-				throw new ArgumentNullException("name");
+				throw new ArgumentNullException(nameof(name));
 
 			return _navigationPageFactory.CanCreatePage(serviceProvider, name);
 		}
@@ -103,9 +95,9 @@ namespace Rsdn.Janus
 		public void ReloadPage(IServiceProvider serviceProvider, INavigationPage page)
 		{
 			if (page == null)
-				throw new ArgumentNullException("page");
+				throw new ArgumentNullException(nameof(page));
 			if (!_openedPagesWithSubscriptions.ContainsKey(page))
-				throw new ArgumentException("Страница не найдена.", "page");
+				throw new ArgumentException("Страница не найдена.", nameof(page));
 
 			var newPage = _navigationPageFactory.CreatePage(serviceProvider, page.Name, page.State);
 

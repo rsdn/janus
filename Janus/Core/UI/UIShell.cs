@@ -4,10 +4,11 @@ using System.ComponentModel;
 using System.Threading;
 using System.Windows.Forms;
 
+using CodeJam.Extensibility;
+
 using JetBrains.Annotations;
 
 using Rsdn.Janus.ObjectModel;
-using Rsdn.SmartApp;
 
 namespace Rsdn.Janus
 {
@@ -17,13 +18,12 @@ namespace Rsdn.Janus
 		private readonly Action<bool> _uiFreezer;
 		private readonly AsyncOperation _ctorAsyncOperation;
 		private readonly HashSet<UIFreezer> _freezers = new HashSet<UIFreezer>();
-		private readonly SynchronizationContext _uiSyncContext = SynchronizationContext.Current;
 
 		public UIShell(Func<IWin32Window> parentWindowGetter, [NotNull] Action<bool> uiFreezer)
 		{
 			if (parentWindowGetter == null)
-				throw new ArgumentNullException("parentWindowGetter");
-			if (uiFreezer == null) throw new ArgumentNullException("uiFreezer");
+				throw new ArgumentNullException(nameof(parentWindowGetter));
+			if (uiFreezer == null) throw new ArgumentNullException(nameof(uiFreezer));
 			_parentWindowGetter = parentWindowGetter;
 			_uiFreezer = uiFreezer;
 			_ctorAsyncOperation = AsyncHelper.CreateOperation();
@@ -42,10 +42,7 @@ namespace Rsdn.Janus
 			return asyncOp;
 		}
 
-		public SynchronizationContext UISyncContext
-		{
-			get { return _uiSyncContext; }
-		}
+		public SynchronizationContext UISyncContext { get; } = SynchronizationContext.Current;
 
 		/// <summary>
 		/// Получить главного родителя окон.

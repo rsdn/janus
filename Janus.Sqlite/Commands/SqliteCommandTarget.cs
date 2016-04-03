@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Data.SQLite;
 
-using Rsdn.SmartApp;
+using CodeJam.Extensibility;
 
 namespace Rsdn.Janus.Sqlite
 {

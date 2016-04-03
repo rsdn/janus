@@ -1,8 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading;
 
-using Rsdn.SmartApp;
+using CodeJam.Threading;
 
 namespace Rsdn.Janus
 {
@@ -20,10 +21,10 @@ namespace Rsdn.Janus
 		public void AddValue(string statsName, int value)
 		{
 			if (value < 0)
-				throw new ArgumentOutOfRangeException("value");
+				throw new ArgumentOutOfRangeException(nameof(value));
 			if (value == 0)
 				return; // nothing to add
-			using (_valuesLock.GetWriterLock())
+			using (_valuesLock.GetWriteLock())
 			{
 				int existingValue;
 				_values.TryGetValue(statsName, out existingValue);
@@ -33,13 +34,13 @@ namespace Rsdn.Janus
 
 		public string[] GetStatsNames()
 		{
-			using (_valuesLock.GetReaderLock())
+			using (_valuesLock.GetReadLock())
 				return _values.Keys.ToArray();
 		}
 
 		public int GetTotalValue(string statsName)
 		{
-			using (_valuesLock.GetReaderLock())
+			using (_valuesLock.GetReadLock())
 			{
 				int value;
 				_values.TryGetValue(statsName, out value);

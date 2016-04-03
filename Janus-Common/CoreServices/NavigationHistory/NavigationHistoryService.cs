@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Reactive.Subjects;
 
-using Rsdn.SmartApp;
+using CodeJam.Extensibility;
 
 namespace Rsdn.Janus
 {
@@ -28,7 +28,7 @@ namespace Rsdn.Janus
 		public void SetHistoryStep(NavigationHistoryStep step)
 		{
 			if (step == null)
-				throw new ArgumentNullException("step");
+				throw new ArgumentNullException(nameof(step));
 
 			if (_current != null)
 				_backPath.Insert(0, _current);
@@ -42,7 +42,7 @@ namespace Rsdn.Janus
 		public void Back(int stepsCount)
 		{
 			if (stepsCount < 1 || stepsCount > _backPath.Count)
-				throw new ArgumentOutOfRangeException("stepsCount");
+				throw new ArgumentOutOfRangeException(nameof(stepsCount));
 
 			_forwardPath.Insert(0, _current);
 			if (stepsCount > 1)
@@ -60,7 +60,7 @@ namespace Rsdn.Janus
 		public void Forward(int stepsCount)
 		{
 			if (stepsCount < 1 || stepsCount > _forwardPath.Count)
-				throw new ArgumentOutOfRangeException("stepsCount");
+				throw new ArgumentOutOfRangeException(nameof(stepsCount));
 
 			_backPath.Insert(0, _current);
 			if (stepsCount > 1)
@@ -75,21 +75,11 @@ namespace Rsdn.Janus
 			_changed.OnNext(EventArgs.Empty);
 		}
 
-		public IList<NavigationHistoryStep> BackPath
-		{
-			get { return _backPathReadOnly; }
-		}
+		public IList<NavigationHistoryStep> BackPath => _backPathReadOnly;
 
-		public IList<NavigationHistoryStep> ForwardPath
-		{
-			get { return _forwardPathReadOnly; }
-		}
+		public IList<NavigationHistoryStep> ForwardPath => _forwardPathReadOnly;
 
-		public IObservable<EventArgs> Changed
-		{
-			get { return _changed; }
-		}
-
+		public IObservable<EventArgs> Changed => _changed;
 		#endregion
 
 		#region Implementation of IDisposable

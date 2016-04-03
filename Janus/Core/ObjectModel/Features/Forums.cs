@@ -3,6 +3,9 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 
+using CodeJam;
+using CodeJam.Extensibility;
+
 using JetBrains.Annotations;
 
 using LinqToDB;
@@ -10,7 +13,6 @@ using LinqToDB;
 using Rsdn.Janus.Framework;
 using Rsdn.Janus.ObjectModel;
 using Rsdn.TreeGrid;
-using Rsdn.SmartApp;
 
 namespace Rsdn.Janus
 {
@@ -23,7 +25,7 @@ namespace Rsdn.Janus
 		private readonly ForumFolder _unsubscribedFolder;
 		private Dictionary<int, Forum> _forumsIdHash = new Dictionary<int, Forum>();
 		private List<IDisposable> _forumLiveBehaviors;
-		private volatile static Forums _instance;
+		private static volatile Forums _instance;
 
 		public static Forums Instance
 		{
@@ -48,16 +50,13 @@ namespace Rsdn.Janus
 
 		public Forum[] ForumList { get; private set; }
 
-		public ForumFolder UnsubscribedForums
-		{
-			get { return _unsubscribedFolder; }
-		}
+		public ForumFolder UnsubscribedForums => _unsubscribedFolder;
 
 		private Forums(IServiceProvider provider)
 			: base(provider)
 		{
 			if (provider == null)
-				throw new ArgumentNullException("provider");
+				throw new ArgumentNullException(nameof(provider));
 
 			_serviceProvider = provider;
 			_dbManager = _serviceProvider.GetRequiredService<IJanusDatabaseManager>();
@@ -80,46 +79,29 @@ namespace Rsdn.Janus
 		public bool IsSubscribed(Forum forum)
 		{
 			if (forum == null)
-				throw new ArgumentNullException("forum");
+				throw new ArgumentNullException(nameof(forum));
 			return Array.IndexOf(ForumList, forum) >= 0;
 		}
 
 		#region Интерфейс коллекции.
-		public Forum this[int forumId]
-		{
-			get { return _forumsIdHash[forumId]; }
-		}
+		public Forum this[int forumId] => _forumsIdHash[forumId];
 
 		//IFeature
-		string IFeature.Key
-		{
-			get { return "Inbox"; }
-		}
+		string IFeature.Key => "Inbox";
 
-		public override string Info
-		{
-			get
-			{
-				return ForumList != null
-						? (Config.Instance.ForumDisplayConfig.ShowTotalMessages ? " {0}/{1}/{2}" : " {0}/{1}")
-							.FormatStr(
-							_forumsAggregatesService.Value.UnreadRepliesToMeCount,
-							_forumsAggregatesService.Value.UnreadMessagesCount,
-							_forumsAggregatesService.Value.MessagesCount)
-						: string.Empty;
-			}
-		}
+		public override string Info =>
+			ForumList != null
+			? (Config.Instance.ForumDisplayConfig.ShowTotalMessages ? " {0}/{1}/{2}" : " {0}/{1}")
+				.FormatWith(
+					_forumsAggregatesService.Value.UnreadRepliesToMeCount,
+					_forumsAggregatesService.Value.UnreadMessagesCount,
+					_forumsAggregatesService.Value.MessagesCount)
+			: string.Empty;
 
-		public override int ImageIndex
-		{
-			get { return ObjectModel.Features.Instance.ForumsImageIndex; }
-		}
+		public override int ImageIndex => ObjectModel.Features.Instance.ForumsImageIndex;
 
 
-		IFeature IFeature.this[int forumId]
-		{
-			get { return this[forumId]; }
-		}
+		IFeature IFeature.this[int forumId] => this[forumId];
 
 		ITreeNode ITreeNode.this[int index]
 		{
@@ -132,26 +114,14 @@ namespace Rsdn.Janus
 			}
 		}
 
-		bool ITreeNode.HasChildren
-		{
-			get { return (ForumList != null && ForumList.Length > 0) || _folders.Count > 0; }
-		}
+		bool ITreeNode.HasChildren => (ForumList != null && ForumList.Length > 0) || _folders.Count > 0;
 
 		// ICollection
-		public int Count
-		{
-			get { return ForumList.Length + _folders.Count; }
-		}
+		public int Count => ForumList.Length + _folders.Count;
 
-		public bool IsSynchronized
-		{
-			get { return ForumList.IsSynchronized; }
-		}
+		public bool IsSynchronized => ForumList.IsSynchronized;
 
-		public object SyncRoot
-		{
-			get { return typeof(Forums); }
-		}
+		public object SyncRoot => typeof(Forums);
 
 		public void CopyTo(Array array, int index)
 		{
@@ -257,8 +227,7 @@ namespace Rsdn.Janus
 			using (_dbManager.GetLock().GetWriterLock())
 			using (var db = _dbManager.CreateDBContext())
 			{
-				if (BeforeLoadData != null)
-					BeforeLoadData(this, EventArgs.Empty);
+				BeforeLoadData?.Invoke(this, EventArgs.Empty);
 
 				var newLiveBehs = new List<IDisposable>();
 				var newIdHash = new Dictionary<int, Forum>();
@@ -298,8 +267,7 @@ namespace Rsdn.Janus
 
 				_forumsIdHash = newIdHash;
 
-				if (_forumLiveBehaviors != null)
-					_forumLiveBehaviors.DisposeAll();
+				_forumLiveBehaviors?.DisposeAll();
 				_forumLiveBehaviors = newLiveBehs;
 			}
 		}

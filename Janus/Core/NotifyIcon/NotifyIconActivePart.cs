@@ -1,9 +1,12 @@
 ﻿using System;
 using System.Drawing;
+
+using CodeJam;
+using CodeJam.Extensibility;
+
 using JetBrains.Annotations;
 
 using Rsdn.Janus.Core.NotifyIcon;
-using Rsdn.SmartApp;
 
 namespace Rsdn.Janus
 {
@@ -69,7 +72,7 @@ namespace Rsdn.Janus
 				{
 					if (meUnread > 0)
 					{
-						_notifyIconService.Tooltip = "{0} {1}".FormatStr(
+						_notifyIconService.Tooltip = "{0} {1}".FormatWith(
 							meUnread,
 							meUnread.GetDeclension(
 								NotifyIconResources.HintMeMessages1,
@@ -79,7 +82,7 @@ namespace Rsdn.Janus
 						return;
 					}
 
-					_notifyIconService.Tooltip = "{0} {1}".FormatStr(
+					_notifyIconService.Tooltip = "{0} {1}".FormatWith(
 						totalUnread,
 						totalUnread.GetDeclension(
 							NotifyIconResources.HintUnreadMessages1,

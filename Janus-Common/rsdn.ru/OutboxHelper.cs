@@ -2,11 +2,11 @@
 using System.Linq;
 using System.Linq.Expressions;
 
+using CodeJam.Extensibility;
+
 using JetBrains.Annotations;
 
 using LinqToDB;
-
-using Rsdn.SmartApp;
 
 namespace Rsdn.Janus
 {
@@ -16,7 +16,7 @@ namespace Rsdn.Janus
 		public static IOutboxManager GetOutboxManager(
 			[NotNull] this IServiceProvider provider)
 		{
-			if (provider == null) throw new ArgumentNullException("provider");
+			if (provider == null) throw new ArgumentNullException(nameof(provider));
 			return provider.GetRequiredService<IOutboxManager>();
 		}
 
@@ -38,8 +38,8 @@ namespace Rsdn.Janus
 			[NotNull] IServiceProvider provider,
 			[NotNull] IOutboxMessage message)
 		{
-			if (provider == null) throw new ArgumentNullException("provider");
-			if (message == null) throw new ArgumentNullException("message");
+			if (provider == null) throw new ArgumentNullException(nameof(provider));
+			if (message == null) throw new ArgumentNullException(nameof(message));
 
 			var tlm = provider.GetRequiredService<ITagLineManager>();
 			var tagline = tlm.GetTagLine(tlm.FindAppropriateTagLine(message.ForumId));

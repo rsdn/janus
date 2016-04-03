@@ -2,9 +2,8 @@
 using System.Linq;
 using System.Windows.Forms;
 
-using JetBrains.Annotations;
-
-using Rsdn.SmartApp;
+using CodeJam;
+using CodeJam.Extensibility;
 
 namespace Rsdn.Janus
 {
@@ -13,10 +12,10 @@ namespace Rsdn.Janus
 	{
 		private readonly ICheckStateSource[] _checkStateSources;
 
-		public CheckStateService([NotNull] IServiceProvider serviceProvider)
+		public CheckStateService([JetBrains.Annotations.NotNull] IServiceProvider serviceProvider)
 		{
 			if (serviceProvider == null)
-				throw new ArgumentNullException("serviceProvider");
+				throw new ArgumentNullException(nameof(serviceProvider));
 
 			_checkStateSources = 
 				new ExtensionsCache<CheckStateSourceInfo, ICheckStateSource>(serviceProvider).GetAllExtensions();
@@ -25,13 +24,13 @@ namespace Rsdn.Janus
 		#region ICheckStateService Members
 
 		public CheckState GetCheckState(
-			[NotNull] IServiceProvider serviceProvider,
-			[NotNull] string name)
+			[JetBrains.Annotations.NotNull] IServiceProvider serviceProvider,
+			[JetBrains.Annotations.NotNull] string name)
 		{
 			if (serviceProvider == null)
-				throw new ArgumentNullException("serviceProvider");
+				throw new ArgumentNullException(nameof(serviceProvider));
 			if (name == null)
-				throw new ArgumentNullException("name");
+				throw new ArgumentNullException(nameof(name));
 
 			CheckState? result = null;
 			foreach (var source in _checkStateSources)
@@ -53,13 +52,13 @@ namespace Rsdn.Janus
 		}
 
 		public IDisposable SubscribeCheckStateChanged(
-			[NotNull] IServiceProvider serviceProvider, 
-			[NotNull] CheckStateChangedEventHandler handler)
+			[JetBrains.Annotations.NotNull] IServiceProvider serviceProvider, 
+			[JetBrains.Annotations.NotNull] CheckStateChangedEventHandler handler)
 		{
 			if (serviceProvider == null)
-				throw new ArgumentNullException("serviceProvider");
+				throw new ArgumentNullException(nameof(serviceProvider));
 			if (handler == null)
-				throw new ArgumentNullException("handler");
+				throw new ArgumentNullException(nameof(handler));
 
 			return
 				_checkStateSources

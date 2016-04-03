@@ -6,8 +6,11 @@ using System.Reflection;
 using System.Text.RegularExpressions;
 using System.Xml;
 
+using CodeJam;
+using CodeJam.Extensibility;
+using CodeJam.Extensibility.Model;
+
 using Rsdn.Framework.Formatting;
-using Rsdn.SmartApp;
 
 namespace Rsdn.Janus
 {
@@ -137,9 +140,7 @@ namespace Rsdn.Janus
 				provider
 					.GetRequiredService<IStyleImageManager>()
 					.GetImageUri(
-						string.Format(@"MessageTree\WD{0}{1}",
-							outdated ? "OUT" : string.Empty,
-							weekDay),
+						$@"MessageTree\WD{(outdated ? "OUT" : string.Empty)}{weekDay}",
 						StyleImageType.ConstSize);
 		}
 
@@ -332,7 +333,7 @@ namespace Rsdn.Janus
 				default:
 					return
 						forumId != msgForumId
-							? SR.Forum.Moderatorial.MoveToForum.FormatStr(
+							? SR.Forum.Moderatorial.MoveToForum.FormatWith(
 								Config.Instance.ForumDisplayConfig.ShowFullForumNames
 									? forumDescription
 									: forumName)
@@ -581,8 +582,8 @@ namespace Rsdn.Janus
 
 		private string ProcessUrlInternal(string url, string text)
 		{
-			if (url  == null) throw new ArgumentNullException("url");
-			if (text == null) throw new ArgumentNullException("text");
+			if (url  == null) throw new ArgumentNullException(nameof(url));
+			if (text == null) throw new ArgumentNullException(nameof(text));
 
 			var info = JanusProtocolInfo.Parse(url);
 
@@ -681,10 +682,7 @@ namespace Rsdn.Janus
 			DateTime date,
 			string nick)
 		{
-			return string.Format("\"{0}\",\r{1}, {2}",
-				subject,
-				nick,
-				date.ToString(Config.Instance.ForumDisplayConfig.DateFormat));
+			return $"\"{subject}\",\r{nick}, {date.ToString(Config.Instance.ForumDisplayConfig.DateFormat)}";
 		}
 
 		/// <summary>

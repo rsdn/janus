@@ -3,9 +3,9 @@ using System.Data.OleDb;
 using System.IO;
 using System.Runtime.InteropServices;
 
-using JRO;
+using CodeJam.Extensibility;
 
-using Rsdn.SmartApp;
+using JRO;
 
 namespace Rsdn.Janus.Jet
 {
@@ -45,6 +45,7 @@ namespace Rsdn.Janus.Jet
 
 						OleDbConnection.ReleaseObjectPool();
 
+						// ReSharper disable once SuspiciousTypeConversion.Global
 						var engine = (IJetEngine) new JetEngineClass();
 						try
 						{

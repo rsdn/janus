@@ -1,6 +1,6 @@
 ﻿using System;
 
-using Rsdn.SmartApp;
+using CodeJam.Extensibility;
 
 using JetBrains.Annotations;
 
@@ -44,14 +44,14 @@ namespace Rsdn.Janus
 			int timeout)
 		{
 			if (provider == null)
-				throw new ArgumentNullException("provider");
+				throw new ArgumentNullException(nameof(provider));
 
 			if (!Config.Instance.NotificationConfig.LateralNotifier)
 				return;
 
-			var notificationService = provider.GetService<INotificationService>();
-			if (notificationService != null)
-				notificationService.ShowNotification(title, text, notificationType, timeout);
+			provider
+				.GetService<INotificationService>()
+				?.ShowNotification(title, text, notificationType, timeout);
 		}
 	}
 }

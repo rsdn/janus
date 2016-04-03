@@ -8,11 +8,14 @@ using System.Linq;
 using System.Timers;
 using System.Windows.Forms;
 
+using CodeJam.Extensibility;
+using CodeJam.Extensibility.EventBroker;
+using CodeJam.Extensibility.Model;
+
 using Rsdn.Janus.Framework;
 using Rsdn.Janus.ObjectModel;
 using Rsdn.Shortcuts;
 using Rsdn.TreeGrid;
-using Rsdn.SmartApp;
 
 namespace Rsdn.Janus
 {
@@ -98,15 +101,9 @@ namespace Rsdn.Janus
 		#region Instance Property
 		private static ForumDummyForm _instance;
 
-		public static ForumDummyForm Instance
-		{
-			get
-			{
-				return
-					_instance
-						?? (_instance = new ForumDummyForm(ApplicationManager.Instance.ServiceProvider));
-			}
-		}
+		public static ForumDummyForm Instance =>
+			_instance
+			?? (_instance = new ForumDummyForm(ApplicationManager.Instance.ServiceProvider));
 		#endregion
 
 		#region Поддержка стилей
@@ -1058,10 +1055,8 @@ namespace Rsdn.Janus
 		public void CollapseAndGoRoot()
 		{
 			var current = (IMsg)_tgMsgs.ActiveNode;
-			if (current == null)
-				return;
 
-			var topic = current.Topic;
+			var topic = current?.Topic;
 
 			if (topic == null)
 				return;
@@ -1231,7 +1226,6 @@ namespace Rsdn.Janus
 			}
 
 			Beeper.DoBeep();
-			return;
 		}
 
 		public IEnumerable<IMsg> SelectedMessages
@@ -1263,15 +1257,13 @@ namespace Rsdn.Janus
 		{
 			if (disposing)
 			{
-				if (_menuGenerator != null)
-					_menuGenerator.Dispose();
+				_menuGenerator?.Dispose();
 
 				_eventsSubscription.Dispose();
 
 				StyleConfig.StyleChange -= OnStyleChanged;
 
-				if (components != null)
-					components.Dispose();
+				components?.Dispose();
 			}
 
 			base.Dispose(disposing);
@@ -1279,10 +1271,8 @@ namespace Rsdn.Janus
 
 		private void OnSelectedMessagesChanged(EventArgs e)
 		{
-			if (SelectedMessagesChanged != null)
-				SelectedMessagesChanged(this, e);
+			SelectedMessagesChanged?.Invoke(this, e);
 		}
-
 		#endregion
 	}
 }

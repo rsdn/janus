@@ -2,9 +2,9 @@
 
 using System.Linq;
 
-using JetBrains.Annotations;
+using CodeJam;
 
-using Rsdn.SmartApp;
+using JetBrains.Annotations;
 
 namespace Rsdn.Janus
 {

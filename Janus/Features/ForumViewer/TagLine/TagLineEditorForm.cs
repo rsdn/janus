@@ -3,10 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
 
+using CodeJam;
+using CodeJam.Extensibility;
+
 using JetBrains.Annotations;
 
 using Rsdn.Scintilla;
-using Rsdn.SmartApp;
 
 namespace Rsdn.Janus
 {
@@ -24,9 +26,9 @@ namespace Rsdn.Janus
 		public TagLineEditorForm([NotNull] IServiceProvider provider, [NotNull] HashSet<int> excludeHash)
 		{
 			if (provider == null)
-				throw new ArgumentNullException("provider");
+				throw new ArgumentNullException(nameof(provider));
 			if (excludeHash == null)
-				throw new ArgumentNullException("excludeHash");
+				throw new ArgumentNullException(nameof(excludeHash));
 
 			_serviceProvider = provider;
 			_textMacrosService = _serviceProvider.GetService<ITextMacrosService>();
@@ -161,7 +163,7 @@ namespace Rsdn.Janus
 					.TextMacroses
 					.Select(
 						macros => new ToolStripMenuItem(
-							"@@{0} - {1}".FormatStr(macros.MacrosText, macros.DisplayName),
+							"@@{0} - {1}".FormatWith(macros.MacrosText, macros.DisplayName),
 							null,
 							MacrosMenuItemClick) { Tag = macros })
 					.ToArray());

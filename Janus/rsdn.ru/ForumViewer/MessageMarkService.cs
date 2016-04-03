@@ -4,11 +4,12 @@ using System.ComponentModel;
 using System.Linq;
 using System.Threading;
 
+using CodeJam.Extensibility;
+using CodeJam.Threading;
+
 using JetBrains.Annotations;
 
 using LinqToDB;
-
-using Rsdn.SmartApp;
 
 namespace Rsdn.Janus
 {
@@ -25,7 +26,7 @@ namespace Rsdn.Janus
 		public MessageMarkService([NotNull] IServiceProvider provider)
 		{
 			if (provider == null)
-				throw new ArgumentNullException("provider");
+				throw new ArgumentNullException(nameof(provider));
 
 			_provider = provider;
 			_uiAsyncOperation = _provider.GetRequiredService<IUIShell>().CreateUIAsyncOperation();
@@ -37,10 +38,10 @@ namespace Rsdn.Janus
 			[NotNull] IEnumerable<ForumEntryIds> msgIds, bool isRead, Action markFinished)
 		{
 			if (msgIds == null)
-				throw new ArgumentNullException("msgIds");
+				throw new ArgumentNullException(nameof(msgIds));
 
 			var msgIdsArray = msgIds.ToArray();
-			using (_rwLock.GetWriterLock())
+			using (_rwLock.GetWriteLock())
 			{
 				AsyncOperation asyncOp = null;
 				if (markFinished != null)
@@ -107,7 +108,7 @@ namespace Rsdn.Janus
 		{
 			var msgIdsArray = msgIds.ToArray();
 			if (msgIdsArray.Any(ids => ids.GetEntryType() != ForumEntryType.Message))
-				throw new ArgumentException(@"Элемент последовательности не является сообщением.", "msgIds");
+				throw new ArgumentException(@"Элемент последовательности не является сообщением.", nameof(msgIds));
 
 			using (var db = provider.CreateDBContext())
 			using (var tx = db.BeginTransaction())
@@ -138,7 +139,7 @@ namespace Rsdn.Janus
 		private void MarkMessages()
 		{
 			HashSet<MarkRequest> hash;
-			using (_rwLock.GetReaderLock())
+			using (_rwLock.GetReadLock())
 				hash = new HashSet<MarkRequest>(_requests);
 
 			foreach (var group in hash
@@ -149,7 +150,7 @@ namespace Rsdn.Janus
 					group.Ids,
 					group.IsRead);
 
-			using (_rwLock.GetWriterLock())
+			using (_rwLock.GetWriteLock())
 				_requests.RemoveAll(hash.Contains);
 
 			foreach (var notificator in hash.Select(rq => rq.MarkFinished))
@@ -161,31 +162,18 @@ namespace Rsdn.Janus
 		#region MarkRequest class
 		private class MarkRequest
 		{
-			private readonly ForumEntryIds[] _msgIds;
-			private readonly bool _isRead;
-			private readonly Action _markFinished;
-
 			public MarkRequest(ForumEntryIds[] msgIds, bool isRead, Action markFinished)
 			{
-				_msgIds = msgIds;
-				_isRead = isRead;
-				_markFinished = markFinished;
+				MsgIds = msgIds;
+				IsRead = isRead;
+				MarkFinished = markFinished;
 			}
 
-			public ForumEntryIds[] MsgIds
-			{
-				get { return _msgIds; }
-			}
+			public ForumEntryIds[] MsgIds { get; }
 
-			public bool IsRead
-			{
-				get { return _isRead; }
-			}
+			public bool IsRead { get; }
 
-			public Action MarkFinished
-			{
-				get { return _markFinished; }
-			}
+			public Action MarkFinished { get; }
 		}
 		#endregion
 	}

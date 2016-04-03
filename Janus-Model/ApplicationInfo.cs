@@ -1,7 +1,5 @@
 using System;
 
-using Rsdn.SmartApp;
-
 namespace Rsdn.Janus
 {
 	public class ApplicationInfo
@@ -24,30 +22,11 @@ namespace Rsdn.Janus
 
 		public static readonly Version Version = new Version(VersionString);
 
-		public static string FullVersion
-		{
-			get
-			{
-				return
-					"{0}.{1}.{2} {3} {4} {5}"
-						.FormatStr(
-							Version.Major,
-							Version.Minor,
-							Version.Build,
-							Release,
-							Resources.Revision,
-							Version.Revision);
-			}
-		}
+		public static string FullVersion =>
+			$"{Version.Major}.{Version.Minor}.{Version.Build} {Release} {Resources.Revision} {Version.Revision}";
 
-		public static string NameWithVersion
-		{
-			get { return ApplicationName + " " + Resources.Version.ToLower() + " " + FullVersion; }
-		}
+		public static string NameWithVersion => $"{ApplicationName} {Resources.Version.ToLower()} {FullVersion}";
 
-		public static string NameWithVersionAndCopyright
-		{
-			get { return NameWithVersion + ", " + Copyright; }
-		}
+		public static string NameWithVersionAndCopyright => $"{NameWithVersion}, {Copyright}";
 	}
 }

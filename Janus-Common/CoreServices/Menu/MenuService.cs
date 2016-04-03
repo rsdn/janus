@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Linq;
 using System.Reactive.Subjects;
-using JetBrains.Annotations;
 
-using Rsdn.SmartApp;
+using CodeJam.Collections;
+using CodeJam.Extensibility;
+
+using JetBrains.Annotations;
 
 namespace Rsdn.Janus
 {
@@ -11,13 +13,13 @@ namespace Rsdn.Janus
 	public sealed class MenuService : IMenuService
 	{
 		private readonly ILookup<string, IMenuProvider> _menuProvidersLookup;
-		private readonly ElementsCache<string, IMenuRoot> _menuCache;
+		private readonly ILazyDictionary<string, IMenuRoot> _menuCache;
 		private readonly Subject<string> _menuChanged = new Subject<string>();
 
 		public MenuService([NotNull] IServiceProvider serviceProvider)
 		{
 			if (serviceProvider == null)
-				throw new ArgumentNullException("serviceProvider");
+				throw new ArgumentNullException(nameof(serviceProvider));
 
 			var menuProviders = new ExtensionsCache<MenuProviderInfo, IMenuProvider>(serviceProvider);
 
@@ -29,19 +31,19 @@ namespace Rsdn.Janus
 						StringComparer.OrdinalIgnoreCase);
 
 			// WTF?
-			menuProviders
-				.GetAllExtensions()
-				.OfType<IDynamicMenuProvider>()
-				.Select(
-					dynamicMenuProvider =>
-					{
-						_menuCache.Drop(dynamicMenuProvider.MenuName);
-						return 
-							dynamicMenuProvider.MenuChanged.Subscribe(
-								arg => _menuChanged.OnNext(dynamicMenuProvider.MenuName));
-					});
+			//menuProviders
+			//	.GetAllExtensions()
+			//	.OfType<IDynamicMenuProvider>()
+			//	.Select(
+			//		dynamicMenuProvider =>
+			//		{
+			//			_menuCache.Drop(dynamicMenuProvider.MenuName);
+			//			return 
+			//				dynamicMenuProvider.MenuChanged.Subscribe(
+			//					arg => _menuChanged.OnNext(dynamicMenuProvider.MenuName));
+			//		});
 
-			_menuCache = new ElementsCache<string, IMenuRoot>(CreateMenu);
+			_menuCache = LazyDictionary.Create<string, IMenuRoot>(CreateMenu, false);
 		}
 
 		#region IMenuService Members
@@ -49,21 +51,17 @@ namespace Rsdn.Janus
 		public IMenuRoot GetMenu(string menuName)
 		{
 			if (menuName == null)
-				throw new ArgumentNullException("menuName");
+				throw new ArgumentNullException(nameof(menuName));
 			if (!MenuNamesValidator.IsValidMenuName(menuName))
-				throw new ArgumentException(@"Аргумент имеет некорректный формат.", "menuName");
+				throw new ArgumentException(@"Аргумент имеет некорректный формат.", nameof(menuName));
 			if (!_menuProvidersLookup.Contains(menuName))
 				throw new ApplicationException(
-					"Меню с идентификатором '{0}' не может создать ни один провайдер меню.".FormatStr(menuName));
+					$"Меню с идентификатором '{menuName}' не может создать ни один провайдер меню.");
 
-			return _menuCache.Get(menuName);
+			return _menuCache[menuName];
 		}
 
-		public IObservable<string> MenuChanged
-		{
-			get { return _menuChanged; }
-		}
-
+		public IObservable<string> MenuChanged => _menuChanged;
 		#endregion
 
 		#region Private Members

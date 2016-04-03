@@ -6,11 +6,16 @@ using System.Reactive.Linq;
 using System.Reactive.Subjects;
 using System.Windows.Forms;
 
+using CodeJam;
+using CodeJam.Collections;
+using CodeJam.Extensibility;
+
 using JetBrains.Annotations;
 
 using Rsdn.Janus.Core.Synchronization;
 using Rsdn.Janus.Log;
-using Rsdn.SmartApp;
+
+using Disposable = System.Reactive.Disposables.Disposable;
 
 namespace Rsdn.Janus
 {
@@ -23,9 +28,7 @@ namespace Rsdn.Janus
 		private readonly IServiceProvider _provider;
 		private readonly AsyncOperation _uiAsyncOp;
 		private readonly Subject<EventArgs> _startSync = new Subject<EventArgs>();
-		private readonly IObservable<EventArgs> _startSyncAsync;
 		private readonly Subject<EndSyncEventArgs> _endSync = new Subject<EndSyncEventArgs>();
-		private readonly IObservable<EndSyncEventArgs> _endSyncAsync;
 		private SyncForm _lastSyncFormInstance;
 		private bool _isActive;
 		private readonly ExtensionsCache<SyncProviderInfo, string, ISyncProvider> _syncProvidersCache;
@@ -34,15 +37,15 @@ namespace Rsdn.Janus
 		public Synchronizer([NotNull] IServiceProvider provider)
 		{
 			if (provider == null)
-				throw new ArgumentNullException("provider");
+				throw new ArgumentNullException(nameof(provider));
 
 			_provider = provider;
 
 			_syncProvidersCache = new ExtensionsCache<SyncProviderInfo, string, ISyncProvider>(provider);
 
 			var syncContext = _provider.GetRequiredService<IUIShell>().UISyncContext;
-			_startSyncAsync = _startSync.ObserveOn(syncContext);
-			_endSyncAsync = _endSync.ObserveOn(syncContext);
+			StartSync = _startSync.ObserveOn(syncContext);
+			EndSync = _endSync.ObserveOn(syncContext);
 			_uiAsyncOp = _provider.GetRequiredService<IUIShell>().CreateUIAsyncOperation();
 
 			_disposables =
@@ -85,9 +88,9 @@ namespace Rsdn.Janus
 		public IStatisticsContainer SyncSpecific(string providerName, string taskName, bool activateUI)
 		{
 			if (providerName == null)
-				throw new ArgumentNullException("providerName");
+				throw new ArgumentNullException(nameof(providerName));
 			if (taskName == null)
-				throw new ArgumentNullException("taskName");
+				throw new ArgumentNullException(nameof(taskName));
 			var prov = _syncProvidersCache.GetExtension(providerName);
 			if (prov == null)
 				throw new ArgumentException("Unknown sync provider");
@@ -102,16 +105,9 @@ namespace Rsdn.Janus
 					activateUI);
 		}
 
-		public IObservable<EventArgs> StartSync
-		{
-			get { return _startSyncAsync; }
-		}
+		public IObservable<EventArgs> StartSync { get; }
 
-		public IObservable<EndSyncEventArgs> EndSync
-		{
-			get { return _endSyncAsync; }
-		}
-
+		public IObservable<EndSyncEventArgs> EndSync { get; }
 		#endregion
 
 		#region Implementation of IDisposable
@@ -211,12 +207,12 @@ namespace Rsdn.Janus
 			}
 			catch (UserCancelledException ex)
 			{
-				_provider.LogWarning(SyncResources.SyncWarning.FormatStr(ex.Message));
+				_provider.LogWarning(SyncResources.SyncWarning.FormatWith(ex.Message));
 				result = SyncResult.Aborted;
 			}
 			catch (Exception ex)
 			{
-				_provider.LogError(SyncResources.SyncError.FormatStr(ex.Message));
+				_provider.LogError(SyncResources.SyncError.FormatWith());
 				result = SyncResult.Failed;
 				failException = ex;
 			}

@@ -1,11 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+
+using CodeJam.Extensibility;
+using CodeJam.Extensibility.EventBroker;
+
 using JetBrains.Annotations;
 
 using LinqToDB;
-
-using Rsdn.SmartApp;
 
 namespace Rsdn.Janus
 {
@@ -16,7 +18,7 @@ namespace Rsdn.Janus
 	{
 		public static IJanusFormatter GetFormatter([NotNull] this IServiceProvider provider)
 		{
-			if (provider == null) throw new ArgumentNullException("provider");
+			if (provider == null) throw new ArgumentNullException(nameof(provider));
 			return provider.GetRequiredService<IJanusFormatter>();
 		}
 
@@ -32,7 +34,7 @@ namespace Rsdn.Janus
 			bool withSubnodes)
 		{
 			if (provider == null)
-				throw new ArgumentNullException("provider");
+				throw new ArgumentNullException(nameof(provider));
 
 			if (messages == null || !messages.Any())
 				return;
@@ -83,7 +85,7 @@ namespace Rsdn.Janus
 			bool isRead)
 		{
 			if (provider == null)
-				throw new ArgumentNullException("provider");
+				throw new ArgumentNullException(nameof(provider));
 
 			if (forums == null || !forums.Any())
 				return;
@@ -236,7 +238,7 @@ namespace Rsdn.Janus
 			bool exceptAnswersMe)
 		{
 			if (provider == null)
-				throw new ArgumentNullException("provider");
+				throw new ArgumentNullException(nameof(provider));
 
 			var eventBroker = provider.GetRequiredService<IEventBroker>();
 
@@ -257,10 +259,12 @@ namespace Rsdn.Janus
 					forumIds ?? Enumerable.Empty<int>(),
 					isRead);
 
-			(forumIds != null && forumIds.Any()
-			 		? forumIds.Select(forumId => Forums.Instance[forumId])
-			 		: Forums.Instance.ForumList)
-				.ForEach(forum => forum.Refresh());
+			var frms =
+				forumIds != null && forumIds.Any()
+					? forumIds.Select(forumId => Forums.Instance[forumId])
+					: Forums.Instance.ForumList;
+			foreach (var frm in frms)
+				frm.Refresh();
 
 			eventBroker.Fire(
 				ForumEventNames.AfterForumEntryChanged,
@@ -322,7 +326,7 @@ namespace Rsdn.Janus
 			int maxId)
 		{
 			if (provider == null)
-				throw new ArgumentNullException("provider");
+				throw new ArgumentNullException(nameof(provider));
 
 			if (unreadMsgIds == null || !unreadMsgIds.Any())
 				return;
@@ -350,7 +354,7 @@ namespace Rsdn.Janus
 			bool readReplies)
 		{
 			if (mids == null)
-				throw new ArgumentNullException("mids");
+				throw new ArgumentNullException(nameof(mids));
 
 			using (var db = provider.CreateDBContext())
 			using (var tx = db.BeginTransaction())
@@ -373,7 +377,7 @@ namespace Rsdn.Janus
 			bool isEnabled)
 		{
 			if (provider == null)
-				throw new ArgumentNullException("provider");
+				throw new ArgumentNullException(nameof(provider));
 
 			if (messages == null || !messages.Any())
 				return;

@@ -4,7 +4,8 @@ using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Drawing.Imaging;
 
-using Rsdn.SmartApp;
+using CodeJam.Collections;
+using CodeJam.Extensibility;
 
 namespace Rsdn.Janus
 {
@@ -20,7 +21,7 @@ namespace Rsdn.Janus
 		private readonly Image _closedImage;
 		private readonly Image _unreadRepliesToMeImage;
 
-		private readonly ElementsCache<MsgImageKey, Image> _images;
+		private readonly ILazyDictionary<MsgImageKey, Image> _images;
 
 		private readonly Image[] _dayOfWeekImages = new Image[7];
 		private readonly Image[] _outdatedDayOfWeekImages = new Image[7];
@@ -35,7 +36,7 @@ namespace Rsdn.Janus
 		private readonly Image _forumImage;
 		private readonly Image _forumUnreadImage;
 		private readonly Image _inTopImage;
-		private readonly ElementsCache<ForumImageKey, Image> _forumImages;
+		private readonly ILazyDictionary<ForumImageKey, Image> _forumImages;
 
 		public ForumImageManager(IServiceProvider provider)
 		{
@@ -80,8 +81,8 @@ namespace Rsdn.Janus
 			_forumUnreadImage = styler.GetImage(navPrefix + "ForumUnread", StyleImageType.ConstSize);
 			_inTopImage = styler.GetImage(navPrefix + "InTopSign", StyleImageType.ConstSize);
 
-			_images = new ElementsCache<MsgImageKey, Image>(CreateMsgImage);
-			_forumImages = new ElementsCache<ForumImageKey, Image>(CreateForumImage);
+			_images = LazyDictionary.Create<MsgImageKey, Image>(CreateMsgImage, true);
+			_forumImages = LazyDictionary.Create<ForumImageKey, Image>(CreateForumImage, true);
 		}
 
 		private Image CreateMsgImage(MsgImageKey key)
@@ -124,7 +125,7 @@ namespace Rsdn.Janus
 		private Image GetMsgDateImage(int index, bool outdated)
 		{
 			if (index < 0 || index > 6)
-				throw new ArgumentOutOfRangeException("index");
+				throw new ArgumentOutOfRangeException(nameof(index));
 			return (outdated ? _outdatedDayOfWeekImages : _dayOfWeekImages)[index];
 		}
 
@@ -157,7 +158,7 @@ namespace Rsdn.Janus
 			bool closed)
 		{
 			return
-				_images.Get(new MsgImageKey(type, hasUnreaded, hasUnreadRepliesToMe, hasModeratorials, closed));
+				_images[new MsgImageKey(type, hasUnreaded, hasUnreadRepliesToMe, hasModeratorials, closed)];
 		}
 
 		private static bool IsMsgOutdated(DateTime date)
@@ -187,7 +188,7 @@ namespace Rsdn.Janus
 				case MessageFlagExistence.OnChildren:
 					return _marksImage;
 				default:
-					throw new ArgumentOutOfRangeException("existence");
+					throw new ArgumentOutOfRangeException(nameof(existence));
 			}
 		}
 
@@ -198,7 +199,7 @@ namespace Rsdn.Janus
 
 		public Image GetForumImage(bool hasUnread, bool inTop, bool hasUnreadRepliesToMe)
 		{
-			return _forumImages.Get(new ForumImageKey(hasUnread, inTop, hasUnreadRepliesToMe));
+			return _forumImages[new ForumImageKey(hasUnread, inTop, hasUnreadRepliesToMe)];
 		}
 		#endregion
 
@@ -225,30 +226,15 @@ namespace Rsdn.Janus
 				_closed = closed;
 			}
 
-			public MessageType Type
-			{
-				get { return _type; }
-			}
+			public MessageType Type => _type;
 
-			public MessageFlagExistence HasUnreaded
-			{
-				get { return _hasUnreaded; }
-			}
+			public MessageFlagExistence HasUnreaded => _hasUnreaded;
 
-			public bool HasUnreadRepliesToMe
-			{
-				get { return _hasUnreadRepliesToMe; }
-			}
+			public bool HasUnreadRepliesToMe => _hasUnreadRepliesToMe;
 
-			public MessageFlagExistence HasModeratorials
-			{
-				get { return _hasModeratorials; }
-			}
+			public MessageFlagExistence HasModeratorials => _hasModeratorials;
 
-			public bool Closed
-			{
-				get { return _closed; }
-			}
+			public bool Closed => _closed;
 
 
 			public static bool operator !=(MsgImageKey msgImageKey1, MsgImageKey msgImageKey2)
@@ -309,20 +295,11 @@ namespace Rsdn.Janus
 				_hasUnreadRepliesToMe = hasUnreadRepliesToMe;
 			}
 
-			public bool HasUnread
-			{
-				get { return _hasUnread; }
-			}
+			public bool HasUnread => _hasUnread;
 
-			public bool InTop
-			{
-				get { return _inTop; }
-			}
+			public bool InTop => _inTop;
 
-			public bool HasUnreadRepliesToMe
-			{
-				get { return _hasUnreadRepliesToMe; }
-			}
+			public bool HasUnreadRepliesToMe => _hasUnreadRepliesToMe;
 
 			public static bool operator !=(ForumImageKey forumImageKey1, ForumImageKey forumImageKey2)
 			{

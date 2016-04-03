@@ -5,10 +5,11 @@ using System.IO;
 using System.Linq;
 using System.Windows.Forms;
 
+using CodeJam;
+
 using Lucene.Net.Index;
 
 using Rsdn.Janus.Log;
-using Rsdn.SmartApp;
 
 namespace Rsdn.Janus
 {
@@ -157,7 +158,7 @@ namespace Rsdn.Janus
 					}
 					finally
 					{
-						reader.Close();
+						reader.Dispose();
 					}
 				}
 
@@ -173,7 +174,7 @@ namespace Rsdn.Janus
 			}
 			finally
 			{
-				writer.Close();
+				writer.Dispose();
 			}
 
 			e.Result = indexedCount;
@@ -199,7 +200,7 @@ namespace Rsdn.Janus
 		{
 			if (e.Error != null)
 			{
-				actionTextBox.Text = SR.BuildIndexForm.Action.ErrorText.FormatStr(e.Error.Message);
+				actionTextBox.Text = SR.BuildIndexForm.Action.ErrorText.FormatWith(e.Error.Message);
 				_provider.LogInfo(
 					string.Format(SR.Search.IndexingTerminatedByError,
 						e.Error.Message));
@@ -246,20 +247,14 @@ namespace Rsdn.Janus
 
 		private class DoWorkArgs
 		{
-			private DoWorkStage _stage = DoWorkStage.Preparing;
-
 			internal DoWorkArgs(bool doOptimize)
 			{
 				DoOptimize = doOptimize;
 			}
 
-			public DoWorkStage Stage
-			{
-				get { return _stage; }
-				set { _stage = value; }
-			}
+			public DoWorkStage Stage { get; set; } = DoWorkStage.Preparing;
 
-			public bool DoOptimize { get; private set; }
+			public bool DoOptimize { get; }
 			public int TotalMessages { get; set; }
 			public int ProcessedMessages { get; set; }
 

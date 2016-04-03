@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Reactive.Subjects;
-using Rsdn.SmartApp;
+
+using CodeJam.Extensibility;
+using CodeJam.Extensibility.EventBroker;
 
 using JetBrains.Annotations;
 
@@ -15,7 +17,7 @@ namespace Rsdn.Janus
 		public ForumsAggregatesService([NotNull] IServiceProvider provider)
 		{
 			if (provider == null)
-				throw new ArgumentNullException("provider");
+				throw new ArgumentNullException(nameof(provider));
 
 			UpdateAggregates();
 
@@ -30,11 +32,7 @@ namespace Rsdn.Janus
 
 		public int UnreadRepliesToMeCount { get; private set; }
 
-		public IObservable<EventArgs> AggregatesChanged
-		{
-			get { return _aggregatesChanged; }
-		}
-
+		public IObservable<EventArgs> AggregatesChanged => _aggregatesChanged;
 		#endregion
 
 		#region Implementation of IDisposable

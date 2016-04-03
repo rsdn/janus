@@ -1,8 +1,7 @@
-﻿using System;
-using System.Diagnostics;
+﻿using System.Diagnostics;
 using System.Windows.Forms;
 
-using Rsdn.SmartApp;
+using CodeJam;
 
 namespace Rsdn.Janus
 {
@@ -14,7 +13,7 @@ namespace Rsdn.Janus
 		public SP1RequiredForm()
 		{
 			InitializeComponent();
-			_messageLabel.Text = _messageLabel.Text.FormatStr(ApplicationInfo.ApplicationName);
+			_messageLabel.Text = _messageLabel.Text.FormatWith(ApplicationInfo.ApplicationName);
 		}
 
 		private void LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)

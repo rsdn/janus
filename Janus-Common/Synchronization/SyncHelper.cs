@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Threading;
 
-using Rsdn.SmartApp;
+using CodeJam.Extensibility;
 
 namespace Rsdn.Janus
 {
@@ -126,15 +126,15 @@ namespace Rsdn.Janus
 								.CreateUIAsyncOperation()
 								.PostOperationCompleted(
 //{{{-PossibleIntendedRethrow
-								state => { throw ex; }, null);
+									state => { throw ex; }, null);
 //{{{+PossibleIntendedRethrow
 						}
 					},
 					priority);
 				thread.Start();
 			}
-			else if (syncFinishedHandler != null)
-				syncFinishedHandler(false, null);
+			else
+				syncFinishedHandler?.Invoke(false, null);
 		}
 
 		private static Thread CreateSyncThread(
@@ -176,7 +176,7 @@ namespace Rsdn.Janus
 			{
 				if (sb.Length > 0)
 					sb.AppendLine("");
-				sb.AppendLine("{0} - {1}".FormatStr(error.TaskName, error.Type));
+				sb.AppendLine($"{error.TaskName} - {error.Type}");
 				sb.AppendLine(error.Text);
 			}
 			return sb.ToString();
@@ -184,10 +184,7 @@ namespace Rsdn.Janus
 
 		public static void TryAddSyncError(this IServiceProvider provider, SyncErrorInfo error)
 		{
-			var svc = provider.GetService<ISyncErrorInformer>();
-			if (svc == null)
-				return;
-			svc.AddError(error);
+			provider.GetService<ISyncErrorInformer>()?.AddError(error);
 		}
 	}
 

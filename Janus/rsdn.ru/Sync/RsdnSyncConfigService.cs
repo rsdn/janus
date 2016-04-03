@@ -1,4 +1,4 @@
-﻿using Rsdn.SmartApp;
+﻿using CodeJam.Extensibility;
 
 namespace Rsdn.Janus.Sync
 {

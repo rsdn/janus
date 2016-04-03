@@ -2,14 +2,15 @@
 using System.Collections.Generic;
 using System.Linq;
 
-using JetBrains.Annotations;
+using CodeJam;
+using CodeJam.Collections;
+using CodeJam.Extensibility;
 
 using LinqToDB;
 
 using Rsdn.Janus.AT;
 using Rsdn.Janus.Log;
 using Rsdn.Janus.Properties;
-using Rsdn.SmartApp;
 
 namespace Rsdn.Janus
 {
@@ -101,15 +102,11 @@ namespace Rsdn.Janus
 						.Update();
 
 				processed++;
-				if (progressHandler != null)
-					progressHandler(rates.Length, processed);
+				progressHandler?.Invoke(rates.Length, processed);
 			}
 		}
 
-		private static bool IsModeratorialExists(
-			IDataContext db,
-			int @messageId,
-			int @userId)
+		private static bool IsModeratorialExists(IDataContext db, int messageId, int userId)
 		{
 			return
 				db
@@ -153,16 +150,16 @@ namespace Rsdn.Janus
 			int selfID)
 		{
 			if (messages == null)
-				throw new ArgumentNullException("messages");
+				throw new ArgumentNullException(nameof(messages));
 			if (rates == null)
-				throw new ArgumentNullException("rates");
+				throw new ArgumentNullException(nameof(rates));
 			if (messages.Length == 0 && rates.Length == 0)
 				// Nothing to do
 				return;
 
 			context.LogInfo(Resources.ProcessMessages);
 
-			var msgIds = EmptyArray<int>.Value;
+			var msgIds = Array<int>.Empty;
 			// Затычка. Блокируем интерфейс на время обработки сообщений.
 			using (context.GetRequiredService<IUIShell>().FreezeUI(context))
 			using (context.GetRequiredService<IJanusDatabaseManager>().GetLock().GetWriterLock())
@@ -174,7 +171,7 @@ namespace Rsdn.Janus
 					var tids = new HashSet<int>();
 					var pgSvc = context.GetService<ISyncProgressVisualizer>();
 
-					var topicIds = EmptyArray<int>.Value;
+					var topicIds = Array<int>.Empty;
 					if (messages.Length > 0)
 						AddMessages(
 							context,
@@ -186,11 +183,12 @@ namespace Rsdn.Janus
 									{
 										pgSvc.ReportProgress(total, current);
 										pgSvc.SetProgressText(
-											current.GetDeclension(
-												Resources.NewMsgProcessingProgressText1,
-												Resources.NewMsgProcessingProgressText2,
-												Resources.NewMsgProcessingProgressText5)
-												.FormatStr(current));
+											current
+												.GetDeclension(
+													Resources.NewMsgProcessingProgressText1,
+													Resources.NewMsgProcessingProgressText2,
+													Resources.NewMsgProcessingProgressText5)
+												.FormatWith(current));
 									}
 								: (Action<int, int>) null,
 							out topicIds,
@@ -208,11 +206,12 @@ namespace Rsdn.Janus
 								{
 									pgSvc.ReportProgress(total, current);
 									pgSvc.SetProgressText(
-										current.GetDeclension(
-											Resources.NewRatesProcessingProgress1,
-											Resources.NewRatesProcessingProgress2,
-											Resources.NewRatesProcessingProgress5)
-											.FormatStr(current));
+										current
+											.GetDeclension(
+												Resources.NewRatesProcessingProgress1,
+												Resources.NewRatesProcessingProgress2,
+												Resources.NewRatesProcessingProgress5)
+											.FormatWith(current));
 								}
 							: (Action<int, int>) null);
 					foreach (var rate in rates)
@@ -227,8 +226,7 @@ namespace Rsdn.Janus
 
 					context.GetRequiredService<IRsdnForumService>().UpdateForumAggregates(context, db, tids);
 
-					if (afterProcessInTxHandler != null)
-						afterProcessInTxHandler(db);
+					afterProcessInTxHandler?.Invoke(db);
 
 					tx.Commit();
 					GC.KeepAlive(db);
@@ -253,8 +251,9 @@ namespace Rsdn.Janus
 			context.StatisticsContainer.AddValue(JanusATInfo.IndexedMessagesStats, addedCount);
 
 			context.LogInfo(
-				Resources.DownloadTopicsStat
-					.FormatStr(
+				Resources
+					.DownloadTopicsStat
+					.FormatWith(
 						msgIds.Length,
 						msgIds.Length.GetDeclension(
 							Resources.Messages1,
@@ -318,7 +317,7 @@ namespace Rsdn.Janus
 					.Add(
 						Resources.BrokenTopicRequestSource,
 						mid,
-						Resources.BrokenTopicRequestHint.FormatStr(freshMids[mid].subject));
+						Resources.BrokenTopicRequestHint.FormatWith(freshMids[mid].subject));
 		}
 
 		/// <summary>
@@ -332,7 +331,7 @@ namespace Rsdn.Janus
 		/// <param name="updatedTopicIds">Какие топики были обновлены.</param>
 		/// <param name="updatedMessageIds">Какие сообщения были добавлены.</param>
 		private static void AddMessages(
-			[NotNull] IServiceProvider provider,
+			[JetBrains.Annotations.NotNull] IServiceProvider provider,
 			IDataContext db,
 			JanusMessageInfo[] messages,
 			int selfid,
@@ -341,9 +340,9 @@ namespace Rsdn.Janus
 			out int[] updatedMessageIds)
 		{
 			if (db == null)
-				throw new ArgumentNullException("db");
+				throw new ArgumentNullException(nameof(db));
 			if (messages == null)
-				throw new ArgumentNullException("messages");
+				throw new ArgumentNullException(nameof(messages));
 
 			var msgIds = new List<int>();
 			var topicIds = new List<int>();
@@ -432,18 +431,12 @@ namespace Rsdn.Janus
 					catch (Exception e)
 					{
 						// Какая ....!
-						provider.LogError(
-							string.Format(
-								"{0}{1} : {2}",
-								Resources.ErrorOnMessageProcessing,
-								msg.messageId,
-								e.Message));
+						provider.LogError($"{Resources.ErrorOnMessageProcessing}{msg.messageId} : {e.Message}");
 					}
 				}
 
 				processed++;
-				if (progressHandler != null)
-					progressHandler(messages.Length, processed);
+				progressHandler?.Invoke(messages.Length, processed);
 			}
 
 			db

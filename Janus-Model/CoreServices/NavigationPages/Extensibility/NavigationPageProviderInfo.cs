@@ -1,27 +1,22 @@
 ﻿using System;
 
-using JetBrains.Annotations;
+using CodeJam.Extensibility;
 
-using Rsdn.SmartApp;
+using JetBrains.Annotations;
 
 namespace Rsdn.Janus
 {
 	public class NavigationPageProviderInfo : ElementInfo
 	{
-		private readonly string _pathMask;
-
 		public NavigationPageProviderInfo([NotNull] Type type, [NotNull] string pathMask)
 			: base(type)
 		{
 			if (pathMask == null)
-				throw new ArgumentNullException("pathMask");
+				throw new ArgumentNullException(nameof(pathMask));
 
-			_pathMask = pathMask;
+			PathMask = pathMask;
 		}
 
-		public string PathMask
-		{
-			get { return _pathMask; }
-		}
+		public string PathMask { get; }
 	}
 }

@@ -3,7 +3,7 @@ using System;
 using System.IO;
 using System.Windows.Forms;
 
-using Rsdn.SmartApp;
+using CodeJam;
 
 namespace Rsdn.Janus
 {
@@ -62,11 +62,9 @@ namespace Rsdn.Janus
 				lblNewUserMessage.Text = ApplicationInfo.ApplicationName + SR.Config.OptionsUserForm.FirstRunMessage;
 
 				var janusDir = EnvironmentHelper.GetJanusRootDir();
-				txtPathToDb.Text =
-					"{0}\\{1}"
-					.FormatStr(new FileInfo(janusDir).DirectoryName, Environment.UserName);
+				txtPathToDb.Text = "{0}\\{1}".FormatWith(new FileInfo(janusDir).DirectoryName, Environment.UserName);
 				txtUserName.Text = Environment.UserName;
-				LocalUser.CreateUser(_serviceProvider, txtPathToDb.Text, txtUserName.Text, txtUserPsw.Text);
+				LocalUser.CreateUser(txtPathToDb.Text, txtUserName.Text, txtUserPsw.Text);
 			}
 			else
 			{
@@ -94,7 +92,7 @@ namespace Rsdn.Janus
 			{
 				Config.Instance.DbDriver		 = _dbDriver;
 				Config.Instance.ConnectionString = _connStr;
-				LocalUser.CreateUser(_serviceProvider, txtPathToDb.Text, txtUserName.Text,
+				LocalUser.CreateUser(txtPathToDb.Text, txtUserName.Text,
 					txtUserPsw.Text);
 			}
 			else
@@ -106,7 +104,7 @@ namespace Rsdn.Janus
 
 				if (!LocalUser.IsDbAndCfgExists(txtPathToDb.Text))
 				{
-					LocalUser.CreateUser(_serviceProvider, txtPathToDb.Text, txtUserName.Text,
+					LocalUser.CreateUser(txtPathToDb.Text, txtUserName.Text,
 						txtUserPsw.Text);
 				}
 				else

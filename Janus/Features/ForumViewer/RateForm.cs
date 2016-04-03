@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 
-using Rsdn.SmartApp;
+using CodeJam.Extensibility;
 
 namespace Rsdn.Janus
 {

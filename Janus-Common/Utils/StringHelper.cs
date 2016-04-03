@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.Text;
 
-using Rsdn.SmartApp;
+using CodeJam;
 
 namespace Rsdn.Janus
 {
@@ -73,14 +73,14 @@ namespace Rsdn.Janus
 		{
 			return
 				"{1}{0}{2}{0}{3}"
-					.FormatStr(
-					CultureInfo.CurrentUICulture.DateTimeFormat.TimeSeparator,
-					(timespan.Days * 24 + timespan.Hours)
-						.ToString("00", CultureInfo.InvariantCulture),
-					timespan.Minutes
-						.ToString("00", CultureInfo.InvariantCulture),
-					((int)Math.Round((timespan.Seconds * 1000 + timespan.Milliseconds) / 1000f))
-						.ToString("00", CultureInfo.InvariantCulture));
+					.FormatWith(
+						CultureInfo.CurrentUICulture.DateTimeFormat.TimeSeparator,
+						(timespan.Days * 24 + timespan.Hours)
+							.ToString("00", CultureInfo.InvariantCulture),
+						timespan.Minutes
+							.ToString("00", CultureInfo.InvariantCulture),
+						((int)Math.Round((timespan.Seconds * 1000 + timespan.Milliseconds) / 1000f))
+							.ToString("00", CultureInfo.InvariantCulture));
 		}
 
 		/// <summary>
@@ -145,11 +145,11 @@ namespace Rsdn.Janus
 			Func<T, string> projector)
 		{
 			if (source == null)
-				throw new ArgumentNullException("source");
+				throw new ArgumentNullException(nameof(source));
 			if (separator == null)
-				throw new ArgumentNullException("separator");
+				throw new ArgumentNullException(nameof(separator));
 			if (seriesSize <= 0)
-				throw new ArgumentOutOfRangeException("seriesSize");
+				throw new ArgumentOutOfRangeException(nameof(seriesSize));
 
 			var sb = new StringBuilder();
 			var pos = 0;

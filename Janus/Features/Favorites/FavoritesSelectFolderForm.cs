@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 
-using Rsdn.SmartApp;
+using CodeJam.Extensibility;
 
 namespace Rsdn.Janus
 {
@@ -49,10 +49,7 @@ namespace Rsdn.Janus
 		#endregion
 
 		#region Properties
-		public FavoritesFolder SelectedFolder
-		{
-			get { return (FavoritesFolder) _folderView.ActiveNode; }
-		}
+		public FavoritesFolder SelectedFolder => (FavoritesFolder) _folderView.ActiveNode;
 
 		public string Comment
 		{

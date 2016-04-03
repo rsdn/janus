@@ -4,9 +4,9 @@ using System.Linq;
 using System.Windows.Forms;
 using System.Reflection;
 
-using JetBrains.Annotations;
+using CodeJam;
 
-using Rsdn.SmartApp;
+using JetBrains.Annotations;
 
 namespace Rsdn.Janus
 {
@@ -42,16 +42,12 @@ namespace Rsdn.Janus
 						if (parameters.Length != 1
 							|| parameters[0].ParameterType != typeof(IServiceProvider)
 							|| method.ReturnType != typeof(CheckState?))
-							throw new ApplicationException(
-								"Метод получения состояния галочки '{0}' имеет неверную сигатуру."
-									.FormatStr(method));
+							throw new ApplicationException($"Метод получения состояния галочки '{method}' имеет неверную сигатуру.");
 
 						var name = checkStateGetterAttribute.Name;
 
 						if (_checkStateGetters.ContainsKey(name))
-							throw new ApplicationException(
-								"Метод получения состояния галочки '{0}' определен несколько раз."
-									.FormatStr(method));
+							throw new ApplicationException($"Метод получения состояния галочки '{method}' определен несколько раз.");
 
 						_checkStateGetters[name] = method;
 					}
@@ -65,8 +61,7 @@ namespace Rsdn.Janus
 								|| parameters[1].ParameterType != typeof(Action)
 								|| method.ReturnType != typeof(IDisposable))
 							throw new ApplicationException(
-								"Метод подписки на оповещения о смене состояния галочки '{0}' имеет неверную сигатуру."
-									.FormatStr(method));
+								$"Метод подписки на оповещения о смене состояния галочки '{method}' имеет неверную сигатуру.");
 
 						subscribeNames.Add(checkStateSubcriberAttribute.Name);
 					}
@@ -86,9 +81,8 @@ namespace Rsdn.Janus
 			{
 				if (!_checkStateGetters.ContainsKey(checkStateName))
 					throw new ApplicationException(
-						"Метод подписки на оповещения о смене состояния галочки '{0}' "
-							.FormatStr(checkStateName) +
-						"определен, а метод запроса состояния - нет.");
+						$"Метод подписки на оповещения о смене состояния галочки '{checkStateName}' определен, а метод запроса" +
+						" состояния - нет.");
 			}
 		}
 
@@ -99,9 +93,9 @@ namespace Rsdn.Janus
 			[NotNull] string name)
 		{
 			if (provider == null)
-				throw new ArgumentNullException("provider");
+				throw new ArgumentNullException(nameof(provider));
 			if (name == null)
-				throw new ArgumentNullException("name");
+				throw new ArgumentNullException(nameof(name));
 
 			MethodInfo checkStateGetter;
 			if (_checkStateGetters.TryGetValue(name, out checkStateGetter))
@@ -114,9 +108,9 @@ namespace Rsdn.Janus
 			[NotNull] CheckStateChangedEventHandler handler)
 		{
 			if (serviceProvider == null)
-				throw new ArgumentNullException("serviceProvider");
+				throw new ArgumentNullException(nameof(serviceProvider));
 			if (handler == null)
-				throw new ArgumentNullException("handler");
+				throw new ArgumentNullException(nameof(handler));
 
 			return
 				_checkStateSubscribers
@@ -132,6 +126,7 @@ namespace Rsdn.Janus
 											serviceProvider,
 											(Action) (() => handler(this, subscribeMethod.Names))
 										}))
+					.ToArray()
 					.Merge();
 		}
 
@@ -141,24 +136,15 @@ namespace Rsdn.Janus
 
 		private struct SubscribeMethod
 		{
-			private readonly RuntimeMethodHandle _method;
-			private readonly string[] _names;
-
 			public SubscribeMethod(string[] names, RuntimeMethodHandle method)
 			{
-				_method = method;
-				_names = names;
+				MethodHandle = method;
+				Names = names;
 			}
 
-			public RuntimeMethodHandle MethodHandle
-			{
-				get { return _method; }
-			}
+			public RuntimeMethodHandle MethodHandle { get; }
 
-			public string[] Names
-			{
-				get { return _names; }
-			}
+			public string[] Names { get; }
 		}
 
 		#endregion

@@ -3,9 +3,9 @@ using System.IO;
 
 using Microsoft.Win32;
 
-using Rsdn.SmartApp.CommandLine;
-
 using System.Linq;
+
+using CodeJam.Extensibility.CommandLine;
 
 namespace Rsdn.Janus
 {
@@ -17,7 +17,7 @@ namespace Rsdn.Janus
 		private const string _keyPath = @"Software\Rsdn\Janus\LocalUser";
 		private const string _keyName = "DBPath";
 
-		private string _databasePath = string.Empty;
+		private string _databasePath;
 
 		private LocalUser()
 		{
@@ -54,15 +54,12 @@ namespace Rsdn.Janus
 				ast,
 				new CmdLineRules(new OptionRule(_dbPathKey, OptionType.Value, false)));
 			var opt = ast.Options.FirstOrDefault(o => o.Text == _dbPathKey);
-			return opt == null ? null : opt.Value.Text;
+			return opt?.Value.Text;
 		}
 
 		private static LocalUser _instance;
 
-		private static LocalUser Instance
-		{
-			get { return _instance ?? (_instance = new LocalUser()); }
-		}
+		private static LocalUser Instance => _instance ?? (_instance = new LocalUser());
 
 		public static bool IsDbAndCfgExists(string dbpath)
 		{
@@ -73,21 +70,16 @@ namespace Rsdn.Janus
 		{
 			using (var luk = Registry.CurrentUser.OpenSubKey(_keyPath))
 			{
-				if (luk != null)
-				{
-					var dbp = luk.GetValue(_keyName);
-					if (dbp != null && IsDbAndCfgExists(dbp.ToString()))
-						return true;
-				}
+				var dbp = luk?.GetValue(_keyName);
+				if (dbp != null && IsDbAndCfgExists(dbp.ToString()))
+					return true;
 			}
 			return false;
 		}
 
 		#region Новый пользователь
 
-		public static void CreateUser(
-			IServiceProvider provider,
-			string dbPath,
+		public static void CreateUser(string dbPath,
 			string userName,
 			string pwd)
 		{
@@ -131,10 +123,7 @@ namespace Rsdn.Janus
 			set { Config.Instance.EncodedPassword = value.EncryptPassword(); }
 		}
 
-		public static string LuceneIndexPath
-		{
-			get { return Path.Combine(DatabasePath, ".index"); }
-		}
+		public static string LuceneIndexPath => Path.Combine(DatabasePath, ".index");
 		#endregion
 	}
 }

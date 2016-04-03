@@ -7,10 +7,12 @@ using System.Reflection;
 using System.Text;
 using System.Windows.Forms;
 
+using CodeJam;
+using CodeJam.Extensibility;
+
 using Rsdn.Framework.Formatting;
 
 using Rsdn.Janus.Framework.Imaging;
-using Rsdn.SmartApp;
 
 namespace Rsdn.Janus
 {
@@ -37,7 +39,7 @@ namespace Rsdn.Janus
 			var canExportMessages = activeMessagesSvc != null && activeMessagesSvc.ActiveMessages.Any();
 
 			var activeForumSvc = provider.GetService<IActiveForumService>();
-			var canExportForum = activeForumSvc != null && activeForumSvc.ActiveForum != null;
+			var canExportForum = activeForumSvc?.ActiveForum != null;
 
 			var mainWnd = provider.GetRequiredService<IUIShell>().GetMainWindowParent();
 			using (var emd = new ExportMessageDialog(canExportMessages, canExportForum))
@@ -58,7 +60,7 @@ namespace Rsdn.Janus
 						var activeMsgSvc = provider.GetRequiredService<IActiveMessagesService>();
 
 						// Prepare msg list
-						IList<IMsg> messages = null;
+						IList<IMsg> messages;
 
 						switch (uiInfo.ExportMode)
 						{
@@ -94,7 +96,7 @@ namespace Rsdn.Janus
 						ProgressDelegate pd =
 							(count, total) =>
 							{
-								pi.SetProgressText(_exportMessageText.FormatStr(count, total));
+								pi.SetProgressText(_exportMessageText.FormatWith(count, total));
 								pi.ReportProgress(total, count);
 							};
 
@@ -368,8 +370,7 @@ Content-Transfer-Encoding: Base64
 							.GetImage(prefix + smileName, StyleImageType.ConstSize);
 					var ifi = ImageFormatInfo.FromImageFormat(smileImage.RawFormat);
 
-					sw.Write(string.Format(_mhtContentImageHeader,
-						ifi.MimeType, smileName, ifi.Extension));
+					sw.Write(_mhtContentImageHeader, ifi.MimeType, smileName, ifi.Extension);
 
 					using (var ms = new MemoryStream())
 					{

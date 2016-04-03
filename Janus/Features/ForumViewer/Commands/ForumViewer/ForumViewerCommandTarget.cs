@@ -1,10 +1,13 @@
 ﻿using System;
 using System.Linq;
-using System.Reactive.Disposables;
 using System.Windows.Forms;
 
+using CodeJam;
+using CodeJam.Extensibility;
+
 using Rsdn.Janus.ObjectModel;
-using Rsdn.SmartApp;
+
+using Disposable = CodeJam.Disposable;
 
 namespace Rsdn.Janus
 {
@@ -38,8 +41,7 @@ namespace Rsdn.Janus
 					ForumCommandHelper.GetMessageId(context, messageId)))
 			{
 				var mainWindowSvc = context.GetService<IMainWindowService>();
-				if (mainWindowSvc != null)
-					mainWindowSvc.EnsureVisible();
+				mainWindowSvc?.EnsureVisible();
 			}
 			else
 				MessageBox.Show(
@@ -83,12 +85,11 @@ namespace Rsdn.Janus
 			if (ApplicationManager.Instance.ForumNavigator.SelectMessage(mid))
 			{
 				var mainWindowSvc = context.GetService<IMainWindowService>();
-				if (mainWindowSvc != null)
-					mainWindowSvc.EnsureVisible();
+				mainWindowSvc?.EnsureVisible();
 			}
 			else if (MessageBox.Show(
 				parentWindow,
-				SR.Forum.GoToMessage.NotFound.FormatStr(mid),
+				SR.Forum.GoToMessage.NotFound.FormatWith(mid),
 				SR.Search.Error,
 				MessageBoxButtons.YesNo,
 				MessageBoxIcon.Exclamation,

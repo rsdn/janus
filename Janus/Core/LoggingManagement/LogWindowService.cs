@@ -1,8 +1,8 @@
 ﻿using System;
 
-using JetBrains.Annotations;
+using CodeJam.Extensibility;
 
-using Rsdn.SmartApp;
+using JetBrains.Annotations;
 
 namespace Rsdn.Janus
 {
@@ -15,7 +15,7 @@ namespace Rsdn.Janus
 		public LogWindowService([NotNull] IServiceProvider serviceProvider)
 		{
 			if (serviceProvider == null)
-				throw new ArgumentNullException("serviceProvider");
+				throw new ArgumentNullException(nameof(serviceProvider));
 
 			_serviceProvider = serviceProvider;
 		}

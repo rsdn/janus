@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 
-using Rsdn.SmartApp;
+using CodeJam;
 
 namespace Rsdn.Janus.Mssql
 {
@@ -33,7 +33,7 @@ namespace Rsdn.Janus.Mssql
 			using (var cmd = con.CreateCommand())
 			{
 				con.Open();
-				cmd.CommandText = string.Format(@"CREATE DATABASE {0}", dbName);
+				cmd.CommandText = $@"CREATE DATABASE {dbName}";
 				cmd.ExecuteNonQuery();
 			}
 		}
@@ -234,7 +234,7 @@ namespace Rsdn.Janus.Mssql
 					#region Recreate block
 					if (recreate)
 					{
-						DeleteDdlCommandsByFilter(string.Format(@"Name Like '{0}.%'", eTable.Name));
+						DeleteDdlCommandsByFilter($@"Name Like '{eTable.Name}.%'");
 
 						foreach (var eTable1 in existingSchema.Tables)
 							foreach (var t in eTable1.Keys)
@@ -280,7 +280,7 @@ namespace Rsdn.Janus.Mssql
 							AddDdlCommand(i,
 										  tTable.Name,
 										  "RecreateInsert",
-										  string.Format(@"SET IDENTITY_INSERT {0} ON", tTable.Name));
+								$@"SET IDENTITY_INSERT {tTable.Name} ON");
 
 						// Подготовить набор колонок данных.
 						var eColumns = tTable
@@ -302,21 +302,16 @@ namespace Rsdn.Janus.Mssql
 						AddDdlCommand(i++,
 									  tTable.Name,
 									  "RecreateInsert",
-									  string.Format(
-									  	@"
-								IF EXISTS(SELECT * FROM {0})
-									EXEC('INSERT INTO {1} ({2}) SELECT {3} FROM {4} WITH (HOLDLOCK TABLOCKX)')",
-									  	eTable.Name,
-									  	tTable.Name,
-									  	tTable.ColumnsList(MakeDdlElementName),
-									  	eColumns,//eTable.ColumnsList(),
-									  	eTable.Name));
+							$@"
+								IF EXISTS(SELECT * FROM {eTable.Name})
+									EXEC('INSERT INTO {tTable.Name} ({tTable
+								.ColumnsList(MakeDdlElementName)}) SELECT {eColumns} FROM {eTable.Name} WITH (HOLDLOCK TABLOCKX)')");
 
 						if (toident)
 							AddDdlCommand(i++,
 										  tTable.Name,
 										  "RecreateInsert",
-										  string.Format(@"SET IDENTITY_INSERT {0} OFF", tTable.Name));
+								$@"SET IDENTITY_INSERT {tTable.Name} OFF");
 
 						AddDdlCommand(i,
 									  eTable.Name,
@@ -326,8 +321,7 @@ namespace Rsdn.Janus.Mssql
 						AddDdlCommand(i,
 									  tTable.Name,
 									  "RecreateRename",
-									  string.Format(@"EXECUTE sp_rename N'{0}', N'{1}', 'OBJECT'",
-													tTable.Name, eTable.Name));
+							$@"EXECUTE sp_rename N'{tTable.Name}', N'{eTable.Name}', 'OBJECT'");
 					}
 					#endregion
 				}
@@ -382,7 +376,7 @@ namespace Rsdn.Janus.Mssql
 		{
 			return
 				@"CREATE {0} {1} INDEX {2} ON {3} ({4})"
-					.FormatStr(
+					.FormatWith(
 						index.Unique ? @" UNIQUE" : string.Empty,
 						index.Clustered ? @" CLUSTERED" : string.Empty,
 						MakeDdlElementName(index.Name),
@@ -409,10 +403,8 @@ namespace Rsdn.Janus.Mssql
 
 		protected override string ParseColumnAlter(TableColumnSchema mColumn, TableColumnSchema eColumn)
 		{
-			return string.Format(@" [{0}] {1}{2} ",
-								 mColumn.Name,
-								 MssqlSchemaLoader.TypeDbsmToSql(mColumn),
-								 mColumn.Nullable ? string.Empty : @" NOT NULL");
+			return
+				$@" [{mColumn.Name}] {MssqlSchemaLoader.TypeDbsmToSql(mColumn)}{(mColumn.Nullable ? string.Empty : @" NOT NULL")} ";
 		}
 		#endregion
 

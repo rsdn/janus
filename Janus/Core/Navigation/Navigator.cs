@@ -3,10 +3,11 @@ using System.ComponentModel;
 using System.Linq;
 using System.Windows.Forms;
 
+using CodeJam.Extensibility;
+
 using JetBrains.Annotations;
 
 using Rsdn.Janus.ObjectModel;
-using Rsdn.SmartApp;
 
 namespace Rsdn.Janus
 {
@@ -23,7 +24,7 @@ namespace Rsdn.Janus
 		internal Navigator([NotNull] IServiceProvider serviceProvider)
 		{
 			if (serviceProvider == null)
-				throw new ArgumentNullException("serviceProvider");
+				throw new ArgumentNullException(nameof(serviceProvider));
 
 			_serviceProvider = serviceProvider;
 
@@ -47,8 +48,7 @@ namespace Rsdn.Janus
 					cdf.Text = Features.Instance.ActiveFeature.ToString();
 					var fv = cdf.AssociatedControl as IFeatureView;
 
-					if (fv != null)
-						fv.Refresh();
+					fv?.Refresh();
 				}
 
 			_features = Features.Instance.GetAllFeatures();
@@ -87,8 +87,7 @@ namespace Rsdn.Janus
 			var nc = fg.GuiControl;
 			// fix from michus
 			var fv = nc as IFeatureView;
-			if (fv != null)
-				fv.Activate(newFeature);
+			fv?.Activate(newFeature);
 
 			if ((cdf.AssociatedControl == null) || (nc != cdf.AssociatedControl))
 				cdf.AssociatedControl = nc;

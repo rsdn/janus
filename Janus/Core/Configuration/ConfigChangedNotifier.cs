@@ -1,6 +1,6 @@
 ﻿using System;
 
-using Rsdn.SmartApp;
+using CodeJam.Extensibility;
 
 namespace Rsdn.Janus
 {
@@ -13,10 +13,7 @@ namespace Rsdn.Janus
 
 		public void FireConfigChanged(Config config)
 		{
-			if (ConfigChanged != null)
-				ConfigChanged(
-					this,
-					new ConfigChangedEventArgs(config));
+			ConfigChanged?.Invoke(this, new ConfigChangedEventArgs(config));
 		}
 	}
 }

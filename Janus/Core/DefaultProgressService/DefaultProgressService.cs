@@ -1,6 +1,6 @@
 ﻿using System;
 
-using Rsdn.SmartApp;
+using CodeJam.Extensibility;
 
 namespace Rsdn.Janus.Framework
 {
@@ -12,7 +12,7 @@ namespace Rsdn.Janus.Framework
 		public DefaultProgressService(IServiceProvider provider)
 		{
 			if (provider == null)
-				throw new ArgumentNullException("provider");
+				throw new ArgumentNullException(nameof(provider));
 
 			_serviceProvider = provider;
 

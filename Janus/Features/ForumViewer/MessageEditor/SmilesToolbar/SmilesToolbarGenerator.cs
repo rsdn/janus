@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Reactive.Linq;
-using Rsdn.SmartApp;
+
+using CodeJam.Extensibility;
 
 namespace Rsdn.Janus
 {
@@ -18,11 +19,11 @@ namespace Rsdn.Janus
 			IServiceProvider provider, string menuName, SmilesToolbar toolbar)
 		{
 			if (provider == null)
-				throw new ArgumentNullException("provider");
+				throw new ArgumentNullException(nameof(provider));
 			if (menuName == null)
-				throw new ArgumentNullException("menuName");
+				throw new ArgumentNullException(nameof(menuName));
 			if (toolbar == null)
-				throw new ArgumentNullException("toolbar");
+				throw new ArgumentNullException(nameof(toolbar));
 
 			_serviceProvider = provider;
 			_toolbar = toolbar;

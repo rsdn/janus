@@ -2,10 +2,11 @@
 using System.Threading;
 using System.Xml;
 
+using CodeJam.Extensibility;
+
 using Rsdn.Janus.Framework;
 using Rsdn.Janus.Framework.Ipc;
 using Rsdn.Janus.Log;
-using Rsdn.SmartApp;
 
 namespace Rsdn.Janus
 {

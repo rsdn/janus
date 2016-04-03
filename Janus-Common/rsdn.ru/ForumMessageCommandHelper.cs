@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Reactive.Disposables;
-using Rsdn.SmartApp;
+
+using CodeJam.Extensibility;
 
 namespace Rsdn.Janus
 {

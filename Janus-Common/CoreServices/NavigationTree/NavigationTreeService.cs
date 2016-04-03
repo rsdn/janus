@@ -4,9 +4,10 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Reactive;
 using System.Reactive.Subjects;
-using JetBrains.Annotations;
 
-using Rsdn.SmartApp;
+using CodeJam.Extensibility;
+
+using JetBrains.Annotations;
 
 namespace Rsdn.Janus
 {
@@ -26,7 +27,7 @@ namespace Rsdn.Janus
 		public NavigationTreeService([NotNull] IServiceProvider serviceProvider)
 		{
 			if (serviceProvider == null)
-				throw new ArgumentNullException("serviceProvider");
+				throw new ArgumentNullException(nameof(serviceProvider));
 
 			_serviceProvider = serviceProvider;
 			_nodesReadOnly = _nodes.AsReadOnly();
@@ -58,15 +59,9 @@ namespace Rsdn.Janus
 
 		#region Implementation of INavigationTreeService
 
-		public IList<INavigationTreeNode> Nodes
-		{
-			get { return _nodesReadOnly; }
-		}
+		public IList<INavigationTreeNode> Nodes => _nodesReadOnly;
 
-		public IObservable<EventArgs> TreeChanged
-		{
-			get { return _treeChanged; }
-		}
+		public IObservable<EventArgs> TreeChanged => _treeChanged;
 
 		public Path<INavigationTreeNode> GetPageNodePath(string page)
 		{
@@ -103,8 +98,7 @@ namespace Rsdn.Janus
 			{
 				if (_pageNodeMap.ContainsKey(node.NavigationPageName))
 					throw new ApplicationException(
-						"Страница навигации '{0}' указана в нескольких элементах дерева навигации."
-							.FormatStr(node.NavigationPageName));
+						$"Страница навигации '{node.NavigationPageName}' указана в нескольких элементах дерева навигации.");
 				var nodePath = parentPath.Add(node);
 				_pageNodeMap.Add(node.NavigationPageName, nodePath);
 				RegisterNodesPages(nodePath, node.Childrens);

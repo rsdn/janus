@@ -1,10 +1,13 @@
 ﻿using System;
 using System.Linq;
 using System.Reactive;
-using System.Reactive.Disposables;
 using System.Windows.Forms;
 
-using Rsdn.SmartApp;
+using CodeJam;
+using CodeJam.Extensibility;
+using CodeJam.Extensibility.EventBroker;
+
+using Disposable = CodeJam.Disposable;
 
 namespace Rsdn.Janus
 {
@@ -63,6 +66,7 @@ namespace Rsdn.Janus
 					afterForumEntryChangedSubscription,
 					activeMessagesChangedSubscription
 				}
+				.ToArray()
 				.Merge();
 		}
 	}

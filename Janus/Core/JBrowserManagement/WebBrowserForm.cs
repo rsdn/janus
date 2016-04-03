@@ -3,7 +3,7 @@ using System.ComponentModel;
 using System.Drawing;
 using System.Windows.Forms;
 
-using Rsdn.SmartApp;
+using CodeJam.Extensibility;
 
 namespace Rsdn.Janus
 {
@@ -16,29 +16,28 @@ namespace Rsdn.Janus
 		//ToDo: mouse back shortcut
 		//ToDo: mouse forward shortcut
 
-		private readonly ServiceManager _serviceManager;
 		private readonly AsyncOperation _asyncOp;
 		private readonly StripMenuGenerator _menuGenerator;
 		private readonly StripMenuGenerator _toolbarGenerator;
 
 		public WebBrowserForm(IServiceProvider serviceProvider)
 		{
-			_serviceManager = new ServiceManager(serviceProvider);
+			var serviceManager = new ServiceManager(serviceProvider);
 			_asyncOp = AsyncHelper.CreateOperation();
 
 			InitializeComponent();
 
-			_serviceManager.Publish<IBrowserFormService>(new JBrowserFormService(this));
-			_serviceManager.Publish<IActiveMessagesService>(
-				new JBrowserActiveMessageService(_serviceManager));
+			serviceManager.Publish<IBrowserFormService>(new JBrowserFormService(this));
+			serviceManager.Publish<IActiveMessagesService>(
+				new JBrowserActiveMessageService(serviceManager));
 
 			//Восстановление размера и положеня формы
 			Bounds = Config.Instance.WebBrowserFormBounds.Bounds;
 			if (Config.Instance.WebBrowserFormBounds.Maximized)
 				WindowState = FormWindowState.Maximized;
 
-			_menuGenerator = new StripMenuGenerator(_serviceManager, _menuStrip, "JBrowser.Menu");
-			_toolbarGenerator = new StripMenuGenerator(_serviceManager, _toolStrip, "JBrowser.Toolbar");
+			_menuGenerator = new StripMenuGenerator(serviceManager, _menuStrip, "JBrowser.Menu");
+			_toolbarGenerator = new StripMenuGenerator(serviceManager, _toolStrip, "JBrowser.Toolbar");
 
 			_webBrowser.BackColor = Color.White;
 
@@ -51,13 +50,10 @@ namespace Rsdn.Janus
 			_webBrowser.CanGoForwardChanged += WebBrowserCanGoForwardChanged;
 			_webBrowser.DocumentCompleted += WebBrowserDocCompleted;
 
-			var styleImageManager = _serviceManager.GetService<IStyleImageManager>();
-			if (styleImageManager != null)
-			{
-				var image = styleImageManager.TryGetImage("jbrowser", StyleImageType.Large);
-				if (image != null) 
-					Icon = image.ToIcon();
-			}
+			var styleImageManager = serviceManager.GetService<IStyleImageManager>();
+			var image = styleImageManager?.TryGetImage("jbrowser", StyleImageType.Large);
+			if (image != null) 
+				Icon = image.ToIcon();
 
 #if DEBUG
 			_webBrowser.ScriptErrorsSuppressed = false;
@@ -71,7 +67,7 @@ namespace Rsdn.Janus
 			get
 			{
 				var uri = _asyncOp.Send(() => _webBrowser.Url);
-				return uri != null ? uri.ToString() : string.Empty;
+				return uri?.ToString() ?? string.Empty;
 			}
 		}
 
@@ -157,8 +153,7 @@ namespace Rsdn.Janus
 
 				_asyncOp.OperationCompleted();
 
-				if (components != null)
-					components.Dispose();
+				components?.Dispose();
 			}
 			base.Dispose(disposing);
 		}
@@ -183,20 +178,17 @@ namespace Rsdn.Janus
 		private void OnNavigated(EventArgs e)
 		{
 			var navigatedHandler = Navigated;
-			if (navigatedHandler != null)
-				navigatedHandler(this, e);
+			navigatedHandler?.Invoke(this, e);
 		}
 
 		private void OnCanNavigateBackwardChanged(EventArgs e)
 		{
-			if (CanNavigateBackwardChanged != null)
-				CanNavigateBackwardChanged(this, e);
+			CanNavigateBackwardChanged?.Invoke(this, e);
 		}
 
 		private void OnCanNavigateForwardChanged(EventArgs e)
 		{
-			if (CanNavigateForwardChanged != null)
-				CanNavigateForwardChanged(this, e);
+			CanNavigateForwardChanged?.Invoke(this, e);
 		}
 		#endregion
 
@@ -300,8 +292,7 @@ namespace Rsdn.Janus
 
 		private void WebBrowserDocCompleted(object sender, WebBrowserDocumentCompletedEventArgs e)
 		{
-			if (DocumentCompleted != null)
-				DocumentCompleted(this, EventArgs.Empty);
+			DocumentCompleted?.Invoke(this, EventArgs.Empty);
 		}
 		#endregion
 	}

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-using Rsdn.SmartApp;
+using CodeJam.Extensibility;
 
 namespace Rsdn.Janus
 {
@@ -30,9 +30,10 @@ namespace Rsdn.Janus
 			IServiceProvider serviceProvider,
 			IEnumerable<int> messageIds)
 		{
-			return messageIds != null
-				? messageIds.Select(msgId => (IForumMessageInfo)DatabaseManager.GetMessageWithForum(serviceProvider, msgId))
-				: serviceProvider
+			return
+				messageIds
+					?.Select(msgId => (IForumMessageInfo)DatabaseManager.GetMessageWithForum(serviceProvider, msgId))
+						?? serviceProvider
 					.GetRequiredService<IActiveMessagesService>()
 					.ActiveMessages;
 		}

@@ -1,8 +1,8 @@
 ﻿using System;
-using System.Reactive.Disposables;
 using System.Windows.Forms;
 
-using Rsdn.SmartApp;
+using CodeJam;
+using CodeJam.Extensibility;
 
 using WeifenLuo.WinFormsUI.Docking;
 
@@ -15,9 +15,7 @@ namespace Rsdn.Janus
 		public CheckState? GetNavigationWindowVisibilityCheckState(IServiceProvider provider)
 		{
 			var dockManager = provider.GetService<DockManager>();
-			if (dockManager == null)
-				return null;
-			var pane = dockManager.FindPaneByText(SR.Navigation.NavTree.DockName);
+			var pane = dockManager?.FindPaneByText(SR.Navigation.NavTree.DockName);
 			if (pane == null)
 				return null;
 			return !(pane.DockState == DockState.Hidden || pane.DockState == DockState.Unknown)
@@ -29,9 +27,7 @@ namespace Rsdn.Janus
 			IServiceProvider serviceProvider, Action handler)
 		{
 			var dockManager = serviceProvider.GetService<DockManager>();
-			if (dockManager == null)
-				return Disposable.Empty;
-			var pane = dockManager.FindPaneByText(SR.Navigation.NavTree.DockName);
+			var pane = dockManager?.FindPaneByText(SR.Navigation.NavTree.DockName);
 			if (pane == null)
 				return Disposable.Empty;
 

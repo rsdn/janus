@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 
-using Rsdn.SmartApp;
+using CodeJam.Extensibility;
+using CodeJam.Extensibility.Instancing;
+using CodeJam.Extensibility.Registration;
 
 namespace Rsdn.Janus
 {

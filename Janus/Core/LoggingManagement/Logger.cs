@@ -1,6 +1,6 @@
 ﻿using System;
 
-using Rsdn.SmartApp;
+using CodeJam.Extensibility;
 
 namespace Rsdn.Janus
 {
@@ -16,9 +16,8 @@ namespace Rsdn.Janus
 		public void Log(LogEventType et, string message)
 		{
 			LastMessage =
-				"[{0:dd.MM.yyyy HH:mm:ss}] {1}".FormatStr(DateTime.Now, message);
-			if (OnLog != null)
-				OnLog(this, new LogEventArgs(this, new LogItem(et, LastMessage)));
+				$"[{DateTime.Now:dd.MM.yyyy HH:mm:ss}] {message}";
+			OnLog?.Invoke(this, new LogEventArgs(this, new LogItem(et, LastMessage)));
 		}
 		#endregion
 

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 
-using Rsdn.SmartApp;
+using CodeJam;
 
 namespace Rsdn.Janus
 {
@@ -24,22 +24,16 @@ namespace Rsdn.Janus
 
 			_infoLabel.Text =
 				(_infoLabel.Text + " {0}")
-					.FormatStr(_proxyConfig.ProxySettings);
+					.FormatWith(_proxyConfig.ProxySettings);
 			_proxyLoginTextBox.Text = _proxyConfig.ProxySettings.Login;
 			_proxyPassTextBox.PasswordChar = (char)0x25CF;
 		}
 		#endregion
 
 		#region Fields & Properties
-		public string Login
-		{
-			get { return _proxyLoginTextBox.Text; }
-		}
+		public string Login => _proxyLoginTextBox.Text;
 
-		public string Password
-		{
-			get { return _proxyPassTextBox.Text; }
-		}
+		public string Password => _proxyPassTextBox.Text;
 		#endregion
 
 		#region Control Events

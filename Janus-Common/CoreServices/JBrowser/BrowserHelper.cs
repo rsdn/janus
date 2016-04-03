@@ -2,8 +2,10 @@
 using System.Diagnostics;
 using System.Windows.Forms;
 
+using CodeJam;
+using CodeJam.Extensibility;
+
 using Rsdn.Janus.CoreServices.JBrowser;
-using Rsdn.SmartApp;
 
 namespace Rsdn.Janus
 {
@@ -13,9 +15,9 @@ namespace Rsdn.Janus
 		public static void OpenUrlInBrowser(this IServiceProvider provider, string url)
 		{
 			if (provider == null)
-				throw new ArgumentNullException("provider");
+				throw new ArgumentNullException(nameof(provider));
 			if (string.IsNullOrEmpty(url))
-				throw new ArgumentNullException("url");
+				throw new ArgumentNullException(nameof(url));
 
 			var cfg = provider.GetRequiredService<IBrowserConfigService>();
 			var urlsBehavior = new Uri(url).Scheme.Equals(
@@ -31,9 +33,9 @@ namespace Rsdn.Janus
 			this IServiceProvider provider, string url, UrlBehavior behavior)
 		{
 			if (provider == null)
-				throw new ArgumentNullException("provider");
+				throw new ArgumentNullException(nameof(provider));
 			if (string.IsNullOrEmpty(url))
-				throw new ArgumentNullException("url");
+				throw new ArgumentNullException(nameof(url));
 
 			if (behavior == UrlBehavior.InternalBrowser)
 				provider.GetRequiredService<IBrowserService>().OpenUrl(url);
@@ -46,7 +48,7 @@ namespace Rsdn.Janus
 				{
 					var messageResult = MessageBox.Show(
 						provider.GetRequiredService<IUIShell>().GetMainWindowParent(),
-						JBrowserResources.OpenExternalBrowserException.FormatStr(ex),
+						JBrowserResources.OpenExternalBrowserException.FormatWith(ex),
 						JBrowserResources.OpenExternalBrowserMsgBoxTitle,
 						MessageBoxButtons.YesNo,
 						MessageBoxIcon.Error);

@@ -2,9 +2,10 @@
 using System.Collections.Generic;
 using System.Windows.Forms;
 
+using CodeJam.Extensibility;
+
 using Rsdn.Janus.ObjectModel;
 using Rsdn.Shortcuts;
-using Rsdn.SmartApp;
 using Rsdn.TreeGrid;
 
 namespace Rsdn.Janus
@@ -27,7 +28,7 @@ namespace Rsdn.Janus
 		public OutboxDummyForm(IServiceProvider provider, OutboxManager manager)
 		{
 			if (provider == null)
-				throw new ArgumentNullException("provider");
+				throw new ArgumentNullException(nameof(provider));
 
 			_serviceManager = new ServiceManager(provider);
 			_manager = manager;
@@ -50,10 +51,8 @@ namespace Rsdn.Janus
 		{
 			if (disposing)
 			{
-				if (_contextMenuGenerator != null)
-					_contextMenuGenerator.Dispose();
-				if (components != null)
-					components.Dispose();
+				_contextMenuGenerator?.Dispose();
+				components?.Dispose();
 			}
 
 			base.Dispose(disposing);
@@ -75,15 +74,9 @@ namespace Rsdn.Janus
 		#endregion IFeatureView
 
 		#region Public Methods
-		ICollection<ITreeNode> IOutboxForm.SelectedNodes
-		{
-			get { return SelectedNodes; }
-		}
+		ICollection<ITreeNode> IOutboxForm.SelectedNodes => SelectedNodes;
 
-		public List<ITreeNode> SelectedNodes
-		{
-			get { return _grid.SelectedNodes; }
-		}
+		public List<ITreeNode> SelectedNodes => _grid.SelectedNodes;
 
 		public event EventHandler SelectedNodesChanged;
 
@@ -115,8 +108,7 @@ namespace Rsdn.Janus
 
 		private void OnSelectedNodesChanged(EventArgs e)
 		{
-			if (SelectedNodesChanged != null)
-				SelectedNodesChanged(this, e);
+			SelectedNodesChanged?.Invoke(this, e);
 		}
 
 		private void MessageSent(object sender, int mid)

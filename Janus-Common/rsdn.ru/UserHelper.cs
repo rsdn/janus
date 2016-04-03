@@ -1,13 +1,15 @@
 ﻿using System;
 using System.Linq;
 using System.Linq.Expressions;
+
+using CodeJam;
+
 using JetBrains.Annotations;
 
 using LinqToDB;
 
 using Rsdn.Janus.Database;
 using Rsdn.Janus.DataModel;
-using Rsdn.SmartApp;
 
 namespace Rsdn.Janus
 {
@@ -49,7 +51,7 @@ namespace Rsdn.Janus
 
 		public static ITable<IUser> Users([NotNull] this IDataContext db)
 		{
-			if (db == null) throw new ArgumentNullException("db");
+			if (db == null) throw new ArgumentNullException(nameof(db));
 			return db.GetTable<IUser>();
 		}
 
@@ -66,8 +68,8 @@ namespace Rsdn.Janus
 			int uid,
 			[NotNull] Expression<Func<IUser, T>> selector)
 		{
-			if (db == null) throw new ArgumentNullException("db");
-			if (selector == null) throw new ArgumentNullException("selector");
+			if (db == null) throw new ArgumentNullException(nameof(db));
+			if (selector == null) throw new ArgumentNullException(nameof(selector));
 			return
 				db
 					.Users(u => u.ID == uid)

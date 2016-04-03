@@ -1,9 +1,10 @@
 ﻿using System;
 using System.Linq;
 
-using JetBrains.Annotations;
+using CodeJam;
+using CodeJam.Extensibility;
 
-using Rsdn.SmartApp;
+using JetBrains.Annotations;
 
 namespace Rsdn.Janus
 {
@@ -16,7 +17,7 @@ namespace Rsdn.Janus
 		public CommandHandlerService([NotNull] IServiceProvider serviceProvider)
 		{
 			if (serviceProvider == null)
-				throw new ArgumentNullException("serviceProvider");
+				throw new ArgumentNullException(nameof(serviceProvider));
 
 			_commandService = serviceProvider.GetRequiredService<ICommandService>();
 			_commandTargets = 
@@ -30,9 +31,9 @@ namespace Rsdn.Janus
 			[NotNull] ICommandContext context)
 		{
 			if (commandName == null)
-				throw new ArgumentNullException("commandName");
+				throw new ArgumentNullException(nameof(commandName));
 			if (context == null)
-				throw new ArgumentNullException("context");
+				throw new ArgumentNullException(nameof(context));
 
 			CheckCommandAndParameters(commandName, context);
 
@@ -54,9 +55,9 @@ namespace Rsdn.Janus
 			[NotNull] ICommandContext context)
 		{
 			if (commandName == null)
-				throw new ArgumentNullException("commandName");
+				throw new ArgumentNullException(nameof(commandName));
 			if (context == null)
-				throw new ArgumentNullException("context");
+				throw new ArgumentNullException(nameof(context));
 
 			CheckCommandAndParameters(commandName, context);
 
@@ -79,9 +80,9 @@ namespace Rsdn.Janus
 			EventHandler<ICommandHandlerService, string[]> handler)
 		{
 			if (serviceProvider == null)
-				throw new ArgumentNullException("serviceProvider");
+				throw new ArgumentNullException(nameof(serviceProvider));
 			if (handler == null)
-				throw new ArgumentNullException("handler");
+				throw new ArgumentNullException(nameof(handler));
 
 			return
 				_commandTargets
@@ -103,8 +104,7 @@ namespace Rsdn.Janus
 			foreach (var parameter in commandInfo.Parameters)
 				if (!parameter.IsOptional && !context.IsParameterExists(parameter.Name))
 					throw new ApplicationException(
-						"Обязательный параметр '{0}' команды '{1}' отсутствует в контексте."
-							.FormatStr(parameter.Name, commandName));
+						$"Обязательный параметр '{parameter.Name}' команды '{commandName}' отсутствует в контексте.");
 		}
 
 		#endregion

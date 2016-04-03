@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 
-using JetBrains.Annotations;
+using CodeJam.Extensibility;
 
-using Rsdn.SmartApp;
+using JetBrains.Annotations;
 
 namespace Rsdn.Janus
 {
@@ -31,7 +31,7 @@ namespace Rsdn.Janus
 		public static void ExecuteDefaultCommand([NotNull] this IServiceProvider provider)
 		{
 			if (provider == null)
-				throw new ArgumentNullException("provider");
+				throw new ArgumentNullException(nameof(provider));
 
 			var defaultCommandSvc = provider.GetRequiredService<IDefaultCommandService>();
 			if (defaultCommandSvc.CommandName == null)

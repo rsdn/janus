@@ -1,4 +1,4 @@
-﻿using Rsdn.SmartApp;
+﻿using CodeJam;
 
 namespace Rsdn.Janus
 {

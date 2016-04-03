@@ -3,8 +3,6 @@ using System.Collections.Generic;
 
 using JetBrains.Annotations;
 
-using Rsdn.SmartApp;
-
 namespace Rsdn.Janus
 {
 	public class CommandContext : ICommandContext
@@ -35,7 +33,7 @@ namespace Rsdn.Janus
 			[CanBeNull] Action<string> outputWriter)
 		{
 			if (serviceProvider == null)
-				throw new ArgumentNullException("serviceProvider");
+				throw new ArgumentNullException(nameof(serviceProvider));
 
 			_serviceProvider = serviceProvider;
 			_parameters = parameters != null ?
@@ -53,12 +51,12 @@ namespace Rsdn.Janus
 			get
 			{
 				if (name == null)
-					throw new ArgumentNullException("name");
+					throw new ArgumentNullException(nameof(name));
 
 				object result;
 				if (_parameters == null || !_parameters.TryGetValue(name, out result))
 					throw new ArgumentException(
-						"Параметр '{0}' не найден.".FormatStr(name), "name");
+						$"Параметр '{name}' не найден.", nameof(name));
 				return result;
 			}
 		}
@@ -66,7 +64,7 @@ namespace Rsdn.Janus
 		public bool IsParameterExists([NotNull] string name)
 		{
 			if (name == null)
-				throw new ArgumentNullException("name");
+				throw new ArgumentNullException(nameof(name));
 
 			return _parameters != null && _parameters.ContainsKey(name);
 		}
@@ -74,10 +72,9 @@ namespace Rsdn.Janus
 		public void WriteToOutput([NotNull] string text)
 		{
 			if (text == null)
-				throw new ArgumentNullException("text");
+				throw new ArgumentNullException(nameof(text));
 
-			if (_outputWriter != null)
-				_outputWriter(text);
+			_outputWriter?.Invoke(text);
 		}
 
 		#endregion

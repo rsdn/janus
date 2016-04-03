@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 
-using Rsdn.SmartApp;
+using CodeJam.Extensibility;
 
 namespace Rsdn.Janus
 {
@@ -19,7 +19,7 @@ namespace Rsdn.Janus
 			bool allowContinue)
 		{
 			if (exception == null)
-				throw new ArgumentNullException("exception");
+				throw new ArgumentNullException(nameof(exception));
 
 			InitializeComponent();
 

@@ -1,6 +1,6 @@
 ﻿using System;
 
-using Rsdn.SmartApp;
+using CodeJam;
 
 namespace Rsdn.Janus
 {
@@ -26,35 +26,26 @@ namespace Rsdn.Janus
 			Func<string> declension5)
 		{
 			if (declension1 == null)
-				throw new ArgumentNullException("declension1");
+				throw new ArgumentNullException(nameof(declension1));
 			if (declension2 == null)
-				throw new ArgumentNullException("declension2");
+				throw new ArgumentNullException(nameof(declension2));
 			if (declension5 == null)
-				throw new ArgumentNullException("declension5");
+				throw new ArgumentNullException(nameof(declension5));
 			_declension1 = declension1;
 			_declension2 = declension2;
 			_declension5 = declension5;
 		}
 
-		public string Declension1
-		{
-			get { return _declension1(); }
-		}
+		public string Declension1 => _declension1();
 
-		public string Declension2
-		{
-			get { return _declension2(); }
-		}
+		public string Declension2 => _declension2();
 
-		public string Declension5
-		{
-			get { return _declension5(); }
-		}
+		public string Declension5 => _declension5();
 
 		#region IStatisticsFormatter Members
 		public string FormatValue(int value, IFormatProvider formatProvider)
 		{
-			return "{0} {1}".FormatStr(
+			return "{0} {1}".FormatWith(
 				value.ToString(formatProvider),
 				value.GetDeclension(
 					Declension1,

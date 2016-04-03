@@ -1,8 +1,9 @@
 ﻿using System;
 using System.Runtime.Serialization;
 
+using CodeJam;
+
 using Rsdn.Janus.Database.Schema;
-using Rsdn.SmartApp;
 
 namespace Rsdn.Janus
 {
@@ -15,7 +16,7 @@ namespace Rsdn.Janus
 
 		private static string GetMessage(string cmdText, string errorMessage)
 		{
-			return SchemaResources.SchemaExceptionMessage.FormatStr(cmdText, errorMessage);
+			return SchemaResources.SchemaExceptionMessage.FormatWith(cmdText, errorMessage);
 		}
 
 		protected SchemaChangeException(SerializationInfo info, StreamingContext context) : base(info, context)

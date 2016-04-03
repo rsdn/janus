@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 
-using LinqToDB;
+using CodeJam.Extensibility;
 
-using Rsdn.SmartApp;
+using LinqToDB;
 
 namespace Rsdn.Janus
 {
@@ -208,7 +208,7 @@ namespace Rsdn.Janus
 		private static IEnumerable<int> GetSubFoldersIds(FavoritesFolder folder)
 		{
 			if (folder == null)
-				throw new ArgumentNullException("folder");
+				throw new ArgumentNullException(nameof(folder));
 
 			foreach (var subFolder in folder.SubFolders)
 			{
@@ -285,8 +285,7 @@ namespace Rsdn.Janus
 
 		private void OnReload()
 		{
-			if (FavoritesReloaded != null)
-				FavoritesReloaded(this, EventArgs.Empty);
+			FavoritesReloaded?.Invoke(this, EventArgs.Empty);
 		}
 
 		private static FavoritesLink FindByMessageId(
@@ -330,7 +329,7 @@ namespace Rsdn.Janus
 		private static IEnumerable<int> GetFavoriteLinks(FavoritesFolder folder)
 		{
 			if (folder == null)
-				throw new ArgumentNullException("folder");
+				throw new ArgumentNullException(nameof(folder));
 
 			foreach (var link in folder.Links)
 				yield return link.MessageId;

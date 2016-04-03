@@ -2,7 +2,8 @@
 using System.Collections;
 using System.Windows.Forms;
 
-using Rsdn.SmartApp;
+using CodeJam.Extensibility;
+
 using Rsdn.TreeGrid;
 using Rsdn.Janus.ObjectModel;
 
@@ -42,10 +43,7 @@ namespace Rsdn.Janus
 
 		private readonly object _formLockFlag = new object();
 
-		IOutboxForm IOutboxManager.OutboxForm
-		{
-			get { return OutboxForm; }
-		}
+		IOutboxForm IOutboxManager.OutboxForm => OutboxForm;
 
 		public OutboxDummyForm OutboxForm
 		{
@@ -61,47 +59,28 @@ namespace Rsdn.Janus
 
 		private readonly NewMessageCollection _newMessages;
 
-		IOutboxMessageCollection IOutboxManager.NewMessages
-		{
-			get { return NewMessages; }
-		}
+		IOutboxMessageCollection IOutboxManager.NewMessages => NewMessages;
 
-		private NewMessageCollection NewMessages
-		{
-			get { return _newMessages; }
-		}
+		private NewMessageCollection NewMessages => _newMessages;
 
 		private readonly RateMarkCollection _rateMarks;
 
-		IOutboxRateCollection IOutboxManager.RateMarks
-		{
-			get { return RateMarks; }
-		}
+		IOutboxRateCollection IOutboxManager.RateMarks => RateMarks;
 
-		private RateMarkCollection RateMarks
-		{
-			get { return _rateMarks; }
-		}
+		private RateMarkCollection RateMarks => _rateMarks;
 
 		private readonly DownloadTopicCollection _downloadTopics;
 
-		private DownloadTopicCollection DownloadTopics
-		{
-			get { return _downloadTopics; }
-		}
+		private DownloadTopicCollection DownloadTopics => _downloadTopics;
 
-		IDownloadTopicCollection IOutboxManager.DownloadTopics
-		{
-			get { return _downloadTopics; }
-		}
+		IDownloadTopicCollection IOutboxManager.DownloadTopics => _downloadTopics;
 
 		/// <summary>
 		/// Перечитать данные из коллекций.
 		/// </summary>
 		public void Renew()
 		{
-			if (_outboxForm != null)
-				_outboxForm.RefreshList();
+			_outboxForm?.RefreshList();
 
 			Features.Instance.FeatureChanged(OutboxFeature.Instance);
 		}
@@ -203,44 +182,26 @@ namespace Rsdn.Janus
 		#endregion
 
 		#region ITreeNode Members
-		bool ITreeNode.HasChildren
-		{
-			get { return true; }
-		}
+		bool ITreeNode.HasChildren => true;
 
-		ITreeNode ITreeNode.this[int iIndex]
-		{
-			get { return _collections[iIndex]; }
-		}
+		ITreeNode ITreeNode.this[int iIndex] => _collections[iIndex];
 
 		NodeFlags ITreeNode.Flags { get; set; }
 
-		ITreeNode ITreeNode.Parent
-		{
-			get { return null; }
-		}
+		ITreeNode ITreeNode.Parent => null;
 		#endregion
 
 		#region ICollection Members
-		bool ICollection.IsSynchronized
-		{
-			get { return false; }
-		}
+		bool ICollection.IsSynchronized => false;
 
-		int ICollection.Count
-		{
-			get { return _collections.Length; }
-		}
+		int ICollection.Count => _collections.Length;
 
 		void ICollection.CopyTo(Array array, int index)
 		{
 			throw new NotSupportedException();
 		}
 
-		object ICollection.SyncRoot
-		{
-			get { return _collections.SyncRoot; }
-		}
+		object ICollection.SyncRoot => _collections.SyncRoot;
 		#endregion
 
 		#region IEnumerable Members
@@ -251,10 +212,7 @@ namespace Rsdn.Janus
 		#endregion
 
 		#region IKeyedNode Members
-		string IKeyedNode.Key
-		{
-			get { return GetType().Name; }
-		}
+		string IKeyedNode.Key => GetType().Name;
 		#endregion
 	}
 }

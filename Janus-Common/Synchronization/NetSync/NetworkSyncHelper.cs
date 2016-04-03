@@ -2,11 +2,12 @@
 using System.IO;
 using System.IO.Compression;
 
+using CodeJam;
+
 using JetBrains.Annotations;
 
 using Rsdn.Janus.Log;
 using Rsdn.Janus.Synchronization;
-using Rsdn.SmartApp;
 
 namespace Rsdn.Janus
 {
@@ -49,7 +50,7 @@ namespace Rsdn.Janus
 				{
 					if (retries > 0)
 					{
-						context.LogWarning(SyncResources.ErrorMessage.FormatStr(ex.Message));
+						context.LogWarning(SyncResources.ErrorMessage.FormatWith(ex.Message));
 						context.TryAddSyncError(
 							new SyncErrorInfo(SyncErrorType.Warning, taskName, ex.ToString()));
 						context.CheckState();
@@ -69,9 +70,9 @@ namespace Rsdn.Janus
 			string compression)
 		{
 			if (baseStream == null)
-				throw new ArgumentNullException("baseStream");
+				throw new ArgumentNullException(nameof(baseStream));
 			if (progressHandler == null)
-				throw new ArgumentNullException("progressHandler");
+				throw new ArgumentNullException(nameof(progressHandler));
 
 			var trackedStream = new TrackedStream(baseStream, closeHandler);
 			trackedStream.BytesTransferred += progressHandler;
@@ -99,8 +100,7 @@ namespace Rsdn.Janus
 
 			private void OnBytesTransferred(int bytesCount)
 			{
-				if (BytesTransferred != null)
-					BytesTransferred(bytesCount);
+				BytesTransferred?.Invoke(bytesCount);
 			}
 
 			///<summary>
@@ -156,36 +156,24 @@ namespace Rsdn.Janus
 			///When overridden in a derived class, gets a value indicating
 			/// whether the current stream supports reading.
 			///</summary>
-			public override bool CanRead
-			{
-				get { return _baseStream.CanRead; }
-			}
+			public override bool CanRead => _baseStream.CanRead;
 
 			///<summary>
 			/// When overridden in a derived class, gets a value indicating
 			/// whether the current stream supports seeking.
 			///</summary>
-			public override bool CanSeek
-			{
-				get { return _baseStream.CanSeek; }
-			}
+			public override bool CanSeek => _baseStream.CanSeek;
 
 			///<summary>
 			/// When overridden in a derived class, gets a value indicating whether
 			/// the current stream supports writing.
 			///</summary>
-			public override bool CanWrite
-			{
-				get { return _baseStream.CanWrite; }
-			}
+			public override bool CanWrite => _baseStream.CanWrite;
 
 			///<summary>
 			///When overridden in a derived class, gets the length in bytes of the stream.
 			///</summary>
-			public override long Length
-			{
-				get { return _baseStream.Length; }
-			}
+			public override long Length => _baseStream.Length;
 
 			///<summary>
 			/// When overridden in a derived class, gets or sets the position within
@@ -199,8 +187,7 @@ namespace Rsdn.Janus
 			public override void Close()
 			{
 				base.Close();
-				if (_closeHandler != null)
-					_closeHandler();
+				_closeHandler?.Invoke();
 			}
 
 			protected override void Dispose(bool disposing)

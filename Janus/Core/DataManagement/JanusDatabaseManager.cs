@@ -1,10 +1,11 @@
 ﻿using System;
 using System.Data;
 
+using CodeJam.Extensibility;
+using CodeJam.Extensibility.Model;
+
 using LinqToDB.Data;
 using LinqToDB.DataProvider;
-
-using Rsdn.SmartApp;
 
 namespace Rsdn.Janus
 {
@@ -26,7 +27,7 @@ namespace Rsdn.Janus
 			: base(provider)
 		{
 			if (provider == null)
-				throw new ArgumentNullException("provider");
+				throw new ArgumentNullException(nameof(provider));
 			_currentDriverName = Config.Instance.DbDriver;
 			var info = _drvManager.GetDriverInfo(_currentDriverName);
 			_currentDriver = _drvManager.GetDriver(_currentDriverName);

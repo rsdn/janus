@@ -4,11 +4,13 @@ using System.ComponentModel;
 using System.Globalization;
 using System.Windows.Forms;
 
+using CodeJam;
+using CodeJam.Extensibility;
+
 using JetBrains.Annotations;
 
 using Rsdn.Janus.ObjectModel;
 using Rsdn.Shortcuts;
-using Rsdn.SmartApp;
 using Rsdn.Janus.Framework;
 
 using WeifenLuo.WinFormsUI.Docking;
@@ -35,7 +37,7 @@ namespace Rsdn.Janus
 		public MainForm([NotNull] IServiceProvider serviceProvider)
 		{
 			if (serviceProvider == null)
-				throw new ArgumentNullException("serviceProvider");
+				throw new ArgumentNullException(nameof(serviceProvider));
 
 			var serviceManager = new ServiceManager(serviceProvider);
 
@@ -73,8 +75,7 @@ namespace Rsdn.Janus
 
 				StyleConfig.StyleChange -= OnStyleChanged;
 
-				if (components != null)
-					components.Dispose();
+				components?.Dispose();
 			}
 
 			base.Dispose(disposing);
@@ -89,7 +90,7 @@ namespace Rsdn.Janus
 		internal static string GetCaption()
 		{
 			return
-				"{0} - {1} ({2})".FormatStr(
+				"{0} - {1} ({2})".FormatWith(
 					CultureInfo.InvariantCulture,
 					ApplicationInfo.ApplicationName,
 					Config.Instance.Login,
@@ -134,14 +135,14 @@ namespace Rsdn.Janus
 				}
 			}
 
-			e.Cancel = Config.Instance.ConfirmationConfig.ConfirmClosing
-				? MessageBox.Show(
+			e.Cancel =
+				Config.Instance.ConfirmationConfig.ConfirmClosing
+				&& MessageBox.Show(
 					this,
-					SR.MainForm.CloseQuestion.FormatStr(ApplicationInfo.ApplicationName),
+					SR.MainForm.CloseQuestion.FormatWith(ApplicationInfo.ApplicationName),
 					SR.MainForm.AppCloseTitle,
 					MessageBoxButtons.OKCancel,
-					MessageBoxIcon.Question) != DialogResult.OK
-				: false;
+					MessageBoxIcon.Question) != DialogResult.OK;
 		}
 
 		protected override void OnClosed(EventArgs ea)
@@ -215,16 +216,9 @@ namespace Rsdn.Janus
 		/// <summary>
 		/// Панель докинга.
 		/// </summary>
-		internal DockPanel DockPanel
-		{
-			get { return _dockPanel; }
-		}
+		internal DockPanel DockPanel { get; private set; }
 
-		internal ShortcutManager ShortcutManager
-		{
-			get { return _shortcutManager; }
-		}
-
+		internal ShortcutManager ShortcutManager => _shortcutManager;
 		#endregion
 
 		#region Private methods

@@ -1,9 +1,12 @@
 ﻿using System;
 using System.Net;
 using System.Windows.Forms;
+
+using CodeJam;
+using CodeJam.Extensibility;
+
 using Rsdn.Janus.Core.Synchronization;
 using Rsdn.Janus.Log;
-using Rsdn.SmartApp;
 
 namespace Rsdn.Janus
 {
@@ -32,8 +35,7 @@ namespace Rsdn.Janus
 					_provider.LogWarning(SyncResources.ProxyDemandAuth);
 
 					_provider.LogInfo(
-						SyncResources.ProxyAuthOn
-							.FormatStr(cfg.ProxyConfig.ProxySettings.ProxyUri));
+						SyncResources.ProxyAuthOn.FormatWith(cfg.ProxyConfig.ProxySettings.ProxyUri));
 
 					if (!firstStep)
 						cfg.ProxyConfig.ProxySettings.IsPasswordAlreadySaved = false;
@@ -53,12 +55,11 @@ namespace Rsdn.Janus
 
 			if (!authComplete)
 			{
-				var error = SyncResources.AuthOnProxyIsFailed
-					.FormatStr(cfg.ProxyConfig.ProxySettings);
+				var error = SyncResources.AuthOnProxyIsFailed.FormatWith(cfg.ProxyConfig.ProxySettings);
 				_provider.LogError(error);
 				throw new ApplicationException(error);
 			}
-			var strLog = SyncResources.AuthOnProxyIsComplete.FormatStr(cfg.ProxyConfig.ProxySettings);
+			var strLog = SyncResources.AuthOnProxyIsComplete.FormatWith(cfg.ProxyConfig.ProxySettings);
 			_provider.LogInfo(strLog);
 		}
 
@@ -84,13 +85,10 @@ namespace Rsdn.Janus
 			catch (WebException we)
 			{
 				abort();
-				if (we.InnerException is WebException)
-				{
-					var hwr = ((WebException)we.InnerException).Response as HttpWebResponse;
-					if (hwr != null)
-						if (hwr.StatusCode == HttpStatusCode.ProxyAuthenticationRequired)
-							isAuthProxy = true;
-				}
+				var webException = we.InnerException as WebException;
+				var hwr = webException?.Response as HttpWebResponse;
+				if (hwr?.StatusCode == HttpStatusCode.ProxyAuthenticationRequired)
+					isAuthProxy = true;
 			}
 
 			return isAuthProxy ? _authCache : null;

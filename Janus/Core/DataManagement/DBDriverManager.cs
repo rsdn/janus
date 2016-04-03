@@ -1,6 +1,9 @@
 ﻿using System;
 
-using Rsdn.SmartApp;
+using CodeJam.Collections;
+using CodeJam.Extensibility;
+using CodeJam.Extensibility.Instancing;
+using CodeJam.Extensibility.Registration;
 
 namespace Rsdn.Janus
 {
@@ -10,19 +13,20 @@ namespace Rsdn.Janus
 	internal class DBDriverManager : IDBDriverManager
 	{
 		private readonly IServiceProvider _provider;
-		private readonly ElementsCache<string, IDBDriver> _cache;
+		private readonly ILazyDictionary<string, IDBDriver> _cache;
 
 		public DBDriverManager(IServiceProvider provider)
 		{
 			_provider = provider;
-			_cache = new ElementsCache<string, IDBDriver>(
+			_cache = LazyDictionary.Create<string, IDBDriver>(
 				name =>
 				{
 					var svc = _provider.GetService<DriverSvc>();
 					if (svc == null || !svc.ContainsElement(name))
-						throw new ArgumentException("Unknown driver '{0}'".FormatStr(name));
+						throw new ArgumentException($"Unknown driver '{name}'");
 					return (IDBDriver)svc.GetElement(name).Type.CreateInstance(_provider);
-				});
+				},
+				true);
 		}
 
 		#region IDBDriverManager Members
@@ -31,7 +35,7 @@ namespace Rsdn.Janus
 		/// </summary>
 		public IDBDriver GetDriver(string driverName)
 		{
-			return _cache.Get(driverName);
+			return _cache[driverName];
 		}
 
 		/// <summary>
@@ -42,7 +46,7 @@ namespace Rsdn.Janus
 			var svc = _provider.GetService<DriverSvc>();
 			return
 				svc == null
-					? EmptyArray<JanusDBDriverInfo>.Value
+					? Array<JanusDBDriverInfo>.Empty
 					: svc.GetRegisteredElements();
 		}
 

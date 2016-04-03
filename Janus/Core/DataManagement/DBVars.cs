@@ -4,9 +4,10 @@ using System.ComponentModel;
 using System.Linq;
 using System.Threading;
 
-using LinqToDB;
+using CodeJam.Extensibility;
+using CodeJam.Threading;
 
-using Rsdn.SmartApp;
+using LinqToDB;
 
 namespace Rsdn.Janus
 {
@@ -54,7 +55,7 @@ namespace Rsdn.Janus
 		private object GetVar(string name)
 		{
 			using (var db = _provider.CreateDBContext())
-			using (_rwLock.GetUpgradeableReaderLock())
+			using (_rwLock.GetUpgradeableReadLock())
 			{
 				if (_varsCache.ContainsKey(name))
 					return _varsCache[name];
@@ -68,7 +69,7 @@ namespace Rsdn.Janus
 							.Vars(v => v.Name == name)
 							.Select(v => v.Value)
 							.Single();
-				using (_rwLock.GetWriterLock())
+				using (_rwLock.GetWriteLock())
 					_varsCache.Add(name, value);
 
 				return value;
@@ -78,12 +79,12 @@ namespace Rsdn.Janus
 		private void SetVar(string name, object value)
 		{
 			using (var db = _provider.CreateDBContext())
-			using (_rwLock.GetUpgradeableReaderLock())
+			using (_rwLock.GetUpgradeableReadLock())
 			{
 				if (_varsCache.ContainsKey(name))
 					_varsCache[name] = value;
 				else
-					using (_rwLock.GetWriterLock())
+					using (_rwLock.GetWriteLock())
 						_varsCache.Add(name, value);
 
 				if (!IsVarExists(db, name))

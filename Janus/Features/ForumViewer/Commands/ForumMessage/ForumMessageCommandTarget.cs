@@ -3,10 +3,13 @@ using System.Linq;
 using System.Reactive;
 using System.Windows.Forms;
 
+using CodeJam;
+using CodeJam.Extensibility;
+using CodeJam.Extensibility.EventBroker;
+
 using Rsdn.Framework.Formatting;
 using Rsdn.Janus.Framework;
 using Rsdn.Janus.ObjectModel;
-using Rsdn.SmartApp;
 
 namespace Rsdn.Janus
 {
@@ -43,7 +46,7 @@ namespace Rsdn.Janus
 						//сообщения уже есть в разделе
 						MessageBox.Show(
 							windowParent,
-							SR.Favorites.ItemExists.FormatStr(
+							SR.Favorites.ItemExists.FormatWith(
 								activeMsg.ID, folder.Name),
 							ApplicationInfo.ApplicationName,
 							MessageBoxButtons.OK,
@@ -170,22 +173,22 @@ namespace Rsdn.Janus
 						context
 							.GetRequiredService<IUIShell>()
 							.GetMainWindowParent()) == DialogResult.Yes)
-					ForumCommandHelper
-						.GetMessageIds(context, messageIds)
-						.ForEach(
-							msgId =>
-								context
-									.GetRequiredService<IOutboxManager>()
-									.RateMarks
-									.Add(msgId, rate));
+					foreach (var msgId in ForumCommandHelper.GetMessageIds(context, messageIds))
+						context
+							.GetRequiredService<IOutboxManager>()
+							.RateMarks
+							.Add(msgId, rate);
 		}
 
 		[CommandStatusGetter("Janus.Forum.RateMessage")]
 		public CommandStatus QueryRateMessageStatus(ICommandContext context, int[] messageIds)
 		{
-			return QueryMessagesCommandStatus(context, messageIds).DisabledIfNot(
-				() => !ForumMessageCommandHelper.GetMessages(context, messageIds)
-					.Any(msg => msg.UserID == Config.Instance.SelfId));
+			return
+				QueryMessagesCommandStatus(context, messageIds)
+					.DisabledIfNot(() =>
+						ForumMessageCommandHelper
+							.GetMessages(context, messageIds)
+							.All(msg => msg.UserID != Config.Instance.SelfId));
 		}
 
 

@@ -1,15 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Windows.Forms;
+
+using CodeJam.Extensibility;
+using CodeJam.Extensibility.EventBroker;
+using CodeJam.Extensibility.Model;
 
 using JetBrains.Annotations;
 
 using Rsdn.Janus.Framework;
 using Rsdn.Janus.ObjectModel;
-using Rsdn.SmartApp;
 using Rsdn.TreeGrid;
 
 namespace Rsdn.Janus
@@ -29,18 +30,20 @@ namespace Rsdn.Janus
 		private readonly DragExpandDetector _dragExpandDetector =
 			new DragExpandDetector();
 
-		// ReSharper disable RedundantDefaultFieldInitializer
 		[ExpectService]
+#pragma warning disable 169
 		private IFavoritesManager _favManager = null;
+#pragma warning restore 169
 
 		[ExpectService]
+#pragma warning disable 169
 		private IOutboxManager _outboxManager = null;
-		// ReSharper restore RedundantDefaultFieldInitializer
+#pragma warning restore 169
 
 		public NavigationDummyForm([NotNull] IServiceProvider provider)
 		{
 			if (provider == null)
-				throw new ArgumentNullException("provider");
+				throw new ArgumentNullException(nameof(provider));
 
 			_provider = provider;
 
@@ -267,7 +270,7 @@ namespace Rsdn.Janus
 		private static ForumsSubscribtionStates GetForumsSubscribedStatus(IEnumerable<ITreeNode> forums)
 		{
 			if (forums == null)
-				throw new ArgumentNullException("forums");
+				throw new ArgumentNullException(nameof(forums));
 
 			var states = ForumsSubscribtionStates.None;
 			foreach (Forum forum in forums)
@@ -526,7 +529,7 @@ namespace Rsdn.Janus
 		private static IEnumerable<FavoritesLink> GetFavoritesLinks(IEnumerable<ITreeNode> nodes)
 		{
 			if (nodes == null)
-				throw new ArgumentNullException("nodes");
+				throw new ArgumentNullException(nameof(nodes));
 
 			foreach (IFavoritesEntry entry in nodes)
 			{
@@ -546,7 +549,7 @@ namespace Rsdn.Janus
 		private static IEnumerable<FavoritesLink> GetFavoritesLinks(FavoritesFolder folder)
 		{
 			if (folder == null)
-				throw new ArgumentNullException("folder");
+				throw new ArgumentNullException(nameof(folder));
 
 			foreach (var link in folder.Links)
 				yield return link;

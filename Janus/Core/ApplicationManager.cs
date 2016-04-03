@@ -3,10 +3,10 @@ using System.Diagnostics;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
 
+using CodeJam.Extensibility;
+
 using Rsdn.Janus.Log;
 using Rsdn.Janus.Protocol;
-
-using Rsdn.SmartApp;
 
 namespace Rsdn.Janus
 {

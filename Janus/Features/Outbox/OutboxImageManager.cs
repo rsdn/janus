@@ -1,6 +1,6 @@
 ﻿using System.Windows.Forms;
 
-using Rsdn.SmartApp;
+using CodeJam.Extensibility;
 
 namespace Rsdn.Janus
 {
@@ -39,85 +39,37 @@ namespace Rsdn.Janus
 			}
 		}
 
-		public static int MsgImageIndex
-		{
-			get { return _msgImageIndex; }
-		}
+		public static int MsgImageIndex => _msgImageIndex;
 
-		public static int MsgWaitImageIndex
-		{
-			get { return _msgWaitImageIndex; }
-		}
+		public static int MsgWaitImageIndex => _msgWaitImageIndex;
 
-		public static int MsgReplyImageIndex
-		{
-			get { return _msgReplyImageIndex; }
-		}
+		public static int MsgReplyImageIndex => _msgReplyImageIndex;
 
-		public static int MsgWaitReplyImageIndex
-		{
-			get { return _msgWaitReplyImageIndex; }
-		}
+		public static int MsgWaitReplyImageIndex => _msgWaitReplyImageIndex;
 
-		public static int MsgFolderImageIndex
-		{
-			get { return _msgFolderImageIndex; }
-		}
+		public static int MsgFolderImageIndex => _msgFolderImageIndex;
 
-		public static int Rate1ImageIndex
-		{
-			get { return _rate1ImageIndex; }
-		}
+		public static int Rate1ImageIndex => _rate1ImageIndex;
 
-		public static int Rate2ImageIndex
-		{
-			get { return _rate2ImageIndex; }
-		}
+		public static int Rate2ImageIndex => _rate2ImageIndex;
 
-		public static int Rate3ImageIndex
-		{
-			get { return _rate3ImageIndex; }
-		}
+		public static int Rate3ImageIndex => _rate3ImageIndex;
 
-		public static int RateSmileImageIndex
-		{
-			get { return _rateSmileImageIndex; }
-		}
+		public static int RateSmileImageIndex => _rateSmileImageIndex;
 
-		public static int RateDisagreeImageIndex
-		{
-			get { return _rateDisagreeImageIndex; }
-		}
+		public static int RateDisagreeImageIndex => _rateDisagreeImageIndex;
 
-		public static int RateAgreeImageIndex
-		{
-			get { return _rateAgreeImageIndex; }
-		}
+		public static int RateAgreeImageIndex => _rateAgreeImageIndex;
 
-		public static int RatePlus1ImageIndex
-		{
-			get { return _ratePlus1ImageIndex; }
-		}
+		public static int RatePlus1ImageIndex => _ratePlus1ImageIndex;
 
-		public static int RateDeleteImageIndex
-		{
-			get { return _rateDeleteImageIndex; }
-		}
+		public static int RateDeleteImageIndex => _rateDeleteImageIndex;
 
-		public static int RateFolderImageIndex
-		{
-			get { return _rateFolderImageIndex; }
-		}
+		public static int RateFolderImageIndex => _rateFolderImageIndex;
 
-		public static int RegetTopicImageIndex
-		{
-			get { return _regetTopicImageIndex; }
-		}
+		public static int RegetTopicImageIndex => _regetTopicImageIndex;
 
-		public static int RegetTopicFolderImageIndex
-		{
-			get { return _regetTopicFolderImageIndex; }
-		}
+		public static int RegetTopicFolderImageIndex => _regetTopicFolderImageIndex;
 
 		private static void InitImageList()
 		{

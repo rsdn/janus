@@ -4,9 +4,12 @@ using System.Linq;
 using System.Net;
 using System.Web.Services.Protocols;
 
+using CodeJam;
+using CodeJam.Collections;
+using CodeJam.Extensibility;
+
 using Rsdn.Janus.Log;
 using Rsdn.Janus.Synchronization;
-using Rsdn.SmartApp;
 
 namespace Rsdn.Janus
 {
@@ -31,15 +34,9 @@ namespace Rsdn.Janus
 				_tasks.Add(task.Name, task);
 		}
 
-		protected IServiceProvider ServiceProvider
-		{
-			get { return _serviceProvider; }
-		}
+		protected IServiceProvider ServiceProvider => _serviceProvider;
 
-		protected IWebConnectionService WebConnectionService
-		{
-			get { return _webConSvc; }
-		}
+		protected IWebConnectionService WebConnectionService => _webConSvc;
 
 		protected abstract T CreateServiceInstance();
 
@@ -76,8 +73,7 @@ namespace Rsdn.Janus
 					var progressTextFormat = (direction == TransferDirection.Receive
 						? SyncResources.Receiving
 						: SyncResources.Sending) + " {0}/{1}";
-					progressProv.SetProgressText(
-						progressTextFormat.FormatStr(0, total.ToInfoSizeString()));
+					progressProv.SetProgressText(progressTextFormat.FormatWith(0, total.ToInfoSizeString()));
 					progressProv.SetCompressionSign(state);
 				};
 			notificator.TransferProgress +=
@@ -89,10 +85,7 @@ namespace Rsdn.Janus
 						? SyncResources.Receiving
 						: SyncResources.Sending) + " {0}/{1}";
 					progressProv.SetProgressText(
-						progressTextFormat
-							.FormatStr(
-								current.ToInfoSizeString(),
-								total.ToInfoSizeString()));
+						progressTextFormat.FormatWith(current.ToInfoSizeString(), total.ToInfoSizeString()));
 				};
 			notificator.TransferComplete +=
 				(total, direction) => progressProv.SetCompressionSign(CompressionState.Off);
@@ -125,7 +118,7 @@ namespace Rsdn.Janus
 		{
 			IWebSvcSyncTask<T> task;
 			if (!_tasks.TryGetValue(taskName, out task))
-				throw new ArgumentException(@"Unknown task", "taskName");
+				throw new ArgumentException(@"Unknown task", nameof(taskName));
 			if (!task.IsTaskActive())
 				throw new ApplicationException("Specified task not active now.");
 			PerformSyncProvider(context,
@@ -166,7 +159,7 @@ namespace Rsdn.Janus
 		{
 			using (var svc = CreateAndInitService())
 			{
-				_serviceProvider.LogInfo(SyncResources.StartWith.FormatStr(svc.Url));
+				_serviceProvider.LogInfo(SyncResources.StartWith.FormatWith(svc.Url));
 				InitTransferProgress(context, svc);
 				runner(svc);
 				AddTrafficStats(context, svc);
@@ -198,9 +191,7 @@ namespace Rsdn.Janus
 			if (svc.Proxy == null || !pxyCfg.UseCustomAuthProxy)
 				return;
 
-			_serviceProvider.LogInfo(
-				SyncResources.TestDemandProxyAuth
-					.FormatStr(pxyCfg.ProxySettings.ProxyUri));
+			_serviceProvider.LogInfo(SyncResources.TestDemandProxyAuth.FormatWith(pxyCfg.ProxySettings.ProxyUri));
 
 			Action check = () => CallSvcCheckMethod(svc);
 			var creds = _webConSvc.ProxyDemandAuth(check, svc.Abort);

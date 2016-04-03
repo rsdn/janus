@@ -4,12 +4,13 @@ using System.Data;
 using System.Linq;
 using System.Linq.Expressions;
 
+using CodeJam.Extensibility;
+
 using JetBrains.Annotations;
 
 using LinqToDB;
 
 using Rsdn.Janus.DataModel;
-using Rsdn.SmartApp;
 
 namespace Rsdn.Janus
 {
@@ -40,7 +41,7 @@ namespace Rsdn.Janus
 		public static IJanusDataContext CreateDBContext([NotNull] this IServiceProvider provider)
 		{
 			if (provider == null)
-				throw new ArgumentNullException("provider");
+				throw new ArgumentNullException(nameof(provider));
 
 			return
 				provider
@@ -52,14 +53,14 @@ namespace Rsdn.Janus
 			[NotNull] this IEnumerable<T> source,
 			[NotNull]IServiceProvider provider)
 		{
-			if (source == null) throw new ArgumentNullException("source");
-			if (provider == null) throw new ArgumentNullException("provider");
+			if (source == null) throw new ArgumentNullException(nameof(source));
+			if (provider == null) throw new ArgumentNullException(nameof(provider));
 			return source.SplitToSeries(provider.MaxInClauseElements());
 		}
 
 		public static ITable<IVariable> Vars([NotNull] this IDataContext db)
 		{
-			if (db == null) throw new ArgumentNullException("db");
+			if (db == null) throw new ArgumentNullException(nameof(db));
 			return db.GetTable<IVariable>();
 		}
 
@@ -72,13 +73,13 @@ namespace Rsdn.Janus
 
 		public static IDBVarsManager DBVars([NotNull] this IServiceProvider provider)
 		{
-			if (provider == null) throw new ArgumentNullException("provider");
+			if (provider == null) throw new ArgumentNullException(nameof(provider));
 			return provider.GetRequiredService<IDBVarsManager>();
 		}
 
 		public static int MaxInClauseElements([NotNull] this IServiceProvider provider)
 		{
-			if (provider == null) throw new ArgumentNullException("provider");
+			if (provider == null) throw new ArgumentNullException(nameof(provider));
 			return
 				provider
 					.GetRequiredService<IJanusDatabaseManager>()

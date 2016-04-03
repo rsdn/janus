@@ -4,10 +4,11 @@ using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
 
+using CodeJam.Extensibility;
+
 using JetBrains.Annotations;
 
 using Rsdn.Janus.ObjectModel;
-using Rsdn.SmartApp;
 using Rsdn.TreeGrid;
 
 namespace Rsdn.Janus
@@ -25,9 +26,9 @@ namespace Rsdn.Janus
 			[NotNull] ComboBox comboBox)
 		{
 			if (serviceProvider == null) 
-				throw new ArgumentNullException("serviceProvider");
+				throw new ArgumentNullException(nameof(serviceProvider));
 			if (comboBox == null)
-				throw new ArgumentNullException("comboBox");
+				throw new ArgumentNullException(nameof(comboBox));
 
 			_comboBox = comboBox;
 			_uiAsyncOperation = serviceProvider.GetRequiredService<IUIShell>().CreateUIAsyncOperation();
@@ -164,23 +165,16 @@ namespace Rsdn.Janus
 		private class FeatureContainer
 		{
 			private readonly IFeature _feature;
-			private readonly int _level;
 
 			public FeatureContainer(IFeature feature, int level)
 			{
 				_feature = feature;
-				_level = level;
+				Level = level;
 			}
 
-			public int Level
-			{
-				get { return _level; }
-			}
+			public int Level { get; }
 
-			public IFeature Feature
-			{
-				get { return _feature; }
-			}
+			public IFeature Feature => _feature;
 
 			public override string ToString()
 			{

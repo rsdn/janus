@@ -1,10 +1,13 @@
 ﻿using System;
 using System.Linq;
-using System.Reactive.Disposables;
 using System.Windows.Forms;
 
+using CodeJam;
+using CodeJam.Extensibility;
+
 using Rsdn.Janus.ObjectModel;
-using Rsdn.SmartApp;
+
+using Disposable = System.Reactive.Disposables.Disposable;
 
 namespace Rsdn.Janus
 {
@@ -141,7 +144,7 @@ namespace Rsdn.Janus
 				if (notMoved)
 					MessageBox.Show(
 						windowParent,
-						SR.Favorites.ElementExists.FormatStr(selForm.SelectedFolder.Name),
+						SR.Favorites.ElementExists.FormatWith(),
 						ApplicationInfo.ApplicationName,
 						MessageBoxButtons.OK,
 						MessageBoxIcon.Information);

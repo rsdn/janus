@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Windows.Forms;
 
-using JetBrains.Annotations;
+using CodeJam.Extensibility;
 
-using Rsdn.SmartApp;
+using JetBrains.Annotations;
 
 namespace Rsdn.Janus
 {
@@ -29,9 +29,9 @@ namespace Rsdn.Janus
 			[CanBeNull] Action completeHandler)
 		{
 			if (provider == null)
-				throw new ArgumentNullException("provider");
+				throw new ArgumentNullException(nameof(provider));
 			if (work == null)
-				throw new ArgumentNullException("work");
+				throw new ArgumentNullException(nameof(work));
 
 			IProgressVisualizer progressVisualizer = null;
 
@@ -47,8 +47,7 @@ namespace Rsdn.Janus
 				() =>
 				{
 					progressVisualizer.Complete();
-					if (completeHandler != null)
-						completeHandler();
+					completeHandler?.Invoke();
 				});
 
 			Application.DoEvents();

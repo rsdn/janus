@@ -2,7 +2,7 @@
 using System.Drawing;
 using System.Windows.Forms;
 
-using Rsdn.SmartApp;
+using CodeJam.Extensibility;
 
 namespace Rsdn.Janus
 {
@@ -15,17 +15,12 @@ namespace Rsdn.Janus
 
 		private class DbDriverInfo
 		{
-			private readonly string _driverName;
-
 			internal DbDriverInfo(string driverName)
 			{
-				_driverName = driverName;
+				DriverName = driverName;
 			}
 
-			public string DriverName
-			{
-				get { return _driverName; }
-			}
+			public string DriverName { get; }
 
 			public IDBDriver Driver { get; internal set; }
 
@@ -75,16 +70,10 @@ namespace Rsdn.Janus
 			TearoffDbDriver(tbcEngine, new TabControlCancelEventArgs(tbcEngine.SelectedTab, 0, false, TabControlAction.Selecting));
 		}
 
-		public string DbDriver
-		{
-			get { return _curDriverInfo.DriverName; }
-		}
+		public string DbDriver => _curDriverInfo.DriverName;
 
 		private string _connectionString = string.Empty;
-		public string  ConnectionString
-		{
-			get { return _connectionString; }
-		}
+		public string  ConnectionString => _connectionString;
 
 		private void tbcEngine_SelectedIndexChanged(object sender, EventArgs e)
 		{

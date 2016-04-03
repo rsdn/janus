@@ -6,9 +6,9 @@ using System.Globalization;
 using System.IO;
 using System.Text;
 
-using FirebirdSql.Data.FirebirdClient;
+using CodeJam;
 
-using Rsdn.SmartApp;
+using FirebirdSql.Data.FirebirdClient;
 
 namespace Rsdn.Janus.Firebird
 {
@@ -155,14 +155,13 @@ namespace Rsdn.Janus.Firebird
 							AddDdlCommand(i,
 								eTable.Name + @"." + eColumn.Name,
 								"Column",
-								string.Format(@"
+								$@"
 											UPDATE RDB$RELATION_FIELDS
 											SET
 												RDB$NULL_FLAG = NULL
 											WHERE
-												(RDB$FIELD_NAME = '{0}') AND (RDB$RELATION_NAME = '{1}')",
-									eColumn.Name,
-									eTable.Name));
+												(RDB$FIELD_NAME = '{eColumn
+									.Name}') AND (RDB$RELATION_NAME = '{eTable.Name}')");
 						}
 						if (mColumn.DefaultValue == eColumn.DefaultValue)
 							continue;
@@ -171,12 +170,10 @@ namespace Rsdn.Janus.Firebird
 							AddDdlCommand(i,
 								eTable.Name + @"." + eColumn.Name,
 								"Column",
-								string.Format(@"
-												ALTER TABLE {0}
-												ADD IBE$$TEMP_COLUMN {1} DEFAULT {2}",
-									MakeDdlElementName(eTable.Name),
-									FBSchemaLoader.TypeDbsmToFb(eColumn),
-									mColumn.DefaultValue));
+								$@"
+												ALTER TABLE {MakeDdlElementName(eTable.Name)}
+												ADD IBE$$TEMP_COLUMN {FBSchemaLoader
+									.TypeDbsmToFb(eColumn)} DEFAULT {mColumn.DefaultValue}");
 
 							AddDdlCommand(i++,
 								eTable.Name + @"." + eColumn.Name,
@@ -205,23 +202,21 @@ namespace Rsdn.Janus.Firebird
 							AddDdlCommand(i++,
 								eTable.Name + @"." + eColumn.Name,
 								"Column",
-								string.Format(@"ALTER TABLE {0} DROP IBE$$TEMP_COLUMN",
-									MakeDdlElementName(eTable.Name)));
+								$@"ALTER TABLE {MakeDdlElementName(eTable.Name)} DROP IBE$$TEMP_COLUMN");
 						}
 						else
 						{
 							AddDdlCommand(i,
 								eTable.Name + @"." + eColumn.Name,
 								"Column",
-								string.Format(@"
+								$@"
 												UPDATE RDB$RELATION_FIELDS F1
 												SET
 													F1.RDB$DEFAULT_VALUE = NULL,
 													F1.RDB$DEFAULT_SOURCE = NULL
 												WHERE
-													(F1.RDB$RELATION_NAME = '{0}') AND (F1.RDB$FIELD_NAME = '{1}')",
-									eTable.Name,
-									eColumn.Name));
+													(F1.RDB$RELATION_NAME = '{eTable
+									.Name}') AND (F1.RDB$FIELD_NAME = '{eColumn.Name}')");
 						}
 					}
 				}
@@ -275,8 +270,7 @@ namespace Rsdn.Janus.Firebird
 
 		protected override string MakeDdlColumnDrop(TableColumnSchema column, TableSchema table)
 		{
-			return string.Format(@"ALTER TABLE {0} DROP {1}",
-				MakeDdlElementName(table.Name), MakeDdlElementName(column.Name));
+			return $@"ALTER TABLE {MakeDdlElementName(table.Name)} DROP {MakeDdlElementName(column.Name)}";
 		}
 
 		protected override string MakeDdlIndexCreate(IndexSchema index, TableSchema table)
@@ -295,55 +289,43 @@ namespace Rsdn.Janus.Firebird
 					break;
 			}
 
-			return string.Format(@"CREATE {0} INDEX {1} ON {2} ({3})",
-				stat,
-				MakeDdlElementName(index.Name),
-				MakeDdlElementName(table.Name),
-				ParseColumnListIndex(index.Columns).JoinStrings(@", "));
+			return
+				$@"CREATE {stat} INDEX {MakeDdlElementName(index.Name)} ON {MakeDdlElementName(table.Name)} ({ParseColumnListIndex(
+					index.Columns).JoinStrings(@", ")})";
 		}
 
 		protected override string MakeDdlIndexDrop(IndexSchema index, TableSchema table)
 		{
-			return string.Format(@"DROP INDEX {0}",
-				MakeDdlElementName(index.Name));
+			return $@"DROP INDEX {MakeDdlElementName(index.Name)}";
 		}
 
 		private string MakeDdlGeneratorCreate(SchemaNamedElement gen)
 		{
-			return string.Format(@"CREATE GENERATOR {0}",
-				MakeDdlElementName(gen.Name));
+			return $@"CREATE GENERATOR {MakeDdlElementName(gen.Name)}";
 		}
 
 		private string MakeDdlGeneratorSet(DBGenerator gen)
 		{
-			return string.Format(@"SET GENERATOR {0} TO {1}",
-				MakeDdlElementName(gen.Name),
-				gen.StartValue);
+			return $@"SET GENERATOR {MakeDdlElementName(gen.Name)} TO {gen.StartValue}";
 		}
 
 		private string MakeDdlGeneratorDrop(SchemaNamedElement gen)
 		{
-			return string.Format(@"DROP GENERATOR {0}",
-				MakeDdlElementName(gen.Name));
+			return $@"DROP GENERATOR {MakeDdlElementName(gen.Name)}";
 		}
 
 		protected override string ParseColumn(TableColumnSchema column)
 		{
-			return string.Format(@"{0} {1} {2} {3} {4}",
-				MakeDdlElementName(column.Name),
-				FBSchemaLoader.TypeDbsmToFb(column),
-				string.Empty, // column.computedBy == null ? string.Empty : ("COMPUTED BY " + column.computedBy),
-				column.DefaultValue.IsNullOrEmpty()
+			return
+				$@"{MakeDdlElementName(column.Name)} {FBSchemaLoader.TypeDbsmToFb(column)} {string.Empty} {(column.DefaultValue
+					.IsNullOrEmpty()
 					? string.Empty
-					: @"DEFAULT {0}".FormatStr(column.DefaultValue),
-				column.Nullable ? string.Empty : @" NOT NULL");
+					: $"DEFAULT {column.DefaultValue}")} {(column.Nullable ? string.Empty : @" NOT NULL")}";
 		}
 
 		protected override string ParseColumnAlter(TableColumnSchema mColumn, TableColumnSchema eColumn)
 		{
-			return string.Format(@"{0} TYPE {1}",
-				MakeDdlElementName(eColumn.Name),
-				FBSchemaLoader.TypeDbsmToFb(mColumn));
+			return $@"{MakeDdlElementName(eColumn.Name)} TYPE {FBSchemaLoader.TypeDbsmToFb(mColumn)}";
 		}
 
 		private static string ParseName(string pre, string tname, string oname)

@@ -1,4 +1,5 @@
-﻿using Rsdn.SmartApp;
+﻿using CodeJam.Extensibility;
+using CodeJam.Extensibility.Registration;
 
 namespace Rsdn.Janus
 {
@@ -15,8 +16,8 @@ namespace Rsdn.Janus
 			ExtensionInfoProviderAttribute attr)
 		{
 			if (!typeof (IExtensionInfoProvider).IsAssignableFrom(context.Type))
-				throw new ExtensibilityException("Type '{0}' must implement interface '{1}'"
-					.FormatStr(context.Type, typeof (IExtensionInfoProvider)));
+				throw new ExtensibilityException(
+					$"Type '{context.Type}' must implement interface '{typeof(IExtensionInfoProvider)}'");
 
 			var infSvc = context.GetService<IBootTimeInformer>();
 			if (infSvc != null)

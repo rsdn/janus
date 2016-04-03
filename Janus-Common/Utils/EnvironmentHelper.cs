@@ -3,7 +3,7 @@ using System.Linq;
 using System.Reflection;
 using System.Web;
 
-using Rsdn.SmartApp;
+using CodeJam.Extensibility;
 
 namespace Rsdn.Janus
 {
@@ -13,12 +13,9 @@ namespace Rsdn.Janus
 	public static class EnvironmentHelper
 	{
 		private const string _unknownOs = "Unknown Win32 compatible OS";
-		private static readonly Assembly _janusAssembly = Type.GetType("Rsdn.Janus.Janus, Janus").Assembly;
 
-		public static Assembly JanusAssembly
-		{
-			get { return _janusAssembly; }
-		}
+		// ReSharper disable once PossibleNullReferenceException
+		public static Assembly JanusAssembly { get; } = Type.GetType("Rsdn.Janus.Janus, Janus").Assembly;
 
 		public static string GetOSName(this OperatingSystem os)
 		{
@@ -92,7 +89,7 @@ namespace Rsdn.Janus
 		public static string GetAssemblyDir(this Assembly assembly)
 		{
 			if (assembly == null)
-				throw new ArgumentNullException("assembly");
+				throw new ArgumentNullException(nameof(assembly));
 			var uri = new Uri(assembly.CodeBase);
 			// Склеиваем все сегменты, кроме первого и последнего.
 			return
@@ -112,8 +109,7 @@ namespace Rsdn.Janus
 		public static void SetSplashMessage(this IServiceProvider provider, string message)
 		{
 			var infSvc = provider.GetService<IBootTimeInformer>();
-			if (infSvc != null)
-				infSvc.SetText(message);
+			infSvc?.SetText(message);
 		}
 
 		public static bool IsSplashAvailable(this IServiceProvider provider)

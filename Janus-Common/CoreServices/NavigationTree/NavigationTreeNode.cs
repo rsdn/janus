@@ -4,20 +4,16 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
 
+using CodeJam.Collections;
+
 using JetBrains.Annotations;
 
-using Rsdn.SmartApp;
 using Rsdn.TreeGrid; //временно
 
 namespace Rsdn.Janus
 {
 	public class NavigationTreeNode : INavigationTreeNode
 	{
-		private readonly string _name;
-		private readonly INavigationItemHeader _header;
-		private readonly string _navigationPageName;
-		private readonly IList<INavigationTreeNode> _childrens;
-		private readonly int _orderIndex;
 		private NodeFlags _nodeFlags;
 
 		public NavigationTreeNode(
@@ -28,50 +24,33 @@ namespace Rsdn.Janus
 			int orderIndex)
 		{
 			if (name == null)
-				throw new ArgumentNullException("name");
+				throw new ArgumentNullException(nameof(name));
 			if (header == null)
-				throw new ArgumentNullException("header");
+				throw new ArgumentNullException(nameof(header));
 			if (navigationPageName == null)
-				throw new ArgumentNullException("navigationPageName");
+				throw new ArgumentNullException(nameof(navigationPageName));
 
-			_name = name;
-			_header = header;
-			_orderIndex = orderIndex;
-			_navigationPageName = navigationPageName;
-			_childrens = (childrens ?? EmptyArray<INavigationTreeNode>.Value).ToArray().AsReadOnly();
+			Name = name;
+			Header = header;
+			OrderIndex = orderIndex;
+			NavigationPageName = navigationPageName;
+			Childrens = (childrens ?? Array<INavigationTreeNode>.Empty).ToArray().AsReadOnly();
 		}
 
 		#region Implementation of INavigationTreeNodeSource
 
-		public string Name
-		{
-			get { return _name; }
-		}
-
+		public string Name { get; }
 		#endregion
 
 		#region Implementation of INavigationTreeNode
 
-		public string NavigationPageName
-		{
-			get { return _navigationPageName; }
-		}
+		public string NavigationPageName { get; }
 
-		public INavigationItemHeader Header
-		{
-			get { return _header; }
-		}
+		public INavigationItemHeader Header { get; }
 
-		public IList<INavigationTreeNode> Childrens
-		{
-			get { return _childrens; }
-		}
+		public IList<INavigationTreeNode> Childrens { get; }
 
-		public int OrderIndex
-		{
-			get { return _orderIndex; }
-		}
-
+		public int OrderIndex { get; }
 		#endregion
 
 		#region Implementation of IDropTarget
@@ -98,25 +77,14 @@ namespace Rsdn.Janus
 			Childrens.CopyTo((INavigationTreeNode[])array, index);
 		}
 
-		int ICollection.Count
-		{
-			get { return Childrens.Count; }
-		}
+		int ICollection.Count => Childrens.Count;
 
-		object ICollection.SyncRoot
-		{
-			get { return this; }
-		}
+		object ICollection.SyncRoot => this;
 
-		bool ICollection.IsSynchronized
-		{
-			get { return true; }
-		}
+		bool ICollection.IsSynchronized => true;
 
-		ITreeNode ITreeNode.Parent
-		{
-			get { return null; }
-		} //ToDo: возвращает null!!!
+		ITreeNode ITreeNode.Parent => null;
+		//ToDo: возвращает null!!!
 
 		NodeFlags ITreeNode.Flags
 		{
@@ -124,16 +92,9 @@ namespace Rsdn.Janus
 			set { _nodeFlags = value; }
 		}
 
-		bool ITreeNode.HasChildren
-		{
-			get { return Childrens.Count > 0; }
-		}
+		bool ITreeNode.HasChildren => Childrens.Count > 0;
 
-		ITreeNode ITreeNode.this[int iIndex]
-		{
-			get { return Childrens[iIndex]; }
-		}
-
+		ITreeNode ITreeNode.this[int iIndex] => Childrens[iIndex];
 		#endregion
 
 		#region Implementation of IGetData

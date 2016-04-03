@@ -32,7 +32,7 @@
 			WeifenLuo.WinFormsUI.Docking.TabGradient tabGradient7 = new WeifenLuo.WinFormsUI.Docking.TabGradient();
 			this._menuStrip = new System.Windows.Forms.MenuStrip();
 			this._shortcutManager = new Rsdn.Shortcuts.ShortcutManager();
-			this._dockPanel = new WeifenLuo.WinFormsUI.Docking.DockPanel();
+			this.DockPanel = new WeifenLuo.WinFormsUI.Docking.DockPanel();
 			this._navigationBox = new System.Windows.Forms.ComboBox();
 			this._toolStrip = new System.Windows.Forms.ToolStrip();
 			((System.ComponentModel.ISupportInitialize)(this._shortcutManager)).BeginInit();
@@ -56,13 +56,13 @@
 			// 
 			// _dockPanel
 			// 
-			this._dockPanel.ActiveAutoHideContent = null;
-			this._dockPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-			this._dockPanel.DockBackColor = System.Drawing.SystemColors.Control;
-			this._dockPanel.DocumentStyle = WeifenLuo.WinFormsUI.Docking.DocumentStyle.DockingWindow;
-			this._dockPanel.Location = new System.Drawing.Point(0, 70);
-			this._dockPanel.Name = "_dockPanel";
-			this._dockPanel.Size = new System.Drawing.Size(784, 392);
+			this.DockPanel.ActiveAutoHideContent = null;
+			this.DockPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.DockPanel.DockBackColor = System.Drawing.SystemColors.Control;
+			this.DockPanel.DocumentStyle = WeifenLuo.WinFormsUI.Docking.DocumentStyle.DockingWindow;
+			this.DockPanel.Location = new System.Drawing.Point(0, 70);
+			this.DockPanel.Name = "DockPanel";
+			this.DockPanel.Size = new System.Drawing.Size(784, 392);
 			dockPanelGradient1.EndColor = System.Drawing.SystemColors.ControlLight;
 			dockPanelGradient1.StartColor = System.Drawing.SystemColors.ControlLight;
 			autoHideStripSkin1.DockStripGradient = dockPanelGradient1;
@@ -106,8 +106,8 @@
 			dockPaneStripToolWindowGradient1.InactiveTabGradient = tabGradient7;
 			dockPaneStripSkin1.ToolWindowGradient = dockPaneStripToolWindowGradient1;
 			dockPanelSkin1.DockPaneStripSkin = dockPaneStripSkin1;
-			this._dockPanel.Skin = dockPanelSkin1;
-			this._dockPanel.TabIndex = 0;
+			this.DockPanel.Skin = dockPanelSkin1;
+			this.DockPanel.TabIndex = 0;
 			// 
 			// _navigationBox
 			// 
@@ -132,7 +132,7 @@
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(784, 462);
-			this.Controls.Add(this._dockPanel);
+			this.Controls.Add(this.DockPanel);
 			this.Controls.Add(this._navigationBox);
 			this.Controls.Add(this._toolStrip);
 			this.Controls.Add(this._menuStrip);
@@ -148,7 +148,6 @@
 
 		private System.Windows.Forms.MenuStrip _menuStrip;
 		private Shortcuts.ShortcutManager _shortcutManager;
-		private WeifenLuo.WinFormsUI.Docking.DockPanel _dockPanel;
 		private System.Windows.Forms.ComboBox _navigationBox;
 		private System.Windows.Forms.ToolStrip _toolStrip;
 	}

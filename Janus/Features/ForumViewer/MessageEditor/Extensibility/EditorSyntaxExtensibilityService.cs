@@ -2,7 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 
-using Rsdn.SmartApp;
+using CodeJam.Collections;
+using CodeJam.Extensibility;
+using CodeJam.Extensibility.Instancing;
 
 namespace Rsdn.Janus
 {
@@ -35,7 +37,7 @@ namespace Rsdn.Janus
 			return
 				_acProviders
 					.Value
-					.SelectMany(prov => prov.GetAutocompleteList(charPressed) ?? EmptyArray<AutocompleteItem>.Value);
+					.SelectMany(prov => prov.GetAutocompleteList(charPressed) ?? Array<AutocompleteItem>.Empty);
 		}
 
 		public IEnumerable<Highlighting> GetHighlightings(string line)

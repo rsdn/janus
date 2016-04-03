@@ -1,4 +1,5 @@
-﻿using Rsdn.SmartApp;
+﻿using CodeJam.Extensibility;
+using CodeJam.Extensibility.Registration;
 
 namespace Rsdn.Janus
 {

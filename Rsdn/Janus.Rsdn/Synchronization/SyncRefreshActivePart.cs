@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Reactive;
-using JetBrains.Annotations;
 
-using Rsdn.SmartApp;
+using CodeJam.Extensibility;
+using CodeJam.Extensibility.EventBroker;
+
+using JetBrains.Annotations;
 
 namespace Rsdn.Janus
 {

@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Net;
+
+using CodeJam;
+
 using Rsdn.Janus.AT;
 using Rsdn.Janus.Log;
 using Rsdn.Janus.Properties;
-using Rsdn.SmartApp;
 
 namespace Rsdn.Janus
 {
@@ -28,20 +30,17 @@ namespace Rsdn.Janus
 
 		private void OnTransferBegin(int total, TransferDirection direction, CompressionState state)
 		{
-			if (TransferBegin != null)
-				TransferBegin(total, direction, state);
+			TransferBegin?.Invoke(total, direction, state);
 		}
 
 		private void OnTransferProgress(int total, int current, TransferDirection direction)
 		{
-			if (TransferProgress != null)
-				TransferProgress(total, current, direction);
+			TransferProgress?.Invoke(total, current, direction);
 		}
 
 		private void OnTransferComplete(int total, TransferDirection direction)
 		{
-			if (TransferComplete != null)
-				TransferComplete(total, direction);
+			TransferComplete?.Invoke(total, direction);
 		}
 
 		///<summary>
@@ -72,9 +71,9 @@ namespace Rsdn.Janus
 			if (response == null)
 				return null;
 			_provider.LogInfo(
-				"JanusAT: {0}".FormatStr(
+				"JanusAT: {0}".FormatWith(
 					!response.ContentEncoding.IsNullOrEmpty()
-						? Resources.CompressionUsed.FormatStr(response.ContentEncoding)
+						? Resources.CompressionUsed.FormatWith(response.ContentEncoding)
 						: Resources.NoCompression));
 
 			TotalUploaded += _total;

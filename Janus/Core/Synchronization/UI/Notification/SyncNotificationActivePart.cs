@@ -1,10 +1,11 @@
 ﻿using System;
 
+using CodeJam.Extensibility;
+
 using JetBrains.Annotations;
 
 using Rsdn.Janus.Core.Synchronization.UI.Notification;
 using Rsdn.Janus.Framework;
-using Rsdn.SmartApp;
 
 namespace Rsdn.Janus
 {

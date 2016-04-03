@@ -1,8 +1,9 @@
 ﻿using System;
 using System.Windows.Forms;
 
+using CodeJam.Extensibility;
+
 using Rsdn.Janus.ObjectModel;
-using Rsdn.SmartApp;
 
 namespace Rsdn.Janus
 {
@@ -14,9 +15,9 @@ namespace Rsdn.Janus
 		public FolderDummyForm(IServiceProvider provider, IFeature folderFeature)
 		{
 			if (provider == null)
-				throw new ArgumentNullException("provider");
+				throw new ArgumentNullException(nameof(provider));
 			if (folderFeature == null)
-				throw new ArgumentNullException("folderFeature");
+				throw new ArgumentNullException(nameof(folderFeature));
 
 			InitializeComponent();
 

@@ -2,7 +2,7 @@
 using System.Reactive.Disposables;
 using System.Windows.Forms;
 
-using Rsdn.SmartApp;
+using CodeJam.Extensibility;
 
 namespace Rsdn.Janus
 {
@@ -56,7 +56,7 @@ namespace Rsdn.Janus
 			var messageEditorSvc = provider.GetService<IMessageEditorService>();
 			if (messageEditorSvc != null)
 			{
-				SmartApp.EventHandler<IMessageEditorService> statusUpdater = sender => handler();
+				CodeJam.Extensibility.EventHandler<IMessageEditorService> statusUpdater = sender => handler();
 				messageEditorSvc.IsModifiedChanged += statusUpdater;
 				return Disposable.Create(() => messageEditorSvc.Modified -= statusUpdater);
 			}
@@ -96,7 +96,7 @@ namespace Rsdn.Janus
 			var messageEditorSvc = provider.GetService<IMessageEditorService>();
 			if (messageEditorSvc != null)
 			{
-				SmartApp.EventHandler<IMessageEditorService> statusUpdater = sender => handler();
+				CodeJam.Extensibility.EventHandler<IMessageEditorService> statusUpdater = sender => handler();
 				messageEditorSvc.Modified += statusUpdater;
 				return Disposable.Create(
 					() => messageEditorSvc.Modified -= statusUpdater);

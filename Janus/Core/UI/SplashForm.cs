@@ -5,7 +5,7 @@ using System.Drawing;
 using System.Threading;
 using System.Windows.Forms;
 
-using Rsdn.SmartApp;
+using CodeJam.Threading;
 
 namespace Rsdn.Janus
 {
@@ -28,7 +28,7 @@ namespace Rsdn.Janus
 		public SplashForm(IServiceProvider serviceProvider)
 		{
 			if (serviceProvider == null)
-				throw new ArgumentNullException("serviceProvider");
+				throw new ArgumentNullException(nameof(serviceProvider));
 
 			// Эта инициализация должна быть только внутри конструктора,
 			// чтобы отработал базовый конструктор Control и тинициализировал
@@ -57,7 +57,7 @@ namespace Rsdn.Janus
 		private void ModulesBoxPaint(object sender, PaintEventArgs e)
 		{
 			var x = _moduleInterval;
-			using (_rwLock.GetReaderLock())
+			using (_rwLock.GetReadLock())
 				foreach (var data in _extData)
 				{
 					DrawExtension(data, e.Graphics, new Rectangle(x, _moduleTopShift,
@@ -89,24 +89,15 @@ namespace Rsdn.Janus
 		#region ExtensionData class
 		private class ExtensionData
 		{
-			private readonly string _displayName;
-			private readonly Image _icon;
-
 			public ExtensionData(string displayName, Image icon)
 			{
-				_displayName = displayName;
-				_icon = icon;
+				DisplayName = displayName;
+				Icon = icon;
 			}
 
-			public string DisplayName
-			{
-				get { return _displayName; }
-			}
+			public string DisplayName { get; }
 
-			public Image Icon
-			{
-				get { return _icon; }
-			}
+			public Image Icon { get; }
 		}
 		#endregion
 
@@ -118,7 +109,7 @@ namespace Rsdn.Janus
 
 		public void AddItem(string itemText, Image itemIcon)
 		{
-			using (_rwLock.GetWriterLock())
+			using (_rwLock.GetWriteLock())
 				_extData.Add(new ExtensionData(itemText, itemIcon));
 			_asyncOp.Post(_itemsBox.Invalidate);
 		}
@@ -144,11 +135,7 @@ namespace Rsdn.Janus
 
 		public void Complete() { }
 
-		public bool CancelRequested
-		{
-			get { return false; }
-		}
-
+		public bool CancelRequested => false;
 		#endregion
 	}
 }

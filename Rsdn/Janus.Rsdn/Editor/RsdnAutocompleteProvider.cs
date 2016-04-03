@@ -1,8 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 
-using Rsdn.SmartApp;
-
 namespace Rsdn.Janus.Autocomplete
 {
 	[AutocompleteProvider]
@@ -20,7 +18,7 @@ namespace Rsdn.Janus.Autocomplete
 							.Select(
 								pair =>
 									pair.Value
-										? new AutocompleteItem("[{0}][/{0}]".FormatStr(pair.Key), GetTagShift)
+										? new AutocompleteItem($"[{pair.Key}][/{pair.Key}]", GetTagShift)
 										: new AutocompleteItem("[" + pair.Key + "]"));
 				case ':':
 					return

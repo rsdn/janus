@@ -1,7 +1,8 @@
 ﻿using System.Collections.Generic;
 
+using CodeJam.Extensibility;
+
 using Rsdn.Janus.ObjectModel;
-using Rsdn.SmartApp;
 
 namespace Rsdn.Janus
 {

@@ -1,6 +1,8 @@
 ﻿using System;
+
+using CodeJam.Extensibility;
+
 using Rsdn.Janus.ObjectModel;
-using Rsdn.SmartApp;
 
 namespace Rsdn.Janus
 {
@@ -14,12 +16,9 @@ namespace Rsdn.Janus
 
 		#region IActiveForumService Members
 
-		public IForum ActiveForum
-		{
-			get { return Features.Instance.ActiveFeature as IForum; }
-		}
+		public IForum ActiveForum => Features.Instance.ActiveFeature as IForum;
 
-		public event SmartApp.EventHandler<IActiveForumService> ActiveForumChanged; 
+		public event CodeJam.Extensibility.EventHandler<IActiveForumService> ActiveForumChanged; 
 
 		#endregion
 
@@ -39,8 +38,7 @@ namespace Rsdn.Janus
 
 		private void OnActiveForumChanged()
 		{
-			if (ActiveForumChanged != null)
-				ActiveForumChanged(this);
+			ActiveForumChanged?.Invoke(this);
 		}
 	}
 }

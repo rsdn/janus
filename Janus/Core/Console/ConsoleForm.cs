@@ -5,11 +5,13 @@ using System.Linq;
 using System.Media;
 using System.Windows.Forms;
 
+using CodeJam;
+using CodeJam.Extensibility;
+
 using JetBrains.Annotations;
 
 using Rsdn.Janus.Core.Console;
 using Rsdn.Scintilla;
-using Rsdn.SmartApp;
 
 namespace Rsdn.Janus
 {
@@ -36,7 +38,7 @@ namespace Rsdn.Janus
 		public ConsoleForm([NotNull] IServiceProvider provider)
 		{
 			if (provider == null)
-				throw new ArgumentNullException("provider");
+				throw new ArgumentNullException(nameof(provider));
 
 			_provider = provider;
 			_commandService = _provider.GetRequiredService<ICommandService>();
@@ -103,7 +105,7 @@ namespace Rsdn.Janus
 		private void WriteLine([NotNull] string text)
 		{
 			if (text == null)
-				throw new ArgumentNullException("text");
+				throw new ArgumentNullException(nameof(text));
 
 			Write(text);
 			Write(Environment.NewLine);
@@ -112,7 +114,7 @@ namespace Rsdn.Janus
 		private void Write([NotNull] string text)
 		{
 			if (text == null)
-				throw new ArgumentNullException("text");
+				throw new ArgumentNullException(nameof(text));
 
 			_consoleEditor.Model.AppendText(text);
 
@@ -151,13 +153,13 @@ namespace Rsdn.Janus
 
 			_isPromptMode = false;
 
-			if (!_userInput.IsNullOrEmpty())
+			if (_userInput.NotNullNorEmpty())
 				AddToHistory(_userInput);
 
 			WriteLine(string.Empty);
 			var preOutputLength = _consoleEditor.Model.TextLength;
 
-			if (!_userInput.IsNullOrEmpty())
+			if (!_userInput.NotNullNorEmpty())
 			{
 				if (_parsedUserInput != null)
 					try
@@ -193,7 +195,7 @@ namespace Rsdn.Janus
 		private void AddToHistory([NotNull] string command)
 		{
 			if (command == null)
-				throw new ArgumentNullException("command");
+				throw new ArgumentNullException(nameof(command));
 
 			if (_history.Count == 0
 				|| (_historyPosition == _history.Count

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Reactive.Disposables;
 using System.Windows.Forms;
 
-using Rsdn.SmartApp;
+using CodeJam.Extensibility;
 
 namespace Rsdn.Janus
 {
@@ -65,8 +65,8 @@ namespace Rsdn.Janus
 		public void ExecuteDelete(ICommandContext context)
 		{
 			var tagLineListFormSvc = context.GetRequiredService<ITagLineListFormService>();
-			tagLineListFormSvc.SelectedTagLines.ForEach(
-				tagLine => tagLineListFormSvc.TagLines.Remove(tagLine));
+			foreach (var tagLine in tagLineListFormSvc.SelectedTagLines)
+				tagLineListFormSvc.TagLines.Remove(tagLine);
 		}
 
 		[CommandStatusGetter("Janus.Forum.TagLine.Add")]

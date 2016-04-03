@@ -4,7 +4,7 @@ using System.Collections;
 using LinqToDB.Mapping;
 
 using Rsdn.TreeGrid;
-using Rsdn.SmartApp;
+using CodeJam.Extensibility;
 
 namespace Rsdn.Janus
 {
@@ -99,10 +99,7 @@ namespace Rsdn.Janus
 			set { _folder = (FavoritesFolder)value; }
 		}
 
-		public bool IsContainer
-		{
-			get { return false; }
-		}
+		public bool IsContainer => false;
 
 		public string Comment { get; set; }
 
@@ -123,17 +120,11 @@ namespace Rsdn.Janus
 		#endregion
 
 		#region ITreeNode
-		ITreeNode ITreeNode.Parent
-		{
-			get { return _folder; }
-		}
+		ITreeNode ITreeNode.Parent => _folder;
 
 		public NodeFlags Flags { get; set; }
 
-		public bool HasChildren
-		{
-			get { return false; }
-		}
+		public bool HasChildren => false;
 
 		public ITreeNode this[int iIndex]
 		{
@@ -157,10 +148,7 @@ namespace Rsdn.Janus
 			get { throw new NotSupportedException(); }
 		}
 
-		public bool IsSynchronized
-		{
-			get { return false; }
-		}
+		public bool IsSynchronized => false;
 
 		public IEnumerator GetEnumerator()
 		{

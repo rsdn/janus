@@ -1,10 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 
-using JetBrains.Annotations;
+using CodeJam.Extensibility;
+using CodeJam.Extensibility.Registration;
 
-using Rsdn.SmartApp;
+using JetBrains.Annotations;
 
 namespace Rsdn.Janus
 {
@@ -16,7 +18,7 @@ namespace Rsdn.Janus
 		public NavigationPageFactoryService([NotNull] IServiceProvider serviceProvider)
 		{
 			if (serviceProvider == null)
-				throw new ArgumentNullException("serviceProvider");
+				throw new ArgumentNullException(nameof(serviceProvider));
 
 			_providerHierarchy = CreatePageProvidersHierachy(CreatePageProviders(serviceProvider));
 		}
@@ -29,14 +31,13 @@ namespace Rsdn.Janus
 			NavigationPageState state)
 		{
 			if (serviceProvider == null)
-				throw new ArgumentNullException("serviceProvider");
+				throw new ArgumentNullException(nameof(serviceProvider));
 			if (name == null)
-				throw new ArgumentNullException("name");
+				throw new ArgumentNullException(nameof(name));
 
 			var provider = TryFindProvider(serviceProvider, name);
 			if (provider == null)
-				throw new ApplicationException(
-					"Отсутствуют провайдеры, способные создать страницу '{0}'".FormatStr(name));
+				throw new ApplicationException($"Отсутствуют провайдеры, способные создать страницу '{name}'");
 
 			return provider.CreateNavigationPage(serviceProvider, name, state);
 		}
@@ -44,9 +45,9 @@ namespace Rsdn.Janus
 		public bool CanCreatePage(IServiceProvider serviceProvider, string name)
 		{
 			if (serviceProvider == null)
-				throw new ArgumentNullException("serviceProvider");
+				throw new ArgumentNullException(nameof(serviceProvider));
 			if (name == null)
-				throw new ArgumentNullException("name");
+				throw new ArgumentNullException(nameof(name));
 
 			return TryFindProvider(serviceProvider, name) != null;
 		}
@@ -80,7 +81,7 @@ namespace Rsdn.Janus
 			return null;
 		}
 
-		private static IEnumerable<Pair<INavigationPageProvider, string>> CreatePageProviders(
+		private static IEnumerable<Tuple<INavigationPageProvider, string>> CreatePageProviders(
 			IServiceProvider serviceProvider)
 		{
 			var provSvc = serviceProvider.GetService<IRegElementsService<NavigationPageProviderInfo>>();
@@ -93,20 +94,20 @@ namespace Rsdn.Janus
 				var ctor = info.Type.GetConstructor(new Type[0]);
 				if (ctor == null)
 					throw new ApplicationException(
-						"'{0}' does not contains appropriate constructor.".FormatStr(info.Type));
+						$"'{info.Type}' does not contains appropriate constructor.");
 
-				yield return new Pair<INavigationPageProvider, string>(
+				yield return new Tuple<INavigationPageProvider, string>(
 					(INavigationPageProvider)ctor.Invoke(new object[0]),
 					info.PathMask);
 			}
 		}
 
 		private static NavigationPageProviderHierarchy CreatePageProvidersHierachy(
-			IEnumerable<Pair<INavigationPageProvider, string>> providersWithMasks)
+			IEnumerable<Tuple<INavigationPageProvider, string>> providersWithMasks)
 		{
 			var result = new NavigationPageProviderHierarchy();
 			foreach (var providerWithMask in providersWithMasks)
-				result.Add(providerWithMask.Second.Split('/'), providerWithMask.First);
+				result.Add(providerWithMask.Item2.Split('/'), providerWithMask.Item1);
 			return result;
 		}
 
@@ -136,7 +137,8 @@ namespace Rsdn.Janus
 				IEnumerable<string> path,
 				INavigationPageProvider provider)
 			{
-				var pathComponent = path.FirstOrDefault();
+				var pathArray = path.ToArray();
+				var pathComponent = pathArray.FirstOrDefault();
 				switch (pathComponent)
 				{
 					case null:
@@ -146,7 +148,7 @@ namespace Rsdn.Janus
 						Provider = provider;
 						break;
 					case "*":
-						if (path.Skip(1).Any())
+						if (pathArray.Skip(1).Any())
 							throw new ApplicationException(
 								"Компонент маски пути '*' поддерживается только в качестве последнего элемента пути.");
 						if (ChildrensProvider != null)
@@ -156,8 +158,9 @@ namespace Rsdn.Janus
 						break;
 					default:
 						var subNode = new NavigationPageProviderHierarchy();
+						Debug.Assert(pathComponent != null, "pathComponent != null");
 						_childrens.Add(pathComponent, subNode);
-						subNode.CreateNodes(path.Skip(1), provider);
+						subNode.CreateNodes(pathArray.Skip(1), provider);
 						break;
 				}
 			}
@@ -177,8 +180,8 @@ namespace Rsdn.Janus
 
 		private sealed class FindNodeResult
 		{
-			public Path<NavigationPageProviderHierarchy> TraversedPath { get; private set; }
-			public IEnumerable<string> PathTail { get; private set; }
+			public Path<NavigationPageProviderHierarchy> TraversedPath { get; }
+			public IEnumerable<string> PathTail { get; }
 
 			public FindNodeResult(
 				Path<NavigationPageProviderHierarchy> traversedPath,

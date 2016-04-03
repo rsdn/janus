@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using Rsdn.SmartApp;
 
 namespace Rsdn.Janus
 {
@@ -11,7 +10,7 @@ namespace Rsdn.Janus
 		public TagLineListFormService(TagLineListForm form)
 		{
 			if (form == null)
-				throw new ArgumentNullException("form");
+				throw new ArgumentNullException(nameof(form));
 
 			_form = form;
 		}
@@ -24,16 +23,9 @@ namespace Rsdn.Janus
 			remove { _form.SelectedTagLinesChanged -= value; }
 		}
 
-		public IEnumerable<TagLineInfo> SelectedTagLines
-		{
-			get { return _form.SelectedTagLines; }
-		}
+		public IEnumerable<TagLineInfo> SelectedTagLines => _form.SelectedTagLines;
 
-		public ICollection<TagLineInfo> TagLines
-		{
-			get { return _form.TagLines; }
-		}
-
+		public ICollection<TagLineInfo> TagLines => _form.TagLines;
 		#endregion
 	}
 }

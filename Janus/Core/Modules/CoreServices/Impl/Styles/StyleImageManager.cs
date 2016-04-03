@@ -8,8 +8,9 @@ using System.Text.RegularExpressions;
 using System.Threading;
 using System.Resources;
 
+using CodeJam.Extensibility;
+
 using Rsdn.Janus.Framework.Imaging;
-using Rsdn.SmartApp;
 
 namespace Rsdn.Janus
 {
@@ -116,8 +117,7 @@ namespace Rsdn.Janus
 				{
 					var img = _images[uri];
 
-					var nameWithExt = string.Format("{0}.{1}",
-						uri, ImageFormatInfo.FromImageFormat(img.RawFormat).Extension);
+					var nameWithExt = $"{uri}.{ImageFormatInfo.FromImageFormat(img.RawFormat).Extension}";
 					_imageNamesWithExt.Remove(nameWithExt);
 
 					img.Dispose();
@@ -126,8 +126,7 @@ namespace Rsdn.Janus
 
 				var newImage = (Image)e.Value;
 
-				var newNameWithExt = string.Format("{0}.{1}",
-					uri, ImageFormatInfo.FromImageFormat(newImage.RawFormat).Extension);
+				var newNameWithExt = $"{uri}.{ImageFormatInfo.FromImageFormat(newImage.RawFormat).Extension}";
 				_imageNamesWithExt.Add(newNameWithExt, uri);
 
 				_images.Add(uri, newImage);
@@ -189,7 +188,7 @@ namespace Rsdn.Janus
 						: _largeSizeImages;
 					break;
 				default:
-					throw new ArgumentException("Unknown image type", "imageType");
+					throw new ArgumentException("Unknown image type", nameof(imageType));
 			}
 			StyledImage image;
 			if (!hash.TryGetValue(name, out image))

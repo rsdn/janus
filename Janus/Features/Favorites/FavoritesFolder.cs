@@ -3,7 +3,7 @@ using System.Collections;
 
 using Rsdn.Janus.Framework;
 using Rsdn.TreeGrid;
-using Rsdn.SmartApp;
+using CodeJam.Extensibility;
 
 namespace Rsdn.Janus
 {
@@ -165,10 +165,7 @@ namespace Rsdn.Janus
 			set { _parent = value; }
 		}
 
-		public bool IsContainer
-		{
-			get { return true; }
-		}
+		public bool IsContainer => true;
 
 		public void Update()
 		{
@@ -188,27 +185,16 @@ namespace Rsdn.Janus
 		#endregion
 
 		#region ITreeNode
-		ITreeNode ITreeNode.Parent
-		{
-			get { return _parent; }
-		}
+		ITreeNode ITreeNode.Parent => _parent;
 
 		public NodeFlags Flags { get; set; }
 
-		public bool HasChildren
-		{
-			get { return SubFolders.Count > 0 || ShowLinks && Links.Count > 0; }
-		}
+		public bool HasChildren => SubFolders.Count > 0 || ShowLinks && Links.Count > 0;
 
-		public ITreeNode this[int index]
-		{
-			get
-			{
-				return index < SubFolders.Count
-					? SubFolders[index]
-					: (ITreeNode)Links[index - SubFolders.Count];
-			}
-		}
+		public ITreeNode this[int index] =>
+			index < SubFolders.Count
+				? SubFolders[index]
+				: (ITreeNode)Links[index - SubFolders.Count];
 		#endregion
 
 		#region ICollection
@@ -233,10 +219,7 @@ namespace Rsdn.Janus
 			get { throw new NotSupportedException(); }
 		}
 
-		public bool IsSynchronized
-		{
-			get { return false; }
-		}
+		public bool IsSynchronized => false;
 		#endregion
 
 		#region IEnumerable

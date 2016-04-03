@@ -2,8 +2,9 @@
 using System.IO;
 using System.Windows.Forms;
 
+using CodeJam.Extensibility;
+
 using Rsdn.Janus.ObjectModel;
-using Rsdn.SmartApp;
 
 namespace Rsdn.Janus
 {

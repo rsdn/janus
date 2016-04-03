@@ -1,6 +1,6 @@
 ﻿using System;
 
-using Rsdn.SmartApp;
+using CodeJam.Extensibility;
 
 using JetBrains.Annotations;
 
@@ -14,7 +14,7 @@ namespace Rsdn.Janus
 		public LogForm([NotNull] IServiceProvider serviceProvider)
 		{
 			if (serviceProvider == null)
-				throw new ArgumentNullException("serviceProvider");
+				throw new ArgumentNullException(nameof(serviceProvider));
 
 			_serviceProvider = serviceProvider;
 
@@ -44,11 +44,9 @@ namespace Rsdn.Janus
 			{
 				StyleConfig.StyleChange -= StyleConfig_StyleChange;
 
-				if (_stripMenuGenerator != null)
-					_stripMenuGenerator.Dispose();
+				_stripMenuGenerator?.Dispose();
 
-				if (components != null)
-					components.Dispose();
+				components?.Dispose();
 			}
 			base.Dispose(disposing);
 		}

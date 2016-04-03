@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 
-using JetBrains.Annotations;
+using CodeJam.Extensibility;
 
-using Rsdn.SmartApp;
+using JetBrains.Annotations;
 
 namespace Rsdn.Janus
 {
@@ -17,22 +17,19 @@ namespace Rsdn.Janus
 		public TextMacrosService([NotNull] IServiceProvider serviceProvider)
 		{
 			if (serviceProvider == null)
-				throw new ArgumentNullException("serviceProvider");
+				throw new ArgumentNullException(nameof(serviceProvider));
 
 			_serviceProvider = serviceProvider;
 		}
 
 		#region Implementation of ITextMacrosService
 
-		public ICollection<ITextMacros> TextMacroses
-		{
-			get { return GetTextMacroses().Values; }
-		}
+		public ICollection<ITextMacros> TextMacroses => GetTextMacroses().Values;
 
 		public ITextMacros GetTextMacros([NotNull] string macrosText)
 		{
 			if (macrosText == null)
-				throw new ArgumentNullException("macrosText");
+				throw new ArgumentNullException(nameof(macrosText));
 
 			ITextMacros result;
 			return GetTextMacroses().TryGetValue(macrosText, out result) ? result : null;
@@ -52,7 +49,7 @@ namespace Rsdn.Janus
 				{
 					if (_textMacroses.ContainsKey(macros.MacrosText))
 						throw new ApplicationException(
-							"Текстовый макрос '{0}' определен более одного раза.".FormatStr(macros.DisplayName));
+							$"Текстовый макрос '{macros.DisplayName}' определен более одного раза.");
 					_textMacroses.Add(macros.MacrosText, macros);
 				}
 			}

@@ -38,11 +38,7 @@ namespace Rsdn.Janus
 			_defaultCommandChanged.OnNext(EventArgs.Empty);
 		}
 
-		public IObservable<EventArgs> DefaultCommandChanged
-		{
-			get { return _defaultCommandChanged; }
-		}
-
+		public IObservable<EventArgs> DefaultCommandChanged => _defaultCommandChanged;
 		#endregion
 
 		private void SetCommandAndParametersCore(
@@ -52,7 +48,7 @@ namespace Rsdn.Janus
 			if (commandName == null && parameters != null)
 				throw new ArgumentException(
 					"Параметры команды должны быть ранвы null, когда имя команды равно null.",
-					"parameters");
+					nameof(parameters));
 
 			CommandName = commandName;
 			Parameters = parameters != null

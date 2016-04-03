@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-using Rsdn.SmartApp;
+using CodeJam.Extensibility;
 
 namespace Rsdn.Janus
 {
@@ -15,7 +15,7 @@ namespace Rsdn.Janus
 		{
 			_provider = provider;
 			if (provider == null)
-				throw new ArgumentNullException("provider");
+				throw new ArgumentNullException(nameof(provider));
 
 			_browserFormService = provider.GetRequiredService<IBrowserFormService>();
 		}

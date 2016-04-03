@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 
-using JetBrains.Annotations;
+using CodeJam.Extensibility;
 
-using Rsdn.SmartApp;
+using JetBrains.Annotations;
 
 namespace Rsdn.Janus
 {

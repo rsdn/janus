@@ -6,11 +6,11 @@ using System.Drawing.Drawing2D;
 using System.Reflection;
 using System.Windows.Forms;
 
+using CodeJam.Extensibility;
+
 using JetBrains.Annotations;
 
 using WeifenLuo.WinFormsUI.Docking.Win32;
-
-using Rsdn.SmartApp;
 
 namespace Rsdn.Janus
 {
@@ -36,21 +36,16 @@ namespace Rsdn.Janus
 		private static Ticker _instance;
 		private const int _stickySpace = 12;
 
-		public static Ticker Instance
-		{
-			get
-			{
-				return _instance
-					?? (_instance = new Ticker(ApplicationManager.Instance.ServiceProvider));
-			}
-		}
+		public static Ticker Instance =>
+			_instance
+				?? (_instance = new Ticker(ApplicationManager.Instance.ServiceProvider));
 
 		private Color BorderColor { get; set; }
 
 		private Ticker([NotNull] IServiceProvider provider)
 		{
 			if (provider == null)
-				throw new ArgumentNullException("provider");
+				throw new ArgumentNullException(nameof(provider));
 
 			_serviceProvider = provider;
 			_forumsAggregatesService = _serviceProvider.GetRequiredService<IForumsAggregatesService>();

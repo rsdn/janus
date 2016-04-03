@@ -5,9 +5,11 @@ using System.Reflection;
 using System.Text;
 using System.Web;
 
-using LinqToDB;
+using CodeJam.Collections;
+using CodeJam.Extensibility;
+using CodeJam.Extensibility.Model;
 
-using Rsdn.SmartApp;
+using LinqToDB;
 
 namespace Rsdn.Janus
 {
@@ -19,8 +21,8 @@ namespace Rsdn.Janus
 		private const string _resourcePrefix =
 			"Rsdn.Janus.Core.JanusProtocolSupport.HtmlPageBuilder.";
 
-		private static readonly ElementsCache<string, string> _templatesCache =
-			new ElementsCache<string, string>(LoadStringTemplate);
+		private static readonly ILazyDictionary<string, string> _templatesCache =
+			LazyDictionary.Create<string, string>(LoadStringTemplate, true);
 
 		private readonly IServiceProvider _serviceProvider;
 		// ReSharper disable ConvertToConstant, RedundantDefaultFieldInitializer
@@ -45,7 +47,7 @@ namespace Rsdn.Janus
 
 		private static string GetStringTemplate(string resName)
 		{
-			return _templatesCache.Get(resName);
+			return _templatesCache[resName];
 		}
 
 		/// <summary>
@@ -353,7 +355,7 @@ namespace Rsdn.Janus
 				rt = (multiplier * (int)rateType).ToString();
 
 				if (forumInTop) // учёт специфичных форумов
-					rt = string.Format(@"<b>{0}</b>", rt);
+					rt = $@"<b>{rt}</b>";
 
 				rt += @"&nbsp;x&nbsp;";
 			}

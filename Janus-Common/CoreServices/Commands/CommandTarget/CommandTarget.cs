@@ -4,9 +4,10 @@ using System.ComponentModel;
 using System.Linq;
 using System.Reflection;
 
-using JetBrains.Annotations;
+using CodeJam;
+using CodeJam.Extensibility;
 
-using Rsdn.SmartApp;
+using JetBrains.Annotations;
 
 namespace Rsdn.Janus
 {
@@ -19,14 +20,12 @@ namespace Rsdn.Janus
 		private readonly List<SubscribeMethod> _subscribeMethods =
 			new List<SubscribeMethod>();
 
-		private readonly ICommandService _commandService;
-
 		protected CommandTarget([NotNull] IServiceProvider serviceProvider)
 		{
 			if (serviceProvider == null)
-				throw new ArgumentNullException("serviceProvider");
+				throw new ArgumentNullException(nameof(serviceProvider));
 
-			_commandService = serviceProvider.GetRequiredService<ICommandService>();
+			var commandService = serviceProvider.GetRequiredService<ICommandService>();
 
 			var subscribeCommands = new List<string>();
 			foreach (var method in
@@ -49,12 +48,10 @@ namespace Rsdn.Janus
 						var commandName = executorAttribute.CommandName;
 
 						if (_executeMethods.ContainsKey(commandName))
-							throw new ApplicationException(
-								"Метод выполнения команды '{0}' определен несколько раз."
-									.FormatStr(commandName));
+							throw new ApplicationException($"Метод выполнения команды '{commandName}' определен несколько раз.");
 
 						_executeMethods[commandName] =
-							CreateExecuteMethod(_commandService.GetCommandInfo(commandName), method);
+							CreateExecuteMethod(commandService.GetCommandInfo(commandName), method);
 
 						continue;
 					}
@@ -65,12 +62,10 @@ namespace Rsdn.Janus
 						var commandName = statusAttribute.CommandName;
 
 						if (_statusMethods.ContainsKey(commandName))
-							throw new ApplicationException(
-								"Метод запроса статуса команды '{0}' определен несколько раз."
-									.FormatStr(commandName));
+							throw new ApplicationException($"Метод запроса статуса команды '{commandName}' определен несколько раз.");
 
 						_statusMethods[commandName] =
-							CreateStatusMethod(_commandService.GetCommandInfo(commandName), method);
+							CreateStatusMethod(commandService.GetCommandInfo(commandName), method);
 
 						continue;
 					}
@@ -90,22 +85,21 @@ namespace Rsdn.Janus
 			foreach (var statusGetter in _statusMethods.Values)
 				if (!_executeMethods.ContainsKey(statusGetter.CommandInfo.Name))
 					throw new ApplicationException(
-						"Метод запроса статуса команды '{0}' определен, а метод выполнения - нет."
-							.FormatStr(statusGetter.CommandInfo.Name));
+						$"Метод запроса статуса команды '{statusGetter.CommandInfo.Name}' определен, а метод выполнения - нет.");
 
 			foreach (var subscribeMethod in _subscribeMethods)
 				foreach (var commandName in subscribeMethod.CommandNames)
 				{
 					if (!_executeMethods.ContainsKey(commandName))
 						throw new ApplicationException(
-							"Метод подписки на оповещения о смене статуса статуса '{0}' команды '{1}' "
-								.FormatStr(MethodBase.GetMethodFromHandle(subscribeMethod.MethodHandle).Name, commandName)
-								+ "определен, а метод выполнения - нет.");
+							"Метод подписки на оповещения о смене статуса статуса "
+							+ $"'{MethodBase.GetMethodFromHandle(subscribeMethod.MethodHandle).Name}' команды '{commandName}' "
+							+ "определен, а метод выполнения - нет.");
 					if (!_statusMethods.ContainsKey(commandName))
 						throw new ApplicationException(
-							"Метод подписки на оповещения о смене статуса статуса '{0}' команды '{1}' "
-								.FormatStr(MethodBase.GetMethodFromHandle(subscribeMethod.MethodHandle).Name, commandName)
-								+ "определен, а метод запроса статуса - нет.");
+							"Метод подписки на оповещения о смене статуса статуса "
+							+ $"'{MethodBase.GetMethodFromHandle(subscribeMethod.MethodHandle).Name}' команды '{commandName}' "
+							+ "определен, а метод запроса статуса - нет.");
 				}
 		}
 
@@ -116,14 +110,13 @@ namespace Rsdn.Janus
 			[NotNull] ICommandContext context)
 		{
 			if (commandName == null)
-				throw new ArgumentNullException("commandName");
+				throw new ArgumentNullException(nameof(commandName));
 			if (context == null)
-				throw new ArgumentNullException("context");
+				throw new ArgumentNullException(nameof(context));
 
 			if (QueryStatus(commandName, context) != CommandStatus.Normal)
 				throw new InvalidOperationException(
-				   "Команда \"{0}\" не может быть выполнена, так как этого не позволяет её статус."
-						.FormatStr(commandName));
+					$"Команда \"{commandName}\" не может быть выполнена, так как этого не позволяет её статус.");
 
 			InvokeCommandMethod(_executeMethods[commandName], context);
 		}
@@ -133,9 +126,9 @@ namespace Rsdn.Janus
 			[NotNull] ICommandContext context)
 		{
 			if (commandName == null)
-				throw new ArgumentNullException("commandName");
+				throw new ArgumentNullException(nameof(commandName));
 			if (context == null)
-				throw new ArgumentNullException("context");
+				throw new ArgumentNullException(nameof(context));
 
 			CommandMethod method;
 			if (_statusMethods.TryGetValue(commandName, out method))
@@ -151,9 +144,9 @@ namespace Rsdn.Janus
 			[NotNull] EventHandler<ICommandTarget, string[]> handler)
 		{
 			if (serviceProvider == null)
-				throw new ArgumentNullException("serviceProvider");
+				throw new ArgumentNullException(nameof(serviceProvider));
 			if (handler == null)
-				throw new ArgumentNullException("handler");
+				throw new ArgumentNullException(nameof(handler));
 
 
 			return
@@ -178,16 +171,14 @@ namespace Rsdn.Janus
 			{
 				if (method.ReturnType != typeof(void))
 					throw new ApplicationException(
-						"Метод выполнения команды '{0}' должен иметь тип возврата void."
-							.FormatStr(commandInfo.Name));
+						$"Метод выполнения команды '{commandInfo.Name}' должен иметь тип возврата void.");
 
 				CheckParameters(commandInfo, method.GetParameters());
 			}
 			catch (ApplicationException exception)
 			{
 				throw new ApplicationException(
-					"Метод выполнения команды '{0}' имеет неверную сигнатуру."
-						.FormatStr(commandInfo.Name),
+					$"Метод выполнения команды '{commandInfo.Name}' имеет неверную сигнатуру.",
 					exception);
 			}
 
@@ -200,16 +191,14 @@ namespace Rsdn.Janus
 			{
 				if (method.ReturnType != typeof(CommandStatus))
 					throw new ApplicationException(
-						"Метод запроса статуса команды '{0}' должен иметь тип возврата CommandStatus."
-							.FormatStr(commandInfo.Name));
+						$"Метод запроса статуса команды '{commandInfo.Name}' должен иметь тип возврата CommandStatus.");
 
 				CheckParameters(commandInfo, method.GetParameters());
 			}
 			catch (ApplicationException exception)
 			{
 				throw new ApplicationException(
-					"Метод запроса статуса команды '{0}' имеет неверную сигнатуру."
-						.FormatStr(commandInfo.Name),
+					$"Метод запроса статуса команды '{commandInfo.Name}' имеет неверную сигнатуру.",
 					exception);
 			}
 
@@ -226,15 +215,12 @@ namespace Rsdn.Janus
 			foreach (var methodParameter in parameters.Skip(1))
 			{
 				if (!commandInfo.IsParameterExists(methodParameter.Name))
-					throw new ApplicationException(
-						"Параметр '{0}' не предусмотрен командой."
-							.FormatStr(methodParameter.Name));
+					throw new ApplicationException($"Параметр '{methodParameter.Name}' не предусмотрен командой.");
 				if (commandInfo.GetParameter(methodParameter.Name).IsOptional
 						&& methodParameter.ParameterType.IsValueType
 						&& methodParameter.ParameterType == typeof(Nullable<>))
 					throw new ApplicationException(
-						"Необязательный параметр '{0}' должен иметь ссылочный тип."
-							.FormatStr(methodParameter.Name));
+						$"Необязательный параметр '{methodParameter.Name}' должен иметь ссылочный тип.");
 			}
 		}
 
@@ -247,8 +233,7 @@ namespace Rsdn.Janus
 					|| !typeof(Action).IsAssignableFrom(parameters[1].ParameterType)
 					|| method.ReturnType != typeof(IDisposable))
 				throw new ApplicationException(
-					"Метод подписки на оповещения о смене статуса команд '{0}'".FormatStr(method)
-						+ " имеет неверную сигатуру.");
+					$"Метод подписки на оповещения о смене статуса команд '{method}' имеет неверную сигатуру.");
 
 			return new SubscribeMethod(commandNames, method.MethodHandle);
 		}
@@ -279,17 +264,16 @@ namespace Rsdn.Janus
 						catch (ApplicationException exception)
 						{
 							throw new Exception(
-								"Параметр '{0}' команды '{1}' не может быть конвертирован в '{2}', для передачи обработчику '{3}'."
-									.FormatStr(parameterName, method.CommandInfo.Name, methodParameterType, methodInfo.Name),
+								$"Параметр '{parameterName}' команды '{method.CommandInfo.Name}' не может быть конвертирован в "
+								+ $"'{methodParameterType}', для передачи обработчику '{methodInfo.Name}'.",
 								exception);
 						}
 					}
 				}
 				else if (!method.CommandInfo.GetParameter(parameterName).IsOptional)
 					throw new ArgumentException(
-						"Параметр '{0}' команды '{1}' не найден в контексте."
-							.FormatStr(parameterName, method.CommandInfo.Name),
-						"context");
+						$"Параметр '{parameterName}' команды '{method.CommandInfo.Name}' не найден в контексте.",
+						nameof(context));
 			}
 
 			return methodInfo.Invoke(this, args);
@@ -333,8 +317,7 @@ namespace Rsdn.Janus
 					catch (Exception exception)
 					{
 						throw new ApplicationException(
-							"Не удалось конвертировать элемент массива с индексом '{0}'."
-								.FormatStr(i),
+							$"Не удалось конвертировать элемент массива с индексом '{i}'.",
 							exception);
 					}
 				return result;
@@ -348,9 +331,7 @@ namespace Rsdn.Janus
 			if (destinationConverter.CanConvertFrom(sourceType))
 				return destinationConverter.ConvertFrom(value);
 
-			throw new ApplicationException(
-				"Значение типа '{0}' не может быть конвертировано в '{1}'"
-					.FormatStr(sourceType, destinationType));
+			throw new ApplicationException($"Значение типа '{sourceType}' не может быть конвертировано в '{destinationType}'");
 		}
 
 		#region Helper Structures

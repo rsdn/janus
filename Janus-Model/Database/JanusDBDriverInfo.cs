@@ -1,6 +1,6 @@
 ﻿using System;
 
-using Rsdn.SmartApp;
+using CodeJam.Extensibility.Registration;
 
 namespace Rsdn.Janus
 {
@@ -9,8 +9,6 @@ namespace Rsdn.Janus
 		private readonly Func<string> _descriptionGetter;
 		private readonly Func<string> _displayNameGetter;
 		private readonly string _name;
-		private readonly Type _type;
-		private readonly bool _lockRequired;
 
 		public JanusDBDriverInfo(
 			string name,
@@ -20,44 +18,32 @@ namespace Rsdn.Janus
 			bool lockRequired)
 		{
 			if (name == null)
-				throw new ArgumentNullException("name");
+				throw new ArgumentNullException(nameof(name));
 			if (displayNameGetter == null)
-				throw new ArgumentNullException("displayNameGetter");
+				throw new ArgumentNullException(nameof(displayNameGetter));
 			if (descriptionGetter == null)
-				throw new ArgumentNullException("descriptionGetter");
+				throw new ArgumentNullException(nameof(descriptionGetter));
 			if (type == null)
-				throw new ArgumentNullException("type");
+				throw new ArgumentNullException(nameof(type));
 
 			_name = name;
-			_lockRequired = lockRequired;
+			LockRequired = lockRequired;
 			_displayNameGetter = displayNameGetter;
 			_descriptionGetter = descriptionGetter;
-			_type = type;
+			Type = type;
 		}
 
-		public string Name
-		{
-			get { return _name; }
-		}
+		public string Name => _name;
 
-		public Type Type
-		{
-			get { return _type; }
-		}
+		public Type Type { get; }
 
-		public bool LockRequired
-		{
-			get { return _lockRequired; }
-		}
+		public bool LockRequired { get; }
 
 		#region IKeyedElementInfo<string> Members
 		///<summary>
 		/// Ключ.
 		///</summary>
-		string IKeyedElementInfo<string>.Key
-		{
-			get { return _name; }
-		}
+		string IKeyedElementInfo<string>.Key => _name;
 		#endregion
 
 		public string GetDisplayName()

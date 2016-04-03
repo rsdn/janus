@@ -1,6 +1,9 @@
 ﻿using System;
 
-using Rsdn.SmartApp;
+using CodeJam.Collections;
+using CodeJam.Extensibility;
+using CodeJam.Extensibility.Instancing;
+using CodeJam.Extensibility.Registration;
 
 namespace Rsdn.Janus
 {
@@ -9,24 +12,25 @@ namespace Rsdn.Janus
 	[Service(typeof (IStatsFormatterManager))]
 	internal class StatsFormatterManager : IStatsFormatterManager
 	{
-		private readonly ElementsCache<string, IStatisticsFormatter> _formatters;
+		private readonly ILazyDictionary<string, IStatisticsFormatter> _formatters;
 
 		public StatsFormatterManager(IServiceProvider provider)
 		{
-			_formatters = new ElementsCache<string, IStatisticsFormatter>(
+			_formatters = LazyDictionary.Create<string, IStatisticsFormatter>(
 				name =>
 				{
 					var regSvc = provider.GetService<RegSvc>();
 					if (regSvc == null || !regSvc.ContainsElement(name))
 						return new DefaultFormatter(name);
 					return (IStatisticsFormatter)regSvc.GetElement(name).Type.CreateInstance(provider);
-				});
+				},
+				true);
 		}
 
 		#region IStatsFormatterManager Members
 		public string FormatValue(string statsName, int value, IFormatProvider formatProvider)
 		{
-			return _formatters.Get(statsName).FormatValue(value, formatProvider);
+			return _formatters[statsName].FormatValue(value, formatProvider);
 		}
 		#endregion
 
@@ -43,7 +47,7 @@ namespace Rsdn.Janus
 			#region IStatisticsFormatter Members
 			public string FormatValue(int value, IFormatProvider formatProvider)
 			{
-				return "{0} : {1}".FormatStr(_name, value.ToString(formatProvider));
+				return $"{_name} : {value.ToString(formatProvider)}";
 			}
 			#endregion
 		}

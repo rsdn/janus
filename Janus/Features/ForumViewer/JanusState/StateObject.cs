@@ -5,11 +5,11 @@ using System.IO;
 using System.Linq;
 using System.Xml.Serialization;
 
+using CodeJam.Extensibility;
+
 using JetBrains.Annotations;
 
 using LinqToDB;
-
-using Rsdn.SmartApp;
 
 namespace Rsdn.Janus
 {
@@ -94,28 +94,24 @@ namespace Rsdn.Janus
 		#region Constructor
 
 		private readonly IServiceProvider _serviceProvider;
-		private readonly string _filename;
 		private readonly IFavoritesManager _favManager;
 
 		public StateObject([NotNull] IServiceProvider serviceProvider, [NotNull]string filename)
 		{
 			if (serviceProvider == null)
-				throw new ArgumentNullException("serviceProvider");
+				throw new ArgumentNullException(nameof(serviceProvider));
 			if (filename == null)
-				throw new ArgumentNullException("filename");
+				throw new ArgumentNullException(nameof(filename));
 
 			_serviceProvider = serviceProvider;
 			_favManager = serviceProvider.GetRequiredService<IFavoritesManager>();
-			_filename = filename;
+			FileName = filename;
 		}
 
 		#endregion
 
 		#region Publc Properties
-		private string FileName
-		{
-			get { return _filename; }
-		}
+		private string FileName { get; }
 		#endregion
 
 		#region Public Methods
@@ -240,7 +236,7 @@ namespace Rsdn.Janus
 			bool clearOther)
 		{
 			if (mids == null)
-				throw new ArgumentNullException("mids");
+				throw new ArgumentNullException(nameof(mids));
 
 			using (var db = provider.CreateDBContext())
 			using (var tx = db.BeginTransaction())
@@ -265,7 +261,7 @@ namespace Rsdn.Janus
 		/// <summary>
 		/// Удаляет маркеры.
 		/// </summary>
-		/// <param name="db">См. <see cref="DbManager"/></param>
+		/// <param name="db">См. <see cref="IDataContext"/></param>
 		/// <param name="maxMsgId">Максимальный ID сообщения, 
 		/// который учавствует в выборке.</param>
 		private static void ClearMarkers(IDataContext db, int maxMsgId)

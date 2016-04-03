@@ -1,6 +1,6 @@
 ﻿using System;
 
-using Rsdn.SmartApp;
+using CodeJam.Extensibility;
 
 namespace Rsdn.Janus.Log
 {
@@ -16,8 +16,7 @@ namespace Rsdn.Janus.Log
 			string message)
 		{
 			var svc = provider.GetService<ILogger>();
-			if (svc != null)
-				svc.Log(eventType, message);
+			svc?.Log(eventType, message);
 		}
 
 		public static void LogInfo(this IServiceProvider provider, string message)

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
 
-using Rsdn.SmartApp;
+using CodeJam.Extensibility;
 
 namespace Rsdn.Janus
 {
@@ -22,9 +22,9 @@ namespace Rsdn.Janus
 		public TagLineListForm(IServiceProvider provider, IEnumerable<TagLineInfo> tagLines)
 		{
 			if (provider == null)
-				throw new ArgumentNullException("provider");
+				throw new ArgumentNullException(nameof(provider));
 			if (tagLines == null)
-				throw new ArgumentNullException("tagLines");
+				throw new ArgumentNullException(nameof(tagLines));
 
 			_serviceManager = new ServiceManager(provider);
 
@@ -56,18 +56,12 @@ namespace Rsdn.Janus
 			{
 				_toolbarGenerator.Dispose();
 				_contextMenuGenerator.Dispose();
-				if (components != null)
-				{
-					components.Dispose();
-				}
+				components?.Dispose();
 			}
 			base.Dispose(disposing);
 		}
 
-		public ObservableList<TagLineInfo> TagLines
-		{
-			get { return _tagLines; }
-		}
+		public ObservableList<TagLineInfo> TagLines => _tagLines;
 
 		public IEnumerable<TagLineInfo> SelectedTagLines
 		{
@@ -83,8 +77,7 @@ namespace Rsdn.Janus
 
 		private void OnSelectedTagLinesChanged()
 		{
-			if (SelectedTagLinesChanged != null)
-				SelectedTagLinesChanged(this);
+			SelectedTagLinesChanged?.Invoke(this);
 		}
 
 		private void UpdateData()

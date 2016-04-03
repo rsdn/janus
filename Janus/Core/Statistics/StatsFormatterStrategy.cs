@@ -1,4 +1,5 @@
-﻿using Rsdn.SmartApp;
+﻿using CodeJam.Extensibility;
+using CodeJam.Extensibility.Registration;
 
 namespace Rsdn.Janus
 {
@@ -17,9 +18,7 @@ namespace Rsdn.Janus
 		{
 			var type = typeof (IStatisticsFormatter);
 			if (!type.IsAssignableFrom(context.Type))
-				throw new ExtensibilityException(
-					"Type '{0}' must implement interface '{1}'"
-					.FormatStr(context.Type, type));
+				throw new ExtensibilityException($"Type '{context.Type}' must implement interface '{type}'");
 			return new StatisticsFormatterInfo(attr.Name, attr.Description, context.Type);
 		}
 	}

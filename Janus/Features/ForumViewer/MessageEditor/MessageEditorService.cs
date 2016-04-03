@@ -11,7 +11,7 @@ namespace Rsdn.Janus
 		public MessageEditorService([NotNull] MessageForm form)
 		{
 			if (form == null)
-				throw new ArgumentNullException("form");
+				throw new ArgumentNullException(nameof(form));
 
 			_form = form;
 			_form.Modified+= EditorModified;
@@ -75,36 +75,25 @@ namespace Rsdn.Janus
 			_form.Close();
 		}
 
-		public bool IsModified
-		{
-			get { return _form.IsModified; }
-		}
+		public bool IsModified => _form.IsModified;
 
-		public bool CanUndo
-		{
-			get { return _form.CanUndo; }
-		}
+		public bool CanUndo => _form.CanUndo;
 
-		public bool CanRedo
-		{
-			get { return _form.CanRedo; }
-		}
+		public bool CanRedo => _form.CanRedo;
 
-		public event SmartApp.EventHandler<IMessageEditorService> Modified;
-		public event SmartApp.EventHandler<IMessageEditorService> IsModifiedChanged;
+		public event CodeJam.Extensibility.EventHandler<IMessageEditorService> Modified;
+		public event CodeJam.Extensibility.EventHandler<IMessageEditorService> IsModifiedChanged;
 
 		#endregion
 
 		private void EditorModified(MessageForm sender)
 		{
-			if (Modified != null)
-				Modified(this);
+			Modified?.Invoke(this);
 		}
 
 		private void EditorIsModifiedChanged(MessageForm sender)
 		{
-			if (IsModifiedChanged != null)
-				IsModifiedChanged(this);
+			IsModifiedChanged?.Invoke(this);
 		}
 	}
 }

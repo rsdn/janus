@@ -1,27 +1,24 @@
 ﻿using System;
 
+using CodeJam.Extensibility;
+
 using Rsdn.Janus.AT;
-using Rsdn.SmartApp;
 
 namespace Rsdn.Janus
 {
 	internal abstract class RsdnSyncTask<TRq, TRsp> : SimpleSyncTask<JanusAT, TRq, TRsp>
 		where TRq : class
 	{
-		private readonly IServiceProvider _provider;
 		private readonly IRsdnSyncConfigService _configService;
 
 		protected RsdnSyncTask(IServiceProvider provider, string name, Func<string > displayNameGetter)
 			: base(name, displayNameGetter)
 		{
-			_provider = provider;
+			Provider = provider;
 			_configService = provider.GetRequiredService<IRsdnSyncConfigService>();
 		}
 
-		protected IServiceProvider Provider
-		{
-			get { return _provider; }
-		}
+		protected IServiceProvider Provider { get; }
 
 		protected IRsdnSyncConfig GetSyncConfig()
 		{

@@ -2,13 +2,15 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Drawing;
+using System.Linq;
 using System.Reactive.Disposables;
 using System.Reactive.Linq;
 using System.Windows.Forms;
 
-using JetBrains.Annotations;
+using CodeJam.Collections;
+using CodeJam.Extensibility;
 
-using Rsdn.SmartApp;
+using JetBrains.Annotations;
 
 namespace Rsdn.Janus
 {
@@ -56,11 +58,11 @@ namespace Rsdn.Janus
 			bool useSmallImages)
 		{
 			if (serviceProvider == null)
-				throw new ArgumentNullException("serviceProvider");
+				throw new ArgumentNullException(nameof(serviceProvider));
 			if (menuName == null)
-				throw new ArgumentNullException("menuName");
+				throw new ArgumentNullException(nameof(menuName));
 			if (toolStrip == null)
-				throw new ArgumentNullException("toolStrip");
+				throw new ArgumentNullException(nameof(toolStrip));
 
 			_serviceProvider = serviceProvider;
 			_toolStrip = toolStrip;
@@ -153,23 +155,16 @@ namespace Rsdn.Janus
 		private sealed class MenuGeneratorContext
 		{
 			private readonly List<ToolStripItem> _result;
-			private readonly TargetMenuType _menuType;
 
 			public MenuGeneratorContext(TargetMenuType menuType)
 			{
-				_menuType = menuType;
+				MenuType = menuType;
 				_result = new List<ToolStripItem>();
 			}
 
-			public TargetMenuType MenuType
-			{
-				get { return _menuType; }
-			}
+			public TargetMenuType MenuType { get; }
 
-			public IList<ToolStripItem> Result
-			{
-				get { return _result; }
-			}
+			public IList<ToolStripItem> Result => _result;
 		}
 
 		#endregion
@@ -200,12 +195,12 @@ namespace Rsdn.Janus
 			InitStripItem(toolStripItem, menuCommand, context.MenuType);
 
 			if (context.MenuType == TargetMenuType.ContextMenu
-					&& _defaultCommandService != null
-					&& _defaultCommandService.CommandName != null
-					&& _defaultCommandService.CommandName.Equals(
-						menuCommand.CommandName, StringComparison.OrdinalIgnoreCase)
-					&& _defaultCommandService.Parameters.DictionaryEquals(
-						menuCommand.Parameters, StringComparer.OrdinalIgnoreCase.Equals, null))
+				&& _defaultCommandService?.CommandName != null
+				&& _defaultCommandService.CommandName.Equals(menuCommand.CommandName, StringComparison.OrdinalIgnoreCase)
+				&& _defaultCommandService.Parameters.DictionaryEquals(
+					menuCommand.Parameters,
+					StringComparer.OrdinalIgnoreCase.Equals,
+					null))
 				toolStripItem.Font = _defaultMenuCommandFont;
 
 			UpdateMenuCommandStatus(toolStripItem);
