@@ -78,7 +78,7 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="CodeJam.Extensibility, Version=1.0.0.0, Culture=neutral, PublicKeyToken=8da42d97776bc8d3, processorArchitecture=MSIL">
-      <HintPath>..\packages\CodeJam.Extensibility.1.0.0-beta5\lib\net45\CodeJam.Extensibility.dll</HintPath>
+      <HintPath>..\packages\CodeJam.Extensibility.1.0.0-beta6\lib\net45\CodeJam.Extensibility.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="ICSharpCode.SharpZipLib, Version=0.86.0.518, Culture=neutral, PublicKeyToken=1b03e6acf1164f73, processorArchitecture=MSIL">
