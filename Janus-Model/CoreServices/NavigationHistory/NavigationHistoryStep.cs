@@ -6,7 +6,6 @@ namespace Rsdn.Janus
 {
 	public class NavigationHistoryStep
 	{
-		private readonly string _displayName;
 		private readonly Action _navigateAction;
 
 		public NavigationHistoryStep(
@@ -14,18 +13,15 @@ namespace Rsdn.Janus
 			[NotNull] Action navigateAction)
 		{
 			if (displayName == null)
-				throw new ArgumentNullException("displayName");
+				throw new ArgumentNullException(nameof(displayName));
 			if (navigateAction == null)
-				throw new ArgumentNullException("navigateAction");
+				throw new ArgumentNullException(nameof(navigateAction));
 
-			_displayName = displayName;
+			DisplayName = displayName;
 			_navigateAction = navigateAction;
 		}
 
-		public string DisplayName
-		{
-			get { return _displayName; }
-		}
+		public string DisplayName { get; }
 
 		public void Navigate()
 		{

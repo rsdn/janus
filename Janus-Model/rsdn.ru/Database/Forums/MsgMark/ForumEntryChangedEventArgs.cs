@@ -9,28 +9,19 @@ namespace Rsdn.Janus
 {
 	public class ForumEntryChangedEventArgs
 	{
-		private readonly ReadOnlyCollection<ForumEntryIds> _entries;
-		private readonly ForumEntryChangeType _changeType;
-
 		public ForumEntryChangedEventArgs(
 			[NotNull] IEnumerable<ForumEntryIds> entries,
 			ForumEntryChangeType changeType)
 		{
 			if (entries == null)
-				throw new ArgumentNullException("entries");
+				throw new ArgumentNullException(nameof(entries));
 
-			_entries = Array.AsReadOnly(entries.ToArray());
-			_changeType = changeType;
+			Entries = Array.AsReadOnly(entries.ToArray());
+			ChangeType = changeType;
 		}
 
-		public ReadOnlyCollection<ForumEntryIds> Entries
-		{
-			get { return _entries; }
-		}
+		public ReadOnlyCollection<ForumEntryIds> Entries { get; }
 
-		public ForumEntryChangeType ChangeType
-		{
-			get { return _changeType; }
-		}
+		public ForumEntryChangeType ChangeType { get; }
 	}
 }

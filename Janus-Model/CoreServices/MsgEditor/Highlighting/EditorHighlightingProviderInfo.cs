@@ -4,16 +4,11 @@ namespace Rsdn.Janus
 {
 	public class EditorHighlightingProviderInfo
 	{
-		private readonly Type _providerType;
-
 		public EditorHighlightingProviderInfo(Type providerType)
 		{
-			_providerType = providerType;
+			ProviderType = providerType;
 		}
 
-		public Type ProviderType
-		{
-			get { return _providerType; }
-		}
+		public Type ProviderType { get; }
 	}
 }

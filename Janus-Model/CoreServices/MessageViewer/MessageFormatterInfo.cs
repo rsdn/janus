@@ -4,30 +4,17 @@ namespace Rsdn.Janus
 {
 	public class MessageFormatterInfo
 	{
-		private readonly Type _formatterType;
-		private readonly bool _formatSource;
-		private readonly bool _formatHtml;
-
 		public MessageFormatterInfo(Type formatterType, bool formatSource, bool formatHtml)
 		{
-			_formatterType = formatterType;
-			_formatSource = formatSource;
-			_formatHtml = formatHtml;
+			FormatterType = formatterType;
+			FormatSource = formatSource;
+			FormatHtml = formatHtml;
 		}
 
-		public Type FormatterType
-		{
-			get { return _formatterType; }
-		}
+		public Type FormatterType { get; }
 
-		public bool FormatSource
-		{
-			get { return _formatSource; }
-		}
+		public bool FormatSource { get; }
 
-		public bool FormatHtml
-		{
-			get { return _formatHtml; }
-		}
+		public bool FormatHtml { get; }
 	}
 }

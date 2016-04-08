@@ -6,10 +6,6 @@ namespace Rsdn.Janus
 {
 	public class EndSyncEventArgs
 	{
-		private readonly IStatisticsContainer _statisticsContainer;
-		private readonly SyncResult _result;
-		private readonly Exception _exception;
-
 		public EndSyncEventArgs(
 			[NotNull] IStatisticsContainer statisticsContainer,
 			SyncResult result)
@@ -21,26 +17,17 @@ namespace Rsdn.Janus
 			Exception exception)
 		{
 			if (statisticsContainer == null)
-				throw new ArgumentNullException("statisticsContainer");
+				throw new ArgumentNullException(nameof(statisticsContainer));
 
-			_statisticsContainer = statisticsContainer;
-			_exception = exception;
-			_result = result;
+			StatisticsContainer = statisticsContainer;
+			Exception = exception;
+			Result = result;
 		}
 
-		public SyncResult Result
-		{
-			get { return _result; }
-		}
+		public SyncResult Result { get; }
 
-		public Exception Exception
-		{
-			get { return _exception; }
-		}
+		public Exception Exception { get; }
 
-		public IStatisticsContainer StatisticsContainer
-		{
-			get { return _statisticsContainer; }
-		}
+		public IStatisticsContainer StatisticsContainer { get; }
 	}
 }

@@ -2,33 +2,20 @@
 {
 	public class PagesChangedEventArgs
 	{
-		private readonly INavigationPage _oldPage;
-		private readonly INavigationPage _newPage;
-		private readonly PagesChangeType _changeType;
-
 		public PagesChangedEventArgs(
 			INavigationPage oldPage,
 			INavigationPage newPage,
 			PagesChangeType changeType)
 		{
-			_changeType = changeType;
-			_newPage = newPage;
-			_oldPage = oldPage;
+			ChangeType = changeType;
+			NewPage = newPage;
+			OldPage = oldPage;
 		}
 
-		public INavigationPage NewPage
-		{
-			get { return _newPage; }
-		}
+		public INavigationPage NewPage { get; }
 
-		public INavigationPage OldPage
-		{
-			get { return _oldPage; }
-		}
+		public INavigationPage OldPage { get; }
 
-		public PagesChangeType ChangeType
-		{
-			get { return _changeType; }
-		}
+		public PagesChangeType ChangeType { get; }
 	}
 }

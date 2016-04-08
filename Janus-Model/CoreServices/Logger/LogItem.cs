@@ -5,23 +5,14 @@
 	/// </summary>
 	public class LogItem
 	{
-		private readonly string _message;
-		private readonly LogEventType _type;
-
 		public LogItem(LogEventType type, string message)
 		{
-			_type = type;
-			_message = message;
+			Type = type;
+			Message = message;
 		}
 
-		public LogEventType Type
-		{
-			get { return _type; }
-		}
+		public LogEventType Type { get; }
 
-		public string Message
-		{
-			get { return _message; }
-		}
+		public string Message { get; }
 	}
 }

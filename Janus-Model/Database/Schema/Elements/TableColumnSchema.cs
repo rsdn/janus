@@ -11,15 +11,10 @@ namespace Rsdn.Janus
 		private const int _defaultIncrement = 0;
 		private const int _defaultSeed = 0;
 		private const ColumnType _defaultType = ColumnType.Unknown;
-		private ColumnType _type = _defaultType;
 
 		[XmlAttribute("type")]
 		[DefaultValue(_defaultType)]
-		public ColumnType Type
-		{
-			get { return _type; }
-			set { _type = value; }
-		}
+		public ColumnType Type { get; set; } = _defaultType;
 
 		[XmlAttribute("auto-increment")]
 		[DefaultValue(_defaultAutoIncrement)]
@@ -53,8 +48,6 @@ namespace Rsdn.Janus
 		#region Methods
 		public override bool Equals(object obj)
 		{
-			if (obj == null)
-				return false;
 			if (!(obj is TableColumnSchema))
 				return false;
 
@@ -99,6 +92,7 @@ namespace Rsdn.Janus
 		public override int GetHashCode()
 		{
 			return
+				// ReSharper disable NonReadonlyMemberInGetHashCode
 				(string.IsNullOrEmpty(Name) ? 0 : Name.GetHashCode()) ^
 				(string.IsNullOrEmpty(DefaultValue) ? 0 : DefaultValue.GetHashCode()) ^
 				(AutoIncrement ? 1 : 0) ^
@@ -106,6 +100,7 @@ namespace Rsdn.Janus
 				Seed ^
 				(Nullable ? 2 : 0) ^
 				(int)Type;
+			// ReSharper restore NonReadonlyMemberInGetHashCode
 		}
 		#endregion
 	}

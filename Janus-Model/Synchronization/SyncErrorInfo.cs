@@ -7,34 +7,21 @@ namespace Rsdn.Janus
 	/// </summary>
 	public class SyncErrorInfo : IEquatable<SyncErrorInfo>
 	{
-		private readonly string _taskName;
-		private readonly string _text;
-		private readonly SyncErrorType _type;
-
 		public SyncErrorInfo(SyncErrorType type, string taskName, string text)
 		{
 			if (taskName == null)
-				throw new ArgumentNullException("taskName");
+				throw new ArgumentNullException(nameof(taskName));
 
-			_type = type;
-			_taskName = taskName;
-			_text = text;
+			Type = type;
+			TaskName = taskName;
+			Text = text;
 		}
 
-		public SyncErrorType Type
-		{
-			get { return _type; }
-		}
+		public SyncErrorType Type { get; }
 
-		public string TaskName
-		{
-			get { return _taskName; }
-		}
+		public string TaskName { get; }
 
-		public string Text
-		{
-			get { return _text; }
-		}
+		public string Text { get; }
 
 		public static bool operator !=(SyncErrorInfo syncErrorInfo1, SyncErrorInfo syncErrorInfo2)
 		{
@@ -50,9 +37,9 @@ namespace Rsdn.Janus
 		{
 			if (syncErrorInfo == null)
 				return false;
-			if (!Equals(_taskName, syncErrorInfo._taskName))
+			if (!Equals(TaskName, syncErrorInfo.TaskName))
 				return false;
-			return Equals(_text, syncErrorInfo._text) && Equals(_type, syncErrorInfo._type);
+			return Equals(Text, syncErrorInfo.Text) && Equals(Type, syncErrorInfo.Type);
 		}
 
 		public override bool Equals(object obj)
@@ -62,9 +49,9 @@ namespace Rsdn.Janus
 
 		public override int GetHashCode()
 		{
-			var result = _taskName.GetHashCode();
-			result = 29 * result + (_text != null ? _text.GetHashCode() : 0);
-			result = 29 * result + _type.GetHashCode();
+			var result = TaskName.GetHashCode();
+			result = 29 * result + (Text?.GetHashCode() ?? 0);
+			result = 29 * result + Type.GetHashCode();
 			return result;
 		}
 	}

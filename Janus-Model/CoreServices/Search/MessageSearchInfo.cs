@@ -7,14 +7,6 @@ namespace Rsdn.Janus
 	/// </summary>
 	public class MessageSearchInfo
 	{
-		private readonly int _messageID;
-		private readonly DateTime _messageDate;
-		private readonly string _subject;
-		private readonly string _messageBody;
-		private readonly int _forumID;
-		private readonly int _userID;
-		private readonly string _userNick;
-
 		public MessageSearchInfo(
 			int messageID,
 			DateTime messageDate,
@@ -24,48 +16,27 @@ namespace Rsdn.Janus
 			int userID,
 			string userNick)
 		{
-			_messageID = messageID;
-			_messageDate = messageDate;
-			_subject = subject;
-			_messageBody = messageBody;
-			_forumID = forumID;
-			_userID = userID;
-			_userNick = userNick;
+			MessageID = messageID;
+			MessageDate = messageDate;
+			Subject = subject;
+			MessageBody = messageBody;
+			ForumID = forumID;
+			UserID = userID;
+			UserNick = userNick;
 		}
 
-		public int MessageID
-		{
-			get { return _messageID; }
-		}
+		public int MessageID { get; }
 
-		public DateTime MessageDate
-		{
-			get { return _messageDate; }
-		}
+		public DateTime MessageDate { get; }
 
-		public string Subject
-		{
-			get { return _subject; }
-		}
+		public string Subject { get; }
 
-		public string MessageBody
-		{
-			get { return _messageBody; }
-		}
+		public string MessageBody { get; }
 
-		public int ForumID
-		{
-			get { return _forumID; }
-		}
+		public int ForumID { get; }
 
-		public int UserID
-		{
-			get { return _userID; }
-		}
+		public int UserID { get; }
 
-		public string UserNick
-		{
-			get { return _userNick; }
-		}
+		public string UserNick { get; }
 	}
 }

@@ -79,11 +79,13 @@ namespace Rsdn.Janus
 
 		public override int GetHashCode()
 		{
-			var result = (Columns != null ? Columns.GetHashCode() : 0);
+			// ReSharper disable NonReadonlyMemberInGetHashCode
+			var result = Columns?.GetHashCode() ?? 0;
 			result = 29*result + Clustered.GetHashCode();
 			result = 29*result + NullAllowances.GetHashCode();
 			result = 29*result + PrimaryKey.GetHashCode();
 			result = 29*result + Unique.GetHashCode();
+			// ReSharper restore NonReadonlyMemberInGetHashCode
 			return result;
 		}
 		#endregion

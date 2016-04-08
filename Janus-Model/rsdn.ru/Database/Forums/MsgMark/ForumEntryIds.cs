@@ -4,10 +4,6 @@ namespace Rsdn.Janus
 {
 	public sealed class ForumEntryIds
 	{
-		private readonly int? _forumId;
-		private readonly int? _topicId;
-		private readonly int? _messageId;
-
 		public static readonly ForumEntryIds AllForums = new ForumEntryIds();
 
 		private ForumEntryIds() : this(null) { }
@@ -21,26 +17,17 @@ namespace Rsdn.Janus
 		public ForumEntryIds(int? forumId, int? topicId, int? messageId)
 		{
 			if (messageId != null && topicId == null)
-				throw new ArgumentNullException("topicId");
+				throw new ArgumentNullException(nameof(topicId));
 
-			_forumId = forumId;
-			_messageId = messageId;
-			_topicId = topicId;
+			ForumId = forumId;
+			MessageId = messageId;
+			TopicId = topicId;
 		}
 
-		public int? MessageId
-		{
-			get { return _messageId; }
-		}
+		public int? MessageId { get; }
 
-		public int? TopicId
-		{
-			get { return _topicId; }
-		}
+		public int? TopicId { get; }
 
-		public int? ForumId
-		{
-			get { return _forumId; }
-		}
+		public int? ForumId { get; }
 	}
 }

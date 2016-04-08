@@ -9,19 +9,14 @@ namespace Rsdn.Janus
 	[MeansImplicitUse]
 	public class NavigationPageProviderAttribute : Attribute
 	{
-		private readonly string _pathMask;
-
 		public NavigationPageProviderAttribute([NotNull] string pathMask)
 		{
 			if (pathMask == null)
-				throw new ArgumentNullException("pathMask");
+				throw new ArgumentNullException(nameof(pathMask));
 
-			_pathMask = pathMask;
+			PathMask = pathMask;
 		}
 
-		public string PathMask
-		{
-			get { return _pathMask; }
-		}
+		public string PathMask { get; }
 	}
 }

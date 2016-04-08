@@ -90,12 +90,14 @@ namespace Rsdn.Janus
 
 		public override int GetHashCode()
 		{
-			var result = (Columns != null ? Columns.GetHashCode() : 0);
+			// ReSharper disable NonReadonlyMemberInGetHashCode
+			var result = Columns?.GetHashCode() ?? 0;
 			result = 29*result + KeyType.GetHashCode();
-			result = 29*result + (RelTable != null ? RelTable.GetHashCode() : 0);
-			result = 29*result + (RelColumns != null ? RelColumns.GetHashCode() : 0);
+			result = 29*result + (RelTable?.GetHashCode() ?? 0);
+			result = 29*result + (RelColumns?.GetHashCode() ?? 0);
 			result = 29*result + Clustered.GetHashCode();
-			result = 29*result + (Source != null ? Source.GetHashCode() : 0);
+			result = 29*result + (Source?.GetHashCode() ?? 0);
+			// ReSharper restore NonReadonlyMemberInGetHashCode
 			return result;
 		}
 		#endregion

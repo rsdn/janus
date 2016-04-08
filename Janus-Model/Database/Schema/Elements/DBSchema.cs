@@ -7,25 +7,14 @@ namespace Rsdn.Janus
 	[XmlRoot("DbSchema", Namespace = "", IsNullable = false)]
 	public class DBSchema : SchemaNamedElement
 	{
-		private List<DBGenerator> _generators = new List<DBGenerator>();
-		private List<TableSchema> _tables = new List<TableSchema>();
-
 		[XmlAttribute("version")]
 		public int Version { get; set; }
 
 		[XmlElement("table", IsNullable = false)]
-		public List<TableSchema> Tables
-		{
-			get { return _tables; }
-			set { _tables = value; }
-		}
+		public List<TableSchema> Tables { get; set; } = new List<TableSchema>();
 
 		[XmlElement("generator", IsNullable = false)]
-		public List<DBGenerator> Generators
-		{
-			get { return _generators; }
-			set { _generators = value; }
-		}
+		public List<DBGenerator> Generators { get; set; } = new List<DBGenerator>();
 
 		#region Methods
 		public DBSchema Copy()

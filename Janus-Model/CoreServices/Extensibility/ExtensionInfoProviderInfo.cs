@@ -7,16 +7,11 @@ namespace Rsdn.Janus
 	/// </summary>
 	public class ExtensionInfoProviderInfo
 	{
-		private readonly Type _providerType;
-
 		public ExtensionInfoProviderInfo(Type providerType)
 		{
-			_providerType = providerType;
+			ProviderType = providerType;
 		}
 
-		public Type ProviderType
-		{
-			get { return _providerType; }
-		}
+		public Type ProviderType { get; }
 	}
 }

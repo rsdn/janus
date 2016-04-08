@@ -4,16 +4,11 @@ namespace Rsdn.Janus
 {
 	public class AutocompleteProviderInfo
 	{
-		private readonly Type _providerType;
-
 		public AutocompleteProviderInfo(Type providerType)
 		{
-			_providerType = providerType;
+			ProviderType = providerType;
 		}
 
-		public Type ProviderType
-		{
-			get { return _providerType; }
-		}
+		public Type ProviderType { get; }
 	}
 }

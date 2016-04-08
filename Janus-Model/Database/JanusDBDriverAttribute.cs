@@ -8,11 +8,6 @@ namespace Rsdn.Janus
 	[BaseTypeRequired(typeof (IDBDriver))]
 	public class JanusDBDriverAttribute : Attribute
 	{
-		private readonly string _descriptionResource;
-		private readonly string _displayNameResource;
-		private readonly string _name;
-		private readonly string _textResourceFile;
-
 		public JanusDBDriverAttribute(
 			string name,
 			string textResourceFile,
@@ -20,33 +15,21 @@ namespace Rsdn.Janus
 			string descriptionResource)
 		{
 			if (name == null)
-				throw new ArgumentNullException("name");
-			_name = name;
-			_textResourceFile = textResourceFile;
-			_displayNameResource = displayNameResource;
-			_descriptionResource = descriptionResource;
+				throw new ArgumentNullException(nameof(name));
+			Name = name;
+			TextResourceFile = textResourceFile;
+			DisplayNameResource = displayNameResource;
+			DescriptionResource = descriptionResource;
 			LockRequired = false;
 		}
 
-		public string Name
-		{
-			get { return _name; }
-		}
+		public string Name { get; }
 
-		public string TextResourceFile
-		{
-			get { return _textResourceFile; }
-		}
+		public string TextResourceFile { get; }
 
-		public string DescriptionResource
-		{
-			get { return _descriptionResource; }
-		}
+		public string DescriptionResource { get; }
 
-		public string DisplayNameResource
-		{
-			get { return _displayNameResource; }
-		}
+		public string DisplayNameResource { get; }
 
 		public bool LockRequired { get; set; }
 	}
