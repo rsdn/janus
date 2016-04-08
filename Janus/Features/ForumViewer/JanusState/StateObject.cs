@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 using System.Xml.Serialization;
 
-using CodeJam.Extensibility;
+using CodeJam.Services;
 
 using JetBrains.Annotations;
 

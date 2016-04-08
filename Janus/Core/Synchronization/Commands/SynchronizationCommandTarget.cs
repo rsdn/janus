@@ -2,7 +2,7 @@
 using System.Reactive;
 using System.Reactive.Disposables;
 
-using CodeJam.Extensibility;
+using CodeJam.Services;
 
 namespace Rsdn.Janus
 {

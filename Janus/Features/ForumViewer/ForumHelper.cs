@@ -2,8 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 
-using CodeJam.Extensibility;
 using CodeJam.Extensibility.EventBroker;
+using CodeJam.Services;
 
 using JetBrains.Annotations;
 

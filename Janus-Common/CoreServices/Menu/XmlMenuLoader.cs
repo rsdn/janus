@@ -6,7 +6,7 @@ using System.Xml;
 using System.Xml.Linq;
 using System.Xml.Schema;
 
-using CodeJam.Extensibility;
+using CodeJam.Services;
 using CodeJam.Xml;
 
 using JetBrains.Annotations;

@@ -6,7 +6,7 @@ using System.Drawing.Drawing2D;
 using System.Reflection;
 using System.Windows.Forms;
 
-using CodeJam.Extensibility;
+using CodeJam.Services;
 
 using JetBrains.Annotations;
 

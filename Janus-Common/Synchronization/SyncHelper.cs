@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Threading;
 
-using CodeJam.Extensibility;
+using CodeJam.Services;
 
 namespace Rsdn.Janus
 {

@@ -2,7 +2,7 @@
 using System.IO;
 using System.Reflection;
 
-using CodeJam.Extensibility;
+using CodeJam.Services;
 
 using JetBrains.Annotations;
 

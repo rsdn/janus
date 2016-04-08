@@ -3,7 +3,8 @@ using System.Collections;
 
 using Rsdn.Janus.Framework;
 using Rsdn.TreeGrid;
-using CodeJam.Extensibility;
+
+using CodeJam.Services;
 
 namespace Rsdn.Janus
 {

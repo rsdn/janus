@@ -4,7 +4,8 @@ using System.Collections;
 using LinqToDB.Mapping;
 
 using Rsdn.TreeGrid;
-using CodeJam.Extensibility;
+
+using CodeJam.Services;
 
 namespace Rsdn.Janus
 {

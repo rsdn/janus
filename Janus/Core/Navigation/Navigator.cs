@@ -3,7 +3,7 @@ using System.ComponentModel;
 using System.Linq;
 using System.Windows.Forms;
 
-using CodeJam.Extensibility;
+using CodeJam.Services;
 
 using JetBrains.Annotations;
 

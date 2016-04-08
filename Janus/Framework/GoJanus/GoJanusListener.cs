@@ -2,7 +2,7 @@
 using System.Threading;
 using System.Xml;
 
-using CodeJam.Extensibility;
+using CodeJam.Services;
 
 using Rsdn.Janus.Framework;
 using Rsdn.Janus.Framework.Ipc;

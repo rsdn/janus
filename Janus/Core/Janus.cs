@@ -5,8 +5,8 @@ using System.Globalization;
 using System.Threading;
 using System.Windows.Forms;
 
-using CodeJam.Extensibility;
 using CodeJam.Extensibility.Instancing;
+using CodeJam.Services;
 
 using Rsdn.Janus.Framework;
 
@@ -63,7 +63,7 @@ namespace Rsdn.Janus
 
 					TraceVerbose("ResMgr");
 
-					var rootManager = new ServiceManager(true);
+					var rootManager = new ServiceContainer(true);
 
 					rootManager.Publish<IUIShell>(
 						new UIShell(
@@ -73,21 +73,18 @@ namespace Rsdn.Janus
 					if (Config.Instance.ShowSplash)
 					{
 						EventHandler hider = null;
-						IServiceRegistrationCookie informerCookie = null;
-						IServiceRegistrationCookie progressCookie = null;
+						IDisposable informerCookie = null;
+						IDisposable progressCookie = null;
 
 						hider =
 							(sender, e) =>
 							{
-								// ReSharper disable AccessToModifiedClosure
-								if (progressCookie != null)
-									rootManager.Unpublish(progressCookie);
+								progressCookie?.Dispose();
 
 								rootManager.Publish<IProgressService>(
 									new DefaultProgressService(rootManager));
 
-								if (informerCookie != null)
-									rootManager.Unpublish(informerCookie);
+								informerCookie?.Dispose();
 								SplashHelper.Hide();
 								Application.Idle -= hider;
 								// ReSharper restore AccessToModifiedClosure

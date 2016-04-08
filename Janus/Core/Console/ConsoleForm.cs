@@ -6,7 +6,7 @@ using System.Media;
 using System.Windows.Forms;
 
 using CodeJam;
-using CodeJam.Extensibility;
+using CodeJam.Services;
 
 using JetBrains.Annotations;
 

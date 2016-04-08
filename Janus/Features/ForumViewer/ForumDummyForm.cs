@@ -11,6 +11,7 @@ using System.Windows.Forms;
 using CodeJam.Extensibility;
 using CodeJam.Extensibility.EventBroker;
 using CodeJam.Extensibility.Model;
+using CodeJam.Services;
 
 using Rsdn.Janus.Framework;
 using Rsdn.Janus.ObjectModel;
@@ -21,7 +22,7 @@ namespace Rsdn.Janus
 {
 	internal sealed partial class ForumDummyForm : UserControl, IFeatureView
 	{
-		private readonly ServiceManager _serviceManager;
+		private readonly ServiceContainer _serviceManager;
 		private readonly AsyncOperation _asyncOperation;
 		private StripMenuGenerator _menuGenerator;
 		private MsgViewer _msgViewer;
@@ -160,7 +161,7 @@ namespace Rsdn.Janus
 
 		private ForumDummyForm(IServiceProvider provider)
 		{
-			_serviceManager = new ServiceManager(provider);
+			_serviceManager = new ServiceContainer(provider);
 			_asyncOperation = AsyncHelper.CreateOperation();
 
 			_serviceManager.Publish<IDefaultCommandService>(

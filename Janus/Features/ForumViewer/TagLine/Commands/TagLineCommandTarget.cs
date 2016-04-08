@@ -4,7 +4,7 @@ using System.Linq;
 using System.Reactive.Disposables;
 using System.Windows.Forms;
 
-using CodeJam.Extensibility;
+using CodeJam.Services;
 
 namespace Rsdn.Janus
 {

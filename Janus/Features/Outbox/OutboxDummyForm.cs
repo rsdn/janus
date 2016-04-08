@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Windows.Forms;
 
-using CodeJam.Extensibility;
+using CodeJam.Services;
 
 using Rsdn.Janus.ObjectModel;
 using Rsdn.Shortcuts;
@@ -17,7 +17,7 @@ namespace Rsdn.Janus
 	{
 		#region Private Fields
 
-		private readonly ServiceManager _serviceManager;
+		private readonly ServiceContainer _serviceManager;
 		private StripMenuGenerator _contextMenuGenerator;
 		private readonly OutboxManager _manager;
 
@@ -30,7 +30,7 @@ namespace Rsdn.Janus
 			if (provider == null)
 				throw new ArgumentNullException(nameof(provider));
 
-			_serviceManager = new ServiceManager(provider);
+			_serviceManager = new ServiceContainer(provider);
 			_manager = manager;
 
 			InitializeComponent();

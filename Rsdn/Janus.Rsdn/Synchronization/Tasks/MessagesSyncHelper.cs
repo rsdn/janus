@@ -4,7 +4,7 @@ using System.Linq;
 
 using CodeJam;
 using CodeJam.Collections;
-using CodeJam.Extensibility;
+using CodeJam.Services;
 
 using LinqToDB;
 

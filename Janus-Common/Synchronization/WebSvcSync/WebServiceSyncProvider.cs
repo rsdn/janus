@@ -6,7 +6,7 @@ using System.Web.Services.Protocols;
 
 using CodeJam;
 using CodeJam.Collections;
-using CodeJam.Extensibility;
+using CodeJam.Services;
 
 using Rsdn.Janus.Log;
 using Rsdn.Janus.Synchronization;

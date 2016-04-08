@@ -2,6 +2,7 @@
 
 using CodeJam.Extensibility;
 using CodeJam.Extensibility.StratFactories;
+using CodeJam.Services;
 
 namespace Rsdn.Janus
 {

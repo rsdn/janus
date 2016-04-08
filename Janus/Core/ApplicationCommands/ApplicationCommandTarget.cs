@@ -2,7 +2,7 @@
 using System.IO;
 using System.Windows.Forms;
 
-using CodeJam.Extensibility;
+using CodeJam.Services;
 
 using Rsdn.Janus.ObjectModel;
 

@@ -3,7 +3,7 @@ using System.Diagnostics;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
 
-using CodeJam.Extensibility;
+using CodeJam.Services;
 
 using Rsdn.Janus.Log;
 using Rsdn.Janus.Protocol;
@@ -23,18 +23,8 @@ namespace Rsdn.Janus
 			
 		}
 
-		private static readonly ApplicationManager _instance =
-			new ApplicationManager();
-
 		[Obsolete("Use IServiceProvider instance, supplied by call argument instead")]
-		public static ApplicationManager Instance
-		{
-			[DebuggerStepThrough]
-			get
-			{
-				return _instance;
-			}
-		}
+		public static ApplicationManager Instance { [DebuggerStepThrough] get; } = new ApplicationManager();
 
 		private IServiceProvider _serviceProvider;
 
@@ -65,16 +55,14 @@ namespace Rsdn.Janus
 			serviceProvider.GetRequiredService<DockManager>().Init();
 			((OutboxManager)ServiceProvider.GetRequiredService<IOutboxManager>()).Init();
 #if DEBUG
+			// ReSharper disable once ObjectCreationAsStatement
 			new FileLog(Logger);
 #endif
 			Navigator.Init();
 
 			GoJanusListener.Start(_serviceProvider);
 
-			Logger.LogInfo(
-				string.Format("{0} , .NET Runtime {1}",
-					Environment.OSVersion.GetOSNameWithVersion(),
-					Environment.Version));
+			Logger.LogInfo($"{Environment.OSVersion.GetOSNameWithVersion()} , .NET Runtime {Environment.Version}");
 			Logger.LogInfo(ApplicationInfo.NameWithVersionAndCopyright);
 		}
 
@@ -154,10 +142,7 @@ namespace Rsdn.Janus
 
 		#region Management services
 
-		public static Forums Forums
-		{
-			get { return Forums.Instance; }
-		}
+		public static Forums Forums => Forums.Instance;
 
 		/// <summary>
 		/// Экземпляр формы с деревом навигации.
@@ -173,20 +158,14 @@ namespace Rsdn.Janus
 		/// Менеджер исходящих.
 		/// </summary>
 		[Obsolete("Use GetRequiredService<IOutboxManager>() instead")]
-		public OutboxManager OutboxManager
-		{
-			get { return (OutboxManager)ServiceProvider.GetRequiredService<IOutboxManager>(); }
-		}
+		public OutboxManager OutboxManager => (OutboxManager)ServiceProvider.GetRequiredService<IOutboxManager>();
 
 		/// <summary>
 		/// Экземпляр диспатчера протокола.
 		/// </summary>
 		public JanusProtocolDispatcher ProtocolDispatcher { get; private set; }
 
-		public static string HomeDirectoryPath
-		{
-			get { return AppDomain.CurrentDomain.BaseDirectory; }
-		}
+		public static string HomeDirectoryPath => AppDomain.CurrentDomain.BaseDirectory;
 
 		/// <summary>
 		/// Ссылка на экземпляр класса, обеспечивающего навигацию по форумам.

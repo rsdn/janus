@@ -8,7 +8,7 @@ using System.Reactive.Linq;
 using System.Windows.Forms;
 
 using CodeJam.Collections;
-using CodeJam.Extensibility;
+using CodeJam.Services;
 
 using JetBrains.Annotations;
 

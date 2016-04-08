@@ -4,8 +4,8 @@ using System.Reactive;
 using System.Windows.Forms;
 
 using CodeJam;
-using CodeJam.Extensibility;
 using CodeJam.Extensibility.EventBroker;
+using CodeJam.Services;
 
 using Disposable = CodeJam.Disposable;
 

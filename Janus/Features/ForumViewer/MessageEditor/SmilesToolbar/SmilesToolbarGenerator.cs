@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Reactive.Linq;
 
-using CodeJam.Extensibility;
+using CodeJam.Services;
 
 namespace Rsdn.Janus
 {

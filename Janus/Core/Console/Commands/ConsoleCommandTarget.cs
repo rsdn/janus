@@ -1,7 +1,7 @@
 ﻿using System;
 
 using CodeJam;
-using CodeJam.Extensibility;
+using CodeJam.Services;
 
 using Rsdn.Janus.Core.Console;
 

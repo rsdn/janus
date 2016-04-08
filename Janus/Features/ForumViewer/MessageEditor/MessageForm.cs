@@ -11,7 +11,7 @@ using System.Web;
 using System.Windows.Forms;
 
 using CodeJam;
-using CodeJam.Extensibility;
+using CodeJam.Services;
 
 using JetBrains.Annotations;
 
@@ -55,7 +55,7 @@ namespace Rsdn.Janus
 		private readonly int _previewSourceNum;
 		private QuoteAnalyzer _quoteAnalyzer;
 		private SmilesToolbar _tagsBar;
-		private readonly ServiceManager _serviceManager;
+		private readonly ServiceContainer _serviceManager;
 		private readonly StripMenuGenerator _menuGenerator;
 		private readonly StripMenuGenerator _toolbarGenerator;
 		private readonly SmilesToolbarGenerator _tagsbarGenerator;
@@ -71,7 +71,7 @@ namespace Rsdn.Janus
 			if (provider == null)
 				throw new ArgumentNullException(nameof(provider));
 
-			_serviceManager = new ServiceManager(provider);
+			_serviceManager = new ServiceContainer(provider);
 
 			InitializeComponent();
 

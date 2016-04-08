@@ -5,6 +5,7 @@ using System.Linq;
 using System.Threading;
 
 using CodeJam.Extensibility;
+using CodeJam.Services;
 using CodeJam.Threading;
 
 using JetBrains.Annotations;

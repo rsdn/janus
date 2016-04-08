@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
 
-using CodeJam.Extensibility;
+using CodeJam.Services;
 
 namespace Rsdn.Janus
 {
@@ -12,7 +12,7 @@ namespace Rsdn.Janus
 	/// </summary>
 	internal sealed partial class TagLineListForm : Form
 	{
-		private readonly ServiceManager _serviceManager;
+		private readonly ServiceContainer _serviceManager;
 		private readonly StripMenuGenerator _toolbarGenerator;
 		private readonly StripMenuGenerator _contextMenuGenerator;
 		private readonly ObservableList<TagLineInfo> _tagLines;
@@ -26,7 +26,7 @@ namespace Rsdn.Janus
 			if (tagLines == null)
 				throw new ArgumentNullException(nameof(tagLines));
 
-			_serviceManager = new ServiceManager(provider);
+			_serviceManager = new ServiceContainer(provider);
 
 			_tagLines = new ObservableList<TagLineInfo>(tagLines);
 

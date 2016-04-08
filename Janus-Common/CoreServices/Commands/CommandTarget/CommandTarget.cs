@@ -6,6 +6,7 @@ using System.Reflection;
 
 using CodeJam;
 using CodeJam.Extensibility;
+using CodeJam.Services;
 
 using JetBrains.Annotations;
 

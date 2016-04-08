@@ -4,7 +4,7 @@ using System.Data;
 using System.Linq;
 using System.Linq.Expressions;
 
-using CodeJam.Extensibility;
+using CodeJam.Services;
 
 using JetBrains.Annotations;
 

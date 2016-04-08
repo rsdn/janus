@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Reactive.Disposables;
 
-using CodeJam.Extensibility;
+using CodeJam.Services;
 
 using IServiceProvider = System.IServiceProvider;
 
@@ -47,7 +47,7 @@ namespace Rsdn.Janus
 				return CommandStatus.Normal;
 
 			var activeForumSvc = context.GetService<IActiveForumService>();
-			return activeForumSvc != null && activeForumSvc.ActiveForum != null
+			return activeForumSvc?.ActiveForum != null
 				? CommandStatus.Normal
 				: CommandStatus.Unavailable;
 		}
@@ -75,7 +75,7 @@ namespace Rsdn.Janus
 			var currentForum = provider
 				.GetRequiredService<IActiveForumService>()
 				.ActiveForum;
-			return currentForum != null ? currentForum.ID : -1;
+			return currentForum?.ID ?? -1;
 		}
 	}
 }

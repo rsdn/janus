@@ -2,7 +2,7 @@
 using System.Windows.Forms;
 
 using CodeJam;
-using CodeJam.Extensibility;
+using CodeJam.Services;
 
 using WeifenLuo.WinFormsUI.Docking;
 

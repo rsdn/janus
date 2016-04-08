@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-using CodeJam.Extensibility;
+using CodeJam.Services;
 
 using LinqToDB;
 

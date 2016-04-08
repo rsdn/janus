@@ -5,7 +5,7 @@ using System.Globalization;
 using System.Windows.Forms;
 
 using CodeJam;
-using CodeJam.Extensibility;
+using CodeJam.Services;
 
 using JetBrains.Annotations;
 
@@ -39,7 +39,7 @@ namespace Rsdn.Janus
 			if (serviceProvider == null)
 				throw new ArgumentNullException(nameof(serviceProvider));
 
-			var serviceManager = new ServiceManager(serviceProvider);
+			var serviceManager = new ServiceContainer(serviceProvider);
 
 			Features.Instance.Init();
 			var activeMsgSvc = new FeatureActiveMessageService();
@@ -93,8 +93,7 @@ namespace Rsdn.Janus
 				"{0} - {1} ({2})".FormatWith(
 					CultureInfo.InvariantCulture,
 					ApplicationInfo.ApplicationName,
-					Config.Instance.Login,
-					LocalUser.DatabasePath);
+					Config.Instance.Login);
 		}
 
 		#endregion

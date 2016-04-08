@@ -12,6 +12,7 @@ using System.Xml.Schema;
 
 using CodeJam.Extensibility;
 using CodeJam.Extensibility.EventBroker;
+using CodeJam.Services;
 
 namespace Rsdn.Janus
 {
@@ -28,20 +29,20 @@ namespace Rsdn.Janus
 		private const string _extensionDescriptorSchemaUri =
 			"http://rsdn.ru/projects/Janus/JanusExtensionDescriptor.xsd";
 
-		private readonly ServiceManager _serviceManager;
+		private readonly ServiceContainer _serviceManager;
 		private readonly IActivePartManager _activePartManager;
 
 		internal JanusHost(IServiceProvider serviceProvider)
 		{
 			_serviceManager =
 				serviceProvider == null
-					? new ServiceManager(true)
-					: new ServiceManager(true, serviceProvider);
+					? new ServiceContainer(true)
+					: new ServiceContainer(serviceProvider, true);
 
 			// TODO: Hack! Must be eliminated.
 			ApplicationManager.Instance.ServiceProvider = this;
 
-			_serviceManager.PublishDisposable<IEventBroker>(new EventBroker());
+			_serviceManager.Publish<IEventBroker>(new EventBroker());
 			InitExtensibility();
 			_activePartManager = ActivePartsHelper.CreateAndPublishManager(_serviceManager);
 

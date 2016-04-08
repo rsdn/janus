@@ -2,7 +2,7 @@
 using System.Diagnostics;
 
 using CodeJam;
-using CodeJam.Extensibility;
+using CodeJam.Services;
 
 namespace Rsdn.Janus
 {

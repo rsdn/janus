@@ -4,6 +4,7 @@ using System.Diagnostics;
 using System.Windows.Forms;
 
 using CodeJam.Extensibility;
+using CodeJam.Services;
 
 namespace Rsdn.Janus
 {
@@ -13,13 +14,13 @@ namespace Rsdn.Janus
 	internal sealed partial class MsgViewer : UserControl
 	{
 		private IMsg _msg;
-		private readonly ServiceManager _serviceManager;
+		private readonly ServiceContainer _serviceManager;
 		private readonly StripMenuGenerator _toolbarGenerator;
 		private bool _blockExternalNavigation;
 
 		public MsgViewer(IServiceProvider provider)
 		{
-			_serviceManager = new ServiceManager(provider);
+			_serviceManager = new ServiceContainer(provider);
 
 			_serviceManager.Publish<IActiveMessagesService>(
 				new MessageViewerActiveMessageService(this));

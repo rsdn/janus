@@ -9,6 +9,7 @@ using System.Windows.Forms;
 using CodeJam;
 using CodeJam.Collections;
 using CodeJam.Extensibility;
+using CodeJam.Services;
 
 using JetBrains.Annotations;
 
@@ -162,7 +163,7 @@ namespace Rsdn.Janus
 			if (!InitStartSync())
 				return stats;
 
-			var svcManager = new ServiceManager(_provider);
+			var svcManager = new ServiceContainer(_provider);
 			SyncForm syncForm = null;
 			var result = SyncResult.Failed;
 			Exception failException = null;

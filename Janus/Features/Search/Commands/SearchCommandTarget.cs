@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Reactive.Disposables;
 
-using CodeJam.Extensibility;
+using CodeJam.Services;
 
 using Rsdn.Janus.ObjectModel;
 

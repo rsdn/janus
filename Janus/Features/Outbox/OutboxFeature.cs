@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 
-using CodeJam.Extensibility;
+using CodeJam.Services;
 
 using Rsdn.Janus.ObjectModel;
 using Rsdn.TreeGrid;

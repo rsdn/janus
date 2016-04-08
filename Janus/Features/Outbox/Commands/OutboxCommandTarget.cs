@@ -4,8 +4,8 @@ using System.Linq;
 using System.Reactive.Disposables;
 using System.Windows.Forms;
 
-using CodeJam.Extensibility;
 using CodeJam.Extensibility.Instancing;
+using CodeJam.Services;
 
 using Rsdn.Janus.ObjectModel;
 using Rsdn.TreeGrid;

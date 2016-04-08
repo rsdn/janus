@@ -3,6 +3,7 @@ using System.Reactive;
 
 using CodeJam.Extensibility;
 using CodeJam.Extensibility.EventBroker;
+using CodeJam.Services;
 
 using JetBrains.Annotations;
 

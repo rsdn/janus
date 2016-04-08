@@ -3,7 +3,7 @@ using System.Globalization;
 using System.Text;
 using System.Linq;
 
-using CodeJam.Extensibility;
+using CodeJam.Services;
 
 namespace Rsdn.Janus
 {

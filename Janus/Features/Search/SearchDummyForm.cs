@@ -15,6 +15,7 @@ using System.ComponentModel;
 
 using CodeJam.Extensibility;
 using CodeJam.Extensibility.Model;
+using CodeJam.Services;
 
 namespace Rsdn.Janus
 {
@@ -23,7 +24,7 @@ namespace Rsdn.Janus
 	/// </summary>
 	public partial class SearchDummyForm : UserControl, IFeatureView
 	{
-		private readonly ServiceManager _serviceManager;
+		private readonly ServiceContainer _serviceManager;
 		private readonly AsyncOperation _asyncOperation;
 		private StripMenuGenerator _contextMenuGenerator;
 		// ReSharper disable ConvertToConstant, RedundantDefaultFieldInitializer
@@ -36,7 +37,7 @@ namespace Rsdn.Janus
 		public SearchDummyForm(IServiceProvider provider)
 		{
 			_asyncOperation = AsyncHelper.CreateOperation();
-			_serviceManager = new ServiceManager(provider);
+			_serviceManager = new ServiceContainer(provider);
 			
 			_serviceManager.Publish<IDefaultCommandService>(
 				new DefaultCommandService("Janus.Forum.GoToMessage"));

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Data.SqlClient;
 
-using CodeJam.Extensibility;
+using CodeJam.Services;
 
 namespace Rsdn.Janus.Mssql
 {

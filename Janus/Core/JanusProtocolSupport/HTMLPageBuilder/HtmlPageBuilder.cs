@@ -8,6 +8,7 @@ using System.Web;
 using CodeJam.Collections;
 using CodeJam.Extensibility;
 using CodeJam.Extensibility.Model;
+using CodeJam.Services;
 
 using LinqToDB;
 

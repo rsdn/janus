@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Linq;
 
-using CodeJam.Extensibility;
+using CodeJam.Services;
 
 using LinqToDB;
 

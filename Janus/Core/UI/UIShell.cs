@@ -4,7 +4,7 @@ using System.ComponentModel;
 using System.Threading;
 using System.Windows.Forms;
 
-using CodeJam.Extensibility;
+using CodeJam.Services;
 
 using JetBrains.Annotations;
 

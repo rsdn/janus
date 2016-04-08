@@ -5,6 +5,7 @@ using System.Drawing;
 using System.Windows.Forms;
 
 using CodeJam.Extensibility;
+using CodeJam.Services;
 
 using JetBrains.Annotations;
 
@@ -13,7 +14,7 @@ namespace Rsdn.Janus
 	[Service(typeof(INotifyIconService))]
 	internal class NotifyIconService : INotifyIconService, IDisposable
 	{
-		private readonly ServiceManager _serviceManager;
+		private readonly ServiceContainer _serviceManager;
 		private readonly AsyncOperation _uiAsyncOperation;
 		private readonly IDefaultCommandService _defaultCommandService;
 		private NotifyIcon _notifyIcon;
@@ -27,7 +28,7 @@ namespace Rsdn.Janus
 			if (serviceProvider == null)
 				throw new ArgumentNullException(nameof(serviceProvider));
 
-			_serviceManager = new ServiceManager(serviceProvider);
+			_serviceManager = new ServiceContainer(serviceProvider);
 			_defaultCommandService = new DefaultCommandService("Janus.Application.ShowMainForm");
 			_serviceManager.Publish(_defaultCommandService);
 

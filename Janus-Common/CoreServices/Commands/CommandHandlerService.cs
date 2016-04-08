@@ -3,6 +3,7 @@ using System.Linq;
 
 using CodeJam;
 using CodeJam.Extensibility;
+using CodeJam.Services;
 
 using JetBrains.Annotations;
 

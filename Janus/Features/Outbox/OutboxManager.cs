@@ -3,6 +3,7 @@ using System.Collections;
 using System.Windows.Forms;
 
 using CodeJam.Extensibility;
+using CodeJam.Services;
 
 using Rsdn.TreeGrid;
 using Rsdn.Janus.ObjectModel;

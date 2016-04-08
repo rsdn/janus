@@ -3,7 +3,7 @@ using System.Diagnostics;
 using System.Windows.Forms;
 
 using CodeJam;
-using CodeJam.Extensibility;
+using CodeJam.Services;
 
 using Rsdn.Janus.CoreServices.JBrowser;
 

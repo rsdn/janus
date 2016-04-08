@@ -9,6 +9,7 @@ using System.Xml;
 using CodeJam;
 using CodeJam.Extensibility;
 using CodeJam.Extensibility.Model;
+using CodeJam.Services;
 
 using Rsdn.Framework.Formatting;
 

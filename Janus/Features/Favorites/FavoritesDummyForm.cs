@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
-using CodeJam.Extensibility;
+using CodeJam.Services;
 
 using Rsdn.Janus.Framework;
 using Rsdn.Janus.ObjectModel;
@@ -20,7 +20,7 @@ namespace Rsdn.Janus
 	/// </summary>
 	public sealed partial class FavoritesDummyForm : UserControl, IFeatureView
 	{
-		private readonly ServiceManager _serviceManager;
+		private readonly ServiceContainer _serviceManager;
 		private readonly StripMenuGenerator _contextMenuGenerator;
 		private readonly DragStartDetector _dragStartDetector = new DragStartDetector();
 		private readonly DragExpandDetector _dragExpandDetector = new DragExpandDetector();
@@ -57,7 +57,7 @@ namespace Rsdn.Janus
 
 		private FavoritesDummyForm(IServiceProvider provider)
 		{
-			_serviceManager = new ServiceManager(provider);
+			_serviceManager = new ServiceContainer(provider);
 			_favManager = provider.GetRequiredService<IFavoritesManager>();
 			InitializeComponent();
 			FillImages();

@@ -1,6 +1,6 @@
 ﻿using System;
 
-using CodeJam.Extensibility;
+using CodeJam.Services;
 
 namespace Rsdn.Janus.Framework
 {

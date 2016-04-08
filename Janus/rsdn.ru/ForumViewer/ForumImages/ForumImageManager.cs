@@ -6,6 +6,7 @@ using System.Drawing.Imaging;
 
 using CodeJam.Collections;
 using CodeJam.Extensibility;
+using CodeJam.Services;
 
 namespace Rsdn.Janus
 {

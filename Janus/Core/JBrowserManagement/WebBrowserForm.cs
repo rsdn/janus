@@ -3,7 +3,7 @@ using System.ComponentModel;
 using System.Drawing;
 using System.Windows.Forms;
 
-using CodeJam.Extensibility;
+using CodeJam.Services;
 
 namespace Rsdn.Janus
 {
@@ -22,7 +22,7 @@ namespace Rsdn.Janus
 
 		public WebBrowserForm(IServiceProvider serviceProvider)
 		{
-			var serviceManager = new ServiceManager(serviceProvider);
+			var serviceManager = new ServiceContainer(serviceProvider);
 			_asyncOp = AsyncHelper.CreateOperation();
 
 			InitializeComponent();

@@ -1,6 +1,6 @@
 ﻿using System;
 
-using CodeJam.Extensibility;
+using CodeJam.Services;
 
 using JetBrains.Annotations;
 
@@ -8,7 +8,6 @@ namespace Rsdn.Janus
 {
 	public partial class LogForm : JanusBaseForm
 	{
-		private readonly IServiceProvider _serviceProvider;
 		private readonly StripMenuGenerator _stripMenuGenerator;
 
 		public LogForm([NotNull] IServiceProvider serviceProvider)
@@ -16,15 +15,13 @@ namespace Rsdn.Janus
 			if (serviceProvider == null)
 				throw new ArgumentNullException(nameof(serviceProvider));
 
-			_serviceProvider = serviceProvider;
-
 			InitializeComponent();
 
-			var styleImageManager = _serviceProvider.GetService<IStyleImageManager>();
+			var styleImageManager = serviceProvider.GetService<IStyleImageManager>();
 			if (styleImageManager != null)
 				Icon = styleImageManager.GetImage("log", StyleImageType.Small).ToIcon();
 
-			_stripMenuGenerator = new StripMenuGenerator(_serviceProvider, _toolStrip, "Janus.Log.Toolbar");
+			_stripMenuGenerator = new StripMenuGenerator(serviceProvider, _toolStrip, "Janus.Log.Toolbar");
 
 			ApplicationManager.Instance.Logger.OnLog += _logComboBox.AddItem;
 

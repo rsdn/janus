@@ -4,6 +4,7 @@ using System.Resources;
 using CodeJam;
 using CodeJam.Extensibility;
 using CodeJam.Extensibility.Registration;
+using CodeJam.Services;
 
 namespace Rsdn.Janus
 {

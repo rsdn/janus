@@ -6,6 +6,7 @@ using System.Net.Mime;
 using System.Reflection;
 
 using CodeJam.Extensibility;
+using CodeJam.Services;
 
 using Rsdn.Janus.Framework.Imaging;
 using Rsdn.Janus.Framework.Networking;
