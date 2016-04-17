@@ -105,9 +105,11 @@ namespace Rsdn.Janus
 		public IDisposable SubscribeSetAllMessagesInForumReadMarkStatusChanged(
 			IServiceProvider provider, Action handler)
 		{
-			return provider
-				.GetRequiredService<IEventBroker>()
-				.Subscribe(
+			var brocker = provider.GetService<IEventBroker>();
+			if (brocker == null)
+				return Disposable.Empty;
+			return
+				brocker.Subscribe(
 					ForumEventNames.AfterForumEntryChanged,
 					Observer.Create<ForumEntryChangedEventArgs>(
 						args =>
