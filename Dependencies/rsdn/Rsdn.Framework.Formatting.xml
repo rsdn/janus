@@ -656,11 +656,6 @@
             Инкапсулирует функции форматирования.
             </summary>
         </member>
-        <member name="F:Rsdn.Framework.Formatting.Format.RsdnDomainName">
-            <summary>
-            Top level RSDN domain name
-            </summary>
-        </member>
         <member name="T:Rsdn.Framework.Formatting.Format.Date">
             <summary>
             Инкапсулирует функции форматирования даты.
@@ -793,6 +788,11 @@
             </summary>
             <param name="dateTime">Заданная дата.</param>
             <returns>Начало месяца.</returns>
+        </member>
+        <member name="F:Rsdn.Framework.Formatting.Format.RsdnDomainName">
+            <summary>
+            Top level RSDN domain name
+            </summary>
         </member>
         <member name="T:Rsdn.Framework.Formatting.Format.Forum">
             <summary>
@@ -995,14 +995,24 @@
             </param>
             <returns>String presentation of query parameters.</returns>
         </member>
+        <member name="T:Rsdn.Framework.Formatting.Resources.ResourceHandler">
+            <summary>
+            HTTP handler for images in resources.
+            </summary>
+        </member>
+        <member name="M:Rsdn.Framework.Formatting.Resources.ResourceHandler.FormatLink(System.String)">
+            <summary>
+            Format link for handler.
+            </summary>
+        </member>
+        <member name="P:Rsdn.Framework.Formatting.Resources.ResourceHandler.HandlerName">
+            <summary>
+            Returns handler name.
+            </summary>
+        </member>
         <member name="T:Rsdn.Framework.Formatting.TextFormatter">
             <summary>
             Форматирование сообщение и расцветка кода.
-            </summary>
-        </member>
-        <member name="F:Rsdn.Framework.Formatting.TextFormatter.StartCitation">
-            <summary>
-            Start of line citation.
             </summary>
         </member>
         <member name="M:Rsdn.Framework.Formatting.TextFormatter.#ctor">
@@ -1051,6 +1061,11 @@
             <param name="code">Исходный код.</param>
             <returns>Обработанный текст.</returns>
         </member>
+        <member name="T:Rsdn.Framework.Formatting.TextFormatter.ProcessImagesDelegate">
+            <summary>
+            Тип делегата для обработки картинок (тэга [img])
+            </summary>
+        </member>
         <member name="M:Rsdn.Framework.Formatting.TextFormatter.DefaultProcessImagesDelegate(Rsdn.Framework.Formatting.TextFormatter,System.Text.RegularExpressions.Match)">
             <summary>
             Делагат по умолчанию для обработки картинок.
@@ -1093,6 +1108,43 @@
             </summary>
             <param name="match">URL match.</param>
             <returns>Formatted URL.</returns>
+        </member>
+        <member name="T:Rsdn.Framework.Formatting.TextFormatter.ProcessUrlItself">
+            <summary>
+            Delegate to process URLs
+            </summary>
+        </member>
+        <member name="T:Rsdn.Framework.Formatting.TextFormatter.URL">
+            <summary>
+            Structure to contain necessary info about link for processing.
+            </summary>
+        </member>
+        <member name="F:Rsdn.Framework.Formatting.TextFormatter.URL.Href">
+            <summary>
+            Address of link.
+            </summary>
+        </member>
+        <member name="F:Rsdn.Framework.Formatting.TextFormatter.URL.Name">
+            <summary>
+            Name of link
+            </summary>
+        </member>
+        <member name="F:Rsdn.Framework.Formatting.TextFormatter.URL.Title">
+            <summary>
+            Additional info for link
+            </summary>
+        </member>
+        <member name="M:Rsdn.Framework.Formatting.TextFormatter.URL.#ctor(System.String,System.String)">
+            <summary>
+            Create URL object.
+            </summary>
+            <param name="href">Adress of link</param>
+            <param name="name">Name of link</param>
+        </member>
+        <member name="T:Rsdn.Framework.Formatting.TextFormatter.ProcessUrl">
+            <summary>
+            Delegate to process URLs.
+            </summary>
         </member>
         <member name="F:Rsdn.Framework.Formatting.TextFormatter.SchemeFormatting">
             <summary>
@@ -1152,9 +1204,19 @@
             <param name="link">HtmlLink, initialized by default</param>
             <returns>true - processed by formatter itself, no further processing</returns>
         </member>
+        <member name="P:Rsdn.Framework.Formatting.TextFormatter.OpenRsdnLinksInNewWindow">
+            <summary>
+            How to open internal RSDN links.
+            </summary>
+        </member>
         <member name="F:Rsdn.Framework.Formatting.TextFormatter.ServerName">
             <summary>
             Server's name for using in rsdn host replacing.
+            </summary>
+        </member>
+        <member name="P:Rsdn.Framework.Formatting.TextFormatter.CanonicalRsdnHostName">
+            <summary>
+            Canonical (common) name of RSDN to replace in all links to rsdn
             </summary>
         </member>
         <member name="F:Rsdn.Framework.Formatting.TextFormatter._taglineDetector">
@@ -1193,6 +1255,11 @@
             </summary>
             <param name="match"></param>
             <returns></returns>
+        </member>
+        <member name="F:Rsdn.Framework.Formatting.TextFormatter.StartCitation">
+            <summary>
+            Start of line citation.
+            </summary>
         </member>
         <member name="F:Rsdn.Framework.Formatting.TextFormatter._rxPrep01">
             <summary>
@@ -1312,73 +1379,6 @@
         <member name="M:Rsdn.Framework.Formatting.TextFormatter.ProcessISBN(System.Text.RegularExpressions.Match,System.String)">
             <summary>
             Обработка ISBN
-            </summary>
-        </member>
-        <member name="P:Rsdn.Framework.Formatting.TextFormatter.OpenRsdnLinksInNewWindow">
-            <summary>
-            How to open internal RSDN links.
-            </summary>
-        </member>
-        <member name="P:Rsdn.Framework.Formatting.TextFormatter.CanonicalRsdnHostName">
-            <summary>
-            Canonical (common) name of RSDN to replace in all links to rsdn
-            </summary>
-        </member>
-        <member name="T:Rsdn.Framework.Formatting.TextFormatter.ProcessImagesDelegate">
-            <summary>
-            Тип делегата для обработки картинок (тэга [img])
-            </summary>
-        </member>
-        <member name="T:Rsdn.Framework.Formatting.TextFormatter.ProcessUrlItself">
-            <summary>
-            Delegate to process URLs
-            </summary>
-        </member>
-        <member name="T:Rsdn.Framework.Formatting.TextFormatter.URL">
-            <summary>
-            Structure to contain necessary info about link for processing.
-            </summary>
-        </member>
-        <member name="F:Rsdn.Framework.Formatting.TextFormatter.URL.Href">
-            <summary>
-            Address of link.
-            </summary>
-        </member>
-        <member name="F:Rsdn.Framework.Formatting.TextFormatter.URL.Name">
-            <summary>
-            Name of link
-            </summary>
-        </member>
-        <member name="F:Rsdn.Framework.Formatting.TextFormatter.URL.Title">
-            <summary>
-            Additional info for link
-            </summary>
-        </member>
-        <member name="M:Rsdn.Framework.Formatting.TextFormatter.URL.#ctor(System.String,System.String)">
-            <summary>
-            Create URL object.
-            </summary>
-            <param name="href">Adress of link</param>
-            <param name="name">Name of link</param>
-        </member>
-        <member name="T:Rsdn.Framework.Formatting.TextFormatter.ProcessUrl">
-            <summary>
-            Delegate to process URLs.
-            </summary>
-        </member>
-        <member name="T:Rsdn.Framework.Formatting.Resources.ResourceHandler">
-            <summary>
-            HTTP handler for images in resources.
-            </summary>
-        </member>
-        <member name="M:Rsdn.Framework.Formatting.Resources.ResourceHandler.FormatLink(System.String)">
-            <summary>
-            Format link for handler.
-            </summary>
-        </member>
-        <member name="P:Rsdn.Framework.Formatting.Resources.ResourceHandler.HandlerName">
-            <summary>
-            Returns handler name.
             </summary>
         </member>
     </members>
