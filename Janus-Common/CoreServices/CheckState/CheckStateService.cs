@@ -63,6 +63,7 @@ namespace Rsdn.Janus
 			return
 				_checkStateSources
 					.Select(target => target.SubscribeCheckStateChanged(serviceProvider, handler))
+					.ToArray()
 					.Merge();
 		}
 
