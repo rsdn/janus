@@ -161,6 +161,7 @@ namespace Rsdn.Janus
 									serviceProvider,
 									(Action)(() => handler(this, subscribeMethod.CommandNames))
 								}))
+					.ToArray()
 					.Merge();
 		}
 

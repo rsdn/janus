@@ -92,6 +92,7 @@ namespace Rsdn.Janus
 							target.SubscribeStatusChanged(
 								serviceProvider,
 								(sender, commansIds) => handler(this, commansIds)))
+					.ToArray()
 					.Merge();
 		}
 
