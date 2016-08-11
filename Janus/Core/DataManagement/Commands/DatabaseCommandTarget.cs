@@ -8,8 +8,8 @@ namespace Rsdn.Janus
 	[CommandTarget]
 	internal sealed class DatabaseCommandTarget : CommandTarget
 	{
-		public DatabaseCommandTarget(IServiceProvider serviceProvider)
-			: base(serviceProvider) { }
+		public DatabaseCommandTarget(IServiceProvider provider)
+			: base(provider) { }
 
 		[CommandExecutor("Janus.Database.DbMigration")]
 		public void ExecuteDbMigration(ICommandContext context)

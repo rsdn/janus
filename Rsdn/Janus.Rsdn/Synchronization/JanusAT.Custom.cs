@@ -3,7 +3,6 @@ using System.Net;
 
 using CodeJam;
 
-using Rsdn.Janus.AT;
 using Rsdn.Janus.Log;
 using Rsdn.Janus.Properties;
 
@@ -22,7 +21,7 @@ namespace Rsdn.Janus
 		{
 			_provider = provider;
 			_syncConfigGetter = syncConfigGetter;
-			//Url = _syncConfigGetter().WebServiceUrl;
+			Url = new Uri(new Uri(_syncConfigGetter().SiteUrl), "/ws/JanusAT.asmx").ToString();
 		}
 
 		public int TotalUploaded { get; private set; }

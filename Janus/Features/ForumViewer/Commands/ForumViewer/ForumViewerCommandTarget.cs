@@ -17,8 +17,8 @@ namespace Rsdn.Janus
 	[CommandTarget]
 	internal sealed class ForumViewerCommandTarget : CommandTarget
 	{
-		public ForumViewerCommandTarget(IServiceProvider serviceProvider)
-			: base(serviceProvider) { }
+		public ForumViewerCommandTarget(IServiceProvider provider)
+			: base(provider) { }
 
 		[CommandExecutor("Janus.Forum.GoToMessage")]
 		public void ExecuteGoToMessage(

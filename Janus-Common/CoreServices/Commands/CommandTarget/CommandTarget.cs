@@ -21,12 +21,12 @@ namespace Rsdn.Janus
 		private readonly List<SubscribeMethod> _subscribeMethods =
 			new List<SubscribeMethod>();
 
-		protected CommandTarget([NotNull] IServiceProvider serviceProvider)
+		protected CommandTarget([NotNull] IServiceProvider provider)
 		{
-			if (serviceProvider == null)
-				throw new ArgumentNullException(nameof(serviceProvider));
+			if (provider == null)
+				throw new ArgumentNullException(nameof(provider));
 
-			var commandService = serviceProvider.GetRequiredService<ICommandService>();
+			var commandService = provider.GetRequiredService<ICommandService>();
 
 			var subscribeCommands = new List<string>();
 			foreach (var method in

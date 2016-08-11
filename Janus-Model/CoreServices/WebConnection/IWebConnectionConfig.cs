@@ -2,7 +2,7 @@
 {
 	public interface IWebConnectionConfig
 	{
-		string WebServiceUrl { get; }
+		string SiteUrl { get; }
 
 		bool UseCompression { get; }
 		int HttpTimeout { get; }

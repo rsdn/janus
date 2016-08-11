@@ -14,8 +14,8 @@ namespace Rsdn.Janus
 	[CommandTarget]
 	internal sealed class TagLineCommandTarget : CommandTarget
 	{
-		public TagLineCommandTarget(IServiceProvider serviceProvider)
-			: base(serviceProvider) { }
+		public TagLineCommandTarget(IServiceProvider provider)
+			: base(provider) { }
 
 		[CommandStatusSubscriber("Janus.Forum.TagLine.Edit")]
 		[CommandStatusSubscriber("Janus.Forum.TagLine.Delete")]

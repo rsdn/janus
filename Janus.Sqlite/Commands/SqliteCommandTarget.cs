@@ -11,8 +11,8 @@ namespace Rsdn.Janus.Sqlite
 	[CommandTarget]
 	internal sealed class SqliteCommandTarget : CommandTarget
 	{
-		public SqliteCommandTarget(IServiceProvider serviceProvider)
-			: base(serviceProvider) { }
+		public SqliteCommandTarget(IServiceProvider provider)
+			: base(provider) { }
 
 		private const string _compactDbCmd = "Janus.Sqlite.CompactDb";
 

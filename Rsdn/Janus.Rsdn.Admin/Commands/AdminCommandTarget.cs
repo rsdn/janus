@@ -1,6 +1,7 @@
 ﻿using System;
 
 using CodeJam;
+using CodeJam.Services;
 
 using IServiceProvider = System.IServiceProvider;
 
@@ -9,25 +10,40 @@ namespace Rsdn.Janus.Admin.Commands
 	[CommandTarget]
 	public class AdminCommandTarget : CommandTarget
 	{
-		private const string _adminUrl = "http://rsdn.ru/Admin";
-		private const string _modUrlTemplate = _adminUrl + "/ModerateMessage/{0}";
+		private readonly Func<string> _siteUrl;
+
+		private const string _adminUrl = "{0}/Admin";
+		private const string _modUrlTemplate = _adminUrl + "/ModerateMessage/{1}";
 		private const string _openReasonsEditorUrl = _adminUrl + "/PenaltyReasons";
 		private const string _openViolationRepsUrl = _adminUrl + "/ViolationReports";
-		private const string _editUrlTemplate = "http://rsdn.ru/Forum/NewMsg.aspx?mid={0}&edit=1";
+		private const string _editUrlTemplate = "{0}/Forum/NewMsg.aspx?mid={1}&edit=1";
 
-		public AdminCommandTarget(IServiceProvider serviceProvider) : base(serviceProvider)
-		{}
+		public AdminCommandTarget(IServiceProvider provider) : base(provider)
+		{
+			_siteUrl =
+				() =>
+					provider
+						.GetRequiredService<IWebConnectionService>()
+						.GetConfig()
+						.SiteUrl;
+		}
 
 		[CommandExecutor("Janus.Rsdn.Admin.ModerateMessage")]
 		public void ExecuteModMessage(ICommandContext context, int? messageId)
 		{
-			context.OpenUrlInBrowser(_modUrlTemplate.FormatWith(ForumCommandHelper.GetMessageId(context, messageId)));
+			context.OpenUrlInBrowser(
+				_modUrlTemplate.FormatWith(
+					_siteUrl(),
+					ForumCommandHelper.GetMessageId(context, messageId)));
 		}
 
 		[CommandExecutor("Janus.Rsdn.Admin.EditMessage")]
 		public void ExecuteEditMessage(ICommandContext context, int? messageId)
 		{
-			context.OpenUrlInBrowser(_editUrlTemplate.FormatWith(ForumCommandHelper.GetMessageId(context, messageId)));
+			context.OpenUrlInBrowser(
+				_editUrlTemplate.FormatWith(
+					_siteUrl(),
+					ForumCommandHelper.GetMessageId(context, messageId)));
 		}
 
 		[CommandStatusGetter("Janus.Rsdn.Admin.ModerateMessage")]
@@ -47,13 +63,13 @@ namespace Rsdn.Janus.Admin.Commands
 		[CommandExecutor("Janus.Rsdn.Admin.OpenReasonsEditor")]
 		public void ExecuteOpenReasonsEditor(ICommandContext context)
 		{
-			context.OpenUrlInBrowser(_openReasonsEditorUrl);
+			context.OpenUrlInBrowser(_openReasonsEditorUrl.FormatWith(_siteUrl()));
 		}
 
 		[CommandExecutor("Janus.Rsdn.Admin.OpenViolationReps")]
 		public void ExecuteOpenViolationReps(ICommandContext context)
 		{
-			context.OpenUrlInBrowser(_openViolationRepsUrl);
+			context.OpenUrlInBrowser(_openViolationRepsUrl.FormatWith(_siteUrl()));
 		}
 	}
 }

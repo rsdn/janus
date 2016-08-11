@@ -15,8 +15,8 @@ namespace Rsdn.Janus
 	[CommandTarget]
 	internal sealed class ForumsCommandTarget : CommandTarget
 	{
-		public ForumsCommandTarget(IServiceProvider serviceProvider)
-			: base(serviceProvider) { }
+		public ForumsCommandTarget(IServiceProvider provider)
+			: base(provider) { }
 
 		[CommandExecutor("Janus.Forum.OpenFileUploadOnRsdn")]
 		public void ExecuteOpenFileUploadOnRsdn(ICommandContext context)

@@ -18,8 +18,8 @@ namespace Rsdn.Janus
 	[CommandTarget]
 	internal sealed class OutboxCommandTarget : CommandTarget
 	{
-		public OutboxCommandTarget(IServiceProvider serviceProvider)
-			: base(serviceProvider) { }
+		public OutboxCommandTarget(IServiceProvider provider)
+			: base(provider) { }
 
 		[CommandExecutor("Janus.Outbox.EditItem")]
 		public void ExecuteEditItem(ICommandContext context)

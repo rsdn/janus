@@ -13,8 +13,8 @@ namespace Rsdn.Janus
 	[CommandTarget]
 	internal sealed class ForumCommandTarget : CommandTarget
 	{
-		public ForumCommandTarget(IServiceProvider serviceProvider)
-			: base(serviceProvider) { }
+		public ForumCommandTarget(IServiceProvider provider)
+			: base(provider) { }
 
 		[CommandExecutor("Janus.Forum.SubscribeOrUnsubscribeForum")]
 		public void ExecuteSubscribeOrUnsubscribeForum(

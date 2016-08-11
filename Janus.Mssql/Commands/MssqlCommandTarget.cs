@@ -11,8 +11,8 @@ namespace Rsdn.Janus.Mssql
 	[CommandTarget]
 	internal sealed class MssqlCommandTarget : CommandTarget
 	{
-		public MssqlCommandTarget(IServiceProvider serviceProvider)
-			: base(serviceProvider) { }
+		public MssqlCommandTarget(IServiceProvider provider)
+			: base(provider) { }
 
 		[CommandExecutor("Janus.Mssql.CompactDb")]
 		public void ExecuteCompactDb(ICommandContext context)

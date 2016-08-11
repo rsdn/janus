@@ -15,8 +15,8 @@ namespace Rsdn.Janus
 	{
 		private const string _commandNamePrefix = "Janus.Console.";
 
-		public ConsoleCommandTarget(IServiceProvider serviceProvider)
-			: base(serviceProvider) { }
+		public ConsoleCommandTarget(IServiceProvider provider)
+			: base(provider) { }
 
 		private const string _showCommand = _commandNamePrefix + "Show";
 

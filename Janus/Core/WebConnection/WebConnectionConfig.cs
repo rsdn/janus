@@ -3,20 +3,20 @@
 	internal class WebConnectionConfig : IWebConnectionConfig
 	{
 		public WebConnectionConfig(
-			string webServiceUrl,
+			string siteUrl,
 			bool useCompression,
 			int httpTimeout,
 			int retriesCount,
 			IProxyConfig proxyConfig)
 		{
-			WebServiceUrl = webServiceUrl;
+			SiteUrl = siteUrl;
 			UseCompression = useCompression;
 			HttpTimeout = httpTimeout;
 			RetriesCount = retriesCount;
 			ProxyConfig = proxyConfig;
 		}
 
-		public string WebServiceUrl { get; }
+		public string SiteUrl { get; }
 
 		public bool UseCompression { get; }
 

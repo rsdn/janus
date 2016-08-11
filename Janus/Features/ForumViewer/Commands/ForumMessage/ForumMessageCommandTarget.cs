@@ -19,8 +19,8 @@ namespace Rsdn.Janus
 	[CommandTarget]
 	internal sealed class ForumMessageCommandTarget : CommandTarget
 	{
-		public ForumMessageCommandTarget(IServiceProvider serviceProvider)
-			: base(serviceProvider) { }
+		public ForumMessageCommandTarget(IServiceProvider provider)
+			: base(provider) { }
 
 		[CommandExecutor("Janus.Forum.AddForumMessageToFavorites")]
 		public void ExecuteAddForumMessageToFavorites(

@@ -14,8 +14,8 @@ namespace Rsdn.Janus
 	[CommandTarget]
 	internal sealed class NavigationCommandTarget : CommandTarget
 	{
-		public NavigationCommandTarget(IServiceProvider serviceProvider)
-			: base(serviceProvider) { }
+		public NavigationCommandTarget(IServiceProvider provider)
+			: base(provider) { }
 
 		[CommandExecutor("Janus.Navigation.SelectNextFeature")]
 		public void ExecuteSelectNextFeature(ICommandContext context)

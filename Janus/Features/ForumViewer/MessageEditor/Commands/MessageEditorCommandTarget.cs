@@ -12,8 +12,8 @@ namespace Rsdn.Janus
 	[CommandTarget]
 	internal sealed class MessageEditorCommandTarget : CommandTarget
 	{
-		public MessageEditorCommandTarget(IServiceProvider serviceProvider)
-			: base(serviceProvider) { }
+		public MessageEditorCommandTarget(IServiceProvider provider)
+			: base(provider) { }
 
 		[CommandExecutor("Janus.Forum.MessageEditor.Send")]
 		public void ExecuteSend(ICommandContext context)

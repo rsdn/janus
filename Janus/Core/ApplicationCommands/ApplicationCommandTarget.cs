@@ -14,8 +14,8 @@ namespace Rsdn.Janus
 	[CommandTarget]
 	internal sealed class ApplicationCommandTarget : CommandTarget
 	{
-		public ApplicationCommandTarget(IServiceProvider serviceProvider)
-			: base(serviceProvider) { }
+		public ApplicationCommandTarget(IServiceProvider provider)
+			: base(provider) { }
 
 		[CommandExecutor("Janus.Application.Exit")]
 		public void ExecuteExit(ICommandContext context)

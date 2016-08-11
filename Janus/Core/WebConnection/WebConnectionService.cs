@@ -69,7 +69,7 @@ namespace Rsdn.Janus
 			var cfg = Config.Instance;
 			return
 				new WebConnectionConfig(
-					cfg.SiteUrl + "/ws/Janus.asmx",
+					cfg.SiteUrl,
 					cfg.UseCompression,
 					cfg.HttpTimeout,
 					cfg.RetriesCount,

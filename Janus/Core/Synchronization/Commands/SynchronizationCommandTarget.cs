@@ -12,8 +12,8 @@ namespace Rsdn.Janus
 	[CommandTarget]
 	internal sealed class SynchronizationCommandTarget : CommandTarget
 	{
-		public SynchronizationCommandTarget(IServiceProvider serviceProvider)
-			: base(serviceProvider) { }
+		public SynchronizationCommandTarget(IServiceProvider provider)
+			: base(provider) { }
 
 		[CommandStatusSubscriber("Janus.Synchronization.Synchronize")]
 		public IDisposable SubscribeStatusChangedCore(

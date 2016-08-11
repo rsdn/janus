@@ -15,8 +15,8 @@ namespace Rsdn.Janus.Jet
 	[CommandTarget]
 	internal sealed class JetCommandTarget : CommandTarget
 	{
-		public JetCommandTarget(IServiceProvider serviceProvider)
-			: base(serviceProvider) { }
+		public JetCommandTarget(IServiceProvider provider)
+			: base(provider) { }
 
 		[CommandExecutor("Janus.Jet.CompactDb")]
 		public void ExecuteCompactDb(ICommandContext context)

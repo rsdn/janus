@@ -13,8 +13,8 @@ namespace Rsdn.Janus
 	[CommandTarget]
 	internal sealed class SearchCommandTarget : CommandTarget
 	{
-		public SearchCommandTarget(IServiceProvider serviceProvider)
-			: base(serviceProvider) { }
+		public SearchCommandTarget(IServiceProvider provider)
+			: base(provider) { }
 
 		[CommandExecutor("Janus.Search.BuildSearchIndex")]
 		public void ExecuteBuildSearchIndex(ICommandContext context)

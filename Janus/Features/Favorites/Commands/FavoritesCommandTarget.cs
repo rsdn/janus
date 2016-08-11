@@ -19,10 +19,10 @@ namespace Rsdn.Janus
 	{
 		private readonly IFavoritesManager _favManager;
 
-		public FavoritesCommandTarget(IServiceProvider serviceProvider)
-			: base(serviceProvider)
+		public FavoritesCommandTarget(IServiceProvider provider)
+			: base(provider)
 		{
-			_favManager = serviceProvider.GetRequiredService<IFavoritesManager>();
+			_favManager = provider.GetRequiredService<IFavoritesManager>();
 		}
 
 		[CommandExecutor("Janus.Favorites.CreateFolder")]

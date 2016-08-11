@@ -2,8 +2,6 @@
 
 using CodeJam.Services;
 
-using Rsdn.Janus.AT;
-
 using JanusAT = Rsdn.Janus.org.rsdn.JanusAT;
 
 namespace Rsdn.Janus

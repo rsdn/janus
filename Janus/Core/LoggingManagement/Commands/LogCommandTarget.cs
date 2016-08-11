@@ -12,8 +12,8 @@ namespace Rsdn.Janus
 	{
 		private const string _commandNamePrefix = "Janus.Log.";
 
-		public LogCommandTarget(IServiceProvider serviceProvider)
-			: base(serviceProvider) { }
+		public LogCommandTarget(IServiceProvider provider)
+			: base(provider) { }
 
 		private const string _showCommand = _commandNamePrefix + "Show";
 

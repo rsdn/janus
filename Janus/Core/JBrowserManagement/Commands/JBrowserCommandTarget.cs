@@ -14,8 +14,8 @@ namespace Rsdn.Janus
 	{
 		private const string _commandNamePrefix = "Janus.JBrowser.";
 
-		public JBrowserCommandTarget(IServiceProvider serviceProvider)
-			: base(serviceProvider) { }
+		public JBrowserCommandTarget(IServiceProvider provider)
+			: base(provider) { }
 
 		#region Nav commands
 		private const string _navBackCommand = _commandNamePrefix + "NavigateBackward";
