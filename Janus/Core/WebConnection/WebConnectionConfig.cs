@@ -2,37 +2,28 @@
 {
 	internal class WebConnectionConfig : IWebConnectionConfig
 	{
-		private readonly bool _useCompression;
-		private readonly int _httpTimeout;
-		private readonly int _retriesCount;
-		private readonly IProxyConfig _proxyConfig;
-
-		public WebConnectionConfig(bool useCompression, int httpTimeout, int retriesCount, IProxyConfig proxyConfig)
+		public WebConnectionConfig(
+			string webServiceUrl,
+			bool useCompression,
+			int httpTimeout,
+			int retriesCount,
+			IProxyConfig proxyConfig)
 		{
-			_useCompression = useCompression;
-			_httpTimeout = httpTimeout;
-			_retriesCount = retriesCount;
-			_proxyConfig = proxyConfig;
+			WebServiceUrl = webServiceUrl;
+			UseCompression = useCompression;
+			HttpTimeout = httpTimeout;
+			RetriesCount = retriesCount;
+			ProxyConfig = proxyConfig;
 		}
 
-		public bool UseCompression
-		{
-			get { return _useCompression; }
-		}
+		public string WebServiceUrl { get; }
 
-		public int HttpTimeout
-		{
-			get { return _httpTimeout; }
-		}
+		public bool UseCompression { get; }
 
-		public int RetriesCount
-		{
-			get { return _retriesCount; }
-		}
+		public int HttpTimeout { get; }
 
-		public IProxyConfig ProxyConfig
-		{
-			get { return _proxyConfig; }
-		}
+		public int RetriesCount { get; }
+
+		public IProxyConfig ProxyConfig { get; }
 	}
 }

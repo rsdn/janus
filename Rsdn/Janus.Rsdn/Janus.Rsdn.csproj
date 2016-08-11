@@ -116,7 +116,6 @@
     </Compile>
     <Compile Include="Synchronization\JanusAT.Custom.cs" />
     <Compile Include="Synchronization\JanusATHelper.cs" />
-    <Compile Include="Synchronization\JanusATServiceReference.cs" />
     <Compile Include="Synchronization\JanusATSyncProvider.cs" />
     <Compile Include="Synchronization\Stats\FailedOutboundMessagesStatsFormatter.cs" />
     <Compile Include="Synchronization\Stats\ForumsStatsFormatter.cs" />
@@ -136,6 +135,11 @@
     <Compile Include="Synchronization\Tasks\TopicSyncTask.cs" />
     <Compile Include="Synchronization\Tasks\UsersSyncTask.cs" />
     <Compile Include="Synchronization\Tasks\ViolationsSyncTask.cs" />
+    <Compile Include="Web References\org.rsdn\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
@@ -146,6 +150,29 @@
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\org.rsdn\ChangeResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\org.rsdn\ForumResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\org.rsdn\JanusAT.wsdl" />
+    <None Include="Web References\org.rsdn\PostResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\org.rsdn\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\org.rsdn\TopicResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\org.rsdn\UserResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\org.rsdn\ViolationResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>
@@ -197,6 +224,28 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Commands\ForumMessageCommands.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferences Include="Web References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferenceUrl Include="http://rsdn.org/ws/JanusAT.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\org.rsdn\</RelPath>
+      <UpdateFromURL>http://rsdn.org/ws/JanusAT.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>Janus_Rsdn_org_rsdn_JanusAT</CachedSettingsPropName>
+    </WebReferenceUrl>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Web References\org.rsdn\JanusAT.disco" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

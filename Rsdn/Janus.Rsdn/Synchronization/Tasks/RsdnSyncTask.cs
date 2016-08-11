@@ -4,6 +4,8 @@ using CodeJam.Services;
 
 using Rsdn.Janus.AT;
 
+using JanusAT = Rsdn.Janus.org.rsdn.JanusAT;
+
 namespace Rsdn.Janus
 {
 	internal abstract class RsdnSyncTask<TRq, TRsp> : SimpleSyncTask<JanusAT, TRq, TRsp>

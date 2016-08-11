@@ -3,6 +3,8 @@ using System.Linq;
 
 using LinqToDB;
 
+using Rsdn.Janus.org.rsdn;
+
 namespace Rsdn.Janus.AT
 {
 	/// <summary>

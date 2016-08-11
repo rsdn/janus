@@ -3,29 +3,31 @@ using System.Collections.Generic;
 
 using Rsdn.Janus.AT;
 
+using JanusAT = Rsdn.Janus.org.rsdn.JanusAT;
+
 namespace Rsdn.Janus
 {
 	/// <summary>
 	/// Провайдер синхронизации для сервиса JanusAT.
 	/// </summary>
 	[SyncProvider(JanusATInfo.ProviderName)]
-	internal class JanusATSyncProvider : WebServiceSyncProvider<JanusAT>
+	internal class JanusATSyncProvider : WebServiceSyncProvider<org.rsdn.JanusAT>
 	{
 		public JanusATSyncProvider(IServiceProvider provider)
 			: base(provider, CreateSyncTasks(provider))
 		{}
 
-		protected override JanusAT CreateServiceInstance()
+		protected override org.rsdn.JanusAT CreateServiceInstance()
 		{
 			return new JanusATCustom(ServiceProvider, () => WebConnectionService.GetConfig());
 		}
 
-		protected override void CallSvcCheckMethod(JanusAT svc)
+		protected override void CallSvcCheckMethod(org.rsdn.JanusAT svc)
 		{
 			svc.Check();
 		}
 
-		private static IEnumerable<IWebSvcSyncTask<JanusAT>> CreateSyncTasks(
+		private static IEnumerable<IWebSvcSyncTask<org.rsdn.JanusAT>> CreateSyncTasks(
 			IServiceProvider provider)
 		{
 			return

@@ -1,0 +1,739 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://rsdn.ru/Janus/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://rsdn.ru/Janus/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://rsdn.ru/Janus/">
+      <s:element name="GetTopicByMessage">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="topicRequest" type="tns:TopicRequest" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="TopicRequest">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="userName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="messageIds" type="tns:ArrayOfInt" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfInt">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="int" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetTopicByMessageResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetTopicByMessageResult" type="tns:TopicResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="TopicResponse">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Messages" type="tns:ArrayOfJanusMessageInfo" />
+          <s:element minOccurs="0" maxOccurs="1" name="Rating" type="tns:ArrayOfJanusRatingInfo" />
+          <s:element minOccurs="0" maxOccurs="1" name="Moderate" type="tns:ArrayOfJanusModerateInfo" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfJanusMessageInfo">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="JanusMessageInfo" nillable="true" type="tns:JanusMessageInfo" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="JanusMessageInfo">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="messageId" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="topicId" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="parentId" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="forumId" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="subject" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="messageName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="userNick" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="message" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="articleId" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="messageDate" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="updateDate" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="userRole" type="tns:UserRole" />
+          <s:element minOccurs="0" maxOccurs="1" name="userTitle" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="userTitleColor" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="lastModerated" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="closed" type="s:boolean" />
+        </s:sequence>
+      </s:complexType>
+      <s:simpleType name="UserRole">
+        <s:restriction base="s:string">
+          <s:enumeration value="Admin" />
+          <s:enumeration value="Moderator" />
+          <s:enumeration value="TeamMember" />
+          <s:enumeration value="User" />
+          <s:enumeration value="Expert" />
+          <s:enumeration value="Anonym" />
+          <s:enumeration value="Group" />
+        </s:restriction>
+      </s:simpleType>
+      <s:complexType name="ArrayOfJanusRatingInfo">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="JanusRatingInfo" nillable="true" type="tns:JanusRatingInfo" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="JanusRatingInfo">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="messageId" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="topicId" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="userRating" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="rate" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="rateDate" type="s:dateTime" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfJanusModerateInfo">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="JanusModerateInfo" nillable="true" type="tns:JanusModerateInfo" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="JanusModerateInfo">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="messageId" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="topicId" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="forumId" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="create" type="s:dateTime" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetNewData">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="changeRequest" type="tns:ChangeRequest" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ChangeRequest">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="userName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="subscribedForums" type="tns:ArrayOfRequestForumInfo" />
+          <s:element minOccurs="0" maxOccurs="1" name="ratingRowVersion" type="s:base64Binary" />
+          <s:element minOccurs="0" maxOccurs="1" name="messageRowVersion" type="s:base64Binary" />
+          <s:element minOccurs="0" maxOccurs="1" name="moderateRowVersion" type="s:base64Binary" />
+          <s:element minOccurs="0" maxOccurs="1" name="breakMsgIds" type="tns:ArrayOfInt" />
+          <s:element minOccurs="0" maxOccurs="1" name="breakTopicIds" type="tns:ArrayOfInt" />
+          <s:element minOccurs="1" maxOccurs="1" name="maxOutput" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfRequestForumInfo">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="RequestForumInfo" nillable="true" type="tns:RequestForumInfo" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="RequestForumInfo">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="forumId" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="isFirstRequest" type="s:boolean" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetNewDataResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetNewDataResult" type="tns:ChangeResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ChangeResponse">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="newMessages" type="tns:ArrayOfJanusMessageInfo" />
+          <s:element minOccurs="0" maxOccurs="1" name="newRating" type="tns:ArrayOfJanusRatingInfo" />
+          <s:element minOccurs="0" maxOccurs="1" name="newModerate" type="tns:ArrayOfJanusModerateInfo" />
+          <s:element minOccurs="0" maxOccurs="1" name="lastRatingRowVersion" type="s:base64Binary" />
+          <s:element minOccurs="0" maxOccurs="1" name="lastForumRowVersion" type="s:base64Binary" />
+          <s:element minOccurs="0" maxOccurs="1" name="lastModerateRowVersion" type="s:base64Binary" />
+          <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetForumList">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="forumRequest" type="tns:ForumRequest" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ForumRequest">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="userName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="forumsRowVersion" type="s:base64Binary" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetForumListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetForumListResult" type="tns:ForumResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ForumResponse">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="forumList" type="tns:ArrayOfJanusForumInfo" />
+          <s:element minOccurs="0" maxOccurs="1" name="groupList" type="tns:ArrayOfJanusForumGroupInfo" />
+          <s:element minOccurs="0" maxOccurs="1" name="forumsRowVersion" type="s:base64Binary" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfJanusForumInfo">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="JanusForumInfo" nillable="true" type="tns:JanusForumInfo" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="JanusForumInfo">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="forumId" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="forumGroupId" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="shortForumName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="forumName" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="rated" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="inTop" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="rateLimit" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfJanusForumGroupInfo">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="JanusForumGroupInfo" nillable="true" type="tns:JanusForumGroupInfo" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="JanusForumGroupInfo">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="forumGroupId" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="forumGroupName" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="sortOrder" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetNewUsers">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="userRequest" type="tns:UserRequest" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="UserRequest">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="userName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="lastRowVersion" type="s:base64Binary" />
+          <s:element minOccurs="1" maxOccurs="1" name="maxOutput" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetNewUsersResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetNewUsersResult" type="tns:UserResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="UserResponse">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="lastRowVersion" type="s:base64Binary" />
+          <s:element minOccurs="0" maxOccurs="1" name="users" type="tns:ArrayOfJanusUserInfo" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfJanusUserInfo">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="JanusUserInfo" nillable="true" type="tns:JanusUserInfo" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="JanusUserInfo">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="userName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="userNick" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="realName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="publicEmail" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="homePage" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="specialization" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="whereFrom" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="origin" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="userClass" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="gravatarHash" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="countryCode" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetUserByIds">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="request" type="tns:UserByIdsRequest" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="UserByIdsRequest">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="userName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="userIds" type="tns:ArrayOfInt" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetUserByIdsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetUserByIdsResult" type="tns:UserResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PostChange">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="postRequest" type="tns:PostRequest" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="PostRequest">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="userName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="writedMessages" type="tns:ArrayOfPostMessageInfo" />
+          <s:element minOccurs="0" maxOccurs="1" name="rates" type="tns:ArrayOfPostRatingInfo" />
+          <s:element minOccurs="0" maxOccurs="1" name="moderates" type="tns:ArrayOfPostModerateInfo" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfPostMessageInfo">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="PostMessageInfo" nillable="true" type="tns:PostMessageInfo" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="PostMessageInfo">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="localMessageId" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="parentId" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="forumId" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="subject" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="message" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfPostRatingInfo">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="PostRatingInfo" nillable="true" type="tns:PostRatingInfo" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="PostRatingInfo">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="localRatingId" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="messageId" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="rate" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfPostModerateInfo">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="PostModerateInfo" nillable="true" type="tns:PostModerateInfo" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="PostModerateInfo">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="LocalModerateId" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="MessageId" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="ModerateAction" type="tns:ModerateActionType" />
+          <s:element minOccurs="1" maxOccurs="1" name="ModerateToForumId" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Description" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="AsModerator" type="s:boolean" />
+        </s:sequence>
+      </s:complexType>
+      <s:simpleType name="ModerateActionType">
+        <s:restriction base="s:string">
+          <s:enumeration value="MoveMessage" />
+          <s:enumeration value="DeleteMessage" />
+          <s:enumeration value="DeleteThread" />
+          <s:enumeration value="DeleteErrorMessage" />
+          <s:enumeration value="SplitThread" />
+          <s:enumeration value="CloseTopic" />
+          <s:enumeration value="OpenTopic" />
+        </s:restriction>
+      </s:simpleType>
+      <s:element name="PostChangeResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="PostChangeCommit">
+        <s:complexType />
+      </s:element>
+      <s:element name="PostChangeCommitResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="PostChangeCommitResult" type="tns:PostResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="PostResponse">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="commitedIds" type="tns:ArrayOfInt" />
+          <s:element minOccurs="0" maxOccurs="1" name="exceptions" type="tns:ArrayOfPostExceptionInfo" />
+          <s:element minOccurs="0" maxOccurs="1" name="commitedRatingIds" type="tns:ArrayOfInt" />
+          <s:element minOccurs="0" maxOccurs="1" name="ratingExceptions" type="tns:ArrayOfRatingExceptionInfo" />
+          <s:element minOccurs="0" maxOccurs="1" name="commitedModerateIds" type="tns:ArrayOfInt" />
+          <s:element minOccurs="0" maxOccurs="1" name="moderateExceptions" type="tns:ArrayOfModerateExceptionInfo" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfPostExceptionInfo">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="PostExceptionInfo" nillable="true" type="tns:PostExceptionInfo" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="PostExceptionInfo">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="exception" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="localMessageId" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="info" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfRatingExceptionInfo">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="RatingExceptionInfo" nillable="true" type="tns:RatingExceptionInfo" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="RatingExceptionInfo">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="exception" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="localRatingId" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="info" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfModerateExceptionInfo">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ModerateExceptionInfo" nillable="true" type="tns:ModerateExceptionInfo" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ModerateExceptionInfo">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="ExceptionMessage" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="LocalModerateId" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Info" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="Check">
+        <s:complexType />
+      </s:element>
+      <s:element name="CheckResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetNewViolations">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="request" type="tns:ViolationRequest" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ViolationRequest">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="UserName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="SubscribedForums" type="tns:ArrayOfRequestForumInfo" />
+          <s:element minOccurs="0" maxOccurs="1" name="LastRowVersion" type="s:base64Binary" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetNewViolationsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetNewViolationsResult" type="tns:ViolationResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ViolationResponse">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Violations" type="tns:ArrayOfJanusViolationInfo" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfJanusViolationInfo">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="JanusViolationInfo" nillable="true" type="tns:JanusViolationInfo" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="JanusViolationInfo">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="MessageID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Reason" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="CreatedOn" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="PenaltyType" type="tns:PenaltyType" />
+          <s:element minOccurs="0" maxOccurs="1" name="RowVersion" type="s:base64Binary" />
+        </s:sequence>
+      </s:complexType>
+      <s:simpleType name="PenaltyType">
+        <s:restriction base="s:string">
+          <s:enumeration value="Ban" />
+          <s:enumeration value="Close" />
+          <s:enumeration value="Warning" />
+        </s:restriction>
+      </s:simpleType>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="GetTopicByMessageSoapIn">
+    <wsdl:part name="parameters" element="tns:GetTopicByMessage" />
+  </wsdl:message>
+  <wsdl:message name="GetTopicByMessageSoapOut">
+    <wsdl:part name="parameters" element="tns:GetTopicByMessageResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetNewDataSoapIn">
+    <wsdl:part name="parameters" element="tns:GetNewData" />
+  </wsdl:message>
+  <wsdl:message name="GetNewDataSoapOut">
+    <wsdl:part name="parameters" element="tns:GetNewDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetForumListSoapIn">
+    <wsdl:part name="parameters" element="tns:GetForumList" />
+  </wsdl:message>
+  <wsdl:message name="GetForumListSoapOut">
+    <wsdl:part name="parameters" element="tns:GetForumListResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetNewUsersSoapIn">
+    <wsdl:part name="parameters" element="tns:GetNewUsers" />
+  </wsdl:message>
+  <wsdl:message name="GetNewUsersSoapOut">
+    <wsdl:part name="parameters" element="tns:GetNewUsersResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetUserByIdsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetUserByIds" />
+  </wsdl:message>
+  <wsdl:message name="GetUserByIdsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetUserByIdsResponse" />
+  </wsdl:message>
+  <wsdl:message name="PostChangeSoapIn">
+    <wsdl:part name="parameters" element="tns:PostChange" />
+  </wsdl:message>
+  <wsdl:message name="PostChangeSoapOut">
+    <wsdl:part name="parameters" element="tns:PostChangeResponse" />
+  </wsdl:message>
+  <wsdl:message name="PostChangeCommitSoapIn">
+    <wsdl:part name="parameters" element="tns:PostChangeCommit" />
+  </wsdl:message>
+  <wsdl:message name="PostChangeCommitSoapOut">
+    <wsdl:part name="parameters" element="tns:PostChangeCommitResponse" />
+  </wsdl:message>
+  <wsdl:message name="CheckSoapIn">
+    <wsdl:part name="parameters" element="tns:Check" />
+  </wsdl:message>
+  <wsdl:message name="CheckSoapOut">
+    <wsdl:part name="parameters" element="tns:CheckResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetNewViolationsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetNewViolations" />
+  </wsdl:message>
+  <wsdl:message name="GetNewViolationsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetNewViolationsResponse" />
+  </wsdl:message>
+  <wsdl:portType name="JanusATSoap">
+    <wsdl:operation name="GetTopicByMessage">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Âûòÿãèâàíèå òîïèêîâ ïî ID ñîîáùåíèé</wsdl:documentation>
+      <wsdl:input message="tns:GetTopicByMessageSoapIn" />
+      <wsdl:output message="tns:GetTopicByMessageSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetNewData">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Èçìåíåíèÿ â ôîðóìå ñ ìîìåíòà ïîñëåäíåé ñèíõðîíèçàöèè</wsdl:documentation>
+      <wsdl:input message="tns:GetNewDataSoapIn" />
+      <wsdl:output message="tns:GetNewDataSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetForumList">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Ñïèñîê ôîðóìîâ è ãðóïï ôîðóìîâ</wsdl:documentation>
+      <wsdl:input message="tns:GetForumListSoapIn" />
+      <wsdl:output message="tns:GetForumListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetNewUsers">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Ïîëó÷åíèå íîâûõ ïîëüçîâàòåëåé ñ ìîìåíòà ïîñëåäíåé ñèíõðîíèçàöèè</wsdl:documentation>
+      <wsdl:input message="tns:GetNewUsersSoapIn" />
+      <wsdl:output message="tns:GetNewUsersSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserByIds">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Ïîëó÷åíèå ïîëüçîâàòåëåé ïî ñïèñêó èõ èäåíòèôèêàòîðîâ</wsdl:documentation>
+      <wsdl:input message="tns:GetUserByIdsSoapIn" />
+      <wsdl:output message="tns:GetUserByIdsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PostChange">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Äîáàâëåíèå èçìåíåíèé â ôîðóìû</wsdl:documentation>
+      <wsdl:input message="tns:PostChangeSoapIn" />
+      <wsdl:output message="tns:PostChangeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PostChangeCommit">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Ïîäòâåðæäåíèå äîáàâëåíèÿ èçìåíåíèé â ôîðóìû</wsdl:documentation>
+      <wsdl:input message="tns:PostChangeCommitSoapIn" />
+      <wsdl:output message="tns:PostChangeCommitSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Check">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Ïðîâåðêà àêòèâíîñòè</wsdl:documentation>
+      <wsdl:input message="tns:CheckSoapIn" />
+      <wsdl:output message="tns:CheckSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetNewViolations">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Возвращает новые сообщения о нарушениях</wsdl:documentation>
+      <wsdl:input message="tns:GetNewViolationsSoapIn" />
+      <wsdl:output message="tns:GetNewViolationsSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="JanusATSoap" type="tns:JanusATSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetTopicByMessage">
+      <soap:operation soapAction="http://rsdn.ru/Janus/GetTopicByMessage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetNewData">
+      <soap:operation soapAction="http://rsdn.ru/Janus/GetNewData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetForumList">
+      <soap:operation soapAction="http://rsdn.ru/Janus/GetForumList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetNewUsers">
+      <soap:operation soapAction="http://rsdn.ru/Janus/GetNewUsers" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserByIds">
+      <soap:operation soapAction="http://rsdn.ru/Janus/GetUserByIds" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PostChange">
+      <soap:operation soapAction="http://rsdn.ru/Janus/PostChange" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PostChangeCommit">
+      <soap:operation soapAction="http://rsdn.ru/Janus/PostChangeCommit" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Check">
+      <soap:operation soapAction="http://rsdn.ru/Janus/Check" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetNewViolations">
+      <soap:operation soapAction="http://rsdn.ru/Janus/GetNewViolations" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="JanusATSoap12" type="tns:JanusATSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetTopicByMessage">
+      <soap12:operation soapAction="http://rsdn.ru/Janus/GetTopicByMessage" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetNewData">
+      <soap12:operation soapAction="http://rsdn.ru/Janus/GetNewData" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetForumList">
+      <soap12:operation soapAction="http://rsdn.ru/Janus/GetForumList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetNewUsers">
+      <soap12:operation soapAction="http://rsdn.ru/Janus/GetNewUsers" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserByIds">
+      <soap12:operation soapAction="http://rsdn.ru/Janus/GetUserByIds" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PostChange">
+      <soap12:operation soapAction="http://rsdn.ru/Janus/PostChange" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PostChangeCommit">
+      <soap12:operation soapAction="http://rsdn.ru/Janus/PostChangeCommit" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Check">
+      <soap12:operation soapAction="http://rsdn.ru/Janus/Check" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetNewViolations">
+      <soap12:operation soapAction="http://rsdn.ru/Janus/GetNewViolations" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="JanusAT">
+    <wsdl:port name="JanusATSoap" binding="tns:JanusATSoap">
+      <soap:address location="http://rsdn.org:8888/ws/JanusAT.asmx" />
+    </wsdl:port>
+    <wsdl:port name="JanusATSoap12" binding="tns:JanusATSoap12">
+      <soap12:address location="http://rsdn.org:8888/ws/JanusAT.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

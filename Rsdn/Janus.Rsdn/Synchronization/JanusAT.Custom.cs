@@ -7,6 +7,8 @@ using Rsdn.Janus.AT;
 using Rsdn.Janus.Log;
 using Rsdn.Janus.Properties;
 
+using JanusAT = Rsdn.Janus.org.rsdn.JanusAT;
+
 namespace Rsdn.Janus
 {
 	internal sealed class JanusATCustom : JanusAT, ITransferNotificator
@@ -20,6 +22,7 @@ namespace Rsdn.Janus
 		{
 			_provider = provider;
 			_syncConfigGetter = syncConfigGetter;
+			//Url = _syncConfigGetter().WebServiceUrl;
 		}
 
 		public int TotalUploaded { get; private set; }
