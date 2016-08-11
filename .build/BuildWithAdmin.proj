@@ -49,7 +49,7 @@
 
   <!-- Projects to Build -->
   <ItemGroup>
-		<ProjectFiles Include="$(MSBuildProjectDirectory)\..\JanusWithAdmin.sln">
+		<ProjectFiles Include="$(MSBuildProjectDirectory)\..\Janus.WithAdmin.sln">
 			<Properties>Configuration=$(BuildConfiguration)</Properties>
 		</ProjectFiles>
   </ItemGroup>
