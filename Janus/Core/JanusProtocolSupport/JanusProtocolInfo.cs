@@ -172,7 +172,7 @@ namespace Rsdn.Janus
 		public static JanusProtocolInfo Parse(string url)
 		{
 			if (url == null)
-				throw new ArgumentNullException("url");
+				throw new ArgumentNullException(nameof(url));
 
 			if (url.TrimEnd().Length == 0)
 				return null;
@@ -316,17 +316,16 @@ namespace Rsdn.Janus
 
 		// "^(?:janus://)?(?<resource>[-a-z]+)/(?<parameters>.*)$"
 		private static readonly Regex _resourceInfoRegex = new Regex(
-			string.Format("^(?:{0})?(?<resource>[-a-z]+){1}(?<parameters>.*?)(?:#.*)?$",
-						  _janusProtocolPrefix, _janusProtocolSeparator),
+			$"^(?:{_janusProtocolPrefix})?(?<resource>[-a-z]+){_janusProtocolSeparator}(?<parameters>.*?)(?:#.*)?$",
 			RegexOptions.Compiled);
 
-		private const string _rsdnLinkPattern = @"^(http://)?((www|gzip|rsdn|rsdn3).)?rsdn.ru";
+		private const string _rsdnLinkPattern = @"^(https?://)?((www|gzip|rsdn|rsdn3).)?rsdn.(ru|org)";
 
 		// Варианты ссылок на сообщения
 		// http://rsdn.ru/forum/test/5765306.1
 		private static readonly Regex _msgUrlDetectorRx =
 			new Regex(
-				_rsdnLinkPattern + @"/forum/[a-zA-Z.]+/\d{1,9}(.(1|all|flat(.\d+)?|hot))?",
+				_rsdnLinkPattern + @"/forum/[a-zA-Z.]+/(?<mid>\d{1,9})(.(1|all|flat(.\d+)?|hot))?",
 				RegexOptions.Compiled | RegexOptions.IgnoreCase);
 
 		// http://www.rsdn.ru/forum/message/4234523.aspx
@@ -405,8 +404,12 @@ namespace Rsdn.Janus
 				match = _msgUrlDetector2Rx.Match(url);
 
 			if (match.Success)
-				return Make(JanusProtocolResourceType.Message,
-							match.Groups["mid"].Value, url, out protocolInfo);
+				return
+					Make(
+						JanusProtocolResourceType.Message,
+						match.Groups["mid"].Value,
+						url,
+						out protocolInfo);
 
 			#endregion
 

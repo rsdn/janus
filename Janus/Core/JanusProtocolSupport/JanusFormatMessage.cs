@@ -481,8 +481,10 @@ namespace Rsdn.Janus
 			return FormatURLs(urlMatch, urlMatch.Value, urlMatch.Value);
 		}
 
-		protected override string FormatURLs(Match urlMatch, 
-			string urlAddress, string urlName)
+		protected override string FormatURLs(
+			Match urlMatch, 
+			string urlAddress,
+			string urlName)
 		{
 			if (!urlMatch.Groups["scheme"].Success)
 				urlAddress = "http://" + urlAddress;
@@ -600,17 +602,24 @@ namespace Rsdn.Janus
 			if(linkType == LinkType.External)
 				imageUrl = RefineImageForWellKnownUrls(_provider, url) ?? imageUrl;
 
-			const string format =
+			url = ParseUrl(url).Groups["scheme"].Success ? url : "http://" + url;
+			url =
+				url
+					.Replace("://rsdn.ru", "://rsdn.org")
+					.Replace("://www.rsdn.ru", "://rsdn.org");
+			var format =
 				"<a class='m' href='{0}{1}' title='{5}'><img border='0' align='absbottom' src='{3}' style='margin-bottom:1px;margin-right: 2px;'></a>" +
 				"<a class='m' href='{0}{1}' title='{5}'>{2}</a>{4}";
 
-			return string.Format(format,
-				ParseUrl(url).Groups["scheme"].Success ? "" : "http://",
-				url.EncodeAgainstXSS(),
-				text,
-				imageUrl,
-				GetPostfixImagePath(_provider, linkType, info),
-				string.IsNullOrEmpty(title) ? url : title);
+			return
+				string.Format(
+					format,
+					"",
+					url.EncodeAgainstXSS(),
+					text,
+					imageUrl,
+					GetPostfixImagePath(_provider, linkType, info),
+					string.IsNullOrEmpty(title) ? url : title);
 		}
 
 		private static readonly Regex _queryRx =
