@@ -66,6 +66,10 @@
     <Reference Include="System.Xml">
       <Name>System.XML</Name>
     </Reference>
+    <ProjectReference Include="..\Dependencies\IEPlugLibrary\IEPlugLibrary.csproj">
+      <Project>{7884d591-4424-434a-b02a-909761d36fed}</Project>
+      <Name>IEPlugLibrary</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Janus.Framework\Janus.Framework.csproj">
       <Project>{C92BBDC9-5AE5-4C2D-B0F5-7369506CDF27}</Project>
       <Name>Janus.Framework</Name>

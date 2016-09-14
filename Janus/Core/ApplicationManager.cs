@@ -67,15 +67,13 @@ namespace Rsdn.Janus
 			Logger.LogInfo(ApplicationInfo.NameWithVersionAndCopyright);
 		}
 
-		private static void CheckJanusProtocolInstallation()
+		private static bool TryInstallJanusProtocol()
 		{
 			try
 			{
 				JanusProtocol.SetDataSource(new JanusInternalResourceProvider());
-
-				var rs = new RegistrationServices();
-				rs.RegisterAssembly(typeof(JanusProtocol).Assembly,
-					AssemblyRegistrationFlags.SetCodeBase);
+				JanusProtocol.InstallProtocol();
+				return true;
 			}
 			catch (Exception ex)
 			{
@@ -83,6 +81,19 @@ namespace Rsdn.Janus
 					string.Format(SR.Application.ProtocolInstallationError, ex.Message),
 					ApplicationInfo.ApplicationName,
 					MessageBoxButtons.OK, MessageBoxIcon.Error);
+				return false;
+			}
+		}
+
+		private static void UninstallJanusProtocol()
+		{
+			try
+			{
+				JanusProtocol.UninstallProtocol();
+			}
+			catch (Exception ex)
+			{
+				Code.AssertState(false, "UninstallJanusProtocol: {0}", ex.Message);
 			}
 		}
 
@@ -161,20 +172,29 @@ namespace Rsdn.Janus
 		{
 			serviceProvider.SetSplashMessage(SR.Splash.InitApplication);
 
-			CheckJanusProtocolInstallation();
 			CheckGoJanusNetInstallation();
 
-			ProtocolDispatcher = new JanusProtocolDispatcher(serviceProvider);
+			if (!TryInstallJanusProtocol())
+				return;
 
-			Forums.BeforeLoadData += ForumsBeforeLoadData;
+			try
+			{
+				ProtocolDispatcher = new JanusProtocolDispatcher(serviceProvider);
 
-			foreach (var forum in Forums.Instance.ForumList)
-				forum.BeforeLoadData += ActiveForumBeforeLoadData;
+				Forums.BeforeLoadData += ForumsBeforeLoadData;
 
-			Init(serviceProvider);
-			serviceProvider.SetSplashMessage(SR.Splash.RunApplication);
+				foreach (var forum in Forums.Instance.ForumList)
+					forum.BeforeLoadData += ActiveForumBeforeLoadData;
 
-			Application.Run(MainForm);
+				Init(serviceProvider);
+				serviceProvider.SetSplashMessage(SR.Splash.RunApplication);
+
+				Application.Run(MainForm);
+			}
+			finally
+			{
+				UninstallJanusProtocol();
+			}
 		}
 
 		private void ForumsBeforeLoadData(object sender, EventArgs e)

@@ -35,6 +35,10 @@ namespace Rsdn.Janus.Framework.Networking
 			get { return _mimeType; }
 		}
 
+		public int MimeEnd
+		{
+			get { return _mimeEnd; }
+		}
 
 		public static byte[] EncodeText(string text, Encoding encoding)
 		{
