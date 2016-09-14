@@ -2208,4 +2208,7 @@
   <data name="EnterTopicMessageIdForm.MessageIdIsTextFormat" xml:space="preserve">
     <value>ID сообщения: {0}</value>
   </data>
+  <data name="Application.GoJanusInstallationErrorReasonErrorCode" xml:space="preserve">
+    <value>Процесс регистрации вернул код ошибки.</value>
+  </data>
 </root>

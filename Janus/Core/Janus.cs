@@ -30,9 +30,17 @@ namespace Rsdn.Janus
 		}
 
 		[STAThread]
-		public static void Main()
+		public static int Main(string[] cmdLineArgs)
 		{
 			TraceVerbose("Instance startup");
+
+			if (Array.Exists(cmdLineArgs, s => s == CmdLineArg.RegisterGoJanusNet))
+			{
+				// Запрос на регистрацию GoJanus. Этот процесс запущен от админа.
+				// Регистрируем и возвращаем управление в вызвавший процесс.
+				return RegisterGoJanusNet();
+			}
+
 			try
 			{
 				Console.WriteLine(
@@ -46,7 +54,7 @@ namespace Rsdn.Janus
 					if (!m.WaitOne(0, false))
 					{
 						WindowActivator.ActivateWindow(MainForm.GetCaption());
-						return;
+						return (int) ExitCode.AnotherInstanceDetected;
 					}
 
 					Application.EnableVisualStyles();
@@ -59,7 +67,7 @@ namespace Rsdn.Janus
 					Thread.CurrentThread.CurrentUICulture = new CultureInfo((int)Config.Instance.UILanguage);
 
 					if (!CheckEnvironment())
-						return;
+						return (int) ExitCode.CheckEnvironmentFailed;
 
 					TraceVerbose("ResMgr");
 
@@ -198,6 +206,8 @@ namespace Rsdn.Janus
 							}
 						}
 						ApplicationManager.Instance.Run(host);
+
+						return (int) ExitCode.Ok;
 					}
 				}
 			}
@@ -205,6 +215,21 @@ namespace Rsdn.Janus
 			{
 				using (var ef = new ExceptionForm(null, ex, false))
 					ef.ShowDialog();
+
+				return (int) ExitCode.ErrorUnhandledException;
+			}
+		}
+
+		private static int RegisterGoJanusNet()
+		{
+			try
+			{
+				ApplicationManager.RegisterGoJanusNet();
+				return (int) ExitCode.Ok;
+			}
+			catch
+			{
+				return (int) ExitCode.ErrorRegisterGoJanusNet;
 			}
 		}
 

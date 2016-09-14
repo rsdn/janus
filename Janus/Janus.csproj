@@ -31,7 +31,6 @@
     </UpgradeBackupLocation>
     <IsWebBootstrapper>true</IsWebBootstrapper>
     <OldToolsVersion>2.0</OldToolsVersion>
-    <ApplicationManifest>Janus.exe.manifest</ApplicationManifest>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <TargetFrameworkProfile />
     <PublishUrl>http://localhost/Janus/</PublishUrl>
@@ -188,8 +187,6 @@
   <ItemGroup>
     <None Include="app.config" />
     <EmbeddedResource Include="Core\Extensibility\JanusExtensionDescriptor.xsd" />
-    <None Include="Janus.exe.manifest">
-    </None>
     <EmbeddedResource Include="Core\ApplicationCommands\ApplicationCommands.xml" />
     <EmbeddedResource Include="Core\Navigation\ForumsBox.resx">
       <DependentUpon>ForumsBox.cs</DependentUpon>
@@ -508,6 +505,7 @@
       <Link>Properties\GlobalAssemblyInfo.cs</Link>
     </Compile>
     <Compile Include="Core\CheckState\Extensibility\CommandProviderStrategiesFactory.cs" />
+    <Compile Include="Core\CmdLineArg.cs" />
     <Compile Include="Core\Configuration\ConfigChangedEventArgs.cs" />
     <Compile Include="Core\Configuration\ConfigChangedNotifier.cs" />
     <Compile Include="Core\Configuration\ConfigResources.Designer.cs">
