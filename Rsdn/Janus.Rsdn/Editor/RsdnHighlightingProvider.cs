@@ -11,7 +11,7 @@ namespace Rsdn.Janus.Autocomplete
 			RegexOptions.Compiled);
 
 		private static readonly Regex _smileRx = new Regex(
-			@":up:|:down:|:super:|:shuffle:" +
+			@":facepalm:|:sarcasm:|:up:|:down:|:super:|:shuffle:" +
 			@"|:crash:|:maniac:|:user:|:wow:|:beer:|:team:|:no:|" +
 			@":nopont:|:xz:|(?<!:):-?\)\)\)|(?<!:):-?\)\)|(?<!:):-?\)|" +
 			@"(?<!;|amp|gt|lt|quot);[-oO]?\)|(?<!:):-?\(|(?<!:):-[\\/]|:\?\?\?:");
