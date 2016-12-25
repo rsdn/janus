@@ -172,21 +172,16 @@ namespace Rsdn.Janus
 		}
 
 		private const bool _defaultShowSplash = true;
-		private bool _showSplash = _defaultShowSplash;
 
 		[JanusDisplayName(SR.Config.ShowSplash.DisplayNameResourceName)]
 		[JanusDescription(SR.Config.ShowSplash.DescriptionResourceName)]
 		[JanusCategory(_categoryNameCommon)]
 		[DefaultValue(_defaultShowSplash)]
 		[SortIndex(20)]
-		public bool ShowSplash
-		{
-			get { return _showSplash; }
-			set { _showSplash = value; }
-		}
+		public bool ShowSplash { get; set; } = _defaultShowSplash;
 
-		private const string _defaultSiteUrl = "http://rsdn.ru/";
-		private const string _defaultWebServiceUrl = "http://rsdn.ru/ws/Janus.asmx";
+		private const string _defaultSiteUrl = "http://rsdn.org/";
+		private const string _defaultWebServiceUrl = "http://rsdn.org/ws/Janus.asmx";
 
 		private string _siteUrl = _defaultSiteUrl;
 
