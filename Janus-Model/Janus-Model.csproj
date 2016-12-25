@@ -159,12 +159,14 @@
     <Compile Include="rsdn.ru\Database\Forums\DataModel\IFavoritesFolder.cs" />
     <Compile Include="rsdn.ru\Database\Forums\DataModel\IFavoritesItem.cs" />
     <Compile Include="rsdn.ru\Database\Forums\DataModel\IForumMessage.cs" />
+    <Compile Include="rsdn.ru\Database\Forums\DataModel\IMessageTag.cs" />
     <Compile Include="rsdn.ru\Database\Forums\DataModel\IModeratorial.cs" />
     <Compile Include="rsdn.ru\Database\Forums\DataModel\IOutboxMessage.cs" />
     <Compile Include="rsdn.ru\Database\Forums\DataModel\IOutboxRate.cs" />
     <Compile Include="rsdn.ru\Database\Forums\DataModel\IRate.cs" />
     <Compile Include="rsdn.ru\Database\Forums\DataModel\IServerForum.cs" />
     <Compile Include="rsdn.ru\Database\Forums\DataModel\ISubscribedForum.cs" />
+    <Compile Include="rsdn.ru\Database\Forums\DataModel\ITag.cs" />
     <Compile Include="rsdn.ru\Database\Forums\DataModel\ITopicInfo.cs" />
     <Compile Include="rsdn.ru\Database\Forums\DataModel\IViolation.cs" />
     <Compile Include="rsdn.ru\Database\Forums\IForumMessageInfo.cs" />

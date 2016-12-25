@@ -229,10 +229,13 @@
     <WebReferences Include="Web References\" />
   </ItemGroup>
   <ItemGroup>
-    <WebReferenceUrl Include="http://rsdn.org/ws/JanusAT.asmx">
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferenceUrl Include="http://rsdn.org/ws/JanusAT.asmx%3fWSDL">
       <UrlBehavior>Dynamic</UrlBehavior>
       <RelPath>Web References\org.rsdn\</RelPath>
-      <UpdateFromURL>http://rsdn.org/ws/JanusAT.asmx</UpdateFromURL>
+      <UpdateFromURL>http://rsdn.org/ws/JanusAT.asmx%3fWSDL</UpdateFromURL>
       <ServiceLocationURL>
       </ServiceLocationURL>
       <CachedDynamicPropName>
@@ -240,9 +243,6 @@
       <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
       <CachedSettingsPropName>Janus_Rsdn_org_rsdn_JanusAT</CachedSettingsPropName>
     </WebReferenceUrl>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Web References\org.rsdn\JanusAT.disco" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

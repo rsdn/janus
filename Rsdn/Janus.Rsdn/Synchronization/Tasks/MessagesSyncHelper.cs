@@ -348,6 +348,23 @@ namespace Rsdn.Janus
 			var msgIds = new List<int>();
 			var topicIds = new List<int>();
 			var processed = 0;
+			var tagCache =
+				LazyDictionary.Create<string, int>(
+					tag =>
+					{
+						var id =
+							db
+								.Tags(t => t.TagValue == tag)
+								.Select(t => (int?)t.ID)
+								.FirstOrDefault()
+							?? Convert.ToInt32(
+								db
+									.Tags()
+									.Value(_ => _.TagValue, tag)
+									.InsertWithIdentity());
+						return id;
+					},
+					false);
 			foreach (var msg in messages)
 			{
 				if (ForumsSubscriptionHelper.IsTrashForum(msg.forumId))
@@ -426,8 +443,18 @@ namespace Rsdn.Janus
 								.Set(_ => _.Name, msg.messageName)
 								.Set(_ => _.Closed, msg.closed)
 								.Update();
+							db
+								.MessageTags(mt => mt.MessageID == msg.messageId)
+								.Delete();
 							topicIds.Add(updatedTid.Value == 0 ? msg.messageId : updatedTid.Value);
 						}
+						if (msg.tags != null)
+							foreach (var tag in msg.tags)
+								db
+									.MessageTags()
+									.Value(_ => _.MessageID, msg.messageId)
+									.Value(_ => _.TagID, tagCache[tag])
+									.Insert();
 					}
 					catch (Exception e)
 					{

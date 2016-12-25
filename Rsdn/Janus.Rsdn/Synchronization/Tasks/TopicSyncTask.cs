@@ -4,7 +4,6 @@ using System.Linq;
 using CodeJam.Extensibility;
 using CodeJam.Extensibility.Model;
 
-using Rsdn.Janus.AT;
 using Rsdn.Janus.Properties;
 
 using JanusAT = Rsdn.Janus.org.rsdn.JanusAT;
@@ -13,7 +12,7 @@ using TopicResponse = Rsdn.Janus.org.rsdn.TopicResponse;
 
 namespace Rsdn.Janus
 {
-	internal class TopicSyncTask : RsdnSyncTask<org.rsdn.TopicRequest, org.rsdn.TopicResponse>
+	internal class TopicSyncTask : RsdnSyncTask<TopicRequest, TopicResponse>
 	{
 #pragma warning disable 0649
 		[ExpectService]
@@ -31,11 +30,11 @@ namespace Rsdn.Janus
 			return _outboxManager.DownloadTopics.Count > 0;
 		}
 
-		protected override org.rsdn.TopicRequest PrepareRequest(ISyncContext context)
+		protected override TopicRequest PrepareRequest(ISyncContext context)
 		{
 			var cfg = GetSyncConfig();
 			return
-				new org.rsdn.TopicRequest
+				new TopicRequest
 				{
 					userName = cfg.Login,
 					password = cfg.Password,
@@ -47,12 +46,12 @@ namespace Rsdn.Janus
 				};
 		}
 
-		protected override TopicResponse MakeRequest(ISyncContext context, JanusAT svc, org.rsdn.TopicRequest rq)
+		protected override TopicResponse MakeRequest(ISyncContext context, JanusAT svc, TopicRequest rq)
 		{
 			return svc.GetTopicByMessage(rq);
 		}
 
-		protected override void ProcessResponse(ISyncContext context, TopicRequest request, org.rsdn.TopicResponse response)
+		protected override void ProcessResponse(ISyncContext context, TopicRequest request, TopicResponse response)
 		{
 			MessagesSyncHelper.AddNewMessages(
 				context,

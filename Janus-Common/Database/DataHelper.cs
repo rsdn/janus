@@ -4,6 +4,7 @@ using System.Data;
 using System.Linq;
 using System.Linq.Expressions;
 
+using CodeJam;
 using CodeJam.Services;
 
 using JetBrains.Annotations;
@@ -16,9 +17,12 @@ namespace Rsdn.Janus
 {
 	public static class DataHelper
 	{
-		public static IQueryable<T> GetTable<T>(this IDataContext context, Expression<Func<T, bool>> predicate)
+		public static IQueryable<T> GetTable<T>(
+			[NotNull] this IDataContext context,
+			[NotNull] Expression<Func<T, bool>> predicate)
 			where T : class
 		{
+			Code.NotNull(context, nameof(context));
 			return context.GetTable<T>().Where(predicate);
 		}
 

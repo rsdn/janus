@@ -59,6 +59,7 @@
           <s:element minOccurs="1" maxOccurs="1" name="userTitleColor" type="s:int" />
           <s:element minOccurs="1" maxOccurs="1" name="lastModerated" type="s:dateTime" />
           <s:element minOccurs="1" maxOccurs="1" name="closed" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="tags" type="tns:ArrayOfString" />
         </s:sequence>
       </s:complexType>
       <s:simpleType name="UserRole">
@@ -72,6 +73,11 @@
           <s:enumeration value="Group" />
         </s:restriction>
       </s:simpleType>
+      <s:complexType name="ArrayOfString">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="s:string" />
+        </s:sequence>
+      </s:complexType>
       <s:complexType name="ArrayOfJanusRatingInfo">
         <s:sequence>
           <s:element minOccurs="0" maxOccurs="unbounded" name="JanusRatingInfo" nillable="true" type="tns:JanusRatingInfo" />
@@ -304,6 +310,7 @@
           <s:element minOccurs="1" maxOccurs="1" name="forumId" type="s:int" />
           <s:element minOccurs="0" maxOccurs="1" name="subject" type="s:string" />
           <s:element minOccurs="0" maxOccurs="1" name="message" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="tags" type="s:string" />
         </s:sequence>
       </s:complexType>
       <s:complexType name="ArrayOfPostRatingInfo">
@@ -515,42 +522,42 @@
   </wsdl:message>
   <wsdl:portType name="JanusATSoap">
     <wsdl:operation name="GetTopicByMessage">
-      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Âûòÿãèâàíèå òîïèêîâ ïî ID ñîîáùåíèé</wsdl:documentation>
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Вытягивание топиков по ID сообщений</wsdl:documentation>
       <wsdl:input message="tns:GetTopicByMessageSoapIn" />
       <wsdl:output message="tns:GetTopicByMessageSoapOut" />
     </wsdl:operation>
     <wsdl:operation name="GetNewData">
-      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Èçìåíåíèÿ â ôîðóìå ñ ìîìåíòà ïîñëåäíåé ñèíõðîíèçàöèè</wsdl:documentation>
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Изменения в форуме с момента последней синхронизации</wsdl:documentation>
       <wsdl:input message="tns:GetNewDataSoapIn" />
       <wsdl:output message="tns:GetNewDataSoapOut" />
     </wsdl:operation>
     <wsdl:operation name="GetForumList">
-      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Ñïèñîê ôîðóìîâ è ãðóïï ôîðóìîâ</wsdl:documentation>
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Список форумов и групп форумов</wsdl:documentation>
       <wsdl:input message="tns:GetForumListSoapIn" />
       <wsdl:output message="tns:GetForumListSoapOut" />
     </wsdl:operation>
     <wsdl:operation name="GetNewUsers">
-      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Ïîëó÷åíèå íîâûõ ïîëüçîâàòåëåé ñ ìîìåíòà ïîñëåäíåé ñèíõðîíèçàöèè</wsdl:documentation>
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Получение новых пользователей с момента последней синхронизации</wsdl:documentation>
       <wsdl:input message="tns:GetNewUsersSoapIn" />
       <wsdl:output message="tns:GetNewUsersSoapOut" />
     </wsdl:operation>
     <wsdl:operation name="GetUserByIds">
-      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Ïîëó÷åíèå ïîëüçîâàòåëåé ïî ñïèñêó èõ èäåíòèôèêàòîðîâ</wsdl:documentation>
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Получение пользователей по списку их идентификаторов</wsdl:documentation>
       <wsdl:input message="tns:GetUserByIdsSoapIn" />
       <wsdl:output message="tns:GetUserByIdsSoapOut" />
     </wsdl:operation>
     <wsdl:operation name="PostChange">
-      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Äîáàâëåíèå èçìåíåíèé â ôîðóìû</wsdl:documentation>
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Добавление изменений в форумы</wsdl:documentation>
       <wsdl:input message="tns:PostChangeSoapIn" />
       <wsdl:output message="tns:PostChangeSoapOut" />
     </wsdl:operation>
     <wsdl:operation name="PostChangeCommit">
-      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Ïîäòâåðæäåíèå äîáàâëåíèÿ èçìåíåíèé â ôîðóìû</wsdl:documentation>
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Подтверждение добавления изменений в форумы</wsdl:documentation>
       <wsdl:input message="tns:PostChangeCommitSoapIn" />
       <wsdl:output message="tns:PostChangeCommitSoapOut" />
     </wsdl:operation>
     <wsdl:operation name="Check">
-      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Ïðîâåðêà àêòèâíîñòè</wsdl:documentation>
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Проверка активности</wsdl:documentation>
       <wsdl:input message="tns:CheckSoapIn" />
       <wsdl:output message="tns:CheckSoapOut" />
     </wsdl:operation>
@@ -730,10 +737,10 @@
   </wsdl:binding>
   <wsdl:service name="JanusAT">
     <wsdl:port name="JanusATSoap" binding="tns:JanusATSoap">
-      <soap:address location="http://rsdn.org:8888/ws/JanusAT.asmx" />
+      <soap:address location="http://localhost:8888/ws/JanusAT.asmx" />
     </wsdl:port>
     <wsdl:port name="JanusATSoap12" binding="tns:JanusATSoap12">
-      <soap12:address location="http://rsdn.org:8888/ws/JanusAT.asmx" />
+      <soap12:address location="http://localhost:8888/ws/JanusAT.asmx" />
     </wsdl:port>
   </wsdl:service>
 </wsdl:definitions>
