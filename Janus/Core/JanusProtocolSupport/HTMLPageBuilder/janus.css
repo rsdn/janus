@@ -148,3 +148,20 @@ body
 .o {
 	font-size: 13px !important;
 }
+
+.tags-box {
+	margin-top: 8px;
+}
+
+.tags-box:before {
+	content: 'Теги: ';
+	color: gray;
+}
+
+.tags-box .tag {
+	display: inline-block;
+	margin: 2px 4px;
+	padding: 4px 8px;
+	color: #39739d !important;
+	background-color: #E1ECF4;
+}

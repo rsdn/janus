@@ -1,4 +1,6 @@
-﻿using LinqToDB.Mapping;
+﻿using System.Collections.Generic;
+
+using LinqToDB.Mapping;
 
 namespace Rsdn.Janus.DataModel
 {
@@ -10,5 +12,8 @@ namespace Rsdn.Janus.DataModel
 
 		[Column("tag_id")]
 		int TagID { get; }
+
+		[Association(ThisKey = "TagID", OtherKey = "ID")]
+		ITag Tag { get; }
 	}
 }

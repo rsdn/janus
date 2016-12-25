@@ -189,12 +189,12 @@
 					<xsl:apply-templates select="Rate"/>
 				</xsl:if>
 
-				<xsl:value-of select="Content"
-								disable-output-escaping="yes" />
+				<xsl:value-of select="Content" disable-output-escaping="yes" />
+
+				<xsl:apply-templates select="Tags"/>
 
 				<div class="o">
-					<xsl:value-of select="Origin"
-									disable-output-escaping="yes"/>
+					<xsl:value-of select="Origin" disable-output-escaping="yes"/>
 				</div>
 			</div>
 		</div>
@@ -294,6 +294,19 @@
 			</table>
 		</div>
 
+	</xsl:template>
+
+	<xsl:template match="Tags">
+		<div class="tags-box">
+			<xsl:for-each select="string">
+				<a class="tag" href="">
+					<xsl:attribute name="href">
+						<xsl:value-of select="XsltFormatUtils:FormatTagURI(text())"/>
+					</xsl:attribute>
+					<xsl:value-of select="text()"/>
+				</a>
+			</xsl:for-each>
+		</div>
 	</xsl:template>
 
 </xsl:stylesheet>

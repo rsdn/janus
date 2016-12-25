@@ -122,6 +122,12 @@ namespace Rsdn.Janus
 						xmlMessage.Rate.List.Add(rateItem);
 					}
 				}
+
+				xmlMessage.Tags =
+					db
+						.MessageTags(mt => mt.MessageID == mid)
+						.Select(mt => mt.Tag.TagValue)
+						.ToArray();
 				return xmlMessage;
 			}
 		}

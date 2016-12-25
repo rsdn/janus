@@ -30,14 +30,9 @@ namespace Rsdn.Janus
 		{
 			public string Summary { get; set; }
 
-			private List<MessageRateItem> _rateList = new List<MessageRateItem>();
 			[XmlArray("RateList")]
 			[XmlArrayItem("RateItem")]
-			public List<MessageRateItem> List
-			{
-				get { return _rateList; }
-				set { _rateList = value; }
-			}
+			public List<MessageRateItem> List { get; set; } = new List<MessageRateItem>();
 		}
 
 		public class MessageRateItem
@@ -46,41 +41,16 @@ namespace Rsdn.Janus
 			public int Type { get; set; }
 			public string Value { get; set; }
 
-			private MessageUserInfo _author = new MessageUserInfo();
-			public MessageUserInfo Author
-			{
-				get { return _author; }
-				set { _author = value; }
-			}
+			public MessageUserInfo Author { get; set; } = new MessageUserInfo();
 		}
 
-		private MessageFormattingOptions _formattingOptions = new MessageFormattingOptions();
-		public MessageFormattingOptions FormattingOptions
-		{
-			get { return _formattingOptions; }
-			set { _formattingOptions = value; }
-		}
+		public MessageFormattingOptions FormattingOptions { get; set; } = new MessageFormattingOptions();
 
-		private MessageRate _rate = new MessageRate();
-		public MessageRate Rate
-		{
-			get { return _rate; }
-			set { _rate = value; }
-		}
+		public MessageRate Rate { get; set; } = new MessageRate();
 
-		private MessageUserInfo _author = new MessageUserInfo();
-		public MessageUserInfo Author
-		{
-			get { return _author; }
-			set { _author = value; }
-		}
+		public MessageUserInfo Author { get; set; } = new MessageUserInfo();
 
-		private MessageDate _date = new MessageDate();
-		public MessageDate Date
-		{
-			get { return _date; }
-			set { _date = value; }
-		}
+		public MessageDate Date { get; set; } = new MessageDate();
 
 		public int ID { get; set; }
 		public string Name { get; set; }
@@ -92,5 +62,6 @@ namespace Rsdn.Janus
 		public string Origin { get; set; }
 		public int ViolationPenaltyType { get; set; }
 		public string ViolationReason { get; set; }
+		public string[] Tags { get; set; }
 	}
 }

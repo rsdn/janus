@@ -1,6 +1,7 @@
 ﻿using System;
 using System.IO;
 using System.Reflection;
+using System.Security.Policy;
 
 using CodeJam.Services;
 
@@ -116,5 +117,7 @@ namespace Rsdn.Janus
 			using (var sr = new StreamReader(stream))
 				return sr.ReadToEnd();
 		}
+
+		public static string FormatTagURI(string tagName) => SiteUrlHelper.GetTagUrl(tagName);
 	}
 }

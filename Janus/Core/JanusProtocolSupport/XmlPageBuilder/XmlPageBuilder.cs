@@ -43,8 +43,10 @@ namespace Rsdn.Janus
 			_serviceProvider = serviceProvider;
 			_pageBuilder = pageBuilder;
 
-			var xslStream = Assembly.GetExecutingAssembly()
-				.GetRequiredResourceStream(_resourcePrefix + "Message.xsl");
+			var xslStream =
+				Assembly
+					.GetExecutingAssembly()
+					.GetRequiredResourceStream(_resourcePrefix + "Message.xsl");
 
 			using (XmlReader xr = new XmlTextReader(xslStream))
 				_xslTransform.Load(xr, null, null);
@@ -72,10 +74,10 @@ namespace Rsdn.Janus
 			if (!msgExists)
 				return _pageBuilder.GetNotFoundMessage(mid);
 
-			var fs = _formatters
-				.Value
-				.Where(data => data.Info.FormatSource)
-				.ToArray();
+			//var fs = _formatters
+			//	.Value
+			//	.Where(data => data.Info.FormatSource)
+			//	.ToArray();
 
 			var message =
 				XmlBuilder.BuildMessage(
@@ -127,6 +129,9 @@ namespace Rsdn.Janus
 				_serializer.Serialize(
 					new XmlTextWriterEx(stream, Encoding.UTF8),
 					message);
+
+				stream.Seek(0, SeekOrigin.Begin);
+				var txt = new StreamReader(stream).ReadToEnd();
 
 				stream.Seek(0, SeekOrigin.Begin);
 
