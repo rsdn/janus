@@ -297,16 +297,18 @@
 	</xsl:template>
 
 	<xsl:template match="Tags">
-		<div class="tags-box">
-			<xsl:for-each select="string">
-				<a class="tag" href="">
-					<xsl:attribute name="href">
-						<xsl:value-of select="XsltFormatUtils:FormatTagURI(text())"/>
-					</xsl:attribute>
-					<xsl:value-of select="text()"/>
-				</a>
-			</xsl:for-each>
-		</div>
+		<xsl:if test="string">
+			<div class="tags-box">
+				<xsl:for-each select="string">
+					<a class="tag" href="">
+						<xsl:attribute name="href">
+							<xsl:value-of select="XsltFormatUtils:FormatTagURI(text())"/>
+						</xsl:attribute>
+						<xsl:value-of select="text()"/>
+					</a>
+				</xsl:for-each>
+			</div>
+		</xsl:if>
 	</xsl:template>
 
 </xsl:stylesheet>
