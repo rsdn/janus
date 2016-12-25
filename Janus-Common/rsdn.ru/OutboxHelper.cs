@@ -54,6 +54,7 @@ namespace Rsdn.Janus
 						.Value(_ => _.Body, () => message.Message)
 						.Value(_ => _.Hold, () => message.Hold)
 						.Value(_ => _.Tagline, () => tagline)
+						.Value(_ => _.Tags, () => message.Tags)
 					.Insert();
 		}
 		#endregion

@@ -11,60 +11,43 @@ namespace Rsdn.Janus
 	[OutboxItemEditor(typeof (NewMessageEditor))]
 	public class NewMessage : IOutboxMessage, ITreeNode, IGetData, IKeyedNode
 	{
-		private readonly int    _id;
-		private readonly int _forumId;
-		private readonly string _forum;
-		private readonly string _subject;
-		private readonly int    _reply;
-		private readonly bool   _hold;
 		private readonly NewMessageCollection _parent;
 
-		internal NewMessage(int id, int forumId, string forum, string subject, int reply,
-							bool hold, NewMessageCollection parent)
+		internal NewMessage(
+			int id,
+			int forumId,
+			string forum,
+			string subject,
+			int reply,
+			bool hold,
+			string tags,
+			NewMessageCollection parent)
 		{
-			_id      = id;
-			_forumId = forumId;
-			_forum   = forum;
-			_subject = subject;
-			_reply   = reply;
-			_hold    = hold;
+			ID      = id;
+			ForumId = forumId;
+			Forum   = forum;
+			Subject = subject;
+			Reply   = reply;
+			Hold    = hold;
 			_parent  = parent;
 		}
 
-		public int ID
-		{
-			get { return _id; }
-		}
+		public int ID { get; }
 
-		private string Forum
-		{
-			get { return _forum; }
-		}
+		private string Forum { get; }
 
-		public string Subject
-		{
-			get { return _subject; }
-		}
+		public string Subject { get; }
 
 		public string Message
 		{
 			get { throw new NotSupportedException(); }
 		}
 
-		private int Reply
-		{
-			get { return _reply; }
-		}
+		private int Reply { get; }
 
-		public bool Hold
-		{
-			get { return _hold; }
-		}
+		public bool Hold { get; }
 
-		public int ForumId
-		{
-			get { return _forumId; }
-		}
+		public int ForumId { get; }
 
 		public int ReplyId
 		{
@@ -91,10 +74,7 @@ namespace Rsdn.Janus
 		}
 
 		#region ITreeNode Members
-		bool ITreeNode.HasChildren
-		{
-			get { return false; }
-		}
+		bool ITreeNode.HasChildren => false;
 
 		ITreeNode ITreeNode.this[int index]
 		{
@@ -103,38 +83,26 @@ namespace Rsdn.Janus
 
 		NodeFlags ITreeNode.Flags { get; set; }
 
-		ITreeNode ITreeNode.Parent
-		{
-			get { return _parent; }
-		}
+		ITreeNode ITreeNode.Parent => _parent;
 		#endregion
 
 		#region ICollection Members
-		bool ICollection.IsSynchronized
-		{
-			get { return false; }
-		}
+		bool ICollection.IsSynchronized => false;
 
-		int ICollection.Count
-		{
-			get { return 0; }
-		}
+		int ICollection.Count => 0;
 
 		void ICollection.CopyTo(Array array, int index)
 		{
 			throw new NotSupportedException();
 		}
 
-		object ICollection.SyncRoot
-		{
-			get { return this; }
-		}
+		object ICollection.SyncRoot => this;
 		#endregion
 
 		#region IEnumerable Members
 		IEnumerator IEnumerable.GetEnumerator()
 		{
-			return null;
+			throw new NotImplementedException();
 		}
 		#endregion
 
@@ -149,10 +117,9 @@ namespace Rsdn.Janus
 		#endregion
 
 		#region IKeyedNode Members
-		public string Key
-		{
-			get { return ID.ToString(); }
-		}
+		public string Key => ID.ToString();
+
+		public string Tags { get; set; }
 		#endregion
 	}
 }

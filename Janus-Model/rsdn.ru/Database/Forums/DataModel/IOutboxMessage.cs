@@ -33,5 +33,8 @@ namespace Rsdn.Janus.DataModel
 
 		[Column]
 		bool Hold { get; }
+
+		[Column]
+		string Tags { get; }
 	}
 }

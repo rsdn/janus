@@ -8,5 +8,6 @@
 		bool Hold { get; }
 		string Subject { get; }
 		string Message { get; }
+		string Tags { get; }
 	}
 }

@@ -112,32 +112,23 @@
     <value>2.0</value>
   </resheader>
   <resheader name="reader">
-    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <resheader name="writer">
-    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <metadata name="_contentPanel.Locked" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="_editorContainer.Locked" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="_messageEditor.Locked" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="_messageEditor.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
   </data>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="_messageEditor.Location" type="System.Drawing.Point, System.Drawing">
     <value>1, 1</value>
   </data>
   <data name="_messageEditor.Size" type="System.Drawing.Size, System.Drawing">
-    <value>580, 212</value>
+    <value>640, 198</value>
   </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="_messageEditor.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
@@ -145,7 +136,7 @@
     <value>_messageEditor</value>
   </data>
   <data name="&gt;&gt;_messageEditor.Type" xml:space="preserve">
-    <value>Rsdn.Janus.JanusScintilla, Janus, Version=1.2.0.1497, Culture=neutral, PublicKeyToken=null</value>
+    <value>Rsdn.Janus.JanusScintilla, Janus, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;_messageEditor.Parent" xml:space="preserve">
     <value>_editorContainer</value>
@@ -163,7 +154,7 @@
     <value>1, 1, 1, 1</value>
   </data>
   <data name="_editorContainer.Size" type="System.Drawing.Size, System.Drawing">
-    <value>582, 214</value>
+    <value>642, 200</value>
   </data>
   <data name="_editorContainer.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -172,7 +163,7 @@
     <value>_editorContainer</value>
   </data>
   <data name="&gt;&gt;_editorContainer.Type" xml:space="preserve">
-    <value>Rsdn.Janus.Framework.FramePanel, Janus, Version=1.2.0.1497, Culture=neutral, PublicKeyToken=null</value>
+    <value>Rsdn.Janus.Framework.FramePanel, Janus, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;_editorContainer.Parent" xml:space="preserve">
     <value>_contentPanel</value>
@@ -180,9 +171,90 @@
   <data name="&gt;&gt;_editorContainer.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <metadata name="_tagsBar.Locked" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
+  <metadata name="_tagsPanel.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
   </metadata>
+  <metadata name="label1.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <data name="label1.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>30, 9</value>
+  </data>
+  <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>34, 13</value>
+  </data>
+  <data name="label1.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="label1.Text" xml:space="preserve">
+    <value>Теги:</value>
+  </data>
+  <data name="&gt;&gt;label1.Name" xml:space="preserve">
+    <value>label1</value>
+  </data>
+  <data name="&gt;&gt;label1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label1.Parent" xml:space="preserve">
+    <value>_tagsPanel</value>
+  </data>
+  <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="_tagsBox.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Left, Right</value>
+  </data>
+  <data name="_tagsBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>77, 6</value>
+  </data>
+  <data name="_tagsBox.MaxLength" type="System.Int32, mscorlib">
+    <value>1024</value>
+  </data>
+  <data name="_tagsBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>565, 20</value>
+  </data>
+  <data name="_tagsBox.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;_tagsBox.Name" xml:space="preserve">
+    <value>_tagsBox</value>
+  </data>
+  <data name="&gt;&gt;_tagsBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;_tagsBox.Parent" xml:space="preserve">
+    <value>_tagsPanel</value>
+  </data>
+  <data name="&gt;&gt;_tagsBox.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="_tagsPanel.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Bottom</value>
+  </data>
+  <data name="_tagsPanel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>5, 265</value>
+  </data>
+  <data name="_tagsPanel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>642, 32</value>
+  </data>
+  <data name="_tagsPanel.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;_tagsPanel.Name" xml:space="preserve">
+    <value>_tagsPanel</value>
+  </data>
+  <data name="&gt;&gt;_tagsPanel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;_tagsPanel.Parent" xml:space="preserve">
+    <value>_contentPanel</value>
+  </data>
+  <data name="&gt;&gt;_tagsPanel.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
   <data name="_tagsBar.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Bottom</value>
   </data>
@@ -190,10 +262,10 @@
     <value>Courier New, 9.75pt</value>
   </data>
   <data name="_tagsBar.Location" type="System.Drawing.Point, System.Drawing">
-    <value>5, 287</value>
+    <value>5, 305</value>
   </data>
   <data name="_tagsBar.Size" type="System.Drawing.Size, System.Drawing">
-    <value>582, 75</value>
+    <value>642, 75</value>
   </data>
   <data name="_tagsBar.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -202,13 +274,13 @@
     <value>_tagsBar</value>
   </data>
   <data name="&gt;&gt;_tagsBar.Type" xml:space="preserve">
-    <value>Rsdn.Janus.SmilesToolbar, Janus, Version=1.2.0.1497, Culture=neutral, PublicKeyToken=null</value>
+    <value>Rsdn.Janus.SmilesToolbar, Janus, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;_tagsBar.Parent" xml:space="preserve">
     <value>_contentPanel</value>
   </data>
   <data name="&gt;&gt;_tagsBar.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>4</value>
   </data>
   <data name="_bottomSplitter.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Bottom</value>
@@ -217,7 +289,7 @@
     <value>NoControl</value>
   </data>
   <data name="_bottomSplitter.Location" type="System.Drawing.Point, System.Drawing">
-    <value>5, 279</value>
+    <value>5, 297</value>
   </data>
   <data name="_bottomSplitter.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -226,20 +298,14 @@
     <value>_bottomSplitter</value>
   </data>
   <data name="&gt;&gt;_bottomSplitter.Type" xml:space="preserve">
-    <value>Rsdn.Janus.Framework.CollapsibleSplitter, Janus, Version=1.2.0.1497, Culture=neutral, PublicKeyToken=null</value>
+    <value>Rsdn.Janus.Framework.CollapsibleSplitter, Janus, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;_bottomSplitter.Parent" xml:space="preserve">
     <value>_contentPanel</value>
   </data>
   <data name="&gt;&gt;_bottomSplitter.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
-  <metadata name="_headerPanel.Locked" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="_subjectTextBox.Locked" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
   <data name="_subjectTextBox.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Left, Right</value>
   </data>
@@ -250,7 +316,7 @@
     <value>128</value>
   </data>
   <data name="_subjectTextBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>512, 20</value>
+    <value>572, 20</value>
   </data>
   <data name="_subjectTextBox.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
@@ -259,7 +325,7 @@
     <value>_subjectTextBox</value>
   </data>
   <data name="&gt;&gt;_subjectTextBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;_subjectTextBox.Parent" xml:space="preserve">
     <value>_headerPanel</value>
@@ -267,43 +333,37 @@
   <data name="&gt;&gt;_subjectTextBox.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <metadata name="_forumsComboBox.Locked" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <data name="_forumsComboBox.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Left, Right</value>
-  </data>
-  <data name="_forumsComboBox.ItemHeight" type="System.Int32, mscorlib">
-    <value>13</value>
-  </data>
-  <data name="_forumsComboBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>285, 6</value>
-  </data>
-  <data name="_forumsComboBox.MaxDropDownItems" type="System.Int32, mscorlib">
-    <value>12</value>
-  </data>
-  <data name="_forumsComboBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>297, 21</value>
-  </data>
-  <data name="_forumsComboBox.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;_forumsComboBox.Name" xml:space="preserve">
+	<data name="_forumsComboBox.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+		<value>Top, Left, Right</value>
+	</data>
+	<data name="_forumsComboBox.ItemHeight" type="System.Int32, mscorlib">
+		<value>13</value>
+	</data>
+	<data name="_forumsComboBox.Location" type="System.Drawing.Point, System.Drawing">
+		<value>285, 6</value>
+	</data>
+	<data name="_forumsComboBox.MaxDropDownItems" type="System.Int32, mscorlib">
+		<value>12</value>
+	</data>
+	<data name="_forumsComboBox.Size" type="System.Drawing.Size, System.Drawing">
+		<value>297, 21</value>
+	</data>
+	<data name="_forumsComboBox.TabIndex" type="System.Int32, mscorlib">
+		<value>3</value>
+	</data>
+	<data name="&gt;&gt;_forumsComboBox.Name" xml:space="preserve">
     <value>_forumsComboBox</value>
   </data>
-  <data name="&gt;&gt;_forumsComboBox.Type" xml:space="preserve">
+	<data name="&gt;&gt;_forumsComboBox.Type" xml:space="preserve">
     <value>Rsdn.Janus.ForumsBox, Janus, Version=1.2.0.1497, Culture=neutral, PublicKeyToken=null</value>
   </data>
-  <data name="&gt;&gt;_forumsComboBox.Parent" xml:space="preserve">
+	<data name="&gt;&gt;_forumsComboBox.Parent" xml:space="preserve">
     <value>_headerPanel</value>
   </data>
-  <data name="&gt;&gt;_forumsComboBox.ZOrder" xml:space="preserve">
+	<data name="&gt;&gt;_forumsComboBox.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <metadata name="_subjectLabel.Locked" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <data name="_subjectLabel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+	<data name="_subjectLabel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
   <data name="_subjectLabel.Location" type="System.Drawing.Point, System.Drawing">
@@ -325,17 +385,14 @@
     <value>_subjectLabel</value>
   </data>
   <data name="&gt;&gt;_subjectLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;_subjectLabel.Parent" xml:space="preserve">
     <value>_headerPanel</value>
   </data>
   <data name="&gt;&gt;_subjectLabel.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>1</value>
   </data>
-  <metadata name="_fromLabel.Locked" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
   <data name="_fromLabel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
@@ -358,17 +415,14 @@
     <value>_fromLabel</value>
   </data>
   <data name="&gt;&gt;_fromLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;_fromLabel.Parent" xml:space="preserve">
     <value>_headerPanel</value>
   </data>
   <data name="&gt;&gt;_fromLabel.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>2</value>
   </data>
-  <metadata name="_forumLabel.Locked" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
   <data name="_forumLabel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
@@ -391,17 +445,14 @@
     <value>_forumLabel</value>
   </data>
   <data name="&gt;&gt;_forumLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;_forumLabel.Parent" xml:space="preserve">
     <value>_headerPanel</value>
   </data>
   <data name="&gt;&gt;_forumLabel.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>3</value>
   </data>
-  <metadata name="_fromUserLabel.Locked" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
   <data name="_fromUserLabel.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 8.25pt, style=Bold</value>
   </data>
@@ -424,13 +475,13 @@
     <value>_fromUserLabel</value>
   </data>
   <data name="&gt;&gt;_fromUserLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;_fromUserLabel.Parent" xml:space="preserve">
     <value>_headerPanel</value>
   </data>
   <data name="&gt;&gt;_fromUserLabel.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>4</value>
   </data>
   <data name="_headerPanel.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Top</value>
@@ -439,7 +490,7 @@
     <value>5, 5</value>
   </data>
   <data name="_headerPanel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>582, 60</value>
+    <value>642, 60</value>
   </data>
   <data name="_headerPanel.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -448,13 +499,13 @@
     <value>_headerPanel</value>
   </data>
   <data name="&gt;&gt;_headerPanel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;_headerPanel.Parent" xml:space="preserve">
     <value>_contentPanel</value>
   </data>
   <data name="&gt;&gt;_headerPanel.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="_contentPanel.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
@@ -466,7 +517,7 @@
     <value>5, 5, 5, 5</value>
   </data>
   <data name="_contentPanel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>592, 367</value>
+    <value>652, 385</value>
   </data>
   <data name="_contentPanel.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -475,7 +526,7 @@
     <value>_contentPanel</value>
   </data>
   <data name="&gt;&gt;_contentPanel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;_contentPanel.Parent" xml:space="preserve">
     <value>$this</value>
@@ -483,17 +534,14 @@
   <data name="&gt;&gt;_contentPanel.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <metadata name="_menuStrip.Locked" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="_menuStrip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+  <metadata name="_menuStrip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>0, 0</value>
   </metadata>
   <data name="_menuStrip.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 0</value>
   </data>
   <data name="_menuStrip.Size" type="System.Drawing.Size, System.Drawing">
-    <value>592, 24</value>
+    <value>652, 24</value>
   </data>
   <data name="_menuStrip.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -502,7 +550,7 @@
     <value>_menuStrip</value>
   </data>
   <data name="&gt;&gt;_menuStrip.Type" xml:space="preserve">
-    <value>System.Windows.Forms.MenuStrip, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.MenuStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;_menuStrip.Parent" xml:space="preserve">
     <value>$this</value>
@@ -510,10 +558,7 @@
   <data name="&gt;&gt;_menuStrip.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
-  <metadata name="_toolStrip.Locked" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="_toolStrip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+  <metadata name="_toolStrip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>0, 24</value>
   </metadata>
   <data name="_toolStrip.Location" type="System.Drawing.Point, System.Drawing">
@@ -523,7 +568,7 @@
     <value>4, 0, 1, 0</value>
   </data>
   <data name="_toolStrip.Size" type="System.Drawing.Size, System.Drawing">
-    <value>592, 25</value>
+    <value>652, 25</value>
   </data>
   <data name="_toolStrip.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -532,7 +577,7 @@
     <value>_toolStrip</value>
   </data>
   <data name="&gt;&gt;_toolStrip.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStrip, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;_toolStrip.Parent" xml:space="preserve">
     <value>$this</value>
@@ -540,14 +585,14 @@
   <data name="&gt;&gt;_toolStrip.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <metadata name="$this.Locked" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>6, 13</value>
+  </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>592, 416</value>
+    <value>652, 434</value>
   </data>
   <data name="$this.MinimumSize" type="System.Drawing.Size, System.Drawing">
     <value>400, 300</value>
@@ -562,6 +607,6 @@
     <value>MessageForm</value>
   </data>
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
-    <value>Rsdn.Janus.JanusBaseForm, Janus-Common, Version=1.2.0.1497, Culture=neutral, PublicKeyToken=null</value>
+    <value>Rsdn.Janus.JanusBaseForm, Janus-Common, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
 </root>

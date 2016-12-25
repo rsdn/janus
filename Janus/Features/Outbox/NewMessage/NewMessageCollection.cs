@@ -80,6 +80,7 @@ namespace Rsdn.Janus
 									m.Subject,
 									m.ReplyToID,
 									m.Hold,
+									m.Tags,
 									this))
 						.ToList();
 		}

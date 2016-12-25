@@ -2,7 +2,7 @@
 
 <DbSchema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
           xmlns:xsd="http://www.w3.org/2001/XMLSchema"
-          version="32">
+          version="33">
 
 	<table name="download_topics">
 		<column name="id" 
@@ -318,6 +318,10 @@
 				type="NCharacterVaring"
 				nullable="true"
 				size="128"/>
+		<column name="tags"
+				type="NCharacterVaring"
+				nullable="true"
+				size="1024"/>
 		<key name="PK_messages_outbox"
 			 columns="mid"
 			 key-type="KeyPrimary"
