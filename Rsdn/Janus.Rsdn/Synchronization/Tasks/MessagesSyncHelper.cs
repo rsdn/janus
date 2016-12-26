@@ -101,7 +101,8 @@ namespace Rsdn.Janus
 			CompiledQuery.Compile<IDataContext, JanusRatingInfo, MessageRates, MessageRates, int>(
 				(db, rate, rateType, oldRateType) =>
 					db
-						.Rates(
+						.GetTable<IRate>()
+						.Where(
 							r =>
 								r.MessageID == rate.messageId
 								&& r.UserID == rate.userId
