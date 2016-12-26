@@ -13,7 +13,7 @@ namespace Rsdn.Janus
 	{
 		private static SqlConnection _hcon;
 		protected static SqlServerVersion _version = new SqlServerVersion();
-		protected DataTable _sqlClauses;
+		protected readonly DataTable _sqlClauses;
 
 		protected SqlDbSchema()
 		{
@@ -30,7 +30,11 @@ namespace Rsdn.Janus
 			{
 				_hcon = con;
 				if (!SqlServerVersion.Parse(_hcon.ServerVersion, out _version))
-					throw new ArgumentException("Invalid server version", "con");
+					throw new ArgumentException("Invalid server version", nameof(con));
+				// all mssqls from v.10 are fully compatible, so treat all versions above 11 as 11 to avoid massive
+				// copypastein MetaData.xml
+				if (int.Parse(_version.ver1.Substring(1, _version.ver1.Length - 2)) > 11)
+					_version.ver1 = "'11'";
 			}
 
 			var dataTable = new DataTable(collectionName);
