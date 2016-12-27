@@ -8,7 +8,7 @@ using CodeJam.Services;
 
 using LinqToDB;
 
-using Rsdn.Janus.DataModel;
+using Rsdn.Janus.AT;
 using Rsdn.Janus.Log;
 using Rsdn.Janus.org.rsdn;
 using Rsdn.Janus.Properties;
@@ -18,101 +18,6 @@ namespace Rsdn.Janus
 	// Вспомогательный класс для сохранения новых сообщений в БД
 	internal static class MessagesSyncHelper
 	{
-		private static readonly Func<IDataContext, JanusMessageInfo, bool, bool, DateTime?, int> _addMsgQuery =
-			CompiledQuery.Compile<IDataContext, JanusMessageInfo, bool, bool, DateTime?, int>(
-				(db, msg, isRead, markRead, lastModerated) =>
-					db
-						.Messages()
-						.Value(_ => _.ID, msg.messageId)
-						.Value(_ => _.ForumID, msg.forumId)
-						.Value(_ => _.TopicID, msg.topicId)
-						.Value(_ => _.ParentID, msg.parentId)
-						.Value(_ => _.Date, msg.messageDate)
-						.Value(_ => _.UserNick, msg.userNick)
-						.Value(_ => _.Subject, msg.subject)
-						.Value(_ => _.Message, msg.message)
-						.Value(_ => _.UserClass, ToJanusUserClass(msg.userRole))
-						.Value(_ => _.IsRead, isRead)
-						.Value(_ => _.UserID, msg.userId)
-						.Value(_ => _.ArticleId, msg.articleId)
-						.Value(_ => _.ReadReplies, markRead)
-						.Value(_ => _.Name, msg.messageName)
-						.Value(_ => _.LastModerated, lastModerated)
-						.Value(_ => _.Closed, msg.closed)
-						.Insert());
-
-		private static readonly Func<IDataContext, JanusMessageInfo, DateTime?, int> _updateMsgQuery =
-			CompiledQuery.Compile<IDataContext, JanusMessageInfo, DateTime?, int>(
-				(db, msg, lastModerated) =>
-					db
-						.Messages(m => m.ID == msg.messageId)
-						.Set(_ => _.ForumID, msg.forumId)
-						.Set(_ => _.TopicID, msg.topicId)
-						.Set(_ => _.ParentID, msg.parentId)
-						.Set(_ => _.Date, msg.messageDate)
-						.Set(_ => _.UserID, msg.userId)
-						.Set(_ => _.UserNick, msg.userNick)
-						.Set(_ => _.Subject, msg.subject)
-						.Set(_ => _.Message, msg.message)
-						.Set(_ => _.UserClass, ToJanusUserClass(msg.userRole))
-						.Set(_ => _.ArticleId, msg.articleId)
-						.Set(_ => _.LastModerated, lastModerated)
-						.Set(_ => _.Name, msg.messageName)
-						.Set(_ => _.Closed, msg.closed)
-						.Update());
-
-		private static readonly Func<IDataContext, int, int, int> _insertTagQuery =
-			CompiledQuery.Compile<IDataContext, int, int, int>(
-				(db, msgId, tagId) =>
-					db
-						.MessageTags()
-						.Value(_ => _.MessageID, msgId)
-						.Value(_ => _.TagID, tagId)
-						.Insert());
-
-		private static readonly Func<IDataContext, int, int> _delTagsQuery =
-			CompiledQuery.Compile<IDataContext, int, int>(
-				(db, msgId) =>
-					db
-						.MessageTags(mt => mt.MessageID == msgId)
-						.Delete());
-
-		private static readonly Func<IDataContext, int, int, int> _deleteRatesQuery =
-			CompiledQuery.Compile<IDataContext, int, int, int>(
-				(db, msgId, userId) =>
-					db
-						.Rates(r => r.MessageID == msgId && r.UserID == userId)
-						.Delete());
-
-		private static readonly Func<IDataContext, JanusRatingInfo, MessageRates, int> _insertRateQuery =
-			CompiledQuery.Compile<IDataContext, JanusRatingInfo, MessageRates, int>(
-				(db, rate, rateType) =>
-					db
-						.GetTable<IRate>()
-						.Value(_ => _.MessageID, rate.messageId)
-						.Value(_ => _.TopicID, rate.topicId)
-						.Value(_ => _.UserID, rate.userId)
-						.Value(_ => _.RateType, rateType)
-						.Value(_ => _.Multiplier, rate.userRating)
-						.Value(_ => _.Date, rate.rateDate)
-						.Insert());
-
-		private static readonly Func<IDataContext, JanusRatingInfo, MessageRates, MessageRates, int> _updateRatesQuery =
-			CompiledQuery.Compile<IDataContext, JanusRatingInfo, MessageRates, MessageRates, int>(
-				(db, rate, rateType, oldRateType) =>
-					db
-						.GetTable<IRate>()
-						.Where(
-							r =>
-								r.MessageID == rate.messageId
-								&& r.UserID == rate.userId
-								&& r.RateType == oldRateType)
-						.Set(_ => _.TopicID, () => rate.topicId)
-						.Set(_ => _.RateType, () => rateType)
-						.Set(_ => _.Multiplier, () => rate.userRating)
-						.Set(_ => _.Date, () => rate.rateDate)
-						.Update());
-
 		public static void AddNewMessages(
 			ISyncContext context,
 			JanusMessageInfo[] messages,
@@ -146,15 +51,24 @@ namespace Rsdn.Janus
 				var rateType = (MessageRates) rate.rate;
 				if (rateType == MessageRates.DeleteRate)
 				{
-					_deleteRatesQuery(db, rate.messageId, rate.userId);
+					db
+						.Rates(r => r.MessageID == localRate.messageId
+								 && r.UserID == localRate.userId)
+						.Delete();
 					continue;
 				}
 
 				var q =
 					db
-						.Rates(r => r.MessageID == localRate.messageId && r.UserID == localRate.userId);
+						.Rates(
+							r =>
+								r.MessageID == localRate.messageId
+								&& r.UserID == localRate.userId);
 				if (rateType == MessageRates.Agree || rateType == MessageRates.DisAgree)
-					q = q.Where(r => r.RateType == MessageRates.Agree || r.RateType == MessageRates.DisAgree);
+					q = q.Where(
+						r =>
+							r.RateType == MessageRates.Agree
+							|| r.RateType == MessageRates.DisAgree);
 				else if (rateType <= 0)
 					q = q.Where(r => r.RateType == rateType);
 				else
@@ -166,9 +80,27 @@ namespace Rsdn.Janus
 						.SingleOrDefault();
 				var newRate = rate;
 				if (!oldRate.HasValue)
-					_insertRateQuery(db, newRate, rateType);
+					db
+						.Rates()
+							.Value(_ => _.MessageID, newRate.messageId)
+							.Value(_ => _.TopicID, newRate.topicId)
+							.Value(_ => _.UserID, newRate.userId)
+							.Value(_ => _.RateType, rateType)
+							.Value(_ => _.Multiplier, newRate.userRating)
+							.Value(_ => _.Date, newRate.rateDate)
+						.Insert();
 				else
-					_updateRatesQuery(db, newRate, rateType, oldRate.Value);
+					db
+						.Rates(
+							r =>
+								r.MessageID == newRate.messageId
+								&& r.UserID == newRate.userId
+								&& r.RateType == oldRate)
+							.Set(_ => _.TopicID, () => newRate.topicId)
+							.Set(_ => _.RateType, () => rateType)
+							.Set(_ => _.Multiplier, () => newRate.userRating)
+							.Set(_ => _.Date, () => newRate.rateDate)
+						.Update();
 
 				processed++;
 				progressHandler?.Invoke(rates.Length, processed);
@@ -470,19 +402,59 @@ namespace Rsdn.Janus
 									? provider.GetRequiredService<IRsdnSyncConfigService>().GetConfig().MarkOwnMessages
 									: markRead;
 
-							_addMsgQuery(db, msg, isRead, markRead, lastModerated);
+							db
+								.Messages()
+								.Value(_ => _.ID, msg.messageId)
+								.Value(_ => _.ForumID, msg.forumId)
+								.Value(_ => _.TopicID, msg.topicId)
+								.Value(_ => _.ParentID, msg.parentId)
+								.Value(_ => _.Date, msg.messageDate)
+								.Value(_ => _.UserNick, msg.userNick)
+								.Value(_ => _.Subject, msg.subject)
+								.Value(_ => _.Message, msg.message)
+								.Value(_ => _.UserClass, ToJanusUserClass(msg.userRole))
+								.Value(_ => _.IsRead, isRead)
+								.Value(_ => _.UserID, msg.userId)
+								.Value(_ => _.ArticleId, msg.articleId)
+								.Value(_ => _.ReadReplies, markRead)
+								.Value(_ => _.Name, msg.messageName)
+								.Value(_ => _.LastModerated, lastModerated)
+								.Value(_ => _.Closed, msg.closed)
+								.Insert();
 
 							msgIds.Add(msg.messageId);
 						}
 						else
 						{
-							_updateMsgQuery(db, msg, lastModerated);
-							_delTagsQuery(db, msg.messageId);
+							var locMsg = msg;
+							db
+								.Messages(m => m.ID == locMsg.messageId)
+								.Set(_ => _.ForumID, msg.forumId)
+								.Set(_ => _.TopicID, msg.topicId)
+								.Set(_ => _.ParentID, msg.parentId)
+								.Set(_ => _.Date, msg.messageDate)
+								.Set(_ => _.UserID, msg.userId)
+								.Set(_ => _.UserNick, msg.userNick)
+								.Set(_ => _.Subject, msg.subject)
+								.Set(_ => _.Message, msg.message)
+								.Set(_ => _.UserClass, ToJanusUserClass(msg.userRole))
+								.Set(_ => _.ArticleId, msg.articleId)
+								.Set(_ => _.LastModerated, lastModerated)
+								.Set(_ => _.Name, msg.messageName)
+								.Set(_ => _.Closed, msg.closed)
+								.Update();
+							db
+								.MessageTags(mt => mt.MessageID == msg.messageId)
+								.Delete();
 							topicIds.Add(updatedTid.Value == 0 ? msg.messageId : updatedTid.Value);
 						}
 						if (msg.tags != null)
 							foreach (var tag in msg.tags)
-								_insertTagQuery(db, msg.messageId, tagCache[tag]);
+								db
+									.MessageTags()
+									.Value(_ => _.MessageID, msg.messageId)
+									.Value(_ => _.TagID, tagCache[tag])
+									.Insert();
 					}
 					catch (Exception e)
 					{
