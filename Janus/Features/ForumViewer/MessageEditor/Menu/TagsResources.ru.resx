@@ -300,4 +300,10 @@
   <data name="Code.Nemerle.Description" xml:space="preserve">
     <value>Код на Nemerle</value>
   </data>
+  <data name="Emotion.Facepalm.Description" xml:space="preserve">
+    <value>Фейспалм</value>
+  </data>
+  <data name="Emotion.Sarcasm.Description" xml:space="preserve">
+    <value>Сарказм</value>
+  </data>
 </root>

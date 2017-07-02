@@ -461,6 +461,18 @@
 			<parameter name="text">:beer:</parameter>
 		</menuCommand>
 
+		<menuCommand command="Janus.Forum.MessageEditor.InsertSmile"
+				 description="Emotion.Facepalm.Description"
+				 image="MessageEditor\EmFacepalm">
+			<parameter name="text">:facepalm:</parameter>
+		</menuCommand>
+
+		<menuCommand command="Janus.Forum.MessageEditor.InsertSmile"
+					 description="Emotion.Sarcasm.Description"
+					 image="MessageEditor\EmSarcasm">
+			<parameter name="text">:sarcasm:</parameter>
+		</menuCommand>
+
 	</group>
 
 </root>
