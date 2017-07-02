@@ -2243,4 +2243,7 @@ Use "Favorites" tab to specify them.</value>
   <data name="EnterTopicMessageIdForm.MessageIdIsTextFormat" xml:space="preserve">
     <value>Message ID is: {0}</value>
   </data>
+  <data name="Application.GoJanusInstallationErrorReasonErrorCode" xml:space="preserve">
+    <value>Registration process return error code.</value>
+  </data>
 </root>

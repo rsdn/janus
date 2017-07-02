@@ -172,6 +172,8 @@
     <Compile Include="Synchronization\NetSync\WebResponseProxy.cs" />
     <Compile Include="Utils\AsyncHelper.cs" />
     <Compile Include="CoreServices\Menu\ResourceMenuProvider.cs" />
+    <Compile Include="Utils\ComHelper.cs" />
+    <Compile Include="Utils\ExitCode.cs" />
     <Compile Include="Utils\HttpUtility.cs" />
     <Compile Include="Utils\ObservableHelper.cs" />
     <Compile Include="Utils\Parsers\CharParsers\CharInput.cs" />
