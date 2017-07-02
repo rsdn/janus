@@ -5,6 +5,7 @@ using System.Linq;
 
 using CodeJam;
 using CodeJam.Services;
+using CodeJam.Strings;
 
 using JetBrains.Annotations;
 

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 
 using CodeJam;
+using CodeJam.Strings;
 
 using Rsdn.Janus.Core.TextMacros.SimpleMacros;
 

@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 
 using CodeJam;
+using CodeJam.Strings;
 
 namespace Rsdn.Janus.Mssql
 {

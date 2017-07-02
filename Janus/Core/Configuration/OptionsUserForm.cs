@@ -4,6 +4,7 @@ using System.IO;
 using System.Windows.Forms;
 
 using CodeJam;
+using CodeJam.Strings;
 
 namespace Rsdn.Janus
 {

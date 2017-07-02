@@ -5,6 +5,7 @@ using System.Linq;
 using CodeJam;
 using CodeJam.Collections;
 using CodeJam.Services;
+using CodeJam.Strings;
 
 using LinqToDB;
 

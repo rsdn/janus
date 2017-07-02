@@ -4,6 +4,7 @@ using System.Drawing;
 using CodeJam;
 using CodeJam.Extensibility;
 using CodeJam.Services;
+using CodeJam.Strings;
 
 using JetBrains.Annotations;
 

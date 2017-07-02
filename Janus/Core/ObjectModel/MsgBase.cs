@@ -8,6 +8,7 @@ using System.Text.RegularExpressions;
 using CodeJam;
 using CodeJam.Extensibility;
 using CodeJam.Extensibility.Model;
+using CodeJam.Strings;
 
 using LinqToDB.Mapping;
 
