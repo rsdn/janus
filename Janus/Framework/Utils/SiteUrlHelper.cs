@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Web;
 
 namespace Rsdn.Janus
 {
@@ -7,21 +8,16 @@ namespace Rsdn.Janus
 	/// </summary>
 	public static class SiteUrlHelper
 	{
-		private static string RsdnServerUrl
-		{
-			get
-			{
-				// Перенес вычисление базового пути в конфиг.
-				return Config.Instance.SiteUrl;
-			}
-		}
+		private static string RsdnServerUrl => Config.Instance.SiteUrl;
 
 		public static string GetForumUrl(string forumName)
 		{
-			return String.Format(
-				"{0}Forum/?group={1}",
-				RsdnServerUrl,
-				forumName);
+			return $"{RsdnServerUrl}Forum/?group={forumName}";
+		}
+
+		public static string GetTagUrl(string tag)
+		{
+			return $"{RsdnServerUrl}tag/messages?tag={HttpUtility.UrlEncode(tag)}";
 		}
 
 		public static string GetMessageUrl(int messageId)
@@ -42,28 +38,22 @@ namespace Rsdn.Janus
 
 		public static string GetSelfModerateUrl(int messageId)
 		{
-			return String.Format("{0}Forum/Private/Self.aspx?mid={1}",
-								 RsdnServerUrl,
-								 messageId);
+			return $"{RsdnServerUrl}Forum/Private/Self.aspx?mid={messageId}";
 		}
 
 		public static string GetRatingUrl(int messageId)
 		{
-			return String.Format("{0}Forum/RateList.aspx?mid={1}",
-								 RsdnServerUrl,
-								 messageId);
+			return $"{RsdnServerUrl}Forum/RateList.aspx?mid={messageId}";
 		}
 
 		public static string GetFileUploadUrl()
 		{
-			return String.Format("{0}Tools/Private/FileList.aspx",
-								 RsdnServerUrl);
+			return $"{RsdnServerUrl}Tools/Private/FileList.aspx";
 		}
 
 		public static string GetInfoUrl(string name)
 		{
-			return JanusProtocolInfo
-				.FormatExternalURI(JanusProtocolResourceType.Faq, name);
+			return JanusProtocolInfo.FormatExternalURI(JanusProtocolResourceType.Faq, name);
 		}
 	}
 }

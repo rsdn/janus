@@ -13,7 +13,7 @@ namespace Rsdn.Janus
 	{
 		public static DataTable GetSchema(SqlConnection con, string collectionName, object[] restrictions)
 		{
-			var filter = String.Format("CollectionName = '{0}'", collectionName);
+			var filter = $"CollectionName = '{collectionName}'";
 
 			var ds = new DataSet();
 			ds.ReadXml(new StringReader(Resources.MetaData));

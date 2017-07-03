@@ -6,7 +6,7 @@
       <Value Profile="(Default)">http://rsdn.ru/WS/JanusAT.asmx</Value>
     </Setting>
     <Setting Name="Janus_Rsdn_org_rsdn_JanusAT" Type="(Web Service URL)" Scope="Application">
-      <Value Profile="(Default)">http://rsdn.org:8888/ws/JanusAT.asmx</Value>
+      <Value Profile="(Default)">http://localhost:8888/ws/JanusAT.asmx</Value>
     </Setting>
   </Settings>
 </SettingsFile>

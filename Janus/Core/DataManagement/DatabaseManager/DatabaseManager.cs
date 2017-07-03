@@ -1,4 +1,4 @@
-﻿using CodeJam;
+﻿using CodeJam.Strings;
 
 namespace Rsdn.Janus
 {

@@ -1,7 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
+
 <DbSchema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-		  xmlns:xsd="http://www.w3.org/2001/XMLSchema"
-		  version="30">
+          xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+          version="33">
 
 	<table name="download_topics">
 		<column name="id" 
@@ -228,6 +229,55 @@
 			 clustered="true" />
 	</table>
 
+	<table name="tags">
+		<column name="id"
+		        type="Integer"
+		        auto-increment="true"
+		        seed="1"
+		        increment="1"
+		        nullable="false"
+		        size="4"
+		        decimal-precision="10" />
+		<column name="tag_value"
+		        type="NCharacterVaring"
+		        nullable="false"
+		        size="1024" />
+		<key name="PK_tags"
+		     columns="id"
+		     key-type="KeyPrimary"
+		     clustered="true" />
+		<index name="IX_tags_tag_value"
+		       columns="tag_value"
+		       clustered="false"
+		       allow-nulls="Allow"
+		       unique="true" />
+	</table>
+
+	<table name="message_tags">
+		<column name="message_id"
+		        type="Integer"
+		        nullable="false"
+		        size="4"
+		        decimal-precision="10" />
+		<column name="tag_id"
+		        type="Integer"
+		        nullable="false"
+		        size="4"
+		        decimal-precision="10" />
+		<key name="FK_message_tags_tags"
+		     columns="tag_id"
+		     key-type="KeyForeign"
+		     rel-table="tags"
+		     rel-columns="id"
+		     clustered="false" />
+		<key name="FK_message_tags_messages"
+		     columns="message_id"
+		     key-type="KeyForeign"
+		     rel-table="messages"
+		     rel-columns="mid"
+		     clustered="false" />
+	</table>
+
 	<table name="messages_outbox">
 		<column name="dte" 
 				type="Timestamp"
@@ -268,6 +318,10 @@
 				type="NCharacterVaring"
 				nullable="true"
 				size="128"/>
+		<column name="tags"
+				type="NCharacterVaring"
+				nullable="true"
+				size="1024"/>
 		<key name="PK_messages_outbox"
 			 columns="mid"
 			 key-type="KeyPrimary"

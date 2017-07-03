@@ -3,6 +3,7 @@ using System.IO;
 using System.IO.Compression;
 
 using CodeJam;
+using CodeJam.Strings;
 
 using JetBrains.Annotations;
 

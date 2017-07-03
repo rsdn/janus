@@ -36,6 +36,8 @@
 		private void InitializeComponent()
 		{
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MessageForm));
+			System.Windows.Forms.Panel _tagsPanel;
+			System.Windows.Forms.Label label1;
 			this._contentPanel = new System.Windows.Forms.Panel();
 			this._editorContainer = new Rsdn.Janus.Framework.FramePanel();
 			this._messageEditor = new Rsdn.Janus.JanusScintilla();
@@ -50,14 +52,19 @@
 			this._fromUserLabel = new System.Windows.Forms.Label();
 			this._menuStrip = new System.Windows.Forms.MenuStrip();
 			this._toolStrip = new System.Windows.Forms.ToolStrip();
+			this._tagsBox = new System.Windows.Forms.TextBox();
+			_tagsPanel = new System.Windows.Forms.Panel();
+			label1 = new System.Windows.Forms.Label();
 			this._contentPanel.SuspendLayout();
 			this._editorContainer.SuspendLayout();
 			this._headerPanel.SuspendLayout();
+			_tagsPanel.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// _contentPanel
 			// 
 			this._contentPanel.Controls.Add(this._editorContainer);
+			this._contentPanel.Controls.Add(_tagsPanel);
 			this._contentPanel.Controls.Add(this._bottomSplitter);
 			this._contentPanel.Controls.Add(this._headerPanel);
 			this._contentPanel.Controls.Add(this._tagsBar);
@@ -87,10 +94,10 @@
 			this._messageEditor.UseDisplayLines = true;
 			this._messageEditor.WrapLines = true;
 			this._messageEditor.Modified += new Rsdn.Scintilla.ModifiedEventHandler(this.MessageEditorModified);
-			this._messageEditor.IsModifiedChanged += new System.EventHandler(this.MessageEditorIsModifiedChanged);
+			this._messageEditor.StyleNeeded += new Rsdn.Scintilla.StyleNeededEventHandler(this.MessageEditorStyleNeeded);
 			this._messageEditor.CharAdded += new System.Windows.Forms.KeyPressEventHandler(this.MessageEditorCharAdded);
 			this._messageEditor.AutocompleteSelected += new System.EventHandler<Rsdn.Scintilla.AutocompleteSelectedEventArgs>(this.MessageEditorAutocompleteSelected);
-			this._messageEditor.StyleNeeded += new Rsdn.Scintilla.StyleNeededEventHandler(this.MessageEditorStyleNeeded);
+			this._messageEditor.IsModifiedChanged += new System.EventHandler(this.MessageEditorIsModifiedChanged);
 			// 
 			// _bottomSplitter
 			// 
@@ -125,8 +132,8 @@
 			// 
 			resources.ApplyResources(this._subjectTextBox, "_subjectTextBox");
 			this._subjectTextBox.Name = "_subjectTextBox";
-			this._subjectTextBox.TextChanged += new System.EventHandler(this.SubjectTextBoxTextChanged);
 			this._subjectTextBox.ModifiedChanged += new System.EventHandler(this.SubjectTextBoxModifiedChanged);
+			this._subjectTextBox.TextChanged += new System.EventHandler(this.SubjectTextBoxTextChanged);
 			// 
 			// _forumsComboBox
 			// 
@@ -134,6 +141,7 @@
 			this._forumsComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
 			this._forumsComboBox.FormattingEnabled = true;
 			this._forumsComboBox.Name = "_forumsComboBox";
+
 			// 
 			// _subjectLabel
 			// 
@@ -168,6 +176,23 @@
 			resources.ApplyResources(this._toolStrip, "_toolStrip");
 			this._toolStrip.Name = "_toolStrip";
 			// 
+			// _tagsPanel
+			// 
+			_tagsPanel.Controls.Add(label1);
+			_tagsPanel.Controls.Add(this._tagsBox);
+			resources.ApplyResources(_tagsPanel, "_tagsPanel");
+			_tagsPanel.Name = "_tagsPanel";
+			// 
+			// _tagsBox
+			// 
+			resources.ApplyResources(this._tagsBox, "_tagsBox");
+			this._tagsBox.Name = "_tagsBox";
+			// 
+			// label1
+			// 
+			resources.ApplyResources(label1, "label1");
+			label1.Name = "label1";
+			// 
 			// MessageForm
 			// 
 			resources.ApplyResources(this, "$this");
@@ -180,6 +205,8 @@
 			this._editorContainer.ResumeLayout(false);
 			this._headerPanel.ResumeLayout(false);
 			this._headerPanel.PerformLayout();
+			_tagsPanel.ResumeLayout(false);
+			_tagsPanel.PerformLayout();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -200,5 +227,6 @@
 		private Rsdn.Janus.Framework.CollapsibleSplitter _bottomSplitter;
 		private System.Windows.Forms.ToolStrip _toolStrip;
 		private System.Windows.Forms.MenuStrip _menuStrip;
+		private System.Windows.Forms.TextBox _tagsBox;
 	}
 }

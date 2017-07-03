@@ -196,5 +196,31 @@ namespace Rsdn.Janus
 				(m => m.Rates.Count(r => r.RateType == MessageRates.DisAgree));
 		}
 		#endregion
+
+		#region Tags
+		public static ITable<ITag> Tags([NotNull] this IDataContext db)
+		{
+			return db.GetTable<ITag>();
+		}
+
+		public static IQueryable<ITag> Tags(
+			[NotNull] this IDataContext db,
+			[NotNull] Expression<Func<ITag, bool>> predicate)
+		{
+			return db.GetTable<ITag>(predicate);
+		}
+
+		public static ITable<IMessageTag> MessageTags([NotNull] this IDataContext db)
+		{
+			return db.GetTable<IMessageTag>();
+		}
+
+		public static IQueryable<IMessageTag> MessageTags(
+			[NotNull] this IDataContext db,
+			[NotNull] Expression<Func<IMessageTag, bool>> predicate)
+		{
+			return db.GetTable(predicate);
+		}
+		#endregion
 	}
 }

@@ -6,7 +6,6 @@ using CodeJam.Services;
 
 using LinqToDB;
 
-using Rsdn.Janus.AT;
 using Rsdn.Janus.org.rsdn;
 using Rsdn.Janus.Properties;
 
@@ -49,7 +48,8 @@ namespace Rsdn.Janus
 											? ""
 											: $"\r\n[tagline]{m.Tagline}[/tagline]"),
 									parentId = m.ReplyToID,
-									subject = m.Subject
+									subject = m.Subject,
+									tags = m.Tags
 								})
 						.ToArray();
 				var rates =

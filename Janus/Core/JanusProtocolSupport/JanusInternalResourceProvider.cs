@@ -9,10 +9,7 @@ namespace Rsdn.Janus
 	{
 		#region IResourceProvider Members
 
-		public string Name
-		{
-			get { return "Janus internal resource provider"; }
-		}
+		public string Name => "Janus internal resource provider";
 
 		public Resource GetData(string uri)
 		{

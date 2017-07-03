@@ -6,7 +6,7 @@ using System.Globalization;
 using System.IO;
 using System.Text;
 
-using CodeJam;
+using CodeJam.Strings;
 
 using FirebirdSql.Data.FirebirdClient;
 

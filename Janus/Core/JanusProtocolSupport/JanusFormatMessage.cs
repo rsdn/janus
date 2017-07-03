@@ -10,6 +10,7 @@ using CodeJam;
 using CodeJam.Extensibility;
 using CodeJam.Extensibility.Model;
 using CodeJam.Services;
+using CodeJam.Strings;
 
 using Rsdn.Framework.Formatting;
 
@@ -548,14 +549,19 @@ namespace Rsdn.Janus
 			string link;
 			string imageUrl;
 
+			int id;
 			var msg =
 				string.IsNullOrEmpty(name)
 					? null
-					: DatabaseManager
-						.GetMessageByName(
-							provider,
-							name,
-							m => new {m.ID, m.Subject, m.Date, m.UserNick});
+					:	int.TryParse(name, out id)
+						? DatabaseManager.GetMessageById(
+								provider,
+								id,
+								m => new { m.ID, m.Subject, m.Date, m.UserNick })
+						: DatabaseManager.GetMessageByName(
+								provider,
+								name,
+								m => new {m.ID, m.Subject, m.Date, m.UserNick});
 			if (msg == null)
 			{
 				link     = SiteUrlHelper.GetInfoUrl(name);

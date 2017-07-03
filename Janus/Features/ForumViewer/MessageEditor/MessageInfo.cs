@@ -19,16 +19,17 @@ namespace Rsdn.Janus
 		}
 
 		public MessageInfo(int forumId, int replyId, string subject, string msg)
-			: this(0, forumId, replyId, subject, msg)
+			: this(0, forumId, replyId, subject, msg, null)
 		{}
 
-		public MessageInfo(int id, int forumId, int replyId, string subject, string msg)
+		public MessageInfo(int id, int forumId, int replyId, string subject, string msg, string tags)
 		{
 			ID = id;
 			ForumId = forumId;
 			ReplyId = replyId;
-			_subject = subject;
-			_message = msg;
+			Subject = subject;
+			Message = msg;
+			Tags = tags;
 		}
 
 		[Column("mid")]
@@ -43,22 +44,13 @@ namespace Rsdn.Janus
 		[Column("hold")]
 		public bool Hold { get; set; }
 
-		private string _subject = String.Empty;
-
 		[Column("subject")]
-		public string Subject
-		{
-			get { return _subject; }
-			set { _subject = value; }
-		}
-
-		private string _message = String.Empty;
+		public string Subject { get; set; } = string.Empty;
 
 		[Column("message")]
-		public string Message
-		{
-			get { return _message; }
-			set { _message = value; }
-		}
+		public string Message { get; set; } = string.Empty;
+
+		[Column("tags")]
+		public string Tags { get; set; }
 	}
 }

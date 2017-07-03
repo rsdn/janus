@@ -10,7 +10,7 @@ using System.Threading;
 using System.Web;
 using System.Windows.Forms;
 
-using CodeJam;
+using CodeJam.Strings;
 using CodeJam.Services;
 
 using JetBrains.Annotations;
@@ -254,6 +254,7 @@ namespace Rsdn.Janus
 					.Set(_ => _.Subject, m => mi.Subject)
 					.Set(_ => _.Body, m => mi.Message)
 					.Set(_ => _.Hold, m => mi.Hold)
+					.Set(_ => _.Tags, m => mi.Tags)
 					.Update();
 		}
 		#endregion
@@ -535,10 +536,13 @@ namespace Rsdn.Janus
 				_messageEditor.SetStyleCharset(style.Number, ScintillaCharset.Russian);
 
 			_subjectTextBox.Modified = false;
+			_tagsBox.Modified = false;
 			_messageEditor.ClearUndoBuffer(); // Savepoint also set by this call
 			OnIsModifiedChanged();
 			_messageEditor.MultipleSelection = true;
 			_messageEditor.AdditionalSelectionTyping = true;
+
+			_tagsBox.Text = _messageInfo.Tags;
 
 			StyleConfig.StyleChange += OnStyleChanged;
 			UpdateStyle();
@@ -604,6 +608,7 @@ namespace Rsdn.Janus
 
 			_messageInfo.Subject = _subjectTextBox.Text.Trim();
 			_messageInfo.Message = _messageEditor.Text.Trim();
+			_messageInfo.Tags = _tagsBox.Text.IsNullOrWhiteSpace() ? null : _tagsBox.Text.Trim();
 
 			if (!_messageInfo.Hold)
 			{
@@ -647,6 +652,7 @@ namespace Rsdn.Janus
 
 			_messageEditor.SetSavePoint();
 			_subjectTextBox.Modified = false;
+			_tagsBox.Modified = false;
 			OnIsModifiedChanged();
 
 			MessageSent?.Invoke(this, _messageInfo.ID);
@@ -664,7 +670,7 @@ namespace Rsdn.Janus
 
 		private void OnIsModifiedChanged()
 		{
-			_isModified = _messageEditor.IsModified || _subjectTextBox.Modified;
+			_isModified = _messageEditor.IsModified || _subjectTextBox.Modified || _tagsBox.Modified;
 			IsModifiedChanged?.Invoke(this);
 		}
 

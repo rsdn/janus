@@ -46,7 +46,8 @@ namespace Rsdn.Janus
 									m.ForumID,
 									m.ReplyToID,
 									m.Subject,
-									m.Body))
+									m.Body,
+									m.Tags))
 						.Single();
 				msg.Set(_ => _.Hold, _ => true).Update();
 			}

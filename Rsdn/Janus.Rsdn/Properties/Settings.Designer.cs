@@ -36,7 +36,7 @@ namespace Rsdn.Janus.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.WebServiceUrl)]
-        [global::System.Configuration.DefaultSettingValueAttribute("http://rsdn.org:8888/ws/JanusAT.asmx")]
+        [global::System.Configuration.DefaultSettingValueAttribute("http://localhost:8888/ws/JanusAT.asmx")]
         public string Janus_Rsdn_org_rsdn_JanusAT {
             get {
                 return ((string)(this["Janus_Rsdn_org_rsdn_JanusAT"]));

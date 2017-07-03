@@ -22,6 +22,19 @@ namespace Rsdn.Janus
 						.SingleOrDefault();
 		}
 
+		public static T GetMessageById<T>(
+			IServiceProvider provider,
+			int id,
+			Expression<Func<DataModel.IForumMessage, T>> resultSelector)
+		{
+			using (var dbMgr = provider.CreateDBContext())
+				return
+					dbMgr
+						.Messages(msg => msg.ID == id)
+						.Select(resultSelector)
+						.SingleOrDefault();
+		}
+
 		public static int? FindMessageForumId(IServiceProvider provider, int msgId)
 		{
 			using (var mgr = provider.CreateDBContext())

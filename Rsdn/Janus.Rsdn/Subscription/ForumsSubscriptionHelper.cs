@@ -7,6 +7,7 @@ using System.Windows.Forms;
 using CodeJam;
 using CodeJam.Extensibility.EventBroker;
 using CodeJam.Services;
+using CodeJam.Strings;
 
 using JetBrains.Annotations;
 

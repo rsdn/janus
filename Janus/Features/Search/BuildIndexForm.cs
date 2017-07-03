@@ -6,6 +6,7 @@ using System.Linq;
 using System.Windows.Forms;
 
 using CodeJam;
+using CodeJam.Strings;
 
 using Lucene.Net.Index;
 

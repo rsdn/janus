@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<discovery xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.xmlsoap.org/disco/">
-  <contractRef ref="http://rsdn.org:8888/ws/JanusAT.asmx?wsdl" docRef="http://rsdn.org:8888/ws/JanusAT.asmx" xmlns="http://schemas.xmlsoap.org/disco/scl/" />
-  <soap address="http://rsdn.org:8888/ws/JanusAT.asmx" xmlns:q1="http://rsdn.ru/Janus/" binding="q1:JanusATSoap" xmlns="http://schemas.xmlsoap.org/disco/soap/" />
-  <soap address="http://rsdn.org:8888/ws/JanusAT.asmx" xmlns:q2="http://rsdn.ru/Janus/" binding="q2:JanusATSoap12" xmlns="http://schemas.xmlsoap.org/disco/soap/" />
-</discovery>
