@@ -10,6 +10,7 @@ using CodeJam;
 using CodeJam.Collections;
 using CodeJam.Extensibility;
 using CodeJam.Services;
+using CodeJam.Strings;
 
 using JetBrains.Annotations;
 

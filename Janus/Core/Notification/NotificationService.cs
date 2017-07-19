@@ -1,6 +1,6 @@
 ﻿using System;
 
-using CodeJam;
+using CodeJam.Strings;
 using CodeJam.Extensibility;
 using CodeJam.Services;
 

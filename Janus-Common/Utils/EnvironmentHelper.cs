@@ -1,9 +1,17 @@
 ﻿using System;
+using System.Diagnostics;
+using System.Globalization;
 using System.Linq;
 using System.Reflection;
+using System.Runtime.InteropServices;
 using System.Web;
+using System.Windows.Forms;
 
 using CodeJam.Services;
+
+using JetBrains.Annotations;
+
+using Microsoft.Win32;
 
 namespace Rsdn.Janus
 {
@@ -116,6 +124,28 @@ namespace Rsdn.Janus
 		{
 			var infSvc = provider.GetService<IBootTimeInformer>();
 			return infSvc != null;
+		}
+
+		public static int RunAsAdmin([NotNull] string cmdLineArgs)
+		{
+			if (cmdLineArgs == null)
+				throw new ArgumentNullException(nameof(cmdLineArgs));
+
+			var executablePath = Application.ExecutablePath;
+			var startInfo = new ProcessStartInfo(executablePath, cmdLineArgs)
+			{
+				Verb = "runas"
+			};
+
+			using (var process = Process.Start(startInfo))
+			{
+				if (process == null)
+					throw new Exception($"Process.Start return null. executablePath: '{executablePath}'. cmdLineArgs: '{cmdLineArgs}'");
+
+				process.WaitForExit();
+
+				return process.ExitCode;
+			}
 		}
 	}
 }

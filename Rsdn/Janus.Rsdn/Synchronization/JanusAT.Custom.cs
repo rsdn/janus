@@ -2,6 +2,7 @@
 using System.Net;
 
 using CodeJam;
+using CodeJam.Strings;
 
 using Rsdn.Janus.Log;
 using Rsdn.Janus.Properties;

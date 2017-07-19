@@ -429,4 +429,10 @@
   <data name="Code.Nemerle.Text" xml:space="preserve">
     <value>[nemerle]</value>
   </data>
+  <data name="Emotion.Facepalm.Description" xml:space="preserve">
+    <value>Facepalm</value>
+  </data>
+  <data name="Emotion.Sarcasm.Description" xml:space="preserve">
+    <value>Sarcasm</value>
+  </data>
 </root>

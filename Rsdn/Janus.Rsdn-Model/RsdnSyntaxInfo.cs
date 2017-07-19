@@ -31,6 +31,8 @@ namespace Rsdn.Janus.Autocomplete
 					":no:",
 					":nopont:",
 					":xz:",
+					":sarcasm:",
+					":facepalm:",
 					":???:?0" // scintilla use '?' as image marker, '?0' is never used
 				};
 

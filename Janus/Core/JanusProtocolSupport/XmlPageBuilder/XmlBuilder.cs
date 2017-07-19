@@ -2,7 +2,7 @@
 
 using System.Linq;
 
-using CodeJam;
+using CodeJam.Strings;
 
 using JetBrains.Annotations;
 

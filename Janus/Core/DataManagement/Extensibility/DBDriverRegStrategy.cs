@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Resources;
 
-using CodeJam;
 using CodeJam.Extensibility;
 using CodeJam.Extensibility.Registration;
 using CodeJam.Services;
+using CodeJam.Strings;
 
 namespace Rsdn.Janus
 {

@@ -6,6 +6,7 @@ using System.Windows.Forms;
 using CodeJam;
 using CodeJam.Extensibility.EventBroker;
 using CodeJam.Services;
+using CodeJam.Strings;
 
 using Rsdn.Framework.Formatting;
 using Rsdn.Janus.Framework;

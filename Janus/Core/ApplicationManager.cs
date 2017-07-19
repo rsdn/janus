@@ -3,8 +3,10 @@ using System.Diagnostics;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
 
+using CodeJam;
 using CodeJam.Services;
 
+using Rsdn.Janus.GoJanusNet;
 using Rsdn.Janus.Log;
 using Rsdn.Janus.Protocol;
 
@@ -20,7 +22,6 @@ namespace Rsdn.Janus
 
 		private ApplicationManager()
 		{
-			
 		}
 
 		[Obsolete("Use IServiceProvider instance, supplied by call argument instead")]
@@ -53,7 +54,7 @@ namespace Rsdn.Janus
 			Navigator = new Navigator(serviceProvider);
 
 			serviceProvider.GetRequiredService<DockManager>().Init();
-			((OutboxManager)ServiceProvider.GetRequiredService<IOutboxManager>()).Init();
+			((OutboxManager) ServiceProvider.GetRequiredService<IOutboxManager>()).Init();
 #if DEBUG
 			// ReSharper disable once ObjectCreationAsStatement
 			new FileLog(Logger);
@@ -66,15 +67,13 @@ namespace Rsdn.Janus
 			Logger.LogInfo(ApplicationInfo.NameWithVersionAndCopyright);
 		}
 
-		private static void CheckJanusProtocolInstallation()
+		private static bool TryInstallJanusProtocol()
 		{
 			try
 			{
 				JanusProtocol.SetDataSource(new JanusInternalResourceProvider());
-
-				var rs = new RegistrationServices();
-				rs.RegisterAssembly(typeof(JanusProtocol).Assembly,
-					AssemblyRegistrationFlags.SetCodeBase);
+				JanusProtocol.InstallProtocol();
+				return true;
 			}
 			catch (Exception ex)
 			{
@@ -82,23 +81,90 @@ namespace Rsdn.Janus
 					string.Format(SR.Application.ProtocolInstallationError, ex.Message),
 					ApplicationInfo.ApplicationName,
 					MessageBoxButtons.OK, MessageBoxIcon.Error);
+				return false;
+			}
+		}
+
+		private static void UninstallJanusProtocol()
+		{
+			try
+			{
+				JanusProtocol.UninstallProtocol();
+			}
+			catch (Exception ex)
+			{
+				Code.AssertState(false, "UninstallJanusProtocol: {0}", ex.Message);
+			}
+		}
+
+		internal static void RegisterGoJanusNet()
+		{
+			ComHelper.RegisterAssembly(typeof(GoUrl));
+		}
+
+		private static void RegisterGoJanusNetAsAdmin()
+		{
+			var showErrorBox = new Action<string>(reason =>
+			{
+				var errorMessage = string.Format(SR.Application.GoJanusInstallationError, reason);
+				MessageBox.Show(
+					errorMessage,
+					ApplicationInfo.ApplicationName,
+					MessageBoxButtons.OK, MessageBoxIcon.Error);
+			});
+
+			int runAsAdminResult;
+			try
+			{
+				runAsAdminResult = EnvironmentHelper.RunAsAdmin(CmdLineArg.RegisterGoJanusNet);
+			}
+			catch (Exception ex)
+			{
+				showErrorBox(ex.Message);
+				return;
+			}
+
+			Code.AssertState(
+				Enum.IsDefined(typeof(ExitCode), runAsAdminResult),
+				"RunAsAdmin return undefuned ExitCode: Value: hex: 0x{0:X02} dec: {0}",
+				runAsAdminResult);
+
+			var exitCode = (ExitCode) runAsAdminResult;
+			switch (exitCode)
+			{
+				case ExitCode.Ok:
+					// зарегили
+					break;
+
+				case ExitCode.ErrorRegisterGoJanusNet:
+					// ошибка во время регистрации в процессе стартовавшим от админа
+					showErrorBox(SR.Application.GoJanusInstallationErrorReasonErrorCode);
+					break;
+
+				default:
+					// процесс стартовавший от админа вернул что-то, что есть в энуме ExitCode, но не
+					// может возвращаться из Juanus.RegisterGoJanusNet, то есть в том процессе
+					// поток управления пошел куда-то не туда
+					Code.AssertState(
+						false,
+						"Unexpected exit code. Name: {0}.{1}. Value: hex: 0x{2:X02} dec: {2}",
+						typeof(ExitCode).Name, Enum.GetName(typeof(ExitCode), runAsAdminResult), runAsAdminResult);
+					break;
 			}
 		}
 
 		private static void CheckGoJanusNetInstallation()
 		{
+			if (ComHelper.IsTypeRegisteredInCom(typeof(GoUrl)))
+				return;
+
 			try
 			{
-				var rs = new RegistrationServices();
-				rs.RegisterAssembly(typeof(GoJanusNet.GoUrl).Assembly,
-					AssemblyRegistrationFlags.SetCodeBase);
+				RegisterGoJanusNet();
 			}
-			catch (Exception ex)
+			catch (UnauthorizedAccessException)
 			{
-				MessageBox.Show(
-					string.Format(SR.Application.GoJanusInstallationError, ex.Message),
-					ApplicationInfo.ApplicationName,
-					MessageBoxButtons.OK, MessageBoxIcon.Error);
+				RegisterGoJanusNetAsAdmin();
 			}
 		}
 
@@ -106,20 +172,29 @@ namespace Rsdn.Janus
 		{
 			serviceProvider.SetSplashMessage(SR.Splash.InitApplication);
 
-			CheckJanusProtocolInstallation();
 			CheckGoJanusNetInstallation();
 
-			ProtocolDispatcher = new JanusProtocolDispatcher(serviceProvider);
+			if (!TryInstallJanusProtocol())
+				return;
 
-			Forums.BeforeLoadData += ForumsBeforeLoadData;
+			try
+			{
+				ProtocolDispatcher = new JanusProtocolDispatcher(serviceProvider);
 
-			foreach (var forum in Forums.Instance.ForumList)
-				forum.BeforeLoadData += ActiveForumBeforeLoadData;
+				Forums.BeforeLoadData += ForumsBeforeLoadData;
 
-			Init(serviceProvider);
-			serviceProvider.SetSplashMessage(SR.Splash.RunApplication);
+				foreach (var forum in Forums.Instance.ForumList)
+					forum.BeforeLoadData += ActiveForumBeforeLoadData;
 
-			Application.Run(MainForm);
+				Init(serviceProvider);
+				serviceProvider.SetSplashMessage(SR.Splash.RunApplication);
+
+				Application.Run(MainForm);
+			}
+			finally
+			{
+				UninstallJanusProtocol();
+			}
 		}
 
 		private void ForumsBeforeLoadData(object sender, EventArgs e)
@@ -158,7 +233,7 @@ namespace Rsdn.Janus
 		/// Менеджер исходящих.
 		/// </summary>
 		[Obsolete("Use GetRequiredService<IOutboxManager>() instead")]
-		public OutboxManager OutboxManager => (OutboxManager)ServiceProvider.GetRequiredService<IOutboxManager>();
+		public OutboxManager OutboxManager => (OutboxManager) ServiceProvider.GetRequiredService<IOutboxManager>();
 
 		/// <summary>
 		/// Экземпляр диспатчера протокола.
@@ -171,6 +246,7 @@ namespace Rsdn.Janus
 		/// Ссылка на экземпляр класса, обеспечивающего навигацию по форумам.
 		/// </summary>
 		public ForumNavigator ForumNavigator { get; private set; }
+
 		#endregion
 
 		#region Main form wrapper

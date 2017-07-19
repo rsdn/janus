@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Runtime.Serialization;
 
-using CodeJam;
+using CodeJam.Strings;
 
 using Rsdn.Janus.Database.Schema;
 

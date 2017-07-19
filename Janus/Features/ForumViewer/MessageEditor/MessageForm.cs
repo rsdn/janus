@@ -10,7 +10,7 @@ using System.Threading;
 using System.Web;
 using System.Windows.Forms;
 
-using CodeJam;
+using CodeJam.Strings;
 using CodeJam.Services;
 
 using JetBrains.Annotations;

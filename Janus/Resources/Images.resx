@@ -9626,6 +9626,15 @@
         DkFKHnT92+j3jKDhL+CtM/prM9BwJTRcCQ1XQsN1lO0DrimY2KcYgSAAAAAASUVORK5CYII=
 </value>
   </data>
+  <data name="_default\MessageEditor\EmFacepalm" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABIAAAASCAYAAABWzo5XAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        wwAADsMBx2+oZAAAABl0RVh0U29mdHdhcmUAcGFpbnQubmV0IDQuMC4xMkMEa+wAAACRSURBVDhPrYyB
+        EgARCET9/0+7iiWVBnNmHna3ttRafyE0GTp8Oewc8MZYiEHeZmYwJ1gkBRG6bLi3JQBlw0ERv6BHKW2O
+        Hrk2y1bvkF3+6YWXsrAIQaa1r5jCDp3qvr+IEcKLtPaxR3gTOsLm2BEVhVpntFl65OLGjh46wRWtwTlL
+        kXwuC0BY9FLmikQ8F9XyAXZQNvQ6Tx87AAAAAElFTkSuQmCC
+</value>
+  </data>
   <data name="_default\MessageEditor\EmFrown" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACQAAAAYCAYAAACSuF9OAAAABGdBTUEAALGOfPtRkwAAALJJREFUSEvl
@@ -9663,6 +9672,20 @@
         z4hClG+iUGbsxjjVKJQZa5A9a6A6e9YzMlBGwKDXck+uGoUyAoak95YgX/T+0yAf5ND7uk/PikAZoYN2
         uS3IqEZVYgyUGRRkzqFvekYGyjNoMFGNMVDuYMOiMP+m/+yAsoIPX9E9FVB2grITlJ2g7GMeD/FYwwTO
         pcs8AAAAAElFTkSuQmCC
+</value>
+  </data>
+  <data name="_default\MessageEditor\EmSarcasm" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAADIAAAAmCAYAAACGeMg8AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        wwAADsMBx2+oZAAAABl0RVh0U29mdHdhcmUAcGFpbnQubmV0IDQuMC4xMkMEa+wAAAHBSURBVFhH7ZYB
+        koMgDEW9k3fqnbzT3sn1E7/EmCC7g1vs+mf+FEKQPKC2wziO8yc4gdxdD0hvekB6UxFkGIbNvSsEscX3
+        DlMNYsWT0nlnfYgxL48x3dcuKQSBah6ix2raFGOlMejsOVQRRMs+BH2aitpa0Tzbp6K2VQhiJ/10Ia8d
+        jVNned4cqngimEhr6bgei/Io9nXc9qGatlUR5E56QHrTA9KbHpDetIF8gvErc5mxwLT467V4eqUFbU4r
+        u8FWRuEJYvW/AkGOtc3x7AZbGUXgSgFiOgHJRcN6qA7IDbYyFq8B8QGsyzBusJU1SHS1NET+J5y9j8Uw
+        h0BLEwSnEZ2IxPYAbHuxt4Hw9YtPW4T0BaTe/obsOi2NxWDsJK+XDyK7XWvk/zmINAWGV8saOVKgSLeh
+        49hbQMQogEXoq3EbkHSlFqMAKUJiexABpXQbOo4JiHYaSiMXmItgcXzR+WXnwjoPTRYcgRACn9KWTeAJ
+        y+hFxgL8DSm/fjMMC6dyDNabId5OfM24xAlkfWN5r1/ag9GWtDyf+by66O8e2NpYgBAlEBhjLHA/JHE7
+        lzHG9YzmxiJ6Z20xnn8zZ57n4RtthxkrYVylywAAAABJRU5ErkJggg==
 </value>
   </data>
   <data name="_default\MessageEditor\EmShuffle" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">

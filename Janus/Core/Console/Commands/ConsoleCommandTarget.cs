@@ -2,6 +2,7 @@
 
 using CodeJam;
 using CodeJam.Services;
+using CodeJam.Strings;
 
 using Rsdn.Janus.Core.Console;
 

@@ -10,6 +10,7 @@ using CodeJam;
 using CodeJam.Extensibility;
 using CodeJam.Extensibility.Model;
 using CodeJam.Services;
+using CodeJam.Strings;
 
 using Rsdn.Framework.Formatting;
 

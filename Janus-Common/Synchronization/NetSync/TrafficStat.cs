@@ -1,4 +1,5 @@
 ﻿using CodeJam;
+using CodeJam.Strings;
 
 using Rsdn.Janus.Synchronization;
 

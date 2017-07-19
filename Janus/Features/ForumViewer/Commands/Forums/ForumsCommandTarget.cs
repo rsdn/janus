@@ -4,6 +4,7 @@ using System.Windows.Forms;
 
 using CodeJam;
 using CodeJam.Services;
+using CodeJam.Strings;
 
 using Rsdn.Janus.Log;
 

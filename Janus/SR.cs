@@ -1528,6 +1528,8 @@ namespace Rsdn.Janus
             
             public const string GoJanusInstallationErrorResourceName = "Application.GoJanusInstallationError";
             
+            public const string GoJanusInstallationErrorReasonErrorCodeResourceName = "Application.GoJanusInstallationErrorReasonErrorCode";
+            
             public const string ProtocolInstallationErrorResourceName = "Application.ProtocolInstallationError";
             
             public static string GoJanusInstallationError
@@ -1535,6 +1537,14 @@ namespace Rsdn.Janus
                 get
                 {
                     return SR.ResourceManager.GetString(GoJanusInstallationErrorResourceName);
+                }
+            }
+            
+            public static string GoJanusInstallationErrorReasonErrorCode
+            {
+                get
+                {
+                    return SR.ResourceManager.GetString(GoJanusInstallationErrorReasonErrorCodeResourceName);
                 }
             }
             
