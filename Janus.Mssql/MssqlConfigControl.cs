@@ -1,10 +1,12 @@
-﻿using System;
+﻿using Microsoft.Win32;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Data.Common;
 using System.Data.SqlClient;
 using System.Globalization;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace Rsdn.Janus.Mssql {
@@ -24,6 +26,31 @@ namespace Rsdn.Janus.Mssql {
 		}
 
 		public override void CustomInitialize(bool localize) {
+			var versionsInstalled = new HashSet<string>(StringComparer.OrdinalIgnoreCase);
+			using (var regRoot = Registry.LocalMachine.OpenSubKey(@"SOFTWARE\Microsoft\Microsoft SQL Server Local DB\Installed Versions")) {
+				foreach (var subKey in regRoot.GetSubKeyNames()) {
+					versionsInstalled.Add(subKey);
+				}
+			}
+			if (Environment.Is64BitOperatingSystem) {
+				using (var regRoot = Registry.LocalMachine.OpenSubKey(@"SOFTWARE\Wow6432Node\Microsoft\Microsoft SQL Server Local DB\Installed Versions")) {
+					if (regRoot != null) {
+						foreach (var subKey in regRoot.GetSubKeyNames()) {
+							versionsInstalled.Add(subKey);
+						}
+					}
+				}
+			}
+
+			if (versionsInstalled.Any()) {
+				chIsSqlExpress.Enabled = true;
+				cmbExpressInstances.Items.AddRange(versionsInstalled.ToArray());
+				cmbExpressInstances.SelectedIndex = 0;
+			}
+			else {
+				chIsSqlExpress.Enabled = false;
+			}
+
 			rbtMsSqlWinAuth.Checked = true;
 			cmbMsSqlServersExist.Items.Clear();
 
@@ -46,7 +73,7 @@ namespace Rsdn.Janus.Mssql {
 			if (chIsSqlExpress.Checked) {
 				var filePath = txDbFilePath.Text;
 				_csb.ConnectionString = string.Format(
-					@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename={0};Integrated Security=True;MultipleActiveResultSets=True;Connect Timeout=30;",
+					@"Data Source=(LocalDB)\v" + cmbExpressInstances.SelectedItem + @";AttachDbFilename={0};Integrated Security=True;MultipleActiveResultSets=True;Connect Timeout=30;",
 					filePath);
 				if (!System.IO.File.Exists(filePath)) {
 					if (MessageBox.Show(string.Format(Resources.FileNotExists, filePath), Resources.ConfirmationHeader, MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes) {
@@ -200,6 +227,7 @@ LOG ON (
 
 		private void chIsSqlExpress_CheckedChanged(object sender, EventArgs e) {
 			notExpressControls.Visible = !(expressControls.Visible = chIsSqlExpress.Checked);
+			notExpressControls.Enabled = !(expressControls.Enabled = chIsSqlExpress.Checked);
 		}
 
 		private void btBrowseDatabaseFile_Click(object sender, EventArgs e) {

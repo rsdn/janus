@@ -37,6 +37,8 @@
 			this.chIsSqlExpress = new System.Windows.Forms.CheckBox();
 			this.notExpressControls = new System.Windows.Forms.Panel();
 			this.expressControls = new System.Windows.Forms.Panel();
+			this.label5 = new System.Windows.Forms.Label();
+			this.cmbExpressInstances = new System.Windows.Forms.ComboBox();
 			this.txConnectionString = new System.Windows.Forms.TextBox();
 			this.btBrowseDatabaseFile = new System.Windows.Forms.Button();
 			this.label4 = new System.Windows.Forms.Label();
@@ -63,9 +65,9 @@
 			// 
 			// lsbMsSqlBasesExist
 			// 
-			this.lsbMsSqlBasesExist.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-			| System.Windows.Forms.AnchorStyles.Left)
-			| System.Windows.Forms.AnchorStyles.Right)));
+			this.lsbMsSqlBasesExist.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
 			this.lsbMsSqlBasesExist.FormattingEnabled = true;
 			this.lsbMsSqlBasesExist.Location = new System.Drawing.Point(3, 148);
 			this.lsbMsSqlBasesExist.Name = "lsbMsSqlBasesExist";
@@ -95,8 +97,8 @@
 			// 
 			// txtMsSqlPassword
 			// 
-			this.txtMsSqlPassword.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-			| System.Windows.Forms.AnchorStyles.Right)));
+			this.txtMsSqlPassword.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
 			this.txtMsSqlPassword.Location = new System.Drawing.Point(79, 107);
 			this.txtMsSqlPassword.Name = "txtMsSqlPassword";
 			this.txtMsSqlPassword.PasswordChar = '*';
@@ -105,8 +107,8 @@
 			// 
 			// txtMsSqlLogin
 			// 
-			this.txtMsSqlLogin.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-			| System.Windows.Forms.AnchorStyles.Right)));
+			this.txtMsSqlLogin.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
 			this.txtMsSqlLogin.Location = new System.Drawing.Point(79, 83);
 			this.txtMsSqlLogin.Name = "txtMsSqlLogin";
 			this.txtMsSqlLogin.Size = new System.Drawing.Size(260, 20);
@@ -145,8 +147,8 @@
 			// 
 			// cmbMsSqlServersExist
 			// 
-			this.cmbMsSqlServersExist.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-			| System.Windows.Forms.AnchorStyles.Right)));
+			this.cmbMsSqlServersExist.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
 			this.cmbMsSqlServersExist.FormattingEnabled = true;
 			this.cmbMsSqlServersExist.Location = new System.Drawing.Point(79, 3);
 			this.cmbMsSqlServersExist.Name = "cmbMsSqlServersExist";
@@ -157,7 +159,7 @@
 			// 
 			this.chIsSqlExpress.Location = new System.Drawing.Point(3, 3);
 			this.chIsSqlExpress.Name = "chIsSqlExpress";
-			this.chIsSqlExpress.Size = new System.Drawing.Size(336, 18);
+			this.chIsSqlExpress.Size = new System.Drawing.Size(84, 18);
 			this.chIsSqlExpress.TabIndex = 22;
 			this.chIsSqlExpress.Text = "Sql LocalDb";
 			this.chIsSqlExpress.UseVisualStyleBackColor = true;
@@ -165,9 +167,9 @@
 			// 
 			// notExpressControls
 			// 
-			this.notExpressControls.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-			| System.Windows.Forms.AnchorStyles.Left)
-			| System.Windows.Forms.AnchorStyles.Right)));
+			this.notExpressControls.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
 			this.notExpressControls.Controls.Add(this.lblMsSqlSelectBase);
 			this.notExpressControls.Controls.Add(this.lsbMsSqlBasesExist);
 			this.notExpressControls.Controls.Add(this.label3);
@@ -185,38 +187,59 @@
 			// 
 			// expressControls
 			// 
-			this.expressControls.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-			| System.Windows.Forms.AnchorStyles.Left)
-			| System.Windows.Forms.AnchorStyles.Right)));
+			this.expressControls.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+			this.expressControls.Controls.Add(this.cmbExpressInstances);
 			this.expressControls.Controls.Add(this.txConnectionString);
 			this.expressControls.Controls.Add(this.btBrowseDatabaseFile);
 			this.expressControls.Controls.Add(this.label4);
 			this.expressControls.Controls.Add(this.txDbFilePath);
+			this.expressControls.Controls.Add(this.label5);
+			this.expressControls.Enabled = false;
 			this.expressControls.Location = new System.Drawing.Point(0, 24);
 			this.expressControls.Name = "expressControls";
 			this.expressControls.Size = new System.Drawing.Size(342, 262);
 			this.expressControls.TabIndex = 23;
 			this.expressControls.Visible = false;
 			// 
+			// label5
+			// 
+			this.label5.AutoSize = true;
+			this.label5.Location = new System.Drawing.Point(3, 7);
+			this.label5.Name = "label5";
+			this.label5.Size = new System.Drawing.Size(42, 13);
+			this.label5.TabIndex = 1;
+			this.label5.Text = "Version";
+			// 
+			// cmbExpressInstances
+			// 
+			this.cmbExpressInstances.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+			this.cmbExpressInstances.FormattingEnabled = true;
+			this.cmbExpressInstances.Location = new System.Drawing.Point(79, 3);
+			this.cmbExpressInstances.Name = "cmbExpressInstances";
+			this.cmbExpressInstances.Size = new System.Drawing.Size(260, 21);
+			this.cmbExpressInstances.TabIndex = 2;
+			// 
 			// txConnectionString
 			// 
-			this.txConnectionString.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-			| System.Windows.Forms.AnchorStyles.Left)
-			| System.Windows.Forms.AnchorStyles.Right)));
-			this.txConnectionString.Location = new System.Drawing.Point(3, 54);
+			this.txConnectionString.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+			this.txConnectionString.Location = new System.Drawing.Point(3, 83);
 			this.txConnectionString.Multiline = true;
 			this.txConnectionString.Name = "txConnectionString";
 			this.txConnectionString.ReadOnly = true;
 			this.txConnectionString.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-			this.txConnectionString.Size = new System.Drawing.Size(336, 202);
-			this.txConnectionString.TabIndex = 26;
+			this.txConnectionString.Size = new System.Drawing.Size(336, 173);
+			this.txConnectionString.TabIndex = 6;
 			// 
 			// btBrowseDatabaseFile
 			// 
-			this.btBrowseDatabaseFile.Location = new System.Drawing.Point(246, 25);
+			this.btBrowseDatabaseFile.Location = new System.Drawing.Point(246, 54);
 			this.btBrowseDatabaseFile.Name = "btBrowseDatabaseFile";
 			this.btBrowseDatabaseFile.Size = new System.Drawing.Size(93, 23);
-			this.btBrowseDatabaseFile.TabIndex = 25;
+			this.btBrowseDatabaseFile.TabIndex = 5;
 			this.btBrowseDatabaseFile.Text = "Browse…";
 			this.btBrowseDatabaseFile.UseVisualStyleBackColor = true;
 			this.btBrowseDatabaseFile.Click += new System.EventHandler(this.btBrowseDatabaseFile_Click);
@@ -224,24 +247,24 @@
 			// label4
 			// 
 			this.label4.AutoSize = true;
-			this.label4.Location = new System.Drawing.Point(3, 7);
+			this.label4.Location = new System.Drawing.Point(3, 33);
 			this.label4.Name = "label4";
 			this.label4.Size = new System.Drawing.Size(37, 13);
-			this.label4.TabIndex = 24;
+			this.label4.TabIndex = 3;
 			this.label4.Text = "&Db file";
 			// 
 			// txDbFilePath
 			// 
-			this.txDbFilePath.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-			| System.Windows.Forms.AnchorStyles.Right)));
+			this.txDbFilePath.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
 			this.txDbFilePath.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
 			this.txDbFilePath.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.FileSystem;
 			this.txDbFilePath.BackColor = System.Drawing.SystemColors.Window;
-			this.txDbFilePath.Location = new System.Drawing.Point(79, 3);
+			this.txDbFilePath.Location = new System.Drawing.Point(79, 28);
 			this.txDbFilePath.Name = "txDbFilePath";
 			this.txDbFilePath.ReadOnly = true;
 			this.txDbFilePath.Size = new System.Drawing.Size(260, 20);
-			this.txDbFilePath.TabIndex = 23;
+			this.txDbFilePath.TabIndex = 4;
 			// 
 			// MssqlConfigControl
 			// 
@@ -280,6 +303,8 @@
 		private System.Windows.Forms.TextBox txDbFilePath;
 		private System.Windows.Forms.Button btBrowseDatabaseFile;
 		private System.Windows.Forms.TextBox txConnectionString;
+		private System.Windows.Forms.ComboBox cmbExpressInstances;
+		private System.Windows.Forms.Label label5;
 	}
 }
 
