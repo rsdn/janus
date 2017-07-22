@@ -79,6 +79,15 @@ namespace Rsdn.Janus.Mssql {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Confirmation.
+        /// </summary>
+        internal static string ConfirmationHeader {
+            get {
+                return ResourceManager.GetString("ConfirmationHeader", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Miscrosoft SQL Server.
         /// </summary>
         internal static string DriverDescription {
@@ -102,6 +111,15 @@ namespace Rsdn.Janus.Mssql {
         internal static string ExtensionDisplayName {
             get {
                 return ResourceManager.GetString("ExtensionDisplayName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to File {0} does not exists. Do You want to create it?.
+        /// </summary>
+        internal static string FileNotExists {
+            get {
+                return ResourceManager.GetString("FileNotExists", resourceCulture);
             }
         }
         
