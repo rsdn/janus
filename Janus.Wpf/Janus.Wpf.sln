@@ -1,0 +1,52 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26430.16
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Janus.Wpf", "Janus.Wpf\Janus.Wpf.csproj", "{DD075DD2-706D-47A4-8F2D-6E3A0192C80D}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Janus.Model", "Janus.Model\Janus.Model.csproj", "{665654D6-ADA0-49C8-99C7-79258AF29844}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Janus.Wpf.Controls", "Janus.Wpf.Controls\Janus.Wpf.Controls.csproj", "{24F85C50-2449-40E3-B5CB-FECF93F7FFCF}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Storages", "Storages", "{DD177FD9-8256-4256-BC99-4635FEE86A66}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Janus.Sql.LocalDb", "Janus.Sql.LocalDb\Janus.Sql.LocalDb.csproj", "{367FDEB1-A7B0-4139-BDAA-3A73903A4EE1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Janus.Db", "Janus.Db\Janus.Db.csproj", "{C5C3F32A-67AF-42A4-929D-0DE898E4895C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DD075DD2-706D-47A4-8F2D-6E3A0192C80D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DD075DD2-706D-47A4-8F2D-6E3A0192C80D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DD075DD2-706D-47A4-8F2D-6E3A0192C80D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DD075DD2-706D-47A4-8F2D-6E3A0192C80D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{665654D6-ADA0-49C8-99C7-79258AF29844}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{665654D6-ADA0-49C8-99C7-79258AF29844}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{665654D6-ADA0-49C8-99C7-79258AF29844}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{665654D6-ADA0-49C8-99C7-79258AF29844}.Release|Any CPU.Build.0 = Release|Any CPU
+		{24F85C50-2449-40E3-B5CB-FECF93F7FFCF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{24F85C50-2449-40E3-B5CB-FECF93F7FFCF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{24F85C50-2449-40E3-B5CB-FECF93F7FFCF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{24F85C50-2449-40E3-B5CB-FECF93F7FFCF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{367FDEB1-A7B0-4139-BDAA-3A73903A4EE1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{367FDEB1-A7B0-4139-BDAA-3A73903A4EE1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{367FDEB1-A7B0-4139-BDAA-3A73903A4EE1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{367FDEB1-A7B0-4139-BDAA-3A73903A4EE1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C5C3F32A-67AF-42A4-929D-0DE898E4895C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C5C3F32A-67AF-42A4-929D-0DE898E4895C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C5C3F32A-67AF-42A4-929D-0DE898E4895C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C5C3F32A-67AF-42A4-929D-0DE898E4895C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{367FDEB1-A7B0-4139-BDAA-3A73903A4EE1} = {DD177FD9-8256-4256-BC99-4635FEE86A66}
+		{C5C3F32A-67AF-42A4-929D-0DE898E4895C} = {DD177FD9-8256-4256-BC99-4635FEE86A66}
+	EndGlobalSection
+EndGlobal

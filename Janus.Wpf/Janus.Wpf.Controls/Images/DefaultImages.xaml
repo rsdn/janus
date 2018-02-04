@@ -1,0 +1,19 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:Janus.Wpf.Controls.Images">
+    <DataTemplate x:Key="Favorites">
+        <Image Source="NavTree/Favorites.png" />
+    </DataTemplate>
+    <DataTemplate x:Key="Forum">
+        <Image Source="NavTree/Forum.png"/>
+    </DataTemplate>
+    <DataTemplate x:Key="Inbox">
+        <Image Source="NavTree/Incomings.png"/>
+    </DataTemplate>
+    <DataTemplate x:Key="Outbox">
+        <Image Source="NavTree/Outcomings.png"/>
+    </DataTemplate>
+    <DataTemplate x:Key="Search">
+        <Image Source="NavTree/Search.png" />
+    </DataTemplate>
+</ResourceDictionary>

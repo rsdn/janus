@@ -1,0 +1,51 @@
+﻿<Window
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:local="clr-namespace:Janus.Wpf"
+    xmlns:Properties="clr-namespace:Janus.Wpf.Properties"
+    xmlns:janus="http://rsdn.org/janus/wpf" xmlns:jcvt="http://rsdn.org/janus/wpf/converters" x:Class="Janus.Wpf.MainWindow"
+    mc:Ignorable="d"
+    Title="MainWindow"
+    Height="{Binding MainWindowHeight, Mode=TwoWay, Source={x:Static Properties:Settings.Default}}" 
+    Width="{Binding MainWindowWidth, Mode=TwoWay, Source={x:Static Properties:Settings.Default}}"
+    Left="{Binding MainWindowLeft, Mode=TwoWay, Source={x:Static Properties:Settings.Default}}" 
+    Top="{Binding MainWindowTop, Mode=TwoWay, Source={x:Static Properties:Settings.Default}}"
+    Loaded="Window_Loaded"
+    WindowStartupLocation="CenterScreen"
+    ShowActivated="True">
+    <Window.Resources>
+        <jcvt:ModelCommandsConverter x:Key="ModelCommandsConverter"/>
+    </Window.Resources>
+    <Grid x:Name="rootGrid" x:FieldModifier="public">
+        <Grid x:Name="allControlsGrid">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width=".33*"/>
+                <ColumnDefinition Width="6" />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" MinHeight="16"/>
+                <RowDefinition />
+                <RowDefinition Height="Auto" MinHeight="16"/>
+            </Grid.RowDefinitions>
+            <Menu Grid.Row="0" Grid.ColumnSpan="3">
+                <MenuItem Header="File">
+                    <MenuItem Header="Text" Command="{Binding ConfirmTest, Converter={StaticResource ModelCommandsConverter}}"/>
+                    <Separator/>
+                    <MenuItem Header="Exit"/>
+                </MenuItem>
+            </Menu>
+            <janus:ForumTree x:Name="forumsTree" DataContext="{Binding Forums}" Grid.Row="1"/>
+            <GridSplitter Grid.Column="1" HorizontalAlignment="Stretch" Grid.Row="1"/>
+            <ContentControl Content="{Binding SelectedItem.Data, ElementName=forumsTree}"  Grid.Column="2" Grid.Row="1"/>
+            <StatusBar Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="3">
+                <StatusBarItem Content="Ready…"/>
+                <StatusBarItem HorizontalAlignment="Right">
+                    <ProgressBar Width="120" Height="16" IsIndeterminate="True" Background="Transparent"/>
+                </StatusBarItem>
+            </StatusBar>
+        </Grid>
+    </Grid>
+</Window>
